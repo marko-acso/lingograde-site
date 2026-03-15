@@ -504,68 +504,10 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   <div class="section-inner" style="max-width:640px;margin:0 auto;text-align:center;">
     <div class="section-label">Your Experience</div>
     <h2 class="section-title">Had an assessment? Tell us how it went.</h2>
-    <p class="section-desc" style="margin:0 auto 32px;">Your feedback helps other learners decide with confidence. Approved reviews appear on this page.</p>
-    <form name="review" method="POST" action="https://formspree.io/f/YOUR_ACTUAL_ID_HERE" style="display:flex;flex-direction:column;gap:16px;text-align:left;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-        <div>
-          <label style="font-size:0.875rem;font-weight:500;color:var(--ink);display:block;margin-bottom:6px;">First name</label>
-          <input type="text" name="name" required placeholder="e.g. Marcus" style="width:100%;border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;font-size:0.95rem;outline:none;font-family:var(--font-body);" />
-        </div>
-        <div>
-          <label style="font-size:0.875rem;font-weight:500;color:var(--ink);display:block;margin-bottom:6px;">Country</label>
-          <input type="text" name="country" placeholder="e.g. Netherlands" style="width:100%;border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;font-size:0.95rem;outline:none;font-family:var(--font-body);" />
-        </div>
-      </div>
-      <div>
-        <label style="font-size:0.875rem;font-weight:500;color:var(--ink);display:block;margin-bottom:6px;">Language assessed</label>
-        <select name="language" required style="width:100%;border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;font-size:0.95rem;outline:none;font-family:var(--font-body);background:white;">
-          <option value="">Select language</option>
-          <option>German</option><option>English</option><option>French</option>
-          <option>Spanish</option><option>Italian</option><option>Serbian</option>
-          <option>Croatian</option><option>Russian</option>
-        </select>
-      </div>
-      <div>
-        <label style="font-size:0.875rem;font-weight:500;color:var(--ink);display:block;margin-bottom:6px;">Your experience</label>
-        <textarea name="review" required rows="5" placeholder="Tell us what you discovered, what surprised you, or how the report helped you..." style="width:100%;border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;font-size:0.95rem;outline:none;font-family:var(--font-body);resize:vertical;"></textarea>
-      </div>
-      <div style="display:flex;align-items:flex-start;gap:10px;">
-        <input type="checkbox" name="consent" required id="consent" style="margin-top:3px;" />
-        <label for="consent" style="font-size:0.8rem;color:var(--ink-soft);line-height:1.5;">I agree that LingoGrade may publish my first name, country, and review on this website after approval.</label>
-      </div>
-      <button type="submit" class="btn-primary" style="justify-content:center;">Submit My Experience</button>
-    </form>
+    <p class="section-desc" style="margin:0 auto 24px;">Your feedback helps other learners decide with confidence. Approved reviews appear on this page. Write to us at <a href="mailto:info@lingograde.com?subject=My LingoGrade Experience" style="color:var(--accent);">info@lingograde.com</a> — we would love to hear from you.</p>
+    <a href="mailto:info@lingograde.com?subject=My LingoGrade Experience" class="btn-primary" style="display:inline-flex;">Share My Experience</a>
   </div>
 </section>
-
-<!-- FAQ -->
-<section class="section section-alt" id="faq">
-  <div class="section-inner">
-    <div class="section-label">FAQ</div>
-    <h2 class="section-title">Common questions</h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-q">What languages do you assess?</button>
-        <div class="faq-a"><div class="faq-a-inner">We currently assess German, English, French, Spanish, Italian, Serbian, Croatian, and Russian. More languages are being added. If your language is not listed, contact us — we may be able to accommodate you.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Is this a test? Do I need to prepare?</button>
-        <div class="faq-a"><div class="faq-a-inner">No preparation needed. This is a natural conversation — not an exam. We assess your real-world speaking ability under normal conditions. Just show up and talk.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">How is this different from a Goethe or telc exam?</button>
-        <div class="faq-a"><div class="faq-a-inner">Official exams give you a certificate but zero actionable feedback. LingoGrade gives you a detailed breakdown of exactly what is holding you back, with specific exercises and a concrete plan to improve. Think of it as the diagnostic step before the treatment — and unlike an exam, there is no pass or fail.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">When do I receive my report?</button>
-        <div class="faq-a"><div class="faq-a-inner">Within 48 hours of your conversation. You will receive a professionally designed PDF report delivered directly to your email address.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Can my teacher use this for our lessons?</button>
-        <div class="faq-a"><div class="faq-a-inner">Absolutely — that is one of the strongest use cases. The homework and 8-week plan in the Full Assessment are designed to integrate directly into existing lessons. Many partner teachers use LingoGrade at the start of a new student relationship to establish a precise baseline before designing their curriculum.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">What if I am a complete beginner?</button>
         <div class="faq-a"><div class="faq-a-inner">We assess all levels from A1 to C2. If you are a beginner, the conversation will be fully adapted to your level — there is no pressure and no awkwardness. The Full Assessment with native language translation is recommended so you can understand every part of your report clearly.</div></div>
       </div>
       <div class="faq-item">
