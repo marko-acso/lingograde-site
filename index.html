@@ -154,10 +154,33 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .partner-card { grid-template-columns: 1fr; }
   .nav-links a:not(.nav-cta) { display: none; }
 }
+@media (max-width: 768px) {
+  .nav-inner { padding: 8px 16px; }
+  .nav-links a:not(.nav-cta):not([href*="login"]) { display: none; }
+  .nav-links { gap: 12px; }
+  .hero { padding: 100px 20px 60px; }
+  .hero h1 { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+  .hero p { font-size: 1rem; }
+  .hero-actions { flex-direction: column; align-items: center; }
+  .hero-actions a { width: 100%; justify-content: center; }
+  .section { padding: 60px 20px; }
+  .steps { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .blocks { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr !important; max-width: 420px !important; }
+  .partner-card { grid-template-columns: 1fr !important; gap: 32px; }
+  .cefr-bar { flex-wrap: wrap; }
+  .cefr-level { flex: 1 1 30%; }
+  div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
+  div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  div[style*="display:flex"][style*="gap:32px"] { flex-direction: column; gap: 16px !important; }
+  .faq-list { margin: 24px auto 0; }
+}
 @media (max-width: 480px) {
   .steps { grid-template-columns: 1fr; }
   .hero h1 { font-size: 1.75rem; }
   .hero-actions { flex-direction: column; align-items: center; }
+  .section-title { font-size: 1.4rem; }
+  .pricing-price { font-size: 2rem; }
 }
 </style>
 </head>
@@ -181,9 +204,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <!-- Hero -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-badge">CEFR Language Assessment</div>
+    <div class="hero-badge">Professional CEFR Language Assessment</div>
     <h1>Most language learners are working at the <em>wrong level.</em> Are you?</h1>
-    <p>Without an accurate baseline, every lesson is a guess. LingoGrade gives you a precise CEFR assessment, a detailed error analysis, and a concrete plan — so every hour you invest from now on actually moves you forward.</p>
+    <p>Without an accurate baseline, every lesson is a guess. LingoGrade assesses your real spoken language — the errors you make under pressure, the structures you avoid without realising it — and gives you a bespoke plan to reach the next level.</p>
     <div class="hero-actions">
       <a href="#pricing" class="btn-primary">Find Out My Real Level</a>
       <a href="#how-it-works" class="btn-secondary">How It Works</a>
@@ -205,6 +228,35 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       <div style="text-align:center;">
         <div style="font-family:var(--font-display);font-size:1.8rem;color:var(--accent);">8 languages</div>
         <div style="font-size:0.8rem;color:var(--ink-light);">assessed by a certified professional</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Speaking differentiator -->
+<section class="section section-alt">
+  <div class="section-inner" style="max-width:860px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="partner-card">
+      <div>
+        <div class="section-label">What makes LingoGrade different</div>
+        <h2 class="section-title">The part of language learning everyone ignores — until now.</h2>
+        <p class="section-desc" style="margin-bottom:24px;">Most courses improve your reading and grammar. Apps gamify vocabulary. Textbooks drill conjugations. None of them fix how you actually speak.</p>
+        <p style="font-size:1rem;color:var(--ink-soft);line-height:1.7;margin-bottom:24px;">LingoGrade assesses your real spoken language — in a natural conversation, under normal conditions. We identify the precise structural errors in your speech, explain why they keep happening, and build a targeted plan around those exact issues.</p>
+        <p style="font-size:1rem;color:var(--ink);font-weight:600;line-height:1.7;">Not a generic curriculum. Your errors. Your plan. Your next level.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="padding:20px 24px;border-radius:12px;background:var(--cream);border:1.5px solid var(--border);">
+          <div style="font-weight:600;color:var(--ink);margin-bottom:6px;">Every app and textbook</div>
+          <div style="font-size:0.875rem;color:var(--ink-light);">Reading, grammar, vocabulary — but never your actual speaking.</div>
+        </div>
+        <div style="padding:20px 24px;border-radius:12px;background:var(--accent-bg);border:1.5px solid var(--accent);">
+          <div style="font-weight:600;color:var(--accent);margin-bottom:6px;">LingoGrade</div>
+          <div style="font-size:0.875rem;color:var(--ink-soft);">Real conversation assessment. Precise error analysis. Bespoke improvement plan. Delivered in 48 hours.</div>
+        </div>
+        <div style="padding:20px 24px;border-radius:12px;background:var(--cream);border:1.5px solid var(--border);">
+          <div style="font-weight:600;color:var(--ink);margin-bottom:6px;">Official exams (Goethe, telc, Cambridge)</div>
+          <div style="font-size:0.875rem;color:var(--ink-light);">A certificate and a pass/fail. Zero feedback on what to improve.</div>
+        </div>
       </div>
     </div>
   </div>
