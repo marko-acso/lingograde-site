@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LingoGrade for Teachers — Turn Your Expertise Into a Revenue Stream</title>
+    <meta name="description" content="Partner with LingoGrade. Earn 30% commission on every CEFR assessment your students take. Professional diagnostics that make you a better teacher — and pay you for it.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #0f1923;
+            --ink-soft: #2d3a45;
+            --ink-muted: #5a6872;
+            --parchment: #faf8f5;
+            --parchment-deep: #f0ece5;
+            --warm-white: #fffdf9;
+            --gold: #c8952e;
+            --gold-light: #e8c36a;
+            --gold-glow: rgba(200, 149, 46, 0.12);
+            --gold-glow-strong: rgba(200, 149, 46, 0.25);
+            --teal: #1a7a6d;
+            --teal-light: #e6f5f2;
+            --coral: #d4553a;
+            --serif: 'DM Serif Display', Georgia, serif;
+            --sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            --max-w: 1140px;
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+        body {
+            font-family: var(--sans);
+            color: var(--ink);
+            background: var(--parchment);
+            line-height: 1.7;
+            font-size: 16.5px;
+            overflow-x: hidden;
+        }
+
+        /* ============ NAV ============ */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(250, 248, 245, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(15, 25, 35, 0.06);
+            transition: box-shadow 0.3s;
+        }
+        .nav.scrolled { box-shadow: 0 2px 20px rgba(15, 25, 35, 0.06); }
+        .nav-inner {
+            max-width: var(--max-w); margin: 0 auto;
+            padding: 0 2rem; height: 64px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo {
+            font-family: var(--sans); font-weight: 700; font-size: 1.25rem;
+            color: var(--ink); text-decoration: none; letter-spacing: -0.02em;
+        }
+        .nav-logo span { color: var(--gold); }
+        .nav-links { display: flex; align-items: center; gap: 2rem; }
+        .nav-links a {
+            font-size: 0.9rem; font-weight: 500; color: var(--ink-muted);
+            text-decoration: none; transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--ink); }
+        .nav-cta {
+            background: var(--ink) !important; color: var(--parchment) !important;
+            padding: 0.55rem 1.35rem !important; border-radius: 8px;
+            font-weight: 600 !important; font-size: 0.85rem !important;
+            transition: transform 0.2s var(--ease-out), box-shadow 0.2s !important;
+        }
+        .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(15, 25, 35, 0.15); }
+
+        /* ============ HERO ============ */
+        .hero {
+            padding: 10rem 2rem 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 20% 10%, var(--gold-glow) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 50% at 80% 80%, rgba(26, 122, 109, 0.06) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .hero-inner {
+            max-width: 820px; margin: 0 auto;
+            text-align: center; position: relative; z-index: 1;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--gold-glow); border: 1px solid rgba(200, 149, 46, 0.2);
+            padding: 0.45rem 1.1rem; border-radius: 100px;
+            font-size: 0.82rem; font-weight: 600; color: var(--gold);
+            margin-bottom: 2rem; letter-spacing: 0.02em;
+        }
+        .hero-badge::before {
+            content: ''; width: 7px; height: 7px;
+            background: var(--gold); border-radius: 50%;
+        }
+        .hero h1 {
+            font-family: var(--serif); font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+            line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem;
+            letter-spacing: -0.015em;
+        }
+        .hero h1 em {
+            font-style: italic; color: var(--gold);
+        }
+        .hero-sub {
+            font-size: 1.15rem; color: var(--ink-muted); max-width: 620px;
+            margin: 0 auto 2.5rem; line-height: 1.75;
+        }
+        .hero-cta {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            background: var(--gold); color: white;
+            padding: 1rem 2.2rem; border-radius: 12px;
+            font-weight: 700; font-size: 1rem;
+            text-decoration: none; border: none; cursor: pointer;
+            transition: transform 0.25s var(--ease-out), box-shadow 0.25s;
+            box-shadow: 0 4px 20px rgba(200, 149, 46, 0.3);
+        }
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(200, 149, 46, 0.4);
+        }
+        .hero-cta svg { width: 18px; height: 18px; }
+        .hero-proof {
+            margin-top: 3rem; font-size: 0.85rem; color: var(--ink-muted);
+        }
+        .hero-proof strong { color: var(--ink-soft); font-weight: 600; }
+
+        /* ============ SECTION BASE ============ */
+        section { padding: 5.5rem 2rem; }
+        .section-inner { max-width: var(--max-w); margin: 0 auto; }
+        .section-label {
+            font-size: 0.78rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.12em;
+            color: var(--gold); margin-bottom: 1rem;
+        }
+        .section-title {
+            font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            line-height: 1.2; margin-bottom: 1rem;
+        }
+        .section-sub {
+            font-size: 1.05rem; color: var(--ink-muted);
+            max-width: 600px; line-height: 1.75;
+        }
+
+        /* ============ EMPATHY SECTION ============ */
+        .empathy {
+            background: var(--warm-white);
+            border-top: 1px solid rgba(15, 25, 35, 0.04);
+            border-bottom: 1px solid rgba(15, 25, 35, 0.04);
+        }
+        .empathy-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 3.5rem; align-items: center; margin-top: 3rem;
+        }
+        .empathy-points { display: flex; flex-direction: column; gap: 1.8rem; }
+        .empathy-point {
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--gold-glow-strong);
+            transition: border-color 0.3s;
+        }
+        .empathy-point:hover { border-left-color: var(--gold); }
+        .empathy-point p {
+            font-size: 1.02rem; color: var(--ink-soft); line-height: 1.7;
+        }
+        .empathy-point p strong { color: var(--ink); }
+        .empathy-card {
+            background: var(--parchment);
+            border: 1px solid rgba(15, 25, 35, 0.06);
+            border-radius: 20px; padding: 2.5rem;
+            position: relative; overflow: hidden;
+        }
+        .empathy-card::after {
+            content: '"'; position: absolute; top: -10px; right: 20px;
+            font-family: var(--serif); font-size: 8rem;
+            color: var(--gold-glow-strong); line-height: 1; pointer-events: none;
+        }
+        .empathy-card blockquote {
+            font-family: var(--serif); font-size: 1.3rem;
+            line-height: 1.5; color: var(--ink); font-style: italic;
+            position: relative; z-index: 1;
+        }
+        .empathy-card cite {
+            display: block; margin-top: 1.2rem;
+            font-family: var(--sans); font-style: normal;
+            font-size: 0.85rem; color: var(--ink-muted);
+        }
+
+        /* ============ VALUE PROP ============ */
+        .value-cards {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem; margin-top: 3rem;
+        }
+        .value-card {
+            background: var(--warm-white);
+            border: 1px solid rgba(15, 25, 35, 0.06);
+            border-radius: 16px; padding: 2rem;
+            transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+        }
+        .value-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(15, 25, 35, 0.06);
+        }
+        .value-icon {
+            width: 48px; height: 48px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1.2rem; font-size: 1.3rem;
+        }
+        .value-icon.diagnostic { background: var(--teal-light); color: var(--teal); }
+        .value-icon.authority { background: var(--gold-glow); color: var(--gold); }
+        .value-icon.revenue { background: #fce8e4; color: var(--coral); }
+        .value-card h3 {
+            font-family: var(--serif); font-size: 1.2rem;
+            margin-bottom: 0.6rem;
+        }
+        .value-card p { font-size: 0.95rem; color: var(--ink-muted); line-height: 1.65; }
+
+        /* ============ HOW IT WORKS ============ */
+        .how { background: var(--ink); color: var(--parchment); }
+        .how .section-label { color: var(--gold-light); }
+        .how .section-title { color: var(--parchment); }
+        .how .section-sub { color: rgba(250, 248, 245, 0.6); }
+        .how-steps {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 2rem; margin-top: 3.5rem;
+        }
+        .how-step {
+            position: relative; padding: 2rem;
+            background: rgba(250, 248, 245, 0.04);
+            border: 1px solid rgba(250, 248, 245, 0.08);
+            border-radius: 16px;
+            transition: background 0.3s;
+        }
+        .how-step:hover { background: rgba(250, 248, 245, 0.07); }
+        .step-num {
+            font-family: var(--serif); font-size: 3rem;
+            color: var(--gold); opacity: 0.3; line-height: 1;
+            margin-bottom: 1rem;
+        }
+        .how-step h3 {
+            font-family: var(--serif); font-size: 1.15rem;
+            color: var(--parchment); margin-bottom: 0.5rem;
+        }
+        .how-step p {
+            font-size: 0.92rem; color: rgba(250, 248, 245, 0.55);
+            line-height: 1.65;
+        }
+        .how-connector {
+            display: none; /* Hidden on mobile, decorative on desktop */
+        }
+
+        /* ============ CALCULATOR ============ */
+        .calculator-wrap {
+            margin-top: 3.5rem;
+            background: var(--warm-white);
+            border: 1px solid rgba(15, 25, 35, 0.06);
+            border-radius: 24px; padding: 3rem;
+            box-shadow: 0 8px 40px rgba(15, 25, 35, 0.04);
+        }
+        .calc-header {
+            text-align: center; margin-bottom: 2.5rem;
+        }
+        .calc-header h3 {
+            font-family: var(--serif); font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+        .calc-header p {
+            color: var(--ink-muted); font-size: 0.95rem;
+        }
+        .calc-controls {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 2rem; margin-bottom: 2.5rem;
+        }
+        .calc-group label {
+            display: block; font-weight: 600; font-size: 0.88rem;
+            margin-bottom: 0.75rem; color: var(--ink-soft);
+        }
+        .calc-slider-wrap {
+            position: relative;
+        }
+        .calc-slider {
+            -webkit-appearance: none; appearance: none;
+            width: 100%; height: 6px; border-radius: 3px;
+            background: var(--parchment-deep);
+            outline: none; cursor: pointer;
+        }
+        .calc-slider::-webkit-slider-thumb {
+            -webkit-appearance: none; appearance: none;
+            width: 24px; height: 24px; border-radius: 50%;
+            background: var(--gold);
+            box-shadow: 0 2px 8px rgba(200, 149, 46, 0.35);
+            cursor: pointer; transition: transform 0.15s;
+        }
+        .calc-slider::-webkit-slider-thumb:hover { transform: scale(1.15); }
+        .calc-slider::-moz-range-thumb {
+            width: 24px; height: 24px; border-radius: 50%;
+            background: var(--gold); border: none;
+            box-shadow: 0 2px 8px rgba(200, 149, 46, 0.35);
+            cursor: pointer;
+        }
+        .calc-value {
+            text-align: center; margin-top: 0.6rem;
+            font-weight: 700; font-size: 1.1rem; color: var(--ink);
+        }
+        .calc-toggle {
+            display: flex; gap: 0.5rem; margin-top: 0.25rem;
+        }
+        .calc-toggle button {
+            flex: 1; padding: 0.7rem 1rem;
+            border: 1.5px solid rgba(15, 25, 35, 0.1);
+            border-radius: 10px; background: transparent;
+            font-family: var(--sans); font-weight: 600;
+            font-size: 0.85rem; color: var(--ink-muted);
+            cursor: pointer; transition: all 0.2s;
+        }
+        .calc-toggle button.active {
+            border-color: var(--gold);
+            background: var(--gold-glow);
+            color: var(--gold);
+        }
+        .calc-toggle button:hover:not(.active) {
+            border-color: rgba(15, 25, 35, 0.2);
+        }
+        .calc-result {
+            text-align: center;
+            padding: 2rem; border-radius: 16px;
+            background: linear-gradient(135deg, rgba(200, 149, 46, 0.06) 0%, rgba(26, 122, 109, 0.04) 100%);
+            border: 1px solid var(--gold-glow-strong);
+        }
+        .calc-result-label {
+            font-size: 0.85rem; font-weight: 600;
+            color: var(--ink-muted); text-transform: uppercase;
+            letter-spacing: 0.08em; margin-bottom: 0.3rem;
+        }
+        .calc-result-amount {
+            font-family: var(--serif); font-size: 3.5rem;
+            color: var(--gold); line-height: 1.1;
+        }
+        .calc-result-sub {
+            font-size: 0.9rem; color: var(--ink-muted);
+            margin-top: 0.4rem;
+        }
+        .calc-breakdown {
+            display: flex; justify-content: center; gap: 3rem;
+            margin-top: 1.5rem; padding-top: 1.5rem;
+            border-top: 1px solid rgba(15, 25, 35, 0.06);
+        }
+        .calc-breakdown-item { text-align: center; }
+        .calc-breakdown-item .num {
+            font-weight: 700; font-size: 1.15rem; color: var(--ink);
+        }
+        .calc-breakdown-item .label {
+            font-size: 0.8rem; color: var(--ink-muted);
+        }
+
+        /* ============ ACCUSATION AUDIT ============ */
+        .audit {
+            background: var(--warm-white);
+            border-top: 1px solid rgba(15, 25, 35, 0.04);
+            border-bottom: 1px solid rgba(15, 25, 35, 0.04);
+        }
+        .audit-items {
+            display: flex; flex-direction: column;
+            gap: 1.2rem; margin-top: 2.5rem; max-width: 780px;
+        }
+        .audit-item {
+            background: var(--parchment);
+            border: 1px solid rgba(15, 25, 35, 0.05);
+            border-radius: 14px; overflow: hidden;
+        }
+        .audit-q {
+            padding: 1.3rem 1.8rem;
+            font-weight: 600; font-size: 1rem;
+            color: var(--ink); cursor: pointer;
+            display: flex; align-items: center; justify-content: space-between;
+            user-select: none; transition: color 0.2s;
+        }
+        .audit-q:hover { color: var(--gold); }
+        .audit-q::after {
+            content: '+'; font-size: 1.4rem; font-weight: 300;
+            color: var(--ink-muted); transition: transform 0.3s var(--ease-out);
+        }
+        .audit-item.open .audit-q::after { transform: rotate(45deg); }
+        .audit-a {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.4s var(--ease-out), padding 0.3s;
+        }
+        .audit-item.open .audit-a {
+            max-height: 300px;
+            padding: 0 1.8rem 1.3rem;
+        }
+        .audit-a p {
+            font-size: 0.95rem; color: var(--ink-muted); line-height: 1.7;
+        }
+
+        /* ============ SOCIAL PROOF ============ */
+        .proof-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem; margin-top: 3rem;
+        }
+        .proof-card {
+            background: var(--warm-white);
+            border: 1px solid rgba(15, 25, 35, 0.06);
+            border-radius: 16px; padding: 2rem;
+        }
+        .proof-card .stars {
+            color: var(--gold); font-size: 0.9rem;
+            letter-spacing: 2px; margin-bottom: 1rem;
+        }
+        .proof-card blockquote {
+            font-size: 0.95rem; color: var(--ink-soft);
+            line-height: 1.7; font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .proof-card cite {
+            font-style: normal; font-size: 0.82rem;
+            color: var(--ink-muted); font-weight: 600;
+        }
+
+        /* ============ FINAL CTA ============ */
+        .final-cta {
+            background: var(--ink);
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .final-cta::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(200, 149, 46, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .final-cta-inner {
+            max-width: 650px; margin: 0 auto; position: relative; z-index: 1;
+        }
+        .final-cta h2 {
+            font-family: var(--serif); font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--parchment); line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        .final-cta p {
+            color: rgba(250, 248, 245, 0.55);
+            font-size: 1.05rem; margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+        .final-cta .hero-cta {
+            font-size: 1.05rem; padding: 1.1rem 2.5rem;
+        }
+
+        /* ============ FOOTER ============ */
+        .footer {
+            background: var(--ink);
+            border-top: 1px solid rgba(250, 248, 245, 0.06);
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+        .footer p {
+            color: rgba(250, 248, 245, 0.35);
+            font-size: 0.82rem;
+        }
+        .footer a {
+            color: rgba(250, 248, 245, 0.5);
+            text-decoration: none;
+        }
+        .footer a:hover { color: var(--gold-light); }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .hero { padding: 8rem 1.5rem 4rem; }
+            .empathy-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .value-cards { grid-template-columns: 1fr; }
+            .how-steps { grid-template-columns: 1fr; }
+            .calc-controls { grid-template-columns: 1fr; }
+            .calc-breakdown { gap: 1.5rem; }
+            .proof-grid { grid-template-columns: 1fr; }
+            .nav-links a:not(.nav-cta) { display: none; }
+            section { padding: 4rem 1.5rem; }
+        }
+
+        /* ============ ANIMATIONS ============ */
+        .fade-up {
+            opacity: 0; transform: translateY(24px);
+            transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+        }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <a href="https://lingograde.com" class="nav-logo">Lingo<span>Grade</span></a>
+        <div class="nav-links">
+            <a href="https://lingograde.com">Home</a>
+            <a href="#how">How It Works</a>
+            <a href="#earnings">Earnings</a>
+            <a href="#faq">FAQ</a>
+            <a href="#join" class="nav-cta">Become a Partner</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO — Tactical Empathy: name their world before you offer anything -->
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-badge fade-up">Teacher Partner Programme</div>
+        <h1 class="fade-up stagger-1">You already know where they struggle. Now <em>prove it.</em></h1>
+        <p class="hero-sub fade-up stagger-2">You hear the fossilized errors, the avoidance patterns, the gap between what your students think they can do and what they actually produce under pressure. LingoGrade turns that instinct into a certified diagnostic — and pays you 30% for every student you refer.</p>
+        <a href="#join" class="hero-cta fade-up stagger-3">
+            Join the Partner Programme
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <p class="hero-proof fade-up stagger-3"><strong>30% commission</strong> on every assessment &middot; No caps &middot; No minimum referrals &middot; Paid monthly</p>
+    </div>
+</section>
+
+<!-- EMPATHY — Labeling: "It seems like..." / "It sounds like..." — describe their reality so accurately they think "that's right" -->
+<section class="empathy">
+    <div class="section-inner">
+        <span class="section-label fade-up">Why this exists</span>
+        <h2 class="section-title fade-up stagger-1">It sounds like you already know <br>the problem</h2>
+        <div class="empathy-grid">
+            <div class="empathy-points">
+                <div class="empathy-point fade-up">
+                    <p>It seems like no matter how many hours you spend with a student, <strong>you are still guessing</strong> whether they are solid B1 or shaky B2. Your gut says one thing — but there is no independent confirmation.</p>
+                </div>
+                <div class="empathy-point fade-up stagger-1">
+                    <p>It feels like your students plateau and blame themselves — when the real issue is that <strong>nobody has shown them exactly which structures are breaking down</strong> and why those specific errors keep resurfacing.</p>
+                </div>
+                <div class="empathy-point fade-up stagger-2">
+                    <p>It sounds like you have wished, more than once, that someone could hand you <strong>a precise diagnostic report</strong> — one that maps each student's real spoken level, their fossilized errors, and the exact structures to prioritise next.</p>
+                </div>
+                <div class="empathy-point fade-up stagger-3">
+                    <p>And it probably seems like the only options out there are <strong>expensive official exams that give a certificate and zero actionable feedback</strong> — or nothing at all.</p>
+                </div>
+            </div>
+            <div class="empathy-card fade-up stagger-2">
+                <blockquote>That is exactly why we built LingoGrade. Not to replace you — but to give you the one thing you cannot produce yourself: an independent, structured, certified assessment that makes your teaching dramatically more precise.</blockquote>
+                <cite>— The LingoGrade Team</cite>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VALUE — What the teacher actually gets (professional utility FIRST, money LAST) -->
+<section class="value">
+    <div class="section-inner">
+        <span class="section-label fade-up">What you get</span>
+        <h2 class="section-title fade-up stagger-1">Three reasons this becomes <br>your favourite tool</h2>
+        <p class="section-sub fade-up stagger-2">This is not an affiliate link you paste and forget. This is a professional instrument that changes how you teach.</p>
+        <div class="value-cards">
+            <div class="value-card fade-up">
+                <div class="value-icon diagnostic">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
+                </div>
+                <h3>A diagnostic you can teach from</h3>
+                <p>Every report maps the student's precise CEFR level across speaking, structure, vocabulary, and fluency — with specific error analysis and targeted recommendations. You stop guessing. You start building lessons around data.</p>
+            </div>
+            <div class="value-card fade-up stagger-1">
+                <div class="value-icon authority">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 15l-3-3h6l-3 3z"/><circle cx="12" cy="8" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                </div>
+                <h3>Your authority, reinforced</h3>
+                <p>The report positions ongoing work with their teacher as the path forward. It does not evaluate your teaching — it evaluates the student's current state and builds a plan that you deliver. You are the hero of the story, not the subject of the test.</p>
+            </div>
+            <div class="value-card fade-up stagger-2">
+                <div class="value-icon revenue">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 100 4h4a2 2 0 110 4H8"/><path d="M12 18V6"/></svg>
+                </div>
+                <h3>30% on every assessment. Always.</h3>
+                <p>No tiers. No thresholds. No expiry. You earn 30% of the assessment price for every student who books through your referral link. Paid monthly via bank transfer. One sentence, one rule — that is the entire programme.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+    <div class="section-inner">
+        <span class="section-label fade-up">How it works</span>
+        <h2 class="section-title fade-up stagger-1">Three steps. Zero friction.</h2>
+        <p class="section-sub fade-up stagger-2">From signup to first payout — here is the entire process.</p>
+        <div class="how-steps">
+            <div class="how-step fade-up">
+                <div class="step-num">01</div>
+                <h3>Sign up in 2 minutes</h3>
+                <p>Fill out the partner form below. You will receive your unique referral link and partner code within 24 hours. Share it however you like — email, WhatsApp, your website, in class.</p>
+            </div>
+            <div class="how-step fade-up stagger-1">
+                <div class="step-num">02</div>
+                <h3>Your students book</h3>
+                <p>When a student books through your link, the system tracks the referral automatically. They take their assessment — a 15-minute or 45-minute spoken conversation with a certified assessor. The report lands in their inbox within 1 hour.</p>
+            </div>
+            <div class="how-step fade-up stagger-2">
+                <div class="step-num">03</div>
+                <h3>You get paid</h3>
+                <p>30% of the assessment price is credited to your partner account. Payouts happen monthly via bank transfer. You can track every referral, every earning, and every report in your partner dashboard.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EARNINGS CALCULATOR -->
+<section class="earnings" id="earnings">
+    <div class="section-inner">
+        <span class="section-label fade-up">Your earnings</span>
+        <h2 class="section-title fade-up stagger-1">What would an extra income stream <br>look like for you?</h2>
+        <p class="section-sub fade-up stagger-2">Move the slider. See the numbers. This is not theoretical — these are real commissions from students who already trust your judgement.</p>
+
+        <div class="calculator-wrap fade-up stagger-3">
+            <div class="calc-header">
+                <h3>Earnings Calculator</h3>
+                <p>Adjust the number of students you refer per month</p>
+            </div>
+            <div class="calc-controls">
+                <div class="calc-group">
+                    <label>Students per month</label>
+                    <div class="calc-slider-wrap">
+                        <input type="range" class="calc-slider" id="studentsSlider" min="1" max="50" value="8">
+                    </div>
+                    <div class="calc-value" id="studentsValue">8 students</div>
+                </div>
+                <div class="calc-group">
+                    <label>Assessment type</label>
+                    <div class="calc-toggle" id="assessmentToggle">
+                        <button data-price="69" data-label="Quick">Quick — €69</button>
+                        <button data-price="129" data-label="Full" class="active">Full — €129</button>
+                    </div>
+                </div>
+            </div>
+            <div class="calc-result">
+                <div class="calc-result-label">Your annual earnings</div>
+                <div class="calc-result-amount" id="annualAmount">€3,715</div>
+                <div class="calc-result-sub" id="monthlyAmount">That is €309 per month — just from referrals</div>
+            </div>
+            <div class="calc-breakdown">
+                <div class="calc-breakdown-item">
+                    <div class="num" id="perStudentAmount">€38.70</div>
+                    <div class="label">Your commission per student</div>
+                </div>
+                <div class="calc-breakdown-item">
+                    <div class="num" id="studentsPerYear">96</div>
+                    <div class="label">Students per year</div>
+                </div>
+                <div class="calc-breakdown-item">
+                    <div class="num">30%</div>
+                    <div class="label">Your share — always</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ACCUSATION AUDIT — Address every fear before it becomes an objection -->
+<section class="audit" id="faq">
+    <div class="section-inner">
+        <span class="section-label fade-up">Honest answers</span>
+        <h2 class="section-title fade-up stagger-1">You might be thinking...</h2>
+        <p class="section-sub fade-up stagger-2">We would rather address your concerns head-on than let them linger.</p>
+
+        <div class="audit-items">
+            <div class="audit-item fade-up">
+                <div class="audit-q">"What if the assessment places my student lower than I suggested?"</div>
+                <div class="audit-a">
+                    <p>This is the most important question — and we are glad you are asking it. The report never evaluates your teaching. It evaluates the student's current spoken performance under real conditions. If the result is lower than expected, the report frames this as a starting point, not a judgement. And here is the thing teachers tell us: when a student sees their real level in black and white, their motivation to work harder with you goes up, not down. The report literally recommends continued work with their current teacher as the path forward.</p>
+                </div>
+            </div>
+            <div class="audit-item fade-up stagger-1">
+                <div class="audit-q">"Will my students think I am just trying to earn a commission?"</div>
+                <div class="audit-a">
+                    <p>Your students do not see your commission. They do not know the percentage. They do not know the structure. What they see is a professional assessment tool that their teacher recommended — the same way a doctor recommends a blood test. Nobody suspects the doctor of having a referral deal with the lab. You are recommending a diagnostic because it makes your teaching better. The commission is simply how we thank you for that recommendation.</p>
+                </div>
+            </div>
+            <div class="audit-item fade-up stagger-2">
+                <div class="audit-q">"Is this just another affiliate programme that pays pennies?"</div>
+                <div class="audit-a">
+                    <p>30% is not an affiliate rate — it is a partnership rate. On a Full Assessment at €129, you earn €38.70 per student. Refer eight students a month and that is over €300 of recurring monthly income from something you would recommend anyway. There are no tiers to unlock, no minimum thresholds, no expiry dates. The rate is 30%, always. We would rather have fewer partners who genuinely believe in the product than an army of affiliates pasting links.</p>
+                </div>
+            </div>
+            <div class="audit-item fade-up stagger-3">
+                <div class="audit-q">"What if my students do not want to pay for an assessment?"</div>
+                <div class="audit-a">
+                    <p>This is where your professional recommendation changes the equation entirely. When a student googles "language assessment" they see a price and hesitate. When their trusted teacher says "I want you to take this assessment so I can build your next three months of lessons around real data" — that is not a purchase, that is a prescription. The students who book through teacher referrals have the highest completion rate and the highest satisfaction scores. Your recommendation is what transforms a service into a necessity.</p>
+                </div>
+            </div>
+            <div class="audit-item fade-up">
+                <div class="audit-q">"How do I know LingoGrade assessments are actually good?"</div>
+                <div class="audit-a">
+                    <p>Every assessment is conducted by a certified language professional using the full CEFR framework — the same standard behind Goethe-Institut, telc, and Cambridge examinations. The report includes detailed error analysis across grammar, vocabulary, fluency, coherence, and pronunciation — with specific examples from the student's own speech. This is not a chatbot quiz. This is a structured, human-led diagnostic that produces a report you can build an entire teaching plan around.</p>
+                </div>
+            </div>
+            <div class="audit-item fade-up stagger-1">
+                <div class="audit-q">"What does it cost me to join?"</div>
+                <div class="audit-a">
+                    <p>Nothing. There is no signup fee, no monthly charge, no minimum commitment. You sign up, you get your link, you start earning. If you refer zero students, it costs you nothing. If you refer fifty, you earn 30% on all fifty. The risk is entirely ours.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="proof">
+    <div class="section-inner">
+        <span class="section-label fade-up">From teachers like you</span>
+        <h2 class="section-title fade-up stagger-1">What partner teachers are saying</h2>
+        <div class="proof-grid">
+            <div class="proof-card fade-up">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"I used to spend the first month with every new student trying to figure out their real level. Now I start with a LingoGrade report and we hit the ground running from lesson one."</blockquote>
+                <cite>— German teacher, Berlin</cite>
+            </div>
+            <div class="proof-card fade-up stagger-1">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"The commission is genuinely generous — but honestly, I would recommend it even without it. The reports give my students clarity I could never produce on my own."</blockquote>
+                <cite>— English teacher, Madrid</cite>
+            </div>
+            <div class="proof-card fade-up stagger-2">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Three of my B2 students turned out to be strong B1. Uncomfortable at first — but once they saw the detailed breakdown, they were more motivated than ever. And they booked more lessons with me."</blockquote>
+                <cite>— French teacher, Vienna</cite>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA — Calibrated question: "Would it be wrong to..." -->
+<section class="final-cta" id="join">
+    <div class="final-cta-inner">
+        <h2 class="fade-up">Would it be wrong to find out <br>what this could do for your teaching?</h2>
+        <p class="fade-up stagger-1">No fee. No commitment. No minimum referrals. Just a professional tool that makes you better at what you do — and pays you for sharing it.</p>
+        <a href="mailto:partners@lingograde.com?subject=Teacher Partner Application&body=Hi LingoGrade team,%0D%0A%0D%0AI'd like to join the Teacher Partner Programme.%0D%0A%0D%0AMy name:%0D%0ALanguages I teach:%0D%0AApproximate number of active students:%0D%0AHow I heard about LingoGrade:%0D%0A%0D%0ALooking forward to hearing from you." class="hero-cta fade-up stagger-2">
+            Apply to Become a Partner
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>&copy; 2025 LingoGrade. All rights reserved. &middot; <a href="https://lingograde.com">Home</a> &middot; <a href="mailto:partners@lingograde.com">partners@lingograde.com</a></p>
+</footer>
+
+<script>
+// NAV SCROLL
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// FADE-UP OBSERVER
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
+        }
+    });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// CALCULATOR
+const slider = document.getElementById('studentsSlider');
+const studentsVal = document.getElementById('studentsValue');
+const annualEl = document.getElementById('annualAmount');
+const monthlyEl = document.getElementById('monthlyAmount');
+const perStudentEl = document.getElementById('perStudentAmount');
+const perYearEl = document.getElementById('studentsPerYear');
+const toggleBtns = document.querySelectorAll('#assessmentToggle button');
+
+let price = 129;
+
+function updateCalc() {
+    const students = parseInt(slider.value);
+    const commission = price * 0.3;
+    const monthly = students * commission;
+    const annual = monthly * 12;
+
+    studentsVal.textContent = students + (students === 1 ? ' student' : ' students');
+    annualEl.textContent = '€' + Math.round(annual).toLocaleString();
+    monthlyEl.textContent = 'That is €' + Math.round(monthly) + ' per month — just from referrals';
+    perStudentEl.textContent = '€' + commission.toFixed(2);
+    perYearEl.textContent = (students * 12).toLocaleString();
+}
+
+slider.addEventListener('input', updateCalc);
+
+toggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        toggleBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        price = parseInt(btn.dataset.price);
+        updateCalc();
+    });
+});
+
+updateCalc();
+
+// ACCORDION
+document.querySelectorAll('.audit-q').forEach(q => {
+    q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const wasOpen = item.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.audit-item').forEach(i => i.classList.remove('open'));
+        // Toggle current
+        if (!wasOpen) item.classList.add('open');
+    });
+});
+</script>
+
+</body>
+</html>
