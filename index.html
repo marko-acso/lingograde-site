@@ -624,5 +624,17 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 </script>
+
+<script>
+(function(){
+  var ref = new URLSearchParams(window.location.search).get('ref');
+  if (!ref) return;
+  document.querySelectorAll('a[href*="cal.com"]').forEach(function(a){
+    var url = new URL(a.href);
+    url.searchParams.set('metadata[ref]', ref.toUpperCase());
+    a.href = url.toString();
+  });
+})();
+</script>
 </body>
 </html>
