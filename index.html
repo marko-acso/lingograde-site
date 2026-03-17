@@ -152,7 +152,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .blocks { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
   .partner-card { grid-template-columns: 1fr; }
-  .nav-links a:not(.nav-cta) { display: none; }
+  .nav-links a:not(.nav-cta):not([href*='login']) { display: none; }
 }
 @media (max-width: 768px) {
   .nav-inner { padding: 8px 16px; }
@@ -638,3 +638,4 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 </script>
 </body>
 </html>
+
