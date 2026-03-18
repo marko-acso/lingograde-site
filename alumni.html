@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Former Student Offer — LingoGrade</title>
+<style>
+:root { --accent: #2563AB; --accent-lt: #1D4ED8; --ink: #1C1C1C; --ink-soft: #5A5A5A; --ink-light: #9CA3AF; --cream: #FFFDF7; --border: #E5E7EB; --gold: #C8952E; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--cream); color: var(--ink); }
+.nav { background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; }
+.nav img { height: 40px; }
+.nav a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.875rem; }
+.hero { text-align: center; padding: 80px 20px 48px; background: linear-gradient(180deg, #EFF6FF 0%, var(--cream) 100%); }
+.badge { display: inline-block; padding: 6px 16px; background: #FEF3C7; border-radius: 20px; font-size: 0.8rem; font-weight: 600; color: var(--gold); margin-bottom: 20px; }
+.hero h1 { font-size: clamp(1.6rem, 5vw, 2.4rem); color: var(--ink); margin-bottom: 16px; line-height: 1.3; }
+.hero p { color: var(--ink-soft); font-size: 1.1rem; max-width: 540px; margin: 0 auto; line-height: 1.7; }
+.pricing { max-width: 720px; margin: -20px auto 60px; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 640px) { .pricing { grid-template-columns: 1fr; } }
+.plan { background: white; border-radius: 16px; padding: 32px 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid var(--border); text-align: center; transition: transform 0.15s, box-shadow 0.15s; }
+.plan:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+.plan.featured { border: 2px solid var(--accent); position: relative; }
+.plan.featured::before { content: 'MOST POPULAR'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; font-size: 0.7rem; font-weight: 700; padding: 4px 14px; border-radius: 10px; letter-spacing: 0.5px; }
+.plan-name { font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; }
+.plan-duration { font-size: 0.85rem; color: var(--ink-light); margin-bottom: 16px; }
+.plan-price { margin-bottom: 4px; }
+.plan-price .old { font-size: 1.1rem; color: var(--ink-light); text-decoration: line-through; margin-right: 8px; }
+.plan-price .new { font-size: 2rem; font-weight: 800; color: var(--accent); }
+.plan-save { font-size: 0.8rem; color: var(--gold); font-weight: 600; margin-bottom: 20px; }
+.plan-features { text-align: left; margin-bottom: 24px; }
+.plan-features li { list-style: none; padding: 6px 0; font-size: 0.9rem; color: var(--ink-soft); line-height: 1.5; }
+.plan-features li::before { content: '✓'; color: var(--accent); font-weight: 700; margin-right: 10px; }
+.plan-btn { display: block; width: 100%; padding: 14px; border-radius: 10px; font-size: 1rem; font-weight: 700; text-decoration: none; text-align: center; transition: all 0.15s; cursor: pointer; border: none; font-family: inherit; }
+.plan-btn.primary { background: var(--accent); color: white; }
+.plan-btn.primary:hover { background: var(--accent-lt); }
+.plan-btn.secondary { background: white; color: var(--accent); border: 1.5px solid var(--accent); }
+.plan-btn.secondary:hover { background: #EFF6FF; }
+.sample { text-align: center; padding: 0 20px 60px; }
+.sample a { color: var(--accent); font-weight: 600; text-decoration: none; font-size: 1rem; }
+.sample a:hover { text-decoration: underline; }
+.info { max-width: 600px; margin: 0 auto 60px; padding: 0 20px; }
+.info-card { background: white; border-radius: 16px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid var(--border); }
+.info-card h3 { font-size: 1rem; margin-bottom: 16px; }
+.info-card p { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 12px; }
+.info-card p:last-child { margin-bottom: 0; }
+.footer { text-align: center; padding: 32px 20px; color: var(--ink-light); font-size: 0.8rem; border-top: 1px solid var(--border); }
+.footer a { color: var(--accent); text-decoration: none; }
+.timer { font-size: 0.9rem; color: var(--ink-soft); margin-top: 24px; }
+.timer strong { color: var(--ink); }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <a href="/"><img src="/logo.png" alt="LingoGrade" onerror="this.outerHTML='<span style=font-weight:800;font-size:1.2rem;color:#2563AB>LingoGrade</span>'"></a>
+  <a href="/">Back to LingoGrade</a>
+</div>
+
+<div class="hero">
+  <div class="badge">Former Student Exclusive</div>
+  <h1>Welcome back.<br>Your German deserves a check-up.</h1>
+  <p>As my former student, you get 20% off any LingoGrade assessment. Find out exactly where you are now — and what to focus on next.</p>
+  <p class="timer">Offer valid until <strong>March 31, 2026</strong></p>
+</div>
+
+<div class="pricing">
+  <div class="plan">
+    <div class="plan-name">Quick Assessment</div>
+    <div class="plan-duration">15 minutes</div>
+    <div class="plan-price">
+      <span class="old">&euro;69</span>
+      <span class="new">&euro;55</span>
+    </div>
+    <div class="plan-save">You save &euro;14</div>
+    <ul class="plan-features">
+      <li>15-min diagnostic conversation</li>
+      <li>CEFR level (active + passive)</li>
+      <li>3 structural corrections</li>
+      <li>3 top problems identified</li>
+      <li>4-week improvement plan</li>
+      <li>Report in German + your language</li>
+    </ul>
+    <a href="https://cal.com/marko.check/quick-assessment-alumni" class="plan-btn secondary">Book Quick Assessment</a>
+  </div>
+
+  <div class="plan featured">
+    <div class="plan-name">Full Assessment</div>
+    <div class="plan-duration">25 minutes</div>
+    <div class="plan-price">
+      <span class="old">&euro;129</span>
+      <span class="new">&euro;103</span>
+    </div>
+    <div class="plan-save">You save &euro;26</div>
+    <ul class="plan-features">
+      <li>25-min deep diagnostic conversation</li>
+      <li>CEFR level + confidence score</li>
+      <li>5 structural corrections with evidence</li>
+      <li>5 top problems + 5 solutions</li>
+      <li>Sentence motor deep dive</li>
+      <li>8-week personalised training plan</li>
+      <li>Full homework programme (A+B+C)</li>
+      <li>Report in German + your language</li>
+    </ul>
+    <a href="https://cal.com/marko.check/full-assessment-alumni" class="plan-btn primary">Book Full Assessment</a>
+  </div>
+</div>
+
+<div class="sample">
+  <a href="/sample-report.pdf" target="_blank">See what a real assessment report looks like →</a>
+</div>
+
+<div class="info">
+  <div class="info-card">
+    <h3>How does it work?</h3>
+    <p><strong>1. Book</strong> — Choose your assessment and pick a time that works for you.</p>
+    <p><strong>2. Talk</strong> — We have a natural conversation in German. No test, no stress.</p>
+    <p><strong>3. Receive</strong> — Within 1 hour, you get a detailed PDF report with your CEFR level, your structural errors, corrections, solutions, and a personal training plan.</p>
+  </div>
+</div>
+
+<div class="footer">
+  <p><a href="/">LingoGrade</a> — Professional Language Assessment</p>
+  <p style="margin-top:8px;">&copy; 2026 LingoGrade. All rights reserved.</p>
+</div>
+
+</body>
+</html>
