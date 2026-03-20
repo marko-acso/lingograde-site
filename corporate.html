@@ -70,7 +70,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       <a href="/#pricing">Individual</a>
       <a href="#pricing">Corporate</a>
       <a href="teachers.html">For Teachers</a>
-      <a href="mailto:info@lingograde.com" class="btn-primary" style="padding:8px 20px;font-size:0.875rem;">Request a Quote</a>
+      <a href="mailto:corporate@lingograde.com" class="btn-primary" style="padding:8px 20px;font-size:0.875rem;color:white;">Request a Quote</a>
     </div>
   </div>
 </nav>
@@ -82,7 +82,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <h1 style="font-family:var(--font-display);font-size:clamp(2rem,4.5vw,2.8rem);line-height:1.2;margin-bottom:20px;">Your team speaks multiple languages.<br>Do you know how well?</h1>
     <p style="font-size:1.125rem;color:var(--ink-soft);max-width:600px;margin:0 auto 32px;line-height:1.7;">LingoGrade assesses your employees' real spoken language skills — across 12 languages, with one provider, one invoice, and one consistent report format. Every employee gets an individual CEFR report. You get a Team Summary showing exactly where your workforce stands.</p>
     <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-      <a href="mailto:info@lingograde.com?subject=Corporate%20Assessment%20Inquiry" class="btn-primary">Request a Quote</a>
+      <a href="#contact" class="btn-primary">Request a Quote</a>
       <a href="#pricing" class="btn-secondary">See Pricing</a>
     </div>
   </div>
@@ -218,7 +218,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       </div>
     </div>
 
-    <a href="mailto:info@lingograde.com?subject=Corporate%20Assessment%20Inquiry" class="btn-primary" style="margin-top:16px;">Request a Quote</a>
+    <a href="#contact" class="btn-primary" style="margin-top:16px;">Request a Quote</a>
     <p style="font-size:0.8rem;color:var(--ink-light);margin-top:12px;">We respond within 24 hours. No commitment required.</p>
   </div>
 </section>
@@ -271,13 +271,74 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   </div>
 </section>
 
-<!-- CTA -->
-<section class="section section-alt" style="text-align:center;">
+<!-- CTA with Form -->
+<section class="section section-alt" style="text-align:center;" id="contact">
   <div class="section-inner" style="max-width:640px;">
     <h2 class="section-title">Ready to see where your team really stands?</h2>
-    <p class="section-desc" style="margin:0 auto 32px;">Write to us with your team size, languages needed, and preferred timeline. We respond within 24 hours with a detailed quote — no commitment, no pressure.</p>
-    <a href="mailto:info@lingograde.com?subject=Corporate%20Assessment%20Inquiry" class="btn-primary">Request a Quote</a>
-    <p style="font-size:0.85rem;color:var(--ink-light);margin-top:16px;">Or email us directly at <a href="mailto:info@lingograde.com" style="color:var(--accent);text-decoration:none;font-weight:600;">info@lingograde.com</a></p>
+    <p class="section-desc" style="margin:0 auto 32px;">Tell us about your team and we'll send you a detailed quote within 24 hours.</p>
+    <div style="background:var(--cream);border-radius:16px;padding:32px;border:1.5px solid var(--border);text-align:left;">
+      <form action="https://formspree.io/f/meerddar" method="POST" style="display:flex;flex-direction:column;gap:16px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div>
+            <label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:4px;">Company Name *</label>
+            <input type="text" name="company" required style="width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9375rem;font-family:var(--font-body);outline:none;transition:border 0.15s;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+          </div>
+          <div>
+            <label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:4px;">Contact Person *</label>
+            <input type="text" name="name" required style="width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9375rem;font-family:var(--font-body);outline:none;transition:border 0.15s;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div>
+            <label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:4px;">Email *</label>
+            <input type="email" name="email" required style="width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9375rem;font-family:var(--font-body);outline:none;transition:border 0.15s;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+          </div>
+          <div>
+            <label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:4px;">Phone</label>
+            <input type="tel" name="phone" style="width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9375rem;font-family:var(--font-body);outline:none;transition:border 0.15s;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div>
+            <label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:4px;">Number of Employees *</label>
+            <input type="number" name="team_size" required min="2" placeholder="e.g. 15" style="width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9375rem;font-family:var(--font-body);outline:none;transition:border 0.15s;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+          </div>
+          <div>
+            <label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:4px;">Timeline</label>
+            <select name="timeline" style="width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9375rem;font-family:var(--font-body);background:white;outline:none;transition:border 0.15s;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+              <option value="">Select...</option>
+              <option value="asap">As soon as possible</option>
+              <option value="1week">Within 1 week</option>
+              <option value="1month">Within 1 month</option>
+              <option value="flexible">Flexible</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:4px;">Languages to Assess *</label>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;">
+            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="German" style="accent-color:var(--accent);"> German</label>
+            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="English" style="accent-color:var(--accent);"> English</label>
+            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="French" style="accent-color:var(--accent);"> French</label>
+            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="Spanish" style="accent-color:var(--accent);"> Spanish</label>
+            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="Italian" style="accent-color:var(--accent);"> Italian</label>
+            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="Portuguese" style="accent-color:var(--accent);"> Portuguese</label>
+            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="Russian" style="accent-color:var(--accent);"> Russian</label>
+            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="Serbian" style="accent-color:var(--accent);"> Serbian</label>
+            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="Croatian" style="accent-color:var(--accent);"> Croatian</label>
+            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="Romanian" style="accent-color:var(--accent);"> Romanian</label>
+            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="Polish" style="accent-color:var(--accent);"> Polish</label>
+            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="Bulgarian" style="accent-color:var(--accent);"> Bulgarian</label>
+          </div>
+        </div>
+        <div>
+          <label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:4px;">Anything else we should know?</label>
+          <textarea name="message" rows="3" placeholder="Purpose of assessment, special requirements, questions..." style="width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9375rem;font-family:var(--font-body);outline:none;resize:vertical;transition:border 0.15s;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+        </div>
+        <button type="submit" style="padding:14px 32px;background:var(--accent);color:white;border:none;border-radius:10px;font-size:1rem;font-weight:600;font-family:var(--font-body);cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='#3B82F6'" onmouseout="this.style.background='#2563AB'">Request a Quote</button>
+      </form>
+    </div>
+    <p style="font-size:0.8rem;color:var(--ink-light);margin-top:16px;">Or email us directly at <a href="mailto:corporate@lingograde.com" style="color:var(--accent);text-decoration:none;font-weight:600;">corporate@lingograde.com</a></p>
   </div>
 </section>
 
@@ -290,7 +351,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <a href="/#languages" style="font-size:0.875rem;color:#93B5D0;text-decoration:none;">Languages</a>
     <a href="/#pricing" style="font-size:0.875rem;color:#93B5D0;text-decoration:none;">Individual Pricing</a>
     <a href="teachers.html" style="font-size:0.875rem;color:#93B5D0;text-decoration:none;">For Teachers</a>
-    <a href="mailto:info@lingograde.com" style="font-size:0.875rem;color:#93B5D0;text-decoration:none;">Contact</a>
+    <a href="mailto:corporate@lingograde.com" style="font-size:0.875rem;color:#93B5D0;text-decoration:none;">Contact</a>
   </div>
   <div style="margin-top:12px;display:flex;gap:16px;justify-content:center;"><a href="privacy-policy.html" target="_blank" style="font-size:0.75rem;color:#9ca3af;text-decoration:none;">Privacy Policy</a><a href="terms-of-service.html" target="_blank" style="font-size:0.75rem;color:#9ca3af;text-decoration:none;">Terms of Service</a></div>
   <div style="margin-top:16px;font-size:0.75rem;color:#6B8FA8;">&copy; 2026 LingoGrade. All rights reserved.</div>
