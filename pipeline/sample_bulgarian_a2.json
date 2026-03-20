@@ -4,7 +4,7 @@
     "display_name": "Sarah",
     "native_name": "Sarah",
     "date": "2026-03-20",
-    "package": "quick",
+    "package": "full",
     "assessed_language": "Bulgarisch",
     "native_language": "Englisch",
     "assessor": "Marko",
@@ -27,6 +27,31 @@
       "title_native": "Precise Perception",
       "content_de": "В тази сесия показа, че имаш добра основа в български. Речниковият ти запас покрива основните ежедневни ситуации. Основните проблеми се появиха в глаголната система — особено в избора на свършен и несвършен вид и в правилната употреба на определителния член.",
       "content_native": "In this session you showed a solid foundation in Bulgarian. Your vocabulary covers basic everyday situations well. The main issues appeared in the verb system — especially in choosing between perfective and imperfective aspect, and in the correct use of the definite article."
+    },
+    {
+      "id": "strengths",
+      "title_de": "Структурни силни страни",
+      "title_native": "Structural Strengths",
+      "items": [
+        {
+          "strength_de": "Добро владеене на основния словоред",
+          "strength_native": "Good command of basic word order",
+          "example_de": "\"Вчера отидох на магазина и купих хляб.\" — Правилен словоред SVO.",
+          "example_native": "\"Yesterday I went to the store and bought bread.\" — Correct SVO word order."
+        },
+        {
+          "strength_de": "Естествена употреба на въпросителни форми",
+          "strength_native": "Natural use of question forms",
+          "example_de": "\"Кога пристигна?\" и \"Защо не дойде?\" — Правилна структура на въпросите.",
+          "example_native": "\"When did you arrive?\" and \"Why didn't you come?\" — Correct question structure."
+        },
+        {
+          "strength_de": "Добро разбиране на контекста",
+          "strength_native": "Good contextual understanding",
+          "example_de": "Разбираш повече, отколкото можеш да произведеш — пасивното ти ниво е значително по-високо от активното.",
+          "example_native": "You understand more than you can produce — your passive level is significantly higher than your active level."
+        }
+      ]
     },
     {
       "id": "core_insight",
@@ -304,6 +329,53 @@
       ]
     },
     {
+      "id": "homework_c",
+      "title_de": "Домашна работа C — Плавност на речта",
+      "title_native": "Homework C — Speaking Fluency",
+      "sentences": [
+        {
+          "de": "Тази сутрин станах рано и си направих кафе.",
+          "native": "This morning I got up early and made myself a coffee."
+        },
+        {
+          "de": "След това седнах на бюрото, защото имах работа.",
+          "native": "Then I sat down at the desk because I had work to do."
+        },
+        {
+          "de": "Отворих лаптопа и прочетох имейлите си.",
+          "native": "I opened the laptop and read my emails."
+        },
+        {
+          "de": "Един колега ми се обади, защото имаше нужда от помощ.",
+          "native": "A colleague called me because he needed help."
+        },
+        {
+          "de": "Отидох при него и му помогнах с проблема.",
+          "native": "I went to him and helped him with the problem."
+        },
+        {
+          "de": "След това се върнах на бюрото си и продължих да работя.",
+          "native": "After that I returned to my desk and continued working."
+        },
+        {
+          "de": "По обяд отидох на ресторант с приятели.",
+          "native": "At lunchtime I went to a restaurant with friends."
+        },
+        {
+          "de": "Ядохме и разговаряхме почти един час.",
+          "native": "We ate and talked for almost an hour."
+        },
+        {
+          "de": "Въпреки че бях уморен, работих до късно.",
+          "native": "Although I was tired, I worked until late."
+        },
+        {
+          "de": "Накрая денят беше продуктивен, въпреки че беше изморителен.",
+          "native": "In the end the day was productive, although it was exhausting."
+        }
+      ]
+    },
+    {
       "id": "weekly_plan",
       "title_de": "Седмичен план",
       "title_native": "Weekly Plan",
@@ -349,6 +421,17 @@
           "daily_native": "2-minute monologue with conscious focus"
         }
       ]
+    },
+    {
+      "id": "mini_block",
+      "title_de": "Мини-блок",
+      "title_native": "Mini Block",
+      "goal_de": "Стабилизиране на глаголния вид под натиск",
+      "goal_native": "Stabilize verb aspect under speaking pressure",
+      "step1_de": "Всеки ден произнасяй на глас 5 двойки изречения — едно и също действие, първо свършен вид, после несвършен. Бавно и осъзнато.",
+      "step1_native": "Every day speak aloud 5 sentence pairs — same action, first perfective, then imperfective. Slowly and consciously.",
+      "step2_de": "2-минутен монолог за вчерашния ти ден. Използвай поне 3 свършени и 3 несвършени глагола. Запиши се. Изслушай се. Повтори.",
+      "step2_native": "A 2-minute monologue about your yesterday. Use at least 3 perfective and 3 imperfective verbs. Record yourself. Listen. Repeat."
     }
   ],
   "cefr_footer": {
