@@ -1,0 +1,383 @@
+{
+  "metadata": {
+    "student_name": "Sarah L.",
+    "display_name": "Sarah",
+    "native_name": "Sarah",
+    "date": "2026-03-20",
+    "package": "quick",
+    "assessed_language": "Bulgarisch",
+    "native_language": "Englisch",
+    "assessor": "Marko",
+    "active_cefr": "A2.2",
+    "passive_cefr": "B1.1",
+    "confidence": "70%",
+    "structural_stability": "mittel",
+    "self_correction": "niedrig bis mittel",
+    "sentence_control": "instabil",
+    "recommended_reassessment": "3 Monate",
+    "error_focus": [
+      "Kasus/Artikel",
+      "Zeitformen"
+    ]
+  },
+  "sections": [
+    {
+      "id": "perception",
+      "title_de": "Точно наблюдение",
+      "title_native": "Precise Perception",
+      "content_de": "В тази сесия показа, че имаш добра основа в български. Речниковият ти запас покрива основните ежедневни ситуации. Основните проблеми се появиха в глаголната система — особено в избора на свършен и несвършен вид и в правилната употреба на определителния член.",
+      "content_native": "In this session you showed a solid foundation in Bulgarian. Your vocabulary covers basic everyday situations well. The main issues appeared in the verb system — especially in choosing between perfective and imperfective aspect, and in the correct use of the definite article."
+    },
+    {
+      "id": "core_insight",
+      "title_de": "Ключово прозрение",
+      "title_native": "Core Structural Insight",
+      "content_de": "Централният модел на тази сесия е объркването на глаголния вид. Български има два вида за почти всеки глагол — свършен (завършено действие) и несвършен (продължаващо действие). В английски тази разлика не съществува по същия начин, което е основната причина за грешките ти.",
+      "content_native": "The central pattern of this session is verb aspect confusion. Bulgarian has two aspects for nearly every verb — perfective (completed action) and imperfective (ongoing action). In English this distinction doesn't exist in the same way, which is the root cause of your errors."
+    },
+    {
+      "id": "problems",
+      "title_de": "Основни структурни проблеми",
+      "title_native": "Top Structural Problems",
+      "items": [
+        {
+          "name_de": "Глаголен вид: свършен vs. несвършен",
+          "name_native": "Verb aspect: perfective vs. imperfective",
+          "error_class": "Zeitformen",
+          "explanation_de": "Използваш несвършен вид, когато искаш да кажеш завършено действие: 'Писах писмо' (пишех, процес) вместо 'Написах писмо' (завърших го).",
+          "explanation_native": "You use imperfective aspect when you mean a completed action: 'Pisah pismo' (was writing, process) instead of 'Napisah pismo' (finished writing it).",
+          "evidence_de": "\"Вчера четях тази книга\" (до края) → Правилно: \"Вчера прочетох тази книга.\"",
+          "evidence_native": "\"Vchera chetyah tazi kniga\" (to the end) → Correct: \"Vchera prochetoh tazi kniga.\""
+        },
+        {
+          "name_de": "Определителен член: пълен vs. кратък",
+          "name_native": "Definite article: full vs. short form",
+          "error_class": "Kasus/Artikel",
+          "explanation_de": "В български определителният член се поставя в края на думата: 'книга' → 'книгата'. Но за мъжки род има две форми: пълна (-ът/-ят) за подлог и кратка (-а/-я) за допълнение. Ти ги объркваш.",
+          "explanation_native": "In Bulgarian the definite article is attached to the end of the word: 'kniga' → 'knigata'. But masculine nouns have two forms: full (-at/-yat) for subject and short (-a/-ya) for object. You mix them up.",
+          "evidence_de": "\"Мъжа отиде\" → Правилно: \"Мъжът отиде.\" (подлог = пълен член)",
+          "evidence_native": "\"Mazha otide\" → Correct: \"Mazhut otide.\" (subject = full article)"
+        },
+        {
+          "name_de": "Словоред с клитики",
+          "name_native": "Word order with clitics",
+          "error_class": "Wortstellung",
+          "explanation_de": "Кратките местоименни форми (ми, ти, му, се) имат строги правила за място в изречението. Те не могат да стоят в началото.",
+          "explanation_native": "Short pronoun forms (mi, ti, mu, se) have strict placement rules in the sentence. They cannot stand at the beginning.",
+          "evidence_de": "\"Ми каза, че...\" → Правилно: \"Каза ми, че...\"",
+          "evidence_native": "\"Mi kaza, che...\" → Correct: \"Kaza mi, che...\""
+        },
+        {
+          "name_de": "Движение: отивам vs. ходя",
+          "name_native": "Motion: otivam vs. hodya",
+          "error_class": "Verbposition",
+          "explanation_de": "В български 'отивам' е за конкретна посока сега, а 'ходя' е за регулярно действие. Ти ги използваш взаимозаменяемо.",
+          "explanation_native": "In Bulgarian 'otivam' is for a specific direction right now, while 'hodya' is for regular/habitual action. You use them interchangeably.",
+          "evidence_de": "\"Ходя на работа\" (сега, в момента) → Правилно: \"Отивам на работа.\"",
+          "evidence_native": "\"Hodya na rabota\" (right now) → Correct: \"Otivam na rabota.\""
+        },
+        {
+          "name_de": "Предлози за място и посока",
+          "name_native": "Prepositions for place and direction",
+          "error_class": "Präpositionen",
+          "explanation_de": "Объркваш 'в' и 'на' — 'в' е за затворени пространства (в стаята), 'на' е за открити или повърхности (на масата, на работа).",
+          "explanation_native": "You confuse 'v' and 'na' — 'v' is for enclosed spaces (v stayata = in the room), 'na' is for open areas or surfaces (na masata = on the table, na rabota = at work).",
+          "evidence_de": "\"Отивам в работа\" → Правилно: \"Отивам на работа.\"",
+          "evidence_native": "\"Otivam v rabota\" → Correct: \"Otivam na rabota.\""
+        }
+      ]
+    },
+    {
+      "id": "corrections",
+      "title_de": "Корекции на лоста",
+      "title_native": "Lever Corrections",
+      "items": [
+        {
+          "original_de": "Грешно: Вчера четях тази книга (до края).",
+          "original_native": "Wrong: Vchera chetyah tazi kniga (to the end).",
+          "corrected_de": "Правилно: Вчера прочетох тази книга.",
+          "corrected_native": "Correct: Vchera prochetoh tazi kniga.",
+          "explanation_de": "Завършено действие = свършен вид: прочетох.",
+          "explanation_native": "Completed action = perfective aspect: prochetoh."
+        },
+        {
+          "original_de": "Грешно: Мъжа отиде на работа.",
+          "original_native": "Wrong: Mazha otide na rabota.",
+          "corrected_de": "Правилно: Мъжът отиде на работа.",
+          "corrected_native": "Correct: Mazhut otide na rabota.",
+          "explanation_de": "Подлог = пълен член (-ът). Допълнение = кратък член (-а).",
+          "explanation_native": "Subject = full article (-ut). Object = short article (-a)."
+        },
+        {
+          "original_de": "Грешно: Ми каза, че идва утре.",
+          "original_native": "Wrong: Mi kaza, che idva utre.",
+          "corrected_de": "Правилно: Каза ми, че идва утре.",
+          "corrected_native": "Correct: Kaza mi, che idva utre.",
+          "explanation_de": "Клитиката 'ми' не може в началото на изречението.",
+          "explanation_native": "The clitic 'mi' cannot start a sentence."
+        },
+        {
+          "original_de": "Грешно: Ходя на работа (в момента).",
+          "original_native": "Wrong: Hodya na rabota (right now).",
+          "corrected_de": "Правилно: Отивам на работа.",
+          "corrected_native": "Correct: Otivam na rabota.",
+          "explanation_de": "Конкретно сега = отивам. Редовно/обичайно = ходя.",
+          "explanation_native": "Specific right now = otivam. Regular/habitual = hodya."
+        },
+        {
+          "original_de": "Грешно: Отивам в работа.",
+          "original_native": "Wrong: Otivam v rabota.",
+          "corrected_de": "Правилно: Отивам на работа.",
+          "corrected_native": "Correct: Otivam na rabota.",
+          "explanation_de": "\"на работа\" — фиксирана конструкция. 'в' е за затворени пространства.",
+          "explanation_native": "\"na rabota\" — fixed construction. 'v' is for enclosed spaces."
+        }
+      ]
+    },
+    {
+      "id": "solutions",
+      "title_de": "Решения",
+      "title_native": "Solutions",
+      "items": [
+        {
+          "name_de": "Тренажор за глаголен вид",
+          "name_native": "Verb Aspect Trainer",
+          "action_de": "Всеки ден 5 двойки изречения: едно и също действие — свършен вид (резултат) и несвършен вид (процес). Произнасяй на глас.",
+          "action_native": "Every day 5 sentence pairs: same action — perfective (result) and imperfective (process). Speak aloud.",
+          "result_de": "Автоматичен избор на вид за 3-4 седмици.",
+          "result_native": "Automatic aspect selection in 3-4 weeks."
+        },
+        {
+          "name_de": "Определителен член",
+          "name_native": "Definite Article Drill",
+          "action_de": "Правило: подлог = пълен член (-ът/-ят), допълнение = кратък член (-а/-я). 3 изречения на ден.",
+          "action_native": "Rule: subject = full article (-ut/-yat), object = short article (-a/-ya). 3 sentences per day.",
+          "result_de": "Правилен член за 2 седмици.",
+          "result_native": "Correct article in 2 weeks."
+        },
+        {
+          "name_de": "Клитики и словоред",
+          "name_native": "Clitic Placement",
+          "action_de": "Правило: клитиката идва след първата ударена дума. Никога в началото. 3 изречения на ден.",
+          "action_native": "Rule: clitic goes after the first stressed word. Never at the start. 3 sentences per day.",
+          "result_de": "Правилен словоред за 1-2 седмици.",
+          "result_native": "Correct word order in 1-2 weeks."
+        },
+        {
+          "name_de": "Отивам vs. ходя",
+          "name_native": "Otivam vs. Hodya",
+          "action_de": "Запомни: отивам = сега, конкретно. Ходя = редовно, обичайно. 3 двойки на ден.",
+          "action_native": "Remember: otivam = now, specific. Hodya = regular, habitual. 3 pairs per day.",
+          "result_de": "Правилен избор за 1 седмица.",
+          "result_native": "Correct selection in 1 week."
+        },
+        {
+          "name_de": "Предлози в/на",
+          "name_native": "Prepositions v/na",
+          "action_de": "в = затворено пространство (в стаята, в магазина). на = повърхност/открито/абстрактно (на масата, на работа, на училище).",
+          "action_native": "v = enclosed space (v stayata, v magazina). na = surface/open/abstract (na masata, na rabota, na uchilishte).",
+          "result_de": "Правилни предлози за 2 седмици.",
+          "result_native": "Correct prepositions in 2 weeks."
+        }
+      ]
+    },
+    {
+      "id": "sentence_engine",
+      "name_de": "Двигател на глаголния вид",
+      "name_native": "The Verb Aspect Engine",
+      "explanation_de": "Всеки ден произнасяй на глас 5 двойки изречения — едно и също действие, първо със свършен вид (завършено), после с несвършен вид (в процес). Подчертавай разликата.",
+      "explanation_native": "Every day speak aloud 5 sentence pairs — the same action, first in perfective (completed), then imperfective (in progress). Stress the difference.",
+      "patterns": [
+        {
+          "de": "Свършен: Написах писмото. (завърших)",
+          "native": "Perfective: Napisah pismoto. (I finished writing it)"
+        },
+        {
+          "de": "Несвършен: Писах писмо цял ден. (процес)",
+          "native": "Imperfective: Pisah pismo tsyal den. (I was writing all day)"
+        },
+        {
+          "de": "Свършен: Прочетох книгата. (до края)",
+          "native": "Perfective: Prochetoh knigata. (I read it to the end)"
+        }
+      ],
+      "daily_instruction_de": "5 двойки на ден, на глас, с осъзнат избор на вид.",
+      "daily_instruction_native": "5 pairs per day, spoken aloud, with conscious aspect choice."
+    },
+    {
+      "id": "activation",
+      "title_de": "Активиране",
+      "title_native": "Activation",
+      "sentences": [
+        {
+          "de": "Отивам на работа, защото имам среща.",
+          "native": "I'm going to work because I have a meeting."
+        },
+        {
+          "de": "Вчера прочетох интересна книга.",
+          "native": "Yesterday I finished reading an interesting book."
+        },
+        {
+          "de": "Мъжът каза, че идва утре.",
+          "native": "The man said he's coming tomorrow."
+        },
+        {
+          "de": "Живея в голям град.",
+          "native": "I live in a big city."
+        },
+        {
+          "de": "Тя ходи на училище всеки ден.",
+          "native": "She goes to school every day."
+        },
+        {
+          "de": "Написах писмо на мама.",
+          "native": "I wrote a letter to mom."
+        }
+      ]
+    },
+    {
+      "id": "homework_a",
+      "title_de": "Домашна работа A — Структура",
+      "title_native": "Homework A — Structure",
+      "sentences": [
+        {
+          "de": "Видях голямата къща.",
+          "native": "I saw the big house."
+        },
+        {
+          "de": "Тя отива на училище.",
+          "native": "She is going to school."
+        },
+        {
+          "de": "Живеем в София.",
+          "native": "We live in Sofia."
+        },
+        {
+          "de": "Дадох книгата на приятеля си.",
+          "native": "I gave the book to my friend."
+        },
+        {
+          "de": "Вчера написах писмо.",
+          "native": "Yesterday I wrote a letter."
+        },
+        {
+          "de": "Той чете интересна книга.",
+          "native": "He is reading an interesting book."
+        }
+      ]
+    },
+    {
+      "id": "homework_b",
+      "title_de": "Домашна работа B — Прецизност",
+      "title_native": "Homework B — Precision",
+      "items": [
+        {
+          "wrong_de": "Грешно: Четях книгата (до края).",
+          "wrong_native": "Wrong: Chetyah knigata (to the end).",
+          "right_de": "Правилно: Прочетох книгата.",
+          "right_native": "Correct: Prochetoh knigata."
+        },
+        {
+          "wrong_de": "Грешно: Мъжа отиде.",
+          "wrong_native": "Wrong: Mazha otide.",
+          "right_de": "Правилно: Мъжът отиде.",
+          "right_native": "Correct: Mazhut otide."
+        },
+        {
+          "wrong_de": "Грешно: Ми каза нещо.",
+          "wrong_native": "Wrong: Mi kaza neshto.",
+          "right_de": "Правилно: Каза ми нещо.",
+          "right_native": "Correct: Kaza mi neshto."
+        },
+        {
+          "wrong_de": "Грешно: Ходя на работа (сега).",
+          "wrong_native": "Wrong: Hodya na rabota (now).",
+          "right_de": "Правилно: Отивам на работа.",
+          "right_native": "Correct: Otivam na rabota."
+        },
+        {
+          "wrong_de": "Грешно: Отивам в работа.",
+          "wrong_native": "Wrong: Otivam v rabota.",
+          "right_de": "Правилно: Отивам на работа.",
+          "right_native": "Correct: Otivam na rabota."
+        }
+      ]
+    },
+    {
+      "id": "weekly_plan",
+      "title_de": "Седмичен план",
+      "title_native": "Weekly Plan",
+      "weeks": [
+        {
+          "label_de": "Седмица 1-2",
+          "label_native": "Week 1-2",
+          "focus_de": "Глаголен вид: свършен vs. несвършен",
+          "focus_native": "Verb aspect: perfective vs. imperfective",
+          "goal_de": "Автоматичен избор на вид",
+          "goal_native": "Automatic aspect selection",
+          "daily_de": "5 двойки изречения на ден",
+          "daily_native": "5 sentence pairs per day"
+        },
+        {
+          "label_de": "Седмица 3-4",
+          "label_native": "Week 3-4",
+          "focus_de": "Определителен член + клитики",
+          "focus_native": "Definite article + clitics",
+          "goal_de": "Пълен/кратък член + правилен словоред",
+          "goal_native": "Full/short article + correct word order",
+          "daily_de": "3 изречения с член + 3 с клитики",
+          "daily_native": "3 article sentences + 3 clitic sentences"
+        },
+        {
+          "label_de": "Седмица 5-6",
+          "label_native": "Week 5-6",
+          "focus_de": "Предлози + глаголи за движение",
+          "focus_native": "Prepositions + motion verbs",
+          "goal_de": "Правилни в/на + отивам/ходя",
+          "goal_native": "Correct v/na + otivam/hodya",
+          "daily_de": "3 изречения с предлози + 3 с глаголи за движение",
+          "daily_native": "3 preposition sentences + 3 motion verb sentences"
+        },
+        {
+          "label_de": "Седмица 7-8",
+          "label_native": "Week 7-8",
+          "focus_de": "Свободна реч под натиск",
+          "focus_native": "Free speaking under pressure",
+          "goal_de": "Точност при спонтанна реч",
+          "goal_native": "Accuracy in spontaneous speech",
+          "daily_de": "2-минутен монолог с осъзнат фокус",
+          "daily_native": "2-minute monologue with conscious focus"
+        }
+      ]
+    }
+  ],
+  "cefr_footer": {
+    "active_de": "Активна устна продукция: A2.2",
+    "active_native": "Active spoken production: A2.2",
+    "passive_de": "Пасивна компетенция: B1.1",
+    "passive_native": "Passive competence: B1.1",
+    "confidence_de": "Увереност: 70%",
+    "confidence_native": "Confidence: 70%",
+    "summary_de": "Намираш се на ниво A2. Базата ти е добра, но глаголният вид и определителният член остават нестабилни под натиск. С целенасочено обучение B1 е реалистичен за 3-4 месеца.",
+    "summary_native": "You are at the A2 level. Your foundation is good, but verb aspect and the definite article remain unstable under pressure. With targeted training, B1 is realistic in 3-4 months.",
+    "stability_de": "Структурна стабилност под натиск: средна",
+    "stability_native": "Structural stability under pressure: medium",
+    "self_correction_de": "Способност за самокорекция: ниска до средна",
+    "self_correction_native": "Self-correction ability: low to medium",
+    "reassessment_de": "Препоръчителна преоценка: 3 месеца",
+    "reassessment_native": "Recommended re-assessment: 3 months"
+  },
+  "block_d": {
+    "title_native": "Summary in Your Language",
+    "cefr_summary_native": "Your active spoken Bulgarian is at level A2.2. You can handle basic everyday situations, but verb aspect and the definite article system break down under pressure. Your passive understanding is higher at B1.1.",
+    "top_problems_native": [
+      "Verb aspect confusion: imperfective used for completed actions",
+      "Definite article: full vs. short form mixed up (subject vs. object)",
+      "Clitic pronouns placed at the start of sentences",
+      "Motion verbs: otivam/hodya used interchangeably",
+      "Preposition confusion: v (enclosed) vs. na (open/abstract)"
+    ],
+    "key_recommendation_native": "Practice the Verb Aspect Engine daily: form 5 sentence pairs with the same action — once perfective (completed), once imperfective (ongoing). This single drill will fix your biggest structural weakness.",
+    "next_steps_native": "Focus on verb aspect for the next 2 weeks, then move to definite articles and clitics. Book a re-assessment in 3 months to measure progress."
+  }
+}

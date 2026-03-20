@@ -1,0 +1,458 @@
+{
+  "metadata": {
+    "student_name": "Carlos M.",
+    "display_name": "Carlos",
+    "native_name": "Carlos",
+    "date": "2026-03-19",
+    "package": "full",
+    "assessed_language": "Englisch",
+    "native_language": "Spanisch",
+    "assessor": "Marko",
+    "active_cefr": "B2.1",
+    "passive_cefr": "B2.2",
+    "confidence": "80%",
+    "structural_stability": "mittel",
+    "self_correction": "mittel bis hoch",
+    "sentence_control": "teilstabil",
+    "recommended_reassessment": "3 Monate",
+    "error_focus": [
+      "Präpositionen",
+      "Zeitformen"
+    ]
+  },
+  "sections": [
+    {
+      "id": "perception",
+      "title_de": "Precise Perception",
+      "title_native": "Percepcion precisa",
+      "content_de": "In this session you showed a strong communicative foundation in English. Your vocabulary is wide enough for B2 conversations, and you actively attempt complex sentence structures. The main issues appeared in preposition usage (especially with dependent prepositions after verbs) and tense consistency, particularly switching between present perfect and simple past.",
+      "content_native": "En esta sesion demostraste una base comunicativa solida en ingles. Tu vocabulario es suficientemente amplio para conversaciones B2, e intentas activamente estructuras complejas. Los problemas principales aparecieron en el uso de preposiciones (especialmente preposiciones dependientes tras verbos) y la consistencia de tiempos, particularmente al alternar entre presente perfecto y pasado simple."
+    },
+    {
+      "id": "strengths",
+      "title_de": "Structural Strengths",
+      "title_native": "Fortalezas estructurales",
+      "items": [
+        {
+          "strength_de": "Natural use of conditional structures",
+          "strength_native": "Uso natural de estructuras condicionales",
+          "example_de": "\"If I had known earlier, I would have changed my plans.\" — Correct third conditional.",
+          "example_native": "\"Si lo hubiera sabido antes, habria cambiado mis planes.\" — Tercer condicional correcto."
+        },
+        {
+          "strength_de": "Good command of phrasal verbs",
+          "strength_native": "Buen dominio de verbos frasales",
+          "example_de": "You naturally used \"figure out\", \"come up with\", \"look into\" — native-level collocations.",
+          "example_native": "Usaste naturalmente \"figure out\", \"come up with\", \"look into\" — colocaciones de nivel nativo."
+        },
+        {
+          "strength_de": "Active self-monitoring and repair",
+          "strength_native": "Automonitoreo y reparacion activos",
+          "example_de": "You caught and corrected several errors mid-sentence, showing strong language awareness.",
+          "example_native": "Detectaste y corregiste varios errores a mitad de frase, mostrando fuerte conciencia linguistica."
+        }
+      ]
+    },
+    {
+      "id": "core_insight",
+      "title_de": "Core Structural Insight",
+      "title_native": "Insight estructural central",
+      "content_de": "Your central pattern is preposition confusion after specific verbs. You transfer Spanish preposition logic into English: \"depend of\" instead of \"depend on\", \"consist in\" instead of \"consist of\". This is a classic L1 transfer error that needs targeted drilling to override.",
+      "content_native": "Tu patron central es la confusion de preposiciones despues de verbos especificos. Transfieres la logica de preposiciones del espanol al ingles: \"depend of\" en vez de \"depend on\", \"consist in\" en vez de \"consist of\". Este es un error clasico de transferencia L1 que necesita ejercicio focalizado para corregirse."
+    },
+    {
+      "id": "problems",
+      "title_de": "Top Structural Problems",
+      "title_native": "Problemas estructurales principales",
+      "items": [
+        {
+          "name_de": "Dependent prepositions after verbs",
+          "name_native": "Preposiciones dependientes tras verbos",
+          "error_class": "Präpositionen",
+          "explanation_de": "You consistently use the wrong preposition after verbs like depend, consist, insist, result. This is direct transfer from Spanish.",
+          "explanation_native": "Usas consistentemente la preposicion incorrecta despues de verbos como depend, consist, insist, result. Esto es transferencia directa del espanol.",
+          "evidence_de": "\"It depends of the weather.\" → Correct: \"It depends on the weather.\"",
+          "evidence_native": "\"It depends of the weather.\" → Correcto: \"It depends on the weather.\""
+        },
+        {
+          "name_de": "Present perfect vs. simple past",
+          "name_native": "Presente perfecto vs. pasado simple",
+          "error_class": "Zeitformen",
+          "explanation_de": "You use the present perfect where simple past is required, especially with specific time markers like \"yesterday\" or \"last week\".",
+          "explanation_native": "Usas el presente perfecto donde se requiere el pasado simple, especialmente con marcadores temporales especificos como \"yesterday\" o \"last week\".",
+          "evidence_de": "\"I have visited Rome last year.\" → Correct: \"I visited Rome last year.\"",
+          "evidence_native": "\"I have visited Rome last year.\" → Correcto: \"I visited Rome last year.\""
+        },
+        {
+          "name_de": "Article omission with countable nouns",
+          "name_native": "Omision del articulo con sustantivos contables",
+          "error_class": "Kasus/Artikel",
+          "explanation_de": "You sometimes drop articles before singular countable nouns, influenced by Spanish patterns.",
+          "explanation_native": "A veces omites articulos antes de sustantivos contables singulares, influenciado por patrones del espanol.",
+          "evidence_de": "\"I need computer for work.\" → Correct: \"I need a computer for work.\"",
+          "evidence_native": "\"I need computer for work.\" → Correcto: \"I need a computer for work.\""
+        },
+        {
+          "name_de": "Adjective word order",
+          "name_native": "Orden de adjetivos",
+          "error_class": "Wortstellung",
+          "explanation_de": "You occasionally place adjectives after nouns (Spanish syntax): \"the car red\" instead of \"the red car\".",
+          "explanation_native": "Ocasionalmente colocas adjetivos despues de sustantivos (sintaxis espanola): \"the car red\" en vez de \"the red car\".",
+          "evidence_de": "\"She wore a dress beautiful.\" → Correct: \"She wore a beautiful dress.\"",
+          "evidence_native": "\"She wore a dress beautiful.\" → Correcto: \"She wore a beautiful dress.\""
+        },
+        {
+          "name_de": "False friends from Spanish",
+          "name_native": "Falsos amigos del espanol",
+          "error_class": "Wortwahl",
+          "explanation_de": "You use \"actually\" to mean \"currently\" (from \"actualmente\"), and \"realize\" to mean \"carry out\" (from \"realizar\").",
+          "explanation_native": "Usas \"actually\" para decir \"actualmente\", y \"realize\" para decir \"realizar\" (llevar a cabo).",
+          "evidence_de": "\"I'm actually working on a project.\" (meaning: right now) → Better: \"I'm currently working on a project.\"",
+          "evidence_native": "\"I'm actually working on a project.\" (queriendo decir: ahora mismo) → Mejor: \"I'm currently working on a project.\""
+        }
+      ]
+    },
+    {
+      "id": "corrections",
+      "title_de": "Lever Corrections",
+      "title_native": "Correcciones palanca",
+      "items": [
+        {
+          "original_de": "Wrong: It depends of the situation.",
+          "original_native": "Incorrecto: It depends of the situation.",
+          "corrected_de": "Correct: It depends on the situation.",
+          "corrected_native": "Correcto: It depends on the situation.",
+          "explanation_de": "depend + on (not of). Spanish 'depender de' does not transfer.",
+          "explanation_native": "depend + on (no of). El espanol 'depender de' no se transfiere."
+        },
+        {
+          "original_de": "Wrong: I have visited Paris last summer.",
+          "original_native": "Incorrecto: I have visited Paris last summer.",
+          "corrected_de": "Correct: I visited Paris last summer.",
+          "corrected_native": "Correcto: I visited Paris last summer.",
+          "explanation_de": "Specific past time marker = simple past, not present perfect.",
+          "explanation_native": "Marcador temporal pasado especifico = pasado simple, no presente perfecto."
+        },
+        {
+          "original_de": "Wrong: She wore a dress beautiful.",
+          "original_native": "Incorrecto: She wore a dress beautiful.",
+          "corrected_de": "Correct: She wore a beautiful dress.",
+          "corrected_native": "Correcto: She wore a beautiful dress.",
+          "explanation_de": "English: adjective before noun. Spanish: adjective often after noun.",
+          "explanation_native": "Ingles: adjetivo antes del sustantivo. Espanol: adjetivo frecuentemente despues del sustantivo."
+        },
+        {
+          "original_de": "Wrong: I'm actually living in Madrid.",
+          "original_native": "Incorrecto: I'm actually living in Madrid.",
+          "corrected_de": "Correct: I'm currently living in Madrid.",
+          "corrected_native": "Correcto: I'm currently living in Madrid.",
+          "explanation_de": "\"Actually\" = in fact/really. \"Currently\" = at this moment.",
+          "explanation_native": "\"Actually\" = de hecho/realmente. \"Currently\" = en este momento."
+        },
+        {
+          "original_de": "Wrong: I need computer for my presentation.",
+          "original_native": "Incorrecto: I need computer for my presentation.",
+          "corrected_de": "Correct: I need a computer for my presentation.",
+          "corrected_native": "Correcto: I need a computer for my presentation.",
+          "explanation_de": "Singular countable nouns always need an article in English.",
+          "explanation_native": "Los sustantivos contables singulares siempre necesitan un articulo en ingles."
+        }
+      ]
+    },
+    {
+      "id": "solutions",
+      "title_de": "Solutions",
+      "title_native": "Soluciones",
+      "items": [
+        {
+          "name_de": "Verb + Preposition Drill",
+          "name_native": "Ejercicio verbo + preposicion",
+          "action_de": "Learn the 20 most common verb + preposition combinations. Write 2 sentences per day using them.",
+          "action_native": "Aprende las 20 combinaciones mas comunes de verbo + preposicion. Escribe 2 frases por dia usandolas.",
+          "result_de": "Preposition errors will decrease by 70% in 3 weeks.",
+          "result_native": "Los errores de preposicion disminuiran un 70% en 3 semanas."
+        },
+        {
+          "name_de": "Tense Timeline Awareness",
+          "name_native": "Conciencia de linea temporal",
+          "action_de": "Before speaking, ask: is there a specific time marker? Yes = simple past. No specific time = present perfect.",
+          "action_native": "Antes de hablar, pregunta: hay un marcador temporal especifico? Si = pasado simple. Sin tiempo especifico = presente perfecto.",
+          "result_de": "Tense selection becomes automatic in 2 weeks.",
+          "result_native": "La seleccion de tiempo se vuelve automatica en 2 semanas."
+        },
+        {
+          "name_de": "False Friends Flash Cards",
+          "name_native": "Tarjetas de falsos amigos",
+          "action_de": "Create cards for the 15 most dangerous Spanish-English false friends. Review daily.",
+          "action_native": "Crea tarjetas para los 15 falsos amigos espanol-ingles mas peligrosos. Repasa diariamente.",
+          "result_de": "False friend errors eliminated within 2 weeks.",
+          "result_native": "Errores de falsos amigos eliminados en 2 semanas."
+        },
+        {
+          "name_de": "Article Checkpoint",
+          "name_native": "Control de articulos",
+          "action_de": "In every sentence you form, check: is the noun countable and singular? Then it MUST have an article.",
+          "action_native": "En cada frase que formes, verifica: es el sustantivo contable y singular? Entonces DEBE tener un articulo.",
+          "result_de": "Article omission drops to near zero.",
+          "result_native": "La omision de articulos cae a casi cero."
+        },
+        {
+          "name_de": "Adjective Order Practice",
+          "name_native": "Practica de orden de adjetivos",
+          "action_de": "Daily: describe 3 objects using 2+ adjectives. Always place adjectives before the noun.",
+          "action_native": "Diario: describe 3 objetos usando 2+ adjetivos. Siempre coloca los adjetivos antes del sustantivo.",
+          "result_de": "Natural adjective placement in 1 week.",
+          "result_native": "Colocacion natural de adjetivos en 1 semana."
+        }
+      ]
+    },
+    {
+      "id": "sentence_engine",
+      "name_de": "The Preposition Engine",
+      "name_native": "El motor de preposiciones",
+      "explanation_de": "Every day, form 5 sentences using verb + preposition combinations from your problem list. Speak them aloud. Stress the correct preposition consciously.",
+      "explanation_native": "Cada dia, forma 5 frases usando combinaciones de verbo + preposicion de tu lista de problemas. Pronuncialas en voz alta. Enfatiza la preposicion correcta conscientemente.",
+      "patterns": [
+        {
+          "de": "It depends on the context.",
+          "native": "Depende del contexto."
+        },
+        {
+          "de": "The report consists of three parts.",
+          "native": "El informe consiste en tres partes."
+        },
+        {
+          "de": "She insisted on paying the bill.",
+          "native": "Ella insistio en pagar la cuenta."
+        }
+      ],
+      "daily_instruction_de": "5 verb + preposition sentences per day, spoken aloud, preposition stressed.",
+      "daily_instruction_native": "5 frases de verbo + preposicion por dia, habladas en voz alta, preposicion enfatizada."
+    },
+    {
+      "id": "activation",
+      "title_de": "Activation",
+      "title_native": "Activacion",
+      "sentences": [
+        {
+          "de": "I visited my parents last weekend because I hadn't seen them in months.",
+          "native": "Visite a mis padres el fin de semana pasado porque no los habia visto en meses."
+        },
+        {
+          "de": "The success of the project depends on good teamwork.",
+          "native": "El exito del proyecto depende de un buen trabajo en equipo."
+        },
+        {
+          "de": "She is currently working on a new proposal for the client.",
+          "native": "Ella esta actualmente trabajando en una nueva propuesta para el cliente."
+        },
+        {
+          "de": "I need a laptop for my presentation tomorrow.",
+          "native": "Necesito un portatil para mi presentacion de manana."
+        },
+        {
+          "de": "He bought a beautiful Italian car last month.",
+          "native": "El compro un hermoso coche italiano el mes pasado."
+        },
+        {
+          "de": "The meeting resulted in several important decisions.",
+          "native": "La reunion resulto en varias decisiones importantes."
+        }
+      ]
+    },
+    {
+      "id": "homework_a",
+      "title_de": "Homework A — Structure",
+      "title_native": "Tarea A — Estructura",
+      "sentences": [
+        {
+          "de": "The quality depends on the materials we use.",
+          "native": "La calidad depende de los materiales que usamos."
+        },
+        {
+          "de": "I have lived here since 2020.",
+          "native": "He vivido aqui desde 2020."
+        },
+        {
+          "de": "She went to Paris last December.",
+          "native": "Ella fue a Paris en diciembre pasado."
+        },
+        {
+          "de": "The book consists of twelve chapters.",
+          "native": "El libro consiste en doce capitulos."
+        },
+        {
+          "de": "He insisted on speaking with the manager.",
+          "native": "El insistio en hablar con el gerente."
+        },
+        {
+          "de": "They are currently looking for a new office.",
+          "native": "Actualmente estan buscando una nueva oficina."
+        }
+      ]
+    },
+    {
+      "id": "homework_b",
+      "title_de": "Homework B — Precision",
+      "title_native": "Tarea B — Precision",
+      "items": [
+        {
+          "wrong_de": "Wrong: It depends of the weather.",
+          "wrong_native": "Incorrecto: It depends of the weather.",
+          "right_de": "Correct: It depends on the weather.",
+          "right_native": "Correcto: It depends on the weather."
+        },
+        {
+          "wrong_de": "Wrong: I have seen her yesterday.",
+          "wrong_native": "Incorrecto: I have seen her yesterday.",
+          "right_de": "Correct: I saw her yesterday.",
+          "right_native": "Correcto: I saw her yesterday."
+        },
+        {
+          "wrong_de": "Wrong: I need car for tomorrow.",
+          "wrong_native": "Incorrecto: I need car for tomorrow.",
+          "right_de": "Correct: I need a car for tomorrow.",
+          "right_native": "Correcto: I need a car for tomorrow."
+        },
+        {
+          "wrong_de": "Wrong: She wore a jacket very elegant.",
+          "wrong_native": "Incorrecto: She wore a jacket very elegant.",
+          "right_de": "Correct: She wore a very elegant jacket.",
+          "right_native": "Correcto: She wore a very elegant jacket."
+        },
+        {
+          "wrong_de": "Wrong: I'm actually studying for my exam.",
+          "wrong_native": "Incorrecto: I'm actually studying for my exam. (queriendo decir ahora)",
+          "right_de": "Correct: I'm currently studying for my exam.",
+          "right_native": "Correcto: I'm currently studying for my exam."
+        }
+      ]
+    },
+    {
+      "id": "homework_c",
+      "title_de": "Homework C — Speaking Fluency",
+      "title_native": "Tarea C — Fluidez oral",
+      "sentences": [
+        {
+          "de": "First I made myself a coffee and sat down at my desk.",
+          "native": "Primero me hice un cafe y me sente en mi escritorio."
+        },
+        {
+          "de": "Then I opened my laptop because I had to finish a report.",
+          "native": "Luego abri mi portatil porque tenia que terminar un informe."
+        },
+        {
+          "de": "I worked on it for two hours and then took a break.",
+          "native": "Trabaje en ello durante dos horas y luego tome un descanso."
+        },
+        {
+          "de": "During the break, I called a colleague who needed help.",
+          "native": "Durante el descanso, llame a un colega que necesitaba ayuda."
+        },
+        {
+          "de": "The problem depended on a software update that hadn't been installed.",
+          "native": "El problema dependia de una actualizacion de software que no se habia instalado."
+        },
+        {
+          "de": "After we figured it out, I went back to my report.",
+          "native": "Despues de resolverlo, volvi a mi informe."
+        },
+        {
+          "de": "By the end of the day, I had completed everything I planned.",
+          "native": "Al final del dia, habia completado todo lo que habia planeado."
+        },
+        {
+          "de": "Although I was tired, I felt very productive.",
+          "native": "Aunque estaba cansado, me senti muy productivo."
+        }
+      ]
+    },
+    {
+      "id": "weekly_plan",
+      "title_de": "Weekly Plan",
+      "title_native": "Plan semanal",
+      "weeks": [
+        {
+          "label_de": "Week 1-2",
+          "label_native": "Semana 1-2",
+          "focus_de": "Verb + preposition combinations",
+          "focus_native": "Combinaciones de verbo + preposicion",
+          "goal_de": "Automatic correct preposition after depend/consist/insist/result",
+          "goal_native": "Preposicion correcta automatica tras depend/consist/insist/result",
+          "daily_de": "5 verb + preposition sentences per day",
+          "daily_native": "5 frases de verbo + preposicion por dia"
+        },
+        {
+          "label_de": "Week 3-4",
+          "label_native": "Semana 3-4",
+          "focus_de": "Present perfect vs. simple past",
+          "focus_native": "Presente perfecto vs. pasado simple",
+          "goal_de": "Correct tense selection based on time markers",
+          "goal_native": "Seleccion correcta de tiempo basada en marcadores temporales",
+          "daily_de": "3 present perfect + 3 simple past sentences daily",
+          "daily_native": "3 frases en presente perfecto + 3 en pasado simple diariamente"
+        },
+        {
+          "label_de": "Week 5-6",
+          "label_native": "Semana 5-6",
+          "focus_de": "Articles + false friends",
+          "focus_native": "Articulos + falsos amigos",
+          "goal_de": "Zero article omission + eliminate top 15 false friends",
+          "goal_native": "Cero omision de articulos + eliminar los 15 falsos amigos principales",
+          "daily_de": "Flash card review + 3 article-focused sentences",
+          "daily_native": "Repaso de tarjetas + 3 frases enfocadas en articulos"
+        },
+        {
+          "label_de": "Week 7-8",
+          "label_native": "Semana 7-8",
+          "focus_de": "Free speaking under pressure",
+          "focus_native": "Habla libre bajo presion",
+          "goal_de": "Maintain accuracy in all target areas during spontaneous speech",
+          "goal_native": "Mantener precision en todas las areas objetivo durante habla espontanea",
+          "daily_de": "2-minute monologue with conscious focus on problem areas",
+          "daily_native": "Monologo de 2 minutos con enfoque consciente en areas problematicas"
+        }
+      ]
+    },
+    {
+      "id": "mini_block",
+      "title_de": "Mini Block",
+      "title_native": "Mini bloque",
+      "goal_de": "Stabilize preposition accuracy under speaking pressure",
+      "goal_native": "Estabilizar la precision de preposiciones bajo presion del habla",
+      "step1_de": "Speak 5 verb + preposition sentences aloud daily — consciously slow, preposition stressed.",
+      "step1_native": "Pronuncia 5 frases de verbo + preposicion en voz alta diariamente — conscientemente lento, preposicion enfatizada.",
+      "step2_de": "A 2-minute monologue using at least 3 dependent prepositions. Record. Listen. Repeat.",
+      "step2_native": "Un monologo de 2 minutos usando al menos 3 preposiciones dependientes. Graba. Escucha. Repite."
+    }
+  ],
+  "cefr_footer": {
+    "active_de": "Active spoken production: B2.1",
+    "active_native": "Produccion oral activa: B2.1",
+    "passive_de": "Passive competence (estimated comprehension ceiling): B2.2",
+    "passive_native": "Competencia pasiva (techo de comprension estimado): B2.2",
+    "confidence_de": "Confidence: 80%",
+    "confidence_native": "Confianza: 80%",
+    "summary_de": "You are in the B2 range. Your communicative foundation is strong, but preposition transfer from Spanish and tense inconsistency remain the key areas for improvement. With targeted training, C1 is realistic in 4-5 months.",
+    "summary_native": "Estas en el rango B2. Tu base comunicativa es fuerte, pero la transferencia de preposiciones del espanol y la inconsistencia de tiempos siguen siendo las areas clave de mejora. Con entrenamiento focalizado, C1 es realista en 4-5 meses.",
+    "stability_de": "Structural stability under pressure: medium",
+    "stability_native": "Estabilidad estructural bajo presion: media",
+    "self_correction_de": "Self-correction ability: medium to high",
+    "self_correction_native": "Capacidad de autocorreccion: media a alta",
+    "reassessment_de": "Recommended re-assessment: 3 months",
+    "reassessment_native": "Reevaluacion recomendada: 3 meses"
+  },
+  "block_d": {
+    "title_native": "Resumen en tu idioma",
+    "cefr_summary_native": "Tu ingles hablado activo esta en el nivel B2.1. Esto significa que puedes comunicarte con fluidez en la mayoria de las situaciones, pero las preposiciones y la seleccion de tiempos siguen siendo inestables bajo presion. Tu comprension pasiva es mas alta en B2.2.",
+    "top_problems_native": [
+      "Preposiciones dependientes tras verbos (depend of → depend on)",
+      "Presente perfecto usado con marcadores de tiempo pasado especificos",
+      "Omision de articulos con sustantivos contables singulares",
+      "Orden de adjetivos influenciado por la sintaxis espanola",
+      "Falsos amigos del espanol (actually, realize, etc.)"
+    ],
+    "key_recommendation_native": "Practica el Motor de Preposiciones diariamente: forma 5 frases con combinaciones de verbo + preposicion y pronuncialas en voz alta. Este unico ejercicio corregira tu debilidad estructural mas grande.",
+    "next_steps_native": "Enfocate en las combinaciones de verbo + preposicion durante las proximas 2 semanas, luego pasa a la seleccion de tiempos y los falsos amigos. Reserva una reevaluacion en 3 meses para medir el progreso."
+  }
+}

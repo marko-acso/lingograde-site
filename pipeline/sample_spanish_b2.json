@@ -1,0 +1,458 @@
+{
+  "metadata": {
+    "student_name": "James T.",
+    "display_name": "James",
+    "native_name": "James",
+    "date": "2026-03-19",
+    "package": "full",
+    "assessed_language": "Spanisch",
+    "native_language": "Englisch",
+    "assessor": "Marko",
+    "active_cefr": "B2.1",
+    "passive_cefr": "B2.2",
+    "confidence": "79%",
+    "structural_stability": "mittel",
+    "self_correction": "mittel bis hoch",
+    "sentence_control": "teilstabil",
+    "recommended_reassessment": "3 Monate",
+    "error_focus": [
+      "Zeitformen",
+      "Präpositionen"
+    ]
+  },
+  "sections": [
+    {
+      "id": "perception",
+      "title_de": "Percepcion precisa",
+      "title_native": "Precise Perception",
+      "content_de": "En esta sesion demostraste una base comunicativa solida en espanol. Tu vocabulario es amplio y variado, y no dudas en intentar estructuras complejas. Los problemas principales aparecieron en el uso del subjuntivo y en la seleccion entre ser y estar.",
+      "content_native": "In this session you showed a solid communicative foundation in Spanish. Your vocabulary is wide and varied, and you don't hesitate to attempt complex structures. The main issues appeared in subjunctive usage and in the selection between ser and estar."
+    },
+    {
+      "id": "strengths",
+      "title_de": "Fortalezas estructurales",
+      "title_native": "Structural Strengths",
+      "items": [
+        {
+          "strength_de": "Uso natural de tiempos pasados",
+          "strength_native": "Natural use of past tenses",
+          "example_de": "\"Cuando llegue a casa, mi madre ya habia preparado la cena.\" — Pluscuamperfecto correcto.",
+          "example_native": "\"When I arrived home, my mother had already prepared dinner.\" — Correct pluperfect."
+        },
+        {
+          "strength_de": "Buen dominio de pronombres reflexivos",
+          "strength_native": "Good command of reflexive pronouns",
+          "example_de": "\"Me levante, me duche y me vesti rapidamente.\" — Secuencia reflexiva correcta.",
+          "example_native": "\"I got up, showered and dressed quickly.\" — Correct reflexive sequence."
+        },
+        {
+          "strength_de": "Vocabulario rico y matizado",
+          "strength_native": "Rich and nuanced vocabulary",
+          "example_de": "Usas sinonimos como 'destacar' en vez de 'ser importante', mostrando profundidad lexica.",
+          "example_native": "You use synonyms like 'destacar' instead of 'ser importante', showing lexical depth."
+        }
+      ]
+    },
+    {
+      "id": "core_insight",
+      "title_de": "Insight estructural central",
+      "title_native": "Core Structural Insight",
+      "content_de": "El patron central de esta sesion es la evitacion del subjuntivo. Donde el subjuntivo es obligatorio (despues de 'quiero que', 'es importante que', 'dudo que'), usas el indicativo. Esto es transferencia directa del ingles, que no tiene un modo subjuntivo productivo.",
+      "content_native": "The central pattern of this session is subjunctive avoidance. Where the subjunctive is mandatory (after 'quiero que', 'es importante que', 'dudo que'), you use the indicative. This is direct transfer from English, which doesn't have a productive subjunctive mood."
+    },
+    {
+      "id": "problems",
+      "title_de": "Problemas estructurales principales",
+      "title_native": "Top Structural Problems",
+      "items": [
+        {
+          "name_de": "Subjuntivo evitado tras expresiones de deseo",
+          "name_native": "Subjunctive avoided after desire expressions",
+          "error_class": "Zeitformen",
+          "explanation_de": "Usas indicativo donde el subjuntivo es obligatorio: 'Quiero que vienes' en vez de 'Quiero que vengas'.",
+          "explanation_native": "You use indicative where subjunctive is mandatory: 'Quiero que vienes' instead of 'Quiero que vengas'.",
+          "evidence_de": "\"Espero que puedes venir.\" → Correcto: \"Espero que puedas venir.\"",
+          "evidence_native": "\"Espero que puedes venir.\" → Correct: \"Espero que puedas venir.\""
+        },
+        {
+          "name_de": "Confusion ser / estar",
+          "name_native": "Ser / estar confusion",
+          "error_class": "Wortwahl",
+          "explanation_de": "Usas 'ser' para estados temporales donde 'estar' es correcto: 'Soy cansado' en vez de 'Estoy cansado'.",
+          "explanation_native": "You use 'ser' for temporary states where 'estar' is correct: 'Soy cansado' instead of 'Estoy cansado'.",
+          "evidence_de": "\"La puerta es abierta.\" → Correcto: \"La puerta esta abierta.\"",
+          "evidence_native": "\"La puerta es abierta.\" → Correct: \"La puerta esta abierta.\""
+        },
+        {
+          "name_de": "Preposiciones: por vs. para",
+          "name_native": "Prepositions: por vs. para",
+          "error_class": "Präpositionen",
+          "explanation_de": "Confundes 'por' y 'para' sistematicamente, especialmente para expresar finalidad.",
+          "explanation_native": "You systematically confuse 'por' and 'para', especially for expressing purpose.",
+          "evidence_de": "\"Estudio por aprobar.\" → Correcto: \"Estudio para aprobar.\"",
+          "evidence_native": "\"Estudio por aprobar.\" → Correct: \"Estudio para aprobar.\""
+        },
+        {
+          "name_de": "Concordancia de genero con adjetivos",
+          "name_native": "Gender agreement with adjectives",
+          "error_class": "Kasus/Artikel",
+          "explanation_de": "Olvidas la concordancia de genero, especialmente con adjetivos que no terminan en -o/-a.",
+          "explanation_native": "You forget gender agreement, especially with adjectives that don't end in -o/-a.",
+          "evidence_de": "\"La situacion es dificil\" — correcto, pero \"La ciudad es grande\" se convierte en \"El ciudad es grande\".",
+          "evidence_native": "\"La situacion es dificil\" — correct, but \"La ciudad es grande\" becomes \"El ciudad es grande\"."
+        },
+        {
+          "name_de": "Uso excesivo de 'que' como conector",
+          "name_native": "Overuse of 'que' as connector",
+          "error_class": "Wortstellung",
+          "explanation_de": "Usas 'que' como conector universal donde otros conectores serian mas precisos.",
+          "explanation_native": "You use 'que' as a universal connector where other connectors would be more precise.",
+          "evidence_de": "\"Es una empresa que tiene problemas que son dificiles.\" → Mejor: \"Es una empresa con problemas dificiles.\"",
+          "evidence_native": "\"Es una empresa que tiene problemas que son dificiles.\" → Better: \"Es una empresa con problemas dificiles.\""
+        }
+      ]
+    },
+    {
+      "id": "corrections",
+      "title_de": "Correcciones palanca",
+      "title_native": "Lever Corrections",
+      "items": [
+        {
+          "original_de": "Incorrecto: Quiero que vienes manana.",
+          "original_native": "Wrong: Quiero que vienes manana.",
+          "corrected_de": "Correcto: Quiero que vengas manana.",
+          "corrected_native": "Correct: Quiero que vengas manana.",
+          "explanation_de": "'Quiero que' + subjuntivo, siempre.",
+          "explanation_native": "'Quiero que' + subjunctive, always."
+        },
+        {
+          "original_de": "Incorrecto: Soy cansado.",
+          "original_native": "Wrong: Soy cansado.",
+          "corrected_de": "Correcto: Estoy cansado.",
+          "corrected_native": "Correct: Estoy cansado.",
+          "explanation_de": "Estados temporales = estar. Caracteristicas permanentes = ser.",
+          "explanation_native": "Temporary states = estar. Permanent characteristics = ser."
+        },
+        {
+          "original_de": "Incorrecto: Estudio por aprobar el examen.",
+          "original_native": "Wrong: Estudio por aprobar el examen.",
+          "corrected_de": "Correcto: Estudio para aprobar el examen.",
+          "corrected_native": "Correct: Estudio para aprobar el examen.",
+          "explanation_de": "Finalidad/proposito = para. Causa/razon = por.",
+          "explanation_native": "Purpose/goal = para. Cause/reason = por."
+        },
+        {
+          "original_de": "Incorrecto: El ciudad es bonita.",
+          "original_native": "Wrong: El ciudad es bonita.",
+          "corrected_de": "Correcto: La ciudad es bonita.",
+          "corrected_native": "Correct: La ciudad es bonita.",
+          "explanation_de": "ciudad = femenino. Regla: sustantivos en -dad son femeninos.",
+          "explanation_native": "ciudad = feminine. Rule: nouns ending in -dad are feminine."
+        },
+        {
+          "original_de": "Incorrecto: Es una empresa que tiene problemas que son dificiles.",
+          "original_native": "Wrong: Es una empresa que tiene problemas que son dificiles.",
+          "corrected_de": "Correcto: Es una empresa con problemas dificiles.",
+          "corrected_native": "Correct: Es una empresa con problemas dificiles.",
+          "explanation_de": "Evita cadenas de 'que'. Usa preposiciones y adjetivos directos.",
+          "explanation_native": "Avoid 'que' chains. Use prepositions and direct adjectives."
+        }
+      ]
+    },
+    {
+      "id": "solutions",
+      "title_de": "Soluciones",
+      "title_native": "Solutions",
+      "items": [
+        {
+          "name_de": "Ejercicio de subjuntivo",
+          "name_native": "Subjunctive drill",
+          "action_de": "Cada dia, forma 5 frases con 'quiero que / espero que / dudo que' + subjuntivo. Pronuncia en voz alta.",
+          "action_native": "Every day, form 5 sentences with 'quiero que / espero que / dudo que' + subjunctive. Speak aloud.",
+          "result_de": "Subjuntivo automatico en 2-3 semanas.",
+          "result_native": "Automatic subjunctive in 2-3 weeks."
+        },
+        {
+          "name_de": "Mapa ser / estar",
+          "name_native": "Ser / estar map",
+          "action_de": "Aprende la regla: PLACE (Position, Location, Action, Condition, Emotion) = estar. Todo lo demas = ser.",
+          "action_native": "Learn the rule: PLACE (Position, Location, Action, Condition, Emotion) = estar. Everything else = ser.",
+          "result_de": "Seleccion correcta en 2 semanas.",
+          "result_native": "Correct selection in 2 weeks."
+        },
+        {
+          "name_de": "Por vs. para: 3 preguntas",
+          "name_native": "Por vs. para: 3 questions",
+          "action_de": "Antes de elegir: es proposito/destino? = para. Es causa/motivo/intercambio? = por.",
+          "action_native": "Before choosing: is it purpose/destination? = para. Is it cause/reason/exchange? = por.",
+          "result_de": "Errores reducidos un 80% en 2 semanas.",
+          "result_native": "Errors reduced by 80% in 2 weeks."
+        },
+        {
+          "name_de": "Genero por terminacion",
+          "name_native": "Gender by ending",
+          "action_de": "Reglas clave: -dad (f.), -cion (f.), -ma (m. de origen griego), -aje (m.).",
+          "action_native": "Key rules: -dad (f.), -cion (f.), -ma (m. from Greek), -aje (m.).",
+          "result_de": "Errores de genero reducidos drasticamente.",
+          "result_native": "Gender errors drastically reduced."
+        },
+        {
+          "name_de": "Conectores variados",
+          "name_native": "Varied connectors",
+          "action_de": "Sustituye 'que' por: 'con', 'donde', 'cuyo', 'el cual'. 3 frases por dia.",
+          "action_native": "Replace 'que' with: 'con', 'donde', 'cuyo', 'el cual'. 3 sentences per day.",
+          "result_de": "Frases mas elegantes y claras.",
+          "result_native": "More elegant and clear sentences."
+        }
+      ]
+    },
+    {
+      "id": "sentence_engine",
+      "name_de": "El motor del subjuntivo",
+      "name_native": "The Subjunctive Engine",
+      "explanation_de": "Cada dia, forma 5 frases con expresiones que exigen subjuntivo. Pronuncia en voz alta. Subraya conscientemente la forma subjuntiva.",
+      "explanation_native": "Every day, form 5 sentences with expressions that demand the subjunctive. Speak aloud. Consciously stress the subjunctive form.",
+      "patterns": [
+        {
+          "de": "Quiero que vengas a la fiesta.",
+          "native": "I want you to come to the party."
+        },
+        {
+          "de": "Es importante que estudies todos los dias.",
+          "native": "It's important that you study every day."
+        },
+        {
+          "de": "Dudo que el pueda terminar a tiempo.",
+          "native": "I doubt he can finish on time."
+        }
+      ],
+      "daily_instruction_de": "5 frases con subjuntivo por dia, habladas en voz alta.",
+      "daily_instruction_native": "5 subjunctive sentences per day, spoken aloud."
+    },
+    {
+      "id": "activation",
+      "title_de": "Activacion",
+      "title_native": "Activation",
+      "sentences": [
+        {
+          "de": "Quiero que vengas a mi fiesta el sabado.",
+          "native": "I want you to come to my party on Saturday."
+        },
+        {
+          "de": "Estoy cansado porque trabaje mucho ayer.",
+          "native": "I'm tired because I worked a lot yesterday."
+        },
+        {
+          "de": "Estudio para aprobar el examen de espanol.",
+          "native": "I study to pass the Spanish exam."
+        },
+        {
+          "de": "La ciudad es bonita pero esta muy sucia hoy.",
+          "native": "The city is beautiful but it's very dirty today."
+        },
+        {
+          "de": "Es una empresa con problemas dificiles de resolver.",
+          "native": "It's a company with problems that are hard to solve."
+        },
+        {
+          "de": "Dudo que llueva manana.",
+          "native": "I doubt it will rain tomorrow."
+        }
+      ]
+    },
+    {
+      "id": "homework_a",
+      "title_de": "Tarea A — Estructura",
+      "title_native": "Homework A — Structure",
+      "sentences": [
+        {
+          "de": "Espero que puedas venir a la reunion.",
+          "native": "I hope you can come to the meeting."
+        },
+        {
+          "de": "El esta enfermo, por eso no viene.",
+          "native": "He is sick, that's why he's not coming."
+        },
+        {
+          "de": "Estudio espanol para trabajar en Espana.",
+          "native": "I study Spanish to work in Spain."
+        },
+        {
+          "de": "La situacion es complicada pero estamos preparados.",
+          "native": "The situation is complicated but we are prepared."
+        },
+        {
+          "de": "Es necesario que hables con el jefe.",
+          "native": "It's necessary that you speak with the boss."
+        },
+        {
+          "de": "Viaje por toda Sudamerica el ano pasado.",
+          "native": "I traveled through all of South America last year."
+        }
+      ]
+    },
+    {
+      "id": "homework_b",
+      "title_de": "Tarea B — Precision",
+      "title_native": "Homework B — Precision",
+      "items": [
+        {
+          "wrong_de": "Incorrecto: Quiero que vienes.",
+          "wrong_native": "Wrong: Quiero que vienes.",
+          "right_de": "Correcto: Quiero que vengas.",
+          "right_native": "Correct: Quiero que vengas."
+        },
+        {
+          "wrong_de": "Incorrecto: Soy contento.",
+          "wrong_native": "Wrong: Soy contento.",
+          "right_de": "Correcto: Estoy contento.",
+          "right_native": "Correct: Estoy contento."
+        },
+        {
+          "wrong_de": "Incorrecto: Trabajo por ganar dinero.",
+          "wrong_native": "Wrong: Trabajo por ganar dinero.",
+          "right_de": "Correcto: Trabajo para ganar dinero.",
+          "right_native": "Correct: Trabajo para ganar dinero."
+        },
+        {
+          "wrong_de": "Incorrecto: El problema es grande.",
+          "wrong_native": "Wrong: El problema es grande. (as feminine)",
+          "right_de": "Correcto: El problema es grande. (masculino)",
+          "right_native": "Correct: El problema es grande. (masculine)"
+        },
+        {
+          "wrong_de": "Incorrecto: Es posible que tiene razon.",
+          "wrong_native": "Wrong: Es posible que tiene razon.",
+          "right_de": "Correcto: Es posible que tenga razon.",
+          "right_native": "Correct: Es posible que tenga razon."
+        }
+      ]
+    },
+    {
+      "id": "homework_c",
+      "title_de": "Tarea C — Fluidez oral",
+      "title_native": "Homework C — Speaking Fluency",
+      "sentences": [
+        {
+          "de": "Primero me levante y desayune con mi familia.",
+          "native": "First I got up and had breakfast with my family."
+        },
+        {
+          "de": "Luego sali de casa porque tenia una reunion importante.",
+          "native": "Then I left the house because I had an important meeting."
+        },
+        {
+          "de": "Cuando llegue a la oficina, mi jefe ya estaba alli.",
+          "native": "When I arrived at the office, my boss was already there."
+        },
+        {
+          "de": "Hablamos durante una hora sobre el nuevo proyecto.",
+          "native": "We talked for an hour about the new project."
+        },
+        {
+          "de": "Despues de la reunion, trabaje en mi escritorio hasta las seis.",
+          "native": "After the meeting, I worked at my desk until six."
+        },
+        {
+          "de": "Por la noche, cene con amigos en un restaurante mexicano.",
+          "native": "In the evening, I had dinner with friends at a Mexican restaurant."
+        },
+        {
+          "de": "Aunque estaba cansado, me quede hasta tarde porque la conversacion era interesante.",
+          "native": "Although I was tired, I stayed late because the conversation was interesting."
+        },
+        {
+          "de": "Al final del dia, me senti satisfecho con todo lo que habia logrado.",
+          "native": "At the end of the day, I felt satisfied with everything I had achieved."
+        }
+      ]
+    },
+    {
+      "id": "weekly_plan",
+      "title_de": "Plan semanal",
+      "title_native": "Weekly Plan",
+      "weeks": [
+        {
+          "label_de": "Semana 1-2",
+          "label_native": "Week 1-2",
+          "focus_de": "Subjuntivo tras expresiones de deseo/duda",
+          "focus_native": "Subjunctive after desire/doubt expressions",
+          "goal_de": "Uso automatico del subjuntivo",
+          "goal_native": "Automatic subjunctive use",
+          "daily_de": "5 frases con subjuntivo por dia",
+          "daily_native": "5 subjunctive sentences per day"
+        },
+        {
+          "label_de": "Semana 3-4",
+          "label_native": "Week 3-4",
+          "focus_de": "Ser vs. estar",
+          "focus_native": "Ser vs. estar",
+          "goal_de": "Seleccion correcta reflexiva",
+          "goal_native": "Correct reflexive selection",
+          "daily_de": "3 pares ser/estar por dia",
+          "daily_native": "3 ser/estar pairs per day"
+        },
+        {
+          "label_de": "Semana 5-6",
+          "label_native": "Week 5-6",
+          "focus_de": "Por vs. para + genero",
+          "focus_native": "Por vs. para + gender",
+          "goal_de": "Zero errores con por/para + reglas de genero automaticas",
+          "goal_native": "Zero por/para errors + automatic gender rules",
+          "daily_de": "3 frases por/para + 3 ejercicios genero",
+          "daily_native": "3 por/para sentences + 3 gender exercises"
+        },
+        {
+          "label_de": "Semana 7-8",
+          "label_native": "Week 7-8",
+          "focus_de": "Habla libre bajo presion",
+          "focus_native": "Free speaking under pressure",
+          "goal_de": "Precision mantenida en habla espontanea",
+          "goal_native": "Accuracy maintained in spontaneous speech",
+          "daily_de": "Monologo de 2 minutos con enfoque consciente",
+          "daily_native": "2-minute monologue with conscious focus"
+        }
+      ]
+    },
+    {
+      "id": "mini_block",
+      "title_de": "Mini bloque",
+      "title_native": "Mini Block",
+      "goal_de": "Estabilizar el subjuntivo bajo presion del habla",
+      "goal_native": "Stabilize subjunctive under speaking pressure",
+      "step1_de": "Diariamente 5 frases con subjuntivo en voz alta — conscientemente lento, forma subjuntiva enfatizada.",
+      "step1_native": "Daily 5 subjunctive sentences aloud — consciously slow, subjunctive form stressed.",
+      "step2_de": "Un monologo de 2 minutos con al menos 3 formas subjuntivas. Grabar. Escuchar. Repetir.",
+      "step2_native": "A 2-minute monologue with at least 3 subjunctive forms. Record. Listen. Repeat."
+    }
+  ],
+  "cefr_footer": {
+    "active_de": "Produccion oral activa: B2.1",
+    "active_native": "Active spoken production: B2.1",
+    "passive_de": "Competencia pasiva (techo de comprension estimado): B2.2",
+    "passive_native": "Passive competence (estimated comprehension ceiling): B2.2",
+    "confidence_de": "Confianza: 79%",
+    "confidence_native": "Confidence: 79%",
+    "summary_de": "Estas en el rango B2. Tu base es solida pero el subjuntivo y la distincion ser/estar son los puntos clave. Con entrenamiento focalizado, C1 es realista en 4-5 meses.",
+    "summary_native": "You are in the B2 range. Your foundation is solid but the subjunctive and ser/estar distinction are the key points. With targeted training, C1 is realistic in 4-5 months.",
+    "stability_de": "Estabilidad estructural bajo presion: media",
+    "stability_native": "Structural stability under pressure: medium",
+    "self_correction_de": "Capacidad de autocorreccion: media a alta",
+    "self_correction_native": "Self-correction ability: medium to high",
+    "reassessment_de": "Reevaluacion recomendada: 3 meses",
+    "reassessment_native": "Recommended re-assessment: 3 months"
+  },
+  "block_d": {
+    "title_native": "Summary in Your Language",
+    "cefr_summary_native": "Your active spoken Spanish is at level B2.1. This means you can communicate fluently in most situations, but the subjunctive and ser/estar remain unstable under pressure. Your passive understanding is higher at B2.2.",
+    "top_problems_native": [
+      "Subjunctive avoided after desire/doubt expressions",
+      "Ser used for temporary states instead of estar",
+      "Por/para confusion for expressing purpose",
+      "Gender agreement errors with non-standard endings",
+      "Overuse of 'que' as universal connector"
+    ],
+    "key_recommendation_native": "Practice the Subjunctive Engine daily: form 5 sentences with expressions that require the subjunctive and speak them aloud. This single drill will fix your biggest structural weakness.",
+    "next_steps_native": "Focus on the subjunctive for the next 2 weeks, then move to ser/estar and por/para. Book a re-assessment in 3 months to measure progress."
+  }
+}

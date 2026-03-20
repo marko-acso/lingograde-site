@@ -1,0 +1,458 @@
+{
+  "metadata": {
+    "student_name": "Anna S.",
+    "display_name": "Anna",
+    "native_name": "Anna",
+    "date": "2026-03-19",
+    "package": "full",
+    "assessed_language": "Italienisch",
+    "native_language": "Deutsch",
+    "assessor": "Marko",
+    "active_cefr": "B1.1",
+    "passive_cefr": "B1.2",
+    "confidence": "74%",
+    "structural_stability": "mittel",
+    "self_correction": "mittel",
+    "sentence_control": "teilstabil",
+    "recommended_reassessment": "3 Monate",
+    "error_focus": [
+      "Zeitformen",
+      "Präpositionen"
+    ]
+  },
+  "sections": [
+    {
+      "id": "perception",
+      "title_de": "Percezione precisa",
+      "title_native": "Präzise Wahrnehmung",
+      "content_de": "In questa sessione hai dimostrato una buona base in italiano. Il tuo vocabolario copre bene le situazioni quotidiane. I problemi principali sono emersi nell'uso dei tempi passati (passato prossimo vs. imperfetto) e nelle preposizioni articolate.",
+      "content_native": "In dieser Sitzung hast du eine gute Grundlage im Italienischen gezeigt. Dein Wortschatz deckt alltägliche Situationen gut ab. Die Hauptprobleme zeigten sich bei den Vergangenheitszeiten (passato prossimo vs. imperfetto) und bei den Präpositionen mit Artikeln."
+    },
+    {
+      "id": "strengths",
+      "title_de": "Punti di forza strutturali",
+      "title_native": "Strukturelle Stärken",
+      "items": [
+        {
+          "strength_de": "Buon uso dei pronomi diretti",
+          "strength_native": "Guter Gebrauch direkter Pronomen",
+          "example_de": "\"L'ho visto ieri al mercato.\" — Pronome diretto corretto.",
+          "example_native": "\"L'ho visto ieri al mercato.\" — Korrektes Direktobjekt-Pronomen."
+        },
+        {
+          "strength_de": "Ordine delle parole naturale",
+          "strength_native": "Natürliche Wortstellung",
+          "example_de": "Le tue frasi seguono l'ordine SVO italiano in modo naturale.",
+          "example_native": "Deine Sätze folgen der italienischen SVO-Wortstellung natürlich."
+        },
+        {
+          "strength_de": "Buona intonazione e ritmo",
+          "strength_native": "Gute Intonation und Rhythmus",
+          "example_de": "Il tuo ritmo di parlata e naturale, con pause appropriate.",
+          "example_native": "Dein Sprechrhythmus ist natürlich, mit angemessenen Pausen."
+        }
+      ]
+    },
+    {
+      "id": "core_insight",
+      "title_de": "Intuizione strutturale centrale",
+      "title_native": "Zentrale Struktur-Erkenntnis",
+      "content_de": "Il modello centrale di questa sessione e la confusione tra passato prossimo e imperfetto. Usi il passato prossimo per descrivere abitudini e stati passati, dove l'imperfetto sarebbe corretto. Questo e un trasferimento dal tedesco, dove il Perfekt copre entrambe le funzioni.",
+      "content_native": "Das zentrale Muster dieser Sitzung ist die Verwechslung von passato prossimo und imperfetto. Du verwendest das passato prossimo für Gewohnheiten und Zustände in der Vergangenheit, wo das imperfetto korrekt wäre. Das ist eine Übertragung aus dem Deutschen, wo das Perfekt beide Funktionen abdeckt."
+    },
+    {
+      "id": "problems",
+      "title_de": "Problemi strutturali principali",
+      "title_native": "Strukturelle Hauptprobleme",
+      "items": [
+        {
+          "name_de": "Passato prossimo vs. imperfetto",
+          "name_native": "Passato prossimo vs. Imperfetto",
+          "error_class": "Zeitformen",
+          "explanation_de": "Usi il passato prossimo per descrizioni e abitudini: 'Ieri ho fatto bel tempo' invece di 'Ieri faceva bel tempo'.",
+          "explanation_native": "Du verwendest das passato prossimo für Beschreibungen und Gewohnheiten: 'Ieri ho fatto bel tempo' statt 'Ieri faceva bel tempo'.",
+          "evidence_de": "\"Quando sono stato bambino, ho giocato a calcio.\" → Corretto: \"Quando ero bambino, giocavo a calcio.\"",
+          "evidence_native": "\"Quando sono stato bambino, ho giocato a calcio.\" → Richtig: \"Quando ero bambino, giocavo a calcio.\""
+        },
+        {
+          "name_de": "Preposizioni articolate",
+          "name_native": "Präpositionen mit Artikeln",
+          "error_class": "Präpositionen",
+          "explanation_de": "Dimentichi la fusione preposizione + articolo: 'a il' invece di 'al', 'di il' invece di 'del'.",
+          "explanation_native": "Du vergisst die Verschmelzung von Präposition + Artikel: 'a il' statt 'al', 'di il' statt 'del'.",
+          "evidence_de": "\"Vado a il cinema.\" → Corretto: \"Vado al cinema.\"",
+          "evidence_native": "\"Vado a il cinema.\" → Richtig: \"Vado al cinema.\""
+        },
+        {
+          "name_de": "Ausiliare essere vs. avere",
+          "name_native": "Hilfsverb essere vs. avere",
+          "error_class": "Zeitformen",
+          "explanation_de": "Usi 'avere' con verbi di movimento dove 'essere' e richiesto.",
+          "explanation_native": "Du verwendest 'avere' mit Bewegungsverben, wo 'essere' erforderlich ist.",
+          "evidence_de": "\"Ho andato a casa.\" → Corretto: \"Sono andato a casa.\"",
+          "evidence_native": "\"Ho andato a casa.\" → Richtig: \"Sono andato a casa.\""
+        },
+        {
+          "name_de": "Congiuntivo evitato",
+          "name_native": "Konjunktiv vermieden",
+          "error_class": "Zeitformen",
+          "explanation_de": "Eviti il congiuntivo dopo espressioni che lo richiedono: 'Penso che e giusto' invece di 'Penso che sia giusto'.",
+          "explanation_native": "Du vermeidest den Konjunktiv nach Ausdrücken, die ihn erfordern: 'Penso che e giusto' statt 'Penso che sia giusto'.",
+          "evidence_de": "\"Credo che lui viene domani.\" → Corretto: \"Credo che lui venga domani.\"",
+          "evidence_native": "\"Credo che lui viene domani.\" → Richtig: \"Credo che lui venga domani.\""
+        },
+        {
+          "name_de": "Doppia negazione mancante",
+          "name_native": "Fehlende doppelte Verneinung",
+          "error_class": "Wortstellung",
+          "explanation_de": "Dimentichi la doppia negazione italiana: 'Non ho visto niente' e corretto, ma dici 'Non ho visto qualcosa'.",
+          "explanation_native": "Du vergisst die italienische doppelte Verneinung: 'Non ho visto niente' ist korrekt, aber du sagst 'Non ho visto qualcosa'.",
+          "evidence_de": "\"Non ho mai visto nessuno\" e corretto — in tedesco sarebbe doppia negazione, in italiano e obbligatoria.",
+          "evidence_native": "\"Non ho mai visto nessuno\" ist korrekt — im Deutschen wäre es doppelte Verneinung, im Italienischen ist sie obligatorisch."
+        }
+      ]
+    },
+    {
+      "id": "corrections",
+      "title_de": "Correzioni leva",
+      "title_native": "Hebelkorrekturen",
+      "items": [
+        {
+          "original_de": "Sbagliato: Quando sono stato bambino, ho giocato a calcio.",
+          "original_native": "Falsch: Quando sono stato bambino, ho giocato a calcio.",
+          "corrected_de": "Corretto: Quando ero bambino, giocavo a calcio.",
+          "corrected_native": "Richtig: Quando ero bambino, giocavo a calcio.",
+          "explanation_de": "Descrizione/abitudine nel passato = imperfetto.",
+          "explanation_native": "Beschreibung/Gewohnheit in der Vergangenheit = Imperfetto."
+        },
+        {
+          "original_de": "Sbagliato: Vado a il cinema.",
+          "original_native": "Falsch: Vado a il cinema.",
+          "corrected_de": "Corretto: Vado al cinema.",
+          "corrected_native": "Richtig: Vado al cinema.",
+          "explanation_de": "a + il = al. Fusione obbligatoria.",
+          "explanation_native": "a + il = al. Obligatorische Verschmelzung."
+        },
+        {
+          "original_de": "Sbagliato: Ho andato a casa.",
+          "original_native": "Falsch: Ho andato a casa.",
+          "corrected_de": "Corretto: Sono andato a casa.",
+          "corrected_native": "Richtig: Sono andato a casa.",
+          "explanation_de": "Verbi di movimento (andare, venire, partire) = essere.",
+          "explanation_native": "Bewegungsverben (andare, venire, partire) = essere."
+        },
+        {
+          "original_de": "Sbagliato: Penso che e giusto.",
+          "original_native": "Falsch: Penso che e giusto.",
+          "corrected_de": "Corretto: Penso che sia giusto.",
+          "corrected_native": "Richtig: Penso che sia giusto.",
+          "explanation_de": "Dopo 'penso che' = congiuntivo.",
+          "explanation_native": "Nach 'penso che' = Konjunktiv."
+        },
+        {
+          "original_de": "Sbagliato: Non ho visto qualcosa.",
+          "original_native": "Falsch: Non ho visto qualcosa.",
+          "corrected_de": "Corretto: Non ho visto niente.",
+          "corrected_native": "Richtig: Non ho visto niente.",
+          "explanation_de": "In italiano la doppia negazione e obbligatoria: non...niente/nessuno/mai.",
+          "explanation_native": "Im Italienischen ist die doppelte Verneinung obligatorisch: non...niente/nessuno/mai."
+        }
+      ]
+    },
+    {
+      "id": "solutions",
+      "title_de": "Soluzioni",
+      "title_native": "Lösungen",
+      "items": [
+        {
+          "name_de": "Esercizio passato prossimo / imperfetto",
+          "name_native": "Übung Passato prossimo / Imperfetto",
+          "action_de": "Ogni giorno, scrivi 3 frasi al passato prossimo (azione unica) e 3 all'imperfetto (descrizione/abitudine).",
+          "action_native": "Jeden Tag 3 Sätze im Passato prossimo (einmalige Handlung) und 3 im Imperfetto (Beschreibung/Gewohnheit) schreiben.",
+          "result_de": "Distinzione automatica in 2-3 settimane.",
+          "result_native": "Automatische Unterscheidung in 2-3 Wochen."
+        },
+        {
+          "name_de": "Preposizioni articolate",
+          "name_native": "Verschmolzene Präpositionen",
+          "action_de": "Memorizza le combinazioni: a+il=al, di+il=del, da+il=dal, in+il=nel, su+il=sul.",
+          "action_native": "Lerne die Kombinationen auswendig: a+il=al, di+il=del, da+il=dal, in+il=nel, su+il=sul.",
+          "result_de": "Fusioni corrette in 1 settimana.",
+          "result_native": "Korrekte Verschmelzungen in 1 Woche."
+        },
+        {
+          "name_de": "Verbi con essere",
+          "name_native": "Verben mit essere",
+          "action_de": "Impara i 15 verbi piu comuni con essere: andare, venire, partire, arrivare, nascere, morire...",
+          "action_native": "Lerne die 15 häufigsten Verben mit essere: andare, venire, partire, arrivare, nascere, morire...",
+          "result_de": "Ausiliare corretto automatico in 2 settimane.",
+          "result_native": "Automatisch korrektes Hilfsverb in 2 Wochen."
+        },
+        {
+          "name_de": "Congiuntivo dopo espressioni chiave",
+          "name_native": "Konjunktiv nach Schlüsselausdrücken",
+          "action_de": "Lista: penso che, credo che, spero che, e importante che, dubito che → sempre + congiuntivo.",
+          "action_native": "Liste: penso che, credo che, spero che, e importante che, dubito che → immer + Konjunktiv.",
+          "result_de": "Congiuntivo corretto in 3 settimane.",
+          "result_native": "Korrekter Konjunktiv in 3 Wochen."
+        },
+        {
+          "name_de": "Doppia negazione",
+          "name_native": "Doppelte Verneinung",
+          "action_de": "Regola: non + verbo + niente/nessuno/mai. 3 frasi negative al giorno.",
+          "action_native": "Regel: non + Verb + niente/nessuno/mai. 3 verneinte Sätze pro Tag.",
+          "result_de": "Doppia negazione automatica in 1 settimana.",
+          "result_native": "Automatische doppelte Verneinung in 1 Woche."
+        }
+      ]
+    },
+    {
+      "id": "sentence_engine",
+      "name_de": "Il motore dei tempi",
+      "name_native": "Der Zeiten-Motor",
+      "explanation_de": "Ogni giorno, forma 5 coppie di frasi: stessa situazione, una volta al passato prossimo (azione unica) e una volta all'imperfetto (descrizione). Pronuncia ad alta voce.",
+      "explanation_native": "Jeden Tag 5 Satzpaare bilden: gleiche Situation, einmal im Passato prossimo (einmalige Handlung) und einmal im Imperfetto (Beschreibung). Laut aussprechen.",
+      "patterns": [
+        {
+          "de": "Passato prossimo: Ieri ho mangiato una pizza. (azione unica)",
+          "native": "Passato prossimo: Ieri ho mangiato una pizza. (einmalige Handlung)"
+        },
+        {
+          "de": "Imperfetto: Da bambino mangiavo spesso la pizza. (abitudine)",
+          "native": "Imperfetto: Da bambino mangiavo spesso la pizza. (Gewohnheit)"
+        },
+        {
+          "de": "Combinato: Pioveva (imperfetto) quando sono uscito (passato prossimo).",
+          "native": "Kombiniert: Pioveva (Imperfetto) quando sono uscito (Passato prossimo)."
+        }
+      ],
+      "daily_instruction_de": "5 coppie al giorno, pronunciate ad alta voce.",
+      "daily_instruction_native": "5 Paare pro Tag, laut ausgesprochen."
+    },
+    {
+      "id": "activation",
+      "title_de": "Attivazione",
+      "title_native": "Aktivierung",
+      "sentences": [
+        {
+          "de": "Quando ero giovane, abitavo a Roma.",
+          "native": "Als ich jung war, lebte ich in Rom."
+        },
+        {
+          "de": "Ieri sono andato al mercato e ho comprato del pane.",
+          "native": "Gestern bin ich zum Markt gegangen und habe Brot gekauft."
+        },
+        {
+          "de": "Faceva bello quando siamo arrivati al mare.",
+          "native": "Es war schönes Wetter, als wir am Meer ankamen."
+        },
+        {
+          "de": "Penso che sia una buona idea.",
+          "native": "Ich denke, dass es eine gute Idee ist."
+        },
+        {
+          "de": "Non ho visto nessuno al parco stamattina.",
+          "native": "Ich habe heute Morgen niemanden im Park gesehen."
+        },
+        {
+          "de": "Vado al cinema con i miei amici.",
+          "native": "Ich gehe mit meinen Freunden ins Kino."
+        }
+      ]
+    },
+    {
+      "id": "homework_a",
+      "title_de": "Compiti A — Struttura",
+      "title_native": "Hausaufgaben A — Struktur",
+      "sentences": [
+        {
+          "de": "Ieri sono andato al supermercato.",
+          "native": "Gestern bin ich zum Supermarkt gegangen."
+        },
+        {
+          "de": "Quando ero bambino, giocavo nel giardino.",
+          "native": "Als ich Kind war, spielte ich im Garten."
+        },
+        {
+          "de": "Pioveva quando lei e uscita di casa.",
+          "native": "Es regnete, als sie das Haus verließ."
+        },
+        {
+          "de": "Ho comprato del latte e della farina.",
+          "native": "Ich habe Milch und Mehl gekauft."
+        },
+        {
+          "de": "Credo che lui venga domani.",
+          "native": "Ich glaube, dass er morgen kommt."
+        },
+        {
+          "de": "Non ho mai visto niente del genere.",
+          "native": "Ich habe nie etwas Derartiges gesehen."
+        }
+      ]
+    },
+    {
+      "id": "homework_b",
+      "title_de": "Compiti B — Precisione",
+      "title_native": "Hausaufgaben B — Präzision",
+      "items": [
+        {
+          "wrong_de": "Sbagliato: Quando sono stato piccolo, ho giocato.",
+          "wrong_native": "Falsch: Quando sono stato piccolo, ho giocato.",
+          "right_de": "Corretto: Quando ero piccolo, giocavo.",
+          "right_native": "Richtig: Quando ero piccolo, giocavo."
+        },
+        {
+          "wrong_de": "Sbagliato: Vado a il parco.",
+          "wrong_native": "Falsch: Vado a il parco.",
+          "right_de": "Corretto: Vado al parco.",
+          "right_native": "Richtig: Vado al parco."
+        },
+        {
+          "wrong_de": "Sbagliato: Ho andato a casa.",
+          "wrong_native": "Falsch: Ho andato a casa.",
+          "right_de": "Corretto: Sono andato a casa.",
+          "right_native": "Richtig: Sono andato a casa."
+        },
+        {
+          "wrong_de": "Sbagliato: Penso che e giusto.",
+          "wrong_native": "Falsch: Penso che e giusto.",
+          "right_de": "Corretto: Penso che sia giusto.",
+          "right_native": "Richtig: Penso che sia giusto."
+        },
+        {
+          "wrong_de": "Sbagliato: Non ho visto qualcosa.",
+          "wrong_native": "Falsch: Non ho visto qualcosa.",
+          "right_de": "Corretto: Non ho visto niente.",
+          "right_native": "Richtig: Non ho visto niente."
+        }
+      ]
+    },
+    {
+      "id": "homework_c",
+      "title_de": "Compiti C — Fluenza orale",
+      "title_native": "Hausaufgaben C — Sprechfluss",
+      "sentences": [
+        {
+          "de": "Stamattina mi sono alzato presto e ho fatto colazione.",
+          "native": "Heute Morgen bin ich früh aufgestanden und habe gefrühstückt."
+        },
+        {
+          "de": "Poi sono uscito perche faceva bel tempo.",
+          "native": "Dann bin ich rausgegangen, weil schönes Wetter war."
+        },
+        {
+          "de": "Ho camminato nel parco per un'ora.",
+          "native": "Ich bin eine Stunde im Park spazieren gegangen."
+        },
+        {
+          "de": "Quando ero nel parco, ho incontrato un vecchio amico.",
+          "native": "Als ich im Park war, habe ich einen alten Freund getroffen."
+        },
+        {
+          "de": "Abbiamo preso del caffe insieme in un piccolo bar.",
+          "native": "Wir haben zusammen Kaffee in einer kleinen Bar getrunken."
+        },
+        {
+          "de": "Mi ha raccontato che lavorava adesso in Germania.",
+          "native": "Er hat mir erzählt, dass er jetzt in Deutschland arbeitet."
+        },
+        {
+          "de": "Dopo il nostro incontro, sono tornato a casa.",
+          "native": "Nach unserem Treffen bin ich nach Hause gegangen."
+        },
+        {
+          "de": "La sera, ho cucinato la pasta per la mia famiglia.",
+          "native": "Am Abend habe ich Pasta für meine Familie gekocht."
+        }
+      ]
+    },
+    {
+      "id": "weekly_plan",
+      "title_de": "Piano settimanale",
+      "title_native": "Wochenplan",
+      "weeks": [
+        {
+          "label_de": "Settimana 1-2",
+          "label_native": "Woche 1-2",
+          "focus_de": "Passato prossimo vs. imperfetto",
+          "focus_native": "Passato prossimo vs. Imperfetto",
+          "goal_de": "Scelta automatica del tempo corretto",
+          "goal_native": "Automatische Wahl der korrekten Zeitform",
+          "daily_de": "5 coppie di frasi al giorno",
+          "daily_native": "5 Satzpaare pro Tag"
+        },
+        {
+          "label_de": "Settimana 3-4",
+          "label_native": "Woche 3-4",
+          "focus_de": "Preposizioni articolate + essere/avere",
+          "focus_native": "Verschmolzene Präpositionen + essere/avere",
+          "goal_de": "Fusioni corrette + ausiliare automatico",
+          "goal_native": "Korrekte Verschmelzungen + automatisches Hilfsverb",
+          "daily_de": "3 frasi con preposizioni + 3 con essere",
+          "daily_native": "3 Sätze mit Präpositionen + 3 mit essere"
+        },
+        {
+          "label_de": "Settimana 5-6",
+          "label_native": "Woche 5-6",
+          "focus_de": "Congiuntivo + doppia negazione",
+          "focus_native": "Konjunktiv + doppelte Verneinung",
+          "goal_de": "Congiuntivo dopo espressioni chiave + doppia negazione",
+          "goal_native": "Konjunktiv nach Schlüsselausdrücken + doppelte Verneinung",
+          "daily_de": "3 frasi congiuntivo + 3 negative",
+          "daily_native": "3 Konjunktiv-Sätze + 3 verneinte Sätze"
+        },
+        {
+          "label_de": "Settimana 7-8",
+          "label_native": "Woche 7-8",
+          "focus_de": "Parlare libero sotto pressione",
+          "focus_native": "Freies Sprechen unter Druck",
+          "goal_de": "Precisione mantenuta in conversazione spontanea",
+          "goal_native": "Genauigkeit beibehalten im spontanen Gespräch",
+          "daily_de": "Monologo di 2 minuti con focus consapevole",
+          "daily_native": "2-Minuten-Monolog mit bewusstem Fokus"
+        }
+      ]
+    },
+    {
+      "id": "mini_block",
+      "title_de": "Mini-blocco",
+      "title_native": "Mini-Block",
+      "goal_de": "Stabilizzare la scelta dei tempi sotto pressione",
+      "goal_native": "Zeitenwahl unter Sprechdruck stabilisieren",
+      "step1_de": "Ogni giorno 5 coppie di frasi ad alta voce — consciamente lento, tempo enfatizzato.",
+      "step1_native": "Jeden Tag 5 Satzpaare laut aussprechen — bewusst langsam, Zeitform betont.",
+      "step2_de": "Un monologo di 2 minuti sulla tua giornata di ieri. Alternare passato prossimo e imperfetto. Registrare. Ascoltare. Ripetere.",
+      "step2_native": "Ein 2-Minuten-Monolog über deinen gestrigen Tag. Passato prossimo und Imperfetto abwechseln. Aufnehmen. Anhören. Wiederholen."
+    }
+  ],
+  "cefr_footer": {
+    "active_de": "Produzione orale attiva: B1.1",
+    "active_native": "Aktive gesprochene Produktion: B1.1",
+    "passive_de": "Competenza passiva (stima tetto comprensione): B1.2",
+    "passive_native": "Passive Kompetenz (geschätzte Verstehensobergrenze): B1.2",
+    "confidence_de": "Fiducia: 74%",
+    "confidence_native": "Konfidenz: 74%",
+    "summary_de": "Sei nella fascia B1. La tua base e solida ma i tempi passati e le preposizioni articolate restano instabili. Con allenamento mirato, B2 e realistico in 4-5 mesi.",
+    "summary_native": "Du befindest dich im B1-Bereich. Dein Fundament ist solide, aber Vergangenheitszeiten und verschmolzene Präpositionen bleiben instabil. Mit gezieltem Training ist B2 in 4-5 Monaten realistisch.",
+    "stability_de": "Stabilita strutturale sotto pressione: media",
+    "stability_native": "Strukturstabilität unter Druck: mittel",
+    "self_correction_de": "Capacita di autocorrezione: media",
+    "self_correction_native": "Selbstkorrektur-Fähigkeit: mittel",
+    "reassessment_de": "Rivalutazione raccomandata: 3 mesi",
+    "reassessment_native": "Empfohlenes Re-Assessment: 3 Monate"
+  },
+  "block_d": {
+    "title_native": "Zusammenfassung in deiner Sprache",
+    "cefr_summary_native": "Dein aktiv gesprochenes Italienisch ist auf Niveau B1.1. Das bedeutet, du kannst in Alltagssituationen kommunizieren, aber die Vergangenheitszeiten und verschmolzene Präpositionen brechen unter Druck zusammen. Dein passives Verständnis ist höher bei B1.2.",
+    "top_problems_native": [
+      "Passato prossimo statt Imperfetto für Beschreibungen und Gewohnheiten",
+      "Fehlende Verschmelzung von Präposition + Artikel (a il statt al)",
+      "Hilfsverb avere statt essere bei Bewegungsverben",
+      "Konjunktiv vermieden nach Ausdrücken die ihn erfordern",
+      "Fehlende doppelte Verneinung"
+    ],
+    "key_recommendation_native": "Übe den Zeiten-Motor täglich: bilde 5 Satzpaare mit derselben Situation — einmal im Passato prossimo und einmal im Imperfetto. Diese eine Übung korrigiert deine größte strukturelle Schwäche.",
+    "next_steps_native": "Konzentriere dich in den nächsten 2 Wochen auf Passato prossimo vs. Imperfetto, dann gehe zu verschmolzenen Präpositionen und Hilfsverben über. Buche ein Re-Assessment in 3 Monaten."
+  }
+}
