@@ -14,7 +14,7 @@ If output path is omitted, generates: LingoGrade_Report_<student>_<date>.docx
 import json
 import sys
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # Import comprehensive translations
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -148,6 +148,83 @@ def get_native_label(term_de, lang_code):
     return native
 
 
+def calc_reassessment_date(assessment_date_str, reassessment_period):
+    """Calculate the next re-assessment date on the nearest Tue/Thu/Sat.
+    
+    Args:
+        assessment_date_str: 'YYYY-MM-DD' format
+        reassessment_period: German string like '3 Monate', '6 Wochen', etc.
+    
+    Returns:
+        (date_obj, formatted_str, cal_com_url) or (None, None, None) if can't calculate
+    """
+    period_map = {
+        "3 Monate": timedelta(weeks=13),
+        "6 Monate": timedelta(weeks=26),
+        "6 Wochen": timedelta(weeks=6),
+        "8 Wochen": timedelta(weeks=8),
+        "12 Wochen": timedelta(weeks=12),
+    }
+    delta = period_map.get(reassessment_period)
+    if not delta:
+        return None, None, None
+    
+    try:
+        assess_date = datetime.strptime(assessment_date_str, "%Y-%m-%d").date()
+    except (ValueError, TypeError):
+        return None, None, None
+    
+    target = assess_date + delta
+    # Assessment days: Tue=1, Thu=3, Sat=5 (Monday=0)
+    assessment_days = [1, 3, 5]  # Tue, Thu, Sat
+    
+    # Find nearest assessment day on or after target
+    for offset in range(7):
+        candidate = target + timedelta(days=offset)
+        if candidate.weekday() in assessment_days:
+            # Format: "Tuesday, June 23, 2026"
+            day_names = {1: "Tuesday", 3: "Thursday", 5: "Saturday"}
+            formatted = candidate.strftime(f"{day_names[candidate.weekday()]}, %B %d, %Y")
+            # Cal.com URL with date parameter
+            cal_url = f"https://cal.com/marko.check/full-assessment?date={candidate.isoformat()}"
+            return candidate, formatted, cal_url
+    
+    return None, None, None
+
+
+def add_hyperlink(paragraph, url, text, color=None, bold=False, size=None):
+    """Add a clickable hyperlink to a paragraph in python-docx."""
+    from docx.opc.constants import RELATIONSHIP_TYPE as RT
+    
+    part = paragraph.part
+    r_id = part.relate_to(url, RT.HYPERLINK, is_external=True)
+    
+    hyperlink = parse_xml(
+        f'<w:hyperlink {nsdecls("w")} r:id="{r_id}" {nsdecls("r")}>'
+        f'</w:hyperlink>'
+    )
+    
+    new_run = parse_xml(
+        f'<w:r {nsdecls("w")}>'
+        f'<w:rPr>'
+        f'<w:rStyle w:val="Hyperlink"/>'
+        f'<w:color w:val="{str(color) if color else "2563AB"}"/>'
+        f'<w:u w:val="single"/>'
+        f'{"<w:b/>" if bold else ""}'
+        f'</w:rPr>'
+        f'<w:t xml:space="preserve">{text}</w:t>'
+        f'</w:r>'
+    )
+    
+    if size:
+        sz = parse_xml(f'<w:sz {nsdecls("w")} w:val="{int(size * 2)}"/>')
+        new_run.find(qn('w:rPr')).append(sz)
+    
+    hyperlink.append(new_run)
+    paragraph._p.append(hyperlink)
+    return hyperlink
+
+
 def set_cell_shading(cell, color):
     shading = parse_xml(f'<w:shd {nsdecls("w")} w:val="clear" w:color="auto" w:fill="{color}"/>')
     cell._tc.get_or_add_tcPr().append(shading)
@@ -226,6 +303,10 @@ def create_report(data, output_path=None):
     assessed_lang = meta.get("assessed_language", "Deutsch")
     assessed_code = LANG_CODES.get(assessed_lang, "de")
     assessed_en, _ = translate_term(assessed_lang, "en")
+
+    # Calculate re-assessment date and booking link
+    reassess_period = meta.get("recommended_reassessment", "")
+    reassess_date_obj, reassess_date_str, reassess_cal_url = calc_reassessment_date(date, reassess_period)
 
     if not output_path:
         safe_name = student.replace(" ", "_").replace(".", "")
@@ -1113,6 +1194,41 @@ def create_report(data, output_path=None):
             ]:
                 if cefr.get(key_de):
                     add_side_by_side(cefr[key_de], cefr[key_native], size=9, bg=LIGHT_BG)
+
+            # Re-assessment date with booking link
+            if reassess_date_str and reassess_cal_url:
+                reassess_booking_labels = {
+                    "de": "Nächster Termin buchen",
+                    "en": "Book your next session",
+                    "fr": "Réserver votre prochaine séance",
+                    "es": "Reservar tu próxima sesión",
+                    "it": "Prenota la tua prossima sessione",
+                    "pt": "Agendar a sua próxima sessão",
+                    "ru": "Забронировать следующую сессию",
+                    "sr": "Закажите следећу сесију",
+                    "hr": "Rezervirajte sljedeću sesiju",
+                    "ro": "Rezerva urmatoarea sesiune",
+                    "pl": "Zarezerwuj następną sesję",
+                    "bg": "Запазете следващата сесия",
+                }
+                assessed_lbl = reassess_booking_labels.get(assessed_code, reassess_booking_labels["en"])
+                native_lbl = reassess_booking_labels.get(lang_code, reassess_booking_labels["en"])
+
+                p = doc.add_paragraph()
+                p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                p.paragraph_format.space_before = Pt(8)
+                p.paragraph_format.space_after = Pt(4)
+
+                if assessed_code == lang_code:
+                    run = p.add_run(f"{assessed_lbl}: {reassess_date_str}  ")
+                else:
+                    run = p.add_run(f"{assessed_lbl} / {native_lbl}: {reassess_date_str}  ")
+                run.font.name = 'Arial'
+                run.font.size = Pt(9)
+                run.font.color.rgb = ACCENT
+                run.font.bold = True
+
+                add_hyperlink(p, reassess_cal_url, "→ Book Now", color=ACCENT, bold=True, size=9)
         add_spacer()
 
     # ══════════════════════════════════════
@@ -1202,6 +1318,85 @@ def create_report(data, output_path=None):
             run.font.name = 'Arial'
             run.font.size = Pt(10)
             run.font.color.rgb = INK
+
+        # Re-assessment booking CTA in Block D
+        if reassess_date_str and reassess_cal_url:
+            reassess_cta_labels = {
+                "de": "Dein nächstes Assessment",
+                "en": "Your Next Assessment",
+                "fr": "Votre prochaine évaluation",
+                "es": "Tu próxima evaluación",
+                "it": "La tua prossima valutazione",
+                "pt": "A sua próxima avaliação",
+                "ru": "Ваша следующая оценка",
+                "sr": "Ваша следећа процена",
+                "hr": "Vaša sljedeća procjena",
+                "ro": "Următoarea dvs. evaluare",
+                "pl": "Twoja następna ocena",
+                "bg": "Следващата ви оценка",
+                "ar": "تقييمك القادم",
+            }
+            reassess_price_labels = {
+                "de": "Re-Assessment zum Sonderpreis",
+                "en": "Re-Assessment at special rate",
+                "fr": "Réévaluation au tarif spécial",
+                "es": "Reevaluación a tarifa especial",
+                "it": "Rivalutazione a tariffa speciale",
+                "pt": "Reavaliação a tarifa especial",
+                "ru": "Повторная оценка по специальной цене",
+                "sr": "Поновна процена по специјалној цени",
+                "hr": "Ponovna procjena po posebnoj cijeni",
+                "ro": "Reevaluare la tarif special",
+                "pl": "Ponowna ocena w specjalnej cenie",
+                "bg": "Преоценка на специална цена",
+                "ar": "إعادة تقييم بسعر خاص",
+            }
+            cta_lbl = reassess_cta_labels.get(lang_code, reassess_cta_labels["en"])
+            price_lbl = reassess_price_labels.get(lang_code, reassess_price_labels["en"])
+
+            doc.add_paragraph("")
+            # Booking box
+            book_tbl = doc.add_table(rows=1, cols=1)
+            book_tbl.alignment = WD_TABLE_ALIGNMENT.CENTER
+            bc = book_tbl.cell(0, 0)
+            set_cell_shading(bc, "EFF6FF")
+            set_cell_margins(bc, top=140, bottom=140, left=200, right=200)
+            # Set border
+            from docx.oxml.ns import qn as _qn
+            tc_pr = bc._tc.get_or_add_tcPr()
+            borders = parse_xml(
+                f'<w:tcBorders {nsdecls("w")}>'
+                f'<w:top w:val="single" w:sz="8" w:space="0" w:color="2563AB"/>'
+                f'<w:left w:val="single" w:sz="8" w:space="0" w:color="2563AB"/>'
+                f'<w:bottom w:val="single" w:sz="8" w:space="0" w:color="2563AB"/>'
+                f'<w:right w:val="single" w:sz="8" w:space="0" w:color="2563AB"/>'
+                f'</w:tcBorders>'
+            )
+            tc_pr.append(borders)
+
+            bp = bc.paragraphs[0]
+            bp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            run = bp.add_run(cta_lbl)
+            run.font.name = 'Arial'; run.font.size = Pt(12); run.font.color.rgb = ACCENT; run.font.bold = True
+
+            bp2 = bc.add_paragraph()
+            bp2.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            bp2.paragraph_format.space_before = Pt(6)
+            run = bp2.add_run(reassess_date_str)
+            run.font.name = 'Arial'; run.font.size = Pt(11); run.font.color.rgb = INK; run.font.bold = True
+
+            bp3 = bc.add_paragraph()
+            bp3.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            bp3.paragraph_format.space_before = Pt(4)
+            run = bp3.add_run(f"{price_lbl}: ")
+            run.font.name = 'Arial'; run.font.size = Pt(9); run.font.color.rgb = INK_SOFT
+            run2 = bp3.add_run("€69")
+            run2.font.name = 'Arial'; run2.font.size = Pt(11); run2.font.color.rgb = SUCCESS; run2.font.bold = True
+
+            bp4 = bc.add_paragraph()
+            bp4.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            bp4.paragraph_format.space_before = Pt(8)
+            add_hyperlink(bp4, reassess_cal_url, "→ Book Re-Assessment", color=ACCENT, bold=True, size=10)
 
         # ── Professional closing — Chris Voss: create forward commitment ──
         doc.add_paragraph("")
