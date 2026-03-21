@@ -278,7 +278,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <h2 class="section-title">Ready to see where your team really stands?</h2>
     <p class="section-desc" style="margin:0 auto 32px;">Tell us about your team and we'll send you a detailed quote within 24 hours.</p>
     <div style="background:var(--cream);border-radius:16px;padding:32px;border:1.5px solid var(--border);text-align:left;">
-      <form action="https://formspree.io/f/meerddar" method="POST" style="display:flex;flex-direction:column;gap:16px;">
+      <form id="corpForm" style="display:flex;flex-direction:column;gap:16px;" onsubmit="return submitCorpForm(event)">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
           <div>
             <label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:4px;">Company Name *</label>
@@ -362,8 +362,13 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:4px;">Anything else we should know?</label>
           <textarea name="message" rows="3" placeholder="Purpose of assessment, special requirements, questions..." style="width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9375rem;font-family:var(--font-body);outline:none;resize:vertical;transition:border 0.15s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'"></textarea>
         </div>
-        <button type="submit" style="padding:14px 32px;background:var(--gold);color:white;border:none;border-radius:10px;font-size:1rem;font-weight:600;font-family:var(--font-body);cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='#E5AB42'" onmouseout="this.style.background='#D4952A'">Request a Quote</button>
+        <button type="submit" id="corpBtn" style="padding:14px 32px;background:var(--gold);color:white;border:none;border-radius:10px;font-size:1rem;font-weight:600;font-family:var(--font-body);cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='#E5AB42'" onmouseout="this.style.background='#D4952A'">Request a Quote</button>
       </form>
+      <div id="corpSuccess" style="display:none;text-align:center;padding:32px 16px;">
+        <div style="font-size:2rem;margin-bottom:12px;color:var(--gold);">&#10003;</div>
+        <h3 style="font-family:var(--font-display);font-size:1.4rem;color:var(--ink);margin-bottom:8px;">Quote request received!</h3>
+        <p style="font-size:0.9375rem;color:var(--ink-soft);line-height:1.6;">We will send you a detailed quote within 24 hours. Check your inbox.</p>
+      </div>
     </div>
     <p style="font-size:0.8rem;color:var(--ink-light);margin-top:16px;">Or email us directly at <a href="mailto:corporate@lingograde.com" style="color:var(--gold);text-decoration:none;font-weight:600;">corporate@lingograde.com</a></p>
   </div>
@@ -423,6 +428,30 @@ function updatePricing() {
   document.getElementById('quotedTotal').value = total;
   document.getElementById('quotedReTotal').value = reTotal;
   document.getElementById('quotedGrand').value = grand;
+}
+
+function submitCorpForm(e) {
+  e.preventDefault();
+  var form = document.getElementById('corpForm');
+  var btn = document.getElementById('corpBtn');
+  var data = new FormData(form);
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  fetch('https://formspree.io/f/meerddar', {
+    method: 'POST', body: data, headers: {'Accept': 'application/json'}
+  }).then(function(r) {
+    if (r.ok) {
+      form.style.display = 'none';
+      document.getElementById('corpSuccess').style.display = 'block';
+    } else {
+      btn.textContent = 'Something went wrong. Try again.';
+      btn.disabled = false;
+    }
+  }).catch(function() {
+    btn.textContent = 'Something went wrong. Try again.';
+    btn.disabled = false;
+  });
+  return false;
 }
 </script>
 </body>

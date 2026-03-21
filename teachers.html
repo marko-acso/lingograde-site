@@ -743,7 +743,7 @@
         <h2 class="fade-up">Would it be wrong to find out <br>what this could do for your teaching?</h2>
         <p class="fade-up stagger-1">No fee. No commitment. No minimum referrals. Just a professional tool that makes you better at what you do — and pays you for sharing it.</p>
         <div class="fade-up stagger-2" style="background:var(--warm-white);border-radius:16px;padding:32px;border:1.5px solid var(--parchment-deep);max-width:560px;margin:32px auto 0;text-align:left;">
-            <form action="https://formspree.io/f/xeerwqjb" method="POST" style="display:flex;flex-direction:column;gap:14px;">
+            <form id="partnerForm" style="display:flex;flex-direction:column;gap:14px;" onsubmit="return submitPartnerForm(event)">
                 <div>
                     <label style="font-size:0.8rem;font-weight:600;color:var(--ink-muted);display:block;margin-bottom:4px;">Your Name *</label>
                     <input type="text" name="name" required style="width:100%;padding:10px 14px;border:1.5px solid var(--parchment-deep);border-radius:8px;font-size:0.9375rem;font-family:var(--sans);background:white;outline:none;transition:border 0.15s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--parchment-deep)'">
@@ -770,8 +770,13 @@
                     <label style="font-size:0.8rem;font-weight:600;color:var(--ink-muted);display:block;margin-bottom:4px;">Anything else?</label>
                     <textarea name="message" rows="2" placeholder="Questions, ideas, how you heard about LingoGrade..." style="width:100%;padding:10px 14px;border:1.5px solid var(--parchment-deep);border-radius:8px;font-size:0.9375rem;font-family:var(--sans);background:white;outline:none;resize:vertical;transition:border 0.15s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--parchment-deep)'"></textarea>
                 </div>
-                <button type="submit" style="padding:14px 32px;background:var(--ink);color:var(--parchment);border:none;border-radius:10px;font-size:1rem;font-weight:600;font-family:var(--sans);cursor:pointer;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 4px 16px rgba(15,25,35,0.15)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">Apply to Become a Partner</button>
+                <button type="submit" id="partnerBtn" style="padding:14px 32px;background:var(--ink);color:var(--parchment);border:none;border-radius:10px;font-size:1rem;font-weight:600;font-family:var(--sans);cursor:pointer;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 4px 16px rgba(15,25,35,0.15)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">Apply to Become a Partner</button>
             </form>
+            <div id="partnerSuccess" style="display:none;text-align:center;padding:32px 16px;">
+                <div style="font-size:2rem;margin-bottom:12px;">&#10003;</div>
+                <h3 style="font-family:var(--serif);font-size:1.4rem;color:var(--ink);margin-bottom:8px;">Application received!</h3>
+                <p style="font-size:0.9375rem;color:var(--ink-muted);line-height:1.6;">We will review your application and get back to you within 24 hours with your partner link and QR code.</p>
+            </div>
         </div>
         <p style="font-size:0.8rem;color:var(--ink-muted);margin-top:16px;">Or email us directly at <a href="mailto:partners@lingograde.com" style="color:var(--gold);text-decoration:none;font-weight:600;">partners@lingograde.com</a></p>
     </div>
@@ -849,6 +854,32 @@ document.querySelectorAll('.audit-q').forEach(q => {
         if (!wasOpen) item.classList.add('open');
     });
 });
+</script>
+
+<script>
+function submitPartnerForm(e) {
+  e.preventDefault();
+  var form = document.getElementById('partnerForm');
+  var btn = document.getElementById('partnerBtn');
+  var data = new FormData(form);
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  fetch('https://formspree.io/f/xeerwqjb', {
+    method: 'POST', body: data, headers: {'Accept': 'application/json'}
+  }).then(function(r) {
+    if (r.ok) {
+      form.style.display = 'none';
+      document.getElementById('partnerSuccess').style.display = 'block';
+    } else {
+      btn.textContent = 'Something went wrong. Try again.';
+      btn.disabled = false;
+    }
+  }).catch(function() {
+    btn.textContent = 'Something went wrong. Try again.';
+    btn.disabled = false;
+  });
+  return false;
+}
 </script>
 
 </body>
