@@ -186,7 +186,7 @@ def calc_reassessment_date(assessment_date_str, reassessment_period):
             day_names = {1: "Tuesday", 3: "Thursday", 5: "Saturday"}
             formatted = candidate.strftime(f"{day_names[candidate.weekday()]}, %B %d, %Y")
             # Cal.com URL with date parameter
-            cal_url = f"https://cal.com/marko.check/full-assessment?date={candidate.isoformat()}"
+            cal_url = f"https://cal.com/marko.check/re-assessment?date={candidate.isoformat()}"
             return candidate, formatted, cal_url
     
     return None, None, None
