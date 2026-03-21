@@ -4,356 +4,112 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Share Your Experience — LingoGrade</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --accent: #2563AB;
-  --accent-lt: #1D4ED8;
-  --ink: #1C1C1C;
-  --ink-soft: #5A5A5A;
-  --ink-light: #9CA3AF;
-  --cream: #FFFDF7;
-  --border: #E5E7EB;
-  --gold: #F59E0B;
-  --green: #10B981;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--cream); color: var(--ink); }
-
-/* Nav */
-.nav { background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; }
-.nav img { height: 40px; }
-.nav a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.875rem; }
-
-/* Hero */
-.hero { text-align: center; padding: 60px 20px 40px; }
-.hero h1 { font-size: clamp(1.5rem, 4vw, 2.2rem); color: var(--ink); margin-bottom: 12px; }
-.hero p { color: var(--ink-soft); font-size: 1.05rem; max-width: 520px; margin: 0 auto; line-height: 1.6; }
-
-/* Form */
-.form-container { max-width: 600px; margin: 0 auto 60px; padding: 0 20px; }
-.card { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid var(--border); margin-bottom: 24px; }
-.card h2 { font-size: 1.1rem; color: var(--ink); margin-bottom: 16px; }
-
-/* Stars */
-.stars { display: flex; gap: 8px; margin-bottom: 8px; }
-.star { width: 44px; height: 44px; cursor: pointer; transition: transform 0.15s; }
-.star:hover { transform: scale(1.15); }
-.star svg { width: 44px; height: 44px; }
-.star svg path { fill: #D1D5DB; transition: fill 0.15s; }
-.star.active svg path { fill: var(--gold); }
-.star-label { font-size: 0.85rem; color: var(--ink-light); min-height: 20px; margin-top: 4px; }
-
-/* Form elements */
-label { display: block; font-weight: 600; font-size: 0.9rem; color: var(--ink); margin-bottom: 8px; }
-.sublabel { font-weight: 400; color: var(--ink-light); font-size: 0.8rem; margin-bottom: 8px; display: block; }
-input[type="text"], input[type="email"], textarea, select {
-  width: 100%; padding: 12px 16px; border: 1.5px solid var(--border); border-radius: 10px;
-  font-size: 0.95rem; font-family: inherit; background: white; transition: border-color 0.15s;
-  color: var(--ink);
-}
-input:focus, textarea:focus, select:focus { outline: none; border-color: var(--accent); }
-textarea { resize: vertical; min-height: 100px; }
-.field { margin-bottom: 20px; }
-
-/* Radio/Checkbox group */
-.option-group { display: flex; flex-wrap: wrap; gap: 10px; }
-.option-group label { display: flex; align-items: center; gap: 8px; padding: 10px 18px; border: 1.5px solid var(--border); border-radius: 10px; cursor: pointer; font-weight: 500; font-size: 0.9rem; transition: all 0.15s; }
-.option-group label:hover { border-color: var(--accent); }
-.option-group input[type="radio"] { display: none; }
-.option-group input[type="radio"]:checked + label,
-.option-group label.selected { background: #EFF6FF; border-color: var(--accent); color: var(--accent); }
-
-/* Photo */
-.photo-upload { display: flex; align-items: center; gap: 16px; padding: 16px; border: 2px dashed var(--border); border-radius: 12px; cursor: pointer; transition: border-color 0.15s; }
-.photo-upload:hover { border-color: var(--accent); }
-.photo-icon { width: 48px; height: 48px; background: #F3F4F6; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.photo-icon svg { width: 24px; height: 24px; fill: var(--ink-light); }
-.photo-text { font-size: 0.9rem; color: var(--ink-soft); }
-.photo-text strong { color: var(--ink); }
-.photo-preview { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; display: none; }
-
-/* Consent */
-.consent { display: flex; align-items: flex-start; gap: 10px; margin: 20px 0; }
-.consent input[type="checkbox"] { margin-top: 3px; width: 18px; height: 18px; accent-color: var(--accent); }
-.consent span { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.5; }
-
-/* Submit */
-.submit-btn { width: 100%; padding: 16px; background: var(--accent); color: white; border: none; border-radius: 12px; font-size: 1.05rem; font-weight: 700; cursor: pointer; transition: background 0.15s; font-family: inherit; }
-.submit-btn:hover { background: var(--accent-lt); }
-.submit-btn:disabled { background: #9CA3AF; cursor: not-allowed; }
-
-/* Thank you */
-.thank-you { display: none; text-align: center; padding: 60px 20px; }
-.thank-you .check { width: 80px; height: 80px; background: #ECFDF5; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; }
-.thank-you .check svg { width: 40px; height: 40px; fill: var(--green); }
-.thank-you h2 { font-size: 1.5rem; margin-bottom: 12px; }
-.thank-you p { color: var(--ink-soft); font-size: 1rem; line-height: 1.6; max-width: 480px; margin: 0 auto; }
-.trustpilot-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; padding: 14px 28px; background: #00B67A; color: white; border-radius: 10px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: background 0.15s; }
-.trustpilot-btn:hover { background: #009F6B; }
-.trustpilot-btn svg { width: 20px; height: 20px; fill: white; }
-.skip { display: block; margin-top: 16px; color: var(--ink-light); font-size: 0.85rem; text-decoration: none; }
-
-/* Footer */
-.footer { text-align: center; padding: 32px 20px; color: var(--ink-light); font-size: 0.8rem; border-top: 1px solid var(--border); margin-top: 40px; }
-.footer a { color: var(--accent); text-decoration: none; }
-
-@media (max-width: 640px) {
-  .card { padding: 24px 20px; }
-  .option-group { flex-direction: column; }
-  .option-group label { justify-content: center; }
-}
+:root { --accent:#2563AB;--ink:#1C1C1C;--ink-soft:#4A4A4A;--ink-light:#8A8A8A;--cream:#FFFFFF;--parchment:#F8F8F8;--border:#E0E0E0;--gold:#F59E0B;--success:#27AE60; }
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',-apple-system,sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;}
+.nav{background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:8px 24px;display:flex;align-items:center;justify-content:space-between;}
+.nav img{height:48px;} .nav a{color:var(--accent);text-decoration:none;font-weight:600;font-size:0.875rem;}
+.quiz{max-width:520px;margin:0 auto;padding:40px 20px 60px;text-align:center;}
+.step{display:none;animation:fadeUp 0.3s ease;} .step.active{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+.step-count{font-size:0.75rem;font-weight:600;color:var(--ink-light);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:16px;}
+.step h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.6rem;line-height:1.3;margin-bottom:8px;}
+.step p{font-size:0.9375rem;color:var(--ink-soft);margin-bottom:24px;line-height:1.6;}
+.stars{display:flex;gap:12px;justify-content:center;margin:24px 0;}
+.star{font-size:2.5rem;cursor:pointer;transition:transform 0.15s;color:#D1D5DB;user-select:none;}
+.star:hover{transform:scale(1.2);} .star.active{color:var(--gold);}
+.star-label{font-size:0.9rem;color:var(--ink-soft);min-height:24px;margin-bottom:16px;}
+.options{display:flex;flex-direction:column;gap:10px;margin:16px 0;}
+.opt{padding:14px 20px;border:1.5px solid var(--border);border-radius:10px;background:white;cursor:pointer;font-size:0.9375rem;color:var(--ink);transition:all 0.15s;text-align:left;}
+.opt:hover{border-color:var(--accent);background:#F0F6FF;}
+.opt.selected{border-color:var(--accent);background:#EFF6FF;font-weight:600;}
+.input-row{display:flex;gap:12px;margin:12px 0;text-align:left;}
+.input-row>div{flex:1;}
+.input-row label{font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:4px;}
+.input-row input,.input-row select{width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9375rem;font-family:inherit;outline:none;}
+.input-row input:focus,.input-row select:focus{border-color:var(--accent);}
+textarea{width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9375rem;font-family:inherit;outline:none;resize:vertical;}
+textarea:focus{border-color:var(--accent);}
+.btn-next{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:var(--accent);color:white;border:none;border-radius:10px;font-size:0.9375rem;font-weight:600;cursor:pointer;transition:all 0.15s;margin-top:16px;}
+.btn-next:hover{background:#1D4ED8;transform:translateY(-1px);}
+.btn-next:disabled{opacity:0.4;cursor:not-allowed;transform:none;}
+.btn-skip{background:none;border:none;color:var(--ink-light);font-size:0.8rem;cursor:pointer;margin-top:12px;display:block;margin-left:auto;margin-right:auto;}
+.btn-skip:hover{color:var(--ink-soft);}
+.progress{display:flex;gap:6px;justify-content:center;margin-bottom:32px;}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--border);transition:background 0.2s;}
+.dot.done{background:var(--accent);} .dot.current{background:var(--accent);width:24px;border-radius:4px;}
+.thank-you{display:none;text-align:center;padding:60px 20px;max-width:520px;margin:0 auto;}
+.thank-you h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.8rem;margin:16px 0;}
+.thank-you p{font-size:1rem;color:var(--ink-soft);line-height:1.7;}
+.check-icon{width:64px;height:64px;background:var(--success);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto;}
+.check-icon svg{width:32px;height:32px;fill:white;}
 </style>
 </head>
 <body>
-
-<div class="nav">
-  <a href="/"><img src="/logo.png" alt="LingoGrade" onerror="this.style.display='none'"></a>
-  <a href="/">Back to LingoGrade</a>
+<div class="nav"><a href="/"><img src="logo.png" alt="LingoGrade"></a><a href="/">Back to LingoGrade</a></div>
+<div class="quiz" id="quizSection">
+<div class="progress" id="progress"><div class="dot current"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+<div class="step active" id="step1">
+<div class="step-count">Step 1 of 4</div>
+<h2>How was your LingoGrade experience?</h2>
+<p>Be honest. Your feedback shapes the product.</p>
+<div class="stars" id="stars"><span class="star" onclick="setRating(1)">&#9733;</span><span class="star" onclick="setRating(2)">&#9733;</span><span class="star" onclick="setRating(3)">&#9733;</span><span class="star" onclick="setRating(4)">&#9733;</span><span class="star" onclick="setRating(5)">&#9733;</span></div>
+<div class="star-label" id="starLabel"></div>
+<button class="btn-next" id="btn1" disabled onclick="goTo(2)">Continue</button>
 </div>
-
-<!-- Main Form -->
-<div id="formSection">
-<div class="hero">
-  <h1>Share Your LingoGrade Experience</h1>
-  <p>Your feedback helps other language learners find the right assessment. It takes less than 3 minutes.</p>
+<div class="step" id="step2">
+<div class="step-count">Step 2 of 4</div>
+<h2>What was most valuable to you?</h2>
+<p>Pick the one that hits closest.</p>
+<div class="options">
+<div class="opt" onclick="selectOpt(this,'valuable')">Finding out my real CEFR level</div>
+<div class="opt" onclick="selectOpt(this,'valuable')">Understanding my specific errors</div>
+<div class="opt" onclick="selectOpt(this,'valuable')">Getting a concrete plan to improve</div>
+<div class="opt" onclick="selectOpt(this,'valuable')">Having the report in my native language</div>
+<div class="opt" onclick="selectOpt(this,'valuable')">The conversation itself was eye-opening</div>
 </div>
-
-<div class="form-container">
-
-  <!-- Card 1: Rating -->
-  <div class="card">
-    <h2>How would you rate your LingoGrade assessment?</h2>
-    <div class="stars" id="starRating">
-      <div class="star" data-rating="1" onclick="setRating(1)"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-      <div class="star" data-rating="2" onclick="setRating(2)"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-      <div class="star" data-rating="3" onclick="setRating(3)"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-      <div class="star" data-rating="4" onclick="setRating(4)"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-      <div class="star" data-rating="5" onclick="setRating(5)"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-    </div>
-    <div class="star-label" id="starLabel"></div>
-  </div>
-
-  <!-- Card 2: About You -->
-  <div class="card">
-    <h2>About you</h2>
-    <div class="field">
-      <label for="name">Your first name</label>
-      <input type="text" id="name" placeholder="e.g. Alessandro">
-    </div>
-    <div class="field">
-      <label for="country">Country</label>
-      <input type="text" id="country" placeholder="e.g. Italy">
-    </div>
-    <div class="field">
-      <label for="language">Which language were you assessed in?</label>
-      <select id="language">
-        <option value="">Select...</option>
-        <option value="German">German</option>
-        <option value="English">English</option>
-        <option value="Italian">Italian</option>
-        <option value="French">French</option>
-        <option value="Spanish">Spanish</option>
-        <option value="Other">Other</option>
-      </select>
-    </div>
-  </div>
-
-  <!-- Card 3: Your Experience -->
-  <div class="card">
-    <h2>Your experience</h2>
-
-    <div class="field">
-      <label>What was your level before the assessment?</label>
-      <span class="sublabel">Your best guess is fine.</span>
-      <select id="levelBefore">
-        <option value="">Select...</option>
-        <option value="Complete beginner (A1)">Complete beginner (A1)</option>
-        <option value="Elementary (A2)">Elementary (A2)</option>
-        <option value="Intermediate (B1)">Intermediate (B1)</option>
-        <option value="Upper-intermediate (B2)">Upper-intermediate (B2)</option>
-        <option value="Advanced (C1)">Advanced (C1)</option>
-        <option value="I had no idea">I had no idea</option>
-      </select>
-    </div>
-
-    <div class="field">
-      <label for="whatChanged">What was the most valuable thing you learned from your report?</label>
-      <span class="sublabel">For example: a specific error you weren't aware of, a new way to practice, your real CEFR level...</span>
-      <textarea id="whatChanged" placeholder="The report showed me exactly where my sentence structure breaks down under pressure..."></textarea>
-    </div>
-
-    <div class="field">
-      <label for="surprise">Was there anything in the report that surprised you?</label>
-      <textarea id="surprise" placeholder="I didn't realise I was mixing up vermeiden and verweigern every time..."></textarea>
-    </div>
-
-    <div class="field">
-      <label>Has the assessment helped you improve your language skills?</label>
-      <div class="option-group" id="improvedGroup">
-        <label onclick="selectOption(this, 'improved')" class="">Yes, noticeably</label>
-        <label onclick="selectOption(this, 'improved')" class="">Yes, a little</label>
-        <label onclick="selectOption(this, 'improved')" class="">Too early to tell</label>
-        <label onclick="selectOption(this, 'improved')" class="">Not yet</label>
-      </div>
-    </div>
-
-    <div class="field">
-      <label>Would you recommend LingoGrade to a friend?</label>
-      <div class="option-group" id="recommendGroup">
-        <label onclick="selectOption(this, 'recommend')" class="">Absolutely</label>
-        <label onclick="selectOption(this, 'recommend')" class="">Yes, probably</label>
-        <label onclick="selectOption(this, 'recommend')" class="">Not sure</label>
-      </div>
-    </div>
-  </div>
-
-  <!-- Card 4: Photo + Open feedback -->
-  <div class="card">
-    <h2>Anything else? (optional)</h2>
-
-    <div class="field">
-      <label for="openFeedback">Is there anything else you'd like to share?</label>
-      <span class="sublabel">Your honest feedback helps us improve and helps other students decide.</span>
-      <textarea id="openFeedback" placeholder="Write anything you'd like future students to know..."></textarea>
-    </div>
-
-    <div class="field">
-      <label>Add your photo (optional)</label>
-      <span class="sublabel">A face makes your review more trustworthy. We'll only use it on lingograde.com.</span>
-      <div class="photo-upload" onclick="document.getElementById('photoInput').click()">
-        <img class="photo-preview" id="photoPreview" src="" alt="">
-        <div class="photo-icon" id="photoIcon">
-          <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-        </div>
-        <div class="photo-text"><strong>Upload a photo</strong><br>JPG or PNG, max 5MB</div>
-      </div>
-      <input type="file" id="photoInput" accept="image/*" style="display:none" onchange="previewPhoto(this)">
-    </div>
-
-    <div class="consent">
-      <input type="checkbox" id="consent">
-      <span>I agree that LingoGrade may use my first name, country, and review on their website and marketing materials. My email will never be shared.</span>
-    </div>
-
-    <button class="submit-btn" onclick="submitReview()">Submit My Review</button>
-  </div>
-
+<button class="btn-next" id="btn2" disabled onclick="goTo(3)">Continue</button>
+<button class="btn-skip" onclick="goTo(3)">Skip this</button>
+</div>
+<div class="step" id="step3">
+<div class="step-count">Step 3 of 4</div>
+<h2>Would you recommend LingoGrade?</h2>
+<p>To a friend, a colleague, a student.</p>
+<div class="options">
+<div class="opt" onclick="selectOpt(this,'recommend')">Absolutely. Already have.</div>
+<div class="opt" onclick="selectOpt(this,'recommend')">Yes, to the right person.</div>
+<div class="opt" onclick="selectOpt(this,'recommend')">Maybe. Need more time to see results.</div>
+<div class="opt" onclick="selectOpt(this,'recommend')">Not sure yet.</div>
+</div>
+<button class="btn-next" id="btn3" disabled onclick="goTo(4)">Continue</button>
+<button class="btn-skip" onclick="goTo(4)">Skip this</button>
+</div>
+<div class="step" id="step4">
+<div class="step-count">Step 4 of 4</div>
+<h2>Almost done. Who are you?</h2>
+<p>Just your first name and country. That is it.</p>
+<div class="input-row"><div><label>First Name *</label><input type="text" id="reviewName" placeholder="e.g. Chiara"></div><div><label>Country</label><input type="text" id="reviewCountry" placeholder="e.g. Italy"></div></div>
+<div class="input-row"><div><label>Language Assessed</label><select id="reviewLang"><option value="">Select...</option><option>German</option><option>English</option><option>French</option><option>Spanish</option><option>Italian</option><option>Portuguese</option><option>Russian</option><option>Serbian</option><option>Croatian</option><option>Romanian</option><option>Polish</option><option>Bulgarian</option></select></div></div>
+<div style="text-align:left;margin-top:12px;"><label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:4px;">Anything else? (optional)</label><textarea id="reviewFeedback" rows="2" placeholder="A sentence or two is perfect..."></textarea></div>
+<button class="btn-next" id="btnSubmit" onclick="submitReview()">Submit My Review</button>
 </div>
 </div>
-
-<!-- Thank You Section -->
 <div class="thank-you" id="thankYou">
-  <div class="check">
-    <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-  </div>
-  <h2>Thank you for your review!</h2>
-  <p>Your feedback means a lot. It helps other language learners find the right assessment — and it helps us keep improving.</p>
-
-  <p style="margin-top: 24px; color: var(--ink);">
-    <strong>One more thing?</strong><br>
-    If you have 30 seconds, leaving a review on Trustpilot helps us enormously.
-  </p>
-
-  <a href="https://www.trustpilot.com/review/lingograde.com" target="_blank" class="trustpilot-btn">
-    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-    Leave a Trustpilot Review
-  </a>
-
-  <a href="/" class="skip">Maybe later — back to LingoGrade</a>
+<div class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+<h2>Thank you!</h2>
+<p>Your review helps other language learners find the right assessment. We read every single one.</p>
+<p style="margin-top:24px;"><a href="/" style="color:var(--accent);font-weight:600;text-decoration:none;">Back to LingoGrade</a></p>
 </div>
-
-<div class="footer">
-  <p><a href="/">LingoGrade</a> — Professional Language Assessment</p>
-  <p style="margin-top: 8px;">&copy; 2026 LingoGrade. All rights reserved.</p>
-</div>
-
 <script>
-let rating = 0;
-let selectedOptions = { improved: '', recommend: '' };
-const starLabels = ['', 'Not good', 'Could be better', 'Good', 'Very good', 'Excellent!'];
-
-function setRating(n) {
-  rating = n;
-  document.querySelectorAll('.star').forEach((s, i) => {
-    s.classList.toggle('active', i < n);
-  });
-  document.getElementById('starLabel').textContent = starLabels[n];
-}
-
-function selectOption(el, group) {
-  el.parentElement.querySelectorAll('label').forEach(l => l.classList.remove('selected'));
-  el.classList.add('selected');
-  selectedOptions[group] = el.textContent.trim();
-}
-
-function previewPhoto(input) {
-  if (input.files && input.files[0]) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      const preview = document.getElementById('photoPreview');
-      preview.src = e.target.result;
-      preview.style.display = 'block';
-      document.getElementById('photoIcon').style.display = 'none';
-    };
-    reader.readAsDataURL(input.files[0]);
-  }
-}
-
-function submitReview() {
-  const name = document.getElementById('name').value.trim();
-  const country = document.getElementById('country').value.trim();
-  const language = document.getElementById('language').value;
-  const levelBefore = document.getElementById('levelBefore').value;
-  const whatChanged = document.getElementById('whatChanged').value.trim();
-  const surprise = document.getElementById('surprise').value.trim();
-  const openFeedback = document.getElementById('openFeedback').value.trim();
-  const consent = document.getElementById('consent').checked;
-
-  // Validation
-  if (!rating) { alert('Please select a star rating.'); return; }
-  if (!name) { alert('Please enter your first name.'); return; }
-  if (!consent) { alert('Please check the consent box to submit.'); return; }
-
-  // Build email body
-  const body = [
-    `LINGOGRADE REVIEW`,
-    `==================`,
-    ``,
-    `Rating: ${'★'.repeat(rating)}${'☆'.repeat(5 - rating)} (${rating}/5)`,
-    `Name: ${name}`,
-    `Country: ${country || 'Not provided'}`,
-    `Language: ${language || 'Not provided'}`,
-    `Level before: ${levelBefore || 'Not provided'}`,
-    ``,
-    `Most valuable thing from the report:`,
-    whatChanged || '(not answered)',
-    ``,
-    `Anything surprising:`,
-    surprise || '(not answered)',
-    ``,
-    `Has it helped improve: ${selectedOptions.improved || '(not answered)'}`,
-    `Would recommend: ${selectedOptions.recommend || '(not answered)'}`,
-    ``,
-    `Additional feedback:`,
-    openFeedback || '(none)',
-    ``,
-    `Photo attached: ${document.getElementById('photoInput').files.length > 0 ? 'Yes (see attachment)' : 'No'}`,
-    `Consent given: Yes`,
-  ].join('\n');
-
-  // Send via mailto
-  const subject = encodeURIComponent(`Review from ${name} (${country || 'N/A'}) — ${rating}/5 stars`);
-  const mailBody = encodeURIComponent(body);
-  window.location.href = `mailto:info@lingograde.com?subject=${subject}&body=${mailBody}`;
-
-  // Show thank you
-  setTimeout(() => {
-    document.getElementById('formSection').style.display = 'none';
-    document.getElementById('thankYou').style.display = 'block';
-    window.scrollTo(0, 0);
-  }, 500);
-}
+var data={rating:0,valuable:'',recommend:'',name:'',country:'',language:'',feedback:''};
+var starLabels=['','Not good','Could be better','Good','Very good','Excellent!'];
+function setRating(n){data.rating=n;document.querySelectorAll('.star').forEach(function(s,i){s.classList.toggle('active',i<n);});document.getElementById('starLabel').textContent=starLabels[n];document.getElementById('btn1').disabled=false;}
+function selectOpt(el,group){el.parentElement.querySelectorAll('.opt').forEach(function(o){o.classList.remove('selected');});el.classList.add('selected');data[group]=el.textContent.trim();var btnId=group==='valuable'?'btn2':'btn3';document.getElementById(btnId).disabled=false;}
+function goTo(step){document.querySelectorAll('.step').forEach(function(s){s.classList.remove('active');});document.getElementById('step'+step).classList.add('active');var dots=document.querySelectorAll('.dot');dots.forEach(function(d,i){d.className='dot';if(i<step-1)d.classList.add('done');if(i===step-1)d.classList.add('current');});}
+function submitReview(){var name=document.getElementById('reviewName').value.trim();if(!name){alert('Please enter your name.');return;}data.name=name;data.country=document.getElementById('reviewCountry').value.trim();data.language=document.getElementById('reviewLang').value;data.feedback=document.getElementById('reviewFeedback').value.trim();var btn=document.getElementById('btnSubmit');btn.textContent='Submitting...';btn.disabled=true;fetch('https://app.lingograde.com/api/submit-review',{method:'POST',body:JSON.stringify({name:data.name,country:data.country,language:data.language,rating:data.rating,most_valuable:data.valuable,recommend:data.recommend,feedback:data.feedback}),headers:{'Content-Type':'application/json'}}).then(function(r){if(r.ok){document.getElementById('quizSection').style.display='none';document.getElementById('thankYou').style.display='block';window.scrollTo(0,0);}else{btn.textContent='Something went wrong. Try again.';btn.disabled=false;}}).catch(function(){btn.textContent='Something went wrong. Try again.';btn.disabled=false;});}
 </script>
-
 </body>
 </html>
