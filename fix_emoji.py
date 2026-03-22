@@ -1,0 +1,6 @@
+﻿c = open('review.html','r',encoding='utf-8').read()
+c = c.replace('\U0001f64b\u200d\u2640\ufe0f', '\U0001f469\u200d\U0001f4bc')
+c = c.replace('\U0001f64b\u200d\u2642\ufe0f', '\U0001f468\u200d\U0001f4bc')
+c = c.replace('\U0001f642', '\U0001f60a')
+open('review.html','w',encoding='utf-8').write(c)
+print('Updated to Option A')
