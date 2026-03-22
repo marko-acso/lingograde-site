@@ -1,116 +1,43 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Share Your Experience â€” LingoGrade</title>
-<link rel="icon" type="image/png" href="logo.png">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root { --accent:#2563AB;--ink:#1C1C1C;--ink-soft:#4A4A4A;--ink-light:#8A8A8A;--cream:#FFFFFF;--parchment:#F8F8F8;--border:#E0E0E0;--gold:#F59E0B;--success:#27AE60; }
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'DM Sans',-apple-system,sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;}
-.nav{background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:8px 24px;display:flex;align-items:center;justify-content:space-between;}
-.nav img{height:48px;} .nav a{color:var(--accent);text-decoration:none;font-weight:600;font-size:0.875rem;}
-.quiz{max-width:520px;margin:0 auto;padding:40px 20px 60px;text-align:center;}
-.step{display:none;animation:fadeUp 0.3s ease;} .step.active{display:block;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
-.step-count{font-size:0.75rem;font-weight:600;color:var(--ink-light);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:16px;}
-.step h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.6rem;line-height:1.3;margin-bottom:8px;}
-.step p{font-size:0.9375rem;color:var(--ink-soft);margin-bottom:24px;line-height:1.6;}
-.stars{display:flex;gap:12px;justify-content:center;margin:24px 0;}
-.star{font-size:2.5rem;cursor:pointer;transition:transform 0.15s;color:#D1D5DB;user-select:none;}
-.star:hover{transform:scale(1.2);} .star.active{color:var(--gold);}
-.star-label{font-size:0.9rem;color:var(--ink-soft);min-height:24px;margin-bottom:16px;}
-.options{display:flex;flex-direction:column;gap:10px;margin:16px 0;}
-.opt{padding:14px 20px;border:1.5px solid var(--border);border-radius:10px;background:white;cursor:pointer;font-size:0.9375rem;color:var(--ink);transition:all 0.15s;text-align:left;}
-.opt:hover{border-color:var(--accent);background:#F0F6FF;}
-.opt.selected{border-color:var(--accent);background:#EFF6FF;font-weight:600;}
-.input-row{display:flex;gap:12px;margin:12px 0;text-align:left;}
-.input-row>div{flex:1;}
-.input-row label{font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:4px;}
-.input-row input,.input-row select{width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9375rem;font-family:inherit;outline:none;}
-.input-row input:focus,.input-row select:focus{border-color:var(--accent);}
-textarea{width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9375rem;font-family:inherit;outline:none;resize:vertical;}
-textarea:focus{border-color:var(--accent);}
-.btn-next{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:var(--accent);color:white;border:none;border-radius:10px;font-size:0.9375rem;font-weight:600;cursor:pointer;transition:all 0.15s;margin-top:16px;}
-.btn-next:hover{background:#1D4ED8;transform:translateY(-1px);}
-.btn-next:disabled{opacity:0.4;cursor:not-allowed;transform:none;}
-.btn-skip{background:none;border:none;color:var(--ink-light);font-size:0.8rem;cursor:pointer;margin-top:12px;display:block;margin-left:auto;margin-right:auto;}
-.btn-skip:hover{color:var(--ink-soft);}
-.progress{display:flex;gap:6px;justify-content:center;margin-bottom:32px;}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--border);transition:background 0.2s;}
-.dot.done{background:var(--accent);} .dot.current{background:var(--accent);width:24px;border-radius:4px;}
-.thank-you{display:none;text-align:center;padding:60px 20px;max-width:520px;margin:0 auto;}
-.thank-you h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.8rem;margin:16px 0;}
-.thank-you p{font-size:1rem;color:var(--ink-soft);line-height:1.7;}
-.check-icon{width:64px;height:64px;background:var(--success);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto;}
-.check-icon svg{width:32px;height:32px;fill:white;}
-</style>
-</head>
-<body>
-<div class="nav"><a href="/"><img src="logo.png" alt="LingoGrade"></a><a href="/">Back to LingoGrade</a></div>
-<div class="quiz" id="quizSection">
-<div class="progress" id="progress"><div class="dot current"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-<div class="step active" id="step1">
-<div class="step-count">Step 1 of 4</div>
-<h2>How was your LingoGrade experience?</h2>
-<p>Be honest. Your feedback shapes the product.</p>
-<div class="stars" id="stars"><span class="star" onclick="setRating(1)">&#9733;</span><span class="star" onclick="setRating(2)">&#9733;</span><span class="star" onclick="setRating(3)">&#9733;</span><span class="star" onclick="setRating(4)">&#9733;</span><span class="star" onclick="setRating(5)">&#9733;</span></div>
-<div class="star-label" id="starLabel"></div>
-<button class="btn-next" id="btn1" disabled onclick="goTo(2)">Continue</button>
-</div>
-<div class="step" id="step2">
-<div class="step-count">Step 2 of 4</div>
-<h2>What was most valuable to you?</h2>
-<p>Pick the one that hits closest.</p>
-<div class="options">
-<div class="opt" onclick="selectOpt(this,'valuable')">Finding out my real CEFR level</div>
-<div class="opt" onclick="selectOpt(this,'valuable')">Understanding my specific errors</div>
-<div class="opt" onclick="selectOpt(this,'valuable')">Getting a concrete plan to improve</div>
-<div class="opt" onclick="selectOpt(this,'valuable')">Having the report in my native language</div>
-<div class="opt" onclick="selectOpt(this,'valuable')">The conversation itself was eye-opening</div>
-</div>
-<button class="btn-next" id="btn2" disabled onclick="goTo(3)">Continue</button>
-<button class="btn-skip" onclick="goTo(3)">Skip this</button>
-</div>
-<div class="step" id="step3">
-<div class="step-count">Step 3 of 4</div>
-<h2>Would you recommend LingoGrade?</h2>
-<p>To a friend, a colleague, a student.</p>
-<div class="options">
-<div class="opt" onclick="selectOpt(this,'recommend')">Absolutely. Already have.</div>
-<div class="opt" onclick="selectOpt(this,'recommend')">Yes, to the right person.</div>
-<div class="opt" onclick="selectOpt(this,'recommend')">Maybe. Need more time to see results.</div>
-<div class="opt" onclick="selectOpt(this,'recommend')">Not sure yet.</div>
-</div>
-<button class="btn-next" id="btn3" disabled onclick="goTo(4)">Continue</button>
-<button class="btn-skip" onclick="goTo(4)">Skip this</button>
-</div>
-<div class="step" id="step4">
+#!/usr/bin/env python3
+"""
+Clean rebuild of review.html step 4, thank-you page, and JS.
+Fixes all duplicates from previous patches.
+"""
+import re
+
+path = 'review.html'
+html = open(path, 'r', encoding='utf-8').read()
+
+# ── 1. Replace entire step4 content (from <div class="step" id="step4"> to </div> before thank-you) ──
+CLEAN_STEP4 = '''<div class="step" id="step4">
 <div class="step-count">Step 4 of 4</div>
 <h2>Almost done. Who are you?</h2>
 <p>Just your first name and country. That is it.</p>
 <div class="input-row"><div><label>First Name *</label><input type="text" id="reviewName" placeholder="e.g. Chiara"></div><div><label>Country</label><select id="reviewCountry"><option value="">Select...</option><option>Albania</option><option>Argentina</option><option>Australia</option><option>Austria</option><option>Belarus</option><option>Belgium</option><option>Bosnia and Herzegovina</option><option>Brazil</option><option>Bulgaria</option><option>Canada</option><option>Chile</option><option>China</option><option>Colombia</option><option>Croatia</option><option>Czech Republic</option><option>Denmark</option><option>Egypt</option><option>Estonia</option><option>Finland</option><option>France</option><option>Germany</option><option>Greece</option><option>Hungary</option><option>India</option><option>Indonesia</option><option>Iran</option><option>Iraq</option><option>Ireland</option><option>Israel</option><option>Italy</option><option>Japan</option><option>Kosovo</option><option>Latvia</option><option>Lebanon</option><option>Lithuania</option><option>Luxembourg</option><option>Mexico</option><option>Moldova</option><option>Montenegro</option><option>Morocco</option><option>Netherlands</option><option>Nigeria</option><option>North Macedonia</option><option>Norway</option><option>Pakistan</option><option>Peru</option><option>Philippines</option><option>Poland</option><option>Portugal</option><option>Romania</option><option>Russia</option><option>Saudi Arabia</option><option>Serbia</option><option>Slovakia</option><option>Slovenia</option><option>South Africa</option><option>South Korea</option><option>Spain</option><option>Sweden</option><option>Switzerland</option><option>Syria</option><option>Tunisia</option><option>Turkey</option><option>Ukraine</option><option>United Arab Emirates</option><option>United Kingdom</option><option>United States</option><option>Venezuela</option><option>Vietnam</option><option>Other</option></select></div></div>
 <div class="input-row"><div><label>Email (optional)</label><input type="email" id="reviewEmail" placeholder="So we can follow up if needed"></div></div>
 <div class="input-row"><div><label>Language Assessed</label><select id="reviewLang"><option value="">Select...</option><option>German</option><option>English</option><option>French</option><option>Spanish</option><option>Italian</option><option>Portuguese</option><option>Russian</option><option>Serbian</option><option>Croatian</option><option>Romanian</option><option>Polish</option><option>Bulgarian</option></select></div></div>
-<div style="text-align:left;margin-top:16px;"><label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:8px;">Choose your avatar</label><div style="display:flex;gap:16px;justify-content:flex-start;" id="avatarPicker"><div class="avatar-opt" onclick="pickAvatar(this,'female')" style="width:56px;height:56px;border-radius:50%;border:2px solid #E0E0E0;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:28px;transition:all 0.2s;" title="Female">👩</div><div class="avatar-opt" onclick="pickAvatar(this,'male')" style="width:56px;height:56px;border-radius:50%;border:2px solid #E0E0E0;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:28px;transition:all 0.2s;" title="Male">👨</div><div class="avatar-opt" onclick="pickAvatar(this,'neutral')" style="width:56px;height:56px;border-radius:50%;border:2px solid #E0E0E0;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:28px;transition:all 0.2s;" title="Neutral">🧑</div></div></div>
+<div style="text-align:left;margin-top:16px;"><label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:8px;">Choose your avatar</label><div style="display:flex;gap:16px;justify-content:flex-start;" id="avatarPicker"><div class="avatar-opt" onclick="pickAvatar(this,'female')" style="width:56px;height:56px;border-radius:50%;border:2px solid #E0E0E0;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:28px;transition:all 0.2s;" title="Female">\U0001f469</div><div class="avatar-opt" onclick="pickAvatar(this,'male')" style="width:56px;height:56px;border-radius:50%;border:2px solid #E0E0E0;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:28px;transition:all 0.2s;" title="Male">\U0001f468</div><div class="avatar-opt" onclick="pickAvatar(this,'neutral')" style="width:56px;height:56px;border-radius:50%;border:2px solid #E0E0E0;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:28px;transition:all 0.2s;" title="Neutral">\U0001f9d1</div></div></div>
 <div style="text-align:left;margin-top:12px;"><label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:4px;">Anything else? (optional)</label><textarea id="reviewFeedback" rows="2" placeholder="A sentence or two is perfect..."></textarea></div>
 <div style="text-align:left;margin-top:16px;"><label style="display:flex;align-items:flex-start;gap:8px;cursor:pointer;font-size:0.85rem;color:var(--ink-soft);line-height:1.5;"><input type="checkbox" id="reviewConsent" style="margin-top:3px;min-width:18px;min-height:18px;accent-color:var(--accent);"><span>I agree that LingoGrade may publish this review on its website. <a href="/privacy.html" target="_blank" style="color:var(--accent);text-decoration:underline;">Privacy Policy</a></span></label></div>
 <button class="btn-next" id="btnSubmit" onclick="submitReview()">Submit My Review</button>
-</div>
-</div>
-<div class="thank-you" id="thankYou">
+</div>'''
+
+# Find and replace the entire step4 div
+step4_pattern = r'<div class="step" id="step4">.*?<button class="btn-next" id="btnSubmit" onclick="submitReview\(\)">Submit My Review</button>\s*</div>'
+html = re.sub(step4_pattern, CLEAN_STEP4, html, count=1, flags=re.DOTALL)
+
+# ── 2. Replace thank-you page ──
+CLEAN_THANKYOU = '''<div class="thank-you" id="thankYou">
 <div class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
 <h2>Thank you!</h2>
 <p>Your review helps other language learners find the right assessment. We read every single one.</p>
 <div id="trustpilotNote" style="margin-top:24px;padding:16px;background:#f0faf0;border-radius:12px;border:1px solid #d4edda;text-align:center;display:none;">
-<p style="margin:0 0 4px;font-size:0.95rem;font-weight:600;color:#1C1C1C;">✅ We just opened Trustpilot in a new tab</p>
-<p style="margin:0;font-size:0.85rem;color:var(--ink-soft);">Leave a quick review there too — it takes 30 seconds and helps us a lot.</p>
+<p style="margin:0 0 4px;font-size:0.95rem;font-weight:600;color:#1C1C1C;">\u2705 We just opened Trustpilot in a new tab</p>
+<p style="margin:0;font-size:0.85rem;color:var(--ink-soft);">Leave a quick review there too \u2014 it takes 30 seconds and helps us a lot.</p>
 </div>
 <div style="margin-top:24px;padding:24px;background:#f0faf0;border-radius:12px;border:1px solid #d4edda;text-align:center;">
 <p style="margin:0 0 8px;font-size:1rem;font-weight:600;color:#1C1C1C;">Loved your experience?</p>
-<p style="margin:0 0 16px;font-size:0.9rem;color:var(--ink-soft);">Help others find us — it takes 30 seconds.</p>
+<p style="margin:0 0 16px;font-size:0.9rem;color:var(--ink-soft);">Help others find us \u2014 it takes 30 seconds.</p>
 <a href="https://www.trustpilot.com/review/lingograde.com" target="_blank" rel="noopener" id="trustpilotBtn" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:#00b67a;color:white;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.95rem;transition:background 0.2s;" onmouseover="this.style.background='#009a68'" onmouseout="this.style.background='#00b67a'"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>Review us on Trustpilot</a>
 </div>
 <div style="margin-top:20px;padding:24px;background:#f8f9fa;border-radius:12px;border:1px solid #E0E0E0;text-align:center;">
@@ -123,8 +50,13 @@ textarea:focus{border-color:var(--accent);}
 </div>
 </div>
 <p style="margin-top:24px;"><a href="/" style="color:var(--accent);font-weight:600;text-decoration:none;">Back to LingoGrade</a></p>
-</div>
-<script>
+</div>'''
+
+thankyou_pattern = r'<div class="thank-you" id="thankYou">.*?</div>\s*(?=<script>)'
+html = re.sub(thankyou_pattern, CLEAN_THANKYOU + '\n', html, count=1, flags=re.DOTALL)
+
+# ── 3. Replace entire script block ──
+CLEAN_SCRIPT = '''<script>
 var data={rating:0,valuable:'',recommend:'',name:'',country:'',language:'',feedback:'',email:'',avatar:'',consent:false};
 var starLabels=['','Not good','Could be better','Good','Very good','Excellent!'];
 function setRating(n){data.rating=n;document.querySelectorAll('.star').forEach(function(s,i){s.classList.toggle('active',i<n);});document.getElementById('starLabel').textContent=starLabels[n];document.getElementById('btn1').disabled=false;}
@@ -133,9 +65,13 @@ function goTo(step){document.querySelectorAll('.step').forEach(function(s){s.cla
 function pickAvatar(el,type){document.querySelectorAll('.avatar-opt').forEach(function(a){a.style.borderColor='#E0E0E0';a.style.background='transparent';a.style.transform='scale(1)';});el.style.borderColor='var(--accent)';el.style.background='rgba(37,99,171,0.08)';el.style.transform='scale(1.1)';data.avatar=type;}
 function copyLink(){navigator.clipboard.writeText('https://www.lingograde.com?ref=review').then(function(){var b=document.getElementById('copyBtn');b.innerHTML='<svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Copied!';setTimeout(function(){b.innerHTML='<svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>Copy Link';},2000);});}
 function submitReview(){var name=document.getElementById('reviewName').value.trim();if(!name){alert('Please enter your name.');return;}var consent=document.getElementById('reviewConsent').checked;if(!consent){alert('Please agree to the review publishing consent.');return;}data.name=name;data.country=document.getElementById('reviewCountry').value;data.language=document.getElementById('reviewLang').value;data.feedback=document.getElementById('reviewFeedback').value.trim();data.email=document.getElementById('reviewEmail').value.trim();data.consent=consent;var btn=document.getElementById('btnSubmit');btn.textContent='Submitting...';btn.disabled=true;fetch('https://app.lingograde.com/api/submit-review',{method:'POST',body:JSON.stringify({name:data.name,country:data.country,language:data.language,rating:data.rating,most_valuable:data.valuable,recommend:data.recommend,feedback:data.feedback,email:data.email,avatar:data.avatar,consent:data.consent}),headers:{'Content-Type':'application/json'}}).then(function(r){if(r.ok){document.getElementById('quizSection').style.display='none';document.getElementById('thankYou').style.display='block';window.scrollTo(0,0);window.open('https://www.trustpilot.com/review/lingograde.com','_blank');document.getElementById('trustpilotNote').style.display='block';}else{btn.textContent='Something went wrong. Try again.';btn.disabled=false;}}).catch(function(){btn.textContent='Something went wrong. Try again.';btn.disabled=false;});}
-</script>
-</body>
-</html>
+</script>'''
 
+script_pattern = r'<script>\s*var data=\{.*?</script>'
+html = re.sub(script_pattern, CLEAN_SCRIPT, html, count=1, flags=re.DOTALL)
 
-
+open(path, 'w', encoding='utf-8').write(html)
+print('\u2705 review.html fully rebuilt!')
+print('   Step 4: name, country dropdown, email, language, avatar, feedback, consent')
+print('   Thank-you: Trustpilot auto-open + button, WhatsApp/Email/Copy referral')
+print('   JS: all fields collected, Trustpilot opens in new tab on submit')
