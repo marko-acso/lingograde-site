@@ -312,66 +312,81 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   <div class="section-inner" style="text-align:center;max-width:960px;margin:0 auto;">
     <div class="section-label">Available Languages</div>
     <h2 class="section-title">12 languages assessed. Reports in 25+ native languages.</h2>
-    <p class="section-desc" style="margin:0 auto 40px;">Every report is delivered bilingually — the assessed language plus your native language. Choose a language below to download a real sample report.</p>
+    <p class="section-desc" style="margin:0 auto 24px;">Every report is delivered bilingually — the assessed language plus your native language. Choose a language below to download a real sample report.</p>
+    <!-- Native Language Selector -->
+    <div style="margin:0 auto 32px;max-width:340px;">
+      <label for="nativeLangSelect" style="display:block;font-size:0.8rem;color:var(--ink-light);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.05em;font-weight:600;">Your native language</label>
+      <select id="nativeLangSelect" onchange="translateLanguages(this.value)" style="width:100%;padding:10px 14px;border-radius:10px;border:1.5px solid var(--border);font-size:1rem;color:var(--ink);background:var(--cream);cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 12 12%22><path d=%22M2 4l4 4 4-4%22 fill=%22none%22 stroke=%22%236b7280%22 stroke-width=%221.5%22/></svg>');background-repeat:no-repeat;background-position:right 14px center;">
+        <option value="en">&#127468;&#127463; English</option>
+        <option value="es">&#127466;&#127480; Espa&ntilde;ol</option>
+        <option value="zh">&#127464;&#127475; &#20013;&#25991;</option>
+        <option value="ar">&#127480;&#127462; &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</option>
+        <option value="ru">&#127479;&#127482; &#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option>
+        <option value="pt">&#127463;&#127479; Portugu&ecirc;s</option>
+        <option value="tr">&#127481;&#127479; T&uuml;rk&ccedil;e</option>
+        <option value="uk">&#127482;&#127462; &#1059;&#1082;&#1088;&#1072;&#1111;&#1085;&#1089;&#1100;&#1082;&#1072;</option>
+      </select>
+      <p style="font-size:0.7rem;color:var(--ink-light);margin-top:6px;">8 display languages shown. Reports available in 25+ native languages.</p>
+    </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin-bottom:32px;">
       <a href="samples/sample_german_b2.pdf" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
         <div style="font-size:2rem;margin-bottom:6px;">&#127465;&#127466;</div>
-        <div style="font-weight:600;color:var(--ink);font-size:0.9375rem;">German</div>
+        <div data-lang="de" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">German</div>
         <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">B2 Sample</div>
       </a>
       <a href="samples/sample_english_b2.pdf" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
         <div style="font-size:2rem;margin-bottom:6px;">&#127468;&#127463;</div>
-        <div style="font-weight:600;color:var(--ink);font-size:0.9375rem;">English</div>
+        <div data-lang="en" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">English</div>
         <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">B2 Sample</div>
       </a>
       <a href="samples/sample_french_b1.pdf" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
         <div style="font-size:2rem;margin-bottom:6px;">&#127467;&#127479;</div>
-        <div style="font-weight:600;color:var(--ink);font-size:0.9375rem;">French</div>
+        <div data-lang="fr" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">French</div>
         <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">B1 Sample</div>
       </a>
       <a href="samples/sample_spanish_b2.pdf" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
         <div style="font-size:2rem;margin-bottom:6px;">&#127466;&#127480;</div>
-        <div style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Spanish</div>
+        <div data-lang="es" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Spanish</div>
         <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">B2 Sample</div>
       </a>
       <a href="samples/sample_italian_b1.pdf" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
         <div style="font-size:2rem;margin-bottom:6px;">&#127470;&#127481;</div>
-        <div style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Italian</div>
+        <div data-lang="it" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Italian</div>
         <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">B1 Sample</div>
       </a>
       <a href="samples/sample_portuguese_b1.pdf" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
         <div style="font-size:2rem;margin-bottom:6px;">&#127477;&#127481;</div>
-        <div style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Portuguese</div>
+        <div data-lang="pt" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Portuguese</div>
         <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">B1 Sample</div>
       </a>
       <a href="samples/sample_russian_a2.pdf" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
         <div style="font-size:2rem;margin-bottom:6px;">&#127479;&#127482;</div>
-        <div style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Russian</div>
+        <div data-lang="ru" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Russian</div>
         <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">A2 Sample</div>
       </a>
       <a href="samples/sample_serbian_a2.pdf" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
         <div style="font-size:2rem;margin-bottom:6px;">&#127479;&#127480;</div>
-        <div style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Serbian</div>
+        <div data-lang="sr" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Serbian</div>
         <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">A2 Sample</div>
       </a>
       <a href="samples/sample_croatian_a2.pdf" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
         <div style="font-size:2rem;margin-bottom:6px;">&#127469;&#127479;</div>
-        <div style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Croatian</div>
+        <div data-lang="hr" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Croatian</div>
         <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">A2 Sample</div>
       </a>
       <a href="samples/sample_romanian_a2.pdf" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
         <div style="font-size:2rem;margin-bottom:6px;">&#127479;&#127476;</div>
-        <div style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Romanian</div>
+        <div data-lang="ro" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Romanian</div>
         <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">A2 Sample</div>
       </a>
       <a href="samples/sample_polish_a2.pdf" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
         <div style="font-size:2rem;margin-bottom:6px;">&#127477;&#127473;</div>
-        <div style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Polish</div>
+        <div data-lang="pl" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Polish</div>
         <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">A2 Sample</div>
       </a>
       <a href="samples/sample_bulgarian_a2.pdf" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
         <div style="font-size:2rem;margin-bottom:6px;">&#127463;&#127468;</div>
-        <div style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Bulgarian</div>
+        <div data-lang="bg" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Bulgarian</div>
         <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">A2 Sample</div>
       </a>
     </div>
@@ -757,6 +772,26 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.href = url.toString();
   });
 })();
+</script>
+
+<script>
+var LG_LANGS = {
+  en: {de:"German",en:"English",fr:"French",es:"Spanish",it:"Italian",pt:"Portuguese",ru:"Russian",sr:"Serbian",hr:"Croatian",ro:"Romanian",pl:"Polish",bg:"Bulgarian"},
+  es: {de:"Alem\u00e1n",en:"Ingl\u00e9s",fr:"Franc\u00e9s",es:"Espa\u00f1ol",it:"Italiano",pt:"Portugu\u00e9s",ru:"Ruso",sr:"Serbio",hr:"Croata",ro:"Rumano",pl:"Polaco",bg:"B\u00falgaro"},
+  zh: {de:"\u5fb7\u8bed",en:"\u82f1\u8bed",fr:"\u6cd5\u8bed",es:"\u897f\u73ed\u7259\u8bed",it:"\u610f\u5927\u5229\u8bed",pt:"\u8461\u8404\u7259\u8bed",ru:"\u4fc4\u8bed",sr:"\u585e\u5c14\u7ef4\u4e9a\u8bed",hr:"\u514b\u7f57\u5730\u4e9a\u8bed",ro:"\u7f57\u9a6c\u5c3c\u4e9a\u8bed",pl:"\u6ce2\u5170\u8bed",bg:"\u4fdd\u52a0\u5229\u4e9a\u8bed"},
+  ar: {de:"\u0627\u0644\u0623\u0644\u0645\u0627\u0646\u064a\u0629",en:"\u0627\u0644\u0625\u0646\u062c\u0644\u064a\u0632\u064a\u0629",fr:"\u0627\u0644\u0641\u0631\u0646\u0633\u064a\u0629",es:"\u0627\u0644\u0625\u0633\u0628\u0627\u0646\u064a\u0629",it:"\u0627\u0644\u0625\u064a\u0637\u0627\u0644\u064a\u0629",pt:"\u0627\u0644\u0628\u0631\u062a\u063a\u0627\u0644\u064a\u0629",ru:"\u0627\u0644\u0631\u0648\u0633\u064a\u0629",sr:"\u0627\u0644\u0635\u0631\u0628\u064a\u0629",hr:"\u0627\u0644\u0643\u0631\u0648\u0627\u062a\u064a\u0629",ro:"\u0627\u0644\u0631\u0648\u0645\u0627\u0646\u064a\u0629",pl:"\u0627\u0644\u0628\u0648\u0644\u0646\u062f\u064a\u0629",bg:"\u0627\u0644\u0628\u0644\u063a\u0627\u0631\u064a\u0629"},
+  ru: {de:"\u041d\u0435\u043c\u0435\u0446\u043a\u0438\u0439",en:"\u0410\u043d\u0433\u043b\u0438\u0439\u0441\u043a\u0438\u0439",fr:"\u0424\u0440\u0430\u043d\u0446\u0443\u0437\u0441\u043a\u0438\u0439",es:"\u0418\u0441\u043f\u0430\u043d\u0441\u043a\u0438\u0439",it:"\u0418\u0442\u0430\u043b\u044c\u044f\u043d\u0441\u043a\u0438\u0439",pt:"\u041f\u043e\u0440\u0442\u0443\u0433\u0430\u043b\u044c\u0441\u043a\u0438\u0439",ru:"\u0420\u0443\u0441\u0441\u043a\u0438\u0439",sr:"\u0421\u0435\u0440\u0431\u0441\u043a\u0438\u0439",hr:"\u0425\u043e\u0440\u0432\u0430\u0442\u0441\u043a\u0438\u0439",ro:"\u0420\u0443\u043c\u044b\u043d\u0441\u043a\u0438\u0439",pl:"\u041f\u043e\u043b\u044c\u0441\u043a\u0438\u0439",bg:"\u0411\u043e\u043b\u0433\u0430\u0440\u0441\u043a\u0438\u0439"},
+  pt: {de:"Alem\u00e3o",en:"Ingl\u00eas",fr:"Franc\u00eas",es:"Espanhol",it:"Italiano",pt:"Portugu\u00eas",ru:"Russo",sr:"S\u00e9rvio",hr:"Croata",ro:"Romeno",pl:"Polon\u00eas",bg:"B\u00falgaro"},
+  tr: {de:"Almanca",en:"\u0130ngilizce",fr:"Frans\u0131zca",es:"\u0130spanyolca",it:"\u0130talyanca",pt:"Portekizce",ru:"Rus\u00e7a",sr:"S\u0131rp\u00e7a",hr:"H\u0131rvat\u00e7a",ro:"Romence",pl:"Lehce",bg:"Bulgarca"},
+  uk: {de:"\u041d\u0456\u043c\u0435\u0446\u044c\u043a\u0430",en:"\u0410\u043d\u0433\u043b\u0456\u0439\u0441\u044c\u043a\u0430",fr:"\u0424\u0440\u0430\u043d\u0446\u0443\u0437\u044c\u043a\u0430",es:"\u0406\u0441\u043f\u0430\u043d\u0441\u044c\u043a\u0430",it:"\u0406\u0442\u0430\u043b\u0456\u0439\u0441\u044c\u043a\u0430",pt:"\u041f\u043e\u0440\u0442\u0443\u0433\u0430\u043b\u044c\u0441\u044c\u043a\u0430",ru:"\u0420\u043e\u0441\u0456\u0439\u0441\u044c\u043a\u0430",sr:"\u0421\u0435\u0440\u0431\u0441\u044c\u043a\u0430",hr:"\u0425\u043e\u0440\u0432\u0430\u0442\u0441\u044c\u043a\u0430",ro:"\u0420\u0443\u043c\u0443\u043d\u0441\u044c\u043a\u0430",pl:"\u041f\u043e\u043b\u044c\u0441\u044c\u043a\u0430",bg:"\u0411\u043e\u043b\u0433\u0430\u0440\u0441\u044c\u043a\u0430"}
+};
+function translateLanguages(lang) {
+  var map = LG_LANGS[lang] || LG_LANGS.en;
+  document.querySelectorAll('[data-lang]').forEach(function(el) {
+    var code = el.getAttribute('data-lang');
+    if (map[code]) el.textContent = map[code];
+  });
+}
 </script>
 </body>
 </html>
