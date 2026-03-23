@@ -23,194 +23,194 @@
   "sections": [
     {
       "id": "perception",
-      "title_de": "Percepcao precisa",
+      "title_assessed": "Percepcao precisa",
       "title_native": "Perception precise",
-      "content_de": "Nesta sessao mostraste que tens uma boa base em portugues. O teu vocabulario cobre bem as situacoes do dia a dia. Os problemas principais surgiram no uso dos tempos verbais (preterito perfeito vs. imperfeito) e nas preposicoes de lugar.",
+      "content_assessed": "Nesta sessao mostraste que tens uma boa base em portugues. O teu vocabulario cobre bem as situacoes do dia a dia. Os problemas principais surgiram no uso dos tempos verbais (preterito perfeito vs. imperfeito) e nas preposicoes de lugar.",
       "content_native": "Lors de cette seance, tu as montre que tu possedes une bonne base en portugais. Ton vocabulaire couvre bien les situations quotidiennes. Les problemes principaux sont apparus dans l'utilisation des temps (passe simple vs. imparfait) et dans les prepositions de lieu."
     },
     {
       "id": "strengths",
-      "title_de": "Pontos fortes estruturais",
+      "title_assessed": "Pontos fortes estruturais",
       "title_native": "Forces structurelles",
       "items": [
         {
-          "strength_de": "Boa utilizacao de pronomes",
+          "strength_assessed": "Boa utilizacao de pronomes",
           "strength_native": "Bonne utilisation des pronoms",
-          "example_de": "\"Eu vi-o ontem no mercado.\" — Pronome direto correto.",
+          "example_assessed": "\"Eu vi-o ontem no mercado.\" — Pronome direto correto.",
           "example_native": "\"Je l'ai vu hier au marche.\" — Pronom direct correct."
         },
         {
-          "strength_de": "Conjugacao regular consistente",
+          "strength_assessed": "Conjugacao regular consistente",
           "strength_native": "Conjugaison reguliere consistante",
-          "example_de": "Conjugas os verbos regulares (-ar, -er, -ir) corretamente na maioria dos tempos.",
+          "example_assessed": "Conjugas os verbos regulares (-ar, -er, -ir) corretamente na maioria dos tempos.",
           "example_native": "Tu conjugues les verbes reguliers (-ar, -er, -ir) correctement dans la plupart des temps."
         },
         {
-          "strength_de": "Boa compreensao auditiva",
+          "strength_assessed": "Boa compreensao auditiva",
           "strength_native": "Bonne comprehension auditive",
-          "example_de": "Entendes bem o portugues falado a velocidade normal.",
+          "example_assessed": "Entendes bem o portugues falado a velocidade normal.",
           "example_native": "Tu comprends bien le portugais parle a vitesse normale."
         }
       ]
     },
     {
       "id": "core_insight",
-      "title_de": "Insight estrutural central",
+      "title_assessed": "Insight estrutural central",
       "title_native": "Apercu structurel central",
-      "content_de": "O padrao central desta sessao e a confusao entre preterito perfeito e imperfeito. Usas o perfeito para descrever habitos e estados no passado, onde o imperfeito seria correto. Esta confusao e compreensivel dado que o frances tem uma distincao semelhante mas usa-a de forma diferente.",
+      "content_assessed": "O padrao central desta sessao e a confusao entre preterito perfeito e imperfeito. Usas o perfeito para descrever habitos e estados no passado, onde o imperfeito seria correto. Esta confusao e compreensivel dado que o frances tem uma distincao semelhante mas usa-a de forma diferente.",
       "content_native": "Le schema central de cette seance est la confusion entre le passe simple et l'imparfait. Tu utilises le passe simple pour decrire des habitudes et des etats passes, la ou l'imparfait serait correct. Cette confusion est comprehensible etant donne que le francais a une distinction similaire mais l'utilise differemment."
     },
     {
       "id": "problems",
-      "title_de": "Problemas estruturais principais",
+      "title_assessed": "Problemas estruturais principais",
       "title_native": "Problemes structurels principaux",
       "items": [
         {
-          "name_de": "Preterito perfeito vs. imperfeito",
+          "name_assessed": "Preterito perfeito vs. imperfeito",
           "name_native": "Passe simple vs. imparfait",
           "error_class": "Zeitformen",
-          "explanation_de": "Usas o perfeito para descricoes e habitos: 'Ontem fez bom tempo' em vez de 'Ontem fazia bom tempo'.",
+          "explanation_assessed": "Usas o perfeito para descricoes e habitos: 'Ontem fez bom tempo' em vez de 'Ontem fazia bom tempo'.",
           "explanation_native": "Tu utilises le passe simple pour des descriptions: 'Ontem fez bom tempo' au lieu de 'Ontem fazia bom tempo'.",
-          "evidence_de": "\"Quando fui crianca, joguei futebol.\" → Correto: \"Quando era crianca, jogava futebol.\"",
+          "evidence_assessed": "\"Quando fui crianca, joguei futebol.\" → Correto: \"Quando era crianca, jogava futebol.\"",
           "evidence_native": "\"Quando fui crianca, joguei futebol.\" → Correct: \"Quando era crianca, jogava futebol.\""
         },
         {
-          "name_de": "Preposicoes de lugar",
+          "name_assessed": "Preposicoes de lugar",
           "name_native": "Prepositions de lieu",
           "error_class": "Präpositionen",
-          "explanation_de": "Confundes 'em', 'a' e 'para' com direcao e localizacao.",
+          "explanation_assessed": "Confundes 'em', 'a' e 'para' com direcao e localizacao.",
           "explanation_native": "Tu confonds 'em', 'a' et 'para' pour la direction et la localisation.",
-          "evidence_de": "\"Vou em Lisboa.\" → Correto: \"Vou a Lisboa.\"",
+          "evidence_assessed": "\"Vou em Lisboa.\" → Correto: \"Vou a Lisboa.\"",
           "evidence_native": "\"Vou em Lisboa.\" → Correct: \"Vou a Lisboa.\""
         },
         {
-          "name_de": "Futuro do conjuntivo",
+          "name_assessed": "Futuro do conjuntivo",
           "name_native": "Futur du subjonctif",
           "error_class": "Zeitformen",
-          "explanation_de": "Evitas o futuro do conjuntivo, que nao existe em frances: 'Quando voce vem' em vez de 'Quando voce vier'.",
+          "explanation_assessed": "Evitas o futuro do conjuntivo, que nao existe em frances: 'Quando voce vem' em vez de 'Quando voce vier'.",
           "explanation_native": "Tu evites le futur du subjonctif, qui n'existe pas en francais: 'Quando voce vem' au lieu de 'Quando voce vier'.",
-          "evidence_de": "\"Se eu tenho tempo, vou.\" → Correto: \"Se eu tiver tempo, vou.\"",
+          "evidence_assessed": "\"Se eu tenho tempo, vou.\" → Correto: \"Se eu tiver tempo, vou.\"",
           "evidence_native": "\"Se eu tenho tempo, vou.\" → Correct: \"Se eu tiver tempo, vou.\""
         },
         {
-          "name_de": "Contracoes de preposicoes",
+          "name_assessed": "Contracoes de preposicoes",
           "name_native": "Contractions de prepositions",
           "error_class": "Präpositionen",
-          "explanation_de": "Esqueces as contracoes obrigatorias: 'de o' em vez de 'do', 'em a' em vez de 'na'.",
+          "explanation_assessed": "Esqueces as contracoes obrigatorias: 'de o' em vez de 'do', 'em a' em vez de 'na'.",
           "explanation_native": "Tu oublies les contractions obligatoires: 'de o' au lieu de 'do', 'em a' au lieu de 'na'.",
-          "evidence_de": "\"O livro de o professor.\" → Correto: \"O livro do professor.\"",
+          "evidence_assessed": "\"O livro de o professor.\" → Correto: \"O livro do professor.\"",
           "evidence_native": "\"O livro de o professor.\" → Correct: \"O livro do professor.\""
         },
         {
-          "name_de": "Colocacao pronominal",
+          "name_assessed": "Colocacao pronominal",
           "name_native": "Placement des pronoms",
           "error_class": "Wortstellung",
-          "explanation_de": "Colocas os pronomes em posicao francesa em vez de seguires as regras portuguesas.",
+          "explanation_assessed": "Colocas os pronomes em posicao francesa em vez de seguires as regras portuguesas.",
           "explanation_native": "Tu places les pronoms en position francaise au lieu de suivre les regles portugaises.",
-          "evidence_de": "\"Me disse que...\" → Correto: \"Disse-me que...\"",
+          "evidence_assessed": "\"Me disse que...\" → Correto: \"Disse-me que...\"",
           "evidence_native": "\"Me disse que...\" → Correct: \"Disse-me que...\""
         }
       ]
     },
     {
       "id": "corrections",
-      "title_de": "Correcoes alavanca",
+      "title_assessed": "Correcoes alavanca",
       "title_native": "Corrections leviers",
       "items": [
         {
-          "original_de": "Errado: Quando fui crianca, joguei futebol.",
+          "original_assessed": "Errado: Quando fui crianca, joguei futebol.",
           "original_native": "Faux: Quando fui crianca, joguei futebol.",
-          "corrected_de": "Correto: Quando era crianca, jogava futebol.",
+          "corrected_assessed": "Correto: Quando era crianca, jogava futebol.",
           "corrected_native": "Correct: Quando era crianca, jogava futebol.",
-          "explanation_de": "Descricao/habito no passado = imperfeito.",
+          "explanation_assessed": "Descricao/habito no passado = imperfeito.",
           "explanation_native": "Description/habitude au passe = imparfait."
         },
         {
-          "original_de": "Errado: Vou em Lisboa.",
+          "original_assessed": "Errado: Vou em Lisboa.",
           "original_native": "Faux: Vou em Lisboa.",
-          "corrected_de": "Correto: Vou a Lisboa.",
+          "corrected_assessed": "Correto: Vou a Lisboa.",
           "corrected_native": "Correct: Vou a Lisboa.",
-          "explanation_de": "Direcao = a. Localizacao = em.",
+          "explanation_assessed": "Direcao = a. Localizacao = em.",
           "explanation_native": "Direction = a. Localisation = em."
         },
         {
-          "original_de": "Errado: Se eu tenho tempo, vou.",
+          "original_assessed": "Errado: Se eu tenho tempo, vou.",
           "original_native": "Faux: Se eu tenho tempo, vou.",
-          "corrected_de": "Correto: Se eu tiver tempo, vou.",
+          "corrected_assessed": "Correto: Se eu tiver tempo, vou.",
           "corrected_native": "Correct: Se eu tiver tempo, vou.",
-          "explanation_de": "'Se' + futuro do conjuntivo para condicoes futuras.",
+          "explanation_assessed": "'Se' + futuro do conjuntivo para condicoes futuras.",
           "explanation_native": "'Se' + futur du subjonctif pour les conditions futures."
         },
         {
-          "original_de": "Errado: O livro de o professor.",
+          "original_assessed": "Errado: O livro de o professor.",
           "original_native": "Faux: O livro de o professor.",
-          "corrected_de": "Correto: O livro do professor.",
+          "corrected_assessed": "Correto: O livro do professor.",
           "corrected_native": "Correct: O livro do professor.",
-          "explanation_de": "de + o = do. Contracao obrigatoria.",
+          "explanation_assessed": "de + o = do. Contracao obrigatoria.",
           "explanation_native": "de + o = do. Contraction obligatoire."
         },
         {
-          "original_de": "Errado: Me disse que era tarde.",
+          "original_assessed": "Errado: Me disse que era tarde.",
           "original_native": "Faux: Me disse que era tarde.",
-          "corrected_de": "Correto: Disse-me que era tarde.",
+          "corrected_assessed": "Correto: Disse-me que era tarde.",
           "corrected_native": "Correct: Disse-me que era tarde.",
-          "explanation_de": "Em inicio de frase, pronome vai depois do verbo (enclise).",
+          "explanation_assessed": "Em inicio de frase, pronome vai depois do verbo (enclise).",
           "explanation_native": "En debut de phrase, le pronom va apres le verbe (enclise)."
         }
       ]
     },
     {
       "id": "solutions",
-      "title_de": "Solucoes",
+      "title_assessed": "Solucoes",
       "title_native": "Solutions",
       "items": [
         {
-          "name_de": "Exercicio perfeito/imperfeito",
+          "name_assessed": "Exercicio perfeito/imperfeito",
           "name_native": "Exercice passe simple/imparfait",
-          "action_de": "Cada dia, escreve 3 frases no perfeito (acao unica) e 3 no imperfeito (descricao/habito).",
+          "action_assessed": "Cada dia, escreve 3 frases no perfeito (acao unica) e 3 no imperfeito (descricao/habito).",
           "action_native": "Chaque jour, ecris 3 phrases au passe simple (action unique) et 3 a l'imparfait (description/habitude).",
-          "result_de": "Distincao automatica em 2-3 semanas.",
+          "result_assessed": "Distincao automatica em 2-3 semanas.",
           "result_native": "Distinction automatique en 2-3 semaines."
         },
         {
-          "name_de": "Preposicoes a/em/para",
+          "name_assessed": "Preposicoes a/em/para",
           "name_native": "Prepositions a/em/para",
-          "action_de": "Regra: direcao = a, localizacao = em, finalidade = para. 3 frases por dia.",
+          "action_assessed": "Regra: direcao = a, localizacao = em, finalidade = para. 3 frases por dia.",
           "action_native": "Regle: direction = a, localisation = em, finalite = para. 3 phrases par jour.",
-          "result_de": "Preposicoes corretas em 1-2 semanas.",
+          "result_assessed": "Preposicoes corretas em 1-2 semanas.",
           "result_native": "Prepositions correctes en 1-2 semaines."
         },
         {
-          "name_de": "Futuro do conjuntivo",
+          "name_assessed": "Futuro do conjuntivo",
           "name_native": "Futur du subjonctif",
-          "action_de": "Pratica: se + futuro conjuntivo, quando + futuro conjuntivo. 3 frases por dia.",
+          "action_assessed": "Pratica: se + futuro conjuntivo, quando + futuro conjuntivo. 3 frases por dia.",
           "action_native": "Pratique: se + futur subjonctif, quando + futur subjonctif. 3 phrases par jour.",
-          "result_de": "Uso correto em 2-3 semanas.",
+          "result_assessed": "Uso correto em 2-3 semanas.",
           "result_native": "Usage correct en 2-3 semaines."
         },
         {
-          "name_de": "Contracoes",
+          "name_assessed": "Contracoes",
           "name_native": "Contractions",
-          "action_de": "Memoriza: de+o=do, de+a=da, em+o=no, em+a=na, a+o=ao, a+a=a.",
+          "action_assessed": "Memoriza: de+o=do, de+a=da, em+o=no, em+a=na, a+o=ao, a+a=a.",
           "action_native": "Memorise: de+o=do, de+a=da, em+o=no, em+a=na, a+o=ao, a+a=a.",
-          "result_de": "Contracoes automaticas em 1 semana.",
+          "result_assessed": "Contracoes automaticas em 1 semana.",
           "result_native": "Contractions automatiques en 1 semaine."
         },
         {
-          "name_de": "Colocacao pronominal",
+          "name_assessed": "Colocacao pronominal",
           "name_native": "Placement pronominal",
-          "action_de": "Regra base: pronome depois do verbo, exceto com palavras negativas ou conjuncoes.",
+          "action_assessed": "Regra base: pronome depois do verbo, exceto com palavras negativas ou conjuncoes.",
           "action_native": "Regle de base: pronom apres le verbe, sauf avec mots negatifs ou conjonctions.",
-          "result_de": "Posicao correta em 2 semanas.",
+          "result_assessed": "Posicao correta em 2 semanas.",
           "result_native": "Position correcte en 2 semaines."
         }
       ]
     },
     {
       "id": "sentence_engine",
-      "name_de": "O motor dos tempos",
+      "name_assessed": "O motor dos tempos",
       "name_native": "Le moteur des temps",
-      "explanation_de": "Cada dia, forma 5 pares de frases: mesma situacao, uma vez no perfeito e uma vez no imperfeito. Pronuncia em voz alta.",
+      "explanation_assessed": "Cada dia, forma 5 pares de frases: mesma situacao, uma vez no perfeito e uma vez no imperfeito. Pronuncia em voz alta.",
       "explanation_native": "Chaque jour, forme 5 paires de phrases: meme situation, une fois au passe simple et une fois a l'imparfait. Prononce a haute voix.",
       "patterns": [
         {
@@ -226,12 +226,12 @@
           "native": "Combine: Il pleuvait (imparfait) quand je suis sorti (passe simple)."
         }
       ],
-      "daily_instruction_de": "5 pares por dia, em voz alta, sublinhando a escolha do tempo.",
+      "daily_instruction_assessed": "5 pares por dia, em voz alta, sublinhando a escolha do tempo.",
       "daily_instruction_native": "5 paires par jour, a haute voix, en soulignant le choix du temps."
     },
     {
       "id": "activation",
-      "title_de": "Ativacao",
+      "title_assessed": "Ativacao",
       "title_native": "Activation",
       "sentences": [
         {
@@ -262,7 +262,7 @@
     },
     {
       "id": "homework_a",
-      "title_de": "Trabalho de casa A — Estrutura",
+      "title_assessed": "Trabalho de casa A — Estrutura",
       "title_native": "Devoirs A — Structure",
       "sentences": [
         {
@@ -293,44 +293,44 @@
     },
     {
       "id": "homework_b",
-      "title_de": "Trabalho de casa B — Precisao",
+      "title_assessed": "Trabalho de casa B — Precisao",
       "title_native": "Devoirs B — Precision",
       "items": [
         {
-          "wrong_de": "Errado: Quando fui pequeno, joguei futebol.",
+          "wrong_assessed": "Errado: Quando fui pequeno, joguei futebol.",
           "wrong_native": "Faux: Quando fui pequeno, joguei futebol.",
-          "right_de": "Correto: Quando era pequeno, jogava futebol.",
+          "right_assessed": "Correto: Quando era pequeno, jogava futebol.",
           "right_native": "Correct: Quando era pequeno, jogava futebol."
         },
         {
-          "wrong_de": "Errado: Vou em Paris.",
+          "wrong_assessed": "Errado: Vou em Paris.",
           "wrong_native": "Faux: Vou em Paris.",
-          "right_de": "Correto: Vou a Paris.",
+          "right_assessed": "Correto: Vou a Paris.",
           "right_native": "Correct: Vou a Paris."
         },
         {
-          "wrong_de": "Errado: Se eu tenho tempo, vou.",
+          "wrong_assessed": "Errado: Se eu tenho tempo, vou.",
           "wrong_native": "Faux: Se eu tenho tempo, vou.",
-          "right_de": "Correto: Se eu tiver tempo, vou.",
+          "right_assessed": "Correto: Se eu tiver tempo, vou.",
           "right_native": "Correct: Se eu tiver tempo, vou."
         },
         {
-          "wrong_de": "Errado: O livro de a professora.",
+          "wrong_assessed": "Errado: O livro de a professora.",
           "wrong_native": "Faux: O livro de a professora.",
-          "right_de": "Correto: O livro da professora.",
+          "right_assessed": "Correto: O livro da professora.",
           "right_native": "Correct: O livro da professora."
         },
         {
-          "wrong_de": "Errado: Me disse que era tarde.",
+          "wrong_assessed": "Errado: Me disse que era tarde.",
           "wrong_native": "Faux: Me disse que era tarde.",
-          "right_de": "Correto: Disse-me que era tarde.",
+          "right_assessed": "Correto: Disse-me que era tarde.",
           "right_native": "Correct: Disse-me que era tarde."
         }
       ]
     },
     {
       "id": "homework_c",
-      "title_de": "Trabalho de casa C — Fluencia oral",
+      "title_assessed": "Trabalho de casa C — Fluencia oral",
       "title_native": "Devoirs C — Fluidite orale",
       "sentences": [
         {
@@ -369,77 +369,77 @@
     },
     {
       "id": "weekly_plan",
-      "title_de": "Plano semanal",
+      "title_assessed": "Plano semanal",
       "title_native": "Plan hebdomadaire",
       "weeks": [
         {
-          "label_de": "Semana 1-2",
+          "label_assessed": "Semana 1-2",
           "label_native": "Semaine 1-2",
-          "focus_de": "Perfeito vs. imperfeito",
+          "focus_assessed": "Perfeito vs. imperfeito",
           "focus_native": "Passe simple vs. imparfait",
-          "goal_de": "Escolha automatica do tempo correto",
+          "goal_assessed": "Escolha automatica do tempo correto",
           "goal_native": "Choix automatique du temps correct",
-          "daily_de": "5 pares de frases por dia",
+          "daily_assessed": "5 pares de frases por dia",
           "daily_native": "5 paires de phrases par jour"
         },
         {
-          "label_de": "Semana 3-4",
+          "label_assessed": "Semana 3-4",
           "label_native": "Semaine 3-4",
-          "focus_de": "Preposicoes + contracoes",
+          "focus_assessed": "Preposicoes + contracoes",
           "focus_native": "Prepositions + contractions",
-          "goal_de": "Preposicoes corretas + contracoes automaticas",
+          "goal_assessed": "Preposicoes corretas + contracoes automaticas",
           "goal_native": "Prepositions correctes + contractions automatiques",
-          "daily_de": "3 frases com preposicoes + 3 com contracoes",
+          "daily_assessed": "3 frases com preposicoes + 3 com contracoes",
           "daily_native": "3 phrases avec prepositions + 3 avec contractions"
         },
         {
-          "label_de": "Semana 5-6",
+          "label_assessed": "Semana 5-6",
           "label_native": "Semaine 5-6",
-          "focus_de": "Futuro do conjuntivo + colocacao pronominal",
+          "focus_assessed": "Futuro do conjuntivo + colocacao pronominal",
           "focus_native": "Futur du subjonctif + placement pronominal",
-          "goal_de": "Conjuntivo futuro correto + pronomes no lugar certo",
+          "goal_assessed": "Conjuntivo futuro correto + pronomes no lugar certo",
           "goal_native": "Subjonctif futur correct + pronoms bien places",
-          "daily_de": "3 frases conjuntivas + 3 com pronomes",
+          "daily_assessed": "3 frases conjuntivas + 3 com pronomes",
           "daily_native": "3 phrases subjonctives + 3 avec pronoms"
         },
         {
-          "label_de": "Semana 7-8",
+          "label_assessed": "Semana 7-8",
           "label_native": "Semaine 7-8",
-          "focus_de": "Falar livre sob pressao",
+          "focus_assessed": "Falar livre sob pressao",
           "focus_native": "Parler librement sous pression",
-          "goal_de": "Precisao mantida em conversa espontanea",
+          "goal_assessed": "Precisao mantida em conversa espontanea",
           "goal_native": "Precision maintenue en conversation spontanee",
-          "daily_de": "Monologo de 2 minutos com foco consciente",
+          "daily_assessed": "Monologo de 2 minutos com foco consciente",
           "daily_native": "Monologue de 2 minutes avec focus conscient"
         }
       ]
     },
     {
       "id": "mini_block",
-      "title_de": "Mini-bloco",
+      "title_assessed": "Mini-bloco",
       "title_native": "Mini-bloc",
-      "goal_de": "Estabilizar a escolha dos tempos sob pressao",
+      "goal_assessed": "Estabilizar a escolha dos tempos sob pressao",
       "goal_native": "Stabiliser le choix des temps sous pression",
-      "step1_de": "Cada dia 5 pares de frases em voz alta — conscientemente devagar, tempo sublinhado.",
+      "step1_assessed": "Cada dia 5 pares de frases em voz alta — conscientemente devagar, tempo sublinhado.",
       "step1_native": "Chaque jour 5 paires de phrases a haute voix — consciemment lent, temps souligne.",
-      "step2_de": "Um monologo de 2 minutos sobre o teu dia de ontem. Alternar perfeito e imperfeito. Gravar. Ouvir. Repetir.",
+      "step2_assessed": "Um monologo de 2 minutos sobre o teu dia de ontem. Alternar perfeito e imperfeito. Gravar. Ouvir. Repetir.",
       "step2_native": "Un monologue de 2 minutes sur ta journee d'hier. Alterner passe simple et imparfait. Enregistrer. Ecouter. Repeter."
     }
   ],
   "cefr_footer": {
-    "active_de": "Producao oral ativa: B1.1",
+    "active_assessed": "Producao oral ativa: B1.1",
     "active_native": "Production orale active: B1.1",
-    "passive_de": "Competencia passiva (teto estimado de compreensao): B1.2",
+    "passive_assessed": "Competencia passiva (teto estimado de compreensao): B1.2",
     "passive_native": "Competence passive (plafond estime de comprehension): B1.2",
-    "confidence_de": "Confianca: 73%",
+    "confidence_assessed": "Confianca: 73%",
     "confidence_native": "Confiance: 73%",
-    "summary_de": "Estas na faixa B1. A tua base e solida mas os tempos e as preposicoes permanecem instaveis. Com treino focado, B2 e realista em 4-5 meses.",
+    "summary_assessed": "Estas na faixa B1. A tua base e solida mas os tempos e as preposicoes permanecem instaveis. Com treino focado, B2 e realista em 4-5 meses.",
     "summary_native": "Tu es dans la fourchette B1. Ta base est solide mais les temps et les prepositions restent instables. Avec un entrainement cible, B2 est realiste en 4-5 mois.",
-    "stability_de": "Estabilidade estrutural sob pressao: media",
+    "stability_assessed": "Estabilidade estrutural sob pressao: media",
     "stability_native": "Stabilite structurelle sous pression: moyenne",
-    "self_correction_de": "Capacidade de autocorrecao: baixa a media",
+    "self_correction_assessed": "Capacidade de autocorrecao: baixa a media",
     "self_correction_native": "Capacite d'auto-correction: faible a moyenne",
-    "reassessment_de": "Reavaliacao recomendada: 3 meses",
+    "reassessment_assessed": "Reavaliacao recomendada: 3 meses",
     "reassessment_native": "Re-evaluation recommandee: 3 mois"
   },
   "block_d": {

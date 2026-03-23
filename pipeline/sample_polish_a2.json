@@ -23,169 +23,169 @@
   "sections": [
     {
       "id": "perception",
-      "title_de": "Precyzyjna obserwacja",
+      "title_assessed": "Precyzyjna obserwacja",
       "title_native": "Präzise Wahrnehmung",
-      "content_de": "Na tej lekcji pokazales, ze masz dobra baze w jezyku polskim. Twoje slownictwo pokrywa proste codzienne sytuacje. Glowne problemy pojawily sie w systemie przypadkow i w aspekcie czasownikow.",
+      "content_assessed": "Na tej lekcji pokazales, ze masz dobra baze w jezyku polskim. Twoje slownictwo pokrywa proste codzienne sytuacje. Glowne problemy pojawily sie w systemie przypadkow i w aspekcie czasownikow.",
       "content_native": "In dieser Sitzung hast du gezeigt, dass du eine gute Grundlage im Polnischen hast. Dein Wortschatz deckt einfache Alltagssituationen ab. Die Hauptprobleme zeigten sich im Kasussystem und beim Verbaspekt."
     },
     {
       "id": "core_insight",
-      "title_de": "Kluczowy wglad",
+      "title_assessed": "Kluczowy wglad",
       "title_native": "Zentrale Struktur-Erkenntnis",
-      "content_de": "Centralnym problemem jest system przypadkow. Polski ma 7 przypadkow, a kazdy zmienia forme rzeczownika. Jako niemiecki mowca znasz 4 przypadki, ale polski ma wiecej form i wiecej wyjatkow.",
+      "content_assessed": "Centralnym problemem jest system przypadkow. Polski ma 7 przypadkow, a kazdy zmienia forme rzeczownika. Jako niemiecki mowca znasz 4 przypadki, ale polski ma wiecej form i wiecej wyjatkow.",
       "content_native": "Das zentrale Problem ist das Kasussystem. Polnisch hat 7 Fälle, und jeder verändert die Form des Substantivs. Als deutscher Muttersprachler kennst du 4 Fälle, aber Polnisch hat mehr Formen und mehr Ausnahmen."
     },
     {
       "id": "problems",
-      "title_de": "Glowne problemy strukturalne",
+      "title_assessed": "Glowne problemy strukturalne",
       "title_native": "Strukturelle Hauptprobleme",
       "items": [
         {
-          "name_de": "Bledy przypadkowe",
+          "name_assessed": "Bledy przypadkowe",
           "name_native": "Kasusfehler",
           "error_class": "Kasus/Artikel",
-          "explanation_de": "Uzywasz mianownika tam, gdzie potrzebny jest biernik lub celownik: 'Widze ksiazka' zamiast 'Widze ksiazke'.",
+          "explanation_assessed": "Uzywasz mianownika tam, gdzie potrzebny jest biernik lub celownik: 'Widze ksiazka' zamiast 'Widze ksiazke'.",
           "explanation_native": "Du verwendest den Nominativ, wo der Akkusativ oder Dativ nötig ist: 'Widze ksiazka' statt 'Widze ksiazke'.",
-          "evidence_de": "\"Dalem ksiazka przyjaciel.\" → Poprawnie: \"Dalem ksiazke przyjacielowi.\"",
+          "evidence_assessed": "\"Dalem ksiazka przyjaciel.\" → Poprawnie: \"Dalem ksiazke przyjacielowi.\"",
           "evidence_native": "\"Dalem ksiazka przyjaciel.\" → Richtig: \"Dalem ksiazke przyjacielowi.\""
         },
         {
-          "name_de": "Aspekt czasownika",
+          "name_assessed": "Aspekt czasownika",
           "name_native": "Verbaspekt",
           "error_class": "Zeitformen",
-          "explanation_de": "Mylisz aspekt dokonany z niedokonanym: 'Pisalem list' (proces) kiedy chcesz powiedziec 'Napisalem list' (rezultat).",
+          "explanation_assessed": "Mylisz aspekt dokonany z niedokonanym: 'Pisalem list' (proces) kiedy chcesz powiedziec 'Napisalem list' (rezultat).",
           "explanation_native": "Du verwechselst vollendeten und unvollendeten Aspekt: 'Pisalem list' (Prozess) wenn du 'Napisalem list' (Ergebnis) sagen willst.",
-          "evidence_de": "\"Wczoraj czytalem te ksiazke\" (do konca) → \"Wczoraj przeczytalem te ksiazke.\"",
+          "evidence_assessed": "\"Wczoraj czytalem te ksiazke\" (do konca) → \"Wczoraj przeczytalem te ksiazke.\"",
           "evidence_native": "\"Wczoraj czytalem te ksiazke\" (bis zum Ende) → \"Wczoraj przeczytalem te ksiazke.\""
         },
         {
-          "name_de": "Przyimki z przypadkami",
+          "name_assessed": "Przyimki z przypadkami",
           "name_native": "Präpositionen mit Kasus",
           "error_class": "Präpositionen",
-          "explanation_de": "Kazdy przyimek wymaga okreslonego przypadku: 'w' + miejscownik (miejsce) lub 'do' + dopelniacz (kierunek).",
+          "explanation_assessed": "Kazdy przyimek wymaga okreslonego przypadku: 'w' + miejscownik (miejsce) lub 'do' + dopelniacz (kierunek).",
           "explanation_native": "Jede Präposition verlangt einen bestimmten Kasus: 'w' + Lokativ (Ort) oder 'do' + Genitiv (Richtung).",
-          "evidence_de": "\"Jestem w sklep.\" → Poprawnie: \"Jestem w sklepie.\"",
+          "evidence_assessed": "\"Jestem w sklep.\" → Poprawnie: \"Jestem w sklepie.\"",
           "evidence_native": "\"Jestem w sklep.\" → Richtig: \"Jestem w sklepie.\""
         },
         {
-          "name_de": "Deklinacja przymiotnikow",
+          "name_assessed": "Deklinacja przymiotnikow",
           "name_native": "Adjektivdeklination",
           "error_class": "Kasus/Artikel",
-          "explanation_de": "Przymiotniki tez sie odmieniaja przez przypadki: 'duzy dom' (mianownik) vs. 'duzego domu' (dopelniacz).",
+          "explanation_assessed": "Przymiotniki tez sie odmieniaja przez przypadki: 'duzy dom' (mianownik) vs. 'duzego domu' (dopelniacz).",
           "explanation_native": "Adjektive werden auch nach Kasus dekliniert: 'duzy dom' (Nominativ) vs. 'duzego domu' (Genitiv).",
-          "evidence_de": "\"Widze duzy dom.\" → Poprawnie: \"Widze duzy dom.\" (tu akurat dobrze, ale w dopelniaczu: \"duzego domu\")",
+          "evidence_assessed": "\"Widze duzy dom.\" → Poprawnie: \"Widze duzy dom.\" (tu akurat dobrze, ale w dopelniaczu: \"duzego domu\")",
           "evidence_native": "\"Widze duzy dom.\" → Richtig: \"Widze duzy dom.\" (hier korrekt, aber im Genitiv: \"duzego domu\")"
         },
         {
-          "name_de": "Wymowa: sz, cz, rz, dz",
+          "name_assessed": "Wymowa: sz, cz, rz, dz",
           "name_native": "Aussprache: sz, cz, rz, dz",
           "error_class": "Register/Wortwahl",
-          "explanation_de": "Mylisz polskie syczace z niemieckimi: 'sz' nie jest 'sch', a 'cz' nie jest 'tsch'.",
+          "explanation_assessed": "Mylisz polskie syczace z niemieckimi: 'sz' nie jest 'sch', a 'cz' nie jest 'tsch'.",
           "explanation_native": "Du verwechselst polnische Zischlaute mit deutschen: 'sz' ist nicht 'sch', und 'cz' ist nicht 'tsch'.",
-          "evidence_de": "Wymowa wymaga codziennej praktyki z nagraniami.",
+          "evidence_assessed": "Wymowa wymaga codziennej praktyki z nagraniami.",
           "evidence_native": "Die Aussprache erfordert tägliches Üben mit Aufnahmen."
         }
       ]
     },
     {
       "id": "corrections",
-      "title_de": "Korekty dzwigni",
+      "title_assessed": "Korekty dzwigni",
       "title_native": "Hebelkorrekturen",
       "items": [
         {
-          "original_de": "Zle: Widze ksiazka.",
+          "original_assessed": "Zle: Widze ksiazka.",
           "original_native": "Falsch: Widze ksiazka.",
-          "corrected_de": "Poprawnie: Widze ksiazke.",
+          "corrected_assessed": "Poprawnie: Widze ksiazke.",
           "corrected_native": "Richtig: Widze ksiazke.",
-          "explanation_de": "Biernik po 'widziec': ksiazka → ksiazke.",
+          "explanation_assessed": "Biernik po 'widziec': ksiazka → ksiazke.",
           "explanation_native": "Akkusativ nach 'widziec': ksiazka → ksiazke."
         },
         {
-          "original_de": "Zle: Jestem w sklep.",
+          "original_assessed": "Zle: Jestem w sklep.",
           "original_native": "Falsch: Jestem w sklep.",
-          "corrected_de": "Poprawnie: Jestem w sklepie.",
+          "corrected_assessed": "Poprawnie: Jestem w sklepie.",
           "corrected_native": "Richtig: Jestem w sklepie.",
-          "explanation_de": "Miejsce = miejscownik: w + sklepie.",
+          "explanation_assessed": "Miejsce = miejscownik: w + sklepie.",
           "explanation_native": "Ort = Lokativ: w + sklepie."
         },
         {
-          "original_de": "Zle: Dalem ksiazka przyjaciel.",
+          "original_assessed": "Zle: Dalem ksiazka przyjaciel.",
           "original_native": "Falsch: Dalem ksiazka przyjaciel.",
-          "corrected_de": "Poprawnie: Dalem ksiazke przyjacielowi.",
+          "corrected_assessed": "Poprawnie: Dalem ksiazke przyjacielowi.",
           "corrected_native": "Richtig: Dalem ksiazke przyjacielowi.",
-          "explanation_de": "Dac + co (biernik) + komu (celownik).",
+          "explanation_assessed": "Dac + co (biernik) + komu (celownik).",
           "explanation_native": "Dac + was (Akkusativ) + wem (Dativ)."
         },
         {
-          "original_de": "Zle: Wczoraj czytalem te ksiazke (do konca).",
+          "original_assessed": "Zle: Wczoraj czytalem te ksiazke (do konca).",
           "original_native": "Falsch: Wczoraj czytalem te ksiazke (bis zum Ende).",
-          "corrected_de": "Poprawnie: Wczoraj przeczytalem te ksiazke.",
+          "corrected_assessed": "Poprawnie: Wczoraj przeczytalem te ksiazke.",
           "corrected_native": "Richtig: Wczoraj przeczytalem te ksiazke.",
-          "explanation_de": "Zakonczony = aspekt dokonany: przeczytalem.",
+          "explanation_assessed": "Zakonczony = aspekt dokonany: przeczytalem.",
           "explanation_native": "Abgeschlossen = vollendeter Aspekt: przeczytalem."
         },
         {
-          "original_de": "Zle: Ide do sklep.",
+          "original_assessed": "Zle: Ide do sklep.",
           "original_native": "Falsch: Ide do sklep.",
-          "corrected_de": "Poprawnie: Ide do sklepu.",
+          "corrected_assessed": "Poprawnie: Ide do sklepu.",
           "corrected_native": "Richtig: Ide do sklepu.",
-          "explanation_de": "'do' + dopelniacz: sklep → sklepu.",
+          "explanation_assessed": "'do' + dopelniacz: sklep → sklepu.",
           "explanation_native": "'do' + Genitiv: sklep → sklepu."
         }
       ]
     },
     {
       "id": "solutions",
-      "title_de": "Rozwiazania",
+      "title_assessed": "Rozwiazania",
       "title_native": "Lösungen",
       "items": [
         {
-          "name_de": "Trenazer przypadkow",
+          "name_assessed": "Trenazer przypadkow",
           "name_native": "Kasus-Trainer",
-          "action_de": "Codziennie 5 zdan ze swiadomym wyborem przypadka. Mow na glos.",
+          "action_assessed": "Codziennie 5 zdan ze swiadomym wyborem przypadka. Mow na glos.",
           "action_native": "Jeden Tag 5 Sätze mit bewusster Kasuswahl. Laut aussprechen.",
-          "result_de": "Automatyczny wybor przypadka w 3-4 tygodnie.",
+          "result_assessed": "Automatyczny wybor przypadka w 3-4 tygodnie.",
           "result_native": "Automatische Kasuswahl in 3-4 Wochen."
         },
         {
-          "name_de": "Aspekt czasownika",
+          "name_assessed": "Aspekt czasownika",
           "name_native": "Verbaspekt",
-          "action_de": "3 pary dziennie: ta sama czynnosc — dokonany (rezultat) i niedokonany (proces).",
+          "action_assessed": "3 pary dziennie: ta sama czynnosc — dokonany (rezultat) i niedokonany (proces).",
           "action_native": "3 Paare pro Tag: dieselbe Handlung — vollendet (Ergebnis) und unvollendet (Prozess).",
-          "result_de": "Swiadomy wybor aspektu w 3 tygodnie.",
+          "result_assessed": "Swiadomy wybor aspektu w 3 tygodnie.",
           "result_native": "Bewusste Aspektwahl in 3 Wochen."
         },
         {
-          "name_de": "Przyimki + przypadki",
+          "name_assessed": "Przyimki + przypadki",
           "name_native": "Präpositionen + Kasus",
-          "action_de": "Zapamietaj: w + miejscownik (miejsce), do + dopelniacz (kierunek), z + narzednik (z kim).",
+          "action_assessed": "Zapamietaj: w + miejscownik (miejsce), do + dopelniacz (kierunek), z + narzednik (z kim).",
           "action_native": "Merke: w + Lokativ (Ort), do + Genitiv (Richtung), z + Instrumental (mit wem).",
-          "result_de": "Poprawne przyimki w 2 tygodnie.",
+          "result_assessed": "Poprawne przyimki w 2 tygodnie.",
           "result_native": "Korrekte Präpositionen in 2 Wochen."
         },
         {
-          "name_de": "Deklinacja przymiotnikow",
+          "name_assessed": "Deklinacja przymiotnikow",
           "name_native": "Adjektivdeklination",
-          "action_de": "Ucz sie przymiotnikow razem z rzeczownikiem w roznych przypadkach.",
+          "action_assessed": "Ucz sie przymiotnikow razem z rzeczownikiem w roznych przypadkach.",
           "action_native": "Lerne Adjektive zusammen mit dem Substantiv in verschiedenen Kasus.",
-          "result_de": "Poprawna deklinacja w 3-4 tygodnie.",
+          "result_assessed": "Poprawna deklinacja w 3-4 tygodnie.",
           "result_native": "Korrekte Deklination in 3-4 Wochen."
         },
         {
-          "name_de": "Cwiczenie wymowy",
+          "name_assessed": "Cwiczenie wymowy",
           "name_native": "Ausspracheübung",
-          "action_de": "Codziennie 5 minut: nagranie → sluchanie → powtarzanie polskich syczacych.",
+          "action_assessed": "Codziennie 5 minut: nagranie → sluchanie → powtarzanie polskich syczacych.",
           "action_native": "Täglich 5 Minuten: Aufnahme → Anhören → Wiederholen polnischer Zischlaute.",
-          "result_de": "Wyrazna poprawa w 2-3 tygodnie.",
+          "result_assessed": "Wyrazna poprawa w 2-3 tygodnie.",
           "result_native": "Deutliche Verbesserung in 2-3 Wochen."
         }
       ]
     },
     {
       "id": "sentence_engine",
-      "name_de": "Silnik przypadkow",
+      "name_assessed": "Silnik przypadkow",
       "name_native": "Der Kasus-Motor",
-      "explanation_de": "Codziennie mow na glos 5 zdan, swiadomie wybierajac prawidlowy przypadek.",
+      "explanation_assessed": "Codziennie mow na glos 5 zdan, swiadomie wybierajac prawidlowy przypadek.",
       "explanation_native": "Jeden Tag 5 Sätze laut aussprechen, bewusst den richtigen Kasus wählen.",
       "patterns": [
         {
@@ -201,12 +201,12 @@
           "native": "Ich bin im Laden. (Lokativ — Ort)"
         }
       ],
-      "daily_instruction_de": "5 zdan dziennie, na glos, ze swiadomym przypadkiem.",
+      "daily_instruction_assessed": "5 zdan dziennie, na glos, ze swiadomym przypadkiem.",
       "daily_instruction_native": "5 Sätze pro Tag, laut, mit bewusstem Kasus."
     },
     {
       "id": "activation",
-      "title_de": "Aktywacja",
+      "title_assessed": "Aktywacja",
       "title_native": "Aktivierung",
       "sentences": [
         {
@@ -237,7 +237,7 @@
     },
     {
       "id": "homework_a",
-      "title_de": "Zadanie A — Struktura",
+      "title_assessed": "Zadanie A — Struktura",
       "title_native": "Hausaufgaben A — Struktur",
       "sentences": [
         {
@@ -268,103 +268,103 @@
     },
     {
       "id": "homework_b",
-      "title_de": "Zadanie B — Precyzja",
+      "title_assessed": "Zadanie B — Precyzja",
       "title_native": "Hausaufgaben B — Präzision",
       "items": [
         {
-          "wrong_de": "Zle: Widze ksiazka.",
+          "wrong_assessed": "Zle: Widze ksiazka.",
           "wrong_native": "Falsch: Widze ksiazka.",
-          "right_de": "Poprawnie: Widze ksiazke.",
+          "right_assessed": "Poprawnie: Widze ksiazke.",
           "right_native": "Richtig: Widze ksiazke."
         },
         {
-          "wrong_de": "Zle: Jestem w sklep.",
+          "wrong_assessed": "Zle: Jestem w sklep.",
           "wrong_native": "Falsch: Jestem w sklep.",
-          "right_de": "Poprawnie: Jestem w sklepie.",
+          "right_assessed": "Poprawnie: Jestem w sklepie.",
           "right_native": "Richtig: Jestem w sklepie."
         },
         {
-          "wrong_de": "Zle: Ide do sklep.",
+          "wrong_assessed": "Zle: Ide do sklep.",
           "wrong_native": "Falsch: Ide do sklep.",
-          "right_de": "Poprawnie: Ide do sklepu.",
+          "right_assessed": "Poprawnie: Ide do sklepu.",
           "right_native": "Richtig: Ide do sklepu."
         },
         {
-          "wrong_de": "Zle: Dalem ksiazka przyjaciel.",
+          "wrong_assessed": "Zle: Dalem ksiazka przyjaciel.",
           "wrong_native": "Falsch: Dalem ksiazka przyjaciel.",
-          "right_de": "Poprawnie: Dalem ksiazke przyjacielowi.",
+          "right_assessed": "Poprawnie: Dalem ksiazke przyjacielowi.",
           "right_native": "Richtig: Dalem ksiazke przyjacielowi."
         },
         {
-          "wrong_de": "Zle: Czytalem ksiazke (do konca).",
+          "wrong_assessed": "Zle: Czytalem ksiazke (do konca).",
           "wrong_native": "Falsch: Czytalem ksiazke (bis zum Ende).",
-          "right_de": "Poprawnie: Przeczytalem ksiazke.",
+          "right_assessed": "Poprawnie: Przeczytalem ksiazke.",
           "right_native": "Richtig: Przeczytalem ksiazke."
         }
       ]
     },
     {
       "id": "weekly_plan",
-      "title_de": "Plan tygodniowy",
+      "title_assessed": "Plan tygodniowy",
       "title_native": "Wochenplan",
       "weeks": [
         {
-          "label_de": "Tydzien 1-2",
+          "label_assessed": "Tydzien 1-2",
           "label_native": "Woche 1-2",
-          "focus_de": "System przypadkow: mianownik → biernik → celownik",
+          "focus_assessed": "System przypadkow: mianownik → biernik → celownik",
           "focus_native": "Kasussystem: Nominativ → Akkusativ → Dativ",
-          "goal_de": "Automatyczny wybor przypadka",
+          "goal_assessed": "Automatyczny wybor przypadka",
           "goal_native": "Automatische Kasuswahl",
-          "daily_de": "5 zdan z przypadkami dziennie",
+          "daily_assessed": "5 zdan z przypadkami dziennie",
           "daily_native": "5 Sätze mit Kasus pro Tag"
         },
         {
-          "label_de": "Tydzien 3-4",
+          "label_assessed": "Tydzien 3-4",
           "label_native": "Woche 3-4",
-          "focus_de": "Aspekt czasownikow + przyimki",
+          "focus_assessed": "Aspekt czasownikow + przyimki",
           "focus_native": "Verbaspekt + Präpositionen",
-          "goal_de": "Prawidlowy aspekt + przypadki po przyimkach",
+          "goal_assessed": "Prawidlowy aspekt + przypadki po przyimkach",
           "goal_native": "Richtiger Aspekt + Kasus nach Präpositionen",
-          "daily_de": "3 pary aspektu + 3 zdania z przyimkami",
+          "daily_assessed": "3 pary aspektu + 3 zdania z przyimkami",
           "daily_native": "3 Aspektpaare + 3 Sätze mit Präpositionen"
         },
         {
-          "label_de": "Tydzien 5-6",
+          "label_assessed": "Tydzien 5-6",
           "label_native": "Woche 5-6",
-          "focus_de": "Deklinacja przymiotnikow + wymowa",
+          "focus_assessed": "Deklinacja przymiotnikow + wymowa",
           "focus_native": "Adjektivdeklination + Aussprache",
-          "goal_de": "Poprawna deklinacja + lepsza wymowa",
+          "goal_assessed": "Poprawna deklinacja + lepsza wymowa",
           "goal_native": "Korrekte Deklination + bessere Aussprache",
-          "daily_de": "3 zdania z przymiotnikami + 5 min wymowy",
+          "daily_assessed": "3 zdania z przymiotnikami + 5 min wymowy",
           "daily_native": "3 Sätze mit Adjektiven + 5 Min. Aussprache"
         },
         {
-          "label_de": "Tydzien 7-8",
+          "label_assessed": "Tydzien 7-8",
           "label_native": "Woche 7-8",
-          "focus_de": "Swobodna mowa pod presja",
+          "focus_assessed": "Swobodna mowa pod presja",
           "focus_native": "Freies Sprechen unter Druck",
-          "goal_de": "Dokladnosc przy spontanicznej mowie",
+          "goal_assessed": "Dokladnosc przy spontanicznej mowie",
           "goal_native": "Genauigkeit bei spontanem Sprechen",
-          "daily_de": "2-minutowy monolog ze swiadomym fokusem",
+          "daily_assessed": "2-minutowy monolog ze swiadomym fokusem",
           "daily_native": "2-Minuten-Monolog mit bewusstem Fokus"
         }
       ]
     }
   ],
   "cefr_footer": {
-    "active_de": "Aktywna produkcja ustna: A2.2",
+    "active_assessed": "Aktywna produkcja ustna: A2.2",
     "active_native": "Aktive gesprochene Produktion: A2.2",
-    "passive_de": "Kompetencja pasywna: B1.1",
+    "passive_assessed": "Kompetencja pasywna: B1.1",
     "passive_native": "Passive Kompetenz: B1.1",
-    "confidence_de": "Pewnosc: 64%",
+    "confidence_assessed": "Pewnosc: 64%",
     "confidence_native": "Konfidenz: 64%",
-    "summary_de": "Jestes na poziomie A2. Twoja baza istnieje, ale system przypadkow jest niestabilny. Z ukierunkowanym treningiem B1 jest realistyczny w 3-4 miesiace.",
+    "summary_assessed": "Jestes na poziomie A2. Twoja baza istnieje, ale system przypadkow jest niestabilny. Z ukierunkowanym treningiem B1 jest realistyczny w 3-4 miesiace.",
     "summary_native": "Du bist auf Niveau A2. Deine Basis ist vorhanden, aber das Kasussystem ist instabil. Mit gezieltem Training ist B1 in 3-4 Monaten realistisch.",
-    "stability_de": "Stabilnosc strukturalna pod presja: niska-srednia",
+    "stability_assessed": "Stabilnosc strukturalna pod presja: niska-srednia",
     "stability_native": "Strukturstabilität unter Druck: niedrig bis mittel",
-    "self_correction_de": "Zdolnosc autokorekty: niska",
+    "self_correction_assessed": "Zdolnosc autokorekty: niska",
     "self_correction_native": "Selbstkorrektur-Fähigkeit: niedrig",
-    "reassessment_de": "Zalecana ponowna ocena: 3 miesiace",
+    "reassessment_assessed": "Zalecana ponowna ocena: 3 miesiace",
     "reassessment_native": "Empfohlenes Re-Assessment: 3 Monate"
   },
   "block_d": {
