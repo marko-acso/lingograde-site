@@ -313,18 +313,33 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <div class="section-label">Available Languages</div>
     <h2 class="section-title">12 languages assessed. Reports in 25+ native languages.</h2>
     <p class="section-desc" style="margin:0 auto 24px;">Every report is delivered bilingually — the assessed language plus your native language. Choose a language below to preview a real sample report.</p>
+    <!-- Native Language Selector -->
+    <div style="margin:0 auto 32px;max-width:340px;">
+      <label for="nativeLangSelect" style="display:block;font-size:0.8rem;color:var(--ink-light);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.05em;font-weight:600;">Your native language</label>
+      <select id="nativeLangSelect" onchange="translateLanguages(this.value)" style="width:100%;padding:10px 14px;border-radius:10px;border:1.5px solid var(--border);font-size:1rem;color:var(--ink);background:var(--cream);cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 12 12%22><path d=%22M2 4l4 4 4-4%22 fill=%22none%22 stroke=%22%236b7280%22 stroke-width=%221.5%22/></svg>');background-repeat:no-repeat;background-position:right 14px center;">
+        <option value="en">&#127468;&#127463; English</option>
+        <option value="es">&#127466;&#127480; Espa&ntilde;ol</option>
+        <option value="zh">&#127464;&#127475; &#20013;&#25991;</option>
+        <option value="ar">&#127480;&#127462; &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</option>
+        <option value="ru">&#127479;&#127482; &#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option>
+        <option value="pt">&#127463;&#127479; Portugu&ecirc;s</option>
+        <option value="tr">&#127481;&#127479; T&uuml;rk&ccedil;e</option>
+        <option value="uk">&#127482;&#127462; &#1059;&#1082;&#1088;&#1072;&#1111;&#1085;&#1089;&#1100;&#1082;&#1072;</option>
+      </select>
+      <p style="font-size:0.7rem;color:var(--ink-light);margin-top:6px;">8 display languages shown. Reports available in 25+ native languages.</p>
+    </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin-bottom:32px;">
-      <a href="samples/sample_german_b2_it.pdf" data-sample="sample_german_b2" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+      <a href="samples/sample_german_b2_en.pdf" data-sample="sample_german_b2" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
         <div style="font-size:2rem;margin-bottom:6px;">&#127465;&#127466;</div>
         <div data-lang="de" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">German</div>
         <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">B2 Sample</div>
       </a>
-      <a href="samples/sample_english_b2_es.pdf" data-sample="sample_english_b2" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+      <a href="samples/sample_english_b2_en.pdf" data-sample="sample_english_b2" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
         <div style="font-size:2rem;margin-bottom:6px;">&#127468;&#127463;</div>
         <div data-lang="en" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">English</div>
         <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">B2 Sample</div>
       </a>
-      <a href="samples/sample_french_b1_ar.pdf" data-sample="sample_french_b1" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+      <a href="samples/sample_french_b1_en.pdf" data-sample="sample_french_b1" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
         <div style="font-size:2rem;margin-bottom:6px;">&#127467;&#127479;</div>
         <div data-lang="fr" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">French</div>
         <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">B1 Sample</div>
@@ -334,37 +349,37 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         <div data-lang="es" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Spanish</div>
         <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">B2 Sample</div>
       </a>
-      <a href="samples/sample_italian_b1_de.pdf" data-sample="sample_italian_b1" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+      <a href="samples/sample_italian_b1_en.pdf" data-sample="sample_italian_b1" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
         <div style="font-size:2rem;margin-bottom:6px;">&#127470;&#127481;</div>
         <div data-lang="it" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Italian</div>
         <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">B1 Sample</div>
       </a>
-      <a href="samples/sample_portuguese_b1_fr.pdf" data-sample="sample_portuguese_b1" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+      <a href="samples/sample_portuguese_b1_en.pdf" data-sample="sample_portuguese_b1" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
         <div style="font-size:2rem;margin-bottom:6px;">&#127477;&#127481;</div>
         <div data-lang="pt" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Portuguese</div>
         <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">B1 Sample</div>
       </a>
-      <a href="samples/sample_russian_a2_bg.pdf" data-sample="sample_russian_a2" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+      <a href="samples/sample_russian_a2_en.pdf" data-sample="sample_russian_a2" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
         <div style="font-size:2rem;margin-bottom:6px;">&#127479;&#127482;</div>
         <div data-lang="ru" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Russian</div>
         <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">A2 Sample</div>
       </a>
-      <a href="samples/sample_serbian_a2_bg.pdf" data-sample="sample_serbian_a2" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+      <a href="samples/sample_serbian_a2_en.pdf" data-sample="sample_serbian_a2" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
         <div style="font-size:2rem;margin-bottom:6px;">&#127479;&#127480;</div>
         <div data-lang="sr" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Serbian</div>
         <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">A2 Sample</div>
       </a>
-      <a href="samples/sample_croatian_a2_bg.pdf" data-sample="sample_croatian_a2" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+      <a href="samples/sample_croatian_a2_en.pdf" data-sample="sample_croatian_a2" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
         <div style="font-size:2rem;margin-bottom:6px;">&#127469;&#127479;</div>
         <div data-lang="hr" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Croatian</div>
         <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">A2 Sample</div>
       </a>
-      <a href="samples/sample_romanian_a2_bg.pdf" data-sample="sample_romanian_a2" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+      <a href="samples/sample_romanian_a2_en.pdf" data-sample="sample_romanian_a2" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
         <div style="font-size:2rem;margin-bottom:6px;">&#127479;&#127476;</div>
         <div data-lang="ro" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Romanian</div>
         <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">A2 Sample</div>
       </a>
-      <a href="samples/sample_polish_a2_de.pdf" data-sample="sample_polish_a2" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+      <a href="samples/sample_polish_a2_en.pdf" data-sample="sample_polish_a2" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
         <div style="font-size:2rem;margin-bottom:6px;">&#127477;&#127473;</div>
         <div data-lang="pl" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Polish</div>
         <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">A2 Sample</div>
