@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LingoGrade — Professional Language Assessment</title>
+<meta name="description" content="Know exactly where you stand. Get a professional CEFR language assessment with actionable feedback, personalized homework, and an 8-week learning plan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1C1C1C;
+  --ink-soft: #4A4A4A;
+  --ink-light: #8A8A8A;
+  --accent: #2563AB;
+  --accent-lt: #3B82F6;
+  --accent-bg: #EFF6FF;
+  --cream: #FFFFFF;
+  --parchment: #F8F8F8;
+  --border: #E0E0E0;
+  --success: #27AE60;
+  --success-bg: #F0FFF4;
+  --warn: #E67E22;
+  --error: #C0392B;
+  --purple: #7B4F9E;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+  --max-w: 1080px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--ink); background: var(--cream); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+/* ── Navigation ── */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 32px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+.nav-brand { font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); text-decoration: none; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; transition: color 0.15s; }
+.nav-links a:hover { color: var(--accent); }
+.nav-cta { display: inline-flex; align-items: center; padding: 8px 20px; background: var(--accent); color: white !important; border-radius: 8px; font-weight: 600; font-size: 0.875rem; transition: background 0.15s; }
+.nav-cta:hover { background: var(--accent-lt); }
+
+/* ── Hero ── */
+.hero { padding: 140px 32px 80px; text-align: center; background: linear-gradient(180deg, var(--accent-bg) 0%, var(--cream) 100%); }
+.hero-inner { max-width: 720px; margin: 0 auto; }
+.hero-badge { display: inline-block; padding: 6px 16px; background: var(--accent); color: white; border-radius: 100px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 24px; }
+.hero h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.2; color: var(--ink); margin-bottom: 20px; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero p { font-size: 1.125rem; color: var(--ink-soft); max-width: 560px; margin: 0 auto 32px; line-height: 1.7; }
+.hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: var(--accent); color: white; border-radius: 10px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
+.btn-primary:hover { background: var(--accent-lt); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(37,99,171,0.3); }
+.btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: transparent; color: var(--ink); border-radius: 10px; font-weight: 600; font-size: 1rem; text-decoration: none; border: 1.5px solid var(--border); transition: all 0.15s; }
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+.hero-trust { margin-top: 48px; font-size: 0.8125rem; color: var(--ink-light); }
+.hero-trust strong { color: var(--ink-soft); font-weight: 600; }
+
+/* ── Section ── */
+.section { padding: 80px 32px; }
+.section-inner { max-width: var(--max-w); margin: 0 auto; }
+.section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+.section-title { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.25rem); line-height: 1.3; color: var(--ink); margin-bottom: 16px; }
+.section-desc { font-size: 1rem; color: var(--ink-soft); max-width: 600px; line-height: 1.7; }
+.section-alt { background: var(--parchment); }
+
+/* ── How It Works ── */
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 48px; }
+.step { text-align: center; }
+.step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--accent); color: white; font-family: var(--font-display); font-size: 1.25rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+.step h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
+.step p { font-size: 0.875rem; color: var(--ink-soft); line-height: 1.6; }
+
+/* ── What You Get ── */
+.blocks { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
+.block-card { padding: 28px; border-radius: 12px; border: 1.5px solid var(--border); background: var(--cream); transition: border-color 0.15s; }
+.block-card:hover { border-color: var(--accent); }
+.block-tag { display: inline-block; padding: 3px 10px; border-radius: 4px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: white; margin-bottom: 12px; }
+.block-tag-a { background: var(--accent); }
+.block-tag-b { background: var(--accent-lt); }
+.block-tag-c { background: var(--success); }
+.block-tag-d { background: var(--warn); }
+.block-tag-e { background: var(--purple); }
+.block-card h3 { font-size: 1.0625rem; font-weight: 600; margin-bottom: 8px; }
+.block-card p { font-size: 0.875rem; color: var(--ink-soft); line-height: 1.6; }
+.block-card.included { border-color: var(--accent); background: var(--accent-bg); }
+.block-card .included-badge { font-size: 0.6875rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 12px; }
+
+/* ── Pricing ── */
+.pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; max-width: 800px; margin-left: auto; margin-right: auto; }
+.pricing-card { border-radius: 16px; border: 2px solid var(--border); padding: 36px 32px; position: relative; transition: border-color 0.2s; }
+.pricing-card:hover { border-color: var(--accent); }
+.pricing-card.featured { border-color: var(--accent); background: linear-gradient(180deg, var(--accent-bg) 0%, var(--cream) 60%); }
+.pricing-card.featured::before { content: 'MOST POPULAR'; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); padding: 4px 16px; background: var(--accent); color: white; border-radius: 100px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.06em; }
+.pricing-name { font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); margin-bottom: 4px; }
+.pricing-duration { font-size: 0.875rem; color: var(--ink-light); margin-bottom: 20px; }
+.pricing-price { font-family: var(--font-display); font-size: 2.5rem; color: var(--accent); margin-bottom: 4px; }
+.pricing-price-note { font-size: 0.8125rem; color: var(--ink-light); margin-bottom: 24px; }
+.pricing-features { list-style: none; margin-bottom: 28px; }
+.pricing-features li { font-size: 0.875rem; color: var(--ink-soft); padding: 6px 0; padding-left: 24px; position: relative; }
+.pricing-features li::before { content: ''; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.pricing-features li.no::before { background: var(--border); }
+.pricing-features li.no { color: var(--ink-light); }
+.pricing-btn { display: block; width: 100%; padding: 14px; text-align: center; border-radius: 10px; font-weight: 600; font-size: 0.9375rem; text-decoration: none; transition: all 0.15s; }
+.pricing-btn-primary { background: var(--accent); color: white; }
+.pricing-btn-primary:hover { background: var(--accent-lt); }
+.pricing-btn-secondary { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+.pricing-btn-secondary:hover { background: var(--accent-bg); }
+.pricing-discount { text-align: center; margin-top: 24px; padding: 16px; background: var(--success-bg); border-radius: 10px; border: 1px solid rgba(39,174,96,0.2); }
+.pricing-discount p { font-size: 0.875rem; color: var(--success); }
+.pricing-discount strong { font-weight: 700; }
+
+/* ── CEFR Explainer ── */
+.cefr-bar { display: flex; gap: 0; margin-top: 32px; border-radius: 10px; overflow: hidden; }
+.cefr-level { flex: 1; padding: 16px 12px; text-align: center; color: white; }
+.cefr-level h4 { font-size: 1.125rem; font-weight: 700; margin-bottom: 2px; }
+.cefr-level p { font-size: 0.6875rem; opacity: 0.9; }
+
+/* ── Partners ── */
+.partner-card { background: var(--accent-bg); border-radius: 16px; padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 40px; }
+.partner-card h3 { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 12px; }
+.partner-card p { font-size: 0.9375rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 20px; }
+.partner-benefits { list-style: none; }
+.partner-benefits li { font-size: 0.875rem; color: var(--ink-soft); padding: 6px 0 6px 24px; position: relative; }
+.partner-benefits li::before { content: ''; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: var(--success); }
+
+/* ── FAQ ── */
+.faq-list { max-width: 700px; margin: 40px auto 0; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-q { width: 100%; padding: 20px 0; background: none; border: none; font-family: var(--font-body); font-size: 1rem; font-weight: 600; color: var(--ink); text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.faq-q::after { content: '+'; font-size: 1.25rem; color: var(--ink-light); transition: transform 0.2s; }
+.faq-item.open .faq-q::after { content: '\2212'; }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.faq-a-inner { padding: 0 0 20px; font-size: 0.9375rem; color: var(--ink-soft); line-height: 1.7; }
+.faq-item.open .faq-a { max-height: 300px; }
+
+/* ── Footer ── */
+.footer { padding: 48px 32px; background: var(--ink); color: rgba(255,255,255,0.6); text-align: center; }
+.footer-brand { font-family: var(--font-display); font-size: 1.25rem; color: white; margin-bottom: 8px; }
+.footer p { font-size: 0.8125rem; line-height: 1.7; }
+.footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
+.footer a:hover { color: white; }
+.footer-links { margin-top: 20px; display: flex; gap: 24px; justify-content: center; }
+.footer-links a { font-size: 0.8125rem; }
+.footer-copy { margin-top: 32px; font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .steps { grid-template-columns: 1fr 1fr; }
+  .blocks { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
+  .partner-card { grid-template-columns: 1fr; }
+  .nav-links a:not(.nav-cta) { display: none; }
+}
+@media (max-width: 480px) {
+  .steps { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 1.75rem; }
+  .hero-actions { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">Lingo<span>Grade</span></a>
+    <div class="nav-links">
+      <a href="#how-it-works">How It Works</a>
+      <a href="#what-you-get">What You Get</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#pricing" class="nav-cta">Book Assessment</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">CEFR Language Assessment</div>
+    <h1>Know Exactly Where You Stand. <em>Get a Clear Path Forward.</em></h1>
+    <p>A 15 or 25-minute conversation with a professional language assessor. You get a detailed CEFR report, your key errors explained, targeted solutions, and a personalized plan to reach the next level.</p>
+    <div class="hero-actions">
+      <a href="#pricing" class="btn-primary">See Packages &amp; Book</a>
+      <a href="#how-it-works" class="btn-secondary">How It Works</a>
+    </div>
+    <p class="hero-trust">Based on the <strong>Common European Framework of Reference (CEFR)</strong> — the same standard used by Goethe-Institut, telc, and Cambridge.</p>
+  </div>
+</section>
+
+<!-- ── How It Works ── -->
+<section class="section" id="how-it-works">
+  <div class="section-inner">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Four simple steps to clarity</h2>
+    <p class="section-desc">No test anxiety. No multiple choice. Just a natural conversation that reveals exactly where your language skills are — and where they need to go.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Choose Your Package</h3>
+        <p>Select between a quick 15-minute check or a comprehensive 25-minute deep dive with homework and learning plan.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Book &amp; Pay</h3>
+        <p>Pick a time that works for you. Pay securely online. You'll get a confirmation with your meeting link.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Have a Conversation</h3>
+        <p>Join a relaxed video call via Google Meet or Teams. Just talk naturally — no preparation needed.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Get Your Report</h3>
+        <p>Within 48 hours, receive a professional PDF report with your CEFR level, errors, solutions, and your personalized path forward.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── What You Get ── -->
+<section class="section section-alt" id="what-you-get">
+  <div class="section-inner">
+    <div class="section-label">What You Get</div>
+    <h2 class="section-title">A complete picture of your language skills</h2>
+    <p class="section-desc">Every assessment is structured into clear blocks. The base package includes Block A and B. Add-ons unlock Blocks C, D, and E.</p>
+    <div class="blocks">
+      <div class="block-card included">
+        <span class="block-tag block-tag-a">Block A</span>
+        <h3>CEFR Assessment</h3>
+        <p>Active and passive CEFR scores with confidence rating. Structural stability analysis. Error class identification. This is your diagnostic baseline.</p>
+        <div class="included-badge">Included in all packages</div>
+      </div>
+      <div class="block-card included">
+        <span class="block-tag block-tag-b">Block B</span>
+        <h3>Errors &amp; Solutions</h3>
+        <p>Your key structural errors explained in plain language — not just what's wrong, but why it happens and exactly how to fix it. With concrete examples from your conversation.</p>
+        <div class="included-badge">Included in all packages</div>
+      </div>
+      <div class="block-card">
+        <span class="block-tag block-tag-c">Block C</span>
+        <h3>Personalized Homework</h3>
+        <p>Three types of exercises targeting your specific weak points: structural writing, precision drills, and guided speaking practice. Ready to start immediately.</p>
+      </div>
+      <div class="block-card">
+        <span class="block-tag block-tag-e">Block E</span>
+        <h3>8-Week Learning Plan</h3>
+        <p>A structured week-by-week plan designed to take you to the next CEFR level. Each phase builds on the previous one with clear milestones.</p>
+      </div>
+      <div class="block-card">
+        <span class="block-tag block-tag-d">Block D</span>
+        <h3>Native Language Translation</h3>
+        <p>Your complete student report translated into your mother tongue. Perfect for beginners who need to fully understand every recommendation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CEFR ── -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">CEFR Standard</div>
+    <h2 class="section-title">Internationally recognized framework</h2>
+    <p class="section-desc">Your assessment follows the Common European Framework of Reference — the global standard for language proficiency used by universities, employers, and governments worldwide.</p>
+    <div class="cefr-bar">
+      <div class="cefr-level" style="background:#6B8F71"><h4>A1</h4><p>Beginner</p></div>
+      <div class="cefr-level" style="background:#4D9B78"><h4>A2</h4><p>Elementary</p></div>
+      <div class="cefr-level" style="background:#3A7DB8"><h4>B1</h4><p>Intermediate</p></div>
+      <div class="cefr-level" style="background:#2563AB"><h4>B2</h4><p>Upper Int.</p></div>
+      <div class="cefr-level" style="background:#7B4F9E"><h4>C1</h4><p>Advanced</p></div>
+      <div class="cefr-level" style="background:#5A2D82"><h4>C2</h4><p>Mastery</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Pricing ── -->
+<section class="section section-alt" id="pricing">
+  <div class="section-inner" style="text-align:center;">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title" style="margin-left:auto;margin-right:auto;">Choose your assessment</h2>
+    <p class="section-desc" style="margin-left:auto;margin-right:auto;">Both packages include a professional PDF report delivered within 48 hours.</p>
+    <div class="pricing-grid">
+      <!-- Schnell-Check -->
+      <div class="pricing-card">
+        <div class="pricing-name">Schnell-Check</div>
+        <div class="pricing-duration">15-minute conversation</div>
+        <div class="pricing-price">&euro;69</div>
+        <div class="pricing-price-note">One-time assessment</div>
+        <ul class="pricing-features">
+          <li>CEFR level (active &amp; passive)</li>
+          <li>3 key errors with explanation</li>
+          <li>3 targeted solutions</li>
+          <li>Professional PDF report</li>
+          <li class="no">Personalized homework</li>
+          <li class="no">8-week learning plan</li>
+          <li class="no">Native language translation</li>
+        </ul>
+        <a href="https://cal.com/marko.check/schnell-check" class="pricing-btn pricing-btn-secondary" target="_blank">Book Schnell-Check</a>
+      </div>
+      <!-- Komplett -->
+      <div class="pricing-card featured">
+        <div class="pricing-name">Komplett-Analyse</div>
+        <div class="pricing-duration">25-minute conversation</div>
+        <div class="pricing-price">&euro;129</div>
+        <div class="pricing-price-note">Complete assessment package</div>
+        <ul class="pricing-features">
+          <li>CEFR level (active &amp; passive)</li>
+          <li>5 key errors with explanation</li>
+          <li>5 targeted solutions</li>
+          <li>Professional PDF report</li>
+          <li>Personalized homework (3 types)</li>
+          <li>8-week structured learning plan</li>
+          <li>Translation in your native language</li>
+        </ul>
+        <a href="https://cal.com/marko.check/sprachstandsanalyse" class="pricing-btn pricing-btn-primary" target="_blank">Book Komplett-Analyse</a>
+      </div>
+    </div>
+    <div class="pricing-discount">
+      <p>Have a discount code from your teacher? <strong>Enter it during booking</strong> to unlock your special rate.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Partners ── -->
+<section class="section" id="partners">
+  <div class="section-inner">
+    <div class="section-label">For Language Teachers</div>
+    <h2 class="section-title">Earn 20% on every assessment</h2>
+    <div class="partner-card">
+      <div>
+        <h3>Partner with LingoGrade</h3>
+        <p>Give your students a professional assessment they can't get anywhere else. You earn commission on every booking — we handle everything.</p>
+        <ul class="partner-benefits">
+          <li>20% commission per assessment</li>
+          <li>Custom discount code for your students</li>
+          <li>You handle zero admin — we do the call, analysis, and report</li>
+          <li>Your students stay your students — we never poach</li>
+          <li>Students come back more motivated for lessons</li>
+        </ul>
+      </div>
+      <div style="text-align:center;">
+        <div style="background:var(--parchment); border-radius:12px; padding:32px; border:1.5px solid var(--border);">
+          <div style="font-family:var(--font-display); font-size:2rem; color:var(--accent); margin-bottom:4px;">&euro;20</div>
+          <div style="font-size:0.875rem; color:var(--ink-soft); margin-bottom:20px;">per Komplett-Analyse referral</div>
+          <div style="font-family:var(--font-display); font-size:1.5rem; color:var(--success); margin-bottom:4px;">&euro;10</div>
+          <div style="font-size:0.875rem; color:var(--ink-soft); margin-bottom:24px;">per Schnell-Check referral</div>
+          <a href="mailto:marko.marcovic@gmail.com?subject=LingoGrade Partner Inquiry" class="btn-primary" style="width:100%; justify-content:center;">Become a Partner</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="section section-alt" id="faq">
+  <div class="section-inner">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Common questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">What languages do you assess?</button>
+        <div class="faq-a"><div class="faq-a-inner">Currently, we specialize in German language assessments. We're expanding to other languages soon. Sign up to be notified when your language becomes available.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is this a test? Do I need to prepare?</button>
+        <div class="faq-a"><div class="faq-a-inner">No preparation needed. This is a natural conversation — not an exam. We assess your real-world speaking ability under normal conditions. Just show up and talk.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How is this different from a Goethe or telc exam?</button>
+        <div class="faq-a"><div class="faq-a-inner">Official exams give you a certificate but zero actionable feedback. LingoGrade gives you a detailed breakdown of exactly what's holding you back, with specific exercises and a plan to improve. Think of it as the diagnostic step before the treatment.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">When do I receive my report?</button>
+        <div class="faq-a"><div class="faq-a-inner">Within 48 hours of your conversation. You'll receive a professionally designed PDF report to your email address.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can my teacher use this for our lessons?</button>
+        <div class="faq-a"><div class="faq-a-inner">Absolutely — that's one of the best use cases. Your teacher receives a separate dashboard view with technical insights they can use to tailor your lessons. The homework and 8-week plan are designed to integrate with your existing lessons.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What if I'm a complete beginner?</button>
+        <div class="faq-a"><div class="faq-a-inner">We assess all levels from A1 to C2. If you're a beginner, the conversation will be adapted to your level. The Komplett-Analyse with native language translation is recommended so you can fully understand your report.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">I'm a teacher. How does the referral program work?</button>
+        <div class="faq-a"><div class="faq-a-inner">You get a unique discount code. Share it with your students — they save money, you earn 20% commission on every assessment. We handle everything: booking, conversation, analysis, and report delivery. Your students stay your students.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer class="footer">
+  <div class="footer-brand">LingoGrade</div>
+  <p>Professional Language Assessment</p>
+  <div class="footer-links">
+    <a href="#how-it-works">How It Works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#partners">For Teachers</a>
+    <a href="mailto:marko.marcovic@gmail.com">Contact</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
+</footer>
+
+<script>
+// FAQ toggle
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>

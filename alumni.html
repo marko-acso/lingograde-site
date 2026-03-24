@@ -15,8 +15,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .badge { display: inline-block; padding: 6px 16px; background: #FEF3C7; border-radius: 20px; font-size: 0.8rem; font-weight: 600; color: var(--gold); margin-bottom: 20px; }
 .hero h1 { font-size: clamp(1.6rem, 5vw, 2.4rem); color: var(--ink); margin-bottom: 16px; line-height: 1.3; }
 .hero p { color: var(--ink-soft); font-size: 1.1rem; max-width: 540px; margin: 0 auto; line-height: 1.7; }
-.pricing { max-width: 720px; margin: -20px auto 60px; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-@media (max-width: 640px) { .pricing { grid-template-columns: 1fr; } }
+.pricing { max-width: 960px; margin: -20px auto 60px; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+@media (max-width: 768px) { .pricing { grid-template-columns: 1fr; max-width: 400px; } }
+.plan.premium { border: 2px solid #E67E22; position: relative; }
+.plan.premium::before { content: 'MOST THOROUGH'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #E67E22; color: white; font-size: 0.7rem; font-weight: 700; padding: 4px 14px; border-radius: 10px; letter-spacing: 0.5px; }
+.plan-btn.premium { background: #E67E22; color: white; }
+.plan-btn.premium:hover { background: #D4952A; }
 .plan { background: white; border-radius: 16px; padding: 32px 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid var(--border); text-align: center; transition: transform 0.15s, box-shadow 0.15s; }
 .plan:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
 .plan.featured { border: 2px solid var(--accent); position: relative; }
@@ -102,6 +106,34 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
       <li>Report in German + your language</li>
     </ul>
     <a href="https://cal.com/marko.check/full-assessment-alumni" class="plan-btn primary">Book Full Assessment</a>
+  </div>
+
+  <div class="plan premium">
+    <div class="plan-name">DeepDive Assessment</div>
+    <div class="plan-duration">15 + 25 minutes (with break)</div>
+    <div class="plan-price">
+      <span class="old">&euro;199</span>
+      <span class="new">&euro;159</span>
+    </div>
+    <div class="plan-save">You save &euro;40</div>
+    <ul class="plan-features">
+      <li>Everything in Full Assessment</li>
+      <li>Extended warm-up session</li>
+      <li>Comprehensive error mapping</li>
+      <li>Extended activation exercises</li>
+      <li>Priority delivery</li>
+      <li>The most thorough diagnostic available</li>
+    </ul>
+    <a href="https://cal.com/marko.check/full-assessment-alumni" class="plan-btn premium">Book DeepDive Assessment</a>
+  </div>
+</div>
+
+<div style="max-width:600px;margin:0 auto 40px;padding:0 20px;">
+  <div class="info-card" style="text-align:center;">
+    <h3>Continue Your Progress with Targeted Lessons</h3>
+    <p>After your assessment, book focused lessons that target YOUR specific errors.</p>
+    <p><strong>15-minute lesson: &euro;69</strong> &nbsp;&bull;&nbsp; <strong>25-minute lesson: &euro;99</strong></p>
+    <p style="font-size:0.85rem;color:var(--ink-light);">Alumni get priority booking. Stackable sessions available.</p>
   </div>
 </div>
 

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
@@ -104,11 +104,18 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .block-card .included-badge { font-size: 0.6875rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 12px; }
 
 /* ── Pricing ── */
-.pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; max-width: 800px; margin-left: auto; margin-right: auto; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; max-width: 1080px; margin-left: auto; margin-right: auto; }
 .pricing-card { border-radius: 16px; border: 2px solid var(--border); padding: 36px 32px; position: relative; transition: border-color 0.2s; }
 .pricing-card:hover { border-color: var(--accent); }
 .pricing-card.featured { border-color: var(--accent); background: linear-gradient(180deg, var(--accent-bg) 0%, var(--cream) 60%); }
-.pricing-card.featured::before { content: 'MOST POPULAR'; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); padding: 4px 16px; background: var(--accent); color: white; border-radius: 100px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.06em; }
+.pricing-card.featured::before { content: 'RECOMMENDED'; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); padding: 4px 16px; background: var(--accent); color: white; border-radius: 100px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.06em; }
+.pricing-card.premium { border-color: var(--warn); background: linear-gradient(180deg, #FFF8F0 0%, var(--cream) 60%); }
+.pricing-card.premium:hover { border-color: #D35400; }
+.pricing-card.premium::before { content: 'MOST THOROUGH'; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); padding: 4px 16px; background: var(--warn); color: white; border-radius: 100px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.06em; }
+.pricing-card.premium .pricing-price { color: var(--warn); }
+.pricing-card.premium .pricing-features li::before { background: var(--warn); }
+.pricing-btn-premium { background: var(--warn); color: white; }
+.pricing-btn-premium:hover { background: #D35400; }
 .pricing-name { font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); margin-bottom: 4px; }
 .pricing-duration { font-size: 0.875rem; color: var(--ink-light); margin-bottom: 20px; }
 .pricing-price { font-family: var(--font-display); font-size: 2.5rem; color: var(--accent); margin-bottom: 4px; }
@@ -126,6 +133,22 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .pricing-discount { text-align: center; margin-top: 24px; padding: 16px; background: var(--success-bg); border-radius: 10px; border: 1px solid rgba(39,174,96,0.2); }
 .pricing-discount p { font-size: 0.875rem; color: var(--success); }
 .pricing-discount strong { font-weight: 700; }
+
+/* ── Lessons Grid ── */
+.lessons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; max-width: 700px; margin-left: auto; margin-right: auto; }
+.lesson-card { border-radius: 16px; border: 2px solid var(--border); padding: 36px 32px; text-align: center; transition: border-color 0.2s; }
+.lesson-card:hover { border-color: var(--accent); }
+.lesson-card .lesson-duration { font-family: var(--font-display); font-size: 1.25rem; color: var(--ink); margin-bottom: 4px; }
+.lesson-card .lesson-price { font-family: var(--font-display); font-size: 2rem; color: var(--accent); margin-bottom: 16px; }
+.lesson-card p { font-size: 0.875rem; color: var(--ink-soft); line-height: 1.6; }
+
+/* ── Subscription Card ── */
+.subscription-card { border-radius: 16px; border: 2px solid var(--accent); background: linear-gradient(180deg, var(--accent-bg) 0%, var(--cream) 60%); padding: 40px; max-width: 700px; margin: 48px auto 0; text-align: center; }
+.subscription-card h3 { font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); margin-bottom: 8px; }
+.subscription-card .sub-price { font-family: var(--font-display); font-size: 2rem; color: var(--accent); margin: 16px 0 8px; }
+.subscription-features { list-style: none; text-align: left; max-width: 440px; margin: 0 auto 24px; }
+.subscription-features li { font-size: 0.9375rem; color: var(--ink-soft); padding: 8px 0 8px 28px; position: relative; }
+.subscription-features li::before { content: ''; position: absolute; left: 0; top: 14px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 
 /* ── CEFR Explainer ── */
 .cefr-bar { display: flex; gap: 0; margin-top: 32px; border-radius: 10px; overflow: hidden; }
@@ -157,7 +180,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .footer p { font-size: 0.8125rem; line-height: 1.7; }
 .footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
 .footer a:hover { color: white; }
-.footer-links { margin-top: 20px; display: flex; gap: 24px; justify-content: center; }
+.footer-links { margin-top: 20px; display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
 .footer-links a { font-size: 0.8125rem; }
 .footer-copy { margin-top: 32px; font-size: 0.75rem; color: rgba(255,255,255,0.5); }
 
@@ -166,6 +189,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .steps { grid-template-columns: 1fr 1fr; }
   .blocks { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
+  .lessons-grid { grid-template-columns: 1fr; max-width: 400px; }
   .partner-card { grid-template-columns: 1fr; }
   .nav-hamburger { display: flex; }
   .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; flex-direction: column; gap: 0; padding: 8px 0; border-bottom: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
@@ -186,6 +210,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .steps { grid-template-columns: 1fr 1fr; gap: 24px; }
   .blocks { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr !important; max-width: 420px !important; }
+  .lessons-grid { grid-template-columns: 1fr !important; max-width: 420px !important; }
   .partner-card { grid-template-columns: 1fr !important; gap: 32px; }
   .cefr-bar { flex-wrap: wrap; }
   .cefr-level { flex: 1 1 30%; }
@@ -231,6 +256,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <div class="hero-badge">Professional CEFR Language Assessment</div>
     <h1>Most language learners are working at the <em>wrong level.</em> Are you?</h1>
     <p>Without an accurate baseline, every lesson is a guess. LingoGrade assesses your real spoken language — the errors you make under pressure, the structures you avoid without realising it — and gives you a bespoke plan to reach the next level.</p>
+    <p style="font-size:0.875rem;color:var(--ink-light);margin:0 auto 24px;font-weight:500;">Meet Marco — your personal language assessment companion</p>
     <div class="hero-actions">
       <a href="#pricing" class="btn-primary">Find Out My Real Level</a>
       <a href="#how-it-works" class="btn-secondary">How It Works</a>
@@ -513,52 +539,134 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   <div class="section-inner" style="text-align:center;">
     <div class="section-label">Pricing</div>
     <h2 class="section-title" style="margin-left:auto;margin-right:auto;">One conversation. Complete clarity.</h2>
-    <p class="section-desc" style="margin-left:auto;margin-right:auto;">Both assessments include a professional PDF report within 1 hour. No preparation needed — just show up and talk. Slots are limited and fill quickly.</p>
+    <p class="section-desc" style="margin-left:auto;margin-right:auto;">All assessments include a professional bilingual PDF report delivered within 55 minutes. No preparation needed — just show up and talk. Slots are limited and fill quickly.</p>
 
-    <div class="pricing-grid" style="grid-template-columns:1fr 1fr;max-width:860px;">
+    <div class="pricing-grid">
       <div class="pricing-card">
         <div class="pricing-name">Quick Assessment</div>
-        <div class="pricing-duration">15-minute conversation</div>
+        <div class="pricing-duration">15-minute session</div>
         <div class="pricing-price">&euro;69</div>
         <div class="pricing-price-note">One-time assessment</div>
         <ul class="pricing-features">
-          <li>Active &amp; passive CEFR level</li>
-          <li>3 key errors with explanation</li>
+          <li>CEFR active &amp; passive level</li>
+          <li>3 structural problems identified</li>
           <li>3 targeted solutions</li>
-          <li>Professional PDF report</li>
-          <li class="no">Personalized homework</li>
+          <li>Homework A + B</li>
+          <li>Bilingual report</li>
+          <li>Delivered within 55 minutes</li>
           <li class="no">8-week learning plan</li>
-          <li class="no">Native language translation</li>
+          <li class="no">Sentence engine + mini block</li>
         </ul>
         <a href="https://cal.com/marko.check/quick-assessment" class="pricing-btn pricing-btn-secondary" target="_blank">Get My CEFR Level &rarr;</a>
       </div>
       <div class="pricing-card featured">
         <div class="pricing-name">Full Assessment</div>
-        <div class="pricing-duration">25-minute conversation</div>
+        <div class="pricing-duration">25-minute session</div>
         <div class="pricing-price">&euro;129</div>
         <div class="pricing-price-note">Complete assessment package</div>
         <ul class="pricing-features">
-          <li>Active &amp; passive CEFR level</li>
-          <li>5 key errors with explanation</li>
-          <li>5 targeted solutions</li>
-          <li>Professional PDF report</li>
-          <li>Personalized homework (3 types)</li>
-          <li>8-week structured learning plan</li>
-          <li>Translation in your native language</li>
+          <li>Extended CEFR analysis</li>
+          <li>5 structural problems + 5 solutions</li>
+          <li>Homework A + B + C</li>
+          <li>8-week learning plan</li>
+          <li>Sentence engine + mini block</li>
+          <li>Bilingual report, 55-min delivery</li>
         </ul>
         <a href="https://cal.com/marko.check/full-assessment" class="pricing-btn pricing-btn-primary" target="_blank">Get My Full Report &rarr;</a>
       </div>
+      <div class="pricing-card premium">
+        <div class="pricing-name">DeepDive Assessment</div>
+        <div class="pricing-duration">15 + 25 minutes (5-min break)</div>
+        <div class="pricing-price">&euro;199</div>
+        <div class="pricing-price-note">The most thorough language diagnostic available</div>
+        <ul class="pricing-features">
+          <li>Everything in Full Assessment</li>
+          <li>Extended activation exercises</li>
+          <li>Comprehensive error mapping</li>
+          <li>Priority delivery</li>
+          <li>Two sessions with a 5-minute break</li>
+          <li>The deepest analysis of your spoken language</li>
+        </ul>
+        <a href="https://cal.com/marko.check/deepdive-assessment" class="pricing-btn pricing-btn-premium" target="_blank">Get the DeepDive &rarr;</a>
+      </div>
     </div>
 
-    <div style="margin-top:16px;padding:12px 24px;background:var(--success-bg);border-radius:8px;max-width:860px;margin-left:auto;margin-right:auto;border:1px solid rgba(39,174,96,0.2);">
+    <div style="margin-top:16px;padding:12px 24px;background:var(--success-bg);border-radius:8px;max-width:1080px;margin-left:auto;margin-right:auto;border:1px solid rgba(39,174,96,0.2);">
       <p style="font-size:0.875rem;color:var(--success);margin:0;"><strong>Limited availability.</strong> Sessions are offered on selected days only. If you see a slot that works, book it — they go quickly.</p>
     </div>
 
-    
-
-    <div class="pricing-discount" style="max-width:860px;margin-left:auto;margin-right:auto;margin-top:16px;">
-      <p>Not sure which to choose? Start with the <strong>Quick Assessment</strong> — a precise CEFR level and your three most critical errors. Choose the <strong>Full Assessment</strong> when you are ready for the complete picture with a structured plan to reach the next level.</p>
+    <div class="pricing-discount" style="max-width:1080px;margin-left:auto;margin-right:auto;margin-top:16px;">
+      <p>Not sure which to choose? Start with the <strong>Quick Assessment</strong> — a precise CEFR level and your three most critical errors. Choose the <strong>Full Assessment</strong> for the complete picture with a structured plan. Go with the <strong>DeepDive</strong> if you want the most comprehensive diagnostic possible.</p>
     </div>
+  </div>
+</section>
+
+<!-- Targeted Lessons -->
+<section class="section" id="lessons">
+  <div class="section-inner" style="text-align:center;">
+    <div class="section-label">Targeted Lessons</div>
+    <h2 class="section-title" style="margin-left:auto;margin-right:auto;">Continue Your Progress with Targeted Lessons</h2>
+    <p class="section-desc" style="margin-left:auto;margin-right:auto;">Every lesson targets YOUR specific errors identified in your assessment. Stackable sessions with 5-minute breaks. Available via video or voice call.</p>
+    <p style="font-size:0.8125rem;color:var(--ink-light);margin:8px auto 0;max-width:600px;">Every lesson is guided by Marco — your diagnostic data drives every question.</p>
+
+    <div class="lessons-grid">
+      <div class="lesson-card">
+        <div class="lesson-duration">15-Minute Lesson</div>
+        <div class="lesson-price">&euro;69</div>
+        <p>Focused correction session targeting one specific error pattern from your report. Ideal for quick, high-impact practice.</p>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-duration">25-Minute Lesson</div>
+        <div class="lesson-price">&euro;99</div>
+        <p>Extended session covering multiple error patterns with guided speaking practice and real-time correction.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;max-width:700px;margin-left:auto;margin-right:auto;">
+      <p style="font-size:0.875rem;color:var(--ink-soft);line-height:1.7;">Stackable sessions with 5-minute breaks between each. Every lesson is built around your specific errors — no generic curriculum, no wasted time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Weekly Subscription -->
+<section class="section section-alt" id="subscription">
+  <div class="section-inner" style="text-align:center;">
+    <div class="section-label">Weekly Subscription</div>
+    <h2 class="section-title" style="margin-left:auto;margin-right:auto;">The Fastest Path: Weekly Subscription</h2>
+    <p class="section-desc" style="margin-left:auto;margin-right:auto;">Consistent practice is what separates learners who plateau from learners who progress. Lock in your weekly sessions and build unstoppable momentum.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:860px;margin:0 auto;">
+      <div class="subscription-card">
+        <h3>Weekly Subscription</h3>
+        <div class="sub-price">From &euro;69<span style="font-size:1rem;color:var(--ink-light);">/lesson</span></div>
+        <p style="font-size:0.8125rem;color:var(--ink-light);margin-bottom:24px;">Homework included &middot; Monthly billing</p>
+        <ul class="subscription-features">
+          <li>3 lessons per week (15 or 25 min)</li>
+          <li>1 homework check included (&euro;19 value)</li>
+          <li>Additional homework checks: &euro;9 each</li>
+          <li>Every lesson targets YOUR errors</li>
+          <li>Cancel anytime &middot; 48h cancellation policy</li>
+        </ul>
+      </div>
+      <div class="subscription-card" style="border-color:var(--warn);background:linear-gradient(180deg,#FFF8F0 0%,var(--cream) 60%);position:relative;">
+        <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 16px;background:var(--warn);color:white;border-radius:100px;font-size:0.6875rem;font-weight:700;letter-spacing:0.06em;">ULTIMATE</div>
+        <h3>Complete Program</h3>
+        <div class="sub-price">From &euro;249<span style="font-size:1rem;color:var(--ink-light);">/week</span></div>
+        <p style="font-size:0.8125rem;color:var(--ink-light);margin-bottom:24px;">All-inclusive &middot; Nothing extra to pay</p>
+        <ul class="subscription-features">
+          <li>3 lessons per week (any combination)</li>
+          <li>All 3 homework checks included</li>
+          <li>Priority scheduling</li>
+          <li>Monthly reassessment included</li>
+          <li>Flashcard app premium included</li>
+          <li>Dedicated progress tracking</li>
+        </ul>
+      </div>
+    </div>
+    <div style="padding:16px 24px;background:var(--success-bg);border-radius:10px;border:1px solid rgba(39,174,96,0.2);max-width:860px;margin:24px auto 0;">
+      <p style="font-size:0.875rem;color:var(--success);margin:0;"><strong>3x faster progress.</strong> Students who complete all 3 weekly homework checks reach the next CEFR level in 8 weeks on average.</p>
+    </div>
+    <p style="font-size:0.8125rem;color:var(--ink-light);margin-top:12px;">Marco tracks your progress and adjusts your lessons weekly.</p>
   </div>
 </section>
 
@@ -717,12 +825,17 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         <div class="faq-a"><div class="faq-a-inner">You may reschedule or cancel free of charge up to 48 hours before your session. Cancellations made less than 48 hours before the scheduled time are non-refundable — the session is considered completed. To reschedule, simply use the link in your confirmation email.</div></div>
       </div>
       <div class="faq-item">
+        <button class="faq-q">What is the DeepDive Assessment?</button>
+        <div class="faq-a"><div class="faq-a-inner">The DeepDive is our most thorough diagnostic. It combines a 15-minute and a 25-minute session with a 5-minute break in between. You get everything in the Full Assessment plus extended activation exercises and comprehensive error mapping. It is ideal for learners who want the most detailed picture of their spoken language — covering patterns that only emerge over a longer conversation. Priority delivery is included.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How do the targeted lessons and weekly subscription work?</button>
+        <div class="faq-a"><div class="faq-a-inner">After your assessment, you can book targeted lessons (15 or 25 minutes) that focus specifically on the errors identified in your report. Sessions are stackable with 5-minute breaks and available via video or voice call. The weekly subscription gives you 3 lessons per week with 1 homework check included (value &euro;19) and additional checks at &euro;9 each. Students who complete all 3 weekly homework checks progress 3x faster. Monthly billing, starting from &euro;69 per lesson. The Complete Program (&euro;249/week) includes all homework checks, priority scheduling, monthly reassessment, and the flashcard app premium.</div></div>
+      </div>
+      <div class="faq-item">
         <button class="faq-q">I am a teacher. How does the partner program work?</button>
         <div class="faq-a"><div class="faq-a-inner">You apply to become a certified LingoGrade assessor partner. After a short onboarding we set you up with a private dashboard, exclusive rates for your students, and a referral system that rewards you for every assessment booked through your link. We handle everything — the session, the analysis, and the report. Your students stay your students. Write to us at info@lingograde.com to apply.</div></div>
       </div>
-    </div>
-  </div>
-</section>
     </div>
   </div>
 </section>
@@ -735,11 +848,13 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <a href="#how-it-works">How It Works</a>
     <a href="#languages">Languages</a>
     <a href="#pricing">Pricing</a>
+    <a href="#lessons">Lessons</a>
     <a href="#corporate">Corporate</a>
     <a href="#reviews">Reviews</a>
     <a href="#partners">For Teachers</a>
     <a href="mailto:info@lingograde.com">Contact</a>
   </div>
+  <p style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.6);">&#x1F989; Marco says: Your next level is closer than you think.</p>
   <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
 </footer>
 
@@ -801,8 +916,3 @@ function translateLanguages(lang) {
 </script>
 </body>
 </html>
-
-
-
-
-
