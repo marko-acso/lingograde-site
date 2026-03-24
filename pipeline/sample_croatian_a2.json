@@ -2,11 +2,11 @@
   "metadata": {
     "student_name": "Ivan P.",
     "display_name": "Ivan",
-    "native_name": "Иван",
+    "native_name": "Ivan",
     "date": "2026-03-19",
-    "package": "quick",
+    "package": "full",
     "assessed_language": "Kroatisch",
-    "native_language": "Bulgarisch",
+    "native_language": "Englisch",
     "assessor": "Marko",
     "active_cefr": "A2.2",
     "passive_cefr": "B1.1",
@@ -24,360 +24,443 @@
     {
       "id": "perception",
       "title_assessed": "Precizna percepcija",
-      "title_native": "Точно наблюдение",
+      "title_native": "Precise Observation",
       "content_assessed": "Na ovom satu pokazao si da imas dobru osnovu u hrvatskom. Tvoj vokabular pokriva osnovne svakodnevne situacije. Glavni problemi pojavili su se u padeznom sustavu i u glagolskom vidu.",
-      "content_native": "В тази сесия показа, че имаш добра основа в хърватски. Речниковият ти запас покрива основни ежедневни ситуации. Основните проблеми се появиха в падежната система и в глаголния вид."
+      "content_native": "In this session you showed that you have a good foundation in Croatian. Your vocabulary covers basic everyday situations. The main problems appeared in the case system and in verbal aspect."
+    },
+    {
+      "id": "strengths",
+      "title_assessed": "Strukturalne snage",
+      "title_native": "Structural Strengths",
+      "items": [
+        {
+          "strength_assessed": "Sigurna upotreba prezenta i perfekta",
+          "strength_native": "Confident use of present and perfect tense",
+          "example_assessed": "\"Today I am in school and I have learned many new words.\" — Ispravna vremenska kombinacija.",
+          "example_native": "\"Today I am in school and I have learned many new words.\" — Correct temporal combination."
+        },
+        {
+          "strength_assessed": "Dobar osnovni vokabular za svakodnevne situacije",
+          "strength_native": "Good basic vocabulary for everyday situations",
+          "example_assessed": "Koristiš fraze kao \"Gdje je kupaonica?\", \"Koliko je to?\", \"Mogu li pomoći?\" — prirodno i u kontekstu.",
+          "example_native": "You use phrases like 'Where is the bathroom?', 'How much is that?', 'Can I help?' — naturally and in context."
+        },
+        {
+          "strength_assessed": "Razumijevanje osnovnih upitnih struktura",
+          "strength_native": "Understanding of basic question structures",
+          "example_assessed": "\"Što radiš sutra?\" i \"Gdje mieszkaš?\" — ispravno formirana pitanja s razumijevanjem odgovora.",
+          "example_native": "\"What are you doing tomorrow?\" and \"Where do you live?\" — correctly formed questions with understanding of answers."
+        }
+      ]
     },
     {
       "id": "core_insight",
       "title_assessed": "Kljucni uvid",
-      "title_native": "Ключово прозрение",
+      "title_native": "Key Insight",
       "content_assessed": "Centralni problem je padezni sustav. Kao bugarski govornik, nisi naviknut na promjenu oblika imenica. U hrvatskom svaka rijec mijenja oblik ovisno o funkciji u recenici. Ovo je tvoj najvazniji izazov.",
-      "content_native": "Централният проблем е падежната система. Като говорещ български, не си свикнал с промяната на формата на съществителните. В хърватски всяка дума сменя формата си в зависимост от функцията й в изречението. Това е най-важното ти предизвикателство."
+      "content_native": "The central problem is the case system. As a Bulgarian speaker, you are not used to nouns changing their form. In Croatian, every word changes its form depending on its function in the sentence. This is your most important challenge."
     },
     {
       "id": "problems",
       "title_assessed": "Glavni strukturni problemi",
-      "title_native": "Основни структурни проблеми",
+      "title_native": "Main Structural Problems",
       "items": [
         {
           "name_assessed": "Padezne pogreske",
-          "name_native": "Падежни грешки",
+          "name_native": "Case Errors",
           "error_class": "Kasus/Artikel",
           "explanation_assessed": "Koristis nominativ tamo gdje treba akuzativ ili dativ: 'Vidim knjiga' umjesto 'Vidim knjigu'.",
-          "explanation_native": "Използваш именителен падеж, където трябва винителен или дателен: 'Vidim knjiga' вместо 'Vidim knjigu'.",
+          "explanation_native": "You use the nominative case where the accusative or dative is required: 'Vidim knjiga' instead of 'Vidim knjigu'.",
           "evidence_assessed": "\"Dao sam knjiga prijatelju.\" → Tocno: \"Dao sam knjigu prijatelju.\"",
-          "evidence_native": "\"Dao sam knjiga prijatelju.\" → Правилно: \"Dao sam knjigu prijatelju.\""
+          "evidence_native": "\"Dao sam knjiga prijatelju.\" → Correct: \"Dao sam knjigu prijatelju.\""
         },
         {
           "name_assessed": "Glagolski vid",
-          "name_native": "Глаголен вид",
+          "name_native": "Verbal Aspect",
           "error_class": "Zeitformen",
           "explanation_assessed": "Mijesaas svrseni i nesvrseni vid: 'Pisao sam pismo' (proces) kad zelis reci 'Napisao sam pismo' (rezultat).",
-          "explanation_native": "Бъркаш свършен и несвършен вид: 'Pisao sam pismo' (процес), когато искаш да кажеш 'Napisao sam pismo' (резултат).",
+          "explanation_native": "You confuse perfective and imperfective aspect: 'Pisao sam pismo' (process), when you want to say 'Napisao sam pismo' (result).",
           "evidence_assessed": "\"Jucer sam citao ovu knjigu\" (do kraja) → \"Jucer sam procitao ovu knjigu.\"",
-          "evidence_native": "\"Jucer sam citao ovu knjigu\" (докрай) → \"Jucer sam procitao ovu knjigu.\""
+          "evidence_native": "\"Jucer sam citao ovu knjigu\" (to the end) → \"Jucer sam procitao ovu knjigu.\""
         },
         {
           "name_assessed": "Ijekavica / ekavica",
-          "name_native": "Ийекавица / екавица",
+          "name_native": "Ijekavian / Ekavian",
           "error_class": "Register/Wortwahl",
           "explanation_assessed": "Hrvatski koristi ijekavicu: 'mlijeko' ne 'mleko', 'lijepo' ne 'lepo'. Ti ponekad koristis ekavske oblike.",
-          "explanation_native": "Хърватският използва ийекавица: 'mlijeko' не 'mleko', 'lijepo' не 'lepo'. Ти понякога използваш екавски форми.",
+          "explanation_native": "Croatian uses Ijekavian: 'mlijeko' not 'mleko', 'lijepo' not 'lepo'. You sometimes use Ekavian forms.",
           "evidence_assessed": "\"Mleko je na stolu.\" → Tocno: \"Mlijeko je na stolu.\"",
-          "evidence_native": "\"Mleko je na stolu.\" → Правилно: \"Mlijeko je na stolu.\""
+          "evidence_native": "\"Mleko je na stolu.\" → Correct: \"Mlijeko je na stolu.\""
         },
         {
           "name_assessed": "Prijedlozi s padezima",
-          "name_native": "Предлози с падежи",
+          "name_native": "Prepositions with Cases",
           "error_class": "Präpositionen",
           "explanation_assessed": "Svaki prijedlog zahtijeva odredeni padez: 'u' + lokativ (mjesto) ili + akuzativ (smjer).",
-          "explanation_native": "Всеки предлог изисква определен падеж: 'u' + локатив (място) или + акузатив (посока).",
+          "explanation_native": "Each preposition requires a specific case: 'u' + locative (location) or + accusative (direction).",
           "evidence_assessed": "\"Ja sam u trgovina.\" → Tocno: \"Ja sam u trgovini.\"",
-          "evidence_native": "\"Ja sam u trgovina.\" → Правилно: \"Ja sam u trgovini.\""
+          "evidence_native": "\"Ja sam u trgovina.\" → Correct: \"Ja sam u trgovini.\""
         },
         {
           "name_assessed": "Red rijeci i enklitike",
-          "name_native": "Словоред и енклитики",
+          "name_native": "Word Order and Clitics",
           "error_class": "Wortstellung",
           "explanation_assessed": "Enklitike (sam, si, se, mi, ti) ne mogu biti na pocetku recenice.",
-          "explanation_native": "Енклитиките (sam, si, se, mi, ti) не могат да бъдат в началото на изречението.",
+          "explanation_native": "Clitics (sam, si, se, mi, ti) cannot appear at the beginning of a sentence.",
           "evidence_assessed": "\"Sam isao u skolu.\" → Tocno: \"Isao sam u skolu.\"",
-          "evidence_native": "\"Sam isao u skolu.\" → Правилно: \"Isao sam u skolu.\""
+          "evidence_native": "\"Sam isao u skolu.\" → Correct: \"Isao sam u skolu.\""
         }
       ]
     },
     {
       "id": "corrections",
       "title_assessed": "Korekcije poluge",
-      "title_native": "Корекции на лоста",
+      "title_native": "Lever Corrections",
       "items": [
         {
           "original_assessed": "Krivo: Vidim knjiga.",
-          "original_native": "Грешно: Vidim knjiga.",
+          "original_native": "Wrong: Vidim knjiga.",
           "corrected_assessed": "Tocno: Vidim knjigu.",
-          "corrected_native": "Правилно: Vidim knjigu.",
+          "corrected_native": "Correct: Vidim knjigu.",
           "explanation_assessed": "Akuzativ nakon 'vidjeti': knjiga → knjigu.",
-          "explanation_native": "Винителен падеж след 'vidjeti': knjiga → knjigu."
+          "explanation_native": "Accusative case after 'vidjeti': knjiga → knjigu."
         },
         {
           "original_assessed": "Krivo: Ja sam u trgovina.",
-          "original_native": "Грешно: Ja sam u trgovina.",
+          "original_native": "Wrong: Ja sam u trgovina.",
           "corrected_assessed": "Tocno: Ja sam u trgovini.",
-          "corrected_native": "Правилно: Ja sam u trgovini.",
+          "corrected_native": "Correct: Ja sam u trgovini.",
           "explanation_assessed": "Mjesto = lokativ: u + trgovini.",
-          "explanation_native": "Място = локатив: u + trgovini."
+          "explanation_native": "Location = locative: u + trgovini."
         },
         {
           "original_assessed": "Krivo: Sam isao u skolu.",
-          "original_native": "Грешно: Sam isao u skolu.",
+          "original_native": "Wrong: Sam isao u skolu.",
           "corrected_assessed": "Tocno: Isao sam u skolu.",
-          "corrected_native": "Правилно: Isao sam u skolu.",
+          "corrected_native": "Correct: Isao sam u skolu.",
           "explanation_assessed": "Enklitika 'sam' ne moze na pocetak recenice.",
-          "explanation_native": "Енклитиката 'sam' не може в началото на изречението."
+          "explanation_native": "The clitic 'sam' cannot appear at the beginning of a sentence."
         },
         {
           "original_assessed": "Krivo: Dao sam knjiga prijatelj.",
-          "original_native": "Грешно: Dao sam knjiga prijatelj.",
+          "original_native": "Wrong: Dao sam knjiga prijatelj.",
           "corrected_assessed": "Tocno: Dao sam knjigu prijatelju.",
-          "corrected_native": "Правилно: Dao sam knjigu prijatelju.",
+          "corrected_native": "Correct: Dao sam knjigu prijatelju.",
           "explanation_assessed": "Dati + sto (akuz.) + kome (dativ).",
-          "explanation_native": "Dati + какво (акуз.) + на кого (датив)."
+          "explanation_native": "Dati + what (accusative) + to whom (dative)."
         },
         {
           "original_assessed": "Krivo: Jucer sam citao ovu knjigu (do kraja).",
-          "original_native": "Грешно: Jucer sam citao ovu knjigu (докрай).",
+          "original_native": "Wrong: Jucer sam citao ovu knjigu (to the end).",
           "corrected_assessed": "Tocno: Jucer sam procitao ovu knjigu.",
-          "corrected_native": "Правилно: Jucer sam procitao ovu knjigu.",
+          "corrected_native": "Correct: Jucer sam procitao ovu knjigu.",
           "explanation_assessed": "Zavrsena radnja = svrseni vid.",
-          "explanation_native": "Завършено действие = свършен вид."
+          "explanation_native": "Completed action = perfective aspect."
         }
       ]
     },
     {
       "id": "solutions",
       "title_assessed": "Rjesenja",
-      "title_native": "Решения",
+      "title_native": "Solutions",
       "items": [
         {
           "name_assessed": "Padezni trenazer",
-          "name_native": "Падежен тренажор",
+          "name_native": "Case Trainer",
           "action_assessed": "Svaki dan 5 recenica sa svjesnim izborom padeza. Izgovaraj naglas.",
-          "action_native": "Всеки ден 5 изречения с осъзнат избор на падеж. Произнасяй на глас.",
+          "action_native": "Every day, 5 sentences with a conscious choice of case. Say them out loud.",
           "result_assessed": "Automatski izbor padeza za 3-4 tjedna.",
-          "result_native": "Автоматичен избор на падеж за 3-4 седмици."
+          "result_native": "Automatic case selection within 3–4 weeks."
         },
         {
           "name_assessed": "Glagolski vid",
-          "name_native": "Глаголен вид",
+          "name_native": "Verbal Aspect",
           "action_assessed": "3 para dnevno: ista radnja — svrseni (rezultat) i nesvrseni (proces) vid.",
-          "action_native": "3 двойки на ден: едно действие — свършен (резултат) и несвършен (процес) вид.",
+          "action_native": "3 pairs per day: one action — perfective (result) and imperfective (process) aspect.",
           "result_assessed": "Svjestan izbor vida za 3 tjedna.",
-          "result_native": "Осъзнат избор на вид за 3 седмици."
+          "result_native": "Conscious aspect selection within 3 weeks."
         },
         {
           "name_assessed": "Prijedlozi + padezi",
-          "name_native": "Предлози + падежи",
+          "name_native": "Prepositions + Cases",
           "action_assessed": "Zapamti: u/na + lokativ (mjesto), u/na + akuzativ (smjer), iz/s + genitiv (odakle).",
-          "action_native": "Запомни: u/na + локатив (място), u/na + акузатив (посока), iz/s + генитив (откъде).",
+          "action_native": "Remember: u/na + locative (location), u/na + accusative (direction), iz/s + genitive (from where).",
           "result_assessed": "Tocni prijedlozi za 2 tjedna.",
-          "result_native": "Правилни предлози за 2 седмици."
+          "result_native": "Correct prepositions within 2 weeks."
         },
         {
           "name_assessed": "Red enklitika",
-          "name_native": "Ред на енклитиките",
+          "name_native": "Clitic Order",
           "action_assessed": "Pravilo: enklitika ide nakon prve naglasene rijeci u recenici.",
-          "action_native": "Правило: енклитиката идва след първата ударена дума в изречението.",
+          "action_native": "Rule: the clitic comes after the first stressed word in the sentence.",
           "result_assessed": "Tocan red rijeci za 1-2 tjedna.",
-          "result_native": "Правилен словоред за 1-2 седмици."
+          "result_native": "Correct word order within 1–2 weeks."
         },
         {
           "name_assessed": "Ijekavica dosljednost",
-          "name_native": "Ийекавска последователност",
+          "name_native": "Ijekavian Consistency",
           "action_assessed": "Zapamti: hrvatski = ijekavica. mlijeko, lijepo, bijelo, vrijeme. Nikad ekavske oblike.",
-          "action_native": "Запомни: хърватски = ийекавица. mlijeko, lijepo, bijelo, vrijeme. Никога екавски форми.",
+          "action_native": "Remember: Croatian = Ijekavian. mlijeko, lijepo, bijelo, vrijeme. Never Ekavian forms.",
           "result_assessed": "Dosljedna ijekavica za 1 tjedan.",
-          "result_native": "Последователна ийекавица за 1 седмица."
+          "result_native": "Consistent Ijekavian within 1 week."
         }
       ]
     },
     {
       "id": "sentence_engine",
       "name_assessed": "Padezni motor",
-      "name_native": "Падежен двигател",
+      "name_native": "Case Engine",
       "explanation_assessed": "Svaki dan izgovaraj naglas 5 recenica, svjesno birajuci pravilni padez. Naglasi padezni nastavak.",
-      "explanation_native": "Всеки ден произнасяй на глас 5 изречения, осъзнато избирайки правилния падеж. Подчертавай падежното окончание.",
+      "explanation_native": "Every day, say 5 sentences out loud, consciously choosing the correct case. Underline the case ending.",
       "patterns": [
         {
           "de": "Vidim knjigu. (akuzativ)",
-          "native": "Виждам книгата. (акузатив)"
+          "native": "I see the book. (accusative)"
         },
         {
           "de": "Idem u trgovinu. (akuz. — smjer)",
-          "native": "Отивам в магазина. (акуз. — посока)"
+          "native": "I am going to the store. (accusative — direction)"
         },
         {
           "de": "Ja sam u trgovini. (lokativ — mjesto)",
-          "native": "Аз съм в магазина. (локатив — място)"
+          "native": "I am in the store. (locative — location)"
         }
       ],
       "daily_instruction_assessed": "5 recenica dnevno, naglas, sa svjesnim padezom.",
-      "daily_instruction_native": "5 изречения на ден, на глас, с осъзнат падеж."
+      "daily_instruction_native": "5 sentences per day, out loud, with conscious case selection."
     },
     {
       "id": "activation",
       "title_assessed": "Aktivacija",
-      "title_native": "Активиране",
+      "title_native": "Activation",
       "sentences": [
         {
           "de": "Idem u trgovinu jer mi treba kruh.",
-          "native": "Отивам в магазина, защото ми трябва хляб."
+          "native": "I am going to the store because I need bread."
         },
         {
           "de": "Jucer sam procitao zanimljivu knjigu.",
-          "native": "Вчера прочетох интересна книга."
+          "native": "Yesterday I read an interesting book."
         },
         {
           "de": "Dao sam prijatelju svoju knjigu.",
-          "native": "Дадох на приятеля си книгата си."
+          "native": "I gave my friend my book."
         },
         {
           "de": "Zivimo u velikom gradu.",
-          "native": "Живеем в голям град."
+          "native": "We live in a big city."
         },
         {
           "de": "Ona ide u skolu svaki dan.",
-          "native": "Тя ходи на училище всеки ден."
+          "native": "She goes to school every day."
         },
         {
           "de": "Napisao sam pismo mami.",
-          "native": "Написах писмо на мама."
+          "native": "I wrote a letter to Mom."
         }
       ]
     },
     {
       "id": "homework_a",
       "title_assessed": "Zadaca A — Struktura",
-      "title_native": "Домашна работа A — Структура",
+      "title_native": "Homework A — Structure",
       "sentences": [
         {
           "de": "Vidim veliku kucu.",
-          "native": "Виждам голяма къща."
+          "native": "I see a big house."
         },
         {
           "de": "Ona ide u skolu.",
-          "native": "Тя отива на училище."
+          "native": "She is going to school."
         },
         {
           "de": "Zivimo u Zagrebu.",
-          "native": "Живеем в Загреб."
+          "native": "We live in Zagreb."
         },
         {
           "de": "Dao sam knjigu prijatelju.",
-          "native": "Дадох книга на приятел."
+          "native": "I gave a book to a friend."
         },
         {
           "de": "Jucer sam napisao pismo.",
-          "native": "Вчера написах писмо."
+          "native": "Yesterday I wrote a letter."
         },
         {
           "de": "On cita zanimljivu knjigu.",
-          "native": "Той чете интересна книга."
+          "native": "He is reading an interesting book."
         }
       ]
     },
     {
       "id": "homework_b",
       "title_assessed": "Zadaca B — Preciznost",
-      "title_native": "Домашна работа B — Прецизност",
+      "title_native": "Homework B — Precision",
       "items": [
         {
           "wrong_assessed": "Krivo: Vidim knjiga.",
-          "wrong_native": "Грешно: Vidim knjiga.",
+          "wrong_native": "Wrong: Vidim knjiga.",
           "right_assessed": "Tocno: Vidim knjigu.",
-          "right_native": "Правилно: Vidim knjigu."
+          "right_native": "Correct: Vidim knjigu."
         },
         {
           "wrong_assessed": "Krivo: Ja sam u trgovina.",
-          "wrong_native": "Грешно: Ja sam u trgovina.",
+          "wrong_native": "Wrong: Ja sam u trgovina.",
           "right_assessed": "Tocno: Ja sam u trgovini.",
-          "right_native": "Правилно: Ja sam u trgovini."
+          "right_native": "Correct: Ja sam u trgovini."
         },
         {
           "wrong_assessed": "Krivo: Sam isao u skolu.",
-          "wrong_native": "Грешно: Sam isao u skolu.",
+          "wrong_native": "Wrong: Sam isao u skolu.",
           "right_assessed": "Tocno: Isao sam u skolu.",
-          "right_native": "Правилно: Isao sam u skolu."
+          "right_native": "Correct: Isao sam u skolu."
         },
         {
           "wrong_assessed": "Krivo: Dao sam knjiga prijatelj.",
-          "wrong_native": "Грешно: Dao sam knjiga prijatelj.",
+          "wrong_native": "Wrong: Dao sam knjiga prijatelj.",
           "right_assessed": "Tocno: Dao sam knjigu prijatelju.",
-          "right_native": "Правилно: Dao sam knjigu prijatelju."
+          "right_native": "Correct: Dao sam knjigu prijatelju."
         },
         {
           "wrong_assessed": "Krivo: Mleko je na stolu.",
-          "wrong_native": "Грешно: Mleko je na stolu.",
+          "wrong_native": "Wrong: Mleko je na stolu.",
           "right_assessed": "Tocno: Mlijeko je na stolu.",
-          "right_native": "Правилно: Mlijeko je na stolu."
+          "right_native": "Correct: Mlijeko je na stolu."
+        }
+      ]
+    },
+    {
+      "id": "homework_c",
+      "title_assessed": "Domaća zadaća C — Govorna fluidnost",
+      "title_native": "Homework C — Oral Fluency",
+      "sentences": [
+        {
+          "assessed": "Juče sam bio u gradu s mojim prijateljem Markom.",
+          "native": "Yesterday I was in the city with my friend Marko."
+        },
+        {
+          "assessed": "Šetali smo kroz stare ulice i gledali starih zgrada.",
+          "native": "We walked through old streets and looked at old buildings."
+        },
+        {
+          "assessed": "Marko je pokazao meni gdje je on radio kada je bio mlad.",
+          "native": "Marko showed me where he worked when he was young."
+        },
+        {
+          "assessed": "Onda smo došli do malog kafića na углу.",
+          "native": "Then we came to a small cafe on the corner."
+        },
+        {
+          "assessed": "U kafići smo pili kavu i jeli kifle.",
+          "native": "In the cafe we drank coffee and ate croissants."
+        },
+        {
+          "assessed": "Marko je rekao mi o njegovoj obitelji i djeci.",
+          "native": "Marko told me about his family and children."
+        },
+        {
+          "assessed": "Iako je vrijeme bilo hladno, bilo je lijepo biti vani.",
+          "native": "Although the weather was cold, it was nice to be outside."
+        },
+        {
+          "assessed": "Nakon kafića smo otišli u muzej jer Marko voli povijest.",
+          "native": "After the cafe we went to the museum because Marko loves history."
+        },
+        {
+          "assessed": "U muzeju sam vidio mnogo intересних stvari iz srednjeg vijeka.",
+          "native": "In the museum I saw many interesting things from the Middle Ages."
+        },
+        {
+          "assessed": "Na kraju dana smo bili umorni ali sretni.",
+          "native": "At the end of the day we were tired but happy."
         }
       ]
     },
     {
       "id": "weekly_plan",
       "title_assessed": "Tjedni plan",
-      "title_native": "Седмичен план",
+      "title_native": "Weekly Plan",
       "weeks": [
         {
           "label_assessed": "Tjedan 1-2",
-          "label_native": "Седмица 1-2",
+          "label_native": "Week 1–2",
           "focus_assessed": "Padezni sustav: nominativ → akuzativ → dativ",
-          "focus_native": "Падежна система: именителен → винителен → дателен",
+          "focus_native": "Case system: nominative → accusative → dative",
           "goal_assessed": "Automatski izbor padeza",
-          "goal_native": "Автоматичен избор на падеж",
+          "goal_native": "Automatic case selection",
           "daily_assessed": "5 recenica s padezima dnevno",
-          "daily_native": "5 изречения с падежи на ден"
+          "daily_native": "5 sentences with cases per day"
         },
         {
           "label_assessed": "Tjedan 3-4",
-          "label_native": "Седмица 3-4",
+          "label_native": "Week 3–4",
           "focus_assessed": "Glagolski vid + prijedlozi",
-          "focus_native": "Глаголен вид + предлози",
+          "focus_native": "Verbal aspect + prepositions",
           "goal_assessed": "Tocan vid + padezi nakon prijedloga",
-          "goal_native": "Точен вид + падежи след предлози",
+          "goal_native": "Accurate aspect + cases after prepositions",
           "daily_assessed": "3 para vida + 3 prijedlozne recenice",
-          "daily_native": "3 двойки вид + 3 предложни изречения"
+          "daily_native": "3 aspect pairs + 3 prepositional sentences"
         },
         {
           "label_assessed": "Tjedan 5-6",
-          "label_native": "Седмица 5-6",
+          "label_native": "Week 5–6",
           "focus_assessed": "Enklitike + dosljedna ijekavica",
-          "focus_native": "Енклитики + последователна ийекавица",
+          "focus_native": "Clitics + consistent Ijekavian",
           "goal_assessed": "Tocan red enklitika + dosljedna ijekavica",
-          "goal_native": "Точен ред на енклитики + последователна ийекавица",
+          "goal_native": "Correct clitic order + consistent Ijekavian",
           "daily_assessed": "5 recenica s enklitikama",
-          "daily_native": "5 изречения с енклитики"
+          "daily_native": "5 sentences with clitics"
         },
         {
           "label_assessed": "Tjedan 7-8",
-          "label_native": "Седмица 7-8",
+          "label_native": "Week 7–8",
           "focus_assessed": "Slobodan govor pod pritiskom",
-          "focus_native": "Свободна реч под натиск",
+          "focus_native": "Free speech under pressure",
           "goal_assessed": "Tocnost pri spontanom govoru",
-          "goal_native": "Точност при спонтанна реч",
+          "goal_native": "Accuracy in spontaneous speech",
           "daily_assessed": "2-minutni monolog sa svjesnim fokusom",
-          "daily_native": "2-минутен монолог с осъзнат фокус"
+          "daily_native": "2-minute monologue with conscious focus"
         }
       ]
+    },
+    {
+      "id": "mini_block",
+      "title_assessed": "Mini-Blok",
+      "title_native": "Mini-Block",
+      "goal_assessed": "Padežni sistem pod pritiskom govorenja stabilizirati — fokus na prijedloge i akuzativ/lokativ",
+      "goal_native": "Stabilize case system under speaking pressure — focus on prepositions and accusative/locative",
+      "step1_assessed": "Svakodnevno 10 minuta — izgovaranje minimalnih parova s prijedlozima (na + akuzativ vs. na + lokativ: \"Idem NA vrata\" vs. \"Čekam NA vratima\"). Naglas i spora.",
+      "step1_native": "Every day 10 minutes — pronounce minimal pairs with prepositions (na + accusative vs. na + locative: 'I go TO the door' vs. 'I wait AT the door'). Out loud and slow.",
+      "step2_assessed": "Tri puta tjedno: 3-minutni monolog o tvojim aktivnostima. Consciousness insert prijedloge: u, na, iz, od, s, kod. Snima se. Slušaš. Ispravlja se.",
+      "step2_native": "Three times per week: 3-minute monologue about your activities. Consciously insert prepositions: u, na, iz, od, s, kod. Record it. Listen. Self-correct."
     }
   ],
   "cefr_footer": {
     "active_assessed": "Aktivna govorna produkcija: A2.2",
-    "active_native": "Активна устна продукция: A2.2",
+    "active_native": "Active oral production: A2.2",
     "passive_assessed": "Pasivna kompetencija: B1.1",
-    "passive_native": "Пасивна компетенция: B1.1",
+    "passive_native": "Passive competence: B1.1",
     "confidence_assessed": "Pouzdanje: 67%",
-    "confidence_native": "Увереност: 67%",
+    "confidence_native": "Confidence: 67%",
     "summary_assessed": "Nalazis se na razini A2. Tvoja baza postoji, ali padezni sustav je nestabilan. S ciljanim treningom B1 je realistican za 3-4 mjeseca.",
-    "summary_native": "Намираш се на ниво A2. Базата ти е налице, но падежната система е нестабилна. С целенасочено обучение B1 е реалистичен за 3-4 месеца.",
+    "summary_native": "You are at level A2. Your foundation is in place, but the case system is unstable. With targeted training, B1 is realistic within 3–4 months.",
     "stability_assessed": "Strukturna stabilnost pod pritiskom: srednja",
-    "stability_native": "Структурна стабилност под натиск: средна",
+    "stability_native": "Structural stability under pressure: moderate",
     "self_correction_assessed": "Sposobnost samokorekcije: niska do srednja",
-    "self_correction_native": "Способност за самокорекция: ниска до средна",
+    "self_correction_native": "Self-correction ability: low to moderate",
     "reassessment_assessed": "Preporucena ponovna procjena: 3 mjeseca",
-    "reassessment_native": "Препоръчителна преоценка: 3 месеца"
+    "reassessment_native": "Recommended reassessment: 3 months"
   },
   "block_d": {
-    "title_native": "Резюме на твоя език",
-    "cefr_summary_native": "Активният ти говорим хърватски е на ниво A2.2. Можеш да се справяш в прости ежедневни ситуации, но падежната система се разпада под натиск. Пасивното ти разбиране е по-високо на B1.1.",
+    "title_native": "Summary in Your Language",
+    "cefr_summary_native": "Your active spoken Croatian is at level A2.2. You can manage in simple everyday situations, but the case system breaks down under pressure. Your passive comprehension is higher at B1.1.",
     "top_problems_native": [
-      "Падежни грешки: именителен вместо винителен и дателен",
-      "Объркване на свършен и несвършен глаголен вид",
-      "Екавски форми вместо ийекавски (mleko вместо mlijeko)",
-      "Предлози с грешен падеж",
-      "Грешен ред на енклитиките"
+      "Case errors: nominative instead of accusative and dative",
+      "Confusion of perfective and imperfective verbal aspect",
+      "Ekavian forms instead of Ijekavian (mleko instead of mlijeko)",
+      "Prepositions with the wrong case",
+      "Incorrect clitic order"
     ],
-    "key_recommendation_native": "Практикувай Падежния двигател ежедневно: произнасяй 5 изречения на глас с осъзнат избор на правилния падеж.",
-    "next_steps_native": "Фокусирай се върху падежната система през следващите 2 седмици, после премини към глаголния вид и предлозите. Запази преоценка след 3 месеца."
+    "key_recommendation_native": "Practice the Case Engine daily: say 5 sentences out loud with a conscious choice of the correct case.",
+    "next_steps_native": "Focus on the case system over the next 2 weeks, then move on to verbal aspect and prepositions. Schedule a reassessment in 3 months."
   }
 }

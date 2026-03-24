@@ -2,11 +2,11 @@
   "metadata": {
     "student_name": "Youssef A.",
     "display_name": "Youssef",
-    "native_name": "يوسف",
+    "native_name": "Youssef",
     "date": "2026-03-19",
     "package": "full",
     "assessed_language": "Französisch",
-    "native_language": "Arabisch",
+    "native_language": "Englisch",
     "assessor": "Marko",
     "active_cefr": "B1.1",
     "passive_cefr": "B1.2",
@@ -24,435 +24,435 @@
     {
       "id": "perception",
       "title_assessed": "Perception precise",
-      "title_native": "ادراك دقيق",
+      "title_native": "Accurate Perception",
       "content_assessed": "Lors de cette seance, tu as montre que tu possedes une base solide en francais. Ton vocabulaire couvre bien les situations quotidiennes. Les problemes principaux sont apparus dans l'utilisation des temps (passe compose vs. imparfait) et dans le choix des articles, particulierement avec les noms abstraits.",
-      "content_native": "في هذه الجلسة، اظهرت انك تمتلك قاعدة صلبة في الفرنسية. مفرداتك تغطي المواقف اليومية جيدا. المشاكل الرئيسية ظهرت في استخدام الازمنة (الماضي المركب مقابل الماضي المستمر) وفي اختيار ادوات التعريف، خاصة مع الاسماء المجردة."
+      "content_native": "In this session, you demonstrated that you have a solid foundation in French. Your vocabulary covers everyday situations well. The main problems appeared in the use of tenses (passé composé vs. imparfait) and in the choice of articles, especially with abstract nouns."
     },
     {
       "id": "strengths",
       "title_assessed": "Forces structurelles",
-      "title_native": "نقاط القوة الهيكلية",
+      "title_native": "Structural Strengths",
       "items": [
         {
           "strength_assessed": "Bonne maitrise de la negation",
-          "strength_native": "اتقان جيد للنفي",
+          "strength_native": "Good command of negation",
           "example_assessed": "\"Je n'ai jamais vu ce film.\" — Structure ne...jamais correcte.",
-          "example_native": "\"Je n'ai jamais vu ce film.\" — بنية ne...jamais صحيحة."
+          "example_native": "\"Je n'ai jamais vu ce film.\" — The ne...jamais structure is correct."
         },
         {
           "strength_assessed": "Utilisation naturelle des pronoms",
-          "strength_native": "استخدام طبيعي للضمائر",
+          "strength_native": "Natural use of pronouns",
           "example_assessed": "\"Je lui ai donne le livre.\" — Pronom indirect correct.",
-          "example_native": "\"Je lui ai donne le livre.\" — ضمير المفعول غير المباشر صحيح."
+          "example_native": "\"Je lui ai donne le livre.\" — The indirect object pronoun is correct."
         },
         {
           "strength_assessed": "Vocabulaire riche pour le niveau B1",
-          "strength_native": "مفردات غنية لمستوى B1",
+          "strength_native": "Rich vocabulary for B1 level",
           "example_assessed": "Tu utilises des synonymes varies et des expressions idiomatiques de base.",
-          "example_native": "تستخدم مرادفات متنوعة وتعبيرات اصطلاحية اساسية."
+          "example_native": "You use varied synonyms and basic idiomatic expressions."
         }
       ]
     },
     {
       "id": "core_insight",
       "title_assessed": "Apercu structurel central",
-      "title_native": "الرؤية الهيكلية المركزية",
+      "title_native": "Core Structural Insight",
       "content_assessed": "Le schema central de cette seance est la confusion entre le passe compose et l'imparfait. Tu utilises le passe compose pour decrire des situations continues dans le passe, la ou l'imparfait serait correct. Ce probleme est lie a l'absence d'un equivalent direct en arabe.",
-      "content_native": "النمط المركزي لهذه الجلسة هو الخلط بين الماضي المركب والماضي المستمر. تستخدم الماضي المركب لوصف مواقف مستمرة في الماضي، حيث يكون الماضي المستمر هو الصحيح. هذه المشكلة مرتبطة بعدم وجود مكافئ مباشر في العربية."
+      "content_native": "The central pattern of this session is the confusion between passé composé and imparfait. You use passé composé to describe ongoing situations in the past, where imparfait is correct. This problem is linked to the absence of a direct equivalent in Arabic."
     },
     {
       "id": "problems",
       "title_assessed": "Problemes structurels principaux",
-      "title_native": "المشاكل الهيكلية الرئيسية",
+      "title_native": "Main Structural Problems",
       "items": [
         {
           "name_assessed": "Passe compose vs. imparfait",
-          "name_native": "الماضي المركب مقابل الماضي المستمر",
+          "name_native": "Passé composé vs. Imparfait",
           "error_class": "Zeitformen",
           "explanation_assessed": "Tu utilises le passe compose pour des descriptions et habitudes passees, la ou l'imparfait est requis.",
-          "explanation_native": "تستخدم الماضي المركب للاوصاف والعادات الماضية، حيث يكون الماضي المستمر مطلوبا.",
+          "explanation_native": "You use passé composé for descriptions and past habits, where imparfait is required.",
           "evidence_assessed": "\"Quand j'ai ete petit, j'ai joue au foot.\" → Correct: \"Quand j'etais petit, je jouais au foot.\"",
-          "evidence_native": "\"Quand j'ai ete petit, j'ai joue au foot.\" → صحيح: \"Quand j'etais petit, je jouais au foot.\""
+          "evidence_native": "\"Quand j'ai ete petit, j'ai joue au foot.\" → Correct: \"Quand j'etais petit, je jouais au foot.\""
         },
         {
           "name_assessed": "Articles partitifs",
-          "name_native": "ادوات التجزئة",
+          "name_native": "Partitive articles",
           "error_class": "Kasus/Artikel",
           "explanation_assessed": "Tu omets souvent les articles partitifs (du, de la, des) devant les noms non comptables.",
-          "explanation_native": "غالبا ما تحذف ادوات التجزئة (du, de la, des) قبل الاسماء غير المعدودة.",
+          "explanation_native": "You often omit partitive articles (du, de la, des) before uncountable nouns.",
           "evidence_assessed": "\"Je veux pain.\" → Correct: \"Je veux du pain.\"",
-          "evidence_native": "\"Je veux pain.\" → صحيح: \"Je veux du pain.\""
+          "evidence_native": "\"Je veux pain.\" → Correct: \"Je veux du pain.\""
         },
         {
           "name_assessed": "Genre des noms",
-          "name_native": "جنس الاسماء",
+          "name_native": "Noun gender",
           "error_class": "Kasus/Artikel",
           "explanation_assessed": "Le genre grammatical n'existant pas de la meme facon en arabe, tu fais des erreurs de genre frequentes.",
-          "explanation_native": "نظرا لاختلاف الجنس النحوي بين العربية والفرنسية، ترتكب اخطاء متكررة في الجنس.",
+          "explanation_native": "Due to the difference in grammatical gender between Arabic and French, you make frequent gender errors.",
           "evidence_assessed": "\"le table\" → Correct: \"la table\", \"une probleme\" → \"un probleme\"",
-          "evidence_native": "\"le table\" → صحيح: \"la table\"، \"une probleme\" → \"un probleme\""
+          "evidence_native": "\"le table\" → Correct: \"la table\", \"une probleme\" → \"un probleme\""
         },
         {
           "name_assessed": "Accord du participe passe",
-          "name_native": "توافق اسم المفعول",
+          "name_native": "Past participle agreement",
           "error_class": "Zeitformen",
           "explanation_assessed": "Tu oublies l'accord du participe passe avec le sujet quand tu utilises etre.",
-          "explanation_native": "تنسى توافق اسم المفعول مع الفاعل عند استخدام etre.",
+          "explanation_native": "You forget to agree the past participle with the subject when using être.",
           "evidence_assessed": "\"Elle est alle au cinema.\" → Correct: \"Elle est allee au cinema.\"",
-          "evidence_native": "\"Elle est alle au cinema.\" → صحيح: \"Elle est allee au cinema.\""
+          "evidence_native": "\"Elle est alle au cinema.\" → Correct: \"Elle est allee au cinema.\""
         },
         {
           "name_assessed": "Prepositions de lieu",
-          "name_native": "حروف جر المكان",
+          "name_native": "Prepositions of place",
           "error_class": "Präpositionen",
           "explanation_assessed": "Confusion entre 'a', 'en', 'au', 'dans' pour les lieux.",
-          "explanation_native": "خلط بين 'a' و 'en' و 'au' و 'dans' للاماكن.",
+          "explanation_native": "Confusion between 'à', 'en', 'au', and 'dans' for places.",
           "evidence_assessed": "\"Je vais a France.\" → Correct: \"Je vais en France.\"",
-          "evidence_native": "\"Je vais a France.\" → صحيح: \"Je vais en France.\""
+          "evidence_native": "\"Je vais a France.\" → Correct: \"Je vais en France.\""
         }
       ]
     },
     {
       "id": "corrections",
       "title_assessed": "Corrections leviers",
-      "title_native": "تصحيحات الرافعة",
+      "title_native": "Leverage Corrections",
       "items": [
         {
           "original_assessed": "Faux: Quand j'ai ete petit, j'ai joue au foot.",
-          "original_native": "خطا: Quand j'ai ete petit, j'ai joue au foot.",
+          "original_native": "Error: Quand j'ai ete petit, j'ai joue au foot.",
           "corrected_assessed": "Correct: Quand j'etais petit, je jouais au foot.",
-          "corrected_native": "صحيح: Quand j'etais petit, je jouais au foot.",
+          "corrected_native": "Correct: Quand j'etais petit, je jouais au foot.",
           "explanation_assessed": "Description/habitude dans le passe = imparfait.",
-          "explanation_native": "وصف/عادة في الماضي = الماضي المستمر."
+          "explanation_native": "Description/habit in the past = imparfait."
         },
         {
           "original_assessed": "Faux: Je veux pain.",
-          "original_native": "خطا: Je veux pain.",
+          "original_native": "Error: Je veux pain.",
           "corrected_assessed": "Correct: Je veux du pain.",
-          "corrected_native": "صحيح: Je veux du pain.",
+          "corrected_native": "Correct: Je veux du pain.",
           "explanation_assessed": "Nom non comptable = article partitif obligatoire.",
-          "explanation_native": "اسم غير معدود = اداة التجزئة اجبارية."
+          "explanation_native": "Uncountable noun = partitive article is mandatory."
         },
         {
           "original_assessed": "Faux: Elle est alle au cinema.",
-          "original_native": "خطا: Elle est alle au cinema.",
+          "original_native": "Error: Elle est alle au cinema.",
           "corrected_assessed": "Correct: Elle est allee au cinema.",
-          "corrected_native": "صحيح: Elle est allee au cinema.",
+          "corrected_native": "Correct: Elle est allee au cinema.",
           "explanation_assessed": "Avec etre, le participe s'accorde avec le sujet (elle = -ee).",
-          "explanation_native": "مع etre، يتوافق اسم المفعول مع الفاعل (elle = -ee)."
+          "explanation_native": "With être, the past participle agrees with the subject (elle = -ee)."
         },
         {
           "original_assessed": "Faux: Je vais a France.",
-          "original_native": "خطا: Je vais a France.",
+          "original_native": "Error: Je vais a France.",
           "corrected_assessed": "Correct: Je vais en France.",
-          "corrected_native": "صحيح: Je vais en France.",
+          "corrected_native": "Correct: Je vais en France.",
           "explanation_assessed": "Pays feminins = en. Pays masculins = au.",
-          "explanation_native": "البلدان المؤنثة = en. البلدان المذكرة = au."
+          "explanation_native": "Feminine countries = en. Masculine countries = au."
         },
         {
           "original_assessed": "Faux: le table",
-          "original_native": "خطا: le table",
+          "original_native": "Error: le table",
           "corrected_assessed": "Correct: la table",
-          "corrected_native": "صحيح: la table",
+          "corrected_native": "Correct: la table",
           "explanation_assessed": "table est feminin. Regle: les noms en -e sont souvent feminins.",
-          "explanation_native": "table مؤنث. القاعدة: الاسماء المنتهية بـ -e غالبا مؤنثة."
+          "explanation_native": "Table is feminine. Rule: nouns ending in -e are usually feminine."
         }
       ]
     },
     {
       "id": "solutions",
       "title_assessed": "Solutions",
-      "title_native": "الحلول",
+      "title_native": "Solutions",
       "items": [
         {
           "name_assessed": "Exercice passe compose / imparfait",
-          "name_native": "تمرين الماضي المركب / المستمر",
+          "name_native": "Passé composé / Imparfait exercise",
           "action_assessed": "Chaque jour, ecris 3 phrases au passe compose (action unique) et 3 a l'imparfait (description/habitude).",
-          "action_native": "كل يوم، اكتب 3 جمل بالماضي المركب (حدث واحد) و 3 بالماضي المستمر (وصف/عادة).",
+          "action_native": "Every day, write 3 sentences in passé composé (single event) and 3 in imparfait (description/habit).",
           "result_assessed": "Distinction automatique en 2-3 semaines.",
-          "result_native": "تمييز تلقائي في 2-3 اسابيع."
+          "result_native": "Automatic distinction within 2–3 weeks."
         },
         {
           "name_assessed": "Articles partitifs",
-          "name_native": "ادوات التجزئة",
+          "name_native": "Partitive articles",
           "action_assessed": "Memorise: du (m.), de la (f.), des (pl.). Forme 3 phrases par jour avec des noms non comptables.",
-          "action_native": "احفظ: du (م.)، de la (م.)، des (ج.). كوّن 3 جمل يوميا مع اسماء غير معدودة.",
+          "action_native": "Memorize: du (m.), de la (f.), des (pl.). Form 3 sentences daily with uncountable nouns.",
           "result_assessed": "Articles partitifs corrects en 1-2 semaines.",
-          "result_native": "ادوات تجزئة صحيحة في 1-2 اسبوع."
+          "result_native": "Correct partitive articles within 1–2 weeks."
         },
         {
           "name_assessed": "Genre par terminaison",
-          "name_native": "الجنس حسب النهاية",
+          "name_native": "Gender by ending",
           "action_assessed": "Apprends les 5 terminaisons cles: -tion (f.), -ment (m.), -age (m.), -ure (f.), -isme (m.).",
-          "action_native": "تعلم النهايات الخمس الرئيسية: -tion (م.)، -ment (م.)، -age (م.)، -ure (م.)، -isme (م.).",
+          "action_native": "Learn the 5 main endings: -tion (f.), -ment (m.), -age (m.), -ure (f.), -isme (m.).",
           "result_assessed": "80% des erreurs de genre disparaissent.",
-          "result_native": "80% من اخطاء الجنس تختفي."
+          "result_native": "80% of gender errors disappear."
         },
         {
           "name_assessed": "Accord avec etre",
-          "name_native": "التوافق مع etre",
+          "name_native": "Agreement with être",
           "action_assessed": "Liste des 17 verbes conjugues avec etre. Pratique l'accord chaque jour.",
-          "action_native": "قائمة الافعال الـ17 المصرفة مع etre. تدرب على التوافق يوميا.",
+          "action_native": "List of the 17 verbs conjugated with être. Practice agreement daily.",
           "result_assessed": "Accords automatiques en 2 semaines.",
-          "result_native": "توافق تلقائي في اسبوعين."
+          "result_native": "Automatic agreement within two weeks."
         },
         {
           "name_assessed": "Prepositions de pays",
-          "name_native": "حروف جر البلدان",
+          "name_native": "Country prepositions",
           "action_assessed": "Regle: pays feminins = en, pays masculins = au, iles = a. 3 phrases par jour.",
-          "action_native": "القاعدة: بلدان مؤنثة = en، بلدان مذكرة = au، جزر = a. 3 جمل يوميا.",
+          "action_native": "Rule: feminine countries = en, masculine countries = au, islands = à. 3 sentences daily.",
           "result_assessed": "Zero erreurs de preposition de lieu en 1 semaine.",
-          "result_native": "صفر اخطاء في حروف جر المكان في اسبوع واحد."
+          "result_native": "Zero preposition errors for places within one week."
         }
       ]
     },
     {
       "id": "sentence_engine",
       "name_assessed": "Le moteur des temps",
-      "name_native": "محرك الازمنة",
+      "name_native": "Tense Engine",
       "explanation_assessed": "Chaque jour, forme 5 paires de phrases: la meme situation, une fois au passe compose (action unique) et une fois a l'imparfait (description). Prononce a haute voix.",
-      "explanation_native": "كل يوم، كوّن 5 ازواج من الجمل: نفس الموقف، مرة بالماضي المركب (حدث واحد) ومرة بالماضي المستمر (وصف). انطقها بصوت عال.",
+      "explanation_native": "Every day, form 5 pairs of sentences: same situation, once in passé composé (single event) and once in imparfait (description). Say them out loud.",
       "patterns": [
         {
           "de": "Passe compose: Hier, j'ai mange une pizza. (action unique)",
-          "native": "الماضي المركب: Hier, j'ai mange une pizza. (حدث واحد)"
+          "native": "Passé composé: Hier, j'ai mange une pizza. (single event)"
         },
         {
           "de": "Imparfait: Quand j'etais enfant, je mangeais souvent des pizzas. (habitude)",
-          "native": "الماضي المستمر: Quand j'etais enfant, je mangeais souvent des pizzas. (عادة)"
+          "native": "Imparfait: Quand j'etais enfant, je mangeais souvent des pizzas. (habit)"
         },
         {
           "de": "Combine: Il pleuvait (imparfait) quand je suis sorti (passe compose).",
-          "native": "مزيج: Il pleuvait (مستمر) quand je suis sorti (مركب)."
+          "native": "Mix: Il pleuvait (imparfait) quand je suis sorti (passé composé)."
         }
       ],
       "daily_instruction_assessed": "5 paires par jour, a haute voix, en soulignant le choix du temps.",
-      "daily_instruction_native": "5 ازواج يوميا، بصوت عال، مع التاكيد على اختيار الزمن."
+      "daily_instruction_native": "5 pairs daily, out loud, with emphasis on tense choice."
     },
     {
       "id": "activation",
       "title_assessed": "Activation",
-      "title_native": "التنشيط",
+      "title_native": "Activation",
       "sentences": [
         {
           "de": "Quand j'etais jeune, j'habitais a Casablanca.",
-          "native": "عندما كنت صغيرا، كنت اسكن في الدار البيضاء."
+          "native": "When I was young, I used to live in Casablanca."
         },
         {
           "de": "Hier, je suis alle au marche et j'ai achete du pain.",
-          "native": "امس، ذهبت الى السوق واشتريت خبزا."
+          "native": "Yesterday, I went to the market and bought bread."
         },
         {
           "de": "Il faisait beau quand nous sommes arrives.",
-          "native": "كان الطقس جميلا عندما وصلنا."
+          "native": "The weather was beautiful when we arrived."
         },
         {
           "de": "Elle a mange de la salade et du fromage.",
-          "native": "اكلت سلطة وجبنة."
+          "native": "I ate a salad and cheese."
         },
         {
           "de": "Je vais en France la semaine prochaine.",
-          "native": "سأذهب الى فرنسا الاسبوع القادم."
+          "native": "I will go to France next week."
         },
         {
           "de": "La table est dans la cuisine.",
-          "native": "الطاولة في المطبخ."
+          "native": "The table is in the kitchen."
         }
       ]
     },
     {
       "id": "homework_a",
       "title_assessed": "Devoirs A — Structure",
-      "title_native": "واجب أ — البنية",
+      "title_native": "Homework A — Structure",
       "sentences": [
         {
           "de": "Hier, je suis alle au cinema avec mon ami.",
-          "native": "امس، ذهبت الى السينما مع صديقي."
+          "native": "Yesterday, I went to the cinema with my friend."
         },
         {
           "de": "Quand j'etais enfant, je jouais dans le jardin.",
-          "native": "عندما كنت طفلا، كنت العب في الحديقة."
+          "native": "When I was a child, I used to play in the garden."
         },
         {
           "de": "Il pleuvait quand elle est sortie de la maison.",
-          "native": "كانت تمطر عندما خرجت من المنزل."
+          "native": "It was raining when I left the house."
         },
         {
           "de": "J'ai achete du lait et de la farine au supermarche.",
-          "native": "اشتريت حليبا ودقيقا من السوبرماركت."
+          "native": "I bought milk and flour from the supermarket."
         },
         {
           "de": "Nous allons en Espagne cet ete.",
-          "native": "سنذهب الى اسبانيا هذا الصيف."
+          "native": "We will go to Spain this summer."
         },
         {
           "de": "Elle est allee a l'ecole ce matin.",
-          "native": "ذهبت الى المدرسة هذا الصباح."
+          "native": "I went to school this morning."
         }
       ]
     },
     {
       "id": "homework_b",
       "title_assessed": "Devoirs B — Precision",
-      "title_native": "واجب ب — الدقة",
+      "title_native": "Homework B — Accuracy",
       "items": [
         {
           "wrong_assessed": "Faux: Quand j'ai ete petit, j'ai aime le chocolat.",
-          "wrong_native": "خطا: Quand j'ai ete petit, j'ai aime le chocolat.",
+          "wrong_native": "Error: Quand j'ai ete petit, j'ai aime le chocolat.",
           "right_assessed": "Correct: Quand j'etais petit, j'aimais le chocolat.",
-          "right_native": "صحيح: Quand j'etais petit, j'aimais le chocolat."
+          "right_native": "Correct: Quand j'etais petit, j'aimais le chocolat."
         },
         {
           "wrong_assessed": "Faux: Je veux cafe.",
-          "wrong_native": "خطا: Je veux cafe.",
+          "wrong_native": "Error: Je veux cafe.",
           "right_assessed": "Correct: Je veux du cafe.",
-          "right_native": "صحيح: Je veux du cafe."
+          "right_native": "Correct: Je veux du cafe."
         },
         {
           "wrong_assessed": "Faux: Elle est alle a la plage.",
-          "wrong_native": "خطا: Elle est alle a la plage.",
+          "wrong_native": "Error: Elle est alle a la plage.",
           "right_assessed": "Correct: Elle est allee a la plage.",
-          "right_native": "صحيح: Elle est allee a la plage."
+          "right_native": "Correct: Elle est allee a la plage."
         },
         {
           "wrong_assessed": "Faux: Je vais a Maroc.",
-          "wrong_native": "خطا: Je vais a Maroc.",
+          "wrong_native": "Error: Je vais a Maroc.",
           "right_assessed": "Correct: Je vais au Maroc.",
-          "right_native": "صحيح: Je vais au Maroc."
+          "right_native": "Correct: Je vais au Maroc."
         },
         {
           "wrong_assessed": "Faux: le probleme",
-          "wrong_native": "خطا: le probleme (كمؤنث)",
+          "wrong_native": "Error: le probleme (used as feminine)",
           "right_assessed": "Correct: un probleme (masculin)",
-          "right_native": "صحيح: un probleme (مذكر)"
+          "right_native": "Correct: un probleme (masculine)"
         }
       ]
     },
     {
       "id": "homework_c",
       "title_assessed": "Devoirs C — Fluidite orale",
-      "title_native": "واجب ج — طلاقة الكلام",
+      "title_native": "Homework C — Fluency",
       "sentences": [
         {
           "de": "D'abord, je me suis leve et j'ai pris mon petit-dejeuner.",
-          "native": "اولا، استيقظت وتناولت فطوري."
+          "native": "First, I woke up and had breakfast."
         },
         {
           "de": "Ensuite, je suis sorti parce qu'il faisait beau.",
-          "native": "بعد ذلك، خرجت لان الطقس كان جميلا."
+          "native": "Then, I went out because the weather was beautiful."
         },
         {
           "de": "J'ai marche dans le parc pendant une heure.",
-          "native": "مشيت في الحديقة لمدة ساعة."
+          "native": "I walked in the garden for an hour."
         },
         {
           "de": "Quand j'etais dans le parc, j'ai rencontre un vieil ami.",
-          "native": "عندما كنت في الحديقة، قابلت صديقا قديما."
+          "native": "While I was in the garden, I ran into an old friend."
         },
         {
           "de": "Nous avons bu du cafe ensemble dans un petit bistrot.",
-          "native": "شربنا القهوة معا في مقهى صغير."
+          "native": "We had coffee together at a small café."
         },
         {
           "de": "Il m'a raconte qu'il travaillait maintenant en France.",
-          "native": "اخبرني انه يعمل الان في فرنسا."
+          "native": "He told me he is now working in France."
         },
         {
           "de": "Apres notre rencontre, je suis rentre chez moi.",
-          "native": "بعد لقائنا، عدت الى المنزل."
+          "native": "After our meeting, I went back home."
         },
         {
           "de": "Le soir, j'ai cuisine du couscous pour ma famille.",
-          "native": "في المساء، طبخت كسكسا لعائلتي."
+          "native": "In the evening, I cooked couscous for my family."
         }
       ]
     },
     {
       "id": "weekly_plan",
       "title_assessed": "Plan hebdomadaire",
-      "title_native": "الخطة الاسبوعية",
+      "title_native": "Weekly Plan",
       "weeks": [
         {
           "label_assessed": "Semaine 1-2",
-          "label_native": "الاسبوع 1-2",
+          "label_native": "Week 1–2",
           "focus_assessed": "Passe compose vs. imparfait",
-          "focus_native": "الماضي المركب مقابل المستمر",
+          "focus_native": "Passé composé vs. Imparfait",
           "goal_assessed": "Choix automatique du temps correct",
-          "goal_native": "اختيار تلقائي للزمن الصحيح",
+          "goal_native": "Automatic selection of the correct tense",
           "daily_assessed": "5 paires de phrases (PC/imparfait) par jour",
-          "daily_native": "5 ازواج جمل (مركب/مستمر) يوميا"
+          "daily_native": "5 sentence pairs (passé composé/imparfait) daily"
         },
         {
           "label_assessed": "Semaine 3-4",
-          "label_native": "الاسبوع 3-4",
+          "label_native": "Week 3–4",
           "focus_assessed": "Articles partitifs + genre",
-          "focus_native": "ادوات التجزئة + الجنس",
+          "focus_native": "Partitive articles + Gender",
           "goal_assessed": "Articles partitifs corrects + 5 regles de genre",
-          "goal_native": "ادوات تجزئة صحيحة + 5 قواعد للجنس",
+          "goal_native": "Correct partitive articles + 5 gender rules",
           "daily_assessed": "3 phrases partitives + 3 exercices de genre",
-          "daily_native": "3 جمل بادوات تجزئة + 3 تمارين جنس"
+          "daily_native": "3 sentences with partitive articles + 3 gender exercises"
         },
         {
           "label_assessed": "Semaine 5-6",
-          "label_native": "الاسبوع 5-6",
+          "label_native": "Week 5–6",
           "focus_assessed": "Accord + prepositions de lieu",
-          "focus_native": "التوافق + حروف جر المكان",
+          "focus_native": "Agreement + Prepositions of place",
           "goal_assessed": "Accords avec etre + prepositions de pays correctes",
-          "goal_native": "توافق مع etre + حروف جر البلدان صحيحة",
+          "goal_native": "Agreement with être + correct country prepositions",
           "daily_assessed": "3 phrases avec etre + 3 phrases de lieu",
-          "daily_native": "3 جمل مع etre + 3 جمل مكان"
+          "daily_native": "3 sentences with être + 3 place sentences"
         },
         {
           "label_assessed": "Semaine 7-8",
-          "label_native": "الاسبوع 7-8",
+          "label_native": "Week 7–8",
           "focus_assessed": "Parler librement sous pression",
-          "focus_native": "التحدث بحرية تحت الضغط",
+          "focus_native": "Speaking freely under pressure",
           "goal_assessed": "Precision maintenue en parole spontanee",
-          "goal_native": "الدقة محفوظة في الكلام التلقائي",
+          "goal_native": "Accuracy maintained in spontaneous speech",
           "daily_assessed": "Monologue de 2 minutes avec focus conscient",
-          "daily_native": "مونولوج لمدة دقيقتين مع تركيز واع"
+          "daily_native": "Two-minute monologue with conscious focus"
         }
       ]
     },
     {
       "id": "mini_block",
       "title_assessed": "Mini-bloc",
-      "title_native": "كتلة صغيرة",
+      "title_native": "Mini Block",
       "goal_assessed": "Stabiliser le choix passe compose / imparfait sous pression",
-      "goal_native": "تثبيت اختيار الماضي المركب / المستمر تحت الضغط",
+      "goal_native": "Solidify passé composé / imparfait selection under pressure",
       "step1_assessed": "Chaque jour, 5 paires de phrases a haute voix — consciemment lent, temps souligne.",
-      "step1_native": "كل يوم، 5 ازواج جمل بصوت عال — ببطء واع، الزمن مؤكد.",
+      "step1_native": "Every day, 5 sentence pairs out loud — slowly and deliberately, tense confirmed.",
       "step2_assessed": "Un monologue de 2 minutes sur ta journee d'hier. Alterner passe compose et imparfait. Enregistrer. Ecouter. Repeter.",
-      "step2_native": "مونولوج لمدة دقيقتين عن يومك بالامس. تبديل بين الماضي المركب والمستمر. سجل. استمع. كرر."
+      "step2_native": "A two-minute monologue about your yesterday. Switch between passé composé and imparfait. Record. Listen. Repeat."
     }
   ],
   "cefr_footer": {
     "active_assessed": "Production orale active: B1.1",
-    "active_native": "الانتاج الشفوي النشط: B1.1",
+    "active_native": "Active Oral Production: B1.1",
     "passive_assessed": "Competence passive (plafond de comprehension estime): B1.2",
-    "passive_native": "الكفاءة السلبية (سقف الفهم المقدر): B1.2",
+    "passive_native": "Passive Competence (estimated comprehension ceiling): B1.2",
     "confidence_assessed": "Confiance: 72%",
-    "confidence_native": "الثقة: 72%",
+    "confidence_native": "Confidence: 72%",
     "summary_assessed": "Tu es dans la fourchette B1. Ta base est solide mais les temps et le genre restent instables. Avec un entrainement cible, B2 est realiste en 4-5 mois.",
-    "summary_native": "انت في نطاق B1. قاعدتك صلبة لكن الازمنة والجنس يظلان غير مستقرين. مع تدريب مركز، B2 واقعي في 4-5 اشهر.",
+    "summary_native": "You are in the B1 range. Your foundation is solid but tenses and gender remain unstable. With focused training, B2 is realistic within 4–5 months.",
     "stability_assessed": "Stabilite structurelle sous pression: moyenne",
-    "stability_native": "الاستقرار الهيكلي تحت الضغط: متوسط",
+    "stability_native": "Structural stability under pressure: Intermediate",
     "self_correction_assessed": "Capacite d'auto-correction: faible a moyenne",
-    "self_correction_native": "قدرة التصحيح الذاتي: منخفضة الى متوسطة",
+    "self_correction_native": "Self-correction ability: Low to intermediate",
     "reassessment_assessed": "Re-evaluation recommandee: 3 mois",
-    "reassessment_native": "اعادة تقييم موصى بها: 3 اشهر"
+    "reassessment_native": "Reassessment recommended: 3 months"
   },
   "block_d": {
-    "title_native": "ملخص بلغتك",
-    "cefr_summary_native": "مستواك في الفرنسية المحكية النشطة هو B1.1. هذا يعني انك تستطيع التواصل في المواقف اليومية، لكن الازمنة وادوات التعريف تنهار تحت الضغط. فهمك السلبي اعلى عند B1.2.",
+    "title_native": "Summary in Your Language",
+    "cefr_summary_native": "Your level in active spoken French is B1.1. This means you can communicate in everyday situations, but tenses and articles break down under pressure. Your passive comprehension is higher at B1.2.",
     "top_problems_native": [
-      "الماضي المركب يستخدم بدلا من الماضي المستمر للاوصاف والعادات",
-      "حذف ادوات التجزئة قبل الاسماء غير المعدودة",
-      "اخطاء الجنس النحوي في الاسماء الشائعة",
-      "نسيان توافق اسم المفعول مع etre",
-      "خلط بين حروف جر الاماكن (a / en / au)"
+      "Passé composé used instead of imparfait for descriptions and habits",
+      "Omission of partitive articles before uncountable nouns",
+      "Grammatical gender errors in common nouns",
+      "Forgetting past participle agreement with être",
+      "Confusion between place prepositions (à / en / au)"
     ],
-    "key_recommendation_native": "تدرب على محرك الازمنة يوميا: كوّن 5 ازواج من الجمل بنفس الموقف — مرة بالماضي المركب ومرة بالماضي المستمر. هذا التمرين الواحد سيصحح اكبر نقطة ضعف لديك.",
-    "next_steps_native": "ركز على الماضي المركب مقابل المستمر خلال الاسبوعين القادمين، ثم انتقل الى ادوات التجزئة والجنس. احجز اعادة تقييم بعد 3 اشهر لقياس التقدم."
+    "key_recommendation_native": "Practice the tense engine daily: form 5 pairs of sentences with the same situation — once in passé composé and once in imparfait. This single exercise will correct your biggest weakness.",
+    "next_steps_native": "Focus on passé composé vs. imparfait over the next two weeks, then move on to partitive articles and gender. Schedule a reassessment in 3 months to measure progress."
   }
 }

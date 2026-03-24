@@ -2,11 +2,11 @@
   "metadata": {
     "student_name": "Georgi V.",
     "display_name": "Georgi",
-    "native_name": "Георги",
+    "native_name": "Georgi",
     "date": "2026-03-19",
-    "package": "quick",
+    "package": "full",
     "assessed_language": "Rumänisch",
-    "native_language": "Bulgarisch",
+    "native_language": "Englisch",
     "assessor": "Marko",
     "active_cefr": "A2.1",
     "passive_cefr": "A2.2",
@@ -24,360 +24,443 @@
     {
       "id": "perception",
       "title_assessed": "Perceptie precisa",
-      "title_native": "Точно наблюдение",
+      "title_native": "Precise Observation",
       "content_assessed": "In aceasta sesiune ai aratat ca ai o baza buna in limba romana. Vocabularul tau acopera situatiile de zi cu zi. Problemele principale au aparut in sistemul de cazuri si in utilizarea timpurilor verbale.",
-      "content_native": "В тази сесия показа, че имаш добра основа в румънски. Речниковият ти запас покрива ежедневни ситуации. Основните проблеми се появиха в падежната система и в използването на глаголните времена."
+      "content_native": "In this session you showed that you have a good foundation in Romanian. Your vocabulary covers everyday situations. The main problems appeared in the case system and in the use of verb tenses."
+    },
+    {
+      "id": "strengths",
+      "title_assessed": "Puncte tari structurale",
+      "title_native": "Structural Strengths",
+      "items": [
+        {
+          "strength_assessed": "Bună utilizare a prezentului simplu",
+          "strength_native": "Good use of present simple tense",
+          "example_assessed": "\"Eu merg la școală în fiecare zi.\" — Conjugarea corectă și context clar.",
+          "example_native": "\"I go to school every day.\" — Correct conjugation and clear context."
+        },
+        {
+          "strength_assessed": "Vocabular zilei de zi solid",
+          "strength_native": "Solid everyday vocabulary",
+          "example_assessed": "Folosești cuvinte pentru mâncare, transport, casă, și activități zilei — \"masa de prânz\", \"autobuz\", \"dormitor\".",
+          "example_native": "You use words for food, transport, house, and daily activities — \"lunch\", \"bus\", \"bedroom\"."
+        },
+        {
+          "strength_assessed": "Formarea corectă a unor întrebări simple",
+          "strength_native": "Correct formation of some simple questions",
+          "example_assessed": "\"Unde locuiești?\" și \"Cât costă?\" — Intonație și structură adecvate.",
+          "example_native": "\"Where do you live?\" and \"How much does it cost?\" — Appropriate intonation and structure."
+        }
+      ]
     },
     {
       "id": "core_insight",
       "title_assessed": "Insight structural central",
-      "title_native": "Централно структурно наблюдение",
+      "title_native": "Central Structural Observation",
       "content_assessed": "Problema centrala este articolul postpus si sistemul de cazuri. In romana, articolul se pune dupa substantiv ('omul' nu 'om-ul'), iar cazurile genitiv si dativ au forme speciale.",
-      "content_native": "Централният проблем е задпоставеният член и падежната система. В румънски, членът се поставя след съществителното ('omul' не 'om-ul'), а родителният и дателният падеж имат специални форми."
+      "content_native": "The central problem is the postposed article and the case system. In Romanian, the article is placed after the noun ('omul' not 'om-ul'), and the genitive and dative cases have special forms."
     },
     {
       "id": "problems",
       "title_assessed": "Probleme structurale principale",
-      "title_native": "Основни структурни проблеми",
+      "title_native": "Main Structural Problems",
       "items": [
         {
           "name_assessed": "Articolul postpus",
-          "name_native": "Задпоставен член",
+          "name_native": "Postposed Article",
           "error_class": "Kasus/Artikel",
           "explanation_assessed": "Nu folosesti corect articolul postpus: 'un om' (nehotarat) vs. 'omul' (hotarat).",
-          "explanation_native": "Не използваш правилно задпоставения член: 'un om' (неопределен) vs. 'omul' (определен).",
+          "explanation_native": "You are not using the postposed article correctly: 'un om' (indefinite) vs. 'omul' (definite).",
           "evidence_assessed": "\"Am vazut om pe strada.\" → Corect: \"Am vazut un om pe strada.\" sau \"Am vazut omul pe strada.\"",
-          "evidence_native": "\"Am vazut om pe strada.\" → Правилно: \"Am vazut un om pe strada.\" или \"Am vazut omul pe strada.\""
+          "evidence_native": "\"Am vazut om pe strada.\" → Correct: \"Am vazut un om pe strada.\" or \"Am vazut omul pe strada.\""
         },
         {
           "name_assessed": "Genitiv-dativ",
-          "name_native": "Родителен-дателен падеж",
+          "name_native": "Genitive-Dative Case",
           "error_class": "Kasus/Artikel",
           "explanation_assessed": "Confuzi formele de genitiv-dativ: 'cartea lui Ion' (genitiv) vs. 'ii dau cartea lui Ion' (dativ).",
-          "explanation_native": "Объркваш формите на родителен-дателен: 'cartea lui Ion' (родителен) vs. 'ii dau cartea lui Ion' (дателен).",
+          "explanation_native": "You confuse the genitive-dative forms: 'cartea lui Ion' (genitive) vs. 'ii dau cartea lui Ion' (dative).",
           "evidence_assessed": "\"Cartea de fratele meu\" → Corect: \"Cartea fratelui meu.\"",
-          "evidence_native": "\"Cartea de fratele meu\" → Правилно: \"Cartea fratelui meu.\""
+          "evidence_native": "\"Cartea de fratele meu\" → Correct: \"Cartea fratelui meu.\""
         },
         {
           "name_assessed": "Conjugarea la trecut",
-          "name_native": "Спрежение в минало време",
+          "name_native": "Past Tense Conjugation",
           "error_class": "Zeitformen",
           "explanation_assessed": "Confuzi perfectul compus cu imperfectul: 'Am mers' (actiune unica) vs. 'Mergeam' (obisnuinta).",
-          "explanation_native": "Объркваш перфектния композит с имперфекта: 'Am mers' (еднократно действие) vs. 'Mergeam' (навик).",
+          "explanation_native": "You confuse the perfect compound with the imperfect: 'Am mers' (one-time action) vs. 'Mergeam' (habit).",
           "evidence_assessed": "\"Cand am fost mic, am jucat fotbal.\" → Corect: \"Cand eram mic, jucam fotbal.\"",
-          "evidence_native": "\"Cand am fost mic, am jucat fotbal.\" → Правилно: \"Cand eram mic, jucam fotbal.\""
+          "evidence_native": "\"Cand am fost mic, am jucat fotbal.\" → Correct: \"Cand eram mic, jucam fotbal.\""
         },
         {
           "name_assessed": "Prepozitii de loc",
-          "name_native": "Предлози за място",
+          "name_native": "Prepositions of Place",
           "error_class": "Präpositionen",
           "explanation_assessed": "Confuzi 'in', 'la' si 'pe' pentru locuri.",
-          "explanation_native": "Объркваш 'in', 'la' и 'pe' за места.",
+          "explanation_native": "You confuse 'in', 'la' and 'pe' for places.",
           "evidence_assessed": "\"Merg in Maria.\" → Corect: \"Merg la Maria.\"",
-          "evidence_native": "\"Merg in Maria.\" → Правилно: \"Merg la Maria.\""
+          "evidence_native": "\"Merg in Maria.\" → Correct: \"Merg la Maria.\""
         },
         {
           "name_assessed": "Pronume atone",
-          "name_native": "Кратки местоимения",
+          "name_native": "Clitic Pronouns",
           "error_class": "Wortstellung",
           "explanation_assessed": "Uiti pronumele atone care sunt obligatorii in romana: 'I-am dat cartea' nu 'Am dat cartea lui'.",
-          "explanation_native": "Забравяш кратките местоимения, които са задължителни в румънски: 'I-am dat cartea' не 'Am dat cartea lui'.",
+          "explanation_native": "You forget the clitic pronouns, which are mandatory in Romanian: 'I-am dat cartea' not 'Am dat cartea lui'.",
           "evidence_assessed": "\"Am dat cartea la Ion.\" → Corect: \"I-am dat cartea lui Ion.\"",
-          "evidence_native": "\"Am dat cartea la Ion.\" → Правилно: \"I-am dat cartea lui Ion.\""
+          "evidence_native": "\"Am dat cartea la Ion.\" → Correct: \"I-am dat cartea lui Ion.\""
         }
       ]
     },
     {
       "id": "corrections",
       "title_assessed": "Corectii de parghie",
-      "title_native": "Корекции на лоста",
+      "title_native": "Lever Corrections",
       "items": [
         {
           "original_assessed": "Gresit: Am vazut om pe strada.",
-          "original_native": "Грешно: Am vazut om pe strada.",
+          "original_native": "Wrong: Am vazut om pe strada.",
           "corrected_assessed": "Corect: Am vazut un om pe strada.",
-          "corrected_native": "Правилно: Am vazut un om pe strada.",
+          "corrected_native": "Correct: Am vazut un om pe strada.",
           "explanation_assessed": "Substantivul singular are nevoie de articol.",
-          "explanation_native": "Единственото число изисква член."
+          "explanation_native": "The singular requires an article."
         },
         {
           "original_assessed": "Gresit: Cartea de fratele meu.",
-          "original_native": "Грешно: Cartea de fratele meu.",
+          "original_native": "Wrong: Cartea de fratele meu.",
           "corrected_assessed": "Corect: Cartea fratelui meu.",
-          "corrected_native": "Правилно: Cartea fratelui meu.",
+          "corrected_native": "Correct: Cartea fratelui meu.",
           "explanation_assessed": "Genitiv: fratele → fratelui.",
-          "explanation_native": "Родителен: fratele → fratelui."
+          "explanation_native": "Genitive: fratele → fratelui."
         },
         {
           "original_assessed": "Gresit: Cand am fost mic, am jucat fotbal.",
-          "original_native": "Грешно: Cand am fost mic, am jucat fotbal.",
+          "original_native": "Wrong: Cand am fost mic, am jucat fotbal.",
           "corrected_assessed": "Corect: Cand eram mic, jucam fotbal.",
-          "corrected_native": "Правилно: Cand eram mic, jucam fotbal.",
+          "corrected_native": "Correct: Cand eram mic, jucam fotbal.",
           "explanation_assessed": "Obisnuinta/descriere in trecut = imperfect.",
-          "explanation_native": "Навик/описание в миналото = имперфект."
+          "explanation_native": "Habit/description in the past = imperfect."
         },
         {
           "original_assessed": "Gresit: Merg in Maria.",
-          "original_native": "Грешно: Merg in Maria.",
+          "original_native": "Wrong: Merg in Maria.",
           "corrected_assessed": "Corect: Merg la Maria.",
-          "corrected_native": "Правилно: Merg la Maria.",
+          "corrected_native": "Correct: Merg la Maria.",
           "explanation_assessed": "'la' = catre o persoana. 'in' = intr-un loc.",
-          "explanation_native": "'la' = към лице. 'in' = в място."
+          "explanation_native": "'la' = towards a person. 'in' = inside a place."
         },
         {
           "original_assessed": "Gresit: Am dat cartea la Ion.",
-          "original_native": "Грешно: Am dat cartea la Ion.",
+          "original_native": "Wrong: Am dat cartea la Ion.",
           "corrected_assessed": "Corect: I-am dat cartea lui Ion.",
-          "corrected_native": "Правилно: I-am dat cartea lui Ion.",
+          "corrected_native": "Correct: I-am dat cartea lui Ion.",
           "explanation_assessed": "Pronumele aton 'i-' este obligatoriu.",
-          "explanation_native": "Краткото местоимение 'i-' е задължително."
+          "explanation_native": "The clitic pronoun 'i-' is mandatory."
         }
       ]
     },
     {
       "id": "solutions",
       "title_assessed": "Solutii",
-      "title_native": "Решения",
+      "title_native": "Solutions",
       "items": [
         {
           "name_assessed": "Exercitiu de articol",
-          "name_native": "Упражнение за член",
+          "name_native": "Article Exercise",
           "action_assessed": "In fiecare zi 5 propozitii cu articol hotarat si nehotarat. Pronunta cu voce tare.",
-          "action_native": "Всеки ден 5 изречения с определен и неопределен член. Произнасяй на глас.",
+          "action_native": "Every day 5 sentences with definite and indefinite articles. Say them aloud.",
           "result_assessed": "Articole corecte in 2 saptamani.",
-          "result_native": "Правилни членове за 2 седмици."
+          "result_native": "Correct articles within 2 weeks."
         },
         {
           "name_assessed": "Genitiv-dativ",
-          "name_native": "Родителен-дателен",
+          "name_native": "Genitive-Dative",
           "action_assessed": "Memoreaza formele de genitiv ale celor mai comune substantive.",
-          "action_native": "Запомни родителните форми на най-често срещаните съществителни.",
+          "action_native": "Memorize the genitive forms of the most common nouns.",
           "result_assessed": "Forme corecte in 2-3 saptamani.",
-          "result_native": "Правилни форми за 2-3 седмици."
+          "result_native": "Correct forms within 2-3 weeks."
         },
         {
           "name_assessed": "Perfect compus vs. imperfect",
-          "name_native": "Перфектен композит vs. имперфект",
+          "name_native": "Perfect Compound vs. Imperfect",
           "action_assessed": "3 perechi pe zi: aceeasi situatie, o data la perfect compus, o data la imperfect.",
-          "action_native": "3 двойки на ден: същата ситуация, веднъж в перфектен композит, веднъж в имперфект.",
+          "action_native": "3 pairs per day: the same situation, once in perfect compound, once in imperfect.",
           "result_assessed": "Distinctia devine automata in 3 saptamani.",
-          "result_native": "Разграничението става автоматично за 3 седмици."
+          "result_native": "The distinction becomes automatic within 3 weeks."
         },
         {
           "name_assessed": "Prepozitii de loc",
-          "name_native": "Предлози за място",
+          "name_native": "Prepositions of Place",
           "action_assessed": "Regula: 'in' = spatiu fizic, 'la' = persoana/institutie, 'pe' = suprafata.",
-          "action_native": "Правило: 'in' = физическо пространство, 'la' = лице/институция, 'pe' = повърхност.",
+          "action_native": "Rule: 'in' = physical space, 'la' = person/institution, 'pe' = surface.",
           "result_assessed": "Prepozitii corecte in 2 saptamani.",
-          "result_native": "Правилни предлози за 2 седмици."
+          "result_native": "Correct prepositions within 2 weeks."
         },
         {
           "name_assessed": "Pronume atone",
-          "name_native": "Кратки местоимения",
+          "name_native": "Clitic Pronouns",
           "action_assessed": "Exerseaza: 'ii dau', 'i-am dat', 'o vad', 'l-am vazut'. 3 propozitii pe zi.",
-          "action_native": "Упражнявай: 'ii dau', 'i-am dat', 'o vad', 'l-am vazut'. 3 изречения на ден.",
+          "action_native": "Practice: 'ii dau', 'i-am dat', 'o vad', 'l-am vazut'. 3 sentences per day.",
           "result_assessed": "Pronume atone corecte in 2-3 saptamani.",
-          "result_native": "Правилни кратки местоимения за 2-3 седмици."
+          "result_native": "Correct clitic pronouns within 2-3 weeks."
         }
       ]
     },
     {
       "id": "sentence_engine",
       "name_assessed": "Motorul cazurilor",
-      "name_native": "Двигател на падежите",
+      "name_native": "Case Engine",
       "explanation_assessed": "In fiecare zi pronunta cu voce tare 5 propozitii, alegand constient cazul corect.",
-      "explanation_native": "Всеки ден произнасяй на глас 5 изречения, осъзнато избирайки правилния падеж.",
+      "explanation_native": "Every day say aloud 5 sentences, consciously choosing the correct case.",
       "patterns": [
         {
           "de": "Cartea fratelui meu. (genitiv)",
-          "native": "Книгата на брат ми. (родителен)"
+          "native": "My brother's book. (genitive)"
         },
         {
           "de": "I-am dat cartea lui Ion. (dativ)",
-          "native": "Дадох книгата на Йон. (дателен)"
+          "native": "I gave the book to Ion. (dative)"
         },
         {
           "de": "Am vazut omul pe strada. (articol hotarat)",
-          "native": "Видях мъжа на улицата. (определен член)"
+          "native": "I saw the man on the street. (definite article)"
         }
       ],
       "daily_instruction_assessed": "5 propozitii pe zi, cu voce tare, cu caz constient.",
-      "daily_instruction_native": "5 изречения на ден, на глас, с осъзнат падеж."
+      "daily_instruction_native": "5 sentences per day, aloud, with conscious case selection."
     },
     {
       "id": "activation",
       "title_assessed": "Activare",
-      "title_native": "Активиране",
+      "title_native": "Activation",
       "sentences": [
         {
           "de": "Merg la magazin pentru ca am nevoie de paine.",
-          "native": "Отивам в магазина, защото ми трябва хляб."
+          "native": "I'm going to the store because I need bread."
         },
         {
           "de": "Ieri am citit o carte interesanta.",
-          "native": "Вчера прочетох интересна книга."
+          "native": "Yesterday I read an interesting book."
         },
         {
           "de": "I-am dat prietenului meu cartea.",
-          "native": "Дадох на приятеля си книгата."
+          "native": "I gave my friend the book."
         },
         {
           "de": "Locuim intr-un oras mare.",
-          "native": "Живеем в голям град."
+          "native": "We live in a big city."
         },
         {
           "de": "Ea merge la scoala in fiecare zi.",
-          "native": "Тя ходи на училище всеки ден."
+          "native": "She goes to school every day."
         },
         {
           "de": "Am scris o scrisoare mamei.",
-          "native": "Написах писмо на мама."
+          "native": "I wrote a letter to mom."
         }
       ]
     },
     {
       "id": "homework_a",
       "title_assessed": "Tema A — Structura",
-      "title_native": "Домашна работа A — Структура",
+      "title_native": "Homework A — Structure",
       "sentences": [
         {
           "de": "Vad o casa mare.",
-          "native": "Виждам голяма къща."
+          "native": "I see a big house."
         },
         {
           "de": "Ea merge la scoala.",
-          "native": "Тя отива на училище."
+          "native": "She goes to school."
         },
         {
           "de": "Locuim in Bucuresti.",
-          "native": "Живеем в Букурещ."
+          "native": "We live in Bucharest."
         },
         {
           "de": "I-am dat cartea prietenului.",
-          "native": "Дадох книгата на приятеля."
+          "native": "I gave the book to my friend."
         },
         {
           "de": "Ieri am scris o scrisoare.",
-          "native": "Вчера написах писмо."
+          "native": "Yesterday I wrote a letter."
         },
         {
           "de": "El citeste o carte interesanta.",
-          "native": "Той чете интересна книга."
+          "native": "He is reading an interesting book."
         }
       ]
     },
     {
       "id": "homework_b",
       "title_assessed": "Tema B — Precizie",
-      "title_native": "Домашна работа B — Прецизност",
+      "title_native": "Homework B — Precision",
       "items": [
         {
           "wrong_assessed": "Gresit: Am vazut om pe strada.",
-          "wrong_native": "Грешно: Am vazut om pe strada.",
+          "wrong_native": "Wrong: Am vazut om pe strada.",
           "right_assessed": "Corect: Am vazut un om pe strada.",
-          "right_native": "Правилно: Am vazut un om pe strada."
+          "right_native": "Correct: Am vazut un om pe strada."
         },
         {
           "wrong_assessed": "Gresit: Cartea de fratele meu.",
-          "wrong_native": "Грешно: Cartea de fratele meu.",
+          "wrong_native": "Wrong: Cartea de fratele meu.",
           "right_assessed": "Corect: Cartea fratelui meu.",
-          "right_native": "Правилно: Cartea fratelui meu."
+          "right_native": "Correct: Cartea fratelui meu."
         },
         {
           "wrong_assessed": "Gresit: Cand am fost mic, am jucat fotbal.",
-          "wrong_native": "Грешно: Cand am fost mic, am jucat fotbal.",
+          "wrong_native": "Wrong: Cand am fost mic, am jucat fotbal.",
           "right_assessed": "Corect: Cand eram mic, jucam fotbal.",
-          "right_native": "Правилно: Cand eram mic, jucam fotbal."
+          "right_native": "Correct: Cand eram mic, jucam fotbal."
         },
         {
           "wrong_assessed": "Gresit: Merg in Maria.",
-          "wrong_native": "Грешно: Merg in Maria.",
+          "wrong_native": "Wrong: Merg in Maria.",
           "right_assessed": "Corect: Merg la Maria.",
-          "right_native": "Правилно: Merg la Maria."
+          "right_native": "Correct: Merg la Maria."
         },
         {
           "wrong_assessed": "Gresit: Am dat cartea la Ion.",
-          "wrong_native": "Грешно: Am dat cartea la Ion.",
+          "wrong_native": "Wrong: Am dat cartea la Ion.",
           "right_assessed": "Corect: I-am dat cartea lui Ion.",
-          "right_native": "Правилно: I-am dat cartea lui Ion."
+          "right_native": "Correct: I-am dat cartea lui Ion."
+        }
+      ]
+    },
+    {
+      "id": "homework_c",
+      "title_assessed": "Temele C — Fluxul vorbirii",
+      "title_native": "Homework C — Oral Fluency",
+      "sentences": [
+        {
+          "assessed": "Ieri am mers la piață cu mama.",
+          "native": "Yesterday I went to the market with my mother."
+        },
+        {
+          "assessed": "Am cumpărat legume proaspete și brânză.",
+          "native": "I bought fresh vegetables and cheese."
+        },
+        {
+          "assessed": "Apoi am mers acasă și am făcut cina.",
+          "native": "Then I went home and made dinner."
+        },
+        {
+          "assessed": "Familia mea a venit pentru a mânca împreună.",
+          "native": "My family came to eat together."
+        },
+        {
+          "assessed": "Am servit salată, mâncare și pâine caldă.",
+          "native": "I served salad, main course, and warm bread."
+        },
+        {
+          "assessed": "Toată lumea a mâncat cu plăcere și a vorbit despre ziua lor.",
+          "native": "Everyone ate with pleasure and talked about their day."
+        },
+        {
+          "assessed": "După cină, am ieșit în grădină pentru o plimbare.",
+          "native": "After dinner, we went out to the garden for a walk."
+        },
+        {
+          "assessed": "Vremea era frumoasă și soarele se asundase ușor.",
+          "native": "The weather was beautiful and the sun had set gently."
+        },
+        {
+          "assessed": "Am vorbit cu vecinii mei despre plantele din grădină.",
+          "native": "I talked with my neighbors about the plants in the garden."
+        },
+        {
+          "assessed": "Deși eram obosit, m-am simțit fericit și relaxat.",
+          "native": "Although I was tired, I felt happy and relaxed."
         }
       ]
     },
     {
       "id": "weekly_plan",
       "title_assessed": "Plan saptamanal",
-      "title_native": "Седмичен план",
+      "title_native": "Weekly Plan",
       "weeks": [
         {
           "label_assessed": "Saptamana 1-2",
-          "label_native": "Седмица 1-2",
+          "label_native": "Week 1-2",
           "focus_assessed": "Articol postpus + genitiv-dativ",
-          "focus_native": "Задпоставен член + родителен-дателен",
+          "focus_native": "Postposed article + genitive-dative",
           "goal_assessed": "Articole si forme de genitiv corecte",
-          "goal_native": "Правилни членове и родителни форми",
+          "goal_native": "Correct articles and genitive forms",
           "daily_assessed": "5 propozitii cu articole + cazuri",
-          "daily_native": "5 изречения с членове + падежи"
+          "daily_native": "5 sentences with articles + cases"
         },
         {
           "label_assessed": "Saptamana 3-4",
-          "label_native": "Седмица 3-4",
+          "label_native": "Week 3-4",
           "focus_assessed": "Timpuri verbale + prepozitii",
-          "focus_native": "Глаголни времена + предлози",
+          "focus_native": "Verb tenses + prepositions",
           "goal_assessed": "Perfect compus vs. imperfect + prepozitii corecte",
-          "goal_native": "Перфектен композит vs. имперфект + правилни предлози",
+          "goal_native": "Perfect compound vs. imperfect + correct prepositions",
           "daily_assessed": "3 perechi de timpuri + 3 propozitii cu prepozitii",
-          "daily_native": "3 двойки времена + 3 изречения с предлози"
+          "daily_native": "3 tense pairs + 3 sentences with prepositions"
         },
         {
           "label_assessed": "Saptamana 5-6",
-          "label_native": "Седмица 5-6",
+          "label_native": "Week 5-6",
           "focus_assessed": "Pronume atone",
-          "focus_native": "Кратки местоимения",
+          "focus_native": "Clitic pronouns",
           "goal_assessed": "Pronume atone corecte in vorbirea spontana",
-          "goal_native": "Правилни кратки местоимения в спонтанна реч",
+          "goal_native": "Correct clitic pronouns in spontaneous speech",
           "daily_assessed": "5 propozitii cu pronume atone",
-          "daily_native": "5 изречения с кратки местоимения"
+          "daily_native": "5 sentences with clitic pronouns"
         },
         {
           "label_assessed": "Saptamana 7-8",
-          "label_native": "Седмица 7-8",
+          "label_native": "Week 7-8",
           "focus_assessed": "Vorbire libera sub presiune",
-          "focus_native": "Свободна реч под натиск",
+          "focus_native": "Free speech under pressure",
           "goal_assessed": "Acuratete mentinuta in vorbirea spontana",
-          "goal_native": "Точност при спонтанна реч",
+          "goal_native": "Accuracy in spontaneous speech",
           "daily_assessed": "Monolog de 2 minute cu focus constient",
-          "daily_native": "2-минутен монолог с осъзнат фокус"
+          "daily_native": "2-minute monologue with conscious focus"
         }
       ]
+    },
+    {
+      "id": "mini_block",
+      "title_assessed": "Mini-Bloc",
+      "title_native": "Mini-Block",
+      "goal_assessed": "Consolidarea reflexelor de caz și timp verbal sub presiunea vorbirii",
+      "goal_native": "Consolidate case and verb tense reflexes under speaking pressure",
+      "step1_assessed": "Zilnic pronunță 5 perechi de propoziții cu prepoziții de loc — \"în\", \"pe\", \"la\" — schimbând cazul (nominativ, acuzativ, genitiv, dativ). Pronunță conscious și atenție la terminații.",
+      "step1_native": "Daily pronounce 5 pairs of sentences with prepositions of location — \"în\", \"pe\", \"la\" — changing the case (nominative, accusative, genitive, dative). Pronounce consciously and pay attention to endings.",
+      "step2_assessed": "Un monolog de 2 minute despre locul tău de muncă sau școală. Folosește deliberat prepoziții de loc și timpuri verbale diferite (prezent și trecut). Înregistrează-te. Ascultă. Repetă până se pare natural.",
+      "step2_native": "A 2-minute monologue about your workplace or school. Deliberately use location prepositions and different verb tenses (present and past). Record yourself. Listen. Repeat until it sounds natural."
     }
   ],
   "cefr_footer": {
     "active_assessed": "Productie orala activa: A2.1",
-    "active_native": "Активна устна продукция: A2.1",
+    "active_native": "Active oral production: A2.1",
     "passive_assessed": "Competenta pasiva: A2.2",
-    "passive_native": "Пасивна компетенция: A2.2",
+    "passive_native": "Passive competence: A2.2",
     "confidence_assessed": "Incredere: 62%",
-    "confidence_native": "Увереност: 62%",
+    "confidence_native": "Confidence: 62%",
     "summary_assessed": "Te afli la nivelul A2. Baza ta exista, dar articolele si cazurile sunt instabile. Cu antrenament tintit, B1 este realist in 4-5 luni.",
-    "summary_native": "Намираш се на ниво A2. Базата ти е налице, но членовете и падежите са нестабилни. С целенасочено обучение B1 е реалистичен за 4-5 месеца.",
+    "summary_native": "You are at level A2. Your base is in place, but articles and cases are unstable. With targeted training, B1 is realistic within 4-5 months.",
     "stability_assessed": "Stabilitate structurala sub presiune: scazuta-medie",
-    "stability_native": "Структурна стабилност под натиск: ниска до средна",
+    "stability_native": "Structural stability under pressure: low to medium",
     "self_correction_assessed": "Capacitate de autocorectare: scazuta",
-    "self_correction_native": "Способност за самокорекция: ниска",
+    "self_correction_native": "Self-correction ability: low",
     "reassessment_assessed": "Reevaluare recomandata: 3 luni",
-    "reassessment_native": "Препоръчителна преоценка: 3 месеца"
+    "reassessment_native": "Recommended reassessment: 3 months"
   },
   "block_d": {
-    "title_native": "Резюме на твоя език",
-    "cefr_summary_native": "Активният ти говорим румънски е на ниво A2.1. Можеш да се справяш в прости ежедневни ситуации, но членовете и падежите се разпадат под натиск.",
+    "title_native": "Summary in Your Language",
+    "cefr_summary_native": "Your active spoken Romanian is at level A2.1. You can manage in simple everyday situations, but articles and cases break down under pressure.",
     "top_problems_native": [
-      "Задпоставен член: пропуснат или грешна форма",
-      "Родителен-дателен падеж: грешни форми",
-      "Перфектен композит вместо имперфект за навици",
-      "Предлози за място: объркване на in/la/pe",
-      "Пропуснати кратки местоимения"
+      "Postposed article: omitted or wrong form",
+      "Genitive-dative case: wrong forms",
+      "Perfect compound instead of imperfect for habits",
+      "Prepositions of place: confusion of in/la/pe",
+      "Omitted clitic pronouns"
     ],
-    "key_recommendation_native": "Практикувай Двигателя на падежите ежедневно: произнасяй 5 изречения на глас с правилни членове и падежи.",
-    "next_steps_native": "Фокусирай се върху членовете и падежите следващите 2 седмици. Запази преоценка след 3 месеца."
+    "key_recommendation_native": "Practice the Case Engine daily: say 5 sentences aloud with correct articles and cases.",
+    "next_steps_native": "Focus on articles and cases for the next 2 weeks. Schedule a reassessment in 3 months."
   }
 }

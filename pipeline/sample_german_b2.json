@@ -6,7 +6,7 @@
     "date": "2026-03-19",
     "package": "full",
     "assessed_language": "Deutsch",
-    "native_language": "Italienisch",
+    "native_language": "Englisch",
     "assessor": "Marko",
     "active_cefr": "B2.1",
     "passive_cefr": "B2.2",
@@ -24,89 +24,89 @@
     {
       "id": "perception",
       "title_assessed": "Präzise Wahrnehmung",
-      "title_native": "Percezione precisa",
+      "title_native": "Precise Perception",
       "content_assessed": "Du hast in dieser Sitzung gezeigt, dass du ein starkes Fundament im Deutschen hast. Dein Wortschatz ist breit und differenziert, und du versuchst aktiv, komplexe Strukturen zu verwenden. Die Hauptprobleme liegen im Kasussystem bei Wechselpräpositionen und in der Artikelwahl bei abstrakten Substantiven.",
-      "content_native": "In questa sessione hai dimostrato di avere una solida base in tedesco. Il tuo vocabolario è ampio e differenziato, e provi attivamente a usare strutture complesse. I problemi principali risiedono nel sistema dei casi con le preposizioni bivalenti e nella scelta degli articoli con i sostantivi astratti."
+      "content_native": "In this session you demonstrated a solid foundation in German. Your vocabulary is broad and differentiated, and you actively try to use complex structures. The main problems lie in the case system with two-way prepositions and in the choice of articles with abstract nouns."
     },
     {
       "id": "strengths",
       "title_assessed": "Strukturelle Stärken",
-      "title_native": "Punti di forza strutturali",
+      "title_native": "Structural Strengths",
       "items": [
         {
           "strength_assessed": "Sichere Nebensatzstruktur",
-          "strength_native": "Struttura sicura delle frasi subordinate",
+          "strength_native": "Confident subordinate clause structure",
           "example_assessed": "\"Obwohl ich gestern müde war, habe ich trotzdem gearbeitet.\" — Korrekte Verbendstellung.",
-          "example_native": "\"Sebbene ieri fossi stanco, ho lavorato lo stesso.\" — Posizione corretta del verbo alla fine."
+          "example_native": "\"Although I was tired yesterday, I worked anyway.\" — Correct verb position at the end."
         },
         {
           "strength_assessed": "Gute Verwendung von Konjunktiv II",
-          "strength_native": "Buon uso del congiuntivo II",
+          "strength_native": "Good use of Konjunktiv II",
           "example_assessed": "\"Ich würde gern mitkommen, wenn ich könnte.\" — Natürlicher Gebrauch.",
-          "example_native": "\"Vorrei venire, se potessi.\" — Uso naturale."
+          "example_native": "\"I would like to come, if I could.\" — Natural usage."
         },
         {
           "strength_assessed": "Reichhaltiger Wortschatz",
-          "strength_native": "Vocabolario ricco",
+          "strength_native": "Rich vocabulary",
           "example_assessed": "Du verwendest Synonyme und Nuancen — \"beeindruckend\" statt immer \"gut\".",
-          "example_native": "Usi sinonimi e sfumature — \"impressionante\" invece di sempre \"buono\"."
+          "example_native": "You use synonyms and nuances — \"impressive\" instead of always \"good\"."
         }
       ]
     },
     {
       "id": "core_insight",
       "title_assessed": "Zentrale Struktur-Erkenntnis",
-      "title_native": "Intuizione strutturale centrale",
+      "title_native": "Core Structural Insight",
       "content_assessed": "Dein Deutsch ist strukturell stark, aber das Kasussystem bleibt der zentrale Schwachpunkt. Unter Sprechdruck greifst du instinktiv zum Akkusativ, auch wo der Dativ korrekt wäre. Das betrifft besonders Wechselpräpositionen (in, auf, an) und die Kombination mit bestimmten Verben.",
-      "content_native": "Il tuo tedesco è strutturalmente forte, ma il sistema dei casi rimane il punto debole centrale. Sotto pressione nel parlare, ricorri istintivamente all'accusativo anche dove il dativo sarebbe corretto. Questo riguarda soprattutto le preposizioni bivalenti (in, auf, an) e la combinazione con determinati verbi."
+      "content_native": "Your German is structurally strong, but the case system remains the central weak point. Under speaking pressure, you instinctively fall back on the accusative even where the dative would be correct. This applies especially to two-way prepositions (in, auf, an) and their combination with certain verbs."
     },
     {
       "id": "problems",
       "title_assessed": "Top Strukturelle Probleme",
-      "title_native": "Problemi strutturali principali",
+      "title_native": "Main Structural Problems",
       "items": [
         {
           "name_assessed": "Wechselpräpositionen: Akkusativ statt Dativ",
-          "name_native": "Preposizioni bivalenti: accusativo al posto del dativo",
+          "name_native": "Two-way prepositions: accusative instead of dative",
           "error_class": "Kasus/Artikel",
           "explanation_assessed": "Bei statischen Situationen verwendest du regelmäßig den Akkusativ statt den Dativ. \"Ich bin in den Park\" statt \"Ich bin im Park\".",
-          "explanation_native": "Nelle situazioni statiche usi regolarmente l'accusativo al posto del dativo. \"Ich bin in den Park\" invece di \"Ich bin im Park\".",
+          "explanation_native": "In static situations you regularly use the accusative instead of the dative. \"Ich bin in den Park\" instead of \"Ich bin im Park\".",
           "evidence_assessed": "\"Ich sitze in den Garten.\" → Richtig: \"Ich sitze im Garten.\"",
-          "evidence_native": "\"Ich sitze in den Garten.\" → Corretto: \"Ich sitze im Garten.\""
+          "evidence_native": "\"Ich sitze in den Garten.\" → Correct: \"Ich sitze im Garten.\""
         },
         {
           "name_assessed": "Artikelwahl bei Komposita",
-          "name_native": "Scelta dell'articolo nei composti",
+          "name_native": "Article choice in compound nouns",
           "error_class": "Kasus/Artikel",
           "explanation_assessed": "Bei zusammengesetzten Substantiven wählst du den Artikel des ersten Bestandteils statt des letzten.",
-          "explanation_native": "Nei sostantivi composti scegli l'articolo del primo componente invece dell'ultimo.",
+          "explanation_native": "In compound nouns you choose the article of the first component instead of the last.",
           "evidence_assessed": "\"der Haustür\" → Richtig: \"die Haustür\" (die Tür)",
-          "evidence_native": "\"der Haustür\" → Corretto: \"die Haustür\" (die Tür)"
+          "evidence_native": "\"der Haustür\" → Correct: \"die Haustür\" (die Tür)"
         },
         {
           "name_assessed": "Präposition bei temporalen Angaben",
-          "name_native": "Preposizione nelle indicazioni temporali",
+          "name_native": "Preposition in time expressions",
           "error_class": "Präpositionen",
           "explanation_assessed": "Du verwechselst \"seit\" und \"vor\" bei Zeitangaben. \"Seit drei Jahren bin ich angekommen\" statt \"Vor drei Jahren bin ich angekommen\".",
-          "explanation_native": "Confondi \"seit\" e \"vor\" nelle indicazioni temporali. \"Seit drei Jahren bin ich angekommen\" invece di \"Vor drei Jahren bin ich angekommen\".",
+          "explanation_native": "You confuse \"seit\" and \"vor\" in time expressions. \"Seit drei Jahren bin ich angekommen\" instead of \"Vor drei Jahren bin ich angekommen\".",
           "evidence_assessed": "\"Seit zwei Wochen habe ich ihn getroffen.\" → \"Vor zwei Wochen...\"",
           "evidence_native": "\"Seit zwei Wochen habe ich ihn getroffen.\" → \"Vor zwei Wochen...\""
         },
         {
           "name_assessed": "Fehlender Dativ nach bestimmten Verben",
-          "name_native": "Dativo mancante dopo determinati verbi",
+          "name_native": "Missing dative after certain verbs",
           "error_class": "Kasus/Artikel",
           "explanation_assessed": "Verben wie helfen, danken, gefallen verlangen den Dativ, du verwendest aber den Akkusativ.",
-          "explanation_native": "Verbi come helfen, danken, gefallen richiedono il dativo, ma tu usi l'accusativo.",
+          "explanation_native": "Verbs such as helfen, danken, gefallen require the dative, but you use the accusative.",
           "evidence_assessed": "\"Ich helfe den Mann.\" → \"Ich helfe dem Mann.\"",
           "evidence_native": "\"Ich helfe den Mann.\" → \"Ich helfe dem Mann.\""
         },
         {
           "name_assessed": "Genusfehler bei häufigen Substantiven",
-          "name_native": "Errori di genere nei sostantivi comuni",
+          "name_native": "Gender errors in common nouns",
           "error_class": "Kasus/Artikel",
           "explanation_assessed": "Einige hochfrequente Substantive haben bei dir das falsche Genus gespeichert.",
-          "explanation_native": "Alcuni sostantivi ad alta frequenza hanno il genere sbagliato nella tua memoria.",
+          "explanation_native": "Some high-frequency nouns have the wrong gender stored in your memory.",
           "evidence_assessed": "\"das Küche\" → \"die Küche\", \"der Mädchen\" → \"das Mädchen\"",
           "evidence_native": "\"das Küche\" → \"die Küche\", \"der Mädchen\" → \"das Mädchen\""
         }
@@ -115,352 +115,352 @@
     {
       "id": "corrections",
       "title_assessed": "Hebelkorrekturen",
-      "title_native": "Correzioni leva",
+      "title_native": "Lever Corrections",
       "items": [
         {
           "original_assessed": "Falsch: Ich sitze in den Garten.",
-          "original_native": "Sbagliato: Ich sitze in den Garten.",
+          "original_native": "Wrong: Ich sitze in den Garten.",
           "corrected_assessed": "Richtig: Ich sitze im Garten.",
-          "corrected_native": "Corretto: Ich sitze im Garten.",
+          "corrected_native": "Correct: Ich sitze im Garten.",
           "explanation_assessed": "Statische Position = Dativ. Bewegung = Akkusativ.",
-          "explanation_native": "Posizione statica = dativo. Movimento = accusativo."
+          "explanation_native": "Static position = dative. Movement = accusative."
         },
         {
           "original_assessed": "Falsch: Ich helfe den Mann.",
-          "original_native": "Sbagliato: Ich helfe den Mann.",
+          "original_native": "Wrong: Ich helfe den Mann.",
           "corrected_assessed": "Richtig: Ich helfe dem Mann.",
-          "corrected_native": "Corretto: Ich helfe dem Mann.",
+          "corrected_native": "Correct: Ich helfe dem Mann.",
           "explanation_assessed": "helfen + Dativ, nicht Akkusativ.",
-          "explanation_native": "helfen + dativo, non accusativo."
+          "explanation_native": "helfen + dative, not accusative."
         },
         {
           "original_assessed": "Falsch: Seit zwei Wochen habe ich ihn getroffen.",
-          "original_native": "Sbagliato: Seit zwei Wochen habe ich ihn getroffen.",
+          "original_native": "Wrong: Seit zwei Wochen habe ich ihn getroffen.",
           "corrected_assessed": "Richtig: Vor zwei Wochen habe ich ihn getroffen.",
-          "corrected_native": "Corretto: Vor zwei Wochen habe ich ihn getroffen.",
+          "corrected_native": "Correct: Vor zwei Wochen habe ich ihn getroffen.",
           "explanation_assessed": "\"seit\" = Dauer bis jetzt. \"vor\" = einmaliges Ereignis in der Vergangenheit.",
-          "explanation_native": "\"seit\" = durata fino ad ora. \"vor\" = evento singolo nel passato."
+          "explanation_native": "\"seit\" = duration up to now. \"vor\" = single event in the past."
         },
         {
           "original_assessed": "Falsch: das Küche",
-          "original_native": "Sbagliato: das Küche",
+          "original_native": "Wrong: das Küche",
           "corrected_assessed": "Richtig: die Küche",
-          "corrected_native": "Corretto: die Küche",
+          "corrected_native": "Correct: die Küche",
           "explanation_assessed": "Küche ist feminin — merke: Räume auf -e sind oft feminin.",
-          "explanation_native": "Küche è femminile — ricorda: le stanze in -e sono spesso femminili."
+          "explanation_native": "Küche is feminine — remember: rooms ending in -e are often feminine."
         },
         {
           "original_assessed": "Falsch: Ich lege das Buch auf den Tisch. (wenn es schon dort liegt)",
-          "original_native": "Sbagliato: Ich lege das Buch auf den Tisch. (quando è già lì)",
+          "original_native": "Wrong: Ich lege das Buch auf den Tisch. (when it is already there)",
           "corrected_assessed": "Richtig: Das Buch liegt auf dem Tisch.",
-          "corrected_native": "Corretto: Das Buch liegt auf dem Tisch.",
+          "corrected_native": "Correct: Das Buch liegt auf dem Tisch.",
           "explanation_assessed": "liegen (Position, Dativ) vs. legen (Bewegung, Akkusativ).",
-          "explanation_native": "liegen (posizione, dativo) vs. legen (movimento, accusativo)."
+          "explanation_native": "liegen (position, dative) vs. legen (movement, accusative)."
         }
       ]
     },
     {
       "id": "solutions",
       "title_assessed": "Lösungen",
-      "title_native": "Soluzioni",
+      "title_native": "Solutions",
       "items": [
         {
           "name_assessed": "Wechselpräpositions-Drill",
-          "name_native": "Esercizio preposizioni bivalenti",
+          "name_native": "Two-way prepositions exercise",
           "action_assessed": "Jeden Tag 5 Satzpaare bilden: gleiche Präposition, einmal Bewegung (Akk.), einmal Position (Dat.).",
-          "action_native": "Ogni giorno forma 5 coppie di frasi: stessa preposizione, una volta movimento (acc.), una volta posizione (dat.).",
+          "action_native": "Every day form 5 sentence pairs: same preposition, once movement (acc.), once position (dat.).",
           "result_assessed": "In 2 Wochen wird die Unterscheidung reflexartig.",
-          "result_native": "In 2 settimane la distinzione diventerà istintiva."
+          "result_native": "Within 2 weeks the distinction will become instinctive."
         },
         {
           "name_assessed": "Dativ-Verben-Liste",
-          "name_native": "Lista verbi al dativo",
+          "name_native": "Dative verb list",
           "action_assessed": "Die 15 häufigsten Dativ-Verben auswendig lernen und täglich je einen Satz bilden.",
-          "action_native": "Impara a memoria i 15 verbi più comuni al dativo e forma una frase al giorno per ciascuno.",
+          "action_native": "Memorize the 15 most common dative verbs and form one sentence per day for each.",
           "result_assessed": "Dativ nach diesen Verben wird automatisch.",
-          "result_native": "Il dativo dopo questi verbi diventerà automatico."
+          "result_native": "The dative after these verbs will become automatic."
         },
         {
           "name_assessed": "Genus-Endungs-Regeln",
-          "name_native": "Regole di genere per le desinenze",
+          "name_native": "Gender rules for endings",
           "action_assessed": "Die 5 wichtigsten Endungsregeln lernen: -ung (f), -keit (f), -ment (n), -chen (n), -er (m).",
-          "action_native": "Impara le 5 regole di desinenza più importanti: -ung (f), -keit (f), -ment (n), -chen (n), -er (m).",
+          "action_native": "Learn the 5 most important ending rules: -ung (f), -keit (f), -ment (n), -chen (n), -er (m).",
           "result_assessed": "80% der Genusfehler verschwinden.",
-          "result_native": "L'80% degli errori di genere scompare."
+          "result_native": "80% of gender errors disappear."
         },
         {
           "name_assessed": "seit/vor-Unterscheidung",
-          "name_native": "Distinzione seit/vor",
+          "name_native": "seit/vor distinction",
           "action_assessed": "Merkregel: seit = Dauer (still happening), vor = Zeitpunkt (completed). 3 Sätze pro Tag.",
-          "action_native": "Regola mnemonica: seit = durata (ancora in corso), vor = momento (completato). 3 frasi al giorno.",
+          "action_native": "Mnemonic rule: seit = duration (still ongoing), vor = point in time (completed). 3 sentences per day.",
           "result_assessed": "Keine Verwechslung mehr nach 1 Woche.",
-          "result_native": "Nessuna confusione dopo 1 settimana."
+          "result_native": "No confusion after 1 week."
         },
         {
           "name_assessed": "Komposita-Artikelregel",
-          "name_native": "Regola articolo composti",
+          "name_native": "Article rule for compounds",
           "action_assessed": "Regel: Der Artikel des letzten Bestandteils bestimmt das Genus. Jeden Tag 3 Komposita üben.",
-          "action_native": "Regola: l'articolo dell'ultimo componente determina il genere. Esercita 3 composti al giorno.",
+          "action_native": "Rule: the article of the last component determines the gender. Practice 3 compounds per day.",
           "result_assessed": "Automatische korrekte Artikelwahl bei Komposita.",
-          "result_native": "Scelta automatica corretta dell'articolo nei composti."
+          "result_native": "Automatic correct article choice in compound nouns."
         }
       ]
     },
     {
       "id": "sentence_engine",
       "name_assessed": "Der Kasus-Motor",
-      "name_native": "Il motore dei casi",
+      "name_native": "The Case Engine",
       "explanation_assessed": "Jeden Tag 5 Sätze mit Wechselpräpositionen bilden — 1x Bewegung (Akkusativ), 1x Position (Dativ). Laut sprechen. Bewusst den richtigen Kasus betonen.",
-      "explanation_native": "Ogni giorno forma 5 frasi con preposizioni bivalenti — 1x movimento (accusativo), 1x posizione (dativo). Pronuncia ad alta voce. Enfatizza consapevolmente il caso corretto.",
+      "explanation_native": "Every day form 5 sentences with two-way prepositions — 1x movement (accusative), 1x position (dative). Say them out loud. Consciously emphasize the correct case.",
       "patterns": [
         {
           "de": "Ich gehe in den Park. → Ich bin im Park.",
-          "native": "Vado nel parco. → Sono nel parco."
+          "native": "I go to the park. → I am in the park."
         },
         {
           "de": "Ich lege das Buch auf den Tisch. → Das Buch liegt auf dem Tisch.",
-          "native": "Metto il libro sul tavolo. → Il libro è sul tavolo."
+          "native": "I put the book on the table. → The book is on the table."
         },
         {
           "de": "Er hängt das Bild an die Wand. → Das Bild hängt an der Wand.",
-          "native": "Appende il quadro alla parete. → Il quadro è appeso alla parete."
+          "native": "He hangs the picture on the wall. → The picture is hanging on the wall."
         }
       ],
       "daily_instruction_assessed": "5 Paare pro Tag, laut gesprochen, Kasus bewusst betont.",
-      "daily_instruction_native": "5 coppie al giorno, pronunciate ad alta voce, caso enfatizzato consapevolmente."
+      "daily_instruction_native": "5 pairs per day, spoken out loud, case consciously emphasized."
     },
     {
       "id": "activation",
       "title_assessed": "Aktivierung",
-      "title_native": "Attivazione",
+      "title_native": "Activation",
       "sentences": [
         {
           "de": "Ich gehe in den Supermarkt, weil ich einkaufen muss.",
-          "native": "Vado al supermercato perché devo fare la spesa."
+          "native": "I go to the supermarket because I need to do the shopping."
         },
         {
           "de": "Er sitzt im Büro und arbeitet konzentriert.",
-          "native": "È seduto in ufficio e lavora concentrato."
+          "native": "He is sitting in the office and working with concentration."
         },
         {
           "de": "Wir fahren an die Küste, weil das Wetter schön ist.",
-          "native": "Andiamo sulla costa perché il tempo è bello."
+          "native": "We are going to the coast because the weather is nice."
         },
         {
           "de": "Das Bild hängt an der Wand seit gestern.",
-          "native": "Il quadro è appeso alla parete da ieri."
+          "native": "The picture has been hanging on the wall since yesterday."
         },
         {
           "de": "Sie legt die Schlüssel auf den Tisch.",
-          "native": "Lei mette le chiavi sul tavolo."
+          "native": "She puts the keys on the table."
         },
         {
           "de": "Die Schlüssel liegen auf dem Tisch.",
-          "native": "Le chiavi sono sul tavolo."
+          "native": "The keys are on the table."
         }
       ]
     },
     {
       "id": "homework_a",
       "title_assessed": "Hausaufgaben A — Struktur",
-      "title_native": "Compiti A — Struttura",
+      "title_native": "Homework A — Structure",
       "sentences": [
         {
           "de": "Ich lege das Buch auf den Tisch.",
-          "native": "Metto il libro sul tavolo."
+          "native": "I put the book on the table."
         },
         {
           "de": "Das Buch liegt auf dem Tisch.",
-          "native": "Il libro è sul tavolo."
+          "native": "The book is on the table."
         },
         {
           "de": "Er geht in die Küche.",
-          "native": "Lui va in cucina."
+          "native": "He goes into the kitchen."
         },
         {
           "de": "Er ist in der Küche.",
-          "native": "Lui è in cucina."
+          "native": "He is in the kitchen."
         },
         {
           "de": "Sie hängt das Bild an die Wand.",
-          "native": "Lei appende il quadro alla parete."
+          "native": "She hangs the picture on the wall."
         },
         {
           "de": "Das Bild hängt an der Wand.",
-          "native": "Il quadro è appeso alla parete."
+          "native": "The picture is hanging on the wall."
         }
       ]
     },
     {
       "id": "homework_b",
       "title_assessed": "Hausaufgaben B — Präzision",
-      "title_native": "Compiti B — Precisione",
+      "title_native": "Homework B — Precision",
       "items": [
         {
           "wrong_assessed": "Falsch: Ich sitze in den Garten.",
-          "wrong_native": "Sbagliato: Ich sitze in den Garten.",
+          "wrong_native": "Wrong: Ich sitze in den Garten.",
           "right_assessed": "Richtig: Ich sitze im Garten.",
-          "right_native": "Corretto: Ich sitze im Garten."
+          "right_native": "Correct: Ich sitze im Garten."
         },
         {
           "wrong_assessed": "Falsch: Ich helfe den Mann.",
-          "wrong_native": "Sbagliato: Ich helfe den Mann.",
+          "wrong_native": "Wrong: Ich helfe den Mann.",
           "right_assessed": "Richtig: Ich helfe dem Mann.",
-          "right_native": "Corretto: Ich helfe dem Mann."
+          "right_native": "Correct: Ich helfe dem Mann."
         },
         {
           "wrong_assessed": "Falsch: Seit zwei Wochen habe ich ihn getroffen.",
-          "wrong_native": "Sbagliato: Seit due settimane l'ho incontrato.",
+          "wrong_native": "Wrong: I met him since two weeks ago.",
           "right_assessed": "Richtig: Vor zwei Wochen habe ich ihn getroffen.",
-          "right_native": "Corretto: Due settimane fa l'ho incontrato."
+          "right_native": "Correct: I met him two weeks ago."
         },
         {
           "wrong_assessed": "Falsch: das Küche",
-          "wrong_native": "Sbagliato: das Küche",
+          "wrong_native": "Wrong: das Küche",
           "right_assessed": "Richtig: die Küche",
-          "right_native": "Corretto: die Küche"
+          "right_native": "Correct: die Küche"
         },
         {
           "wrong_assessed": "Falsch: der Mädchen",
-          "wrong_native": "Sbagliato: der Mädchen",
+          "wrong_native": "Wrong: der Mädchen",
           "right_assessed": "Richtig: das Mädchen",
-          "right_native": "Corretto: das Mädchen"
+          "right_native": "Correct: das Mädchen"
         }
       ]
     },
     {
       "id": "homework_c",
       "title_assessed": "Hausaufgaben C — Sprechfluss",
-      "title_native": "Compiti C — Fluenza orale",
+      "title_native": "Homework C — Oral Fluency",
       "sentences": [
         {
           "de": "Gestern bin ich in den Park gegangen.",
-          "native": "Ieri sono andato al parco."
+          "native": "Yesterday I went to the park."
         },
         {
           "de": "Ich habe mich auf die Bank gesetzt.",
-          "native": "Mi sono seduto sulla panchina."
+          "native": "I sat down on the bench."
         },
         {
           "de": "Dann habe ich auf der Bank gesessen und gelesen.",
-          "native": "Poi sono rimasto seduto sulla panchina e ho letto."
+          "native": "Then I stayed sitting on the bench and read."
         },
         {
           "de": "Ein Freund hat mich angerufen, weil er Hilfe brauchte.",
-          "native": "Un amico mi ha chiamato perché aveva bisogno di aiuto."
+          "native": "A friend called me because he needed help."
         },
         {
           "de": "Ich bin zu ihm nach Hause gefahren.",
-          "native": "Sono andato a casa sua in macchina."
+          "native": "I drove to his place by car."
         },
         {
           "de": "Bei ihm zu Hause habe ich ihm geholfen.",
-          "native": "A casa sua l'ho aiutato."
+          "native": "At his place I helped him."
         },
         {
           "de": "Danach sind wir zusammen in ein Restaurant gegangen.",
-          "native": "Dopo siamo andati insieme in un ristorante."
+          "native": "Afterwards we went to a restaurant together."
         },
         {
           "de": "Wir haben im Restaurant gegessen und viel gelacht.",
-          "native": "Abbiamo mangiato al ristorante e riso molto."
+          "native": "We ate at the restaurant and laughed a lot."
         },
         {
           "de": "Obwohl es spät war, bin ich noch spazieren gegangen.",
-          "native": "Anche se era tardi, sono andato ancora a passeggiare."
+          "native": "Even though it was late, I went for a walk."
         },
         {
           "de": "Am Ende war ich müde, aber zufrieden.",
-          "native": "Alla fine ero stanco ma soddisfatto."
+          "native": "In the end I was tired but satisfied."
         }
       ]
     },
     {
       "id": "weekly_plan",
       "title_assessed": "Wochenplan",
-      "title_native": "Piano settimanale",
+      "title_native": "Weekly Plan",
       "weeks": [
         {
           "label_assessed": "Woche 1-2",
-          "label_native": "Settimana 1-2",
+          "label_native": "Week 1-2",
           "focus_assessed": "Wechselpräpositionen: Akkusativ vs. Dativ",
-          "focus_native": "Preposizioni bivalenti: accusativo vs. dativo",
+          "focus_native": "Two-way prepositions: accusative vs. dative",
           "goal_assessed": "Reflexartige Kasus-Unterscheidung bei in/auf/an",
-          "goal_native": "Distinzione istintiva dei casi con in/auf/an",
+          "goal_native": "Instinctive case distinction with in/auf/an",
           "daily_assessed": "5 Satzpaare (Bewegung/Position) pro Tag",
-          "daily_native": "5 coppie di frasi (movimento/posizione) al giorno"
+          "daily_native": "5 sentence pairs (movement/position) per day"
         },
         {
           "label_assessed": "Woche 3-4",
-          "label_native": "Settimana 3-4",
+          "label_native": "Week 3-4",
           "focus_assessed": "Dativ-Verben + Genusfehler",
-          "focus_native": "Verbi al dativo + errori di genere",
+          "focus_native": "Dative verbs + gender errors",
           "goal_assessed": "15 Dativ-Verben automatisiert + Genus-Endungsregeln",
-          "goal_native": "15 verbi al dativo automatizzati + regole desinenze genere",
+          "goal_native": "15 dative verbs automated + gender ending rules",
           "daily_assessed": "3 Dativ-Verb-Sätze + 3 Genus-Übungen",
-          "daily_native": "3 frasi con verbi al dativo + 3 esercizi sul genere"
+          "daily_native": "3 sentences with dative verbs + 3 gender exercises"
         },
         {
           "label_assessed": "Woche 5-6",
-          "label_native": "Settimana 5-6",
+          "label_native": "Week 5-6",
           "focus_assessed": "seit/vor + temporale Präpositionen",
-          "focus_native": "seit/vor + preposizioni temporali",
+          "focus_native": "seit/vor + temporal prepositions",
           "goal_assessed": "Fehlerfreie Verwendung von seit/vor/bis/ab",
-          "goal_native": "Uso senza errori di seit/vor/bis/ab",
+          "goal_native": "Error-free use of seit/vor/bis/ab",
           "daily_assessed": "3 Sätze mit verschiedenen temporalen Präpositionen",
-          "daily_native": "3 frasi con diverse preposizioni temporali"
+          "daily_native": "3 sentences with different temporal prepositions"
         },
         {
           "label_assessed": "Woche 7-8",
-          "label_native": "Settimana 7-8",
+          "label_native": "Week 7-8",
           "focus_assessed": "Komposita + freies Sprechen unter Druck",
-          "focus_native": "Composti + parlare liberamente sotto pressione",
+          "focus_native": "Compound nouns + speaking freely under pressure",
           "goal_assessed": "Korrekte Artikel bei Komposita + Stabilität unter Sprechdruck",
-          "goal_native": "Articoli corretti nei composti + stabilità sotto pressione",
+          "goal_native": "Correct articles in compounds + stability under pressure",
           "daily_assessed": "2-Minuten-Monolog mit bewusstem Kasus-Fokus",
-          "daily_native": "Monologo di 2 minuti con focus consapevole sui casi"
+          "daily_native": "2-minute monologue with conscious focus on cases"
         }
       ]
     },
     {
       "id": "mini_block",
       "title_assessed": "Mini-Block",
-      "title_native": "Mini-blocco",
+      "title_native": "Mini-Block",
       "goal_assessed": "Kasus-Reflexe unter Sprechdruck stabilisieren",
-      "goal_native": "Stabilizzare i riflessi dei casi sotto pressione nel parlare",
+      "goal_native": "Stabilize case reflexes under speaking pressure",
       "step1_assessed": "Täglich 5 Satzpaare mit Wechselpräpositionen laut sprechen — bewusst den Kasus betonen.",
-      "step1_native": "Ogni giorno pronuncia ad alta voce 5 coppie di frasi con preposizioni bivalenti — enfatizza consapevolmente il caso.",
+      "step1_native": "Every day say 5 sentence pairs with two-way prepositions out loud — consciously emphasize the case.",
       "step2_assessed": "Ein 2-Minuten-Monolog über deinen Tag. Bewusst Wechselpräpositionen einbauen. Aufnehmen. Anhören. Wiederholen.",
-      "step2_native": "Un monologo di 2 minuti sulla tua giornata. Inserisci consapevolmente preposizioni bivalenti. Registra. Ascolta. Ripeti."
+      "step2_native": "A 2-minute monologue about your day. Consciously insert two-way prepositions. Record. Listen. Repeat."
     }
   ],
   "cefr_footer": {
     "active_assessed": "Aktive gesprochene Produktion: B2.1",
-    "active_native": "Produzione orale attiva: B2.1",
+    "active_native": "Active oral production: B2.1",
     "passive_assessed": "Passive Kompetenz (geschätzte Verstehensobergrenze): B2.2",
-    "passive_native": "Competenza passiva (stima del tetto di comprensione): B2.2",
+    "passive_native": "Passive competence (estimated comprehension ceiling): B2.2",
     "confidence_assessed": "Konfidenz: 82%",
-    "confidence_native": "Fiducia: 82%",
+    "confidence_native": "Confidence: 82%",
     "summary_assessed": "Du bist im B2-Bereich angekommen. Deine Struktur ist solide, aber das Kasussystem bei Wechselpräpositionen bleibt der zentrale Optimierungspunkt. Mit gezieltem Training ist C1 in 4-6 Monaten erreichbar.",
-    "summary_native": "Sei arrivato nella fascia B2. La tua struttura è solida, ma il sistema dei casi con le preposizioni bivalenti resta il punto centrale di ottimizzazione. Con un allenamento mirato, il C1 è raggiungibile in 4-6 mesi.",
+    "summary_native": "You have reached the B2 range. Your structure is solid, but the case system with two-way prepositions remains the central area for optimization. With targeted practice, C1 is achievable within 4-6 months.",
     "stability_assessed": "Strukturstabilität unter Druck: mittel bis hoch",
-    "stability_native": "Stabilità strutturale sotto pressione: medio-alta",
+    "stability_native": "Structural stability under pressure: medium-high",
     "self_correction_assessed": "Selbstkorrektur-Fähigkeit: hoch",
-    "self_correction_native": "Capacità di autocorrezione: alta",
+    "self_correction_native": "Self-correction ability: high",
     "reassessment_assessed": "Empfohlenes Re-Assessment: 3 Monate",
-    "reassessment_native": "Rivalutazione raccomandata: 3 mesi"
+    "reassessment_native": "Recommended reassessment: 3 months"
   },
   "block_d": {
-    "title_native": "Riepilogo nella tua lingua",
-    "cefr_summary_native": "Il tuo tedesco parlato attivo è al livello B2.1. Questo significa che puoi comunicare in modo fluente nella maggior parte delle situazioni, ma il sistema dei casi resta instabile sotto pressione. La tua comprensione passiva è più alta a B2.2.",
+    "title_native": "Summary in Your Language",
+    "cefr_summary_native": "Your active spoken German is at level B2.1. This means you can communicate fluently in most situations, but the case system remains unstable under pressure. Your passive comprehension is higher at B2.2.",
     "top_problems_native": [
-      "Preposizioni bivalenti: accusativo al posto del dativo nelle situazioni statiche",
-      "Articoli sbagliati nei sostantivi composti",
-      "Confusione seit/vor nelle indicazioni temporali",
-      "Dativo mancante dopo verbi specifici (helfen, danken, gefallen)",
-      "Errori di genere nei sostantivi comuni"
+      "Two-way prepositions: accusative instead of dative in static situations",
+      "Wrong articles in compound nouns",
+      "Confusion of seit/vor in time expressions",
+      "Missing dative after specific verbs (helfen, danken, gefallen)",
+      "Gender errors in common nouns"
     ],
-    "key_recommendation_native": "Esercita il Motore dei Casi ogni giorno: forma 5 coppie di frasi con preposizioni bivalenti — una volta movimento (accusativo), una volta posizione (dativo). Questo singolo esercizio correggerà la tua debolezza strutturale più grande.",
-    "next_steps_native": "Concentrati sulle preposizioni bivalenti per le prossime 2 settimane, poi passa ai verbi al dativo e al genere. Prenota una rivalutazione tra 3 mesi per misurare i progressi."
+    "key_recommendation_native": "Practice the Case Engine every day: form 5 sentence pairs with two-way prepositions — once movement (accusative), once position (dative). This single exercise will correct your biggest structural weakness.",
+    "next_steps_native": "Focus on two-way prepositions for the next 2 weeks, then move on to dative verbs and gender. Book a reassessment in 3 months to measure your progress."
   }
 }

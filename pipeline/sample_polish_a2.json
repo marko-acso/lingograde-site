@@ -4,9 +4,9 @@
     "display_name": "Thomas",
     "native_name": "Thomas",
     "date": "2026-03-19",
-    "package": "quick",
+    "package": "full",
     "assessed_language": "Polnisch",
-    "native_language": "Deutsch",
+    "native_language": "Englisch",
     "assessor": "Marko",
     "active_cefr": "A2.2",
     "passive_cefr": "B1.1",
@@ -24,360 +24,443 @@
     {
       "id": "perception",
       "title_assessed": "Precyzyjna obserwacja",
-      "title_native": "Präzise Wahrnehmung",
+      "title_native": "Precise Perception",
       "content_assessed": "Na tej lekcji pokazales, ze masz dobra baze w jezyku polskim. Twoje slownictwo pokrywa proste codzienne sytuacje. Glowne problemy pojawily sie w systemie przypadkow i w aspekcie czasownikow.",
-      "content_native": "In dieser Sitzung hast du gezeigt, dass du eine gute Grundlage im Polnischen hast. Dein Wortschatz deckt einfache Alltagssituationen ab. Die Hauptprobleme zeigten sich im Kasussystem und beim Verbaspekt."
+      "content_native": "In this session you demonstrated that you have a good foundation in Polish. Your vocabulary covers simple everyday situations. The main problems appeared in the case system and verb aspect."
+    },
+    {
+      "id": "strengths",
+      "title_assessed": "Strukturalne Mocne Strony",
+      "title_native": "Structural Strengths",
+      "items": [
+        {
+          "strength_assessed": "Dobra podstawa słownictwa codziennego",
+          "strength_native": "Good foundation of everyday vocabulary",
+          "example_assessed": "Poprawnie używasz słów takich jak \"dom\", \"pić\", \"jść\", \"czytać\" w kontekście rutynowych sytuacji.",
+          "example_native": "You correctly use words like \"home\", \"drink\", \"go\", \"read\" in the context of routine situations."
+        },
+        {
+          "strength_assessed": "Zrozumienie czasów przeszłych",
+          "strength_native": "Understanding of past tenses",
+          "example_assessed": "Poprawnie tworzyłeś formy przeszłe: \"Byłem w szkole\", \"Robiłem pracę\" — struktura jest prawidłowa.",
+          "example_native": "You correctly formed past tense: \"I was at school\", \"I did work\" — the structure is correct."
+        },
+        {
+          "strength_assessed": "Zdolność do tworzenia prostych zdań złożonych",
+          "strength_native": "Ability to create simple compound sentences",
+          "example_assessed": "Łączyłeś zdania z \"i\", \"ale\", \"dlatego\" — \"Poszedłem do sklepu, ale było zamknięte\".",
+          "example_native": "You connected sentences with \"and\", \"but\", \"because\" — \"I went to the store, but it was closed\"."
+        }
+      ]
     },
     {
       "id": "core_insight",
       "title_assessed": "Kluczowy wglad",
-      "title_native": "Zentrale Struktur-Erkenntnis",
+      "title_native": "Central Structural Insight",
       "content_assessed": "Centralnym problemem jest system przypadkow. Polski ma 7 przypadkow, a kazdy zmienia forme rzeczownika. Jako niemiecki mowca znasz 4 przypadki, ale polski ma wiecej form i wiecej wyjatkow.",
-      "content_native": "Das zentrale Problem ist das Kasussystem. Polnisch hat 7 Fälle, und jeder verändert die Form des Substantivs. Als deutscher Muttersprachler kennst du 4 Fälle, aber Polnisch hat mehr Formen und mehr Ausnahmen."
+      "content_native": "The central problem is the case system. Polish has 7 cases, and each one changes the form of the noun. As a native German speaker you know 4 cases, but Polish has more forms and more exceptions."
     },
     {
       "id": "problems",
       "title_assessed": "Glowne problemy strukturalne",
-      "title_native": "Strukturelle Hauptprobleme",
+      "title_native": "Main Structural Problems",
       "items": [
         {
           "name_assessed": "Bledy przypadkowe",
-          "name_native": "Kasusfehler",
+          "name_native": "Case Errors",
           "error_class": "Kasus/Artikel",
           "explanation_assessed": "Uzywasz mianownika tam, gdzie potrzebny jest biernik lub celownik: 'Widze ksiazka' zamiast 'Widze ksiazke'.",
-          "explanation_native": "Du verwendest den Nominativ, wo der Akkusativ oder Dativ nötig ist: 'Widze ksiazka' statt 'Widze ksiazke'.",
+          "explanation_native": "You use the nominative where the accusative or dative is required: 'Widze ksiazka' instead of 'Widze ksiazke'.",
           "evidence_assessed": "\"Dalem ksiazka przyjaciel.\" → Poprawnie: \"Dalem ksiazke przyjacielowi.\"",
-          "evidence_native": "\"Dalem ksiazka przyjaciel.\" → Richtig: \"Dalem ksiazke przyjacielowi.\""
+          "evidence_native": "\"Dalem ksiazka przyjaciel.\" → Correct: \"Dalem ksiazke przyjacielowi.\""
         },
         {
           "name_assessed": "Aspekt czasownika",
-          "name_native": "Verbaspekt",
+          "name_native": "Verb Aspect",
           "error_class": "Zeitformen",
           "explanation_assessed": "Mylisz aspekt dokonany z niedokonanym: 'Pisalem list' (proces) kiedy chcesz powiedziec 'Napisalem list' (rezultat).",
-          "explanation_native": "Du verwechselst vollendeten und unvollendeten Aspekt: 'Pisalem list' (Prozess) wenn du 'Napisalem list' (Ergebnis) sagen willst.",
+          "explanation_native": "You confuse the perfective and imperfective aspect: 'Pisalem list' (process) when you want to say 'Napisalem list' (result).",
           "evidence_assessed": "\"Wczoraj czytalem te ksiazke\" (do konca) → \"Wczoraj przeczytalem te ksiazke.\"",
-          "evidence_native": "\"Wczoraj czytalem te ksiazke\" (bis zum Ende) → \"Wczoraj przeczytalem te ksiazke.\""
+          "evidence_native": "\"Wczoraj czytalem te ksiazke\" (to the end) → \"Wczoraj przeczytalem te ksiazke.\""
         },
         {
           "name_assessed": "Przyimki z przypadkami",
-          "name_native": "Präpositionen mit Kasus",
+          "name_native": "Prepositions with Cases",
           "error_class": "Präpositionen",
           "explanation_assessed": "Kazdy przyimek wymaga okreslonego przypadku: 'w' + miejscownik (miejsce) lub 'do' + dopelniacz (kierunek).",
-          "explanation_native": "Jede Präposition verlangt einen bestimmten Kasus: 'w' + Lokativ (Ort) oder 'do' + Genitiv (Richtung).",
+          "explanation_native": "Each preposition requires a specific case: 'w' + locative (location) or 'do' + genitive (direction).",
           "evidence_assessed": "\"Jestem w sklep.\" → Poprawnie: \"Jestem w sklepie.\"",
-          "evidence_native": "\"Jestem w sklep.\" → Richtig: \"Jestem w sklepie.\""
+          "evidence_native": "\"Jestem w sklep.\" → Correct: \"Jestem w sklepie.\""
         },
         {
           "name_assessed": "Deklinacja przymiotnikow",
-          "name_native": "Adjektivdeklination",
+          "name_native": "Adjective Declension",
           "error_class": "Kasus/Artikel",
           "explanation_assessed": "Przymiotniki tez sie odmieniaja przez przypadki: 'duzy dom' (mianownik) vs. 'duzego domu' (dopelniacz).",
-          "explanation_native": "Adjektive werden auch nach Kasus dekliniert: 'duzy dom' (Nominativ) vs. 'duzego domu' (Genitiv).",
+          "explanation_native": "Adjectives are also declined by case: 'duzy dom' (nominative) vs. 'duzego domu' (genitive).",
           "evidence_assessed": "\"Widze duzy dom.\" → Poprawnie: \"Widze duzy dom.\" (tu akurat dobrze, ale w dopelniaczu: \"duzego domu\")",
-          "evidence_native": "\"Widze duzy dom.\" → Richtig: \"Widze duzy dom.\" (hier korrekt, aber im Genitiv: \"duzego domu\")"
+          "evidence_native": "\"Widze duzy dom.\" → Correct: \"Widze duzy dom.\" (correct here, but in the genitive: \"duzego domu\")"
         },
         {
           "name_assessed": "Wymowa: sz, cz, rz, dz",
-          "name_native": "Aussprache: sz, cz, rz, dz",
+          "name_native": "Pronunciation: sz, cz, rz, dz",
           "error_class": "Register/Wortwahl",
           "explanation_assessed": "Mylisz polskie syczace z niemieckimi: 'sz' nie jest 'sch', a 'cz' nie jest 'tsch'.",
-          "explanation_native": "Du verwechselst polnische Zischlaute mit deutschen: 'sz' ist nicht 'sch', und 'cz' ist nicht 'tsch'.",
+          "explanation_native": "You confuse Polish sibilants with German ones: 'sz' is not 'sch', and 'cz' is not 'tsch'.",
           "evidence_assessed": "Wymowa wymaga codziennej praktyki z nagraniami.",
-          "evidence_native": "Die Aussprache erfordert tägliches Üben mit Aufnahmen."
+          "evidence_native": "Pronunciation requires daily practice with recordings."
         }
       ]
     },
     {
       "id": "corrections",
       "title_assessed": "Korekty dzwigni",
-      "title_native": "Hebelkorrekturen",
+      "title_native": "Lever Corrections",
       "items": [
         {
           "original_assessed": "Zle: Widze ksiazka.",
-          "original_native": "Falsch: Widze ksiazka.",
+          "original_native": "Wrong: Widze ksiazka.",
           "corrected_assessed": "Poprawnie: Widze ksiazke.",
-          "corrected_native": "Richtig: Widze ksiazke.",
+          "corrected_native": "Correct: Widze ksiazke.",
           "explanation_assessed": "Biernik po 'widziec': ksiazka → ksiazke.",
-          "explanation_native": "Akkusativ nach 'widziec': ksiazka → ksiazke."
+          "explanation_native": "Accusative after 'widziec': ksiazka → ksiazke."
         },
         {
           "original_assessed": "Zle: Jestem w sklep.",
-          "original_native": "Falsch: Jestem w sklep.",
+          "original_native": "Wrong: Jestem w sklep.",
           "corrected_assessed": "Poprawnie: Jestem w sklepie.",
-          "corrected_native": "Richtig: Jestem w sklepie.",
+          "corrected_native": "Correct: Jestem w sklepie.",
           "explanation_assessed": "Miejsce = miejscownik: w + sklepie.",
-          "explanation_native": "Ort = Lokativ: w + sklepie."
+          "explanation_native": "Location = locative: w + sklepie."
         },
         {
           "original_assessed": "Zle: Dalem ksiazka przyjaciel.",
-          "original_native": "Falsch: Dalem ksiazka przyjaciel.",
+          "original_native": "Wrong: Dalem ksiazka przyjaciel.",
           "corrected_assessed": "Poprawnie: Dalem ksiazke przyjacielowi.",
-          "corrected_native": "Richtig: Dalem ksiazke przyjacielowi.",
+          "corrected_native": "Correct: Dalem ksiazke przyjacielowi.",
           "explanation_assessed": "Dac + co (biernik) + komu (celownik).",
-          "explanation_native": "Dac + was (Akkusativ) + wem (Dativ)."
+          "explanation_native": "Dac + what (accusative) + to whom (dative)."
         },
         {
           "original_assessed": "Zle: Wczoraj czytalem te ksiazke (do konca).",
-          "original_native": "Falsch: Wczoraj czytalem te ksiazke (bis zum Ende).",
+          "original_native": "Wrong: Wczoraj czytalem te ksiazke (to the end).",
           "corrected_assessed": "Poprawnie: Wczoraj przeczytalem te ksiazke.",
-          "corrected_native": "Richtig: Wczoraj przeczytalem te ksiazke.",
+          "corrected_native": "Correct: Wczoraj przeczytalem te ksiazke.",
           "explanation_assessed": "Zakonczony = aspekt dokonany: przeczytalem.",
-          "explanation_native": "Abgeschlossen = vollendeter Aspekt: przeczytalem."
+          "explanation_native": "Completed = perfective aspect: przeczytalem."
         },
         {
           "original_assessed": "Zle: Ide do sklep.",
-          "original_native": "Falsch: Ide do sklep.",
+          "original_native": "Wrong: Ide do sklep.",
           "corrected_assessed": "Poprawnie: Ide do sklepu.",
-          "corrected_native": "Richtig: Ide do sklepu.",
+          "corrected_native": "Correct: Ide do sklepu.",
           "explanation_assessed": "'do' + dopelniacz: sklep → sklepu.",
-          "explanation_native": "'do' + Genitiv: sklep → sklepu."
+          "explanation_native": "'do' + genitive: sklep → sklepu."
         }
       ]
     },
     {
       "id": "solutions",
       "title_assessed": "Rozwiazania",
-      "title_native": "Lösungen",
+      "title_native": "Solutions",
       "items": [
         {
           "name_assessed": "Trenazer przypadkow",
-          "name_native": "Kasus-Trainer",
+          "name_native": "Case Trainer",
           "action_assessed": "Codziennie 5 zdan ze swiadomym wyborem przypadka. Mow na glos.",
-          "action_native": "Jeden Tag 5 Sätze mit bewusster Kasuswahl. Laut aussprechen.",
+          "action_native": "5 sentences every day with conscious case selection. Say them out loud.",
           "result_assessed": "Automatyczny wybor przypadka w 3-4 tygodnie.",
-          "result_native": "Automatische Kasuswahl in 3-4 Wochen."
+          "result_native": "Automatic case selection in 3-4 weeks."
         },
         {
           "name_assessed": "Aspekt czasownika",
-          "name_native": "Verbaspekt",
+          "name_native": "Verb Aspect",
           "action_assessed": "3 pary dziennie: ta sama czynnosc — dokonany (rezultat) i niedokonany (proces).",
-          "action_native": "3 Paare pro Tag: dieselbe Handlung — vollendet (Ergebnis) und unvollendet (Prozess).",
+          "action_native": "3 pairs per day: the same action — perfective (result) and imperfective (process).",
           "result_assessed": "Swiadomy wybor aspektu w 3 tygodnie.",
-          "result_native": "Bewusste Aspektwahl in 3 Wochen."
+          "result_native": "Conscious aspect selection in 3 weeks."
         },
         {
           "name_assessed": "Przyimki + przypadki",
-          "name_native": "Präpositionen + Kasus",
+          "name_native": "Prepositions + Cases",
           "action_assessed": "Zapamietaj: w + miejscownik (miejsce), do + dopelniacz (kierunek), z + narzednik (z kim).",
-          "action_native": "Merke: w + Lokativ (Ort), do + Genitiv (Richtung), z + Instrumental (mit wem).",
+          "action_native": "Remember: w + locative (location), do + genitive (direction), z + instrumental (with whom).",
           "result_assessed": "Poprawne przyimki w 2 tygodnie.",
-          "result_native": "Korrekte Präpositionen in 2 Wochen."
+          "result_native": "Correct prepositions in 2 weeks."
         },
         {
           "name_assessed": "Deklinacja przymiotnikow",
-          "name_native": "Adjektivdeklination",
+          "name_native": "Adjective Declension",
           "action_assessed": "Ucz sie przymiotnikow razem z rzeczownikiem w roznych przypadkach.",
-          "action_native": "Lerne Adjektive zusammen mit dem Substantiv in verschiedenen Kasus.",
+          "action_native": "Learn adjectives together with the noun in various cases.",
           "result_assessed": "Poprawna deklinacja w 3-4 tygodnie.",
-          "result_native": "Korrekte Deklination in 3-4 Wochen."
+          "result_native": "Correct declension in 3-4 weeks."
         },
         {
           "name_assessed": "Cwiczenie wymowy",
-          "name_native": "Ausspracheübung",
+          "name_native": "Pronunciation Practice",
           "action_assessed": "Codziennie 5 minut: nagranie → sluchanie → powtarzanie polskich syczacych.",
-          "action_native": "Täglich 5 Minuten: Aufnahme → Anhören → Wiederholen polnischer Zischlaute.",
+          "action_native": "5 minutes daily: record → listen → repeat Polish sibilants.",
           "result_assessed": "Wyrazna poprawa w 2-3 tygodnie.",
-          "result_native": "Deutliche Verbesserung in 2-3 Wochen."
+          "result_native": "Noticeable improvement in 2-3 weeks."
         }
       ]
     },
     {
       "id": "sentence_engine",
       "name_assessed": "Silnik przypadkow",
-      "name_native": "Der Kasus-Motor",
+      "name_native": "The Case Engine",
       "explanation_assessed": "Codziennie mow na glos 5 zdan, swiadomie wybierajac prawidlowy przypadek.",
-      "explanation_native": "Jeden Tag 5 Sätze laut aussprechen, bewusst den richtigen Kasus wählen.",
+      "explanation_native": "Say 5 sentences out loud every day, consciously choosing the correct case.",
       "patterns": [
         {
           "de": "Widze ksiazke. (biernik)",
-          "native": "Ich sehe das Buch. (Akkusativ)"
+          "native": "I see the book. (Accusative)"
         },
         {
           "de": "Ide do sklepu. (dopelniacz — kierunek)",
-          "native": "Ich gehe zum Laden. (Genitiv — Richtung)"
+          "native": "I go to the store. (Genitive — direction)"
         },
         {
           "de": "Jestem w sklepie. (miejscownik — miejsce)",
-          "native": "Ich bin im Laden. (Lokativ — Ort)"
+          "native": "I am in the store. (Locative — location)"
         }
       ],
       "daily_instruction_assessed": "5 zdan dziennie, na glos, ze swiadomym przypadkiem.",
-      "daily_instruction_native": "5 Sätze pro Tag, laut, mit bewusstem Kasus."
+      "daily_instruction_native": "5 sentences per day, out loud, with conscious case selection."
     },
     {
       "id": "activation",
       "title_assessed": "Aktywacja",
-      "title_native": "Aktivierung",
+      "title_native": "Activation",
       "sentences": [
         {
           "de": "Ide do sklepu, bo potrzebuje chleba.",
-          "native": "Ich gehe zum Laden, weil ich Brot brauche."
+          "native": "I go to the store because I need bread."
         },
         {
           "de": "Wczoraj przeczytalem ciekawa ksiazke.",
-          "native": "Gestern habe ich ein interessantes Buch gelesen."
+          "native": "Yesterday I read an interesting book."
         },
         {
           "de": "Dalem przyjacielowi swoja ksiazke.",
-          "native": "Ich habe meinem Freund mein Buch gegeben."
+          "native": "I gave my friend my book."
         },
         {
           "de": "Mieszkamy w duzym miescie.",
-          "native": "Wir wohnen in einer großen Stadt."
+          "native": "We live in a big city."
         },
         {
           "de": "Ona chodzi do szkoly codziennie.",
-          "native": "Sie geht jeden Tag zur Schule."
+          "native": "She goes to school every day."
         },
         {
           "de": "Napisalem list do mamy.",
-          "native": "Ich habe einen Brief an Mama geschrieben."
+          "native": "I wrote a letter to mom."
         }
       ]
     },
     {
       "id": "homework_a",
       "title_assessed": "Zadanie A — Struktura",
-      "title_native": "Hausaufgaben A — Struktur",
+      "title_native": "Homework A — Structure",
       "sentences": [
         {
           "de": "Widze duzy dom.",
-          "native": "Ich sehe ein großes Haus."
+          "native": "I see a big house."
         },
         {
           "de": "Ona idzie do szkoly.",
-          "native": "Sie geht zur Schule."
+          "native": "She goes to school."
         },
         {
           "de": "Mieszkamy w Warszawie.",
-          "native": "Wir wohnen in Warschau."
+          "native": "We live in Warsaw."
         },
         {
           "de": "Dalem ksiazke przyjacielowi.",
-          "native": "Ich habe dem Freund ein Buch gegeben."
+          "native": "I gave the friend a book."
         },
         {
           "de": "Wczoraj napisalem list.",
-          "native": "Gestern habe ich einen Brief geschrieben."
+          "native": "Yesterday I wrote a letter."
         },
         {
           "de": "On czyta ciekawa ksiazke.",
-          "native": "Er liest ein interessantes Buch."
+          "native": "He reads an interesting book."
         }
       ]
     },
     {
       "id": "homework_b",
       "title_assessed": "Zadanie B — Precyzja",
-      "title_native": "Hausaufgaben B — Präzision",
+      "title_native": "Homework B — Precision",
       "items": [
         {
           "wrong_assessed": "Zle: Widze ksiazka.",
-          "wrong_native": "Falsch: Widze ksiazka.",
+          "wrong_native": "Wrong: Widze ksiazka.",
           "right_assessed": "Poprawnie: Widze ksiazke.",
-          "right_native": "Richtig: Widze ksiazke."
+          "right_native": "Correct: Widze ksiazke."
         },
         {
           "wrong_assessed": "Zle: Jestem w sklep.",
-          "wrong_native": "Falsch: Jestem w sklep.",
+          "wrong_native": "Wrong: Jestem w sklep.",
           "right_assessed": "Poprawnie: Jestem w sklepie.",
-          "right_native": "Richtig: Jestem w sklepie."
+          "right_native": "Correct: Jestem w sklepie."
         },
         {
           "wrong_assessed": "Zle: Ide do sklep.",
-          "wrong_native": "Falsch: Ide do sklep.",
+          "wrong_native": "Wrong: Ide do sklep.",
           "right_assessed": "Poprawnie: Ide do sklepu.",
-          "right_native": "Richtig: Ide do sklepu."
+          "right_native": "Correct: Ide do sklepu."
         },
         {
           "wrong_assessed": "Zle: Dalem ksiazka przyjaciel.",
-          "wrong_native": "Falsch: Dalem ksiazka przyjaciel.",
+          "wrong_native": "Wrong: Dalem ksiazka przyjaciel.",
           "right_assessed": "Poprawnie: Dalem ksiazke przyjacielowi.",
-          "right_native": "Richtig: Dalem ksiazke przyjacielowi."
+          "right_native": "Correct: Dalem ksiazke przyjacielowi."
         },
         {
           "wrong_assessed": "Zle: Czytalem ksiazke (do konca).",
-          "wrong_native": "Falsch: Czytalem ksiazke (bis zum Ende).",
+          "wrong_native": "Wrong: Czytalem ksiazke (to the end).",
           "right_assessed": "Poprawnie: Przeczytalem ksiazke.",
-          "right_native": "Richtig: Przeczytalem ksiazke."
+          "right_native": "Correct: Przeczytalem ksiazke."
+        }
+      ]
+    },
+    {
+      "id": "homework_c",
+      "title_assessed": "Zadanie Domowe C — Płynność Wypowiadania",
+      "title_native": "Homework C — Oral Fluency",
+      "sentences": [
+        {
+          "assessed": "Dzisiaj rano wstałem wcześnie i piłem kawę.",
+          "native": "This morning I got up early and drank coffee."
+        },
+        {
+          "assessed": "Poszedłem do szkoły, gdzie miałem lekcje angielskiego i matematyki.",
+          "native": "I went to school, where I had English and math lessons."
+        },
+        {
+          "assessed": "Po szkole spotykałem się z moim przyjacielem w parku.",
+          "native": "After school I met my friend in the park."
+        },
+        {
+          "assessed": "Graliśmy w piłkę i rozmawiali o naszych planach na weekend.",
+          "native": "We played ball and talked about our weekend plans."
+        },
+        {
+          "assessed": "Potem poszliśmy do kawiarni i jedliśmy lody.",
+          "native": "Then we went to a café and ate ice cream."
+        },
+        {
+          "assessed": "Moja mama czekała na mnie w domu i przygotowała obiad.",
+          "native": "My mom was waiting for me at home and prepared dinner."
+        },
+        {
+          "assessed": "Wieczorem siedziałem w pokoju i robiłem pracę domową z matematyki.",
+          "native": "In the evening I sat in my room and did my math homework."
+        },
+        {
+          "assessed": "Choć było trudne, staralem się rozwiązać wszystkie zadania.",
+          "native": "Although it was difficult, I tried to solve all the tasks."
+        },
+        {
+          "assessed": "Przed snem przeczytałem książkę przez pół godziny.",
+          "native": "Before bed I read a book for half an hour."
+        },
+        {
+          "assessed": "Poszedłem spać zmęczony, ale zadowolony z mojego dnia.",
+          "native": "I went to bed tired, but satisfied with my day."
         }
       ]
     },
     {
       "id": "weekly_plan",
       "title_assessed": "Plan tygodniowy",
-      "title_native": "Wochenplan",
+      "title_native": "Weekly Plan",
       "weeks": [
         {
           "label_assessed": "Tydzien 1-2",
-          "label_native": "Woche 1-2",
+          "label_native": "Week 1-2",
           "focus_assessed": "System przypadkow: mianownik → biernik → celownik",
-          "focus_native": "Kasussystem: Nominativ → Akkusativ → Dativ",
+          "focus_native": "Case system: Nominative → Accusative → Dative",
           "goal_assessed": "Automatyczny wybor przypadka",
-          "goal_native": "Automatische Kasuswahl",
+          "goal_native": "Automatic case selection",
           "daily_assessed": "5 zdan z przypadkami dziennie",
-          "daily_native": "5 Sätze mit Kasus pro Tag"
+          "daily_native": "5 sentences with cases per day"
         },
         {
           "label_assessed": "Tydzien 3-4",
-          "label_native": "Woche 3-4",
+          "label_native": "Week 3-4",
           "focus_assessed": "Aspekt czasownikow + przyimki",
-          "focus_native": "Verbaspekt + Präpositionen",
+          "focus_native": "Verb aspect + prepositions",
           "goal_assessed": "Prawidlowy aspekt + przypadki po przyimkach",
-          "goal_native": "Richtiger Aspekt + Kasus nach Präpositionen",
+          "goal_native": "Correct aspect + case after prepositions",
           "daily_assessed": "3 pary aspektu + 3 zdania z przyimkami",
-          "daily_native": "3 Aspektpaare + 3 Sätze mit Präpositionen"
+          "daily_native": "3 aspect pairs + 3 sentences with prepositions"
         },
         {
           "label_assessed": "Tydzien 5-6",
-          "label_native": "Woche 5-6",
+          "label_native": "Week 5-6",
           "focus_assessed": "Deklinacja przymiotnikow + wymowa",
-          "focus_native": "Adjektivdeklination + Aussprache",
+          "focus_native": "Adjective declension + pronunciation",
           "goal_assessed": "Poprawna deklinacja + lepsza wymowa",
-          "goal_native": "Korrekte Deklination + bessere Aussprache",
+          "goal_native": "Correct declension + better pronunciation",
           "daily_assessed": "3 zdania z przymiotnikami + 5 min wymowy",
-          "daily_native": "3 Sätze mit Adjektiven + 5 Min. Aussprache"
+          "daily_native": "3 sentences with adjectives + 5 min. pronunciation"
         },
         {
           "label_assessed": "Tydzien 7-8",
-          "label_native": "Woche 7-8",
+          "label_native": "Week 7-8",
           "focus_assessed": "Swobodna mowa pod presja",
-          "focus_native": "Freies Sprechen unter Druck",
+          "focus_native": "Free speaking under pressure",
           "goal_assessed": "Dokladnosc przy spontanicznej mowie",
-          "goal_native": "Genauigkeit bei spontanem Sprechen",
+          "goal_native": "Accuracy in spontaneous speech",
           "daily_assessed": "2-minutowy monolog ze swiadomym fokusem",
-          "daily_native": "2-Minuten-Monolog mit bewusstem Fokus"
+          "daily_native": "2-minute monologue with conscious focus"
         }
       ]
+    },
+    {
+      "id": "mini_block",
+      "title_assessed": "Mini-Blok",
+      "title_native": "Mini-Block",
+      "goal_assessed": "Stabilizować odruchy przypadkowe i aspekt czasownika w mowie naturalnej",
+      "goal_native": "Stabilize case reflexes and verb aspect in natural speech",
+      "step1_assessed": "Codziennie mów na głos 10 zdań z przyimkami wymagającymi różnych przypadków (na, w, do, z, od). Zdania: \"Idę do szkoły\", \"Jestem w domu\", \"Biorę książkę z półki\".",
+      "step1_native": "Every day speak out loud 10 sentences with prepositions requiring different cases (to, in, for, with, from). Sentences: \"I go to school\", \"I am at home\", \"I take the book from the shelf\".",
+      "step2_assessed": "Napisz 3-minutowy opis swojego dnia, skupiając się na rozróżnieniu aspektów doskonałego (co robisz) i niedoskonałego (co robiłeś). Nagrań, słuchaj i powtarzaj.",
+      "step2_native": "Write a 3-minute description of your day, focusing on distinguishing perfective (what you do) and imperfective (what you did) aspects. Record, listen and repeat."
     }
   ],
   "cefr_footer": {
     "active_assessed": "Aktywna produkcja ustna: A2.2",
-    "active_native": "Aktive gesprochene Produktion: A2.2",
+    "active_native": "Active spoken production: A2.2",
     "passive_assessed": "Kompetencja pasywna: B1.1",
-    "passive_native": "Passive Kompetenz: B1.1",
+    "passive_native": "Passive competence: B1.1",
     "confidence_assessed": "Pewnosc: 64%",
-    "confidence_native": "Konfidenz: 64%",
+    "confidence_native": "Confidence: 64%",
     "summary_assessed": "Jestes na poziomie A2. Twoja baza istnieje, ale system przypadkow jest niestabilny. Z ukierunkowanym treningiem B1 jest realistyczny w 3-4 miesiace.",
-    "summary_native": "Du bist auf Niveau A2. Deine Basis ist vorhanden, aber das Kasussystem ist instabil. Mit gezieltem Training ist B1 in 3-4 Monaten realistisch.",
+    "summary_native": "You are at level A2. Your foundation is in place, but the case system is unstable. With targeted training, B1 is realistic within 3-4 months.",
     "stability_assessed": "Stabilnosc strukturalna pod presja: niska-srednia",
-    "stability_native": "Strukturstabilität unter Druck: niedrig bis mittel",
+    "stability_native": "Structural stability under pressure: low to medium",
     "self_correction_assessed": "Zdolnosc autokorekty: niska",
-    "self_correction_native": "Selbstkorrektur-Fähigkeit: niedrig",
+    "self_correction_native": "Self-correction ability: low",
     "reassessment_assessed": "Zalecana ponowna ocena: 3 miesiace",
-    "reassessment_native": "Empfohlenes Re-Assessment: 3 Monate"
+    "reassessment_native": "Recommended re-assessment: 3 months"
   },
   "block_d": {
-    "title_native": "Zusammenfassung in deiner Sprache",
-    "cefr_summary_native": "Dein aktiv gesprochenes Polnisch ist auf Niveau A2.2. Du kannst in einfachen Alltagssituationen kommunizieren, aber das Kasussystem bricht unter Druck zusammen. Dein passives Verständnis ist höher bei B1.1.",
+    "title_native": "Summary in Your Language",
+    "cefr_summary_native": "Your actively spoken Polish is at level A2.2. You can communicate in simple everyday situations, but the case system breaks down under pressure. Your passive comprehension is higher at B1.1.",
     "top_problems_native": [
-      "Kasusfehler: Nominativ statt Akkusativ und Dativ",
-      "Verwechslung von vollendetem und unvollendetem Verbaspekt",
-      "Präpositionen mit falschem Kasus",
-      "Adjektivdeklination fehlerhaft",
-      "Aussprache der Zischlaute sz, cz, rz"
+      "Case errors: nominative instead of accusative and dative",
+      "Confusion of perfective and imperfective verb aspect",
+      "Prepositions used with the wrong case",
+      "Adjective declension errors",
+      "Pronunciation of sibilants sz, cz, rz"
     ],
-    "key_recommendation_native": "Übe den Kasus-Motor täglich: sprich 5 Sätze laut aus mit bewusster Wahl des richtigen Kasus. Diese eine Übung korrigiert deine größte strukturelle Schwäche.",
-    "next_steps_native": "Konzentriere dich in den nächsten 2 Wochen auf das Kasussystem, dann gehe zu Verbaspekt und Präpositionen über. Buche ein Re-Assessment in 3 Monaten."
+    "key_recommendation_native": "Practice the Case Engine daily: say 5 sentences out loud with conscious selection of the correct case. This single exercise corrects your biggest structural weakness.",
+    "next_steps_native": "Focus on the case system for the next 2 weeks, then move on to verb aspect and prepositions. Book a re-assessment in 3 months."
   }
 }
