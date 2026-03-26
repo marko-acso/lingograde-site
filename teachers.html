@@ -60,6 +60,9 @@
             color: var(--ink); text-decoration: none; letter-spacing: -0.02em;
         }
         .nav-logo span { color: var(--gold); }
+        .brand-logo { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-family: var(--serif); font-size: 1.5rem; color: var(--ink); }
+        .brand-logo img { height: 32px; width: auto; }
+        .brand-a { color: #27AE60; text-decoration: underline; }
         .nav-menu { display: flex; align-items: center; gap: 28px; }
         .nav-menu a {
             font-size: 0.875rem; font-weight: 500; color: var(--ink-muted);
@@ -590,7 +593,7 @@
 <!-- NAV -->
 <nav class="nav" id="nav">
     <div class="nav-inner">
-        <a href="index.html" class="nav-logo"><img src="logo.png" alt="LingoGrade" style="height:64px; max-height:10vw; width:auto; display:block;"></a>
+        <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-mugprint.png" alt="Marco"> Lingo Gr<span class="brand-a">A</span>de</a>
         <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
             <span></span><span></span><span></span>
         </button>
@@ -599,6 +602,7 @@
             <a href="corporate.html">Corporate</a>
             <a href="teachers.html" style="color:var(--gold);font-weight:700;">For Teachers</a>
             <a href="partners.html">Partners</a>
+            <a href="kids.html">Young Learners</a>
             <a href="index.html#languages">Languages</a>
             <a href="index.html#faq">FAQ</a>
             <a href="https://app.lingograde.com/login" class="nav-signin">Sign In</a>

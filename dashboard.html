@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Student Dashboard — LingoGrade</title>
-<link rel="icon" type="image/png" href="logo.png">
+<link rel="icon" type="image/png" href="assets/mascot/marco-mugprint.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
@@ -79,6 +79,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
 /* ── Footer ── */
 .footer { background: var(--ink); color: rgba(255,255,255,0.8); text-align: center; padding: 40px 24px; }
 .footer-brand { font-family: var(--font-display); font-size: 1.25rem; color: white; margin-bottom: 8px; }
+.brand-logo { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); }
+.brand-logo img { height: 32px; width: auto; }
+.brand-a { color: #27AE60; text-decoration: underline; }
 .footer p { font-size: 0.8125rem; line-height: 1.7; }
 .footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
 .footer a:hover { color: white; }
@@ -106,7 +109,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
 <!-- ── Navigation ── -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html"><img src="logo.png" alt="LingoGrade" style="height:64px; max-height:10vw; width:auto; display:block;"></a>
+    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-mugprint.png" alt="Marco"> Lingo Gr<span class="brand-a">A</span>de</a>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -115,6 +118,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
       <a href="corporate.html">Corporate</a>
       <a href="teachers.html">For Teachers</a>
       <a href="partners.html">Partners</a>
+      <a href="kids.html">Young Learners</a>
       <a href="index.html#languages">Languages</a>
       <a href="index.html#faq">FAQ</a>
       <a href="https://app.lingograde.com/login" class="nav-signin">Sign Out</a>
@@ -213,7 +217,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
 
 <!-- ── Footer ── -->
 <footer class="footer">
-  <div class="footer-brand">LingoGrade</div>
+  <div class="footer-brand">Lingo Gr<span style="color:#27AE60;text-decoration:underline">A</span>de</div>
   <p>Professional Language Assessment</p>
   <div class="footer-links">
     <a href="index.html">Home</a>

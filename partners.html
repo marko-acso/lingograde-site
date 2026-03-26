@@ -19,7 +19,7 @@
 <meta property="og:description" content="Know someone learning a language? Earn every time they get assessed. No caps, no tiers, no minimum.">
 <meta property="og:image" content="og-image.png">
 <meta property="og:type" content="website">
-<link rel="icon" type="image/png" href="logo.png">
+<link rel="icon" type="image/png" href="assets/mascot/marco-mugprint.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
@@ -51,6 +51,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 4px 32px; height: auto; display: flex; align-items: center; justify-content: space-between; }
 .nav-brand { font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); text-decoration: none; }
 .nav-brand span { color: var(--accent); }
+.brand-logo { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); }
+.brand-logo img { height: 32px; width: auto; }
+.brand-a { color: #27AE60; text-decoration: underline; }
 .nav-links { display: flex; gap: 32px; align-items: center; }
 .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; transition: color 0.15s; }
 .nav-links a:hover { color: var(--accent); }
@@ -306,7 +309,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <!-- ── Navigation ── -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand"><img src="logo.png" alt="LingoGrade" style="height:64px; max-height:10vw; width:auto; display:block;"></a>
+    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-mugprint.png" alt="Marco"> Lingo Gr<span class="brand-a">A</span>de</a>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -315,6 +318,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       <a href="corporate.html">Corporate</a>
       <a href="teachers.html">For Teachers</a>
       <a href="partners.html" style="color:var(--accent);font-weight:700;">Partners</a>
+      <a href="kids.html">Young Learners</a>
       <a href="index.html#languages">Languages</a>
       <a href="index.html#faq">FAQ</a>
       <a href="https://app.lingograde.com/login" class="nav-signin">Sign In</a>
@@ -658,7 +662,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       </div>
       <!-- Scarcity -->
       <div class="form-scarcity" id="scarcity-notice">
-        Limited partner spots in your region &mdash; we review applications every Friday.
+        <img src="assets/mascot/marco-alarm.png" alt="Marco alarm" style="height:40px;width:auto;vertical-align:middle;margin-right:6px;">Limited partner spots in your region &mdash; we review applications every Friday.
       </div>
     </div>
   </div>
@@ -744,7 +748,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <div class="sticker-price-old">&euro;10.00</div>
           <div class="sticker-price-new">&euro;7.50</div>
           <div class="sticker-price-save">25% off your first pack</div>
-          <div class="sticker-scarcity">This week only</div>
+          <div class="sticker-scarcity"><img src="assets/mascot/marco-alarm.png" alt="Marco alarm" style="height:40px;width:auto;vertical-align:middle;margin-right:4px;">This week only</div>
         </div>
         <a href="https://app.lingograde.com/partner/stickers" class="btn-primary" style="margin-top:24px;">Get Your Sticker Pack</a>
         <div class="sticker-note">Every sticker has your personal QR code. Every scan = potential referral.</div>
@@ -809,7 +813,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
 <!-- ── Footer ── -->
 <footer class="footer">
-  <div class="footer-brand">LingoGrade</div>
+  <div class="footer-brand">Lingo Gr<span style="color:#27AE60;text-decoration:underline">A</span>de</div>
   <p>Professional Language Assessment</p>
   <div class="footer-links">
     <a href="index.html#how-it-works">How It Works</a>
