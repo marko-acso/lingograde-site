@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-32D60T2ZKT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-32D60T2ZKT');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Marco Shop — LingoGrade</title>
+<meta name="description" content="Sticker packs, plush owls, and bundles. Everything you need to spread the word and earn while doing it.">
+<meta property="og:title" content="The Marco Shop — LingoGrade">
+<meta property="og:description" content="Sticker packs, plush owls, and bundles. Spread the word and earn while doing it.">
+<meta property="og:image" content="og-image.png">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/mascot/marco-mugprint.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1C1C1C;
+  --ink-soft: #4A4A4A;
+  --ink-light: #8A8A8A;
+  --accent: #2563AB;
+  --accent-lt: #3B82F6;
+  --accent-bg: #EFF6FF;
+  --cream: #FFFFFF;
+  --parchment: #F8F8F8;
+  --border: #E0E0E0;
+  --success: #27AE60;
+  --success-bg: #F0FFF4;
+  --warn: #E67E22;
+  --error: #C0392B;
+  --purple: #7B4F9E;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+  --max-w: 1080px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--ink); background: var(--cream); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+/* ── Navigation ── */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 4px 32px; height: auto; display: flex; align-items: center; justify-content: space-between; }
+.nav-brand { font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); text-decoration: none; }
+.nav-brand span { color: var(--accent); }
+.brand-logo { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); }
+.brand-logo img { height: 32px; width: auto; }
+.brand-a { color: #27AE60; text-decoration: underline; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; transition: color 0.15s; }
+.nav-links a:hover { color: var(--accent); }
+.nav-menu { display: flex; gap: 28px; align-items: center; }
+.nav-menu a { font-size: 0.875rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; transition: color 0.15s; }
+.nav-menu a:hover { color: var(--accent); }
+.nav-signin { padding: 8px 16px; border: 1.5px solid var(--border); border-radius: 8px; transition: all 0.15s; }
+.nav-signin:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
+.nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+.nav-hamburger span { display: block; width: 24px; height: 2.5px; background: var(--ink); border-radius: 2px; transition: all 0.2s; }
+.nav-cta { display: inline-flex; align-items: center; padding: 8px 20px; background: var(--accent); color: white !important; border-radius: 8px; font-weight: 600; font-size: 0.875rem; transition: background 0.15s; }
+.nav-cta:hover { background: var(--accent-lt); }
+
+/* ── Marco mascot images ── */
+.marco-img { max-width: 100%; height: auto; }
+
+/* ── Hero ── */
+.hero { padding: 140px 32px 80px; text-align: center; background: linear-gradient(180deg, var(--accent-bg) 0%, var(--cream) 100%); }
+.hero-inner { max-width: 720px; margin: 0 auto; }
+.hero h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.2; color: var(--ink); margin-bottom: 20px; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero p { font-size: 1.125rem; color: var(--ink-soft); max-width: 560px; margin: 0 auto 32px; line-height: 1.7; }
+
+/* ── Section ── */
+.section { padding: 80px 32px; }
+.section-inner { max-width: var(--max-w); margin: 0 auto; }
+.section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+.section-title { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.25rem); line-height: 1.3; color: var(--ink); margin-bottom: 16px; }
+.section-desc { font-size: 1rem; color: var(--ink-soft); max-width: 600px; line-height: 1.7; }
+.section-alt { background: var(--parchment); }
+
+/* ── Product Cards ── */
+.product-card {
+  border-radius: 16px;
+  border: 2px solid var(--border);
+  padding: 48px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-top: 40px;
+  transition: border-color 0.2s;
+}
+.product-card:hover { border-color: var(--accent); }
+.product-card.featured { border-color: var(--accent); background: linear-gradient(180deg, var(--accent-bg) 0%, var(--cream) 60%); position: relative; }
+.product-card.featured::before {
+  content: 'FEATURED';
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 16px;
+  background: var(--accent);
+  color: white;
+  border-radius: 100px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.product-img-wrap { text-align: center; }
+.product-img-wrap img { max-width: 280px; width: 100%; height: auto; border-radius: 12px; }
+.product-info h2 { font-family: var(--font-display); font-size: 1.75rem; color: var(--ink); margin-bottom: 12px; line-height: 1.3; }
+.product-info p { font-size: 0.9375rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 16px; }
+.product-info ul { list-style: none; margin-bottom: 20px; }
+.product-info ul li { font-size: 0.9375rem; color: var(--ink-soft); padding: 6px 0 6px 24px; position: relative; }
+.product-info ul li::before { content: ''; position: absolute; left: 0; top: 13px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.product-highlight { font-size: 0.9375rem; color: var(--ink); font-weight: 600; font-style: italic; margin-bottom: 20px; }
+.product-price { font-family: var(--font-display); font-size: 2.25rem; color: var(--accent); margin-bottom: 4px; }
+.product-price .old-price { font-size: 1.125rem; color: var(--ink-light); text-decoration: line-through; font-family: var(--font-body); font-weight: 400; margin-left: 8px; }
+.product-price-note { font-size: 0.8125rem; color: var(--ink-light); margin-bottom: 24px; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: var(--accent); color: white; border-radius: 10px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
+.btn-primary:hover { background: var(--accent-lt); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(37,99,171,0.3); }
+.btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: transparent; color: var(--ink); border-radius: 10px; font-weight: 600; font-size: 1rem; text-decoration: none; border: 1.5px solid var(--border); transition: all 0.15s; }
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+.product-smallprint { font-size: 0.75rem; color: var(--ink-light); margin-top: 12px; }
+
+/* ── Coming Soon card ── */
+.product-card.coming-soon { border-color: var(--border); border-style: dashed; background: var(--parchment); }
+.product-card.coming-soon:hover { border-color: var(--ink-light); }
+.coming-soon-badge { display: inline-block; padding: 4px 14px; background: var(--ink-light); color: white; border-radius: 100px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 12px; }
+
+/* ── Waitlist form ── */
+.waitlist-form { display: flex; gap: 8px; margin-top: 16px; }
+.waitlist-form input { flex: 1; padding: 12px 16px; border: 1.5px solid var(--border); border-radius: 8px; font-family: var(--font-body); font-size: 0.9375rem; outline: none; transition: border-color 0.15s; }
+.waitlist-form input:focus { border-color: var(--accent); }
+.waitlist-form button { padding: 12px 24px; background: var(--accent); color: white; border: none; border-radius: 8px; font-family: var(--font-body); font-weight: 600; font-size: 0.875rem; cursor: pointer; transition: background 0.15s; white-space: nowrap; }
+.waitlist-form button:hover { background: var(--accent-lt); }
+
+/* ── Bundle Card ── */
+.bundle-card {
+  border-radius: 16px;
+  border: 2px solid var(--success);
+  background: linear-gradient(180deg, var(--success-bg) 0%, var(--cream) 60%);
+  padding: 48px 40px;
+  text-align: center;
+  margin-top: 40px;
+  position: relative;
+}
+.bundle-card::before {
+  content: 'BEST VALUE';
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 16px;
+  background: var(--success);
+  color: white;
+  border-radius: 100px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.bundle-card h2 { font-family: var(--font-display); font-size: 1.75rem; color: var(--ink); margin-bottom: 12px; }
+.bundle-card p { font-size: 1rem; color: var(--ink-soft); line-height: 1.7; max-width: 560px; margin: 0 auto 20px; }
+.bundle-price { font-family: var(--font-display); font-size: 2.5rem; color: var(--success); margin-bottom: 4px; }
+.bundle-price .old-price { font-size: 1.25rem; color: var(--ink-light); text-decoration: line-through; font-family: var(--font-body); font-weight: 400; margin-left: 8px; }
+.bundle-savings { font-size: 0.9375rem; color: var(--success); font-weight: 600; margin-bottom: 24px; }
+.btn-success { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: var(--success); color: white; border-radius: 10px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
+.btn-success:hover { background: #219a52; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(39,174,96,0.3); }
+
+/* ── Trust Bar ── */
+.trust-bar { margin-top: 40px; padding: 32px; background: var(--parchment); border-radius: 12px; text-align: center; }
+.trust-bar p { font-size: 0.9375rem; color: var(--ink-soft); line-height: 1.8; }
+.trust-bar strong { color: var(--ink); }
+
+/* ── Scarcity text with alarm clock ── */
+.scarcity { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8125rem; font-weight: 600; color: var(--warn); margin-bottom: 8px; }
+.scarcity img { height: 20px; width: auto; }
+
+/* ── Footer ── */
+.footer { padding: 48px 32px; background: var(--accent); color: rgba(255,255,255,0.75); text-align: center; }
+.footer-brand { font-family: var(--font-display); font-size: 1.25rem; color: white; margin-bottom: 8px; }
+.footer p { font-size: 0.8125rem; line-height: 1.7; }
+.footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
+.footer a:hover { color: white; }
+.footer-links { margin-top: 20px; display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+.footer-links a { font-size: 0.8125rem; }
+.footer-copy { margin-top: 32px; font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .nav-hamburger { display: flex; }
+  .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; flex-direction: column; gap: 0; padding: 8px 0; border-bottom: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .nav-menu.open { display: flex; }
+  .nav-menu a { padding: 12px 32px; font-size: 1rem; }
+  .nav-menu a:hover { background: var(--parchment); }
+  .nav-signin { margin: 4px 32px; text-align: center; }
+  .nav-cta { margin: 8px 32px 12px; text-align: center; justify-content: center; }
+  .nav-inner { padding: 8px 16px; }
+  .hero { padding: 100px 20px 60px; }
+  .hero h1 { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+  .hero p { font-size: 1rem; }
+  .section { padding: 60px 20px; }
+  .product-card { grid-template-columns: 1fr; gap: 32px; padding: 32px 24px; }
+  .product-img-wrap img { max-width: 200px; }
+  .bundle-card { padding: 32px 24px; }
+  .waitlist-form { flex-direction: column; }
+}
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.75rem; }
+  .section-title { font-size: 1.4rem; }
+  .product-info h2 { font-size: 1.4rem; }
+  .product-price { font-size: 1.75rem; }
+  .bundle-price { font-size: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-mugprint.png" alt="Marco"> Lingo Gr<span class="brand-a">A</span>de</a>
+    <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-menu">
+      <a href="index.html#pricing">Individual</a>
+      <a href="corporate.html">Corporate</a>
+      <a href="teachers.html">For Teachers</a>
+      <a href="partners.html">Partners</a>
+      <a href="kids.html">Young Learners</a>
+      <a href="shop.html" style="color:var(--accent);font-weight:700;">Shop</a>
+      <a href="index.html#languages">Languages</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="https://app.lingograde.com/login" class="nav-signin">Sign In</a>
+      <a href="index.html#pricing" class="nav-cta">Book Assessment</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <img src="assets/mascot/marco-thumbsup.png" alt="Marco giving a thumbs up" class="marco-img" style="max-width:180px;margin:0 auto 32px;display:block;">
+    <h1>The <em>Marco</em> Shop</h1>
+    <p>Everything you need to spread the word and earn while doing it.</p>
+  </div>
+</section>
+
+<!-- ── Featured: Sticker Gift Pack ── -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Featured Product</div>
+    <div class="product-card featured">
+      <div class="product-img-wrap">
+        <img src="assets/mascot/marco-faces-icon-wink-party.png" alt="Marco and Mila sticker designs">
+      </div>
+      <div class="product-info">
+        <h2>Marco and Mila Sticker Pack</h2>
+        <p>30 premium QR code stickers &mdash; each one a tiny billboard for your referral link.</p>
+        <ul>
+          <li><strong>10x Marco stickers</strong> &mdash; blue campaign &mdash; share with friends</li>
+          <li><strong>10x Mila stickers</strong> &mdash; gold campaign &mdash; spread the word</li>
+          <li><strong>10x Marco + Mila duo stickers</strong> &mdash; dark grey campaign &mdash; for your workplace</li>
+        </ul>
+        <p>Each sticker has <strong>your personal QR code</strong> and referral link.</p>
+        <p class="product-highlight">"Every scan is a potential referral. Every referral earns you revenue share."</p>
+        <div class="scarcity"><img src="assets/mascot/marco-alarm.png" alt=""> Launch price &mdash; limited time</div>
+        <div class="product-price">EUR 9.90 <span class="old-price">EUR 14.90</span></div>
+        <div class="product-price-note">Launch price</div>
+        <a href="https://app.lingograde.com/shop/stickers" class="btn-primary">Get Your Sticker Pack &rarr;</a>
+        <p class="product-smallprint">Stickers are personalized with your referral QR code. Allow 3&ndash;5 business days for delivery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Marco Plush ── -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="assets/mascot/marco-hero.png" alt="Marco the Owl plush">
+      </div>
+      <div class="product-info">
+        <h2>Meet Marco in person</h2>
+        <p>The official Marco the Owl plush. 25cm of pure warmth. Kiss him, snap a selfie, earn EUR 5 credit.</p>
+        <div class="product-price">EUR 19.90</div>
+        <div class="product-price-note">Free shipping in Europe</div>
+        <a href="https://app.lingograde.com/shop/marco-plush" class="btn-primary">Get Your Marco &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Mila Plush (Coming Soon) ── -->
+<section class="section">
+  <div class="section-inner">
+    <div class="product-card coming-soon">
+      <div class="product-img-wrap">
+        <img src="assets/mascot/marco-sleeping.png" alt="Mila sleeping — coming soon" style="opacity:0.8;">
+      </div>
+      <div class="product-info">
+        <span class="coming-soon-badge">Coming Soon</span>
+        <h2>Mila is on her way</h2>
+        <p>Mila the Owl &mdash; Marco's partner for young learners. Coming soon.</p>
+        <div class="waitlist-form">
+          <input type="email" placeholder="your@email.com" aria-label="Email for Mila waitlist">
+          <button type="button" onclick="alert('Thanks! We will notify you when Mila arrives.');">Notify me when Mila arrives</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Bundle Deal ── -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="bundle-card">
+      <div class="scarcity" style="justify-content:center;margin-bottom:16px;"><img src="assets/mascot/marco-alarm.png" alt=""> Limited bundle offer</div>
+      <h2>Marco + Sticker Pack Bundle</h2>
+      <p>The complete starter kit. Plush for selfies, stickers for spreading the word.</p>
+      <div class="bundle-price">EUR 24.90 <span class="old-price">EUR 29.80</span></div>
+      <div class="bundle-savings">Save EUR 4.90</div>
+      <a href="https://app.lingograde.com/shop/bundle" class="btn-success">Get the Bundle &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Trust Section ── -->
+<section class="section">
+  <div class="section-inner">
+    <div class="trust-bar">
+      <p><strong>Free shipping in Europe.</strong> 100% of tips go to your assessor. Every sticker scan is tracked in your partner dashboard.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer class="footer">
+  <div class="footer-brand">Lingo Gr<span style="color:#27AE60;text-decoration:underline">A</span>de</div>
+  <p>Professional Language Assessment</p>
+  <div class="footer-links">
+    <a href="index.html#how-it-works">How It Works</a>
+    <a href="index.html#languages">Languages</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="teachers.html">For Teachers</a>
+    <a href="partners.html">Partners</a>
+    <a href="shop.html">Shop</a>
+    <a href="mailto:info@lingograde.com">Contact</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
+</footer>
+
+<script>
+// Referral param forwarding
+(function(){
+  var ref = new URLSearchParams(window.location.search).get('ref');
+  if (!ref) return;
+  document.querySelectorAll('a[href*="app.lingograde.com"]').forEach(function(a){
+    var url = new URL(a.href);
+    url.searchParams.set('ref', ref.toUpperCase());
+    a.href = url.toString();
+  });
+})();
+</script>
+
+</body>
+</html>
