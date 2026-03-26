@@ -58,6 +58,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .nav-cta { display: inline-flex; align-items: center; padding: 8px 20px; background: var(--accent); color: white !important; border-radius: 8px; font-weight: 600; font-size: 0.875rem; transition: background 0.15s; }
 .nav-cta:hover { background: var(--accent-lt); }
 
+/* ── Marco mascot images ── */
+.marco-img { max-width: 100%; height: auto; }
+
 /* ── Hero ── */
 .hero { padding: 140px 32px 80px; text-align: center; background: linear-gradient(180deg, var(--accent-bg) 0%, var(--cream) 100%); }
 .hero-inner { max-width: 720px; margin: 0 auto; }
@@ -258,7 +261,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <h1>Most language learners are working at the <em>wrong level.</em> Are you?</h1>
     <p>Without an accurate baseline, every lesson is a guess. LingoGrade assesses your real spoken language — the errors you make under pressure, the structures you avoid without realising it — and gives you a bespoke plan to reach the next level.</p>
     <div style="display:inline-flex;align-items:center;gap:12px;background:var(--accent-bg);border:1px solid rgba(37,99,171,0.15);border-radius:12px;padding:12px 24px;margin:0 auto 28px;">
-      <img src="assets/mascot/marco-happy.png" alt="Marco the owl" style="width:48px;height:48px;object-fit:contain;display:none;" onload="this.style.display='block'">
+      <img src="assets/mascot/marco-hero.png" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:240px;height:auto;object-fit:contain;display:none;" onload="this.style.display='block'">
       <span style="font-size:0.95rem;color:var(--ink-soft);font-weight:500;">Marco says: <em style="color:var(--accent);font-style:normal;font-weight:600;">"Your next level is closer than you think."</em></span>
     </div>
     <div class="hero-actions">
@@ -601,7 +604,8 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       <p style="font-size:0.875rem;color:var(--success);margin:0;"><strong>Limited availability.</strong> Sessions are offered on selected days only. If you see a slot that works, book it — they go quickly.</p>
     </div>
 
-    <div class="pricing-discount" style="max-width:1080px;margin-left:auto;margin-right:auto;margin-top:16px;">
+    <div class="pricing-discount" style="max-width:1080px;margin-left:auto;margin-right:auto;margin-top:16px;display:flex;align-items:center;gap:20px;">
+      <img src="assets/mascot/marco-coffee-morning.png" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:100px;height:auto;flex-shrink:0;">
       <p>Not sure which to choose? Start with the <strong>Quick Assessment</strong> — a precise CEFR level and your three most critical errors. Choose the <strong>Full Assessment</strong> for the complete picture with a structured plan. Go with the <strong>DeepDive</strong> if you want the most comprehensive diagnostic possible.</p>
     </div>
   </div>
@@ -796,7 +800,10 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <section class="section section-alt" id="faq">
   <div class="section-inner">
     <div class="section-label">FAQ</div>
-    <h2 class="section-title">Common questions</h2>
+    <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:8px;">
+      <img src="assets/mascot/marco-face-wink.png" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:120px;height:auto;">
+      <h2 class="section-title" style="margin:0;">Common questions</h2>
+    </div>
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-q">Is the LingoGrade assessment officially recognised?</button>
