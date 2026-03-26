@@ -256,7 +256,10 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <div class="hero-badge">Professional CEFR Language Assessment</div>
     <h1>Most language learners are working at the <em>wrong level.</em> Are you?</h1>
     <p>Without an accurate baseline, every lesson is a guess. LingoGrade assesses your real spoken language — the errors you make under pressure, the structures you avoid without realising it — and gives you a bespoke plan to reach the next level.</p>
-    <p style="font-size:0.875rem;color:var(--ink-light);margin:0 auto 24px;font-weight:500;">Meet Marco — your personal language assessment companion</p>
+    <div style="display:inline-flex;align-items:center;gap:12px;background:var(--accent-bg);border:1px solid rgba(37,99,171,0.15);border-radius:12px;padding:12px 24px;margin:0 auto 28px;">
+      <img src="assets/mascot/marco-happy.png" alt="Marco the owl" style="width:48px;height:48px;object-fit:contain;display:none;" onload="this.style.display='block'">
+      <span style="font-size:0.95rem;color:var(--ink-soft);font-weight:500;">Marco says: <em style="color:var(--accent);font-style:normal;font-weight:600;">"Your next level is closer than you think."</em></span>
+    </div>
     <div class="hero-actions">
       <a href="#pricing" class="btn-primary">Find Out My Real Level</a>
       <a href="#how-it-works" class="btn-secondary">How It Works</a>
@@ -541,7 +544,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <h2 class="section-title" style="margin-left:auto;margin-right:auto;">One conversation. Complete clarity.</h2>
     <p class="section-desc" style="margin-left:auto;margin-right:auto;">All assessments include a professional bilingual PDF report delivered within 55 minutes. No preparation needed — just show up and talk. Slots are limited and fill quickly.</p>
 
-    <div class="pricing-grid">
+    <div class="pricing-grid" style="position:relative;">
+      <!-- Marco pointing at the recommended card -->
+      <img src="assets/mascot/marco-pointing.png" alt="Marco the owl pointing" style="position:absolute;top:-60px;right:-40px;width:100px;height:auto;z-index:10;pointer-events:none;display:none;" onload="this.style.display='block'">
       <div class="pricing-card">
         <div class="pricing-name">Quick Assessment</div>
         <div class="pricing-duration">15-minute session</div>
@@ -915,5 +920,6 @@ function translateLanguages(lang) {
 }
 </script>
 <script src="js/shield.js" defer></script>
+<script src="js/marco-chat.js" defer></script>
 </body>
 </html>

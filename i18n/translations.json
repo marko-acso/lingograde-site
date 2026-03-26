@@ -2,73 +2,73 @@
   "de": {
     "nav": { "home": "Startseite", "assessment": "Assessment", "corporate": "Unternehmen", "partners": "Partner", "courses": "Kurse", "login": "Anmelden", "book": "Jetzt buchen" },
     "cta": { "bookNow": "Jetzt buchen", "apply": "Bewerben", "learnMore": "Mehr erfahren", "getStarted": "Loslegen", "contactUs": "Kontakt" },
-    "common": { "assessment": "Sprachbewertung", "tagline": "Professionelle CEFR-Sprachbewertung", "languages": "12 Sprachen", "results": "Ergebnisse innerhalb von 24 Stunden" },
+    "common": { "assessment": "Sprachbewertung", "tagline": "Professionelle CEFR-Sprachbewertung", "languages": "12 Sprachen", "results": "Ergebnisse innerhalb einer Stunde" },
     "hero": { "title": "Wissen, wo du stehst", "subtitle": "Professionelle CEFR-Sprachbewertung in 12 Sprachen. Keine Vorbereitung nötig." }
   },
   "en": {
     "nav": { "home": "Home", "assessment": "Assessment", "corporate": "Corporate", "partners": "Partners", "courses": "Courses", "login": "Sign In", "book": "Book Now" },
     "cta": { "bookNow": "Book Now", "apply": "Apply", "learnMore": "Learn More", "getStarted": "Get Started", "contactUs": "Contact Us" },
-    "common": { "assessment": "Language Assessment", "tagline": "Professional CEFR Language Assessment", "languages": "12 Languages", "results": "Results within 24 hours" },
+    "common": { "assessment": "Language Assessment", "tagline": "Professional CEFR Language Assessment", "languages": "12 Languages", "results": "Results within 1 hour" },
     "hero": { "title": "Know where you stand", "subtitle": "Professional CEFR language assessment in 12 languages. No preparation needed." }
   },
   "fr": {
     "nav": { "home": "Accueil", "assessment": "Évaluation", "corporate": "Entreprises", "partners": "Partenaires", "courses": "Cours", "login": "Connexion", "book": "Réserver" },
     "cta": { "bookNow": "Réserver", "apply": "Postuler", "learnMore": "En savoir plus", "getStarted": "Commencer", "contactUs": "Nous contacter" },
-    "common": { "assessment": "Évaluation linguistique", "tagline": "Évaluation linguistique CECR professionnelle", "languages": "12 langues", "results": "Résultats sous 24 heures" },
+    "common": { "assessment": "Évaluation linguistique", "tagline": "Évaluation linguistique CECR professionnelle", "languages": "12 langues", "results": "Résultats sous 1 heure" },
     "hero": { "title": "Sachez où vous en êtes", "subtitle": "Évaluation CECR professionnelle en 12 langues. Aucune préparation nécessaire." }
   },
   "es": {
     "nav": { "home": "Inicio", "assessment": "Evaluación", "corporate": "Empresas", "partners": "Socios", "courses": "Cursos", "login": "Iniciar sesión", "book": "Reservar" },
     "cta": { "bookNow": "Reservar", "apply": "Solicitar", "learnMore": "Saber más", "getStarted": "Empezar", "contactUs": "Contáctenos" },
-    "common": { "assessment": "Evaluación lingüística", "tagline": "Evaluación MCER profesional", "languages": "12 idiomas", "results": "Resultados en 24 horas" },
+    "common": { "assessment": "Evaluación lingüística", "tagline": "Evaluación MCER profesional", "languages": "12 idiomas", "results": "Resultados en 1 hora" },
     "hero": { "title": "Sabe dónde estás", "subtitle": "Evaluación MCER profesional en 12 idiomas. Sin preparación necesaria." }
   },
   "it": {
     "nav": { "home": "Home", "assessment": "Valutazione", "corporate": "Aziende", "partners": "Partner", "courses": "Corsi", "login": "Accedi", "book": "Prenota" },
     "cta": { "bookNow": "Prenota ora", "apply": "Candidati", "learnMore": "Scopri di più", "getStarted": "Inizia", "contactUs": "Contattaci" },
-    "common": { "assessment": "Valutazione linguistica", "tagline": "Valutazione QCER professionale", "languages": "12 lingue", "results": "Risultati entro 24 ore" },
+    "common": { "assessment": "Valutazione linguistica", "tagline": "Valutazione QCER professionale", "languages": "12 lingue", "results": "Risultati entro 1 ora" },
     "hero": { "title": "Scopri il tuo livello", "subtitle": "Valutazione QCER professionale in 12 lingue. Nessuna preparazione necessaria." }
   },
   "pt": {
     "nav": { "home": "Início", "assessment": "Avaliação", "corporate": "Empresas", "partners": "Parceiros", "courses": "Cursos", "login": "Entrar", "book": "Reservar" },
     "cta": { "bookNow": "Reservar", "apply": "Candidatar-se", "learnMore": "Saiba mais", "getStarted": "Começar", "contactUs": "Contacte-nos" },
-    "common": { "assessment": "Avaliação linguística", "tagline": "Avaliação QECR profissional", "languages": "12 idiomas", "results": "Resultados em 24 horas" },
+    "common": { "assessment": "Avaliação linguística", "tagline": "Avaliação QECR profissional", "languages": "12 idiomas", "results": "Resultados em 1 hora" },
     "hero": { "title": "Saiba onde está", "subtitle": "Avaliação QECR profissional em 12 idiomas. Sem preparação necessária." }
   },
   "ru": {
     "nav": { "home": "Главная", "assessment": "Оценка", "corporate": "Для компаний", "partners": "Партнёры", "courses": "Курсы", "login": "Войти", "book": "Забронировать" },
     "cta": { "bookNow": "Забронировать", "apply": "Подать заявку", "learnMore": "Узнать больше", "getStarted": "Начать", "contactUs": "Связаться" },
-    "common": { "assessment": "Языковая оценка", "tagline": "Профессиональная оценка по CEFR", "languages": "12 языков", "results": "Результаты в течение 24 часов" },
+    "common": { "assessment": "Языковая оценка", "tagline": "Профессиональная оценка по CEFR", "languages": "12 языков", "results": "Результаты в течение 1 часа" },
     "hero": { "title": "Узнайте свой уровень", "subtitle": "Профессиональная оценка CEFR на 12 языках. Подготовка не нужна." }
   },
   "sr": {
     "nav": { "home": "Почетна", "assessment": "Процена", "corporate": "Компаније", "partners": "Партнери", "courses": "Курсеви", "login": "Пријава", "book": "Резервиши" },
     "cta": { "bookNow": "Резервиши", "apply": "Пријави се", "learnMore": "Сазнај више", "getStarted": "Почни", "contactUs": "Контакт" },
-    "common": { "assessment": "Језичка процена", "tagline": "Професионална CEFR процена", "languages": "12 језика", "results": "Резултати за 24 сата" },
+    "common": { "assessment": "Језичка процена", "tagline": "Професионална CEFR процена", "languages": "12 језика", "results": "Резултати за 1 сат" },
     "hero": { "title": "Сазнај где стојиш", "subtitle": "Професионална CEFR процена на 12 језика." }
   },
   "hr": {
     "nav": { "home": "Početna", "assessment": "Procjena", "corporate": "Tvrtke", "partners": "Partneri", "courses": "Tečajevi", "login": "Prijava", "book": "Rezerviraj" },
     "cta": { "bookNow": "Rezerviraj", "apply": "Prijavi se", "learnMore": "Saznaj više", "getStarted": "Počni", "contactUs": "Kontakt" },
-    "common": { "assessment": "Jezična procjena", "tagline": "Profesionalna CEFR procjena", "languages": "12 jezika", "results": "Rezultati unutar 24 sata" },
+    "common": { "assessment": "Jezična procjena", "tagline": "Profesionalna CEFR procjena", "languages": "12 jezika", "results": "Rezultati unutar 1 sat" },
     "hero": { "title": "Saznaj gdje stojiš", "subtitle": "Profesionalna CEFR procjena na 12 jezika." }
   },
   "bg": {
     "nav": { "home": "Начало", "assessment": "Оценка", "corporate": "За компании", "partners": "Партньори", "courses": "Курсове", "login": "Вход", "book": "Резервирай" },
     "cta": { "bookNow": "Резервирай", "apply": "Кандидатствай", "learnMore": "Научи повече", "getStarted": "Започни", "contactUs": "Контакт" },
-    "common": { "assessment": "Езикова оценка", "tagline": "Професионална CEFR оценка", "languages": "12 езика", "results": "Резултати до 24 часа" },
+    "common": { "assessment": "Езикова оценка", "tagline": "Професионална CEFR оценка", "languages": "12 езика", "results": "Резултати до 1 час" },
     "hero": { "title": "Разбери нивото си", "subtitle": "Професионална CEFR оценка на 12 езика." }
   },
   "ro": {
     "nav": { "home": "Acasă", "assessment": "Evaluare", "corporate": "Companii", "partners": "Parteneri", "courses": "Cursuri", "login": "Autentificare", "book": "Rezervă" },
     "cta": { "bookNow": "Rezervă acum", "apply": "Aplică", "learnMore": "Află mai multe", "getStarted": "Începe", "contactUs": "Contactează-ne" },
-    "common": { "assessment": "Evaluare lingvistică", "tagline": "Evaluare CECR profesională", "languages": "12 limbi", "results": "Rezultate în 24 de ore" },
+    "common": { "assessment": "Evaluare lingvistică", "tagline": "Evaluare CECR profesională", "languages": "12 limbi", "results": "Rezultate în 1 oră" },
     "hero": { "title": "Află unde te afli", "subtitle": "Evaluare CECR profesională în 12 limbi." }
   },
   "pl": {
     "nav": { "home": "Strona główna", "assessment": "Ocena", "corporate": "Firmy", "partners": "Partnerzy", "courses": "Kursy", "login": "Zaloguj się", "book": "Zarezerwuj" },
     "cta": { "bookNow": "Zarezerwuj", "apply": "Aplikuj", "learnMore": "Dowiedz się więcej", "getStarted": "Zacznij", "contactUs": "Kontakt" },
-    "common": { "assessment": "Ocena językowa", "tagline": "Profesjonalna ocena CEFR", "languages": "12 języków", "results": "Wyniki w ciągu 24 godzin" },
+    "common": { "assessment": "Ocena językowa", "tagline": "Profesjonalna ocena CEFR", "languages": "12 języków", "results": "Wyniki w ciągu 1 godziny" },
     "hero": { "title": "Sprawdź swój poziom", "subtitle": "Profesjonalna ocena CEFR w 12 językach." }
   }
 }

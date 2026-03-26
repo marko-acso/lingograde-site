@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Page Not Found | LingoGrade</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1C1C1C;
+  --ink-soft: #4A4A4A;
+  --ink-light: #8A8A8A;
+  --accent: #2563AB;
+  --accent-lt: #3B82F6;
+  --accent-bg: #EFF6FF;
+  --cream: #FFFFFF;
+  --border: #E0E0E0;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-body); color: var(--ink); background: var(--cream); min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 32px; }
+.container { max-width: 480px; }
+.marco-img { width: 160px; height: auto; margin-bottom: 32px; opacity: 0.9; }
+h1 { font-family: var(--font-display); font-size: 2.5rem; color: var(--ink); margin-bottom: 12px; }
+h1 span { color: var(--accent); }
+p { font-size: 1.125rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 32px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: var(--accent); color: white; border-radius: 10px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: all 0.2s; }
+.btn:hover { background: var(--accent-lt); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(37,99,171,0.3); }
+</style>
+</head>
+<body>
+<div class="container">
+  <img src="assets/mascot/marco-sleeping.png" alt="Marco the owl sleeping" class="marco-img">
+  <h1><span>404</span> — Page Not Found</h1>
+  <p>Oops, Marco fell asleep. This page doesn't exist.</p>
+  <a href="/" class="btn">Back to Home</a>
+</div>
+</body>
+</html>
