@@ -218,7 +218,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   <div class="section-inner">
     <p class="section-label">How It Works</p>
     <h2 class="section-title">Three steps. That's it.</h2>
-    <p class="section-desc">No complicated onboarding. No software to install. No minimum students required.</p>
+    <p class="section-desc">No complicated onboarding. No software to install. No minimum referrals required.</p>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
@@ -228,7 +228,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       <div class="step">
         <div class="step-num">2</div>
         <h3>Share your personal link</h3>
-        <p>Every approved partner gets a unique referral URL and QR code. Share it however you like &mdash; email, class handout, WhatsApp group.</p>
+        <p>Every approved partner gets a unique referral URL and QR code. Share it however you like &mdash; email, social media, WhatsApp group.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
@@ -248,21 +248,21 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <table class="earnings-table">
       <thead>
         <tr>
-          <th>Students / month</th>
+          <th>Referrals / month</th>
           <th>Your earnings</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>2 students</td>
+          <td>2 referrals</td>
           <td>A nice dinner out</td>
         </tr>
         <tr>
-          <td>5 students</td>
+          <td>5 referrals</td>
           <td>A monthly subscription you actually enjoy</td>
         </tr>
         <tr>
-          <td>10 students</td>
+          <td>10 referrals</td>
           <td>A meaningful addition to your income</td>
         </tr>
       </tbody>
@@ -291,9 +291,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         </div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">"What if my students don't book right away?"</button>
+        <button class="faq-q">"What if my referrals don't book right away?"</button>
         <div class="faq-a">
-          <div class="faq-a-inner">Your referral link doesn't expire. If a student clicks it today and books three months from now, you still earn. We use a 90-day attribution window, which is far longer than industry standard. Students move at their own pace &mdash; we don't penalise you for that. And the longer you wait to start, the more potential referrals you leave on the table.</div>
+          <div class="faq-a-inner">Your referral link doesn't expire. If someone clicks it today and books three months from now, you still earn. We use a 90-day attribution window, which is far longer than industry standard. People move at their own pace &mdash; we don't penalise you for that. And the longer you wait to start, the more potential referrals you leave on the table.</div>
         </div>
       </div>
       <div class="faq-item">
@@ -325,22 +325,35 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <input type="email" id="email" name="email" required placeholder="you@example.com">
         </div>
         <div class="form-group">
-          <label for="phone">Phone <span class="optional">(optional)</span></label>
-          <input type="tel" id="phone" name="phone" placeholder="+49 170 ...">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" required placeholder="+49 170 ...">
         </div>
         <div class="form-group">
-          <label for="institution">How would you describe yourself?</label>
+          <label for="institution">What best describes you?</label>
           <select id="institution" name="institution" required>
-            <option value="" disabled selected>Select one...</option>
-            <option value="teacher">Language Teacher / Tutor</option>
-            <option value="public-school">Public School</option>
-            <option value="private-school">Private School</option>
-            <option value="language-school">Language School</option>
-            <option value="university">University / College</option>
-            <option value="online-school">Online School</option>
+            <option value="" disabled selected>Select your background...</option>
+            <option value="language-teacher">Language Teacher</option>
+            <option value="university-lecturer">University Lecturer</option>
+            <option value="school-teacher">School Teacher</option>
+            <option value="private-tutor">Private Tutor</option>
+            <option value="translation-interpretation">Translation / Interpretation</option>
             <option value="student">Student</option>
-            <option value="professional">Professional</option>
-            <option value="freelance">Freelance / Independent</option>
+            <option value="university-student">University Student</option>
+            <option value="hr-recruitment">HR / Recruitment</option>
+            <option value="corporate-trainer">Corporate Trainer</option>
+            <option value="business-professional">Business Professional</option>
+            <option value="freelancer">Freelancer</option>
+            <option value="coach-consultant">Coach / Consultant</option>
+            <option value="social-worker">Social Worker</option>
+            <option value="integration-specialist">Integration Specialist</option>
+            <option value="healthcare-professional">Healthcare Professional</option>
+            <option value="legal-professional">Legal Professional</option>
+            <option value="it-tech">IT / Tech Professional</option>
+            <option value="marketing-communications">Marketing / Communications</option>
+            <option value="entrepreneur">Entrepreneur</option>
+            <option value="expat-international">Expat / International Professional</option>
+            <option value="parent">Parent</option>
+            <option value="retired-professional">Retired Professional</option>
             <option value="other">Other</option>
           </select>
         </div>
