@@ -210,6 +210,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .product-card { grid-template-columns: 1fr; gap: 32px; padding: 32px 24px; }
   .product-img-wrap img { max-width: 200px; }
   .bundle-card { padding: 32px 24px; }
+  .bundle-card [style*="grid-template-columns"] { grid-template-columns: 1fr !important; text-align: center; }
   .waitlist-form { flex-direction: column; }
 }
 @media (max-width: 480px) {
@@ -256,17 +257,17 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <div class="section-label">Featured Product</div>
     <div class="product-card featured">
       <div class="product-img-wrap">
-        <img src="assets/mascot/marco-faces-icon-wink-party.png" alt="Marco and Mila sticker designs">
+        <img src="assets/mascot/marco-sticker-concept.png" alt="Marco sticker with QR code" style="max-width:380px;">
       </div>
       <div class="product-info">
         <h2>Marco and Mila Sticker Pack</h2>
         <p>30 premium QR code stickers &mdash; each one a tiny billboard for your referral link.</p>
         <ul>
-          <li><strong>10x Marco stickers</strong> &mdash; blue campaign &mdash; share with friends</li>
-          <li><strong>10x Mila stickers</strong> &mdash; gold campaign &mdash; spread the word</li>
-          <li><strong>10x Marco + Mila duo stickers</strong> &mdash; dark grey campaign &mdash; for your workplace</li>
+          <li><strong>10x Marco stickers</strong> &mdash; blue campaign</li>
+          <li><strong>10x Mila stickers</strong> &mdash; gold campaign</li>
+          <li><strong>10x Marco + Mila duo stickers</strong> &mdash; dark grey campaign</li>
         </ul>
-        <p>Each sticker has <strong>your personal QR code</strong> and referral link.</p>
+        <p>Each sticker has <strong>your personal QR code</strong> that links directly to your referral.</p>
         <p class="product-highlight">"Every scan is a potential referral. Every referral earns you revenue share."</p>
         <div class="scarcity"><img src="assets/mascot/marco-alarm.png" alt=""> Launch price &mdash; limited time</div>
         <div class="product-price">EUR 9.90 <span class="old-price">EUR 14.90</span></div>
@@ -282,12 +283,15 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <section class="section section-alt">
   <div class="section-inner">
     <div class="product-card">
-      <div class="product-img-wrap">
-        <img src="assets/mascot/marco-hero.png" alt="Marco the Owl plush">
+      <div class="product-img-wrap" style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
+        <img src="assets/mascot/marco-wave.png" alt="Marco the Owl waving" style="max-width:260px;border-radius:12px;">
+        <img src="assets/mascot/marco-hero.png" alt="Marco the Owl plush concept" style="max-width:140px;border-radius:12px;opacity:0.85;">
+        <img src="assets/mascot/marco-thumbsup.png" alt="Marco thumbs up" style="max-width:140px;border-radius:12px;opacity:0.85;">
       </div>
       <div class="product-info">
         <h2>Meet Marco in person</h2>
         <p>The official Marco the Owl plush. 25cm of pure warmth. Kiss him, snap a selfie, earn EUR 5 credit.</p>
+        <p style="font-size:0.8125rem;color:var(--ink-light);font-style:italic;margin-bottom:16px;">Real product photos coming soon</p>
         <div class="product-price">EUR 19.90</div>
         <div class="product-price-note">Free shipping in Europe</div>
         <a href="https://app.lingograde.com/shop/marco-plush" class="btn-primary">Get Your Marco &rarr;</a>
@@ -301,12 +305,12 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   <div class="section-inner">
     <div class="product-card coming-soon">
       <div class="product-img-wrap">
-        <img src="assets/mascot/marco-sleeping.png" alt="Mila sleeping — coming soon" style="opacity:0.8;">
+        <img src="assets/mascot/marco-mila-outfits.png" alt="Marco and Mila in different outfits" style="max-width:360px;border-radius:12px;">
       </div>
       <div class="product-info">
         <span class="coming-soon-badge">Coming Soon</span>
         <h2>Mila is on her way</h2>
-        <p>Mila the Owl &mdash; Marco's partner for young learners. Coming soon.</p>
+        <p>Mila the Owl &mdash; Marco's partner for young learners. Playful outfits, the same LingoGrade quality.</p>
         <div class="waitlist-form">
           <input type="email" placeholder="your@email.com" aria-label="Email for Mila waitlist">
           <button type="button" onclick="alert('Thanks! We will notify you when Mila arrives.');">Notify me when Mila arrives</button>
@@ -319,13 +323,20 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <!-- ── Bundle Deal ── -->
 <section class="section section-alt">
   <div class="section-inner">
-    <div class="bundle-card">
-      <div class="scarcity" style="justify-content:center;margin-bottom:16px;"><img src="assets/mascot/marco-alarm.png" alt=""> Limited bundle offer</div>
-      <h2>Marco + Sticker Pack Bundle</h2>
-      <p>The complete starter kit. Plush for selfies, stickers for spreading the word.</p>
-      <div class="bundle-price">EUR 24.90 <span class="old-price">EUR 29.80</span></div>
-      <div class="bundle-savings">Save EUR 4.90</div>
-      <a href="https://app.lingograde.com/shop/bundle" class="btn-success">Get the Bundle &rarr;</a>
+    <div class="bundle-card" style="text-align:left;">
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;">
+        <div style="text-align:center;">
+          <img src="assets/mascot/marco-alarm.png" alt="Marco with alarm clock" style="width:220px;height:auto;border-radius:12px;">
+        </div>
+        <div>
+          <div class="scarcity" style="margin-bottom:16px;"><img src="assets/mascot/marco-alarm.png" alt="" style="height:20px;"> Limited bundle offer</div>
+          <h2 style="margin-bottom:12px;">Marco + Sticker Pack Bundle</h2>
+          <p style="max-width:none;margin-bottom:20px;">The complete starter kit. Plush for selfies, stickers for spreading the word.</p>
+          <div class="bundle-price">EUR 24.90 <span class="old-price">EUR 29.80</span></div>
+          <div class="bundle-savings">Save EUR 4.90</div>
+          <a href="https://app.lingograde.com/shop/bundle" class="btn-success">Get the Bundle &rarr;</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
