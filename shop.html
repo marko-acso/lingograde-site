@@ -286,6 +286,67 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .progress-labels .unlocked { color: var(--success); font-weight: 700; }
 .guide-smallprint { font-size: 0.75rem; color: var(--ink-light); text-align: center; max-width: 640px; margin: 0 auto; line-height: 1.7; }
 
+/* ── Sticker Fan Cards ── */
+.sticker-fan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 220px;
+  width: 300px;
+  margin: 0 auto;
+}
+.sticker-card {
+  position: absolute;
+  width: 140px;
+  height: 180px;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease;
+}
+.sticker-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+.sticker-card span {
+  margin-top: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+.sticker-card.blue {
+  border: 4px solid #2563AB;
+  transform: rotate(-12deg) translateX(-50px);
+  z-index: 1;
+}
+.sticker-card.grey {
+  border: 4px solid #3A3A3A;
+  transform: rotate(0deg);
+  z-index: 3;
+}
+.sticker-card.gold {
+  border: 4px solid #C5960C;
+  transform: rotate(12deg) translateX(50px);
+  z-index: 2;
+}
+.sticker-card.blue span { color: #2563AB; }
+.sticker-card.grey span { color: #3A3A3A; }
+.sticker-card.gold span { color: #C5960C; }
+.sticker-fan:hover .sticker-card.blue {
+  transform: rotate(-14.4deg) translateX(-60px);
+}
+.sticker-fan:hover .sticker-card.grey {
+  transform: rotate(0deg) translateY(-5px);
+}
+.sticker-fan:hover .sticker-card.gold {
+  transform: rotate(14.4deg) translateX(60px);
+}
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .brand-logo { font-size: 1.2rem; gap: 6px; }
@@ -316,8 +377,10 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .plush-main img { max-width: 220px; }
   .plush-thumbs { flex-direction: column; align-items: center; }
   .plush-thumbs img { max-width: 160px; }
+  .sticker-fan { transform: scale(0.85); }
 }
 @media (max-width: 480px) {
+  .sticker-fan { transform: scale(0.7); height: 180px; }
   .hero h1 { font-size: 1.75rem; }
   .section-title { font-size: 1.4rem; }
   .product-info h2 { font-size: 1.4rem; }
@@ -362,7 +425,20 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <div class="section-label">Featured Product</div>
     <div class="product-card featured">
       <div class="product-img-wrap">
-        <img src="assets/mascot/marco-sticker-concept.png" alt="Marco sticker" style="max-width:380px;">
+        <div class="sticker-fan">
+          <div class="sticker-card blue">
+            <img src="assets/mascot/marco-face-wink.png" alt="Marco sticker">
+            <span>Marco</span>
+          </div>
+          <div class="sticker-card grey">
+            <img src="assets/mascot/marco-face-graduation.png" alt="Duo sticker">
+            <span>Duo</span>
+          </div>
+          <div class="sticker-card gold">
+            <img src="assets/mascot/marco-face-party.png" alt="Mila sticker">
+            <span>Mila</span>
+          </div>
+        </div>
       </div>
       <div class="product-info">
         <h2>Marco and Mila Sticker Pack</h2>
