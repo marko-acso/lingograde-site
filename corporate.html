@@ -19,7 +19,7 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.lingograde.com/og-logo-v2.png">
-<link rel="icon" type="image/png" href="assets/mascot/marco-mugprint.png">
+<link rel="icon" type="image/png" href="assets/mascot/marco-logo-v5.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
@@ -42,7 +42,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .nav-brand img { height: 36px; }
 .nav-brand span { color: var(--accent); }
 .brand-logo { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); }
-.brand-logo img { height: 32px; width: auto; }
+.brand-logo img { height: 38px; width: auto; }
 .brand-a { color: #27AE60; text-decoration: underline; }
 .nav-menu { display: flex; gap: 28px; align-items: center; }
 .nav-menu a { font-size: 0.875rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; transition: color 0.15s; }
@@ -68,13 +68,15 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 @media (max-width: 768px) {
   .pricing-tiers { grid-template-columns: 1fr !important; }
   .advantages-grid { grid-template-columns: 1fr !important; }
+  .brand-logo { font-size: 1.2rem; gap: 6px; }
+  .brand-logo img { height: 32px; }
   .nav-hamburger { display: flex; }
   .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; flex-direction: column; gap: 0; padding: 8px 0; border-bottom: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
   .nav-menu.open { display: flex; }
   .nav-menu a { padding: 12px 32px; font-size: 1rem; }
   .nav-menu a:hover { background: var(--parchment); }
   .nav-signin { margin: 4px 32px; text-align: center; }
-  .nav-cta { margin: 8px 32px 12px; text-align: center; justify-content: center; }
+  .nav-cta { margin: 8px 32px 12px; text-align: center; justify-content: center; display: flex; }
 }
 </style>
 </head>
@@ -82,7 +84,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-mugprint.png" alt="Marco"> Lingo Gr<span class="brand-a">A</span>de</a>
+    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-v5.png" alt="Marco"> Lingo Gr<span class="brand-a">A</span>de</a>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
