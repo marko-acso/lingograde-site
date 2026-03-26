@@ -191,6 +191,14 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .footer-links a { font-size: 0.8125rem; }
 .footer-copy { margin-top: 32px; font-size: 0.75rem; color: rgba(255,255,255,0.5); }
 
+/* ── Plush Gallery ── */
+.plush-gallery { text-align: center; }
+.plush-main { margin-bottom: 16px; }
+.plush-main img { max-width: 300px; width: 100%; height: auto; border-radius: 12px; }
+.plush-thumbs { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.plush-thumbs img { max-width: 120px; width: 100%; height: auto; border-radius: 10px; cursor: pointer; border: 2px solid transparent; transition: border-color 0.2s; }
+.plush-thumbs img:hover { border-color: var(--accent); }
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .brand-logo { font-size: 1.2rem; gap: 6px; }
@@ -212,6 +220,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .bundle-card { padding: 32px 24px; }
   .bundle-card [style*="grid-template-columns"] { grid-template-columns: 1fr !important; text-align: center; }
   .waitlist-form { flex-direction: column; }
+  .plush-main img { max-width: 220px; }
+  .plush-thumbs { flex-direction: column; align-items: center; }
+  .plush-thumbs img { max-width: 160px; }
 }
 @media (max-width: 480px) {
   .hero h1 { font-size: 1.75rem; }
@@ -283,15 +294,21 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <section class="section section-alt">
   <div class="section-inner">
     <div class="product-card">
-      <div class="product-img-wrap" style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;">
-        <img src="assets/mascot/marco-wave.png" alt="Marco the Owl waving" style="max-width:260px;border-radius:12px;">
-        <img src="assets/mascot/marco-hero.png" alt="Marco the Owl plush concept" style="max-width:140px;border-radius:12px;opacity:0.85;">
-        <img src="assets/mascot/marco-thumbsup.png" alt="Marco thumbs up" style="max-width:140px;border-radius:12px;opacity:0.85;">
+      <div class="product-img-wrap">
+        <div class="plush-gallery">
+          <div class="plush-main">
+            <img src="assets/mascot/Marco.png" alt="Marco the Owl plush — front view">
+          </div>
+          <div class="plush-thumbs">
+            <img src="assets/mascot/Marco2.png" alt="Marco plush — angle">
+            <img src="assets/mascot/Marco3.png" alt="Marco plush — side">
+            <img src="assets/mascot/Marco4.png" alt="Marco plush — three quarter">
+          </div>
+        </div>
       </div>
       <div class="product-info">
         <h2>Meet Marco in person</h2>
         <p>The official Marco the Owl plush. 25cm of pure warmth. Kiss him, snap a selfie, earn EUR 5 credit.</p>
-        <p style="font-size:0.8125rem;color:var(--ink-light);font-style:italic;margin-bottom:16px;">Real product photos coming soon</p>
         <div class="product-price">EUR 19.90</div>
         <div class="product-price-note">Free shipping in Europe</div>
         <a href="https://app.lingograde.com/shop/marco-plush" class="btn-primary">Get Your Marco &rarr;</a>
