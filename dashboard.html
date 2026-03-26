@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard — LingoGrade</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1C1C1C;
+  --ink-soft: #4A4A4A;
+  --ink-light: #8A8A8A;
+  --accent: #2563AB;
+  --accent-lt: #3B82F6;
+  --accent-bg: #EFF6FF;
+  --cream: #FFFFFF;
+  --parchment: #F8F8F8;
+  --border: #E0E0E0;
+  --success: #27AE60;
+  --success-bg: #F0FFF4;
+  --warn: #E67E22;
+  --error: #C0392B;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+  --max-w: 1080px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--ink); background: var(--parchment); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+/* ── Navigation ── */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 4px 32px; height: auto; display: flex; align-items: center; justify-content: space-between; }
+.nav-menu { display: flex; gap: 28px; align-items: center; }
+.nav-menu a { font-size: 0.875rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; transition: color 0.15s; }
+.nav-menu a:hover { color: var(--accent); }
+.nav-signin { padding: 8px 16px; border: 1.5px solid var(--border); border-radius: 8px; transition: all 0.15s; }
+.nav-signin:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
+.nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+.nav-hamburger span { display: block; width: 24px; height: 2.5px; background: var(--ink); border-radius: 2px; transition: all 0.2s; }
+.nav-cta { display: inline-flex; align-items: center; padding: 8px 20px; background: var(--accent); color: white !important; border-radius: 8px; font-weight: 600; font-size: 0.875rem; transition: background 0.15s; text-decoration: none; }
+.nav-cta:hover { background: var(--accent-lt); }
+
+/* ── Dashboard Layout ── */
+.dashboard { max-width: 720px; margin: 0 auto; padding: 100px 24px 60px; }
+.dashboard-header { margin-bottom: 32px; }
+.dashboard-header h1 { font-family: var(--font-display); font-size: 1.75rem; color: var(--ink); margin-bottom: 4px; }
+.dashboard-header p { font-size: 0.9375rem; color: var(--ink-soft); }
+
+/* ── Card ── */
+.card { background: var(--cream); border-radius: 16px; border: 1.5px solid var(--border); padding: 28px 32px; margin-bottom: 20px; }
+.card-title { font-family: var(--font-display); font-size: 1.15rem; color: var(--ink); margin-bottom: 4px; }
+.card-desc { font-size: 0.8125rem; color: var(--ink-light); margin-bottom: 20px; }
+
+/* ── Form Elements ── */
+.form-group { margin-bottom: 20px; }
+.form-group:last-child { margin-bottom: 0; }
+.form-label { font-size: 0.8rem; font-weight: 600; color: var(--ink-soft); display: block; margin-bottom: 6px; }
+.form-input { width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 0.9375rem; font-family: var(--font-body); background: white; outline: none; transition: border 0.15s; }
+.form-input:focus { border-color: var(--accent); }
+.form-select { width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 0.9375rem; font-family: var(--font-body); background: white; outline: none; transition: border 0.15s; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A8A8A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; cursor: pointer; }
+.form-select:focus { border-color: var(--accent); }
+.form-helper { font-size: 0.75rem; color: var(--ink-light); margin-top: 6px; line-height: 1.5; }
+
+/* ── Save Button ── */
+.btn-save { display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px; background: var(--accent); color: white; border: none; border-radius: 8px; font-size: 0.875rem; font-weight: 600; font-family: var(--font-body); cursor: pointer; transition: all 0.15s; margin-top: 8px; }
+.btn-save:hover { background: var(--accent-lt); transform: translateY(-1px); }
+.btn-save:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+/* ── Toast ── */
+.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--ink); color: white; padding: 12px 24px; border-radius: 10px; font-size: 0.875rem; font-weight: 500; opacity: 0; transition: all 0.3s ease; z-index: 200; pointer-events: none; }
+.toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+.toast.success { background: var(--success); }
+.toast.error { background: var(--error); }
+
+/* ── Footer ── */
+.footer { background: var(--ink); color: rgba(255,255,255,0.8); text-align: center; padding: 40px 24px; }
+.footer-brand { font-family: var(--font-display); font-size: 1.25rem; color: white; margin-bottom: 8px; }
+.footer p { font-size: 0.8125rem; line-height: 1.7; }
+.footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
+.footer a:hover { color: white; }
+.footer-links { margin-top: 20px; display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+.footer-links a { font-size: 0.8125rem; }
+.footer-copy { margin-top: 32px; font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .nav-hamburger { display: flex; }
+  .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; flex-direction: column; gap: 0; padding: 8px 0; border-bottom: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .nav-menu.open { display: flex; }
+  .nav-menu a { padding: 12px 32px; font-size: 1rem; }
+  .nav-menu a:hover { background: var(--parchment); }
+  .nav-signin { margin: 4px 32px; text-align: center; }
+  .nav-cta { margin: 8px 32px 12px; text-align: center; justify-content: center; }
+  .nav-inner { padding: 8px 16px; }
+  .dashboard { padding: 90px 16px 40px; }
+  .card { padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html"><img src="logo.png" alt="LingoGrade" style="height:64px; max-height:10vw; width:auto; display:block;"></a>
+    <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#languages">Languages</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="https://app.lingograde.com/login" class="nav-signin">Sign Out</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Dashboard ── -->
+<div class="dashboard">
+  <div class="dashboard-header">
+    <h1>Your Profile</h1>
+    <p>Manage your assessment preferences and personal details.</p>
+  </div>
+
+  <!-- ── Assessment Settings Card ── -->
+  <div class="card">
+    <div class="card-title">Assessment Settings</div>
+    <div class="card-desc">These settings apply to your next assessment report.</div>
+
+    <div class="form-group">
+      <label class="form-label" for="preferredName">How should we call you?</label>
+      <input class="form-input" type="text" id="preferredName" name="preferred_name" placeholder="e.g. Chet, Sasha, Ali...">
+      <div class="form-helper">This is how Marco will address you in your reports</div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="formalityPreference">How would you like to be addressed?</label>
+      <select class="form-select" id="formalityPreference" name="formality_preference" required>
+        <option value="informal" selected>Informal (du/tu/tú) — warm &amp; personal</option>
+        <option value="formal">Formal (Sie/vous/usted) — professional</option>
+      </select>
+      <div class="form-helper">Private students usually prefer informal. Corporate clients often prefer formal.</div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="displayCountry">Country shown on assessment</label>
+      <select class="form-select" id="displayCountry" name="display_country">
+        <option value="">Select your country...</option>
+        <option value="DE">Germany</option>
+        <option value="AT">Austria</option>
+        <option value="CH">Switzerland</option>
+        <option value="FR">France</option>
+        <option value="BE">Belgium</option>
+        <option value="ES">Spain</option>
+        <option value="IT">Italy</option>
+        <option value="PT">Portugal</option>
+        <option value="RU">Russia</option>
+        <option value="UA">Ukraine</option>
+        <option value="TR">Turkey</option>
+        <option value="PK">Pakistan</option>
+        <option value="CN">China</option>
+        <option value="JP">Japan</option>
+        <option value="KR">Korea</option>
+        <option value="PL">Poland</option>
+        <option value="RO">Romania</option>
+        <option value="HU">Hungary</option>
+        <option value="BG">Bulgaria</option>
+        <option value="RS">Serbia</option>
+        <option value="HR">Croatia</option>
+        <option value="CZ">Czech Republic</option>
+        <option value="NO">Norway</option>
+        <option value="SE">Sweden</option>
+        <option value="FI">Finland</option>
+        <option value="DK">Denmark</option>
+        <option value="NL">Netherlands</option>
+        <option value="AL">Albania</option>
+        <option value="GR">Greece</option>
+        <option value="GB">United Kingdom</option>
+        <option value="US">USA</option>
+        <option value="CA">Canada</option>
+        <option value="AU">Australia</option>
+        <option value="IE">Ireland</option>
+        <option value="BR">Brazil</option>
+        <option value="AR">Argentina</option>
+        <option value="MX">Mexico</option>
+        <option value="IN">India</option>
+        <option value="AE">UAE</option>
+        <option value="SA">Saudi Arabia</option>
+        <option value="EG">Egypt</option>
+        <option value="MA">Morocco</option>
+        <option value="IR">Iran</option>
+        <option value="CM">Cameroon</option>
+      </select>
+      <div class="form-helper">This determines the language of your assessment report.</div>
+    </div>
+
+    <button class="btn-save" id="btnSave" onclick="saveDisplayCountry()">Save Changes</button>
+  </div>
+</div>
+
+<!-- ── Toast Notification ── -->
+<div class="toast" id="toast"></div>
+
+<!-- ── Footer ── -->
+<footer class="footer">
+  <div class="footer-brand">LingoGrade</div>
+  <p>Professional Language Assessment</p>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="index.html#languages">Languages</a>
+    <a href="teachers.html">For Teachers</a>
+    <a href="mailto:info@lingograde.com">Contact</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
+</footer>
+
+<script>
+// ── Load student profile and set default country ──
+(function loadProfile() {
+  fetch('https://app.lingograde.com/api/student/profile', {
+    credentials: 'include'
+  })
+  .then(function(r) { return r.ok ? r.json() : null; })
+  .then(function(data) {
+    if (!data) return;
+    var select = document.getElementById('displayCountry');
+    // Use display_country if set, otherwise fall back to country_of_residence
+    var country = data.display_country || data.country_of_residence || '';
+    if (country && select.querySelector('option[value="' + country + '"]')) {
+      select.value = country;
+    }
+    // Populate preferred name
+    if (data.preferred_name) {
+      document.getElementById('preferredName').value = data.preferred_name;
+    }
+    // Populate formality preference
+    if (data.formality_preference) {
+      document.getElementById('formalityPreference').value = data.formality_preference;
+    }
+  })
+  .catch(function() { /* Profile load failed silently — user can still select manually */ });
+})();
+
+// ── Save profile fields ──
+function saveDisplayCountry() {
+  var select = document.getElementById('displayCountry');
+  var preferredName = document.getElementById('preferredName');
+  var formalityPref = document.getElementById('formalityPreference');
+  var btn = document.getElementById('btnSave');
+  var countryValue = select.value;
+
+  if (!countryValue) {
+    showToast('Please select a country.', 'error');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Saving...';
+
+  fetch('https://app.lingograde.com/api/student/profile', {
+    method: 'PATCH',
+    credentials: 'include',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      display_country: countryValue,
+      preferred_name: preferredName.value.trim(),
+      formality_preference: formalityPref.value
+    })
+  })
+  .then(function(r) {
+    if (!r.ok) throw new Error('Save failed');
+    return r.json();
+  })
+  .then(function() {
+    showToast('Country saved successfully.', 'success');
+  })
+  .catch(function() {
+    showToast('Could not save. Please try again.', 'error');
+  })
+  .finally(function() {
+    btn.disabled = false;
+    btn.textContent = 'Save Changes';
+  });
+}
+
+// ── Toast notification ──
+function showToast(message, type) {
+  var toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.className = 'toast ' + (type || '');
+  toast.classList.add('show');
+  setTimeout(function() { toast.classList.remove('show'); }, 3000);
+}
+</script>
+<script src="js/shield.js" defer></script>
+</body>
+</html>
