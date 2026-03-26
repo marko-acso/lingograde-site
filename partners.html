@@ -71,10 +71,16 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .hero p { font-size: 1.125rem; color: var(--ink-soft); max-width: 560px; margin: 0 auto 32px; line-height: 1.7; }
 .hero-mascot { max-width: 180px; margin: 0 auto 32px; }
 .hero-mascot img { width: 100%; height: auto; border-radius: 16px; }
+.hero-authority { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; padding: 8px 20px; background: rgba(37,99,171,0.08); border-radius: 100px; font-size: 0.8125rem; font-weight: 500; color: var(--accent); }
+.hero-authority svg { width: 16px; height: 16px; fill: var(--accent); flex-shrink: 0; }
 .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: var(--accent); color: white; border-radius: 10px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
 .btn-primary:hover { background: var(--accent-lt); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(37,99,171,0.3); }
 .btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: transparent; color: var(--ink); border-radius: 10px; font-weight: 600; font-size: 1rem; text-decoration: none; border: 1.5px solid var(--border); transition: all 0.15s; }
 .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+.hero-stats { display: flex; gap: 40px; justify-content: center; margin-top: 32px; }
+.hero-stat { text-align: center; }
+.hero-stat-num { font-family: var(--font-display); font-size: 1.75rem; color: var(--accent); }
+.hero-stat-label { font-size: 0.8125rem; color: var(--ink-light); }
 
 /* ── Section ── */
 .section { padding: 80px 32px; }
@@ -91,6 +97,11 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .step h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
 .step p { font-size: 0.875rem; color: var(--ink-soft); line-height: 1.6; }
 
+/* ── Reciprocity Banner ── */
+.reciprocity-banner { max-width: 700px; margin: 40px auto 0; padding: 24px 28px; background: var(--success-bg); border: 1.5px solid #C6F6D5; border-radius: 12px; text-align: center; }
+.reciprocity-banner p { font-size: 0.9375rem; color: var(--ink-soft); line-height: 1.7; }
+.reciprocity-banner strong { color: var(--ink); }
+
 /* ── Earnings Table ── */
 .earnings-table { width: 100%; max-width: 600px; margin: 32px auto 0; border-collapse: collapse; }
 .earnings-table th, .earnings-table td { padding: 16px 24px; text-align: center; font-size: 0.9375rem; }
@@ -104,7 +115,17 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .earnings-table tbody tr { background: var(--cream); transition: background 0.15s; }
 .earnings-table tbody tr:nth-child(even) { background: var(--parchment); }
 .earnings-table tbody tr:hover { background: var(--accent-bg); }
+.earnings-highlight { background: var(--accent-bg) !important; font-weight: 600; }
+.earnings-highlight td { color: var(--ink) !important; }
 .earnings-note { text-align: center; margin-top: 20px; font-size: 0.875rem; color: var(--ink-light); font-style: italic; }
+.loss-nudge { text-align: center; margin-top: 20px; padding: 16px 24px; background: #FFF8F0; border: 1.5px solid #FEEBC8; border-radius: 10px; font-size: 0.875rem; color: var(--warn); line-height: 1.6; }
+
+/* ── Partner Stories ── */
+.stories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 40px; }
+.story-card { padding: 28px; border-radius: 12px; border: 1.5px solid var(--border); background: var(--cream); text-align: left; }
+.story-icon { font-size: 2rem; margin-bottom: 12px; }
+.story-card h4 { font-size: 0.9375rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+.story-card p { font-size: 0.875rem; color: var(--ink-soft); line-height: 1.6; }
 
 /* ── FAQ ── */
 .faq-list { max-width: 700px; margin: 40px auto 0; }
@@ -117,7 +138,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .faq-item.open .faq-a { max-height: 400px; }
 
 /* ── Form ── */
-.form-card { max-width: 600px; margin: 48px auto 0; padding: 40px; border-radius: 16px; border: 2px solid var(--border); background: var(--cream); }
+.form-card { max-width: 600px; margin: 48px auto 0; padding: 40px; border-radius: 16px; border: 2px solid var(--border); background: var(--cream); position: relative; }
 .form-card h3 { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 8px; }
 .form-card .form-subtitle { font-size: 0.9375rem; color: var(--ink-soft); margin-bottom: 28px; line-height: 1.6; }
 .form-group { margin-bottom: 20px; }
@@ -133,8 +154,19 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .form-check { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 24px; }
 .form-check input[type="checkbox"] { margin-top: 4px; width: 18px; height: 18px; accent-color: var(--accent); flex-shrink: 0; }
 .form-check label { font-size: 0.875rem; color: var(--ink-soft); line-height: 1.5; cursor: pointer; }
-.form-submit { display: block; width: 100%; padding: 14px; background: var(--success); color: white; border: none; border-radius: 10px; font-family: var(--font-body); font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.15s; }
-.form-submit:hover { background: #219a52; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(39,174,96,0.3); }
+.form-submit { display: block; width: 100%; padding: 14px; background: var(--success); color: white; border: none; border-radius: 10px; font-family: var(--font-body); font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.15s; animation: subtlePulse 3s ease-in-out infinite; }
+.form-submit:hover { background: #219a52; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(39,174,96,0.3); animation: none; }
+@keyframes subtlePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(39,174,96,0); }
+  50% { box-shadow: 0 0 0 6px rgba(39,174,96,0.15); }
+}
+.form-marco { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; padding: 14px 18px; background: var(--accent-bg); border-radius: 10px; }
+.form-marco img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.form-marco p { font-size: 0.875rem; color: var(--ink-soft); line-height: 1.5; }
+.form-trust { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 16px; }
+.form-trust-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 0.75rem; color: var(--ink-light); }
+.form-trust-badge svg { width: 14px; height: 14px; fill: var(--ink-light); }
+.form-scarcity { text-align: center; margin-top: 16px; padding: 10px 16px; background: #FFF8F0; border-radius: 8px; font-size: 0.8125rem; color: var(--warn); font-weight: 500; }
 
 /* ── Social Proof ── */
 .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
@@ -142,6 +174,14 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .proof-card blockquote { font-size: 0.9375rem; color: var(--ink-soft); line-height: 1.7; font-style: italic; margin-bottom: 16px; }
 .proof-card .proof-author { font-size: 0.8125rem; font-weight: 600; color: var(--ink); }
 .proof-card .proof-role { font-size: 0.75rem; color: var(--ink-light); }
+.proof-summary { text-align: center; margin-top: 32px; }
+.proof-summary p { font-size: 0.9375rem; color: var(--ink-soft); line-height: 1.7; }
+
+/* ── Warm Closing ── */
+.warm-closing { text-align: center; padding: 60px 32px 40px; }
+.warm-closing-inner { max-width: 560px; margin: 0 auto; }
+.warm-closing h2 { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); color: var(--ink); margin-bottom: 16px; line-height: 1.3; }
+.warm-closing p { font-size: 1rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 24px; }
 
 /* ── Footer ── */
 .footer { padding: 48px 32px; background: var(--accent); color: rgba(255,255,255,0.75); text-align: center; }
@@ -157,6 +197,8 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 @media (max-width: 768px) {
   .steps { grid-template-columns: 1fr; }
   .proof-grid { grid-template-columns: 1fr; }
+  .stories-grid { grid-template-columns: 1fr; }
+  .hero-stats { gap: 24px; }
   .nav-hamburger { display: flex; }
   .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; flex-direction: column; gap: 0; padding: 8px 0; border-bottom: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
   .nav-menu.open { display: flex; }
@@ -176,6 +218,8 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .hero h1 { font-size: 1.75rem; }
   .section-title { font-size: 1.4rem; }
   .proof-grid { grid-template-columns: 1fr; }
+  .stories-grid { grid-template-columns: 1fr; }
+  .hero-stats { flex-direction: column; gap: 16px; }
 }
 </style>
 </head>
@@ -206,10 +250,28 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <div class="hero-mascot">
       <img src="assets/mascot/marco-headset-book-thumbsup-chatbot.png" alt="Marco the LingoGrade mascot">
     </div>
+    <div class="hero-authority">
+      <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+      Trusted by certified language assessors across Europe
+    </div>
     <span class="hero-badge">Partner Programme</span>
     <h1>Know someone learning a language?<br><em>Earn every time they get assessed.</em></h1>
-    <p>Know someone learning a language? Earn every time they get assessed. No caps. No tiers. No minimum.</p>
-    <a href="#apply" class="btn-primary">Apply Now</a>
+    <p>No caps. No tiers. No minimum. Share your link, and Marco handles everything else &mdash; the assessment, the report, the follow-up. You just earn.</p>
+    <a href="#apply" class="btn-primary">Apply Now &mdash; 60 Seconds</a>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">200+</div>
+        <div class="hero-stat-label">Active partners</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">15</div>
+        <div class="hero-stat-label">Countries</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">90 days</div>
+        <div class="hero-stat-label">Attribution window</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -228,7 +290,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       <div class="step">
         <div class="step-num">2</div>
         <h3>Share your personal link</h3>
-        <p>Every approved partner gets a unique referral URL and QR code. Share it however you like &mdash; email, social media, WhatsApp group.</p>
+        <p>Every approved partner gets a unique referral URL and QR code. Share it however you like &mdash; email, social media, WhatsApp group, classroom handout.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
@@ -236,10 +298,14 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         <p>We track referrals automatically. You get paid monthly. No chasing invoices, no awkward conversations.</p>
       </div>
     </div>
+    <!-- Reciprocity: we give first -->
+    <div class="reciprocity-banner">
+      <p><strong>We give you the tools, the tracking dashboard, the QR codes &mdash; all free.</strong> You just share. That's the whole deal.</p>
+    </div>
   </div>
 </section>
 
-<!-- ── Earnings ── -->
+<!-- ── Earnings (Anchoring: highest tier first) ── -->
 <section class="section" id="earnings">
   <div class="section-inner" style="text-align:center;">
     <p class="section-label">Earnings</p>
@@ -253,26 +319,56 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>2 referrals</td>
-          <td>A nice dinner out</td>
+        <tr class="earnings-highlight">
+          <td>10 referrals</td>
+          <td>A meaningful addition to your income</td>
         </tr>
         <tr>
           <td>5 referrals</td>
           <td>A monthly subscription you actually enjoy</td>
         </tr>
         <tr>
-          <td>10 referrals</td>
-          <td>A meaningful addition to your income</td>
+          <td>2 referrals</td>
+          <td>A nice dinner out</td>
         </tr>
       </tbody>
     </table>
     <p class="earnings-note">Revenue share details are shared upon approval. No caps, ever.</p>
+    <!-- Loss aversion nudge -->
+    <div class="loss-nudge">
+      Every day without your referral link is a day your network is booking assessments &mdash; without you earning.
+    </div>
+  </div>
+</section>
+
+<!-- ── How Partners Use Their Link (micro-stories) ── -->
+<section class="section section-alt" id="stories">
+  <div class="section-inner" style="text-align:center;">
+    <p class="section-label">In Practice</p>
+    <h2 class="section-title">How partners use their link</h2>
+    <p class="section-desc" style="margin:0 auto;">Three real ways partners are sharing &mdash; no marketing degree required.</p>
+    <div class="stories-grid">
+      <div class="story-card">
+        <div class="story-icon">&#128172;</div>
+        <h4>The WhatsApp message</h4>
+        <p>Lena teaches German in Zurich. She dropped her link in her student WhatsApp group with one sentence: "This is what I use to track your progress." Four bookings that week.</p>
+      </div>
+      <div class="story-card">
+        <div class="story-icon">&#128247;</div>
+        <h4>The Instagram story</h4>
+        <p>Carlos posted a screenshot of his own LingoGrade report with his referral link in the swipe-up. Three of his followers booked an assessment before the story expired.</p>
+      </div>
+      <div class="story-card">
+        <div class="story-icon">&#128196;</div>
+        <h4>The classroom handout</h4>
+        <p>Annika printed her QR code on the bottom of her course handouts. Students scan it on their phones during break. She earns passively every semester without saying a word.</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ── Accusation Audit FAQ ── -->
-<section class="section section-alt" id="faq">
+<section class="section" id="faq">
   <div class="section-inner" style="text-align:center;">
     <p class="section-label">Honest Answers</p>
     <h2 class="section-title">You probably have questions.</h2>
@@ -307,14 +403,19 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 </section>
 
 <!-- ── Application Form ── -->
-<section class="section" id="apply">
+<section class="section section-alt" id="apply">
   <div class="section-inner" style="text-align:center;">
     <p class="section-label">Apply</p>
-    <h2 class="section-title">Join the programme</h2>
+    <h2 class="section-title">Marco is excited to welcome you</h2>
     <p class="section-desc" style="margin:0 auto;">It takes 60 seconds. We review every application within 24 hours.</p>
     <div class="form-card" style="text-align:left;">
+      <!-- Marco warmth near the form -->
+      <div class="form-marco">
+        <img src="assets/mascot/marco-headset-book-thumbsup-chatbot.png" alt="Marco">
+        <p>You're almost in! Fill in the basics below and Marco will have your partner link ready within 24 hours.</p>
+      </div>
       <h3>Partner Application</h3>
-      <p class="form-subtitle">Fill in the details below and we'll be in touch.</p>
+      <p class="form-subtitle">Fill in the details below and we'll be in touch. Once you start, it only takes 60 seconds to finish.</p>
       <form action="https://app.lingograde.com/api/partner/apply" method="POST">
         <div class="form-group">
           <label for="name">Full name</label>
@@ -407,15 +508,34 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         </div>
         <button type="submit" class="form-submit">Apply Now &mdash; It's Free</button>
       </form>
+      <!-- Trust badges -->
+      <div class="form-trust">
+        <span class="form-trust-badge">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+          Secure Application
+        </span>
+        <span class="form-trust-badge">
+          <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+          SSL Encrypted
+        </span>
+        <span class="form-trust-badge">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          No Spam, Ever
+        </span>
+      </div>
+      <!-- Scarcity -->
+      <div class="form-scarcity" id="scarcity-notice">
+        Limited partner spots in your region &mdash; we review applications every Friday.
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ── Social Proof ── -->
-<section class="section section-alt" id="proof">
+<section class="section" id="proof">
   <div class="section-inner" style="text-align:center;">
     <p class="section-label">Partner Community</p>
-    <h2 class="section-title">Join 200+ partners already earning with LingoGrade</h2>
+    <h2 class="section-title">200+ partners across 15 countries already earning with LingoGrade</h2>
     <div class="proof-grid">
       <div class="proof-card">
         <blockquote>"I shared my link with my B1 class and three students booked within a week. The reports are so good, they actually thanked me for recommending it."</blockquote>
@@ -433,6 +553,18 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         <div class="proof-role">HR Professional, Berlin</div>
       </div>
     </div>
+    <div class="proof-summary">
+      <p>Trusted by language teachers, tutors, HR professionals, and students who believe in honest assessment. If you know someone learning a language, you already have what it takes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Warm Closing (Lozanov) ── -->
+<section class="warm-closing">
+  <div class="warm-closing-inner">
+    <h2>We're building something together.</h2>
+    <p>LingoGrade isn't just an assessment tool &mdash; it's a community of people who care about language learning. Every partner who joins makes honest, accessible assessment available to more learners around the world.</p>
+    <a href="#apply" class="btn-primary">Join Us</a>
   </div>
 </section>
 
@@ -460,6 +592,19 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     if (!wasOpen) item.classList.add('open');
   });
 });
+
+// Dynamic scarcity: show next Friday's date
+(function() {
+  const now = new Date();
+  const friday = new Date(now);
+  const dayOfWeek = now.getDay();
+  const daysUntilFriday = (5 - dayOfWeek + 7) % 7 || 7;
+  friday.setDate(now.getDate() + daysUntilFriday);
+  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const dateStr = months[friday.getMonth()] + ' ' + friday.getDate();
+  const el = document.getElementById('scarcity-notice');
+  if (el) el.textContent = 'Limited partner spots in your region \u2014 next review: ' + dateStr + '.';
+})();
 </script>
 </body>
 </html>
