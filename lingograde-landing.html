@@ -36,9 +36,13 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 32px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
 .nav-brand { font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); text-decoration: none; }
 .nav-brand span { color: var(--accent); }
-.nav-links { display: flex; gap: 32px; align-items: center; }
-.nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; transition: color 0.15s; }
-.nav-links a:hover { color: var(--accent); }
+.nav-menu { display: flex; gap: 28px; align-items: center; }
+.nav-menu a { font-size: 0.875rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; transition: color 0.15s; }
+.nav-menu a:hover { color: var(--accent); }
+.nav-signin { padding: 8px 16px; border: 1.5px solid var(--border); border-radius: 8px; transition: all 0.15s; }
+.nav-signin:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
+.nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+.nav-hamburger span { display: block; width: 24px; height: 2.5px; background: var(--ink); border-radius: 2px; transition: all 0.2s; }
 .nav-cta { display: inline-flex; align-items: center; padding: 8px 20px; background: var(--accent); color: white !important; border-radius: 8px; font-weight: 600; font-size: 0.875rem; transition: background 0.15s; }
 .nav-cta:hover { background: var(--accent-lt); }
 
@@ -151,7 +155,13 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .blocks { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
   .partner-card { grid-template-columns: 1fr; }
-  .nav-links a:not(.nav-cta) { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; flex-direction: column; gap: 0; padding: 8px 0; border-bottom: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .nav-menu.open { display: flex; }
+  .nav-menu a { padding: 12px 32px; font-size: 1rem; }
+  .nav-menu a:hover { background: var(--parchment); }
+  .nav-signin { margin: 4px 32px; text-align: center; }
+  .nav-cta { margin: 8px 32px 12px; text-align: center; justify-content: center; }
 }
 @media (max-width: 480px) {
   .steps { grid-template-columns: 1fr; }
@@ -165,13 +175,19 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <!-- ── Navigation ── -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="#" class="nav-brand">Lingo<span>Grade</span></a>
-    <div class="nav-links">
-      <a href="#how-it-works">How It Works</a>
-      <a href="#what-you-get">What You Get</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a href="#pricing" class="nav-cta">Book Assessment</a>
+    <a href="index.html" class="nav-brand"><img src="logo.png" alt="LingoGrade" style="height:64px; max-height:10vw; width:auto; display:block;"></a>
+    <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-menu">
+      <a href="index.html#pricing">Individual</a>
+      <a href="corporate.html">Corporate</a>
+      <a href="teachers.html">For Teachers</a>
+      <a href="partners.html">Partners</a>
+      <a href="index.html#languages">Languages</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="https://app.lingograde.com/login" class="nav-signin">Sign In</a>
+      <a href="index.html#pricing" class="nav-cta">Book Assessment</a>
     </div>
   </div>
 </nav>
