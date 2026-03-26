@@ -199,6 +199,42 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .plush-thumbs img { max-width: 120px; width: 100%; height: auto; border-radius: 10px; cursor: pointer; border: 2px solid transparent; transition: border-color 0.2s; }
 .plush-thumbs img:hover { border-color: var(--accent); }
 
+/* ── Sticker Guide ── */
+.sticker-guide { background: var(--parchment); }
+.sticker-guide-inner { max-width: var(--max-w); margin: 0 auto; }
+.guide-headline { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.25rem); color: var(--ink); margin-bottom: 8px; }
+.guide-headline em { font-style: normal; color: var(--accent); }
+.guide-subhead { font-size: 1rem; color: var(--ink-soft); margin-bottom: 40px; }
+.guide-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 48px; }
+.guide-step { background: var(--cream); border-radius: 14px; padding: 32px 24px; text-align: center; border: 1.5px solid var(--border); transition: border-color 0.2s; }
+.guide-step:hover { border-color: var(--accent); }
+.guide-step-icon { font-size: 2.5rem; margin-bottom: 16px; }
+.guide-step-num { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.guide-step h3 { font-family: var(--font-display); font-size: 1.25rem; color: var(--ink); margin-bottom: 10px; }
+.guide-step p { font-size: 0.9375rem; color: var(--ink-soft); line-height: 1.7; }
+.guide-rules { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 48px; }
+.guide-rule-box { border-radius: 14px; padding: 28px 24px; }
+.guide-rule-box.green { background: var(--success-bg); border: 1.5px solid var(--success); }
+.guide-rule-box.red { background: #FFF5F5; border: 1.5px solid var(--error); }
+.guide-rule-box h3 { font-family: var(--font-display); font-size: 1.125rem; margin-bottom: 16px; }
+.guide-rule-box.green h3 { color: var(--success); }
+.guide-rule-box.red h3 { color: var(--error); }
+.guide-rule-box ul { list-style: none; }
+.guide-rule-box ul li { font-size: 0.9375rem; color: var(--ink-soft); padding: 6px 0 6px 28px; position: relative; line-height: 1.6; }
+.guide-rule-box.green ul li::before { content: '\2713'; position: absolute; left: 0; top: 6px; color: var(--success); font-weight: 700; font-size: 1rem; }
+.guide-rule-box.red ul li::before { content: '\2717'; position: absolute; left: 0; top: 6px; color: var(--error); font-weight: 700; font-size: 1rem; }
+.challenge-box { border-radius: 16px; border: 2px solid var(--accent); background: linear-gradient(180deg, var(--accent-bg) 0%, var(--cream) 60%); padding: 40px; text-align: center; margin-bottom: 32px; }
+.challenge-box h3 { font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); margin-bottom: 16px; }
+.challenge-box p { font-size: 0.9375rem; color: var(--ink-soft); line-height: 1.7; max-width: 640px; margin: 0 auto 16px; }
+.challenge-box .loss-frame { font-size: 0.9375rem; color: var(--error); font-weight: 600; font-style: italic; max-width: 600px; margin: 0 auto 24px; }
+.progress-visual { max-width: 480px; margin: 0 auto; }
+.progress-bar-track { background: var(--border); border-radius: 100px; height: 32px; position: relative; overflow: hidden; margin-bottom: 8px; }
+.progress-bar-fill { background: linear-gradient(90deg, var(--accent) 0%, var(--success) 100%); height: 100%; border-radius: 100px; width: 100%; display: flex; align-items: center; justify-content: center; }
+.progress-bar-fill span { color: white; font-weight: 700; font-size: 0.8125rem; letter-spacing: 0.04em; }
+.progress-labels { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--ink-light); font-weight: 600; }
+.progress-labels .unlocked { color: var(--success); font-weight: 700; }
+.guide-smallprint { font-size: 0.75rem; color: var(--ink-light); text-align: center; max-width: 640px; margin: 0 auto; line-height: 1.7; }
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .brand-logo { font-size: 1.2rem; gap: 6px; }
@@ -220,6 +256,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .bundle-card { padding: 32px 24px; }
   .bundle-card [style*="grid-template-columns"] { grid-template-columns: 1fr !important; text-align: center; }
   .waitlist-form { flex-direction: column; }
+  .guide-steps { grid-template-columns: 1fr; gap: 20px; }
+  .guide-rules { grid-template-columns: 1fr; gap: 20px; }
+  .challenge-box { padding: 28px 20px; }
   .plush-main img { max-width: 220px; }
   .plush-thumbs { flex-direction: column; align-items: center; }
   .plush-thumbs img { max-width: 160px; }
@@ -288,6 +327,80 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         <p class="product-smallprint">Stickers are personalized with your referral QR code. Allow 3&ndash;5 business days for delivery.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ── Sticker Guide — How to Earn ── -->
+<section class="section sticker-guide">
+  <div class="section-inner sticker-guide-inner">
+    <div class="section-label">Sticker Guide</div>
+    <h2 class="guide-headline">Place it. Snap it. <em>Earn it.</em></h2>
+    <p class="guide-subhead">Three steps between you and EUR 5 credit per sticker.</p>
+
+    <!-- Steps -->
+    <div class="guide-steps">
+      <div class="guide-step">
+        <div class="guide-step-icon">&#128204;</div>
+        <div class="guide-step-num">Step 1</div>
+        <h3>Stick it right</h3>
+        <p>Firmly attach your Marco sticker to a visible surface &mdash; laptop, notebook, water bottle, window, wall. The QR code must stay scannable.</p>
+      </div>
+      <div class="guide-step">
+        <div class="guide-step-icon">&#128248;</div>
+        <div class="guide-step-num">Step 2</div>
+        <h3>Kiss Marco</h3>
+        <p>Take a selfie kissing your Marco plush with your placed sticker visible in the background.</p>
+      </div>
+      <div class="guide-step">
+        <div class="guide-step-icon">&#128176;</div>
+        <div class="guide-step-num">Step 3</div>
+        <h3>Earn EUR 5</h3>
+        <p>Upload your selfie. EUR 5 credit added to your account within 24h. Use it for any course on LingoGrade.</p>
+      </div>
+    </div>
+
+    <!-- Rules -->
+    <div class="guide-rules">
+      <div class="guide-rule-box green">
+        <h3>What counts</h3>
+        <ul>
+          <li>Sticker firmly glued to a permanent surface</li>
+          <li>QR code clearly visible and scannable</li>
+          <li>Marco plush in the selfie</li>
+          <li>At least one placed sticker visible in background</li>
+        </ul>
+      </div>
+      <div class="guide-rule-box red">
+        <h3>What does NOT count</h3>
+        <ul>
+          <li>Sticker held in hand or on paper</li>
+          <li>QR code covered or damaged</li>
+          <li>No plush in photo</li>
+          <li>Digital overlays or edits</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 30-Sticker Challenge -->
+    <div class="challenge-box">
+      <h3>The 30-Sticker Challenge &mdash; Unlock Your Payout</h3>
+      <p><strong>Use all 30. Unlock everything.</strong></p>
+      <p>Place all 30 stickers from your pack. Selfie each one. When all 30 are verified, your full commission balance becomes available for payout.</p>
+      <p>30 stickers placed = 30 permanent billboards for your referral link. That is when we know you are serious &mdash; and that is when we pay out.</p>
+      <p class="loss-frame">Every unplaced sticker is a referral you will never get. Every missing selfie delays your payout.</p>
+      <div class="progress-visual">
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill"><span>30 / 30 VERIFIED</span></div>
+        </div>
+        <div class="progress-labels">
+          <span>0 / 30</span>
+          <span class="unlocked">30 / 30 = PAYOUT UNLOCKED</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Small print -->
+    <p class="guide-smallprint">EUR 5 credit per verified selfie. Credit is redeemable for LingoGrade courses only, not cashable. Commission payout requires all 30 stickers from your pack to be placed and verified via selfie. Verification within 24 hours.</p>
   </div>
 </section>
 
