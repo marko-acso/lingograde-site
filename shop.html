@@ -11,9 +11,9 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marco's Shop — LingoGrade</title>
-<meta name="description" content="Sticker packs, plush owls, and bundles. Everything you need to spread the word and earn while doing it.">
-<meta property="og:title" content="Marco's Shop — LingoGrade">
+<title>Kiss. Snap. Earn. — LingoGrade</title>
+<meta name="description" content="Get your Marco. Place stickers. Earn real money. It is that simple.">
+<meta property="og:title" content="Kiss. Snap. Earn. — LingoGrade">
 <meta property="og:description" content="Sticker packs, plush owls, and bundles. Spread the word and earn while doing it.">
 <meta property="og:image" content="og-image.png">
 <meta property="og:type" content="website">
@@ -22,17 +22,17 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
-  --ink: #1C1C1C;
-  --ink-soft: #4A4A4A;
+  --ink: #E0E0E0;
+  --ink-soft: #B0B0B0;
   --ink-light: #8A8A8A;
   --accent: #2563AB;
   --accent-lt: #3B82F6;
-  --accent-bg: #EFF6FF;
-  --cream: #FFFFFF;
-  --parchment: #F8F8F8;
-  --border: #E0E0E0;
+  --accent-bg: rgba(37,99,171,0.12);
+  --cream: #121212;
+  --parchment: #1e1e1e;
+  --border: #2a2a2a;
   --success: #27AE60;
-  --success-bg: #F0FFF4;
+  --success-bg: rgba(39,174,96,0.1);
   --warn: #E67E22;
   --error: #C0392B;
   --purple: #7B4F9E;
@@ -42,10 +42,10 @@
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: var(--font-body); color: var(--ink); background: var(--cream); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font-body); color: var(--ink); background: var(--cream); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
 /* ── Navigation ── */
-.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(18,18,18,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
 .nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 4px 32px; height: auto; display: flex; align-items: center; justify-content: space-between; }
 .nav-brand { font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); text-decoration: none; }
 .nav-brand span { color: var(--accent); }
@@ -69,7 +69,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .marco-img { max-width: 100%; height: auto; background: transparent; }
 
 /* ── Hero ── */
-.hero { padding: 90px 32px 8px; text-align: center; background: linear-gradient(180deg, var(--accent-bg) 0%, var(--cream) 100%); }
+.hero { padding: 90px 32px 8px; text-align: center; background: linear-gradient(180deg, rgba(37,99,171,0.15) 0%, var(--cream) 100%); }
 .hero-inner { max-width: 720px; margin: 0 auto; }
 .hero h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.2; color: var(--ink); margin-bottom: 8px; }
 .hero h1 em { font-style: normal; color: var(--accent); }
@@ -88,6 +88,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .product-card {
   border-radius: 16px;
   border: 2px solid var(--border);
+  background: #1e1e1e;
   padding: 48px 40px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -97,7 +98,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   transition: border-color 0.2s;
 }
 .product-card:hover { border-color: var(--accent); }
-.product-card.featured { border-color: var(--accent); background: linear-gradient(180deg, var(--accent-bg) 0%, var(--cream) 60%); position: relative; }
+.product-card.featured { border-color: var(--accent); background: linear-gradient(180deg, rgba(37,99,171,0.12) 0%, #1e1e1e 60%); position: relative; }
 .product-card.featured::before {
   content: 'FEATURED';
   position: absolute;
@@ -136,7 +137,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
 /* ── Waitlist form ── */
 .waitlist-form { display: flex; gap: 8px; margin-top: 16px; }
-.waitlist-form input { flex: 1; padding: 12px 16px; border: 1.5px solid var(--border); border-radius: 8px; font-family: var(--font-body); font-size: 0.9375rem; outline: none; transition: border-color 0.15s; }
+.waitlist-form input { flex: 1; padding: 12px 16px; border: 1.5px solid var(--border); border-radius: 8px; font-family: var(--font-body); font-size: 0.9375rem; outline: none; transition: border-color 0.15s; background: #1e1e1e; color: var(--ink); }
 .waitlist-form input:focus { border-color: var(--accent); }
 .waitlist-form button { padding: 12px 24px; background: var(--accent); color: white; border: none; border-radius: 8px; font-family: var(--font-body); font-weight: 600; font-size: 0.875rem; cursor: pointer; transition: background 0.15s; white-space: nowrap; }
 .waitlist-form button:hover { background: var(--accent-lt); }
@@ -145,7 +146,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .bundle-card {
   border-radius: 16px;
   border: 2px solid var(--success);
-  background: linear-gradient(180deg, var(--success-bg) 0%, var(--cream) 60%);
+  background: linear-gradient(180deg, rgba(39,174,96,0.1) 0%, #1e1e1e 60%);
   padding: 48px 40px;
   text-align: center;
   margin-top: 40px;
@@ -170,7 +171,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .mega-bundle {
   border-radius: 20px;
   border: 3px solid var(--success);
-  background: linear-gradient(180deg, var(--success-bg) 0%, #FFFEF5 40%, var(--cream) 100%);
+  background: linear-gradient(180deg, rgba(39,174,96,0.1) 0%, #1a1a1a 40%, #1e1e1e 100%);
   padding: 56px 48px;
   margin-top: 40px;
   position: relative;
@@ -200,7 +201,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .mega-price-block { text-align: center; margin-bottom: 24px; }
 .mega-price-old { font-size: 1.5rem; color: var(--ink-light); text-decoration: line-through; font-family: var(--font-body); margin-bottom: 4px; }
 .mega-price-new { font-family: var(--font-display); font-size: 3.5rem; color: var(--success); line-height: 1.1; margin-bottom: 8px; }
-.mega-price-save { display: inline-flex; align-items: center; gap: 8px; font-size: 1.125rem; font-weight: 700; color: var(--error); background: #FFF5F5; padding: 8px 20px; border-radius: 100px; }
+.mega-price-save { display: inline-flex; align-items: center; gap: 8px; font-size: 1.125rem; font-weight: 700; color: var(--error); background: rgba(192,57,43,0.1); padding: 8px 20px; border-radius: 100px; }
 .mega-price-save img { height: 22px; width: auto; }
 .mega-urgency { max-width: 540px; margin: 24px auto 0; }
 .mega-urgency p { font-size: 0.9375rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 8px; }
@@ -213,7 +214,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .bundle-card.starter::before { content: 'STARTER'; background: var(--ink-light); }
 
 /* ── Need More Stickers ── */
-.need-more-box { border-radius: 14px; border: 1.5px dashed var(--accent); background: var(--accent-bg); padding: 32px; text-align: center; margin-top: 40px; }
+.need-more-box { border-radius: 14px; border: 1.5px dashed var(--accent); background: rgba(37,99,171,0.08); padding: 32px; text-align: center; margin-top: 40px; }
 .need-more-box h3 { font-family: var(--font-display); font-size: 1.25rem; color: var(--ink); margin-bottom: 12px; }
 .need-more-box p { font-size: 0.9375rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 20px; }
 .bundle-card h2 { font-family: var(--font-display); font-size: 1.75rem; color: var(--ink); margin-bottom: 12px; }
@@ -258,7 +259,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .guide-headline em { font-style: normal; color: var(--accent); }
 .guide-subhead { font-size: 1rem; color: var(--ink-soft); margin-bottom: 40px; }
 .guide-steps { display: flex; gap: 32px; margin-bottom: 48px; align-items: stretch; }
-.guide-step { flex: 1 1 0; display: flex; flex-direction: column; align-items: center; background: var(--cream); border-radius: 14px; padding: 32px 24px; text-align: center; border: 1.5px solid var(--border); transition: border-color 0.2s; }
+.guide-step { flex: 1 1 0; display: flex; flex-direction: column; align-items: center; background: #1e1e1e; border-radius: 14px; padding: 32px 24px; text-align: center; border: 1.5px solid var(--border); transition: border-color 0.2s; }
 .guide-step:hover { border-color: var(--accent); }
 .guide-step-icon { font-size: 2.5rem; margin-bottom: 16px; height: 2.5rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .guide-step-num { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; flex-shrink: 0; }
@@ -281,7 +282,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 /* ── Step Modal (mobile bottom-sheet) ── */
 .step-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 9998; }
 .step-modal-overlay.active { display: block; }
-.step-modal { position: fixed; bottom: 0; left: 0; right: 0; max-height: 50vh; background: #fff; border-radius: 18px 18px 0 0; padding: 28px 24px 36px; z-index: 9999; transform: translateY(100%); transition: transform 0.32s cubic-bezier(.4,.0,.2,1); box-shadow: 0 -4px 32px rgba(0,0,0,0.15); }
+.step-modal { position: fixed; bottom: 0; left: 0; right: 0; max-height: 50vh; background: #1e1e1e; border-radius: 18px 18px 0 0; padding: 28px 24px 36px; z-index: 9999; transform: translateY(100%); transition: transform 0.32s cubic-bezier(.4,.0,.2,1); box-shadow: 0 -4px 32px rgba(0,0,0,0.4); }
 .step-modal.active { transform: translateY(0); }
 .step-modal-handle { width: 40px; height: 4px; border-radius: 2px; background: #CBD5E1; margin: 0 auto 18px; }
 .step-modal-title { font-family: var(--font-display); font-size: 1.125rem; color: var(--ink); margin-bottom: 10px; text-align: center; }
@@ -290,7 +291,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .guide-rules { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 48px; }
 .guide-rule-box { border-radius: 14px; padding: 28px 24px; }
 .guide-rule-box.green { background: var(--success-bg); border: 1.5px solid var(--success); }
-.guide-rule-box.red { background: #FFF5F5; border: 1.5px solid var(--error); }
+.guide-rule-box.red { background: rgba(192,57,43,0.08); border: 1.5px solid var(--error); }
 .guide-rule-box h3 { font-family: var(--font-display); font-size: 1.125rem; margin-bottom: 16px; }
 .guide-rule-box.green h3 { color: var(--success); }
 .guide-rule-box.red h3 { color: var(--error); }
@@ -298,7 +299,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .guide-rule-box ul li { font-size: 0.9375rem; color: var(--ink-soft); padding: 6px 0 6px 28px; position: relative; line-height: 1.6; }
 .guide-rule-box.green ul li::before { content: '\2713'; position: absolute; left: 0; top: 6px; color: var(--success); font-weight: 700; font-size: 1rem; }
 .guide-rule-box.red ul li::before { content: '\2717'; position: absolute; left: 0; top: 6px; color: var(--error); font-weight: 700; font-size: 1rem; }
-.challenge-box { border-radius: 16px; border: 2px solid var(--accent); background: linear-gradient(180deg, var(--accent-bg) 0%, var(--cream) 60%); padding: 40px; text-align: center; margin-bottom: 32px; }
+.challenge-box { border-radius: 16px; border: 2px solid var(--accent); background: linear-gradient(180deg, rgba(37,99,171,0.12) 0%, #1e1e1e 60%); padding: 40px; text-align: center; margin-bottom: 32px; }
 .challenge-box h3 { font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); margin-bottom: 16px; }
 .challenge-box p { font-size: 0.9375rem; color: var(--ink-soft); line-height: 1.7; max-width: 640px; margin: 0 auto 16px; }
 .challenge-box .loss-frame { font-size: 0.9375rem; color: var(--error); font-weight: 600; font-style: italic; max-width: 600px; margin: 0 auto 24px; }
@@ -309,6 +310,11 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .progress-labels { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--ink-light); font-weight: 600; }
 .progress-labels .unlocked { color: var(--success); font-weight: 700; }
 .guide-smallprint { font-size: 0.75rem; color: var(--ink-light); text-align: center; max-width: 640px; margin: 0 auto; line-height: 1.7; }
+/* ── Collapsible details ── */
+details { margin-top:12px; }
+details summary { font-size:0.8rem; font-weight:600; color:#B0B0B0; cursor:pointer; padding:8px 0; }
+details[open] summary { color:#E0E0E0; }
+details > div, details > p { font-size:0.8rem; color:#777; line-height:1.6; padding:8px 0; }
 /* ── Scan Marco callout ── */
 .scan-marco-callout { margin-top: 16px; text-align: center; }
 .scan-marco-callout .scan-arrow { display: block; margin: 0 auto; }
@@ -521,21 +527,22 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .brand-logo { font-size: 1.2rem; gap: 6px; }
   .brand-logo img { height: 32px; }
   .nav-hamburger { display: flex; }
-  .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; flex-direction: column; gap: 0; padding: 8px 0; border-bottom: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #121212; flex-direction: column; gap: 0; padding: 8px 0; border-bottom: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
   .nav-menu.open { display: flex; }
   .nav-menu a { padding: 12px 32px; font-size: 1rem; }
   .nav-menu a:hover { background: var(--parchment); }
   .nav-signin { margin: 4px 32px; text-align: center; }
   .nav-cta { margin: 8px 32px 12px; text-align: center; justify-content: center; display: flex; }
   .nav-inner { padding: 8px 16px; }
-  .hero { padding: 100px 20px 16px; }
+  .hero { padding: 80px 12px 12px; }
   .hero h1 { font-size: clamp(1.6rem, 6vw, 2.4rem); }
   .hero p { font-size: 1rem; }
-  .section { padding: 60px 20px; }
+  .hero img { max-width: 200px; }
+  .section { padding: 32px 12px; }
   .hero + .section { padding-top: 16px; }
 
   /* Product cards: single column on mobile */
-  .product-card { grid-template-columns: 1fr; gap: 32px; padding: 20px; }
+  .product-card { grid-template-columns: 1fr; gap: 32px; padding: 12px; }
   .product-card img { max-width: 200px; }
   .product-img-wrap > img { max-width: 200px; }
   .plush-main img { max-width: 200px; }
@@ -558,20 +565,20 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .btn-primary, .btn-secondary, .btn-success { width: 100%; justify-content: center; text-align: center; }
 
   /* Bundle card mobile padding */
-  .bundle-card { padding: 20px; margin: 40px 10px 0; }
+  .bundle-card { padding: 16px; margin: 24px 8px 0; }
   .bundle-card [style*="grid-template-columns"] { grid-template-columns: 1fr !important; text-align: center; }
 
   /* Mega bundle mobile */
-  .mega-bundle { padding: 20px; margin: 40px 10px 0; }
+  .mega-bundle { padding: 16px; margin: 24px 8px 0; }
   .mega-bundle [style*="grid-template-columns"] { grid-template-columns: 1fr !important; text-align: center; }
   .mega-price-save { font-size: 0.9375rem; flex-wrap: wrap; justify-content: center; }
 
   /* Sticker guide mobile */
-  .sticker-guide-inner { padding: 20px; }
+  .sticker-guide-inner { padding: 12px; }
   .guide-steps { flex-direction: column; gap: 20px; }
   .guide-rules { grid-template-columns: 1fr; gap: 20px; }
-  .challenge-box { padding: 20px; }
-  .need-more-box { padding: 20px; }
+  .challenge-box { padding: 12px; }
+  .need-more-box { padding: 12px; }
 
   /* Forms */
   .waitlist-form { flex-direction: column; }
@@ -590,9 +597,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .product-price { font-size: 1.5rem; }
   .bundle-price { font-size: 1.75rem; }
   .mega-price-new { font-size: 1.75rem; }
-  .product-card { padding: 16px; }
-  .bundle-card { padding: 16px; margin: 40px 6px 0; }
-  .mega-bundle { padding: 16px; margin: 40px 6px 0; }
+  .product-card { padding: 12px; }
+  .bundle-card { padding: 16px; margin: 24px 6px 0; }
+  .mega-bundle { padding: 16px; margin: 24px 6px 0; }
   .sticker-guide-inner { padding: 16px; }
 }
 </style>
@@ -622,10 +629,57 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <section class="hero">
   <div class="hero-inner">
     <img src="assets/mascot/marco-hero.png?v=3" alt="Marco the owl" class="marco-img" style="max-width:120px;margin:0 auto 8px;display:block;">
-    <h1><em>Marco's</em> Shop</h1>
-    <p>Everything you need to spread the word and earn while doing it.</p>
+    <h1><em>Kiss. Snap. Earn.</em></h1>
+    <p>Get your Marco. Place stickers. Earn real money. It is that simple.</p>
+    <p style="margin-top:16px;font-size:0.9375rem;font-weight:600;color:var(--accent);letter-spacing:0.02em;">127 people already earning</p>
   </div>
 </section>
+
+<div style="display:flex;justify-content:center;gap:12px;padding:16px;flex-wrap:wrap;">
+  <a href="#individual" style="padding:8px 20px;background:#1e1e1e;color:#B0B0B0;border-radius:20px;text-decoration:none;font-size:0.85rem;border:1px solid #2a2a2a;">Individual</a>
+  <a href="#kids" style="padding:8px 20px;background:#1e1e1e;color:#B0B0B0;border-radius:20px;text-decoration:none;font-size:0.85rem;border:1px solid #2a2a2a;">Kids</a>
+  <a href="#corporate" style="padding:8px 20px;background:#1e1e1e;color:#B0B0B0;border-radius:20px;text-decoration:none;font-size:0.85rem;border:1px solid #2a2a2a;">Corporate</a>
+  <a href="#partners" style="padding:8px 20px;background:#1e1e1e;color:#B0B0B0;border-radius:20px;text-decoration:none;font-size:0.85rem;border:1px solid #2a2a2a;">Partners</a>
+</div>
+
+<!-- ── Marco Plush ── -->
+<section class="section section-alt" id="individual">
+  <div class="section-inner">
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <div class="plush-gallery">
+          <div class="plush-main">
+            <img src="assets/mascot/Marco.png" alt="Marco the Owl plush — front view">
+          </div>
+          <div class="plush-thumbs">
+            <img src="assets/mascot/Marco2.png" alt="Marco plush — angle">
+            <img src="assets/mascot/Marco3.png" alt="Marco plush — side">
+            <img src="assets/mascot/Marco4.png" alt="Marco plush — three quarter">
+          </div>
+        </div>
+      </div>
+      <div class="product-info">
+        <h2>Meet Marco in person</h2>
+        <p>The official Marco the Owl plush. Approx. 18cm of pure warmth. Soft grey fur, mortarboard cap, round glasses. Comes with 30 personalized QR stickers &mdash; your referral link embedded invisibly in every one.</p>
+        <p style="margin-top:8px;">Kiss him, snap a selfie with your stickers, earn EUR 5 credit per placement.</p>
+        <p style="margin-top:12px;font-size:0.9375rem;color:var(--error);font-weight:600;font-style:italic;">The plush comes with 30 stickers. That is 30 potential referrals &mdash; 30 potential assessments &mdash; sitting in one box.</p>
+        <ul style="margin:16px 0;list-style:none;padding:0;font-size:0.9375rem;">
+          <li style="padding:6px 0 6px 28px;position:relative;"><span style="position:absolute;left:0;color:var(--success);font-weight:700;">&#10003;</span> Marco the Owl plush (approx. 18cm, soft grey plush, mortarboard cap, glasses, orange beak and feet)</li>
+          <li style="padding:6px 0 6px 28px;position:relative;"><span style="position:absolute;left:0;color:var(--success);font-weight:700;">&#10003;</span> 30 personalized stickers with your individual QR code (10 Marco, 10 Mila, 10 duo)</li>
+        </ul>
+        <div class="product-price">EUR 24.95</div>
+        <div class="product-price-note" style="font-size:0.8125rem;color:var(--ink-soft);margin-bottom:8px;">EUR 24.95 &mdash; includes Marco plush + 30 personalized QR stickers (worth EUR 19.95 separately)</div>
+        <div class="product-price-note">Free shipping in Europe</div>
+        <a href="https://app.lingograde.com/shop/marco-plush" class="btn-primary">Get My Marco &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="max-width:480px;margin:32px auto;padding:28px;background:#1e1e1e;border-radius:12px;text-align:center;border:1px solid #2a2a2a;">
+  <h3 style="color:#27AE60;margin:0 0 16px;">501% ROI</h3>
+  <p style="color:#B0B0B0;font-size:0.95rem;line-height:1.8;margin:0;">You spend EUR 24.95 on Marco. He comes with 30 stickers. Each sticker earns EUR 5 credit = EUR 150 total. That is a 501% return on a plush owl.</p>
+</div>
 
 <!-- ── MEGA BUNDLE ── -->
 <section class="section section-alt" id="mega-bundle">
@@ -757,7 +811,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <!-- Sticker design selector -->
           <div style="margin-bottom:16px;">
             <label for="sticker-set" style="display:block;font-weight:700;font-size:0.875rem;margin-bottom:6px;color:var(--ink);">Sticker design</label>
-            <select id="sticker-set" style="width:100%;max-width:360px;padding:10px 14px;border:2px solid var(--border);border-radius:8px;font-size:1rem;font-family:inherit;background:white;cursor:pointer;">
+            <select id="sticker-set" style="width:100%;max-width:360px;padding:10px 14px;border:2px solid var(--border);border-radius:8px;font-size:1rem;font-family:inherit;background:#1e1e1e;color:var(--ink);cursor:pointer;">
               <option value="marco">Marco &mdash; Marco solo</option>
               <option value="mila">Mila &mdash; Mila solo</option>
               <option value="corporate">Corporate &mdash; Marco + Mila in uniform</option>
@@ -772,7 +826,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
             <div style="display:flex;flex-direction:column;gap:10px;">
 
               <!-- Tier 1 -->
-              <label style="display:flex;align-items:center;gap:12px;padding:12px 16px;border:2px solid var(--border);border-radius:10px;cursor:pointer;transition:border-color .2s,box-shadow .2s;background:white;" class="sticker-tier-option" data-tier="1">
+              <label style="display:flex;align-items:center;gap:12px;padding:12px 16px;border:2px solid var(--border);border-radius:10px;cursor:pointer;transition:border-color .2s,box-shadow .2s;background:#1e1e1e;" class="sticker-tier-option" data-tier="1">
                 <input type="radio" name="sticker-tier" value="1" checked style="accent-color:var(--accent);width:18px;height:18px;flex-shrink:0;" onchange="updateStickerTotal()">
                 <div style="flex:1;">
                   <div style="font-weight:700;font-size:1rem;color:var(--ink);">1 Pack &mdash; Single Pack <span style="font-weight:400;font-size:0.8rem;color:var(--ink-light);">(35 stickers)</span></div>
@@ -781,7 +835,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
               </label>
 
               <!-- Tier 2 -->
-              <label style="display:flex;align-items:center;gap:12px;padding:12px 16px;border:2px solid var(--border);border-radius:10px;cursor:pointer;transition:border-color .2s,box-shadow .2s;background:white;" class="sticker-tier-option" data-tier="2">
+              <label style="display:flex;align-items:center;gap:12px;padding:12px 16px;border:2px solid var(--border);border-radius:10px;cursor:pointer;transition:border-color .2s,box-shadow .2s;background:#1e1e1e;" class="sticker-tier-option" data-tier="2">
                 <input type="radio" name="sticker-tier" value="2" style="accent-color:var(--accent);width:18px;height:18px;flex-shrink:0;" onchange="updateStickerTotal()">
                 <div style="flex:1;">
                   <div style="font-weight:700;font-size:1rem;color:var(--ink);">2 Packs &mdash; Double Pack <span style="font-weight:400;font-size:0.8rem;color:var(--ink-light);">(70 stickers)</span></div>
@@ -791,7 +845,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
               </label>
 
               <!-- Tier 3 -->
-              <label style="display:flex;align-items:center;gap:12px;padding:12px 16px;border:2px solid var(--accent);border-radius:10px;cursor:pointer;transition:border-color .2s,box-shadow .2s;background:linear-gradient(135deg,#fffbeb,#fef3c7);position:relative;box-shadow:0 0 0 1px var(--accent);" class="sticker-tier-option" data-tier="3">
+              <label style="display:flex;align-items:center;gap:12px;padding:12px 16px;border:2px solid var(--accent);border-radius:10px;cursor:pointer;transition:border-color .2s,box-shadow .2s;background:linear-gradient(135deg,rgba(37,99,171,0.15),rgba(37,99,171,0.08));position:relative;box-shadow:0 0 0 1px var(--accent);" class="sticker-tier-option" data-tier="3">
                 <span style="position:absolute;top:-10px;right:12px;background:var(--accent);color:white;font-weight:800;font-size:0.7rem;padding:3px 10px;border-radius:20px;letter-spacing:0.04em;text-transform:uppercase;">Most Popular</span>
                 <input type="radio" name="sticker-tier" value="3" style="accent-color:var(--accent);width:18px;height:18px;flex-shrink:0;" onchange="updateStickerTotal()">
                 <div style="flex:1;">
@@ -901,25 +955,41 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <!-- Small print -->
     <div class="guide-smallprint" style="max-width:640px;margin:0 auto;">
       <p style="margin-bottom:8px;">EUR 5 credit per verified selfie. Credit is non-transferable and non-cashable. Verification within 24 hours.</p>
-      <p style="margin-bottom:4px;font-weight:600;color:var(--ink);">Credit tiers (what you can spend credit on):</p>
-      <ul style="list-style:none;text-align:left;font-size:0.75rem;line-height:1.8;">
-        <li><strong>0 &ndash; 10 verified stickers:</strong> Credit redeemable for sticker packs and courses only.</li>
-        <li><strong>11 &ndash; 20 verified stickers:</strong> Unlocks mugs, plush, and accessories.</li>
-        <li><strong>21+ verified stickers:</strong> Full shop access.</li>
-      </ul>
+      <details>
+        <summary>Credit tiers</summary>
+        <div>
+          <ul style="list-style:none;text-align:left;font-size:0.75rem;line-height:1.8;">
+            <li><strong>0 &ndash; 10 verified stickers:</strong> Credit redeemable for sticker packs and courses only.</li>
+            <li><strong>11 &ndash; 20 verified stickers:</strong> Unlocks mugs, plush, and accessories.</li>
+            <li><strong>21+ verified stickers:</strong> Full shop access.</li>
+          </ul>
+        </div>
+      </details>
       <p style="margin-top:8px;font-weight:600;color:var(--ink);font-size:0.75rem;">How you earn:</p>
       <p style="font-size:0.75rem;line-height:1.8;"><strong>EUR 5 credit</strong> per verified sticker selfie &mdash; spendable immediately on courses, stickers, and shop items (tier-dependent). <strong>Commission</strong> on every assessment booked through your referral stickers. Your earnings accumulate in your account &mdash; both selfie credit and referral commission.</p>
-      <p style="margin-top:8px;font-weight:600;color:var(--ink);font-size:0.75rem;">Cash withdrawal:</p>
-      <p style="font-size:0.75rem;line-height:1.8;">Your full balance (selfie credit + referral commission) becomes eligible for <strong>cash withdrawal after 10 successful referral assessments</strong>. At 9 referrals, your balance stays in your account &mdash; you can spend it on LingoGrade products, but cannot withdraw cash. The moment referral #10 is completed, your entire accumulated balance unlocks for payout. Withdrawals are processed via Stripe.</p>
+      <details>
+        <summary>Cash withdrawal rules</summary>
+        <p style="font-size:0.75rem;line-height:1.8;">Your full balance (selfie credit + referral commission) becomes eligible for <strong>cash withdrawal after 10 successful referral assessments</strong>. At 9 referrals, your balance stays in your account &mdash; you can spend it on LingoGrade products, but cannot withdraw cash. The moment referral #10 is completed, your entire accumulated balance unlocks for payout. Withdrawals are processed via Stripe.</p>
+      </details>
     </div>
 
-    <p style="font-size:0.75rem;color:#888;max-width:720px;margin:16px auto 0;line-height:1.5;"><strong>Liability disclaimer:</strong> The sticker placer bears sole and exclusive responsibility for any and all damage claims, removal costs, fines, cleaning fees, property damage, removal requests, or complaints arising from sticker placement. LingoGrade accepts no liability whatsoever for stickers placed on any surface, whether or not the owner's permission was obtained. By placing stickers, you confirm that you have obtained all necessary permissions from the property owner and accept full personal liability for any consequences. Stickers placed on property without the owner's explicit written consent, in prohibited locations, or in violation of local regulations are entirely the placer's responsibility. LingoGrade reserves the right to withhold or revoke credit and commission if placement guidelines are violated. Payout is at LingoGrade's sole discretion and may be withheld if fraudulent activity, guideline violations, or disputes are identified. LingoGrade may modify payout terms, credit values, and programme conditions at any time without prior notice.</p>
+    <details style="max-width:720px;margin:16px auto 0;">
+      <summary>Liability disclaimer</summary>
+      <p>The sticker placer bears sole and exclusive responsibility for any and all damage claims, removal costs, fines, cleaning fees, property damage, removal requests, or complaints arising from sticker placement. LingoGrade accepts no liability whatsoever for stickers placed on any surface, whether or not the owner's permission was obtained. By placing stickers, you confirm that you have obtained all necessary permissions from the property owner and accept full personal liability for any consequences. Stickers placed on property without the owner's explicit written consent, in prohibited locations, or in violation of local regulations are entirely the placer's responsibility. LingoGrade reserves the right to withhold or revoke credit and commission if placement guidelines are violated. Payout is at LingoGrade's sole discretion and may be withheld if fraudulent activity, guideline violations, or disputes are identified. LingoGrade may modify payout terms, credit values, and programme conditions at any time without prior notice.</p>
+    </details>
 
-    <p style="font-size:0.75rem;color:#888;max-width:720px;margin:12px auto 0;line-height:1.5;"><strong>Image consent and waiver:</strong> By uploading a selfie, you grant LingoGrade an irrevocable, worldwide, royalty-free, perpetual licence to use, reproduce, modify, publish, and display your image on the LingoGrade website, social media channels, marketing materials, and any other promotional context. You waive any right to inspect or approve the finished product or the copy that may be used in connection with your image. You release LingoGrade, its officers, employees, and agents from any and all claims, demands, and causes of action arising out of or in connection with the use of your image, including but not limited to claims of defamation, invasion of privacy, right of publicity, or any third-party misuse. You expressly renounce any right to initiate legal proceedings or court claims against LingoGrade relating to the use, distribution, or third-party misuse of your uploaded image. This waiver is binding and irrevocable. LingoGrade reserves the right to reject, remove, or refuse to publish any submitted image at its sole discretion, including but not limited to images deemed inappropriate, offensive, or not meeting community standards. You may withdraw your consent and request removal of your photo at any time by emailing info@lingograde.com. Removal will be processed within 30 days, though copies already in circulation (print, third-party shares, cached versions) may persist beyond our control. LingoGrade may crop, resize, watermark, or overlay branding on submitted images. Submitted photos will not be used for facial recognition, AI training, or biometric processing. If other identifiable individuals appear in your selfie, you confirm that you have obtained their explicit consent to be photographed and published. <strong>Minimum age:</strong> You must be at least 18 years of age or have reached the age of legal majority in your country of residence to participate in the sticker programme and submit selfies. Submissions from minors will not be accepted.</p>
+    <details style="max-width:720px;margin:12px auto 0;">
+      <summary>Image consent and waiver</summary>
+      <p>By uploading a selfie, you grant LingoGrade an irrevocable, worldwide, royalty-free, perpetual licence to use, reproduce, modify, publish, and display your image on the LingoGrade website, social media channels, marketing materials, and any other promotional context. You waive any right to inspect or approve the finished product or the copy that may be used in connection with your image. You release LingoGrade, its officers, employees, and agents from any and all claims, demands, and causes of action arising out of or in connection with the use of your image, including but not limited to claims of defamation, invasion of privacy, right of publicity, or any third-party misuse. You expressly renounce any right to initiate legal proceedings or court claims against LingoGrade relating to the use, distribution, or third-party misuse of your uploaded image. This waiver is binding and irrevocable. LingoGrade reserves the right to reject, remove, or refuse to publish any submitted image at its sole discretion, including but not limited to images deemed inappropriate, offensive, or not meeting community standards. You may withdraw your consent and request removal of your photo at any time by emailing info@lingograde.com. Removal will be processed within 30 days, though copies already in circulation (print, third-party shares, cached versions) may persist beyond our control. LingoGrade may crop, resize, watermark, or overlay branding on submitted images. Submitted photos will not be used for facial recognition, AI training, or biometric processing. If other identifiable individuals appear in your selfie, you confirm that you have obtained their explicit consent to be photographed and published. <strong>Minimum age:</strong> You must be at least 18 years of age or have reached the age of legal majority in your country of residence to participate in the sticker programme and submit selfies. Submissions from minors will not be accepted.</p>
+    </details>
 
-    <p style="font-size:0.75rem;color:#888;max-width:720px;margin:12px auto 0;line-height:1.5;"><strong>Data protection notice (GDPR):</strong> The data controller is Acso Consulting LTD, Ul. Okolovrasten Pat 251, 621 Vh.1 Et.3 &mdash; Ring Tower, Sofia, Bulgaria. By submitting a selfie, you consent to the processing of your personal data (name, email address, photograph) for the purpose of verifying sticker placements, awarding credit, and publishing your image as described above. The legal basis for processing is your explicit consent (Article 6(1)(a) and Article 9(2)(a) GDPR). Your data will be retained for a period of 24 months from submission, after which it will be deleted unless you request earlier removal. Your data may be stored on servers operated by third-party providers (including Vercel, Supabase, and Cloudflare) which may process data outside the European Economic Area under Standard Contractual Clauses or equivalent safeguards. Your submitted photo may be shared publicly on the LingoGrade website and social media channels as described in the image consent above. No automated decision-making or profiling is applied to your submission.</p>
-
-    <p style="font-size:0.75rem;color:#888;max-width:720px;margin:12px auto 0;line-height:1.5;"><strong>Your rights under GDPR:</strong> You have the right to (a) access your personal data, (b) rectify inaccurate data, (c) request erasure of your data (&ldquo;right to be forgotten&rdquo;), (d) restrict processing, (e) data portability, (f) object to processing, and (g) withdraw consent at any time without affecting the lawfulness of processing carried out prior to withdrawal. To exercise any of these rights, contact info@lingograde.com. You also have the right to lodge a complaint with your national data protection supervisory authority. Consent is freely given and voluntary &mdash; refusal to consent will not affect your ability to use other LingoGrade services, but you will not be able to participate in the sticker programme or earn credit through selfie submissions.</p>
+    <details style="max-width:720px;margin:12px auto 0;">
+      <summary>Data protection (GDPR)</summary>
+      <div>
+        <p>The data controller is Acso Consulting LTD, Ul. Okolovrasten Pat 251, 621 Vh.1 Et.3 &mdash; Ring Tower, Sofia, Bulgaria. By submitting a selfie, you consent to the processing of your personal data (name, email address, photograph) for the purpose of verifying sticker placements, awarding credit, and publishing your image as described above. The legal basis for processing is your explicit consent (Article 6(1)(a) and Article 9(2)(a) GDPR). Your data will be retained for a period of 24 months from submission, after which it will be deleted unless you request earlier removal. Your data may be stored on servers operated by third-party providers (including Vercel, Supabase, and Cloudflare) which may process data outside the European Economic Area under Standard Contractual Clauses or equivalent safeguards. Your submitted photo may be shared publicly on the LingoGrade website and social media channels as described in the image consent above. No automated decision-making or profiling is applied to your submission.</p>
+        <p style="margin-top:8px;"><strong>Your rights under GDPR:</strong> You have the right to (a) access your personal data, (b) rectify inaccurate data, (c) request erasure of your data (&ldquo;right to be forgotten&rdquo;), (d) restrict processing, (e) data portability, (f) object to processing, and (g) withdraw consent at any time without affecting the lawfulness of processing carried out prior to withdrawal. To exercise any of these rights, contact info@lingograde.com. You also have the right to lodge a complaint with your national data protection supervisory authority. Consent is freely given and voluntary &mdash; refusal to consent will not affect your ability to use other LingoGrade services, but you will not be able to participate in the sticker programme or earn credit through selfie submissions.</p>
+      </div>
+    </details>
 
     <!-- Need More Stickers? -->
     <div class="need-more-box">
@@ -930,39 +1000,6 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   </div>
 </section>
 
-<!-- ── Marco Plush ── -->
-<section class="section section-alt">
-  <div class="section-inner">
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <div class="plush-gallery">
-          <div class="plush-main">
-            <img src="assets/mascot/Marco.png" alt="Marco the Owl plush — front view">
-          </div>
-          <div class="plush-thumbs">
-            <img src="assets/mascot/Marco2.png" alt="Marco plush — angle">
-            <img src="assets/mascot/Marco3.png" alt="Marco plush — side">
-            <img src="assets/mascot/Marco4.png" alt="Marco plush — three quarter">
-          </div>
-        </div>
-      </div>
-      <div class="product-info">
-        <h2>Meet Marco in person</h2>
-        <p>The official Marco the Owl plush. Approx. 18cm of pure warmth. Soft grey fur, mortarboard cap, round glasses. Comes with 30 personalized QR stickers &mdash; your referral link embedded invisibly in every one.</p>
-        <p style="margin-top:8px;">Kiss him, snap a selfie with your stickers, earn EUR 5 credit per placement.</p>
-        <p style="margin-top:12px;font-size:0.9375rem;color:var(--error);font-weight:600;font-style:italic;">The plush comes with 30 stickers. That is 30 potential referrals &mdash; 30 potential assessments &mdash; sitting in one box.</p>
-        <ul style="margin:16px 0;list-style:none;padding:0;font-size:0.9375rem;">
-          <li style="padding:6px 0 6px 28px;position:relative;"><span style="position:absolute;left:0;color:var(--success);font-weight:700;">&#10003;</span> Marco the Owl plush (approx. 18cm, soft grey plush, mortarboard cap, glasses, orange beak and feet)</li>
-          <li style="padding:6px 0 6px 28px;position:relative;"><span style="position:absolute;left:0;color:var(--success);font-weight:700;">&#10003;</span> 30 personalized stickers with your individual QR code (10 Marco, 10 Mila, 10 duo)</li>
-        </ul>
-        <div class="product-price">EUR 24.95</div>
-        <div class="product-price-note" style="font-size:0.8125rem;color:var(--ink-soft);margin-bottom:8px;">EUR 24.95 &mdash; includes Marco plush + 30 personalized QR stickers (worth EUR 19.95 separately)</div>
-        <div class="product-price-note">Free shipping in Europe</div>
-        <a href="https://app.lingograde.com/shop/marco-plush" class="btn-primary">Get Your Marco &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ── LingoGrade Mug (Coming Soon) ── -->
 <section class="section">
@@ -984,6 +1021,21 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     </div>
   </div>
 </section>
+<!-- ── LingoGrade Flashcard App ── -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Digital Products</div>
+    <div class="product-card" style="text-align:center;">
+      <img src="assets/mascot/marco-face-wink.png?v=3" alt="LingoGrade Flashcards" style="max-width:200px;width:100%;height:auto;background:transparent;">
+      <h2>LingoGrade Flashcards</h2>
+      <p style="color:#B0B0B0;">Anki-style spaced repetition powered by FSRS. Your stats feed directly into your lesson guidance.</p>
+      <div style="font-size:2rem;font-weight:700;color:#27AE60;margin:16px 0;">FREE</div>
+      <p style="color:#777;font-size:0.85rem;">Free for the first 50 users. Then Club tier. Then EUR 4.95/month.</p>
+      <a href="https://app.lingograde.com/flashcards" class="btn-primary" style="margin-top:16px;">Get Early Access</a>
+      <p style="color:#777;font-size:0.75rem;margin-top:8px;">PWA — works offline on any device.</p>
+    </div>
+  </div>
+</section>
 
 <!-- ── Trust Section ── -->
 <section class="section">
@@ -991,6 +1043,43 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <div class="trust-bar">
       <p><strong>Free shipping in Europe.</strong> 100% of tips go to your assessor. Every sticker scan is tracked in your partner dashboard.</p>
     </div>
+  </div>
+</section>
+
+
+<section class="section" id="kids">
+  <div class="section-inner" style="text-align:center;">
+    <div class="section-label">For Young Learners</div>
+    <h2 class="section-title">Kids Sticker Packs</h2>
+    <p style="color:#B0B0B0;">Coming soon. Age-appropriate designs for children aged 6-14.</p>
+    <a href="kids.html" style="color:#2563AB;">Learn more about Kids assessments</a>
+  </div>
+</section>
+
+<section class="section" id="corporate">
+  <div class="section-inner" style="text-align:center;">
+    <div class="section-label">For Companies</div>
+    <h2 class="section-title">Bulk Sticker Orders</h2>
+    <p style="color:#B0B0B0;">Custom-branded sticker packs for teams. Volume pricing available.</p>
+    <a href="corporate.html" class="btn-primary">Request Corporate Quote</a>
+  </div>
+</section>
+
+<section class="section" id="partners">
+  <div class="section-inner" style="text-align:center;">
+    <div class="section-label">For Partners</div>
+    <h2 class="section-title">Partner Sticker Programme</h2>
+    <p style="color:#B0B0B0;">Earn revenue with every referral. Get your personalized QR stickers.</p>
+    <a href="partners.html" class="btn-primary">Join the Partner Programme</a>
+  </div>
+</section>
+
+<section class="section" id="assessor" style="background:linear-gradient(135deg,#1a3a5c 0%,#2563AB 100%);padding:60px 20px;">
+  <div class="section-inner" style="text-align:center;max-width:640px;">
+    <div class="section-label" style="color:#93B5D0;">Join the Team</div>
+    <h2 class="section-title" style="color:#fff;">Become an Assessor</h2>
+    <p style="color:#93B5D0;font-size:1.1rem;line-height:1.7;margin-bottom:24px;">Don't miss out on being part of the best-ever trained assessment team on planet Terra. CEFR-certified. Professionally equipped. Making a real difference in language learning.</p>
+    <a href="teachers.html" class="btn-primary" style="background:#fff;color:#1a3a5c;">Apply Now</a>
   </div>
 </section>
 
@@ -1115,7 +1204,7 @@ function updateStickerTotal(){
     if(opt.getAttribute('data-tier') === '3'){
       opt.style.borderColor = isSel ? 'var(--accent)' : 'var(--border)';
       opt.style.boxShadow = isSel ? '0 0 0 1px var(--accent)' : 'none';
-      opt.style.background = isSel ? 'linear-gradient(135deg,#fffbeb,#fef3c7)' : 'white';
+      opt.style.background = isSel ? 'linear-gradient(135deg,rgba(37,99,171,0.15),rgba(37,99,171,0.08))' : '#1e1e1e';
     } else {
       opt.style.borderColor = isSel ? 'var(--accent)' : 'var(--border)';
       opt.style.boxShadow = isSel ? '0 0 0 1px var(--accent)' : 'none';
