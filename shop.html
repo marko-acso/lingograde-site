@@ -11,13 +11,13 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Marco Shop — LingoGrade</title>
+<title>Marco's Shop — LingoGrade</title>
 <meta name="description" content="Sticker packs, plush owls, and bundles. Everything you need to spread the word and earn while doing it.">
-<meta property="og:title" content="The Marco Shop — LingoGrade">
+<meta property="og:title" content="Marco's Shop — LingoGrade">
 <meta property="og:description" content="Sticker packs, plush owls, and bundles. Spread the word and earn while doing it.">
 <meta property="og:image" content="og-image.png">
 <meta property="og:type" content="website">
-<link rel="icon" type="image/png" href="assets/mascot/marco-logo-v5.png">
+<link rel="icon" type="image/gif" href="assets/mascot/marco-logo-v6.1.png?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
@@ -69,14 +69,15 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .marco-img { max-width: 100%; height: auto; }
 
 /* ── Hero ── */
-.hero { padding: 140px 32px 80px; text-align: center; background: linear-gradient(180deg, var(--accent-bg) 0%, var(--cream) 100%); }
+.hero { padding: 90px 32px 8px; text-align: center; background: linear-gradient(180deg, var(--accent-bg) 0%, var(--cream) 100%); }
 .hero-inner { max-width: 720px; margin: 0 auto; }
-.hero h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.2; color: var(--ink); margin-bottom: 20px; }
+.hero h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.2; color: var(--ink); margin-bottom: 8px; }
 .hero h1 em { font-style: normal; color: var(--accent); }
-.hero p { font-size: 1.125rem; color: var(--ink-soft); max-width: 560px; margin: 0 auto 32px; line-height: 1.7; }
+.hero p { font-size: 1.125rem; color: var(--ink-soft); max-width: 560px; margin: 0 auto 0; line-height: 1.7; }
 
 /* ── Section ── */
-.section { padding: 80px 32px; }
+.section { padding: 32px 32px; }
+.hero + .section { padding-top: 16px; }
 .section-inner { max-width: var(--max-w); margin: 0 auto; }
 .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
 .section-title { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.25rem); line-height: 1.3; color: var(--ink); margin-bottom: 16px; }
@@ -112,7 +113,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   letter-spacing: 0.06em;
 }
 .product-img-wrap { text-align: center; }
-.product-img-wrap img { max-width: 280px; width: 100%; height: auto; border-radius: 12px; }
+.product-img-wrap > img { max-width: 280px; width: 100%; height: auto; border-radius: 12px; }
 .product-info h2 { font-family: var(--font-display); font-size: 1.75rem; color: var(--ink); margin-bottom: 12px; line-height: 1.3; }
 .product-info p { font-size: 0.9375rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 16px; }
 .product-info ul { list-style: none; margin-bottom: 20px; }
@@ -176,7 +177,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   box-shadow: 0 8px 32px rgba(39,174,96,0.12);
 }
 .mega-bundle::before {
-  content: 'BEST VALUE — 25% OFF';
+  content: 'BEST VALUE — 28% OFF';
   position: absolute;
   top: -15px;
   left: 50%;
@@ -256,13 +257,36 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .guide-headline { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.25rem); color: var(--ink); margin-bottom: 8px; }
 .guide-headline em { font-style: normal; color: var(--accent); }
 .guide-subhead { font-size: 1rem; color: var(--ink-soft); margin-bottom: 40px; }
-.guide-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 48px; }
-.guide-step { background: var(--cream); border-radius: 14px; padding: 32px 24px; text-align: center; border: 1.5px solid var(--border); transition: border-color 0.2s; }
+.guide-steps { display: flex; gap: 32px; margin-bottom: 48px; align-items: stretch; }
+.guide-step { flex: 1 1 0; display: flex; flex-direction: column; align-items: center; background: var(--cream); border-radius: 14px; padding: 32px 24px; text-align: center; border: 1.5px solid var(--border); transition: border-color 0.2s; }
 .guide-step:hover { border-color: var(--accent); }
-.guide-step-icon { font-size: 2.5rem; margin-bottom: 16px; }
-.guide-step-num { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-.guide-step h3 { font-family: var(--font-display); font-size: 1.25rem; color: var(--ink); margin-bottom: 10px; }
+.guide-step-icon { font-size: 2.5rem; margin-bottom: 16px; height: 2.5rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.guide-step-num { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; flex-shrink: 0; }
+.guide-step h3 { font-family: var(--font-display); font-size: 1.25rem; color: var(--ink); margin-bottom: 10px; flex-shrink: 0; }
 .guide-step p { font-size: 0.9375rem; color: var(--ink-soft); line-height: 1.7; }
+.guide-step p:last-of-type { margin-bottom: 0; }
+
+/* ── Step Tooltip (desktop hover) ── */
+.guide-step { position: relative; cursor: default; }
+.guide-step h3 { margin-bottom: 0; }
+.step-tooltip { visibility: hidden; opacity: 0; position: absolute; left: 50%; transform: translateX(-50%) translateY(6px); bottom: calc(100% + 14px); width: max-content; max-width: 280px; background: #1A3A5C; color: #fff; font-size: 0.8125rem; line-height: 1.55; padding: 14px 16px; border-radius: 10px; box-shadow: 0 6px 24px rgba(0,0,0,0.18); z-index: 90; pointer-events: none; transition: opacity 0.2s, visibility 0.2s, transform 0.2s; }
+.step-tooltip::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 7px solid transparent; border-top-color: #1A3A5C; }
+@media (min-width: 769px) {
+  .guide-step:hover .step-tooltip { visibility: visible; opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+@media (max-width: 768px) {
+  .step-tooltip { display: none !important; }
+}
+
+/* ── Step Modal (mobile bottom-sheet) ── */
+.step-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 9998; }
+.step-modal-overlay.active { display: block; }
+.step-modal { position: fixed; bottom: 0; left: 0; right: 0; max-height: 50vh; background: #fff; border-radius: 18px 18px 0 0; padding: 28px 24px 36px; z-index: 9999; transform: translateY(100%); transition: transform 0.32s cubic-bezier(.4,.0,.2,1); box-shadow: 0 -4px 32px rgba(0,0,0,0.15); }
+.step-modal.active { transform: translateY(0); }
+.step-modal-handle { width: 40px; height: 4px; border-radius: 2px; background: #CBD5E1; margin: 0 auto 18px; }
+.step-modal-title { font-family: var(--font-display); font-size: 1.125rem; color: var(--ink); margin-bottom: 10px; text-align: center; }
+.step-modal-body { font-size: 0.9375rem; color: var(--ink-soft); line-height: 1.7; text-align: center; }
+
 .guide-rules { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 48px; }
 .guide-rule-box { border-radius: 14px; padding: 28px 24px; }
 .guide-rule-box.green { background: var(--success-bg); border: 1.5px solid var(--success); }
@@ -280,71 +304,228 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .challenge-box .loss-frame { font-size: 0.9375rem; color: var(--error); font-weight: 600; font-style: italic; max-width: 600px; margin: 0 auto 24px; }
 .progress-visual { max-width: 480px; margin: 0 auto; }
 .progress-bar-track { background: var(--border); border-radius: 100px; height: 32px; position: relative; overflow: hidden; margin-bottom: 8px; }
-.progress-bar-fill { background: linear-gradient(90deg, var(--accent) 0%, var(--success) 100%); height: 100%; border-radius: 100px; width: 100%; display: flex; align-items: center; justify-content: center; }
+.progress-bar-fill { background: linear-gradient(90deg, var(--accent) 0%, var(--success) 100%); height: 100%; border-radius: 100px; width: 0%; display: flex; align-items: center; justify-content: center; }
 .progress-bar-fill span { color: white; font-weight: 700; font-size: 0.8125rem; letter-spacing: 0.04em; }
 .progress-labels { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--ink-light); font-weight: 600; }
 .progress-labels .unlocked { color: var(--success); font-weight: 700; }
 .guide-smallprint { font-size: 0.75rem; color: var(--ink-light); text-align: center; max-width: 640px; margin: 0 auto; line-height: 1.7; }
+/* ── Scan Marco callout ── */
+.scan-marco-callout { margin-top: 16px; text-align: center; }
+.scan-marco-callout .scan-arrow { display: block; margin: 0 auto; }
 
-/* ── Sticker Fan Cards ── */
-.sticker-fan {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  height: 220px;
-  width: 300px;
+/* ── 3D Carousel ── */
+.carousel-scene {
+  --items: 5;
+  --radius: 150px;
+  --card-w: 120px;
+  --card-h: 160px;
+  width: 100%;
+  max-width: 340px;
+  height: 260px;
   margin: 0 auto;
+  perspective: 600px;
+  padding: 16px 0 12px;
+  overflow: visible;
 }
-.sticker-card {
+.carousel-ring {
+  width: var(--card-w);
+  height: var(--card-h);
+  margin: 0 auto;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.carousel-radio { display: none; }
+.carousel-card {
   position: absolute;
-  width: 140px;
-  height: 180px;
+  top: 0; left: 0;
+  width: var(--card-w);
+  height: var(--card-h);
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease, filter 0.6s ease;
+  cursor: pointer;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+.carousel-card-inner {
+  width: 100%;
+  height: 100%;
   background: white;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
-  transition: transform 0.3s ease;
+  padding: 10px 8px 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  border: 2.5px solid var(--border);
+  transition: border-color 0.3s, box-shadow 0.3s;
+  position: relative;
 }
-.sticker-card img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
+/* Card positions: 5 items, 72deg apart */
+.carousel-card:nth-child(2) { --angle: 0deg; }
+.carousel-card:nth-child(3) { --angle: 72deg; }
+.carousel-card:nth-child(4) { --angle: 144deg; }
+.carousel-card:nth-child(5) { --angle: 216deg; }
+.carousel-card:nth-child(6) { --angle: 288deg; }
+.carousel-card {
+  transform: rotateY(var(--angle)) translateZ(var(--radius));
+  opacity: 0.45;
+  filter: brightness(0.82) blur(0.5px);
 }
-.sticker-card span {
-  margin-top: 8px;
-  font-weight: 700;
-  font-size: 0.85rem;
-}
-.sticker-card.blue {
-  border: 4px solid #2563AB;
-  transform: rotate(-12deg) translateX(-50px);
-  z-index: 1;
-}
-.sticker-card.grey {
-  border: 4px solid #3A3A3A;
-  transform: rotate(0deg);
-  z-index: 3;
-}
-.sticker-card.gold {
-  border: 4px solid #C5960C;
-  transform: rotate(12deg) translateX(50px);
+/* Ring rotation per selected radio */
+.carousel-radio:nth-of-type(1):checked ~ .carousel-ring { transform: rotateY(0deg); }
+.carousel-radio:nth-of-type(2):checked ~ .carousel-ring { transform: rotateY(-72deg); }
+.carousel-radio:nth-of-type(3):checked ~ .carousel-ring { transform: rotateY(-144deg); }
+.carousel-radio:nth-of-type(4):checked ~ .carousel-ring { transform: rotateY(-216deg); }
+.carousel-radio:nth-of-type(5):checked ~ .carousel-ring { transform: rotateY(-288deg); }
+/* Front-facing card highlight */
+.carousel-radio:nth-of-type(1):checked ~ .carousel-ring .carousel-card:nth-child(2),
+.carousel-radio:nth-of-type(2):checked ~ .carousel-ring .carousel-card:nth-child(3),
+.carousel-radio:nth-of-type(3):checked ~ .carousel-ring .carousel-card:nth-child(4),
+.carousel-radio:nth-of-type(4):checked ~ .carousel-ring .carousel-card:nth-child(5),
+.carousel-radio:nth-of-type(5):checked ~ .carousel-ring .carousel-card:nth-child(6) {
+  opacity: 1;
+  filter: brightness(1) blur(0);
   z-index: 2;
 }
-.sticker-card.blue span { color: #2563AB; }
-.sticker-card.grey span { color: #3A3A3A; }
-.sticker-card.gold span { color: #C5960C; }
-.sticker-fan:hover .sticker-card.blue {
-  transform: rotate(-14.4deg) translateX(-60px);
+/* Campaign border + shadow on active */
+.carousel-radio:nth-of-type(1):checked ~ .carousel-ring .carousel-card:nth-child(2) .carousel-card-inner { border-color: #2563AB; box-shadow: 0 0 0 3px rgba(37,99,171,0.2), 0 8px 24px rgba(0,0,0,0.12); }
+.carousel-radio:nth-of-type(2):checked ~ .carousel-ring .carousel-card:nth-child(3) .carousel-card-inner { border-color: #C5960C; box-shadow: 0 0 0 3px rgba(197,150,12,0.2), 0 8px 24px rgba(0,0,0,0.12); }
+.carousel-radio:nth-of-type(3):checked ~ .carousel-ring .carousel-card:nth-child(4) .carousel-card-inner { border-color: #3A3A3A; box-shadow: 0 0 0 3px rgba(58,58,58,0.2), 0 8px 24px rgba(0,0,0,0.12); }
+.carousel-radio:nth-of-type(4):checked ~ .carousel-ring .carousel-card:nth-child(5) .carousel-card-inner { border-color: #27AE60; box-shadow: 0 0 0 3px rgba(39,174,96,0.2), 0 8px 24px rgba(0,0,0,0.12); }
+.carousel-radio:nth-of-type(5):checked ~ .carousel-ring .carousel-card:nth-child(6) .carousel-card-inner { border-color: #7B4F9E; box-shadow: 0 0 0 3px rgba(123,79,158,0.2), 0 8px 24px rgba(0,0,0,0.12); }
+/* Checkmark badge on active card */
+.carousel-radio:nth-of-type(1):checked ~ .carousel-ring .carousel-card:nth-child(2) .carousel-card-inner::after,
+.carousel-radio:nth-of-type(2):checked ~ .carousel-ring .carousel-card:nth-child(3) .carousel-card-inner::after,
+.carousel-radio:nth-of-type(3):checked ~ .carousel-ring .carousel-card:nth-child(4) .carousel-card-inner::after,
+.carousel-radio:nth-of-type(4):checked ~ .carousel-ring .carousel-card:nth-child(5) .carousel-card-inner::after,
+.carousel-radio:nth-of-type(5):checked ~ .carousel-ring .carousel-card:nth-child(6) .carousel-card-inner::after {
+  content: '\2713';
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  width: 20px;
+  height: 20px;
+  background: var(--accent);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.sticker-fan:hover .sticker-card.grey {
-  transform: rotate(0deg) translateY(-5px);
+/* Card inner elements */
+.carousel-card .card-brand {
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  margin-bottom: 6px;
+  white-space: nowrap;
 }
-.sticker-fan:hover .sticker-card.gold {
-  transform: rotate(14.4deg) translateX(60px);
+.carousel-card .card-brand .green-a {
+  color: #22c55e;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.carousel-card img {
+  width: 90%;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+.carousel-card .card-label {
+  font-weight: 700;
+  font-size: 0.7rem;
+  margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+}
+.carousel-card[data-color="blue"] .card-label { color: #2563AB; }
+.carousel-card[data-color="gold"] .card-label { color: #C5960C; }
+.carousel-card[data-color="grey"] .card-label { color: #3A3A3A; }
+.carousel-card[data-color="green"] .card-label { color: #27AE60; }
+.carousel-card[data-color="purple"] .card-label { color: #7B4F9E; }
+/* Inline price + launch text */
+.price-launch-line {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.price-launch-line .launch-tag {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--error);
+  white-space: nowrap;
+}
+/* Pack preview area */
+.pack-preview {
+  margin-top: 12px;
+  padding: 0 16px;
+  background: var(--parchment);
+  border-radius: 12px;
+  border: 1.5px solid var(--border);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+.pack-preview.visible { max-height: 300px; padding: 14px 16px; }
+.pack-preview h4 {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  margin-bottom: 10px;
+}
+.pack-preview-thumbs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.pack-preview-thumbs .preview-thumb {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  background: white;
+  border-radius: 8px;
+  border: 1.5px solid var(--border);
+  padding: 4px;
+}
+.preview-plus {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ink-light);
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+}
+.pack-preview-thumbs .preview-thumb.bonus-thumb {
+  border: 2px solid #C5960C;
+  background: linear-gradient(135deg, #FFFEF5 0%, #FFF8E1 100%);
+  position: relative;
+}
+.pack-preview-thumbs .preview-thumb.bonus-thumb::after {
+  content: '+5 BONUS';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.45rem;
+  font-weight: 700;
+  color: #C5960C;
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+}
+.pack-preview-desc {
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
 }
 
 /* ── Responsive ── */
@@ -359,28 +540,34 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .nav-signin { margin: 4px 32px; text-align: center; }
   .nav-cta { margin: 8px 32px 12px; text-align: center; justify-content: center; display: flex; }
   .nav-inner { padding: 8px 16px; }
-  .hero { padding: 100px 20px 60px; }
+  .hero { padding: 100px 20px 16px; }
   .hero h1 { font-size: clamp(1.6rem, 6vw, 2.4rem); }
   .hero p { font-size: 1rem; }
   .section { padding: 60px 20px; }
+  .hero + .section { padding-top: 16px; }
   .product-card { grid-template-columns: 1fr; gap: 32px; padding: 32px 24px; }
-  .product-img-wrap img { max-width: 200px; }
+  .product-img-wrap > img { max-width: 200px; }
   .bundle-card { padding: 32px 24px; }
   .bundle-card [style*="grid-template-columns"] { grid-template-columns: 1fr !important; text-align: center; }
   .mega-bundle { padding: 36px 24px; }
   .mega-bundle [style*="grid-template-columns"] { grid-template-columns: 1fr !important; text-align: center; }
   .mega-price-new { font-size: 2.5rem; }
   .waitlist-form { flex-direction: column; }
-  .guide-steps { grid-template-columns: 1fr; gap: 20px; }
+  .guide-steps { flex-direction: column; gap: 20px; }
   .guide-rules { grid-template-columns: 1fr; gap: 20px; }
   .challenge-box { padding: 28px 20px; }
   .plush-main img { max-width: 220px; }
   .plush-thumbs { flex-direction: column; align-items: center; }
   .plush-thumbs img { max-width: 160px; }
-  .sticker-fan { transform: scale(0.85); }
+  .carousel-scene { --radius: 120px; --card-w: 100px; --card-h: 136px; height: 230px; perspective: 500px; }
+  .carousel-card img { height: 55px; }
+  .carousel-card .card-label { font-size: 0.6rem; }
+  .carousel-card .card-brand { font-size: 0.45rem; }
 }
 @media (max-width: 480px) {
-  .sticker-fan { transform: scale(0.7); height: 180px; }
+  .carousel-scene { --radius: 100px; --card-w: 88px; --card-h: 120px; height: 210px; perspective: 450px; }
+  .carousel-card img { height: 45px; }
+  .carousel-card .card-label { font-size: 0.55rem; }
   .hero h1 { font-size: 1.75rem; }
   .section-title { font-size: 1.4rem; }
   .product-info h2 { font-size: 1.4rem; }
@@ -394,7 +581,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <!-- ── Navigation ── -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-v5.png" alt="Marco"> Lingo Gr<span class="brand-a">A</span>de</a>
+    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-v6.1.png?v=3" alt="Marco" width="38" height="38" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v5.png'"> LingoGr<span class="brand-a">A</span>de</a>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -413,8 +600,8 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <!-- ── Hero ── -->
 <section class="hero">
   <div class="hero-inner">
-    <img src="assets/mascot/marco-thumbsup.png" alt="Marco giving a thumbs up" class="marco-img" style="max-width:180px;margin:0 auto 32px;display:block;">
-    <h1>The <em>Marco</em> Shop</h1>
+    <img src="assets/mascot/marco-hero.png?v=2" alt="Marco the owl" class="marco-img" style="max-width:120px;margin:0 auto 8px;display:block;">
+    <h1><em>Marco's</em> Shop</h1>
     <p>Everything you need to spread the word and earn while doing it.</p>
   </div>
 </section>
@@ -425,36 +612,136 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <div class="section-label">Featured Product</div>
     <div class="product-card featured">
       <div class="product-img-wrap">
-        <div class="sticker-fan">
-          <div class="sticker-card blue">
-            <img src="assets/mascot/marco-face-wink.png" alt="Marco sticker">
-            <span>Marco</span>
+        <div class="carousel-scene" id="pack-carousel" role="radiogroup" aria-label="Choose sticker set">
+          <!-- Hidden radios drive the 3D rotation -->
+          <input class="carousel-radio" type="radio" name="pack-select" id="pack-radio-marco" value="marco" checked>
+          <input class="carousel-radio" type="radio" name="pack-select" id="pack-radio-mila" value="mila">
+          <input class="carousel-radio" type="radio" name="pack-select" id="pack-radio-corporate" value="corporate">
+          <input class="carousel-radio" type="radio" name="pack-select" id="pack-radio-playful" value="playful">
+          <input class="carousel-radio" type="radio" name="pack-select" id="pack-radio-kids" value="kids">
+          <div class="carousel-ring">
+            <label class="carousel-card" for="pack-radio-marco" data-pack="marco" data-color="blue">
+              <div class="carousel-card-inner">
+                <span class="card-brand">Lingo<span>Gr</span><span class="green-a">A</span><span>de</span></span>
+                <img src="assets/mascot/lingograde-card.png" alt="Marco Solo">
+                <span class="card-label">Marco</span>
+              </div>
+            </label>
+            <label class="carousel-card" for="pack-radio-mila" data-pack="mila" data-color="gold">
+              <div class="carousel-card-inner">
+                <span class="card-brand">Lingo<span>Gr</span><span class="green-a">A</span><span>de</span></span>
+                <img src="assets/mascot/lingograde-card-mila.png" alt="Mila Solo">
+                <span class="card-label">Mila</span>
+              </div>
+            </label>
+            <label class="carousel-card" for="pack-radio-corporate" data-pack="corporate" data-color="grey">
+              <div class="carousel-card-inner">
+                <span class="card-brand">Lingo<span>Gr</span><span class="green-a">A</span><span>de</span></span>
+                <img src="assets/mascot/lingograde-card-corporate.png" alt="Corporate">
+                <span class="card-label">Corporate</span>
+              </div>
+            </label>
+            <label class="carousel-card" for="pack-radio-playful" data-pack="playful" data-color="green">
+              <div class="carousel-card-inner">
+                <span class="card-brand">Lingo<span>Gr</span><span class="green-a">A</span><span>de</span></span>
+                <img src="assets/mascot/lingograde-card-kids.png" alt="Playful">
+                <span class="card-label">Playful</span>
+              </div>
+            </label>
+            <label class="carousel-card" for="pack-radio-kids" data-pack="kids" data-color="purple">
+              <div class="carousel-card-inner">
+                <span class="card-brand">Lingo<span>Gr</span><span class="green-a">A</span><span>de</span></span>
+                <img src="assets/mascot/marco-wave.png" alt="Kids">
+                <span class="card-label">Kids</span>
+              </div>
+            </label>
           </div>
-          <div class="sticker-card grey">
-            <img src="assets/mascot/marco-face-graduation.png" alt="Duo sticker">
-            <span>Duo</span>
+        </div>
+        <!-- Pack preview area (slides open on card click) -->
+        <div class="pack-preview" id="pack-preview">
+          <h4>Your collection includes:</h4>
+          <div class="pack-preview-thumbs" id="pack-preview-thumbs">
+            <img class="preview-thumb" src="assets/mascot/lingograde-card.png" alt="Design 1">
+            <img class="preview-thumb" src="assets/mascot/lingograde-card.png" alt="Design 2">
+            <img class="preview-thumb" src="assets/mascot/lingograde-card.png" alt="Design 3">
+            <span class="preview-plus">+</span>
+            <img class="preview-thumb bonus-thumb" src="assets/mascot/marco-logo-v6.1.png?v=2" alt="Bonus stickers">
           </div>
-          <div class="sticker-card gold">
-            <img src="assets/mascot/marco-face-party.png" alt="Mila sticker">
-            <span>Mila</span>
-          </div>
+          <p class="pack-preview-desc" id="pack-preview-desc">30 Marco stickers + 5 bonus standard</p>
         </div>
       </div>
       <div class="product-info">
-        <h2>Marco and Mila Sticker Pack</h2>
-        <p>30 premium stickers featuring Marco and Mila &mdash; each one a tiny billboard for your referral link. Scanning Marco triggers your personal referral link. Clean design, no visible QR code.</p>
+        <h2>Sticker Packs &mdash; Choose Your Set</h2>
+        <p>30 premium stickers + 5 bonus standard per pack &mdash; 35 stickers total. Each one a tiny billboard for your referral link. Invisible QR, no visible code. Five sets to choose from:</p>
         <ul>
-          <li><strong>10x Marco stickers</strong> &mdash; blue campaign</li>
-          <li><strong>10x Mila stickers</strong> &mdash; gold campaign</li>
-          <li><strong>10x Marco + Mila duo stickers</strong> &mdash; dark grey campaign</li>
+          <li><strong>Marco</strong> &mdash; Marco solo, classic</li>
+          <li><strong>Mila</strong> &mdash; Mila solo</li>
+          <li><strong>Corporate</strong> &mdash; Marco + Mila in uniform</li>
+          <li><strong>Playful</strong> &mdash; Marco + Mila casual</li>
+          <li><strong>Kids</strong> &mdash; fun and playful</li>
         </ul>
         <p><strong>Unlimited selfies</strong> &mdash; every NEW sticker location earns EUR 5 credit. Keep placing, keep earning.</p>
         <p style="font-size:0.9375rem;color:var(--ink-soft);margin-bottom:16px;">Gave your stickers away? No problem &mdash; they become referrals. Need more? <a href="#mega-bundle" style="color:var(--accent);font-weight:600;">Get another pack below.</a></p>
         <p class="product-highlight">"Every scan is a potential referral. Every referral earns you revenue share."</p>
-        <div class="scarcity"><img src="assets/mascot/marco-alarm.png" alt=""> Launch price &mdash; limited time</div>
-        <div class="product-price">EUR 9.90 <span class="old-price">EUR 14.90</span></div>
-        <div class="product-price-note">Launch price</div>
-        <a href="https://app.lingograde.com/shop/stickers" class="btn-primary">Get Your Sticker Pack &rarr;</a>
+        <div class="sticker-order-form" style="margin-top:20px;">
+          <!-- Sticker design selector -->
+          <div style="margin-bottom:16px;">
+            <label for="sticker-set" style="display:block;font-weight:700;font-size:0.875rem;margin-bottom:6px;color:var(--ink);">Sticker design</label>
+            <select id="sticker-set" style="width:100%;max-width:360px;padding:10px 14px;border:2px solid var(--border);border-radius:8px;font-size:1rem;font-family:inherit;background:white;cursor:pointer;">
+              <option value="marco">Marco &mdash; Marco solo</option>
+              <option value="mila">Mila &mdash; Mila solo</option>
+              <option value="corporate">Corporate &mdash; Marco + Mila in uniform</option>
+              <option value="playful">Playful &mdash; Marco + Mila casual</option>
+              <option value="kids">Kids &mdash; fun and playful</option>
+            </select>
+          </div>
+
+          <!-- Bundle tier selector -->
+          <fieldset id="sticker-tier-fieldset" style="border:none;padding:0;margin:0 0 16px 0;">
+            <legend style="font-weight:700;font-size:0.875rem;margin-bottom:10px;color:var(--ink);">Choose your bundle</legend>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+
+              <!-- Tier 1 -->
+              <label style="display:flex;align-items:center;gap:12px;padding:12px 16px;border:2px solid var(--border);border-radius:10px;cursor:pointer;transition:border-color .2s,box-shadow .2s;background:white;" class="sticker-tier-option" data-tier="1">
+                <input type="radio" name="sticker-tier" value="1" checked style="accent-color:var(--accent);width:18px;height:18px;flex-shrink:0;" onchange="updateStickerTotal()">
+                <div style="flex:1;">
+                  <div style="font-weight:700;font-size:1rem;color:var(--ink);">1 Pack &mdash; Single Pack <span style="font-weight:400;font-size:0.8rem;color:var(--ink-light);">(35 stickers)</span></div>
+                  <div style="font-size:0.85rem;color:var(--ink-soft);margin-top:2px;">&euro;19.95</div>
+                </div>
+              </label>
+
+              <!-- Tier 2 -->
+              <label style="display:flex;align-items:center;gap:12px;padding:12px 16px;border:2px solid var(--border);border-radius:10px;cursor:pointer;transition:border-color .2s,box-shadow .2s;background:white;" class="sticker-tier-option" data-tier="2">
+                <input type="radio" name="sticker-tier" value="2" style="accent-color:var(--accent);width:18px;height:18px;flex-shrink:0;" onchange="updateStickerTotal()">
+                <div style="flex:1;">
+                  <div style="font-weight:700;font-size:1rem;color:var(--ink);">2 Packs &mdash; Double Pack <span style="font-weight:400;font-size:0.8rem;color:var(--ink-light);">(70 stickers)</span></div>
+                  <div style="font-size:0.85rem;color:var(--ink-soft);margin-top:2px;">&euro;36.95 <span style="color:var(--ink-soft);">(&euro;18.95/pack)</span></div>
+                </div>
+                <span style="font-weight:700;font-size:0.8rem;color:#16a34a;white-space:nowrap;">Save &euro;2.95</span>
+              </label>
+
+              <!-- Tier 3 -->
+              <label style="display:flex;align-items:center;gap:12px;padding:12px 16px;border:2px solid var(--accent);border-radius:10px;cursor:pointer;transition:border-color .2s,box-shadow .2s;background:linear-gradient(135deg,#fffbeb,#fef3c7);position:relative;box-shadow:0 0 0 1px var(--accent);" class="sticker-tier-option" data-tier="3">
+                <span style="position:absolute;top:-10px;right:12px;background:var(--accent);color:white;font-weight:800;font-size:0.7rem;padding:3px 10px;border-radius:20px;letter-spacing:0.04em;text-transform:uppercase;">Most Popular</span>
+                <input type="radio" name="sticker-tier" value="3" style="accent-color:var(--accent);width:18px;height:18px;flex-shrink:0;" onchange="updateStickerTotal()">
+                <div style="flex:1;">
+                  <div style="font-weight:700;font-size:1rem;color:var(--ink);">3 Packs &mdash; The Collection <span style="font-weight:400;font-size:0.8rem;color:var(--ink-light);">(105 stickers)</span></div>
+                  <div style="font-size:0.85rem;color:var(--ink-soft);margin-top:2px;">&euro;44.95 <span style="color:var(--ink-soft);">(&euro;14.95/pack)</span></div>
+                </div>
+                <span style="font-weight:700;font-size:0.8rem;color:#16a34a;white-space:nowrap;">Save &euro;14.95</span>
+              </label>
+
+            </div>
+          </fieldset>
+
+          <p style="font-size:0.78rem;color:var(--ink-soft);margin:0 0 14px 0;font-style:italic;">LingoGrade prices are locked at time of purchase and only increase over time.</p>
+
+          <div class="price-launch-line">
+            <div class="product-price" id="sticker-total" data-price="19.95"></div>
+            <span class="launch-tag">Launch price &mdash; limited time</span>
+          </div>
+        </div>
+        <a href="https://app.lingograde.com/shop/stickers" class="btn-primary" style="margin-top:16px;">Get Your Sticker Pack &rarr;</a>
         <p class="product-smallprint">Stickers are personalized with your embedded referral link. Allow 3&ndash;5 business days for delivery.</p>
       </div>
     </div>
@@ -466,28 +753,36 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   <div class="section-inner sticker-guide-inner">
     <div class="section-label">Sticker Guide</div>
     <h2 class="guide-headline">Place it. Snap it. <em>Earn it.</em></h2>
-    <p class="guide-subhead">Three steps between you and EUR 5 credit per sticker.</p>
+    <p class="guide-subhead">Right now, EUR 5 is waiting for you per sticker. The only question is how many you will claim before someone else does.</p>
 
     <!-- Steps -->
     <div class="guide-steps">
-      <div class="guide-step">
+      <div class="guide-step" data-step="1" data-title="Stick it" data-tip="Every surface without one is a conversation that never starts. Laptop lids, cafe tables, airport lounges, smoking areas, rail stations, bus stops, co-working desks, library tables, gym lockers &mdash; claim them before someone else does.">
+        <div class="step-tooltip">Every surface without one is a conversation that never starts. Laptop lids, cafe tables, airport lounges, smoking areas, rail stations, bus stops, co-working desks, library tables, gym lockers &mdash; claim them before someone else does.</div>
         <div class="guide-step-icon">&#128204;</div>
         <div class="guide-step-num">Step 1</div>
-        <h3>Stick it right</h3>
-        <p>Firmly attach your Marco sticker to a fixed, permanent surface &mdash; laptop lid, notebook cover, wall, window, door, bulletin board, desk, shelf, car bumper. Fixed surfaces only &mdash; stickers on loose or movable items do not count. Marco's face does the rest &mdash; scanning him triggers your referral link.</p>
+        <h3>Stick it</h3>
       </div>
-      <div class="guide-step">
+      <div class="guide-step" data-step="2" data-title="Kiss Marco" data-tip="Three things in frame: your face, Marco's face, the sticker on the surface. One snap. One upload. Done.">
+        <div class="step-tooltip">Three things in frame: your face, Marco&rsquo;s face, the sticker on the surface. One snap. One upload. Done.</div>
         <div class="guide-step-icon">&#128248;</div>
         <div class="guide-step-num">Step 2</div>
         <h3>Kiss Marco</h3>
-        <p>Take a selfie kissing your Marco plush with your placed sticker visible in the background.</p>
       </div>
-      <div class="guide-step">
+      <div class="guide-step" data-step="3" data-title="Earn EUR 5" data-tip="Upload within 24 hours, EUR 5 lands in your account. The only way to miss it is to not upload. 10 verified selfies unlock full cash payout.">
+        <div class="step-tooltip">Upload within 24 hours, EUR 5 lands in your account. The only way to miss it is to not upload. 10 verified selfies unlock full cash payout.</div>
         <div class="guide-step-icon">&#128176;</div>
         <div class="guide-step-num">Step 3</div>
         <h3>Earn EUR 5</h3>
-        <p>Upload your selfie. EUR 5 credit added to your account within 24h. Use it for any course on LingoGrade.</p>
       </div>
+    </div>
+
+    <!-- Mobile bottom-sheet modal for step details -->
+    <div class="step-modal-overlay" id="stepModalOverlay"></div>
+    <div class="step-modal" id="stepModal">
+      <div class="step-modal-handle"></div>
+      <div class="step-modal-title" id="stepModalTitle"></div>
+      <div class="step-modal-body" id="stepModalBody"></div>
     </div>
 
     <!-- Rules -->
@@ -495,22 +790,22 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       <div class="guide-rule-box green">
         <h3>What counts</h3>
         <ul>
-          <li>Sticker firmly attached to a fixed, permanent surface (laptop, wall, window, desk, door)</li>
-          <li>Marco's face clearly visible (no visible QR &mdash; it is embedded)</li>
-          <li>Marco plush in the selfie</li>
-          <li>At least one placed sticker visible in background</li>
-          <li><strong>Unlimited selfies</strong> &mdash; every NEW location earns EUR 5 credit</li>
+          <li>Sticker on a <strong>fixed, permanent surface</strong> &mdash; laptop, wall, window, lamp post, bus stop, campus board</li>
+          <li><strong>Your face</strong> &mdash; clearly visible, no guessing</li>
+          <li><strong>Marco kissed</strong> &mdash; plush held close, lips on Marco, his face visible</li>
+          <li><strong>Sticker in frame</strong> &mdash; sharp, readable, within 30&deg; angle</li>
+          <li><strong>Unlimited locations</strong> &mdash; every new spot earns EUR 5</li>
         </ul>
       </div>
       <div class="guide-rule-box red">
         <h3>What does NOT count</h3>
         <ul>
-          <li>Sticker held in hand or on paper</li>
-          <li>Sticker on water bottles, cups, or loose movable objects</li>
-          <li>Marco's face obscured or damaged</li>
-          <li>No plush in photo</li>
-          <li>Digital overlays or edits</li>
-          <li>Same location photographed twice</li>
+          <li>Sticker held in hand, on paper, or on loose objects (bottles, cups)</li>
+          <li>Face hidden, sunglasses, mask &mdash; we need to see you</li>
+          <li>No kiss, no Marco, sticker out of frame or too far</li>
+          <li>Digital edits, filters, or overlays</li>
+          <li>Same location twice</li>
+          <li>Inappropriate attire (swimwear at beach/pool is fine)</li>
         </ul>
       </div>
     </div>
@@ -518,25 +813,43 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <!-- 30-Sticker Challenge -->
     <div class="challenge-box">
       <h3>The 30-Sticker Challenge &mdash; Unlock Your Payout</h3>
-      <p><strong>Use all 30. Unlock everything.</strong></p>
-      <p>Place all 30 stickers from your pack. Selfie each one. When all 30 are verified, your full commission balance becomes available for payout.</p>
-      <p>30 stickers placed and selfied = your commission unlocks. <strong>You are X stickers away.</strong></p>
-      <p class="loss-frame">Every unplaced sticker is a conversation that never happens. Every missing selfie delays your payout.</p>
+      <p><strong>30 stickers. 30 locations. One goal: unlock everything.</strong></p>
+      <p>Think of this as a quest with a real reward at the end. Every sticker you place earns EUR 5 credit instantly. Every scan earns you referral commission. Your balance grows with every move you make &mdash; selfie credit and referral commission stacking together.</p>
+      <p>At 10 completed referral assessments, your <strong>entire accumulated balance unlocks for cash withdrawal</strong> via Stripe. That is not a distant milestone &mdash; people who place all 30 stickers in high-traffic spots reach it faster than you would expect.</p>
+      <p class="loss-frame">Every sticker sitting in the pack is EUR 5 you are leaving on the table. Every day without placement is a referral someone else earns instead. At 9 referrals you are one away from unlocking your full payout &mdash; imagine stopping there.</p>
       <div class="progress-visual">
         <div class="progress-bar-track">
-          <div class="progress-bar-fill"><span>30 / 30 VERIFIED</span></div>
+          <div class="progress-bar-fill"><span>0 / 10 ASSESSMENTS</span></div>
         </div>
         <div class="progress-labels">
-          <span>0 / 30</span>
-          <span class="unlocked">30 / 30 = PAYOUT UNLOCKED</span>
+          <span>0 / 10 assessments</span>
+          <span class="unlocked">10 / 10 = PAYOUT UNLOCKED</span>
         </div>
       </div>
     </div>
 
     <!-- Small print -->
-    <p class="guide-smallprint">EUR 5 credit per verified selfie. Credit is redeemable for LingoGrade courses only, not cashable. Commission payout requires all 30 stickers from your pack to be placed and verified via selfie. Verification within 24 hours.</p>
+    <div class="guide-smallprint" style="max-width:640px;margin:0 auto;">
+      <p style="margin-bottom:8px;">EUR 5 credit per verified selfie. Credit is non-transferable and non-cashable. Verification within 24 hours.</p>
+      <p style="margin-bottom:4px;font-weight:600;color:var(--ink);">Credit tiers (what you can spend credit on):</p>
+      <ul style="list-style:none;text-align:left;font-size:0.75rem;line-height:1.8;">
+        <li><strong>0 &ndash; 10 verified stickers:</strong> Credit redeemable for sticker packs and courses only.</li>
+        <li><strong>11 &ndash; 20 verified stickers:</strong> Unlocks mugs, plush, and accessories.</li>
+        <li><strong>21+ verified stickers:</strong> Full shop access.</li>
+      </ul>
+      <p style="margin-top:8px;font-weight:600;color:var(--ink);font-size:0.75rem;">How you earn:</p>
+      <p style="font-size:0.75rem;line-height:1.8;"><strong>EUR 5 credit</strong> per verified sticker selfie &mdash; spendable immediately on courses, stickers, and shop items (tier-dependent). <strong>Commission</strong> on every assessment booked through your referral stickers. Your earnings accumulate in your account &mdash; both selfie credit and referral commission.</p>
+      <p style="margin-top:8px;font-weight:600;color:var(--ink);font-size:0.75rem;">Cash withdrawal:</p>
+      <p style="font-size:0.75rem;line-height:1.8;">Your full balance (selfie credit + referral commission) becomes eligible for <strong>cash withdrawal after 10 successful referral assessments</strong>. At 9 referrals, your balance stays in your account &mdash; you can spend it on LingoGrade products, but cannot withdraw cash. The moment referral #10 is completed, your entire accumulated balance unlocks for payout. Withdrawals are processed via Stripe.</p>
+    </div>
 
-    <p style="font-size:0.75rem;color:#888;max-width:720px;margin:16px auto 0;line-height:1.5;">The partner is solely responsible for any damage claims, removal requests, or complaints arising from sticker placement. LingoGrade accepts no liability for stickers placed on surfaces without the owner's permission. By placing stickers, you confirm you have the right to do so. Stickers placed in prohibited locations or on property without consent are the partner's responsibility.</p>
+    <p style="font-size:0.75rem;color:#888;max-width:720px;margin:16px auto 0;line-height:1.5;"><strong>Liability disclaimer:</strong> The sticker placer bears sole and exclusive responsibility for any and all damage claims, removal costs, fines, cleaning fees, property damage, removal requests, or complaints arising from sticker placement. LingoGrade accepts no liability whatsoever for stickers placed on any surface, whether or not the owner's permission was obtained. By placing stickers, you confirm that you have obtained all necessary permissions from the property owner and accept full personal liability for any consequences. Stickers placed on property without the owner's explicit written consent, in prohibited locations, or in violation of local regulations are entirely the placer's responsibility. LingoGrade reserves the right to withhold or revoke credit and commission if placement guidelines are violated. Payout is at LingoGrade's sole discretion and may be withheld if fraudulent activity, guideline violations, or disputes are identified. LingoGrade may modify payout terms, credit values, and programme conditions at any time without prior notice.</p>
+
+    <p style="font-size:0.75rem;color:#888;max-width:720px;margin:12px auto 0;line-height:1.5;"><strong>Image consent and waiver:</strong> By uploading a selfie, you grant LingoGrade an irrevocable, worldwide, royalty-free, perpetual licence to use, reproduce, modify, publish, and display your image on the LingoGrade website, social media channels, marketing materials, and any other promotional context. You waive any right to inspect or approve the finished product or the copy that may be used in connection with your image. You release LingoGrade, its officers, employees, and agents from any and all claims, demands, and causes of action arising out of or in connection with the use of your image, including but not limited to claims of defamation, invasion of privacy, right of publicity, or any third-party misuse. You expressly renounce any right to initiate legal proceedings or court claims against LingoGrade relating to the use, distribution, or third-party misuse of your uploaded image. This waiver is binding and irrevocable. LingoGrade reserves the right to reject, remove, or refuse to publish any submitted image at its sole discretion, including but not limited to images deemed inappropriate, offensive, or not meeting community standards. You may withdraw your consent and request removal of your photo at any time by emailing info@lingograde.com. Removal will be processed within 30 days, though copies already in circulation (print, third-party shares, cached versions) may persist beyond our control. LingoGrade may crop, resize, watermark, or overlay branding on submitted images. Submitted photos will not be used for facial recognition, AI training, or biometric processing. If other identifiable individuals appear in your selfie, you confirm that you have obtained their explicit consent to be photographed and published. <strong>Minimum age:</strong> You must be at least 18 years of age or have reached the age of legal majority in your country of residence to participate in the sticker programme and submit selfies. Submissions from minors will not be accepted.</p>
+
+    <p style="font-size:0.75rem;color:#888;max-width:720px;margin:12px auto 0;line-height:1.5;"><strong>Data protection notice (GDPR):</strong> The data controller is Acso Consulting LTD, Ul. Okolovrasten Pat 251, 621 Vh.1 Et.3 &mdash; Ring Tower, Sofia, Bulgaria. By submitting a selfie, you consent to the processing of your personal data (name, email address, photograph) for the purpose of verifying sticker placements, awarding credit, and publishing your image as described above. The legal basis for processing is your explicit consent (Article 6(1)(a) and Article 9(2)(a) GDPR). Your data will be retained for a period of 24 months from submission, after which it will be deleted unless you request earlier removal. Your data may be stored on servers operated by third-party providers (including Vercel, Supabase, and Cloudflare) which may process data outside the European Economic Area under Standard Contractual Clauses or equivalent safeguards. Your submitted photo may be shared publicly on the LingoGrade website and social media channels as described in the image consent above. No automated decision-making or profiling is applied to your submission.</p>
+
+    <p style="font-size:0.75rem;color:#888;max-width:720px;margin:12px auto 0;line-height:1.5;"><strong>Your rights under GDPR:</strong> You have the right to (a) access your personal data, (b) rectify inaccurate data, (c) request erasure of your data (&ldquo;right to be forgotten&rdquo;), (d) restrict processing, (e) data portability, (f) object to processing, and (g) withdraw consent at any time without affecting the lawfulness of processing carried out prior to withdrawal. To exercise any of these rights, contact info@lingograde.com. You also have the right to lodge a complaint with your national data protection supervisory authority. Consent is freely given and voluntary &mdash; refusal to consent will not affect your ability to use other LingoGrade services, but you will not be able to participate in the sticker programme or earn credit through selfie submissions.</p>
 
     <!-- Need More Stickers? -->
     <div class="need-more-box">
@@ -565,14 +878,14 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       </div>
       <div class="product-info">
         <h2>Meet Marco in person</h2>
-        <p>The official Marco the Owl plush. Approx. 15cm of pure warmth. Soft grey fur, mortarboard cap, round glasses. Comes with 30 personalized QR stickers &mdash; your referral link embedded invisibly in every one.</p>
+        <p>The official Marco the Owl plush. Approx. 18cm of pure warmth. Soft grey fur, mortarboard cap, round glasses. Comes with 30 personalized QR stickers &mdash; your referral link embedded invisibly in every one.</p>
         <p style="margin-top:8px;">Kiss him, snap a selfie with your stickers, earn EUR 5 credit per placement.</p>
         <ul style="margin:16px 0;list-style:none;padding:0;font-size:0.9375rem;">
-          <li style="padding:6px 0 6px 28px;position:relative;"><span style="position:absolute;left:0;color:var(--success);font-weight:700;">&#10003;</span> Marco the Owl plush (approx. 15cm, soft grey plush, mortarboard cap, glasses, orange beak and feet)</li>
+          <li style="padding:6px 0 6px 28px;position:relative;"><span style="position:absolute;left:0;color:var(--success);font-weight:700;">&#10003;</span> Marco the Owl plush (approx. 18cm, soft grey plush, mortarboard cap, glasses, orange beak and feet)</li>
           <li style="padding:6px 0 6px 28px;position:relative;"><span style="position:absolute;left:0;color:var(--success);font-weight:700;">&#10003;</span> 30 personalized stickers with your individual QR code (10 Marco, 10 Mila, 10 duo)</li>
         </ul>
-        <div class="product-price">EUR 24.99</div>
-        <div class="product-price-note" style="font-size:0.8125rem;color:var(--ink-soft);margin-bottom:8px;">RRP EUR 20.11 &mdash; Our price: EUR 24.99 (includes 30 personalized QR stickers worth EUR 9.90)</div>
+        <div class="product-price">EUR 24.95</div>
+        <div class="product-price-note" style="font-size:0.8125rem;color:var(--ink-soft);margin-bottom:8px;">EUR 24.95 &mdash; includes Marco plush + 30 personalized QR stickers (worth EUR 19.95 separately)</div>
         <div class="product-price-note">Free shipping in Europe</div>
         <a href="https://app.lingograde.com/shop/marco-plush" class="btn-primary">Get Your Marco &rarr;</a>
       </div>
@@ -580,21 +893,22 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   </div>
 </section>
 
-<!-- ── Mila Plush (Coming Soon) ── -->
+<!-- ── LingoGrade Mug (Coming Soon) ── -->
 <section class="section">
   <div class="section-inner">
     <div class="product-card coming-soon">
       <div class="product-img-wrap">
-        <img src="assets/mascot/marco-mila-outfits.png" alt="Marco and Mila in different outfits" style="max-width:360px;border-radius:12px;">
+        <img src="assets/mascot/marco-coffee-morning.png" alt="Marco the owl enjoying a morning coffee" style="max-width:360px;border-radius:12px;">
       </div>
       <div class="product-info">
         <span class="coming-soon-badge">Coming Soon</span>
-        <h2>Mila is on her way</h2>
-        <p>Mila the Owl &mdash; Marco's partner for young learners. Playful outfits, the same LingoGrade quality.</p>
+        <h2>The LingoGrade Mug</h2>
+        <p>The LingoGrade mug is in production. Drop your email &mdash; first to know, first to pour.</p>
         <div class="waitlist-form">
-          <input type="email" placeholder="your@email.com" aria-label="Email for Mila waitlist">
-          <button type="button" onclick="alert('Thanks! We will notify you when Mila arrives.');">Notify me when Mila arrives</button>
+          <input type="email" placeholder="your@email.com" aria-label="Email for LingoGrade Mug waitlist">
+          <button type="button" onclick="alert('Thanks! We will notify you when the mug launches.');">Notify Me</button>
         </div>
+        <p style="font-size:0.85rem;color:var(--ink-light);margin-top:12px;">First to know, first to pour. Early access members get launch-day pricing before it goes up.</p>
       </div>
     </div>
   </div>
@@ -609,25 +923,30 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       <p class="mega-sub">Everything you need. One price. Massive savings.</p>
 
       <ul class="mega-items">
-        <li><strong>3x Sticker Packs</strong> (90 stickers &mdash; 30 Marco, 30 Mila, 30 duo) <span class="item-value">EUR 29.70</span></li>
-        <li><strong>1x Full Assessment</strong> &mdash; complete CEFR evaluation <span class="item-value">EUR 149.00</span></li>
-        <li><strong>1x Homework Check</strong> &mdash; detailed correction report <span class="item-value">EUR 29.00</span></li>
-        <li><strong>1x Reassessment at 8 weeks</strong> &mdash; track your progress <span class="item-value">EUR 149.00</span></li>
-        <li><strong>1x Marco Plush</strong> &mdash; included as bonus <span class="item-value">FREE</span></li>
+        <li><strong>3x Sticker Packs</strong> (105 stickers) <span class="item-value">EUR 59.95</span></li>
+        <li><strong>1x Full Assessment</strong> &mdash; complete CEFR evaluation <span class="item-value">EUR 149.95</span></li>
+        <li><strong>1x Homework Check</strong> &mdash; detailed correction report <span class="item-value">EUR 29.95</span></li>
+        <li><strong>1x Reassessment at 8 weeks</strong> &mdash; track your progress <span class="item-value">EUR 149.95</span></li>
+        <li><strong>1x Marco Plush</strong> <span class="item-value">EUR 24.95</span></li>
+        <li style="border-top:2px solid var(--ink);font-weight:700;font-size:1.0625rem;"><strong>TOTAL value</strong> <span class="item-value" style="font-weight:700;font-size:1.0625rem;color:var(--ink);">EUR 414.95</span></li>
       </ul>
 
       <div class="mega-price-block">
-        <div class="mega-price-old">Regular price: EUR 356.70</div>
-        <div class="mega-price-new">EUR 267.00</div>
-        <div class="mega-price-save"><img src="assets/mascot/marco-alarm.png" alt=""> You save EUR 89.70 + free Marco plush (EUR 24.99)</div>
+        <div class="mega-price-old">Regular price: EUR 414.95</div>
+        <div class="mega-price-new">EUR 299.95</div>
+        <div class="mega-price-save"><img src="assets/mascot/marco-alarm.png?v=3" alt=""> You save EUR 114.95 (28% off)</div>
+        <p style="font-size:1rem;color:var(--ink-soft);margin-top:8px;font-style:italic;">Less than a nice dinner for two &mdash; but this keeps earning for you long after dessert.</p>
       </div>
 
-      <div style="margin-bottom:32px;">
-        <a href="https://app.lingograde.com/shop/mega-bundle" class="btn-success" style="font-size:1.125rem;padding:18px 48px;">Get the Complete Package &rarr;</a>
+      <div style="margin-bottom:16px;">
+        <a href="https://app.lingograde.com/shop/mega-bundle" class="btn-success" style="font-size:1.125rem;padding:18px 48px;display:inline-flex;align-items:center;gap:14px;">
+          <img src="assets/mascot/marco-alarm.png?v=3" alt="" style="height:80px;width:auto;">
+          <span>Get the Complete Package &rarr;</span>
+        </a>
       </div>
+      <p style="font-size:0.9375rem;font-weight:600;color:var(--warn);margin-bottom:32px;">This offer is available NOW. Prices increase over time &mdash; they never decrease.</p>
 
       <div class="mega-urgency">
-        <div class="urgency-alarm"><img src="assets/mascot/marco-alarm.png" alt=""> This offer is available NOW. Prices increase over time &mdash; they never decrease.</div>
         <p style="font-weight:600;color:var(--ink);font-style:italic;">Every day you wait is a day your stickers are not working for you.</p>
         <p class="urgency-scarcity">Limited to first 50 bundles</p>
       </div>
@@ -643,8 +962,8 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <p style="font-size:0.8125rem;font-weight:600;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Just getting started?</p>
           <h2 style="margin-bottom:12px;font-size:1.4rem;">Marco + Sticker Pack Bundle</h2>
           <p style="max-width:none;margin-bottom:20px;font-size:0.9375rem;">The starter kit. Marco plush (with 30 stickers) + an extra Sticker Pack for maximum coverage.</p>
-          <div class="bundle-price" style="font-size:1.75rem;">EUR 29.90 <span class="old-price">EUR 34.89</span></div>
-          <div class="bundle-savings" style="font-size:0.8125rem;">Save EUR 4.99</div>
+          <div class="bundle-price" style="font-size:1.75rem;">EUR 39.95 <span class="old-price">EUR 44.95</span></div>
+          <div class="bundle-savings" style="font-size:0.8125rem;">Save EUR 5.00</div>
           <a href="https://app.lingograde.com/shop/bundle" class="btn-secondary">Get the Starter Bundle &rarr;</a>
         </div>
       </div>
@@ -663,7 +982,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
 <!-- ── Footer ── -->
 <footer class="footer">
-  <div class="footer-brand">Lingo Gr<span style="color:#27AE60;text-decoration:underline">A</span>de</div>
+  <div class="footer-brand">LingoGr<span style="color:#27AE60;text-decoration:underline">A</span>de</div>
   <p>Professional Language Assessment</p>
   <div class="footer-links">
     <a href="index.html#how-it-works">How It Works</a>
@@ -678,6 +997,197 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 </footer>
 
 <script>
+// Currency detection — symbol swap + USD price conversion
+(function(){
+  var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+  var symbol = '\u20AC'; // EUR default
+  var isUSD = false;
+
+  // USD timezones
+  var usTzExact = ['America/New_York','America/Chicago','America/Denver','America/Los_Angeles','America/Phoenix','America/Anchorage','America/Honolulu'];
+  var isUS = usTzExact.indexOf(tz) !== -1 || tz.indexOf('America/') === 0 || tz.indexOf('US/') === 0;
+
+  if (isUS) {
+    symbol = '$';
+    isUSD = true;
+  } else if (tz.indexOf('London') !== -1 || tz.indexOf('Europe/London') !== -1 || tz.indexOf('Europe/Belfast') !== -1 || tz.indexOf('Europe/Isle_of_Man') !== -1 || tz.indexOf('Europe/Jersey') !== -1 || tz.indexOf('Europe/Guernsey') !== -1) {
+    symbol = '\u00A3'; // GBP
+  } else if (tz.indexOf('Zurich') !== -1 || tz.indexOf('Europe/Zurich') !== -1) {
+    symbol = 'CHF '; // CHF
+  }
+  window._lgCurrency = symbol;
+  window._lgIsUSD = isUSD;
+
+  // EUR → USD price mapping
+  var eurToUsd = {
+    '19.95': '22.95',
+    '36.95': '42.95',
+    '44.95': '51.95',
+    '24.95': '29.95',
+    '39.95': '44.95',
+    '299.95': '349.95'
+  };
+
+  // Helper: convert a EUR price string to USD if in USD mode
+  function convertPrice(eurPrice) {
+    if (!isUSD) return eurPrice;
+    return eurToUsd[eurPrice] || eurPrice;
+  }
+  window._lgConvertPrice = convertPrice;
+  window._lgEurToUsd = eurToUsd;
+
+  // Fill all data-price elements (swap price if USD)
+  document.querySelectorAll('[data-price]').forEach(function(el){
+    var price = el.getAttribute('data-price');
+    var displayPrice = convertPrice(price);
+    el.textContent = symbol + displayPrice;
+    if (isUSD) el.setAttribute('data-price', displayPrice);
+  });
+
+  // Replace static "EUR " in all price-bearing elements
+  var priceEls = document.querySelectorAll('.product-price, .bundle-price, .mega-price-old, .mega-price-new, .mega-price-save, .bundle-savings, .item-value, .guide-step p, .guide-step h3, .guide-subhead, .challenge-box p, .guide-smallprint p, .guide-smallprint li, .product-price-note, .guide-rule-box li, .need-more-box p');
+  priceEls.forEach(function(el){
+    if (symbol !== '\u20AC') {
+      el.innerHTML = el.innerHTML.replace(/EUR\s/g, symbol);
+    }
+    // For USD, also swap the price numbers after the symbol swap
+    if (isUSD) {
+      Object.keys(eurToUsd).forEach(function(eur){
+        // Match $ or EUR followed by the EUR price number
+        var re = new RegExp('(\\$|EUR\\s?)' + eur.replace('.', '\\.') + '(?!\\d)', 'g');
+        el.innerHTML = el.innerHTML.replace(re, '$1' + eurToUsd[eur]);
+      });
+    }
+  });
+
+  // For USD, also swap prices inside the tier radio option labels (rendered as &euro; in HTML)
+  if (isUSD) {
+    document.querySelectorAll('.sticker-tier-option').forEach(function(label){
+      // Replace euro symbol + price in the tier labels
+      Object.keys(eurToUsd).forEach(function(eur){
+        var re = new RegExp('\u20AC' + eur.replace('.', '\\.'), 'g');
+        label.innerHTML = label.innerHTML.replace(re, '$' + eurToUsd[eur]);
+      });
+      // Also update per-pack prices for tier 2 and tier 3
+      // Tier 2: €18.95/pack → $21.95/pack
+      label.innerHTML = label.innerHTML.replace(/\u20AC18\.95\/pack/g, '$21.95/pack');
+      label.innerHTML = label.innerHTML.replace(/\$18\.95\/pack/g, '$21.95/pack');
+      // Tier 3: €14.95/pack → $17.33/pack
+      label.innerHTML = label.innerHTML.replace(/\u20AC14\.95\/pack/g, '$17.33/pack');
+      label.innerHTML = label.innerHTML.replace(/\$14\.95\/pack/g, '$17.33/pack');
+      // Tier 2 savings: Save €2.95 → Save $3.00
+      label.innerHTML = label.innerHTML.replace(/\u20AC2\.95/g, '$3.00');
+      // Tier 3 savings: Save €14.95 → Save $17.95 (3 x 22.95 = 68.85, collection = 51.95, save = 16.90)
+      label.innerHTML = label.innerHTML.replace(/\u20AC14\.95/g, '$17.95');
+    });
+  }
+})();
+
+// Sticker order total
+function updateStickerTotal(){
+  var tierPricesEUR = { '1': 19.95, '2': 36.95, '3': 44.95 };
+  var tierPricesUSD = { '1': 22.95, '2': 42.95, '3': 51.95 };
+  var tierPrices = window._lgIsUSD ? tierPricesUSD : tierPricesEUR;
+  var tierEl = document.querySelector('input[name="sticker-tier"]:checked');
+  var tier = tierEl ? tierEl.value : '1';
+  var defaultPrice = window._lgIsUSD ? 22.95 : 19.95;
+  var total = (tierPrices[tier] || defaultPrice).toFixed(2);
+  var el = document.getElementById('sticker-total');
+  el.textContent = (window._lgCurrency || '\u20AC') + total;
+
+  // Highlight selected tier option
+  document.querySelectorAll('.sticker-tier-option').forEach(function(opt){
+    var isSel = opt.getAttribute('data-tier') === tier;
+    if(opt.getAttribute('data-tier') === '3'){
+      opt.style.borderColor = isSel ? 'var(--accent)' : 'var(--border)';
+      opt.style.boxShadow = isSel ? '0 0 0 1px var(--accent)' : 'none';
+      opt.style.background = isSel ? 'linear-gradient(135deg,#fffbeb,#fef3c7)' : 'white';
+    } else {
+      opt.style.borderColor = isSel ? 'var(--accent)' : 'var(--border)';
+      opt.style.boxShadow = isSel ? '0 0 0 1px var(--accent)' : 'none';
+    }
+  });
+}
+updateStickerTotal();
+
+// Sync dropdown with 3D carousel
+var stickerSelect = document.getElementById('sticker-set');
+var carouselRadios = document.querySelectorAll('.carousel-radio');
+var carouselCards = document.querySelectorAll('.carousel-card');
+
+var packData = {
+  marco: {
+    desc: '30 Marco stickers in 3 designs + 5 bonus LingoGrade standard',
+    imgs: ['assets/mascot/lingograde-card.png','assets/mascot/marco-face-wink.png','assets/mascot/marco-hero.png?v=2','assets/mascot/marco-logo-v6.1.png?v=2']
+  },
+  mila: {
+    desc: '30 Mila stickers in 3 designs + 5 bonus LingoGrade standard',
+    imgs: ['assets/mascot/lingograde-card-mila.png','assets/mascot/marco-face-party.png','assets/mascot/marco-hero.png?v=2','assets/mascot/marco-logo-v6.1.png?v=2']
+  },
+  corporate: {
+    desc: '30 Corporate stickers in 3 designs (Marco + Mila in uniform) + 5 bonus LingoGrade standard',
+    imgs: ['assets/mascot/lingograde-card-corporate.png','assets/mascot/lingograde-card.png','assets/mascot/lingograde-card-mila.png','assets/mascot/marco-logo-v6.1.png?v=2']
+  },
+  playful: {
+    desc: '30 Playful stickers in 3 designs (Marco + Mila casual) + 5 bonus LingoGrade standard',
+    imgs: ['assets/mascot/lingograde-card-kids.png','assets/mascot/lingograde-card.png','assets/mascot/lingograde-card-mila.png','assets/mascot/marco-logo-v6.1.png?v=2']
+  },
+  kids: {
+    desc: '30 Kids stickers in 3 designs + 5 bonus LingoGrade standard',
+    imgs: ['assets/mascot/marco-wave.png','assets/mascot/lingograde-card-kids.png','assets/mascot/marco-face-wink.png','assets/mascot/marco-logo-v6.1.png?v=2']
+  }
+};
+
+function selectPack(pack){
+  // Check the matching radio (drives CSS 3D rotation)
+  var radio = document.getElementById('pack-radio-' + pack);
+  if (radio) radio.checked = true;
+  // Update preview panel
+  var preview = document.getElementById('pack-preview');
+  var desc = document.getElementById('pack-preview-desc');
+  var thumbs = document.getElementById('pack-preview-thumbs');
+  if (preview && desc && packData[pack]) {
+    preview.classList.add('visible');
+    desc.textContent = packData[pack].desc;
+    var imgs = thumbs.querySelectorAll('.preview-thumb');
+    packData[pack].imgs.forEach(function(src, i){
+      if (imgs[i]) imgs[i].src = src;
+    });
+  }
+  // Sync dropdown
+  if (stickerSelect.value !== pack) stickerSelect.value = pack;
+}
+
+// Dropdown changes drive carousel
+stickerSelect.addEventListener('change', function(){ selectPack(stickerSelect.value); updateStickerTotal(); });
+
+// Carousel radio changes drive dropdown + preview
+carouselRadios.forEach(function(radio){
+  radio.addEventListener('change', function(){
+    selectPack(radio.value);
+    updateStickerTotal();
+  });
+});
+
+// Touch/swipe support for mobile
+(function(){
+  var scene = document.getElementById('pack-carousel');
+  if (!scene) return;
+  var packOrder = ['marco','mila','corporate','playful','kids'];
+  var startX = 0, threshold = 40;
+  scene.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, {passive: true});
+  scene.addEventListener('touchend', function(e){
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) < threshold) return;
+    var current = 0;
+    carouselRadios.forEach(function(r, i){ if (r.checked) current = i; });
+    if (dx < 0) current = (current + 1) % 5;
+    else current = (current - 1 + 5) % 5;
+    selectPack(packOrder[current]);
+    updateStickerTotal();
+  }, {passive: true});
+})();
+
 // Referral param forwarding
 (function(){
   var ref = new URLSearchParams(window.location.search).get('ref');
@@ -687,6 +1197,46 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     url.searchParams.set('ref', ref.toUpperCase());
     a.href = url.toString();
   });
+})();
+
+// ── Step card mobile bottom-sheet modal ──
+(function(){
+  var overlay = document.getElementById('stepModalOverlay');
+  var modal   = document.getElementById('stepModal');
+  var mTitle  = document.getElementById('stepModalTitle');
+  var mBody   = document.getElementById('stepModalBody');
+  if (!overlay || !modal) return;
+
+  function openModal(title, body) {
+    mTitle.textContent = title;
+    mBody.innerHTML = body;
+    overlay.classList.add('active');
+    modal.classList.add('active');
+  }
+  function closeModal() {
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+  }
+
+  // Only attach tap handlers on mobile (<= 768px)
+  function isMobile() { return window.matchMedia('(max-width: 768px)').matches; }
+
+  document.querySelectorAll('.guide-step[data-tip]').forEach(function(step) {
+    step.addEventListener('click', function() {
+      if (!isMobile()) return;
+      openModal(step.getAttribute('data-title'), step.getAttribute('data-tip'));
+    });
+  });
+
+  overlay.addEventListener('click', closeModal);
+
+  // Swipe-down to close
+  var startY = 0;
+  modal.addEventListener('touchstart', function(e) { startY = e.touches[0].clientY; }, { passive: true });
+  modal.addEventListener('touchmove', function(e) {
+    var dy = e.touches[0].clientY - startY;
+    if (dy > 60) closeModal();
+  }, { passive: true });
 })();
 </script>
 

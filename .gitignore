@@ -1,0 +1,31 @@
+# Environment and secrets
+.env
+.env.*
+.env.local
+.env.production
+deploy/**/.env
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (if any)
+node_modules/
+
+# Build artifacts
+dist/
+build/
+
+# Logs
+*.log
+
+# Claude Code
+.claude/settings.local.json

@@ -142,8 +142,8 @@
       lookingReply: "No worries! I'm here whenever you're ready. Here's what people usually ask about:",
       faqBtns: ["How does it work?", "What does it cost?", "Is it online?", "How fast do I get results?"],
       faqAnswers: [
-        "You book a session, talk with Marco for 10-50 minutes, and get a full CEFR report with personalized homework. It's like a friendly chat, not a scary exam!",
-        "We have packages from \u20AC39 (10 min mini check) to \u20AC249 (50 min deep analysis). Every package includes a detailed CEFR report.",
+        "You book a session, talk with Marco for 15-40 minutes, and get a full CEFR report with personalized homework. It's like a friendly chat, not a scary exam!",
+        "We have packages from \u20AC69.95 (15 min quick assessment) to \u20AC199.95 (40 min deep analysis). Every package includes a detailed CEFR report.",
         "100% online! You just need a microphone and an internet connection. Book a time that works for you.",
         "You'll get your full report within 24 hours after your session. Most people get it within a few hours!"
       ],
@@ -170,8 +170,8 @@
       lookingReply: "Kein Problem! Ich bin hier, wenn du bereit bist. Hier ist, was die Leute meistens fragen:",
       faqBtns: ["Wie funktioniert es?", "Was kostet es?", "Ist es online?", "Wie schnell bekomme ich Ergebnisse?"],
       faqAnswers: [
-        "Du buchst eine Session, sprichst 10-50 Minuten mit Marco und bekommst einen vollst\u00E4ndigen CEFR-Bericht mit personalisierten Haus\u00FCbungen. Wie ein freundliches Gespr\u00E4ch, keine Pr\u00FCfung!",
-        "Wir haben Pakete von \u20AC39 (10 Min. Mini-Check) bis \u20AC249 (50 Min. Tiefenanalyse). Jedes Paket enth\u00E4lt einen detaillierten CEFR-Bericht.",
+        "Du buchst eine Session, sprichst 15-40 Minuten mit Marco und bekommst einen vollst\u00E4ndigen CEFR-Bericht mit personalisierten Haus\u00FCbungen. Wie ein freundliches Gespr\u00E4ch, keine Pr\u00FCfung!",
+        "Wir haben Pakete von \u20AC69.95 (15 Min. Schnell-Check) bis \u20AC199.95 (40 Min. Tiefenanalyse). Jedes Paket enth\u00E4lt einen detaillierten CEFR-Bericht.",
         "100% online! Du brauchst nur ein Mikrofon und eine Internetverbindung. Buche eine Zeit, die dir passt.",
         "Du bekommst deinen Bericht innerhalb von 24 Stunden. Die meisten bekommen ihn schon nach wenigen Stunden!"
       ],
@@ -198,8 +198,8 @@
       lookingReply: "Pas de souci! Je suis l\u00E0 quand tu es pr\u00EAt. Voici ce que les gens demandent g\u00E9n\u00E9ralement:",
       faqBtns: ["Comment \u00E7a marche?", "Combien \u00E7a co\u00FBte?", "C'est en ligne?", "En combien de temps j'ai les r\u00E9sultats?"],
       faqAnswers: [
-        "Tu r\u00E9serves une session, tu parles avec Marco pendant 10-50 minutes, et tu re\u00E7ois un rapport CECR complet avec des devoirs personnalis\u00E9s. C'est une conversation amicale, pas un examen!",
-        "On a des forfaits de 39\u20AC (10 min mini check) \u00E0 249\u20AC (50 min analyse approfondie). Chaque forfait inclut un rapport CECR d\u00E9taill\u00E9.",
+        "Tu r\u00E9serves une session, tu parles avec Marco pendant 15-40 minutes, et tu re\u00E7ois un rapport CECR complet avec des devoirs personnalis\u00E9s. C'est une conversation amicale, pas un examen!",
+        "On a des forfaits de 69.95\u20AC (15 min \u00E9valuation rapide) \u00E0 199.95\u20AC (40 min analyse approfondie). Chaque forfait inclut un rapport CECR d\u00E9taill\u00E9.",
         "100% en ligne! Tu as juste besoin d'un micro et d'une connexion internet. Choisis l'heure qui te convient.",
         "Tu recevras ton rapport dans les 24 heures. La plupart des gens le re\u00E7oivent en quelques heures!"
       ],
@@ -226,8 +226,8 @@
       lookingReply: "\u00A1Sin problema! Estoy aqu\u00ED cuando est\u00E9s listo. Esto es lo que la gente suele preguntar:",
       faqBtns: ["\u00BFC\u00F3mo funciona?", "\u00BFCu\u00E1nto cuesta?", "\u00BFEs online?", "\u00BFQu\u00E9 tan r\u00E1pido obtengo resultados?"],
       faqAnswers: [
-        "Reservas una sesi\u00F3n, hablas con Marco durante 10-50 minutos y recibes un informe MCER completo con tareas personalizadas. \u00A1Es como una charla amigable, no un examen!",
-        "Tenemos paquetes desde 39\u20AC (10 min mini check) hasta 249\u20AC (50 min an\u00E1lisis profundo). Cada paquete incluye un informe MCER detallado.",
+        "Reservas una sesi\u00F3n, hablas con Marco durante 15-40 minutos y recibes un informe MCER completo con tareas personalizadas. \u00A1Es como una charla amigable, no un examen!",
+        "Tenemos paquetes desde 69.95\u20AC (15 min evaluaci\u00F3n r\u00E1pida) hasta 199.95\u20AC (40 min an\u00E1lisis profundo). Cada paquete incluye un informe MCER detallado.",
         "\u00A1100% online! Solo necesitas un micr\u00F3fono y conexi\u00F3n a internet. Elige el horario que te convenga.",
         "\u00A1Recibir\u00E1s tu informe en 24 horas! La mayor\u00EDa lo recibe en pocas horas."
       ],
@@ -254,8 +254,8 @@
       lookingReply: "Nessun problema! Sono qui quando sei pronto. Ecco cosa chiedono di solito:",
       faqBtns: ["Come funziona?", "Quanto costa?", "\u00C8 online?", "Quanto velocemente ottengo i risultati?"],
       faqAnswers: [
-        "Prenoti una sessione, parli con Marco per 10-50 minuti e ricevi un rapporto QCER completo con compiti personalizzati. \u00C8 come una chiacchierata amichevole, non un esame!",
-        "Abbiamo pacchetti da 39\u20AC (10 min mini check) a 249\u20AC (50 min analisi approfondita). Ogni pacchetto include un rapporto QCER dettagliato.",
+        "Prenoti una sessione, parli con Marco per 15-40 minuti e ricevi un rapporto QCER completo con compiti personalizzati. \u00C8 come una chiacchierata amichevole, non un esame!",
+        "Abbiamo pacchetti da 69.95\u20AC (15 min valutazione rapida) a 199.95\u20AC (40 min analisi approfondita). Ogni pacchetto include un rapporto QCER dettagliato.",
         "100% online! Ti serve solo un microfono e una connessione internet. Scegli l'orario che ti va meglio.",
         "Riceverai il rapporto entro 24 ore. La maggior parte lo riceve in poche ore!"
       ],
@@ -282,8 +282,8 @@
       lookingReply: "\u0411\u0435\u0437 \u043F\u0440\u043E\u0431\u043B\u0435\u043C! \u042F \u0437\u0434\u0435\u0441\u044C, \u043A\u043E\u0433\u0434\u0430 \u0431\u0443\u0434\u0435\u0448\u044C \u0433\u043E\u0442\u043E\u0432. \u0412\u043E\u0442 \u0447\u0442\u043E \u043E\u0431\u044B\u0447\u043D\u043E \u0441\u043F\u0440\u0430\u0448\u0438\u0432\u0430\u044E\u0442:",
       faqBtns: ["\u041A\u0430\u043A \u044D\u0442\u043E \u0440\u0430\u0431\u043E\u0442\u0430\u0435\u0442?", "\u0421\u043A\u043E\u043B\u044C\u043A\u043E \u0441\u0442\u043E\u0438\u0442?", "\u042D\u0442\u043E \u043E\u043D\u043B\u0430\u0439\u043D?", "\u041A\u0430\u043A \u0431\u044B\u0441\u0442\u0440\u043E \u043F\u0440\u0438\u0445\u043E\u0434\u044F\u0442 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442\u044B?"],
       faqAnswers: [
-        "\u0422\u044B \u0431\u0440\u043E\u043D\u0438\u0440\u0443\u0435\u0448\u044C \u0441\u0435\u0441\u0441\u0438\u044E, \u0433\u043E\u0432\u043E\u0440\u0438\u0448\u044C \u0441 \u041C\u0430\u0440\u043A\u043E 10-50 \u043C\u0438\u043D\u0443\u0442 \u0438 \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0448\u044C \u043F\u043E\u043B\u043D\u044B\u0439 \u043E\u0442\u0447\u0451\u0442 CEFR \u0441 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u043C \u0434\u043E\u043C\u0430\u0448\u043D\u0438\u043C \u0437\u0430\u0434\u0430\u043D\u0438\u0435\u043C. \u042D\u0442\u043E \u043A\u0430\u043A \u0434\u0440\u0443\u0436\u0435\u0441\u043A\u0438\u0439 \u0440\u0430\u0437\u0433\u043E\u0432\u043E\u0440, \u043D\u0435 \u044D\u043A\u0437\u0430\u043C\u0435\u043D!",
-        "\u0423 \u043D\u0430\u0441 \u043F\u0430\u043A\u0435\u0442\u044B \u043E\u0442 39\u20AC (10 \u043C\u0438\u043D \u043C\u0438\u043D\u0438-\u043F\u0440\u043E\u0432\u0435\u0440\u043A\u0430) \u0434\u043E 249\u20AC (50 \u043C\u0438\u043D \u0433\u043B\u0443\u0431\u043E\u043A\u0438\u0439 \u0430\u043D\u0430\u043B\u0438\u0437). \u041A\u0430\u0436\u0434\u044B\u0439 \u043F\u0430\u043A\u0435\u0442 \u0432\u043A\u043B\u044E\u0447\u0430\u0435\u0442 \u043F\u043E\u0434\u0440\u043E\u0431\u043D\u044B\u0439 \u043E\u0442\u0447\u0451\u0442 CEFR.",
+        "\u0422\u044B \u0431\u0440\u043E\u043D\u0438\u0440\u0443\u0435\u0448\u044C \u0441\u0435\u0441\u0441\u0438\u044E, \u0433\u043E\u0432\u043E\u0440\u0438\u0448\u044C \u0441 \u041C\u0430\u0440\u043A\u043E 15-40 \u043C\u0438\u043D\u0443\u0442 \u0438 \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0448\u044C \u043F\u043E\u043B\u043D\u044B\u0439 \u043E\u0442\u0447\u0451\u0442 CEFR \u0441 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u043C \u0434\u043E\u043C\u0430\u0448\u043D\u0438\u043C \u0437\u0430\u0434\u0430\u043D\u0438\u0435\u043C. \u042D\u0442\u043E \u043A\u0430\u043A \u0434\u0440\u0443\u0436\u0435\u0441\u043A\u0438\u0439 \u0440\u0430\u0437\u0433\u043E\u0432\u043E\u0440, \u043D\u0435 \u044D\u043A\u0437\u0430\u043C\u0435\u043D!",
+        "\u0423 \u043D\u0430\u0441 \u043F\u0430\u043A\u0435\u0442\u044B \u043E\u0442 69.95\u20AC (15 \u043C\u0438\u043D \u0431\u044B\u0441\u0442\u0440\u0430\u044F \u043E\u0446\u0435\u043D\u043A\u0430) \u0434\u043E 199.95\u20AC (40 \u043C\u0438\u043D \u0433\u043B\u0443\u0431\u043E\u043A\u0438\u0439 \u0430\u043D\u0430\u043B\u0438\u0437). \u041A\u0430\u0436\u0434\u044B\u0439 \u043F\u0430\u043A\u0435\u0442 \u0432\u043A\u043B\u044E\u0447\u0430\u0435\u0442 \u043F\u043E\u0434\u0440\u043E\u0431\u043D\u044B\u0439 \u043E\u0442\u0447\u0451\u0442 CEFR.",
         "100% \u043E\u043D\u043B\u0430\u0439\u043D! \u041D\u0443\u0436\u0435\u043D \u0442\u043E\u043B\u044C\u043A\u043E \u043C\u0438\u043A\u0440\u043E\u0444\u043E\u043D \u0438 \u0438\u043D\u0442\u0435\u0440\u043D\u0435\u0442. \u0412\u044B\u0431\u0435\u0440\u0438 \u0443\u0434\u043E\u0431\u043D\u043E\u0435 \u0432\u0440\u0435\u043C\u044F.",
         "\u041E\u0442\u0447\u0451\u0442 \u043F\u0440\u0438\u0434\u0451\u0442 \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435 24 \u0447\u0430\u0441\u043E\u0432. \u0411\u043E\u043B\u044C\u0448\u0438\u043D\u0441\u0442\u0432\u043E \u043F\u043E\u043B\u0443\u0447\u0430\u044E\u0442 \u0435\u0433\u043E \u0437\u0430 \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E \u0447\u0430\u0441\u043E\u0432!"
       ],
@@ -310,8 +310,8 @@
       lookingReply: "\u6CA1\u95EE\u9898\uFF01\u6211\u968F\u65F6\u90FD\u5728\u3002\u4EE5\u4E0B\u662F\u5927\u5BB6\u5E38\u95EE\u7684\u95EE\u9898\uFF1A",
       faqBtns: ["\u600E\u4E48\u8FD0\u4F5C\u7684\uFF1F", "\u8D39\u7528\u591A\u5C11\uFF1F", "\u662F\u7EBF\u4E0A\u7684\u5417\uFF1F", "\u591A\u5FEB\u80FD\u62FF\u5230\u7ED3\u679C\uFF1F"],
       faqAnswers: [
-        "\u4F60\u9884\u7EA6\u4E00\u4E2A\u65F6\u95F4\uFF0C\u548CMarco\u804A10-50\u5206\u949F\uFF0C\u7136\u540E\u6536\u5230\u5B8C\u6574\u7684CEFR\u62A5\u544A\u548C\u4E2A\u6027\u5316\u4F5C\u4E1A\u3002\u8FD9\u662F\u53CB\u597D\u7684\u804A\u5929\uFF0C\u4E0D\u662F\u53EF\u6015\u7684\u8003\u8BD5\uFF01",
-        "\u6211\u4EEC\u670939\u20AC\uFF0810\u5206\u949F\u5FEB\u901F\u68C0\u67E5\uFF09\u5230249\u20AC\uFF0850\u5206\u949F\u6DF1\u5EA6\u5206\u6790\uFF09\u7684\u5957\u9910\u3002\u6BCF\u4E2A\u5957\u9910\u90FD\u5305\u542B\u8BE6\u7EC6\u7684CEFR\u62A5\u544A\u3002",
+        "\u4F60\u9884\u7EA6\u4E00\u4E2A\u65F6\u95F4\uFF0C\u548CMarco\u804A15-40\u5206\u949F\uFF0C\u7136\u540E\u6536\u5230\u5B8C\u6574\u7684CEFR\u62A5\u544A\u548C\u4E2A\u6027\u5316\u4F5C\u4E1A\u3002\u8FD9\u662F\u53CB\u597D\u7684\u804A\u5929\uFF0C\u4E0D\u662F\u53EF\u6015\u7684\u8003\u8BD5\uFF01",
+        "\u6211\u4EEC\u670969.95\u20AC\uFF0815\u5206\u949F\u5FEB\u901F\u8BC4\u4F30\uFF09\u5230199.95\u20AC\uFF0840\u5206\u949F\u6DF1\u5EA6\u5206\u6790\uFF09\u7684\u5957\u9910\u3002\u6BCF\u4E2A\u5957\u9910\u90FD\u5305\u542B\u8BE6\u7EC6\u7684CEFR\u62A5\u544A\u3002",
         "100%\u7EBF\u4E0A\uFF01\u4F60\u53EA\u9700\u8981\u9EA6\u514B\u98CE\u548C\u7F51\u7EDC\u8FDE\u63A5\u3002\u9009\u62E9\u4F60\u65B9\u4FBF\u7684\u65F6\u95F4\u3002",
         "24\u5C0F\u65F6\u5185\u6536\u5230\u62A5\u544A\u3002\u5927\u591A\u6570\u4EBA\u51E0\u5C0F\u65F6\u5185\u5C31\u80FD\u6536\u5230\uFF01"
       ],
@@ -326,10 +326,9 @@
 
   // ── Package definitions for sales flow ──
   var PACKAGES = [
-    { id: 'talk-now', name: 'Talk to Marco Now', price: '\u20AC39', time: '10 minutes', slug: 'talk-now' },
-    { id: 'quick', name: 'Quick Assessment', price: '\u20AC69', time: '15 minutes', slug: 'quick' },
-    { id: 'full', name: 'Full Assessment', price: '\u20AC149', time: '25 minutes', slug: 'full' },
-    { id: 'deepdive', name: 'DeepDive Assessment', price: '\u20AC249', time: '50 minutes', slug: 'deepdive' }
+    { id: 'quick', name: 'Quick Assessment', price: '\u20AC69.95', time: '15 minutes', slug: 'quick' },
+    { id: 'full', name: 'Full Assessment', price: '\u20AC129.95', time: '25 minutes', slug: 'full' },
+    { id: 'deepdive', name: 'DeepDive Assessment', price: '\u20AC199.95', time: '40 minutes (15 + 25 min)', slug: 'deepdive' }
   ];
 
   // ── Top 10 learning languages for sales flow ──
@@ -510,6 +509,54 @@
   var salesData = { learningLang: null, learningLangLabel: null, duration: null, challenge: null };
   var exitEmailShown = false;
 
+  // ── Page context detection ──
+  var pageContext = (function () {
+    var path = window.location.pathname.toLowerCase();
+    if (path.indexOf('corporate') !== -1) return 'corporate';
+    if (path.indexOf('kids') !== -1) return 'kids';
+    if (path.indexOf('partners') !== -1) return 'partners';
+    if (path.indexOf('teachers') !== -1) return 'teachers';
+    return 'individual';
+  })();
+
+  // ── Context-aware greetings and product suggestions ──
+  var PAGE_CONTEXT_CONFIG = {
+    individual: {
+      intentQ: null, // use default SALES_MSGS
+      checkLevel: null,
+      justLooking: null,
+      packages: null // use default PACKAGES
+    },
+    corporate: {
+      intentQ: "Are you looking to assess your team's language skills?",
+      checkLevel: "Yes, assess our team",
+      justLooking: "Tell me more first",
+      packages: [
+        { id: 'quick', name: 'Team Quick Assessment', price: '\u20AC69.95', time: '15 min per person', slug: 'quick' },
+        { id: 'full', name: 'Team Full Assessment', price: '\u20AC129.95', time: '25 min per person', slug: 'full' },
+        { id: 'deepdive', name: 'Team DeepDive Assessment', price: '\u20AC199.95', time: '40 min per person', slug: 'deepdive' }
+      ]
+    },
+    kids: {
+      intentQ: "Looking for a fun language session for your child?",
+      checkLevel: "Yes, book a session",
+      justLooking: "Tell me more first",
+      packages: null
+    },
+    partners: {
+      intentQ: "Interested in becoming a LingoGrade partner?",
+      checkLevel: "Yes, tell me about partnership",
+      justLooking: "Just exploring for now",
+      packages: null
+    },
+    teachers: {
+      intentQ: "Want to join our assessor network?",
+      checkLevel: "Yes, I'd like to apply",
+      justLooking: "Tell me more first",
+      packages: null
+    }
+  };
+
   // ── Add a chat message (text only) ──
   function addMsg(type, text) {
     var el = document.createElement('div');
@@ -669,29 +716,34 @@
     showSalesIntent();
   }
 
-  // ── Sales Step 1: Intent question ──
+  // ── Sales Step 1: Intent question (context-aware) ──
   function showSalesIntent() {
     flowPhase = 'sales-intent';
     setInputEnabled(false);
     var sm = salesMsg();
+    var ctx = PAGE_CONTEXT_CONFIG[pageContext] || PAGE_CONTEXT_CONFIG.individual;
 
-    var html = sm.intentQ +
+    var intentText = ctx.intentQ || sm.intentQ;
+    var checkText = ctx.checkLevel || sm.checkLevel;
+    var lookText = ctx.justLooking || sm.justLooking;
+
+    var html = intentText +
       '<div class="mc-sales-btns">' +
-      '<button class="mc-btn-primary" data-action="check-level">' + sm.checkLevel + '</button>' +
-      '<button data-action="just-looking">' + sm.justLooking + '</button>' +
+      '<button class="mc-btn-primary" data-action="check-level">' + checkText + '</button>' +
+      '<button data-action="just-looking">' + lookText + '</button>' +
       '</div>';
 
     var el = addMsgHtml('bot', html);
 
     el.querySelector('[data-action="check-level"]').addEventListener('click', function () {
       disableButtons(el);
-      addMsg('usr', sm.checkLevel);
+      addMsg('usr', checkText);
       showSalesLangPick();
     });
 
     el.querySelector('[data-action="just-looking"]').addEventListener('click', function () {
       disableButtons(el);
-      addMsg('usr', sm.justLooking);
+      addMsg('usr', lookText);
       showFaqFlow();
     });
   }
@@ -780,11 +832,13 @@
     setInputEnabled(false);
     var sm = salesMsg();
 
-    // Map duration index to package: 0=just started→talk-now, 1=6mo-1yr→quick, 2=1-3yr→full, 3=3yr+→deepdive
+    // Map duration index to package: 0=just started→quick, 1=6mo-1yr→quick, 2=1-3yr→full, 3=3yr+→deepdive
+    var ctx = PAGE_CONTEXT_CONFIG[pageContext] || PAGE_CONTEXT_CONFIG.individual;
+    var pkgList = ctx.packages || PACKAGES;
     var pkgIdx = salesData.duration;
     if (pkgIdx < 0) pkgIdx = 0;
-    if (pkgIdx > 3) pkgIdx = 3;
-    var pkg = PACKAGES[pkgIdx];
+    if (pkgIdx >= pkgList.length) pkgIdx = pkgList.length - 1;
+    var pkg = pkgList[pkgIdx];
 
     var recText = sm.recommend.replace('{pkg}', pkg.name + ' (' + pkg.price + ')');
     var vossText = sm.voss.replace('{time}', pkg.time);
@@ -953,6 +1007,15 @@
     }
   }
 
+  // ── Context-aware greeting text for each page ──
+  var PAGE_GREETINGS = {
+    individual: null, // use default
+    corporate: "Welcome! I can help you find the right language assessment solution for your team.",
+    kids: "Hi there! Looking for a fun language session for your child? I can help!",
+    partners: "Welcome! Interested in becoming a LingoGrade partner? Let's talk revenue share and referral opportunities.",
+    teachers: "Hello! Want to join our assessor network? I can tell you about professional development and earning potential."
+  };
+
   // ── Initial greeting logic ──
   function initGreeting() {
     if (chosenLang) {
@@ -961,7 +1024,12 @@
       setInputEnabled(true);
       var greeting = GREETINGS[chosenLang] || GREETINGS.en;
       var sm = SALES_MSGS[chosenLang] || SALES_MSGS.en;
-      addMsg('bot', OWL + ' ' + greeting + '\n\n' + sm.readyAnytime);
+      var contextGreeting = PAGE_GREETINGS[pageContext];
+      if (contextGreeting) {
+        addMsg('bot', OWL + ' ' + contextGreeting);
+      } else {
+        addMsg('bot', OWL + ' ' + greeting + '\n\n' + sm.readyAnytime);
+      }
     } else {
       // No preference yet — show language confirm flow
       showLangConfirm();

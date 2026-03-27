@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Former Student Offer — LingoGrade</title>
+<link rel="icon" type="image/png" href="assets/mascot/marco-logo-v6.1.png">
 <style>
 :root { --accent: #2563AB; --accent-lt: #1D4ED8; --ink: #1C1C1C; --ink-soft: #5A5A5A; --ink-light: #9CA3AF; --cream: #FFFDF7; --border: #E5E7EB; --gold: #C8952E; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -56,15 +57,21 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 <body>
 
 <div class="nav">
-  <a href="/" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;"><img src="assets/mascot/marco-logo-v5.png" alt="Marco" style="height:38px;width:auto;"> <span style="font-family:DM Serif Display,Georgia,serif;font-size:1.25rem;color:#1C1C1C;">Lingo Gr<span style="color:#27AE60;text-decoration:underline">A</span>de</span></a>
-  <a href="/">Back to Lingo Gr<span style="color:#27AE60;text-decoration:underline">A</span>de</a>
+  <a href="/" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;"><img src="assets/mascot/marco-logo-v6.1.png?v=3" alt="Marco" style="height:38px;width:auto;" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v5.png'"> <span style="font-family:DM Serif Display,Georgia,serif;font-size:1.25rem;color:#1C1C1C;">LingoGr<span style="color:#27AE60;text-decoration:underline">A</span>de</span></a>
+  <a href="/">Back to LingoGr<span style="color:#27AE60;text-decoration:underline">A</span>de</a>
 </div>
 
 <div class="hero">
   <div class="badge">Former Student Exclusive</div>
   <h1>Welcome back.<br>Your German deserves a check-up.</h1>
-  <p>As my former student, you get an exclusive alumni discount on any LingoGrade assessment. Find out exactly where you are now — and what to focus on next.</p>
-  <p class="timer">Offer valid until <strong>March 31, 2026</strong></p>
+  <p>It has been a while since your last assessment. Your German has been improving, hasn't it? There is only one way to know for sure.</p>
+  <!-- UPDATE: Change this date monthly or implement dynamic expiry -->
+  <p class="timer">Offer valid until <strong>April 30, 2026</strong></p>
+  <p style="text-align:center;font-size:0.95rem;color:#E74C3C;font-weight:500;margin:16px 0;">Your alumni discount starts at 20%. It will decrease over time. The best price is right now.</p>
+</div>
+
+<div style="max-width:640px;margin:0 auto 28px;text-align:center;">
+  <p style="font-size:1.05rem;color:#555;line-height:1.7;">Without a reassessment, you will not know if your practice has been working — or if you have been reinforcing the same errors.</p>
 </div>
 
 <div class="pricing">
@@ -72,10 +79,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
     <div class="plan-name">Quick Assessment</div>
     <div class="plan-duration">15 minutes</div>
     <div class="plan-price">
-      <span class="old">&euro;69</span>
-      <span class="new">&euro;55</span>
+      <span class="old">&euro;69.95</span>
+      <span class="new">&euro;55.95</span>
     </div>
-    <div class="plan-save">You save &euro;14</div>
+    <div class="plan-save">You save &euro;14.00</div>
     <ul class="plan-features">
       <li>15-min diagnostic conversation</li>
       <li>CEFR level (active + passive)</li>
@@ -91,10 +98,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
     <div class="plan-name">Full Assessment</div>
     <div class="plan-duration">25 minutes</div>
     <div class="plan-price">
-      <span class="old">&euro;129</span>
-      <span class="new">&euro;103</span>
+      <span class="old">&euro;129.95</span>
+      <span class="new">&euro;103.95</span>
     </div>
-    <div class="plan-save">You save &euro;26</div>
+    <div class="plan-save">You save &euro;26.00</div>
     <ul class="plan-features">
       <li>25-min deep diagnostic conversation</li>
       <li>CEFR level + confidence score</li>
@@ -112,10 +119,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
     <div class="plan-name">DeepDive Assessment</div>
     <div class="plan-duration">15 + 25 minutes (with break)</div>
     <div class="plan-price">
-      <span class="old">&euro;199</span>
-      <span class="new">&euro;159</span>
+      <span class="old">&euro;199.95</span>
+      <span class="new">&euro;159.95</span>
     </div>
-    <div class="plan-save">You save &euro;40</div>
+    <div class="plan-save">You save &euro;40.00</div>
     <ul class="plan-features">
       <li>Everything in Full Assessment</li>
       <li>Extended warm-up session</li>
@@ -124,7 +131,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
       <li>Priority delivery</li>
       <li>The most thorough diagnostic available</li>
     </ul>
-    <a href="https://cal.com/marko.check/full-assessment-alumni" class="plan-btn premium">Book DeepDive Assessment</a>
+    <a href="https://cal.com/marko.check/deepdive-assessment-alumni" class="plan-btn premium">Book DeepDive Assessment</a>
   </div>
 </div>
 
@@ -132,7 +139,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
   <div class="info-card" style="text-align:center;">
     <h3>Continue Your Progress with Targeted Lessons</h3>
     <p>After your assessment, book focused lessons that target YOUR specific errors.</p>
-    <p><strong>15-minute lesson: &euro;69</strong> &nbsp;&bull;&nbsp; <strong>25-minute lesson: &euro;99</strong></p>
+    <p><strong>15-minute lesson: &euro;69.95</strong> &nbsp;&bull;&nbsp; <strong>25-minute lesson: &euro;99.95</strong></p>
     <p style="font-size:0.85rem;color:var(--ink-light);">Alumni get priority booking. Stackable sessions available.</p>
   </div>
 </div>
@@ -144,14 +151,14 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 <div class="info">
   <div class="info-card">
     <h3>How does it work?</h3>
-    <p><strong>1. Book</strong> — Choose your assessment and pick a time that works for you.</p>
-    <p><strong>2. Talk</strong> — We have a natural conversation in German. No test, no stress.</p>
-    <p><strong>3. Receive</strong> — Within 1 hour, you get a detailed PDF report with your CEFR level, your structural errors, corrections, solutions, and a personal training plan.</p>
+    <p><strong>1. Book your reassessment</strong> — Choose your level of depth and pick a time that works for you.</p>
+    <p><strong>2. Talk</strong> — Same conversation format you know. No test, no stress — just a natural check-in on your German.</p>
+    <p><strong>3. Receive your new report</strong> — Within 1 hour, you get a detailed PDF with a direct comparison to your last assessment, updated CEFR level, structural errors, corrections, solutions, and a refreshed training plan.</p>
   </div>
 </div>
 
 <div class="footer">
-  <p><a href="/">Lingo Gr<span style="color:#27AE60;text-decoration:underline">A</span>de</a> — Professional Language Assessment</p>
+  <p><a href="/">LingoGr<span style="color:#27AE60;text-decoration:underline">A</span>de</a> — Professional Language Assessment</p>
   <p style="margin-top:8px;">&copy; 2026 LingoGrade. All rights reserved.</p>
 </div>
 

@@ -11,15 +11,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LingoGrade Young Learners — Coming Soon</title>
-<meta name="description" content="Age-appropriate, play-based language assessment for children aged 6-14. Designed with child psychologists. GDPR-compliant. Coming soon.">
+<meta name="description" content="Age-appropriate, play-based language sessions for children aged 6-14. Designed with child psychologists. GDPR-compliant. Coming soon.">
 <meta property="og:title" content="LingoGrade Young Learners — Coming Soon">
-<meta property="og:description" content="Age-appropriate, play-based language assessment for children aged 6-14. Because every child deserves to know they are making progress.">
-<meta property="og:image" content="https://www.lingograde.com/og-logo-v2.png">
+<meta property="og:description" content="Age-appropriate, play-based language sessions for children aged 6-14. Because every child deserves to know they are making progress.">
+<meta property="og:image" content="https://www.lingograde.com/assets/mascot/lingograde-card-kids.png">
 <meta property="og:url" content="https://www.lingograde.com/kids.html">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://www.lingograde.com/og-logo-v2.png">
-<link rel="icon" type="image/png" href="assets/mascot/marco-logo-v5.png">
+<meta name="twitter:image" content="https://www.lingograde.com/assets/mascot/lingograde-card-kids.png">
+<link rel="icon" type="image/gif" href="assets/mascot/marco-logo-v6.1.png?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
@@ -80,8 +80,27 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .trust-line { font-size: 0.8125rem; color: var(--ink-light); max-width: 480px; margin: 0 auto; line-height: 1.7; }
 .trust-line strong { color: var(--ink-soft); font-weight: 600; }
 
+/* ── Pricing preview ── */
+.pricing-preview { padding: 80px 32px; background: var(--cream); }
+.pricing-preview-inner { max-width: var(--max-w); margin: 0 auto; text-align: center; }
+.pricing-preview-inner h2 { font-family: var(--font-display); font-size: clamp(1.3rem, 3vw, 1.8rem); color: var(--ink); margin-bottom: 12px; }
+.pricing-preview-inner .pricing-sub { font-size: 0.9375rem; color: var(--ink-soft); max-width: 540px; margin: 0 auto 40px; line-height: 1.7; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 860px; margin: 0 auto; }
+.pricing-card { border-radius: 16px; border: 2px solid var(--border); padding: 32px 24px; position: relative; transition: border-color 0.2s; background: white; }
+.pricing-card:hover { border-color: var(--accent); }
+.pricing-card.featured { border-color: var(--accent); background: linear-gradient(180deg, var(--accent-bg) 0%, white 60%); }
+.pricing-card.featured::before { content: 'RECOMMENDED'; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); padding: 4px 16px; background: var(--accent); color: white; border-radius: 100px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.06em; }
+.pricing-name { font-family: var(--font-display); font-size: 1.35rem; color: var(--ink); margin-bottom: 4px; }
+.pricing-duration { font-size: 0.8125rem; color: var(--ink-light); margin-bottom: 16px; }
+.pricing-price { font-family: var(--font-display); font-size: 2.25rem; color: var(--accent); margin-bottom: 4px; }
+.pricing-price-note { font-size: 0.8125rem; color: var(--ink-light); margin-bottom: 20px; }
+.pricing-features { list-style: none; margin-bottom: 24px; }
+.pricing-features li { font-size: 0.8125rem; color: var(--ink-soft); padding: 5px 0 5px 22px; position: relative; text-align: left; }
+.pricing-features li::before { content: ''; position: absolute; left: 0; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.pricing-coming { display: block; width: 100%; padding: 12px; text-align: center; border-radius: 10px; font-weight: 600; font-size: 0.875rem; background: var(--parchment); color: var(--ink-light); border: 1.5px solid var(--border); cursor: default; }
+
 /* ── Features preview ── */
-.features { padding: 64px 32px; background: var(--parchment); }
+.features { padding: 80px 32px; background: var(--parchment); }
 .features-inner { max-width: var(--max-w); margin: 0 auto; text-align: center; }
 .features-inner h2 { font-family: var(--font-display); font-size: clamp(1.3rem, 3vw, 1.8rem); color: var(--ink); margin-bottom: 40px; }
 .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 800px; margin: 0 auto; }
@@ -102,6 +121,8 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
+  .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+  .pricing-preview { padding: 60px 20px; }
   .features-grid { grid-template-columns: 1fr; max-width: 400px; }
   .waitlist-form { flex-direction: column; }
   .brand-logo { font-size: 1.2rem; gap: 6px; }
@@ -126,7 +147,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <!-- ── Navigation ── -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-v5.png" alt="Marco"> Lingo Gr<span class="brand-a">A</span>de</a>
+    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-v6.1.png?v=3" alt="Marco" width="38" height="38" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v5.png'"> LingoGr<span class="brand-a">A</span>de</a>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -146,9 +167,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-badge">Coming Soon</div>
-    <img src="assets/mascot/marco-sleeping.png" alt="Marco the Owl is sleeping — getting ready for Young Learners" class="marco-sleeping">
+    <img src="assets/mascot/marco-sleeping.png?v=3" alt="Marco the Owl is sleeping — getting ready for Young Learners" class="marco-sleeping">
     <h1>Marco is getting ready for the little ones</h1>
-    <p>Young Learner assessments are coming soon. Age-appropriate, play-based language assessment for children aged 6&ndash;14. Because every child deserves to know they are making progress.</p>
+    <p>It seems like you want the best for your child's language journey — but you are not sure exactly where they stand. That is why Marco is here. No tests. No stress. Just play. Age-appropriate, game-based language sessions for children aged 6&ndash;14.</p>
 
     <!-- Email capture -->
     <div class="waitlist-box">
@@ -164,10 +185,69 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   </div>
 </section>
 
+<!-- ── Accusation Audit ── -->
+<div style="max-width:720px;margin:32px auto;padding:28px;background:#FFF8E1;border-radius:8px;text-align:center;">
+  <p style="font-size:1.1rem;color:#444;line-height:1.8;margin:0 0 16px;">You might think evaluating a child's language sounds stressful. We thought so too. That is why we designed every session around play, stories, and Marco the Owl. Children do not even realise they are being assessed — they think they are on an adventure with their new friend.</p>
+  <p style="font-size:1.05rem;color:#2563AB;font-style:italic;margin:0;">How would it feel to finally know exactly where your child stands — and have a clear plan for what comes next?</p>
+</div>
+
+<!-- ── Pricing Preview ── -->
+<section class="pricing-preview" id="pricing">
+  <div class="pricing-preview-inner">
+    <h2>What it will cost</h2>
+    <p class="pricing-sub">Simple, transparent pricing. One session, one report, no subscriptions. Every session includes a parent-friendly report with clear next steps.</p>
+    <p style="text-align:center;font-size:0.95rem;color:#777;margin-bottom:24px;">Join parents across Europe already on the waitlist. Whether before the school year, after exams, or during summer — knowing where your child stands is the first step to helping them thrive.</p>
+    <div class="pricing-grid">
+
+      <div class="pricing-card">
+        <div class="pricing-name">Quick Check</div>
+        <div class="pricing-duration">15-minute session</div>
+        <div class="pricing-price" data-eur="69.95" data-usd="79.95" data-gbp="69.95" data-chf="69.95">&euro;69.95</div>
+        <div class="pricing-price-note">One-time assessment</div>
+        <ul class="pricing-features">
+          <li>Play-based speaking tasks</li>
+          <li>CEFR level (Pre-A1 &ndash; B1)</li>
+          <li>Parent-friendly PDF report</li>
+        </ul>
+        <span class="pricing-coming">Coming Soon</span>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="pricing-name">Full Picture</div>
+        <div class="pricing-duration">25-minute session</div>
+        <div class="pricing-price" data-eur="129.95" data-usd="149.95" data-gbp="129.95" data-chf="129.95">&euro;129.95</div>
+        <div class="pricing-price-note">Complete assessment</div>
+        <ul class="pricing-features">
+          <li>Extended play-based tasks</li>
+          <li>Listening + speaking + vocabulary</li>
+          <li>Detailed report with next steps</li>
+          <li>Teacher-ready summary included</li>
+        </ul>
+        <span class="pricing-coming">Coming Soon</span>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-name">Deep Dive</div>
+        <div class="pricing-duration">15 + 25 min (5-min break)</div>
+        <div class="pricing-price" data-eur="199.95" data-usd="229.95" data-gbp="199.95" data-chf="199.95">&euro;199.95</div>
+        <div class="pricing-price-note">The most thorough assessment</div>
+        <ul class="pricing-features">
+          <li>Two-part session with rest break</li>
+          <li>All skills assessed in depth</li>
+          <li>Full diagnostic report</li>
+          <li>Personalised learning roadmap</li>
+        </ul>
+        <span class="pricing-coming">Coming Soon</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ── What to expect ── -->
 <section class="features">
   <div class="features-inner">
-    <h2>What Young Learner assessments will include</h2>
+    <h2>What Young Learner sessions will include</h2>
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon">&#127912;</div>
@@ -190,7 +270,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
 <!-- Footer -->
 <footer class="footer">
-  <div class="footer-brand">Lingo Gr<span style="color:#27AE60;text-decoration:underline">A</span>de</div>
+  <div class="footer-brand">LingoGr<span style="color:#27AE60;text-decoration:underline">A</span>de</div>
   <p>Professional Language Assessment</p>
   <div class="footer-links">
     <a href="index.html">Home</a>
@@ -234,6 +314,37 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
     if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
+
+// ── Currency geo-detection (timezone-based) ──
+(function(){
+  var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+  var currency = 'eur'; // default EUR
+
+  // USD — Americas timezones
+  if (/America\//.test(tz) || /US\//.test(tz) || /Pacific\/Honolulu/.test(tz)) {
+    currency = 'usd';
+  }
+  // GBP — UK timezones
+  else if (/Europe\/London|Europe\/Belfast|Europe\/Isle_of_Man|Europe\/Jersey|Europe\/Guernsey/.test(tz)) {
+    currency = 'gbp';
+  }
+  // CHF — Switzerland
+  else if (/Europe\/Zurich/.test(tz)) {
+    currency = 'chf';
+  }
+
+  var symbols = { eur: '\u20AC', usd: '$', gbp: '\u00A3', chf: 'CHF\u00A0' };
+  var sym = symbols[currency] || '\u20AC';
+
+  // Swap all pricing elements that carry data attributes
+  document.querySelectorAll('[data-eur]').forEach(function(el){
+    var val = el.getAttribute('data-' + currency) || el.getAttribute('data-eur');
+    el.textContent = sym + val;
+  });
+
+  window._lgCurrency = currency;
+  window._lgSymbol = sym;
+})();
 </script>
 
 </body>
