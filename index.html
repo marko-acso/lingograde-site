@@ -63,7 +63,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
 /* ── Marco mascot images ── */
 .marco-img { max-width: 100%; height: auto; }
-.marco-icon { width: 48px; height: 48px; object-fit: contain; vertical-align: middle; }
+.marco-icon { width: 48px; height: auto; object-fit: contain; vertical-align: middle; }
 
 /* ── Hero ── */
 .hero { padding: 140px 32px 80px; text-align: center; background: linear-gradient(180deg, var(--accent-bg) 0%, var(--cream) 100%); }
@@ -91,7 +91,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 /* ── How It Works ── */
 .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 48px; }
 .step { text-align: center; }
-.step-icon { display: block; width: 80px; height: 80px; object-fit: contain; margin: 0 auto 12px; }
+.step-icon { display: block; width: 80px; height: auto; object-fit: contain; margin: 0 auto 12px; background: transparent; }
 .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--accent); color: white; font-family: var(--font-display); font-size: 1.25rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
 .step h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
 .step p { font-size: 0.875rem; color: var(--ink-soft); line-height: 1.6; }
@@ -287,12 +287,12 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <h1>Most language learners are working at the <em>wrong level.</em> Are you?</h1>
     <p>Without an accurate baseline, every lesson is a guess. LingoGrade assesses your real spoken language — the errors you make under pressure, the structures you avoid without realising it — and gives you a bespoke plan to reach the next level.</p>
     <p style="font-size:1.15rem;color:#555;margin-top:12px;font-style:italic;">How would it feel to finally know exactly where you stand — and have a concrete plan to reach the next level?</p>
-    <div style="display:inline-flex;align-items:center;gap:12px;background:var(--accent-bg);border:1px solid rgba(37,99,171,0.15);border-radius:12px;padding:12px 24px;margin:0 auto 28px;">
-      <img src="assets/mascot/marco-hero.png?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:240px;height:auto;object-fit:contain;display:none;" onload="this.style.display='block'">
+    <div style="display:inline-flex;align-items:center;gap:12px;background:transparent;border:1px solid rgba(37,99,171,0.15);border-radius:12px;padding:12px 24px;margin:0 auto 28px;">
+      <img src="assets/mascot/marco-hero.png?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:240px;height:auto;object-fit:contain;display:none;background:transparent;" onload="this.style.display='block'">
       <span style="font-size:0.95rem;color:var(--ink-soft);font-weight:500;">Marco says: <em style="color:var(--accent);font-style:normal;font-weight:600;">"Your next level is closer than you think."</em></span>
     </div>
     <div class="hero-actions">
-      <a href="#pricing" class="btn-primary">Find Out My Real Level</a>
+      <a href="#pricing" class="btn-primary">Stop Guessing My Level</a>
       <a href="#how-it-works" class="btn-secondary">How It Works</a>
     </div>
     <div class="hero-trust" style="margin-top:32px;">
@@ -478,7 +478,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       </div>
     </div>
     <p style="margin-top:40px;font-size:1.0625rem;color:var(--ink);font-weight:500;">One 15-minute conversation changes all of this.</p>
-    <a href="#pricing" class="btn-primary" style="margin-top:20px;">Get My Accurate CEFR Level</a>
+    <a href="#pricing" class="btn-primary" style="margin-top:20px;">Stop Guessing My Level</a>
   </div>
 </section>
 
@@ -502,7 +502,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         <p>Select a time that works for you and pay securely online. Slots are limited — availability is updated in real time. You will receive a confirmation immediately.</p>
       </div>
       <div class="step">
-        <img src="assets/mascot/marco-headset.png" alt="Marco with headset" class="step-icon" style="width: 64px; height: 64px;">
+        <img src="assets/mascot/marco-headset.png" alt="Marco with headset" class="step-icon">
         <div class="step-num">3</div>
         <h3>Have a Conversation</h3>
         <p>Join a relaxed video call. Just talk naturally — no scripts, no multiple choice, no stress. Our assessor adapts to your level and draws out your real abilities.</p>
@@ -603,7 +603,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <li>Two sessions with a 5-minute break</li>
           <li>The deepest analysis of your spoken language</li>
         </ul>
-        <a href="https://cal.com/marko.check/deepdive-assessment" class="pricing-btn pricing-btn-premium" target="_blank">Get the DeepDive &rarr;</a>
+        <a href="https://cal.com/marko.check/deepdive-assessment" class="pricing-btn pricing-btn-premium" target="_blank">Don't Settle for Less &rarr;</a>
       </div>
       <div class="pricing-card featured">
         <div class="pricing-name">Full Assessment</div>
@@ -618,7 +618,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <li>Sentence engine + mini block</li>
           <li>Bilingual report, 1-hour delivery</li>
         </ul>
-        <a href="https://cal.com/marko.check/full-assessment" class="pricing-btn pricing-btn-primary" target="_blank">Get My Full Report &rarr;</a>
+        <a href="https://cal.com/marko.check/full-assessment" class="pricing-btn pricing-btn-primary" target="_blank">Stop Guessing — Get My Full Report &rarr;</a>
       </div>
       <div class="pricing-card">
         <div class="pricing-name">Quick Assessment</div>
@@ -635,12 +635,12 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <li class="no">8-week learning plan</li>
           <li class="no">Sentence engine + mini block</li>
         </ul>
-        <a href="https://cal.com/marko.check/quick-assessment" class="pricing-btn pricing-btn-secondary" target="_blank">Get My CEFR Level &rarr;</a>
+        <a href="https://cal.com/marko.check/quick-assessment" class="pricing-btn pricing-btn-secondary" target="_blank">Stop Guessing My Level &rarr;</a>
       </div>
     </div>
 
     <div style="margin-top:16px;padding:12px 24px;background:var(--success-bg);border-radius:8px;max-width:1080px;margin-left:auto;margin-right:auto;border:1px solid rgba(39,174,96,0.2);">
-      <p style="font-size:0.875rem;color:var(--success);margin:0;"><img src="assets/mascot/marco-alarm.png?v=3" alt="Marco alarm" class="marco-icon" style="margin-right:6px;"><strong>Limited availability.</strong> Sessions are offered on selected days only. If you see a slot that works, book it — they go quickly.</p>
+      <p style="font-size:0.875rem;color:var(--success);margin:0;"><img src="assets/mascot/marco-alarm.png?v=3" alt="Marco alarm" class="marco-icon" style="width:60px;height:auto;margin-right:6px;"><strong>Limited availability.</strong> Sessions are offered on selected days only. If you see a slot that works, book it — they go quickly.</p>
     </div>
 
     <div class="pricing-discount" style="max-width:1080px;margin-left:auto;margin-right:auto;margin-top:16px;display:flex;align-items:center;gap:20px;">
@@ -660,14 +660,14 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
     <div class="lessons-grid">
       <div class="lesson-card">
-        <div class="lesson-duration">15-Minute Lesson</div>
-        <div class="lesson-price" data-eur="69.95" data-usd="79.95">&euro;69.95</div>
-        <p>Focused correction session targeting one specific error pattern from your report. Ideal for quick, high-impact practice.</p>
-      </div>
-      <div class="lesson-card">
         <div class="lesson-duration">25-Minute Lesson</div>
         <div class="lesson-price" data-eur="99.95" data-usd="119.95">&euro;99.95</div>
         <p>Extended session covering multiple error patterns with guided speaking practice and real-time correction.</p>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-duration">15-Minute Lesson</div>
+        <div class="lesson-price" data-eur="69.95" data-usd="79.95">&euro;69.95</div>
+        <p>Focused correction session targeting one specific error pattern from your report. Ideal for quick, high-impact practice.</p>
       </div>
     </div>
 
