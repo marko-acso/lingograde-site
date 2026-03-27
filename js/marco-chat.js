@@ -143,7 +143,7 @@
       faqBtns: ["How does it work?", "What does it cost?", "Is it online?", "How fast do I get results?"],
       faqAnswers: [
         "You book a session, talk with Marco for 15-40 minutes, and get a full CEFR report with personalized homework. It's like a friendly chat, not a scary exam!",
-        "We have packages from \u20AC69.95 (15 min quick assessment) to \u20AC199.95 (40 min deep analysis). Every package includes a detailed CEFR report.",
+        "We have packages from \u20AC69.95 (15 min quick assessment) to \u20AC249.95 (40 min deep analysis). Every package includes a detailed CEFR report.",
         "100% online! You just need a microphone and an internet connection. Book a time that works for you.",
         "You'll get your full report within 24 hours after your session. Most people get it within a few hours!"
       ],
@@ -171,7 +171,7 @@
       faqBtns: ["Wie funktioniert es?", "Was kostet es?", "Ist es online?", "Wie schnell bekomme ich Ergebnisse?"],
       faqAnswers: [
         "Du buchst eine Session, sprichst 15-40 Minuten mit Marco und bekommst einen vollst\u00E4ndigen CEFR-Bericht mit personalisierten Haus\u00FCbungen. Wie ein freundliches Gespr\u00E4ch, keine Pr\u00FCfung!",
-        "Wir haben Pakete von \u20AC69.95 (15 Min. Schnell-Check) bis \u20AC199.95 (40 Min. Tiefenanalyse). Jedes Paket enth\u00E4lt einen detaillierten CEFR-Bericht.",
+        "Wir haben Pakete von \u20AC69.95 (15 Min. Schnell-Check) bis \u20AC249.95 (40 Min. Tiefenanalyse). Jedes Paket enth\u00E4lt einen detaillierten CEFR-Bericht.",
         "100% online! Du brauchst nur ein Mikrofon und eine Internetverbindung. Buche eine Zeit, die dir passt.",
         "Du bekommst deinen Bericht innerhalb von 24 Stunden. Die meisten bekommen ihn schon nach wenigen Stunden!"
       ],
@@ -199,7 +199,7 @@
       faqBtns: ["Comment \u00E7a marche?", "Combien \u00E7a co\u00FBte?", "C'est en ligne?", "En combien de temps j'ai les r\u00E9sultats?"],
       faqAnswers: [
         "Tu r\u00E9serves une session, tu parles avec Marco pendant 15-40 minutes, et tu re\u00E7ois un rapport CECR complet avec des devoirs personnalis\u00E9s. C'est une conversation amicale, pas un examen!",
-        "On a des forfaits de 69.95\u20AC (15 min \u00E9valuation rapide) \u00E0 199.95\u20AC (40 min analyse approfondie). Chaque forfait inclut un rapport CECR d\u00E9taill\u00E9.",
+        "On a des forfaits de 69.95\u20AC (15 min \u00E9valuation rapide) \u00E0 249.95\u20AC (40 min analyse approfondie). Chaque forfait inclut un rapport CECR d\u00E9taill\u00E9.",
         "100% en ligne! Tu as juste besoin d'un micro et d'une connexion internet. Choisis l'heure qui te convient.",
         "Tu recevras ton rapport dans les 24 heures. La plupart des gens le re\u00E7oivent en quelques heures!"
       ],
@@ -227,7 +227,7 @@
       faqBtns: ["\u00BFC\u00F3mo funciona?", "\u00BFCu\u00E1nto cuesta?", "\u00BFEs online?", "\u00BFQu\u00E9 tan r\u00E1pido obtengo resultados?"],
       faqAnswers: [
         "Reservas una sesi\u00F3n, hablas con Marco durante 15-40 minutos y recibes un informe MCER completo con tareas personalizadas. \u00A1Es como una charla amigable, no un examen!",
-        "Tenemos paquetes desde 69.95\u20AC (15 min evaluaci\u00F3n r\u00E1pida) hasta 199.95\u20AC (40 min an\u00E1lisis profundo). Cada paquete incluye un informe MCER detallado.",
+        "Tenemos paquetes desde 69.95\u20AC (15 min evaluaci\u00F3n r\u00E1pida) hasta 249.95\u20AC (40 min an\u00E1lisis profundo). Cada paquete incluye un informe MCER detallado.",
         "\u00A1100% online! Solo necesitas un micr\u00F3fono y conexi\u00F3n a internet. Elige el horario que te convenga.",
         "\u00A1Recibir\u00E1s tu informe en 24 horas! La mayor\u00EDa lo recibe en pocas horas."
       ],
@@ -255,7 +255,7 @@
       faqBtns: ["Come funziona?", "Quanto costa?", "\u00C8 online?", "Quanto velocemente ottengo i risultati?"],
       faqAnswers: [
         "Prenoti una sessione, parli con Marco per 15-40 minuti e ricevi un rapporto QCER completo con compiti personalizzati. \u00C8 come una chiacchierata amichevole, non un esame!",
-        "Abbiamo pacchetti da 69.95\u20AC (15 min valutazione rapida) a 199.95\u20AC (40 min analisi approfondita). Ogni pacchetto include un rapporto QCER dettagliato.",
+        "Abbiamo pacchetti da 69.95\u20AC (15 min valutazione rapida) a 249.95\u20AC (40 min analisi approfondita). Ogni pacchetto include un rapporto QCER dettagliato.",
         "100% online! Ti serve solo un microfono e una connessione internet. Scegli l'orario che ti va meglio.",
         "Riceverai il rapporto entro 24 ore. La maggior parte lo riceve in poche ore!"
       ],
@@ -283,7 +283,7 @@
       faqBtns: ["\u041A\u0430\u043A \u044D\u0442\u043E \u0440\u0430\u0431\u043E\u0442\u0430\u0435\u0442?", "\u0421\u043A\u043E\u043B\u044C\u043A\u043E \u0441\u0442\u043E\u0438\u0442?", "\u042D\u0442\u043E \u043E\u043D\u043B\u0430\u0439\u043D?", "\u041A\u0430\u043A \u0431\u044B\u0441\u0442\u0440\u043E \u043F\u0440\u0438\u0445\u043E\u0434\u044F\u0442 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442\u044B?"],
       faqAnswers: [
         "\u0422\u044B \u0431\u0440\u043E\u043D\u0438\u0440\u0443\u0435\u0448\u044C \u0441\u0435\u0441\u0441\u0438\u044E, \u0433\u043E\u0432\u043E\u0440\u0438\u0448\u044C \u0441 \u041C\u0430\u0440\u043A\u043E 15-40 \u043C\u0438\u043D\u0443\u0442 \u0438 \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0448\u044C \u043F\u043E\u043B\u043D\u044B\u0439 \u043E\u0442\u0447\u0451\u0442 CEFR \u0441 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u043C \u0434\u043E\u043C\u0430\u0448\u043D\u0438\u043C \u0437\u0430\u0434\u0430\u043D\u0438\u0435\u043C. \u042D\u0442\u043E \u043A\u0430\u043A \u0434\u0440\u0443\u0436\u0435\u0441\u043A\u0438\u0439 \u0440\u0430\u0437\u0433\u043E\u0432\u043E\u0440, \u043D\u0435 \u044D\u043A\u0437\u0430\u043C\u0435\u043D!",
-        "\u0423 \u043D\u0430\u0441 \u043F\u0430\u043A\u0435\u0442\u044B \u043E\u0442 69.95\u20AC (15 \u043C\u0438\u043D \u0431\u044B\u0441\u0442\u0440\u0430\u044F \u043E\u0446\u0435\u043D\u043A\u0430) \u0434\u043E 199.95\u20AC (40 \u043C\u0438\u043D \u0433\u043B\u0443\u0431\u043E\u043A\u0438\u0439 \u0430\u043D\u0430\u043B\u0438\u0437). \u041A\u0430\u0436\u0434\u044B\u0439 \u043F\u0430\u043A\u0435\u0442 \u0432\u043A\u043B\u044E\u0447\u0430\u0435\u0442 \u043F\u043E\u0434\u0440\u043E\u0431\u043D\u044B\u0439 \u043E\u0442\u0447\u0451\u0442 CEFR.",
+        "\u0423 \u043D\u0430\u0441 \u043F\u0430\u043A\u0435\u0442\u044B \u043E\u0442 69.95\u20AC (15 \u043C\u0438\u043D \u0431\u044B\u0441\u0442\u0440\u0430\u044F \u043E\u0446\u0435\u043D\u043A\u0430) \u0434\u043E 249.95\u20AC (40 \u043C\u0438\u043D \u0433\u043B\u0443\u0431\u043E\u043A\u0438\u0439 \u0430\u043D\u0430\u043B\u0438\u0437). \u041A\u0430\u0436\u0434\u044B\u0439 \u043F\u0430\u043A\u0435\u0442 \u0432\u043A\u043B\u044E\u0447\u0430\u0435\u0442 \u043F\u043E\u0434\u0440\u043E\u0431\u043D\u044B\u0439 \u043E\u0442\u0447\u0451\u0442 CEFR.",
         "100% \u043E\u043D\u043B\u0430\u0439\u043D! \u041D\u0443\u0436\u0435\u043D \u0442\u043E\u043B\u044C\u043A\u043E \u043C\u0438\u043A\u0440\u043E\u0444\u043E\u043D \u0438 \u0438\u043D\u0442\u0435\u0440\u043D\u0435\u0442. \u0412\u044B\u0431\u0435\u0440\u0438 \u0443\u0434\u043E\u0431\u043D\u043E\u0435 \u0432\u0440\u0435\u043C\u044F.",
         "\u041E\u0442\u0447\u0451\u0442 \u043F\u0440\u0438\u0434\u0451\u0442 \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435 24 \u0447\u0430\u0441\u043E\u0432. \u0411\u043E\u043B\u044C\u0448\u0438\u043D\u0441\u0442\u0432\u043E \u043F\u043E\u043B\u0443\u0447\u0430\u044E\u0442 \u0435\u0433\u043E \u0437\u0430 \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E \u0447\u0430\u0441\u043E\u0432!"
       ],
@@ -311,7 +311,7 @@
       faqBtns: ["\u600E\u4E48\u8FD0\u4F5C\u7684\uFF1F", "\u8D39\u7528\u591A\u5C11\uFF1F", "\u662F\u7EBF\u4E0A\u7684\u5417\uFF1F", "\u591A\u5FEB\u80FD\u62FF\u5230\u7ED3\u679C\uFF1F"],
       faqAnswers: [
         "\u4F60\u9884\u7EA6\u4E00\u4E2A\u65F6\u95F4\uFF0C\u548CMarco\u804A15-40\u5206\u949F\uFF0C\u7136\u540E\u6536\u5230\u5B8C\u6574\u7684CEFR\u62A5\u544A\u548C\u4E2A\u6027\u5316\u4F5C\u4E1A\u3002\u8FD9\u662F\u53CB\u597D\u7684\u804A\u5929\uFF0C\u4E0D\u662F\u53EF\u6015\u7684\u8003\u8BD5\uFF01",
-        "\u6211\u4EEC\u670969.95\u20AC\uFF0815\u5206\u949F\u5FEB\u901F\u8BC4\u4F30\uFF09\u5230199.95\u20AC\uFF0840\u5206\u949F\u6DF1\u5EA6\u5206\u6790\uFF09\u7684\u5957\u9910\u3002\u6BCF\u4E2A\u5957\u9910\u90FD\u5305\u542B\u8BE6\u7EC6\u7684CEFR\u62A5\u544A\u3002",
+        "\u6211\u4EEC\u670969.95\u20AC\uFF0815\u5206\u949F\u5FEB\u901F\u8BC4\u4F30\uFF09\u5230249.95\u20AC\uFF0840\u5206\u949F\u6DF1\u5EA6\u5206\u6790\uFF09\u7684\u5957\u9910\u3002\u6BCF\u4E2A\u5957\u9910\u90FD\u5305\u542B\u8BE6\u7EC6\u7684CEFR\u62A5\u544A\u3002",
         "100%\u7EBF\u4E0A\uFF01\u4F60\u53EA\u9700\u8981\u9EA6\u514B\u98CE\u548C\u7F51\u7EDC\u8FDE\u63A5\u3002\u9009\u62E9\u4F60\u65B9\u4FBF\u7684\u65F6\u95F4\u3002",
         "24\u5C0F\u65F6\u5185\u6536\u5230\u62A5\u544A\u3002\u5927\u591A\u6570\u4EBA\u51E0\u5C0F\u65F6\u5185\u5C31\u80FD\u6536\u5230\uFF01"
       ],
@@ -328,7 +328,7 @@
   var PACKAGES = [
     { id: 'quick', name: 'Quick Assessment', price: '\u20AC69.95', time: '15 minutes', slug: 'quick' },
     { id: 'full', name: 'Full Assessment', price: '\u20AC129.95', time: '25 minutes', slug: 'full' },
-    { id: 'deepdive', name: 'DeepDive Assessment', price: '\u20AC199.95', time: '40 minutes (15 + 25 min)', slug: 'deepdive' }
+    { id: 'deepdive', name: 'DeepDive Assessment', price: '\u20AC249.95', time: '40 minutes (15 + 25 min)', slug: 'deepdive' }
   ];
 
   // ── Top 10 learning languages for sales flow ──
@@ -534,7 +534,7 @@
       packages: [
         { id: 'quick', name: 'Team Quick Assessment', price: '\u20AC69.95', time: '15 min per person', slug: 'quick' },
         { id: 'full', name: 'Team Full Assessment', price: '\u20AC129.95', time: '25 min per person', slug: 'full' },
-        { id: 'deepdive', name: 'Team DeepDive Assessment', price: '\u20AC199.95', time: '40 min per person', slug: 'deepdive' }
+        { id: 'deepdive', name: 'Team DeepDive Assessment', price: '\u20AC249.95', time: '40 min per person', slug: 'deepdive' }
       ]
     },
     kids: {
