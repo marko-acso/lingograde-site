@@ -216,9 +216,6 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .mega-urgency .urgency-alarm img { height: 20px; width: auto; margin-top: 2px; }
 .mega-urgency .urgency-scarcity { font-size: 0.8125rem; font-weight: 700; color: var(--error); text-transform: uppercase; letter-spacing: 0.04em; }
 
-/* ── Smaller bundle card ── */
-.bundle-card.starter { border-color: var(--border); background: var(--parchment); box-shadow: none; }
-.bundle-card.starter::before { content: 'STARTER'; background: var(--ink-light); }
 
 /* ── Need More Stickers ── */
 .need-more-box { border-radius: 14px; border: 1.5px dashed var(--accent); background: rgba(37,99,171,0.08); padding: 32px; text-align: center; margin-top: 28px; }
@@ -793,7 +790,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
 
     <!-- Visual: Marco + Stickers -->
     <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin:20px 0;">
-      <img src="assets/mascot/Marco.png" alt="Marco Plush" style="width:120px;height:auto;border-radius:12px;">
+      <img src="assets/mascot/Marco.png" alt="Marco Plush" style="width:120px;height:auto;border-radius:16px;mix-blend-mode:multiply;">
       <span style="font-size:2rem;font-weight:700;color:var(--accent);">+</span>
       <img src="assets/mascot/lingograde-card.png" alt="30 QR Stickers" style="width:80px;height:auto;border-radius:8px;">
     </div>
@@ -881,22 +878,6 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
       </div>
     </div>
 
-    <!-- Smaller starter bundle -->
-    <div class="bundle-card starter" style="text-align:left;margin-top:48px;">
-      <div style="display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;">
-        <div style="text-align:center;">
-          <img src="assets/mascot/Marco.png" alt="Marco the owl plush" style="max-width:280px;width:100%;height:auto;border-radius:12px;">
-        </div>
-        <div>
-          <p style="font-size:0.8125rem;font-weight:600;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Just getting started?</p>
-          <h2 style="margin-bottom:12px;font-size:1.4rem;">Marco + Sticker Pack Bundle</h2>
-          <p style="max-width:none;margin-bottom:20px;font-size:0.9375rem;">The starter kit. Marco plush (with 30 stickers) + an extra Sticker Pack for maximum coverage.</p>
-          <div class="bundle-price" style="font-size:1.75rem;">EUR 39.95 <span class="old-price">EUR 44.95</span></div>
-          <div class="bundle-savings" style="font-size:0.8125rem;">Save EUR 5.00</div>
-          <a href="https://app.lingograde.com/shop/bundle" class="btn-secondary">See the Starter Kit &rarr;</a>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1355,7 +1336,6 @@ function enlargeImage(src) {
     '36.95': '42.95',
     '44.95': '51.95',
     '24.95': '29.95',
-    '39.95': '44.95',
     '299.95': '349.95'
   };
 
