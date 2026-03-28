@@ -38,7 +38,7 @@
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: var(--font-body); color: var(--ink); background: var(--cream); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font-body); color: var(--ink); background: var(--cream); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
 /* ── Navigation ── */
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
@@ -91,7 +91,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 /* ── How It Works ── */
 .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 48px; }
 .step { text-align: center; }
-.step-icon { display: block; width: 80px; height: auto; object-fit: contain; margin: 0 auto 12px; background: transparent; }
+.step-icon { display: block; width: 80px; height: 80px; object-fit: contain; margin: 0 auto 12px; background: transparent; }
 .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--accent); color: white; font-family: var(--font-display); font-size: 1.25rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
 .step h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
 .step p { font-size: 0.875rem; color: var(--ink-soft); line-height: 1.6; }
@@ -192,13 +192,10 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .footer-links a { font-size: 0.8125rem; }
 .footer-copy { margin-top: 32px; font-size: 0.75rem; color: rgba(255,255,255,0.5); }
 
-/* ── Responsive ── */
+/* ── Responsive: 768px ── */
 @media (max-width: 768px) {
-  .steps { grid-template-columns: 1fr 1fr; }
-  .blocks { grid-template-columns: 1fr; }
-  .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
-  .lessons-grid { grid-template-columns: 1fr; max-width: 400px; }
-  .partner-card { grid-template-columns: 1fr; }
+  /* Navigation */
+  .nav-inner { padding: 8px 16px; }
   .brand-logo { font-size: 1.2rem; gap: 6px; }
   .brand-logo img { height: 32px; }
   .nav-hamburger { display: flex; }
@@ -208,31 +205,59 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .nav-menu a:hover { background: var(--parchment); }
   .nav-signin { margin: 4px 32px; text-align: center; }
   .nav-cta { margin: 8px 32px 12px; text-align: center; justify-content: center; display: flex; }
-}
-@media (max-width: 768px) {
-  .nav-inner { padding: 8px 16px; }
+
+  /* Hero */
   .hero { padding: 100px 20px 60px; }
   .hero h1 { font-size: clamp(1.6rem, 6vw, 2.4rem); }
   .hero p { font-size: 1rem; }
   .hero-actions { flex-direction: column; align-items: center; }
   .hero-actions a { width: 100%; justify-content: center; }
+  .hero .marco-img { max-width: 200px; margin: 0 auto; display: block; }
+
+  /* Sections */
   .section { padding: 32px 20px; }
+  .faq-list { margin: 24px auto 0; }
+
+  /* Grids — single column on mobile */
   .steps { grid-template-columns: 1fr 1fr; gap: 24px; }
   .blocks { grid-template-columns: 1fr; }
-  .pricing-grid { grid-template-columns: 1fr !important; max-width: 420px !important; }
-  .lessons-grid { grid-template-columns: 1fr !important; max-width: 420px !important; }
-  .partner-card { grid-template-columns: 1fr !important; gap: 32px; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+  .lessons-grid { grid-template-columns: 1fr; max-width: 420px; }
+  .partner-card { grid-template-columns: 1fr; gap: 32px; }
+  .flashcard-layout { grid-template-columns: 1fr; gap: 32px; }
+  .flashcard-tiers { grid-template-columns: 1fr; }
+  .flashcard-visual { order: -1; }
+  .flashcard-visual img { max-width: 240px; }
+
+  /* CEFR bar */
   .cefr-bar { flex-wrap: wrap; }
   .cefr-level { flex: 1 1 30%; }
-  div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
-  div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
-  div[style*="display:flex"][style*="gap:32px"] { flex-direction: column; gap: 16px !important; }
-  .faq-list { margin: 24px auto 0; }
+
+  /* Inline style overrides — grids and flex containers set via style="" */
+  div[style*="grid-template-columns:repeat(3,1fr)"],
+  div[style*="grid-template-columns: repeat(3,1fr)"],
+  div[style*="grid-template-columns:repeat(3, 1fr)"],
+  div[style*="grid-template-columns: repeat(3, 1fr)"] { grid-template-columns: 1fr !important; }
+  div[style*="grid-template-columns:1fr 1fr"],
+  div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+  div[style*="display:flex"][style*="gap:32px"],
+  div[style*="display: flex"][style*="gap: 32px"],
+  div[style*="display:flex"][style*="gap: 32px"] { flex-direction: column; gap: 16px !important; }
+
+  /* All CTA buttons full width */
+  .btn-primary, .btn-secondary, .pricing-btn { width: 100%; text-align: center; justify-content: center; box-sizing: border-box; }
+
+  /* Subscription cards stack */
+  .subscription-card { padding: 28px 20px; }
+
+  /* Prevent any image from causing horizontal scroll */
+  img { max-width: 100%; height: auto; }
 }
+
+/* ── Responsive: 480px ── */
 @media (max-width: 480px) {
   .steps { grid-template-columns: 1fr; }
   .hero h1 { font-size: 1.75rem; }
-  .hero-actions { flex-direction: column; align-items: center; }
   .section-title { font-size: 1.4rem; }
   .pricing-price { font-size: 2rem; }
 }
@@ -250,12 +275,6 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .flashcard-loss { margin-top: 24px; padding: 16px 20px; background: #FFF8F0; border-left: 3px solid var(--warn); border-radius: 0 8px 8px 0; font-size: 0.875rem; color: var(--ink-soft); line-height: 1.6; font-style: italic; }
 .flashcard-visual { text-align: center; }
 .flashcard-visual img { max-width: 340px; width: 100%; height: auto; }
-@media (max-width: 768px) {
-  .flashcard-layout { grid-template-columns: 1fr; gap: 32px; }
-  .flashcard-tiers { grid-template-columns: 1fr; }
-  .flashcard-visual { order: -1; }
-  .flashcard-visual img { max-width: 240px; }
-}
 </style>
 </head>
 <body>
@@ -288,7 +307,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <p>Without an accurate baseline, every lesson is a guess. LingoGrade assesses your real spoken language — the errors you make under pressure, the structures you avoid without realising it — and gives you a bespoke plan to reach the next level.</p>
     <p style="font-size:1.15rem;color:#555;margin-top:12px;font-style:italic;">How would it feel to finally know exactly where you stand — and have a concrete plan to reach the next level?</p>
     <div style="display:inline-flex;align-items:center;gap:12px;background:transparent;border:1px solid rgba(37,99,171,0.15);border-radius:12px;padding:12px 24px;margin:0 auto 28px;">
-      <img src="assets/mascot/marco-hero.png?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:240px;height:auto;object-fit:contain;display:none;background:transparent;" onload="this.style.display='block'">
+      <img src="assets/mascot/marco-hero.png?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:160px;height:auto;object-fit:contain;display:none;background:transparent;" onload="this.style.display='block'">
       <span style="font-size:0.95rem;color:var(--ink-soft);font-weight:500;">Marco says: <em style="color:var(--accent);font-style:normal;font-weight:600;">"Your next level is closer than you think."</em></span>
     </div>
     <div class="hero-actions">
@@ -493,7 +512,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         <img src="assets/mascot/marco-reading.png" alt="Marco reading" class="step-icon">
         <div class="step-num">1</div>
         <h3>Choose Your Assessment</h3>
-        <p>Quick Assessment for a focused baseline. Full Assessment for a complete diagnostic with homework and an 8-week plan. Both include your full CEFR report.</p>
+        <p>DeepDive Assessment for the most thorough diagnostic available. Full Assessment for a complete diagnostic with homework and an 8-week plan. Quick Assessment for a focused baseline. All include your full CEFR report.</p>
       </div>
       <div class="step">
         <img src="assets/mascot/marco-alarm.png" alt="Marco with alarm clock" class="step-icon">
@@ -651,7 +670,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
     <div class="pricing-discount" style="max-width:1080px;margin-left:auto;margin-right:auto;margin-top:16px;display:flex;align-items:center;gap:20px;">
       <img src="assets/mascot/marco-coffee-morning.png?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:100px;height:auto;flex-shrink:0;">
-      <p>Not sure which to choose? Most students pick the <strong>Full Assessment</strong> — it gives you the complete diagnostic with homework and an 8-week improvement plan.</p>
+      <p>Not sure which to choose? The <strong>DeepDive Assessment</strong> gives you the most thorough diagnostic available — extended sessions, comprehensive error mapping, and priority delivery. The <strong>Full Assessment</strong> is our most popular option with homework and an 8-week plan included.</p>
     </div>
   </div>
 </section>
@@ -691,18 +710,6 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <p class="section-desc" style="margin-left:auto;margin-right:auto;">Consistent practice is what separates learners who plateau from learners who progress. Lock in your weekly sessions and build unstoppable momentum.</p>
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:860px;margin:0 auto;">
-      <div class="subscription-card">
-        <h3>Weekly Subscription</h3>
-        <div class="sub-price" data-eur="69.95" data-usd="79.95" data-suffix="/lesson">From &euro;69.95<span style="font-size:1rem;color:var(--ink-light);">/lesson</span></div>
-        <p style="font-size:0.8125rem;color:var(--ink-light);margin-bottom:24px;">Homework included &middot; Monthly billing</p>
-        <ul class="subscription-features">
-          <li>3 lessons per week (15 or 25 min)</li>
-          <li>1 homework check included (<span class="lg-price-inline" data-eur="29.95" data-usd="34.95">&euro;29.95</span> value)</li>
-          <li>Additional homework checks: <span class="lg-price-inline" data-eur="9.95" data-usd="9.95">&euro;9.95</span> each</li>
-          <li>Every lesson targets YOUR errors</li>
-          <li>Cancel anytime &middot; 48h cancellation policy</li>
-        </ul>
-      </div>
       <div class="subscription-card" style="border-color:var(--warn);background:linear-gradient(180deg,#FFF8F0 0%,var(--cream) 60%);position:relative;">
         <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 16px;background:var(--warn);color:white;border-radius:100px;font-size:0.6875rem;font-weight:700;letter-spacing:0.06em;">ULTIMATE</div>
         <h3>Complete Program</h3>
@@ -715,6 +722,18 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <li>Monthly reassessment included</li>
           <li>Flashcard app premium included</li>
           <li>Dedicated progress tracking</li>
+        </ul>
+      </div>
+      <div class="subscription-card">
+        <h3>Weekly Subscription</h3>
+        <div class="sub-price" data-eur="69.95" data-usd="79.95" data-suffix="/lesson">From &euro;69.95<span style="font-size:1rem;color:var(--ink-light);">/lesson</span></div>
+        <p style="font-size:0.8125rem;color:var(--ink-light);margin-bottom:24px;">Homework included &middot; Monthly billing</p>
+        <ul class="subscription-features">
+          <li>3 lessons per week (25 or 15 min)</li>
+          <li>1 homework check included (<span class="lg-price-inline" data-eur="29.95" data-usd="34.95">&euro;29.95</span> value)</li>
+          <li>Additional homework checks: <span class="lg-price-inline" data-eur="9.95" data-usd="9.95">&euro;9.95</span> each</li>
+          <li>Every lesson targets YOUR errors</li>
+          <li>Cancel anytime &middot; 48h cancellation policy</li>
         </ul>
       </div>
     </div>
@@ -902,7 +921,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       </div>
       <div class="faq-item">
         <button class="faq-q">How do the targeted lessons and weekly subscription work?</button>
-        <div class="faq-a"><div class="faq-a-inner">After your assessment, you can book targeted lessons (15 or 25 minutes) that focus specifically on the errors identified in your report. Sessions are stackable with 5-minute breaks and available via video or voice call. The weekly subscription gives you 3 lessons per week with 1 homework check included (value <span class="lg-price-inline" data-eur="29.95" data-usd="34.95">&euro;29.95</span>) and additional checks at <span class="lg-price-inline" data-eur="9.95" data-usd="9.95">&euro;9.95</span> each. Students who complete all 3 weekly homework checks progress 3x faster. Monthly billing, starting from <span class="lg-price-inline" data-eur="69.95" data-usd="79.95">&euro;69.95</span> per lesson. The Complete Program (<span class="lg-price-inline" data-eur="249.95" data-usd="279.95">&euro;249.95</span>/week) includes all homework checks, priority scheduling, monthly reassessment, and the flashcard app premium.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">After your assessment, you can book targeted lessons (25 or 15 minutes) that focus specifically on the errors identified in your report. Sessions are stackable with 5-minute breaks and available via video or voice call. The Complete Program (<span class="lg-price-inline" data-eur="249.95" data-usd="279.95">&euro;249.95</span>/week) includes all homework checks, priority scheduling, monthly reassessment, and the flashcard app premium. The weekly subscription gives you 3 lessons per week with 1 homework check included (value <span class="lg-price-inline" data-eur="29.95" data-usd="34.95">&euro;29.95</span>) and additional checks at <span class="lg-price-inline" data-eur="9.95" data-usd="9.95">&euro;9.95</span> each, starting from <span class="lg-price-inline" data-eur="69.95" data-usd="79.95">&euro;69.95</span> per lesson. Students who complete all 3 weekly homework checks progress 3x faster.</div></div>
       </div>
     </div>
   </div>
