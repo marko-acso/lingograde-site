@@ -48,8 +48,8 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
 .nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 4px 32px; height: auto; display: flex; align-items: center; justify-content: space-between; }
 .brand-logo { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); }
-.brand-logo img { height: 38px; width: auto; }
-.brand-a { color: #27AE60; text-decoration: underline; }
+.brand-logo img { height: 44px; width: auto; }
+.brand-a { color: #27AE60; text-decoration: none; }
 .nav-menu { display: flex; gap: 28px; align-items: center; }
 .nav-menu a { font-size: 0.875rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; transition: color 0.15s; }
 .nav-menu a:hover { color: var(--accent); }
@@ -307,7 +307,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 }
 .carousel-card .card-brand .brand-a {
   color: #27AE60;
-  text-decoration: underline;
+  text-decoration: none;
 }
 .carousel-card .card-label {
   font-family: var(--font-display);
@@ -885,7 +885,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <!-- ══════════════════════════════════════ -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-v6.1.png?v=3" alt="Marco" width="38" height="38" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v5.png'"> LingoGr<span class="brand-a">A</span>de</a>
+    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-v6.1.png?v=3" alt="Marco" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v5.png'"> LingoGr<span class="brand-a">A</span>de</a>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -1402,7 +1402,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <!-- FOOTER                                -->
 <!-- ══════════════════════════════════════ -->
 <footer class="footer">
-  <div class="footer-brand">LingoGr<span style="color:#27AE60;text-decoration:underline">A</span>de</div>
+  <div class="footer-brand">LingoGr<span style="color:#27AE60">A</span>de</div>
   <p>Professional Language Assessment</p>
   <div class="footer-links">
     <a href="index.html#how-it-works">How It Works</a>
