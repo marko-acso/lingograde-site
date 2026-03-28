@@ -390,9 +390,10 @@
   // ── Inject styles ──
   var css = document.createElement('style');
   css.textContent = [
-    '#marco-fab{position:fixed;bottom:24px;right:24px;width:60px;height:60px;border-radius:50%;',
+    '#marco-fab{position:fixed;bottom:24px;right:24px;width:50px;height:50px;border-radius:50%;',
     'background:#2563AB;color:#fff;border:none;cursor:pointer;z-index:9999;box-shadow:0 4px 16px rgba(0,0,0,.25);',
     'display:flex;align-items:center;justify-content:center;transition:transform .2s,box-shadow .2s}',
+    '#marco-fab img,#marco-fab svg{width:60%;height:60%;object-fit:contain}',
     '#marco-fab:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(0,0,0,.3)}',
     '#marco-chat{position:fixed;bottom:96px;right:24px;width:370px;height:520px;border-radius:16px;',
     'background:#fff;box-shadow:0 8px 40px rgba(0,0,0,.18);z-index:9998;display:none;flex-direction:column;',
@@ -462,9 +463,12 @@
     '.mc-pkg-card .mc-pkg-name{font-weight:700;color:#1A3A5C;font-size:.9rem}',
     '.mc-pkg-card .mc-pkg-price{color:#27AE60;font-weight:600;font-size:.85rem;margin-top:2px}',
     '.mc-pkg-card .mc-pkg-voss{font-style:italic;color:#555;font-size:.82rem;margin-top:6px}',
+    '@media(max-width:768px){',
+    '#marco-fab{width:44px;height:44px;bottom:16px;right:16px}',
+    '}',
     '@media(max-width:480px){',
     '#marco-chat{bottom:0;right:0;left:0;width:100%;height:100%;border-radius:0}',
-    '#marco-fab{bottom:16px;right:16px}',
+    '#marco-fab{width:40px;height:40px;bottom:16px;right:16px}',
     '}'
   ].join('\n');
   document.head.appendChild(css);
