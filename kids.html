@@ -89,7 +89,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .pricing-card { border-radius: 16px; border: 2px solid var(--border); padding: 32px 24px; position: relative; transition: border-color 0.2s; background: white; }
 .pricing-card:hover { border-color: var(--accent); }
 .pricing-card.featured { border-color: var(--accent); background: linear-gradient(180deg, var(--accent-bg) 0%, white 60%); }
-.pricing-card.featured::before { content: 'RECOMMENDED'; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); padding: 4px 16px; background: var(--accent); color: white; border-radius: 100px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.06em; }
+.pricing-card.featured::before { content: 'MOST CHOSEN'; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); padding: 4px 16px; background: var(--accent); color: white; border-radius: 100px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.06em; }
 .pricing-name { font-family: var(--font-display); font-size: 1.35rem; color: var(--ink); margin-bottom: 4px; }
 .pricing-duration { font-size: 0.8125rem; color: var(--ink-light); margin-bottom: 16px; }
 .pricing-price { font-family: var(--font-display); font-size: 2.25rem; color: var(--accent); margin-bottom: 4px; }
@@ -200,15 +200,20 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <div class="pricing-grid">
 
       <div class="pricing-card">
-        <div class="pricing-name">Quick Check</div>
-        <div class="pricing-duration">15-minute session</div>
-        <div class="pricing-price" data-eur="69.95" data-usd="79.95" data-gbp="69.95" data-chf="69.95">&euro;69.95</div>
-        <div class="pricing-price-note">One-time assessment</div>
+        <div class="pricing-name">Deep Dive</div>
+        <div class="pricing-duration">15 + 25 min (5-min break)</div>
+        <div class="pricing-price" data-eur="249.95" data-usd="289.95" data-gbp="249.95" data-chf="249.95">&euro;249.95</div>
+        <div class="pricing-price-note">The most thorough assessment</div>
         <ul class="pricing-features">
-          <li>Play-based speaking tasks</li>
-          <li>CEFR level (Pre-A1 &ndash; B1)</li>
-          <li>Parent-friendly PDF report</li>
+          <li>Two-part session with rest break</li>
+          <li>All skills assessed in depth</li>
+          <li>Full diagnostic report</li>
+          <li>Personalised learning roadmap</li>
         </ul>
+        <p style="font-size:0.85rem;color:var(--ink-soft);margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">
+          <strong>Recommended add-on:</strong> Homework programme — EUR 29.95
+          <span style="font-size:0.8rem;color:var(--ink-light);display:block;margin-top:4px;">Detailed correction report within 1 hour</span>
+        </p>
         <span class="pricing-coming">Coming Soon</span>
       </div>
 
@@ -227,20 +232,15 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       </div>
 
       <div class="pricing-card">
-        <div class="pricing-name">Deep Dive</div>
-        <div class="pricing-duration">15 + 25 min (5-min break)</div>
-        <div class="pricing-price" data-eur="249.95" data-usd="289.95" data-gbp="249.95" data-chf="249.95">&euro;249.95</div>
-        <div class="pricing-price-note">The most thorough assessment</div>
+        <div class="pricing-name">Quick Check</div>
+        <div class="pricing-duration">15-minute session</div>
+        <div class="pricing-price" data-eur="69.95" data-usd="79.95" data-gbp="69.95" data-chf="69.95">&euro;69.95</div>
+        <div class="pricing-price-note">One-time assessment</div>
         <ul class="pricing-features">
-          <li>Two-part session with rest break</li>
-          <li>All skills assessed in depth</li>
-          <li>Full diagnostic report</li>
-          <li>Personalised learning roadmap</li>
+          <li>Play-based speaking tasks</li>
+          <li>CEFR level (Pre-A1 &ndash; B1)</li>
+          <li>Parent-friendly PDF report</li>
         </ul>
-        <p style="font-size:0.85rem;color:var(--ink-soft);margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">
-          <strong>Recommended add-on:</strong> Homework programme — EUR 29.95
-          <span style="font-size:0.8rem;color:var(--ink-light);display:block;margin-top:4px;">Detailed correction report within 1 hour</span>
-        </p>
         <span class="pricing-coming">Coming Soon</span>
       </div>
 

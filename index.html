@@ -116,7 +116,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .pricing-card { border-radius: 16px; border: 2px solid var(--border); padding: 36px 32px; position: relative; transition: border-color 0.2s; }
 .pricing-card:hover { border-color: var(--accent); }
 .pricing-card.featured { border-color: var(--accent); background: linear-gradient(180deg, var(--accent-bg) 0%, var(--cream) 60%); }
-.pricing-card.featured::before { content: 'RECOMMENDED'; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); padding: 4px 16px; background: var(--accent); color: white; border-radius: 100px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.06em; }
+.pricing-card.featured::before { content: 'MOST CHOSEN'; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); padding: 4px 16px; background: var(--accent); color: white; border-radius: 100px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.06em; }
 .pricing-card.premium { border-color: var(--warn); background: linear-gradient(180deg, #FFF8F0 0%, var(--cream) 60%); }
 .pricing-card.premium:hover { border-color: #D35400; }
 .pricing-card.premium::before { content: 'MOST THOROUGH'; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); padding: 4px 16px; background: var(--warn); color: white; border-radius: 100px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.06em; }
@@ -303,9 +303,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-badge">Professional CEFR Language Assessment</div>
-    <h1>Most language learners are working at the <em>wrong level.</em> Are you?</h1>
-    <p>Without an accurate baseline, every lesson is a guess. LingoGrade assesses your real spoken language — the errors you make under pressure, the structures you avoid without realising it — and gives you a bespoke plan to reach the next level.</p>
-    <p style="font-size:1.15rem;color:#555;margin-top:12px;font-style:italic;">How would it feel to finally know exactly where you stand — and have a concrete plan to reach the next level?</p>
+    <h1>Most people have no idea what level they <em>actually speak at.</em></h1>
+    <p>Without a clear starting point, every lesson is a shot in the dark. LingoGrade listens to how you really speak — the mistakes you repeat, the patterns you avoid — and shows you exactly what to work on next.</p>
+    <p style="font-size:1.15rem;color:#555;margin-top:12px;font-style:italic;">Would it be a bad idea to find out where you actually stand?</p>
     <div style="display:inline-flex;align-items:center;gap:12px;background:transparent;border:1px solid rgba(37,99,171,0.15);border-radius:12px;padding:12px 24px;margin:0 auto 28px;">
       <img src="assets/mascot/marco-hero.png?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:160px;height:auto;object-fit:contain;display:none;background:transparent;" onload="this.style.display='block'">
       <span style="font-size:0.95rem;color:var(--ink-soft);font-weight:500;">Marco says: <em style="color:var(--accent);font-style:normal;font-weight:600;">"Your next level is closer than you think."</em></span>
@@ -497,7 +497,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       </div>
     </div>
     <p style="margin-top:40px;font-size:1.0625rem;color:var(--ink);font-weight:500;">One 15-minute conversation changes all of this.</p>
-    <a href="#pricing" class="btn-primary" style="margin-top:20px;">See Where I Actually Stand</a>
+    <a href="#pricing" class="btn-primary" style="margin-top:20px;">Explore Assessment Options</a>
   </div>
 </section>
 
@@ -518,7 +518,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         <img src="assets/mascot/marco-alarm.png" alt="Marco with alarm clock" class="step-icon">
         <div class="step-num">2</div>
         <h3>Book a Slot</h3>
-        <p>Select a time that works for you and pay securely online. Slots are limited — availability is updated in real time. You will receive a confirmation immediately.</p>
+        <p>Select a time that works for you and pay securely online. Availability is updated in real time. You will receive a confirmation immediately.</p>
       </div>
       <div class="step">
         <img src="assets/mascot/marco-headset.png" alt="Marco with headset" class="step-icon">
@@ -596,14 +596,15 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   <div class="section-inner" style="text-align:center;">
     <div class="section-label">Pricing</div>
     <h2 class="section-title" style="margin-left:auto;margin-right:auto;">One conversation. Complete clarity.</h2>
-    <p class="section-desc" style="margin-left:auto;margin-right:auto;">All assessments include a professional bilingual PDF report delivered within 1 hour. No preparation needed — just show up and talk. Slots are limited and fill quickly. <img src="assets/mascot/marco-alarm.png?v=3" alt="Marco alarm" class="marco-icon" style="margin-left:6px;"></p>
+    <p class="section-desc" style="margin-left:auto;margin-right:auto;">All assessments include a professional bilingual PDF report delivered within 1 hour. No preparation needed — just show up and talk. <img src="assets/mascot/marco-alarm.png?v=3" alt="Marco alarm" class="marco-icon" style="margin-left:6px;"></p>
 
     <div style="max-width:720px;margin:0 auto 32px;text-align:center;padding:24px;background:#f8f9fa;border-radius:8px;">
-      <p style="font-size:1.05rem;color:#444;line-height:1.7;margin:0;">You are probably thinking this is just another online language test. We understand that. LingoGrade is not a test. There is no pass, no fail, no trick questions. It is a professional diagnostic conversation — and it ends with complete clarity about your level and exactly what to do next.</p>
+      <p style="font-size:1.05rem;color:#444;line-height:1.7;margin:0;">You are probably thinking this sounds too good to be true — or that it is just another online language test dressed up differently. That is a fair reaction. LingoGrade is not a test. There is no pass, no fail, no trick questions. It is a professional diagnostic conversation — and it ends with a clear picture of your level and what to work on next.</p>
     </div>
 
     <div style="max-width:720px;margin:0 auto 40px;text-align:center;">
       <p style="font-size:0.95rem;color:#777;">A Goethe-Institut exam costs &euro;250+, takes 4 hours, and delivers results in 2 weeks with zero feedback. LingoGrade: from &euro;69.95, 15 minutes, results in 1 hour, complete improvement plan included.</p>
+      <p style="font-size:0.9rem;color:#999;margin-top:8px;font-style:italic;">Would it be wrong to find out exactly where you stand before committing to months of study?</p>
     </div>
 
     <div class="pricing-grid" style="position:relative;">
@@ -665,12 +666,13 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     </div>
 
     <div style="margin-top:16px;padding:12px 24px;background:var(--success-bg);border-radius:8px;max-width:1080px;margin-left:auto;margin-right:auto;border:1px solid rgba(39,174,96,0.2);">
-      <p style="font-size:0.875rem;color:var(--success);margin:0;"><img src="assets/mascot/marco-alarm.png?v=3" alt="Marco alarm" class="marco-icon" style="width:60px;height:auto;margin-right:6px;"><strong>Limited availability.</strong> Sessions are offered on selected days only. If you see a slot that works, book it — they go quickly.</p>
+      <p style="font-size:0.875rem;color:var(--success);margin:0;"><img src="assets/mascot/marco-alarm.png?v=3" alt="Marco alarm" class="marco-icon" style="width:60px;height:auto;margin-right:6px;">Sessions are offered on selected days. Availability is updated in real time.</p>
     </div>
 
     <div class="pricing-discount" style="max-width:1080px;margin-left:auto;margin-right:auto;margin-top:16px;display:flex;align-items:center;gap:20px;">
       <img src="assets/mascot/marco-coffee-morning.png?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:100px;height:auto;flex-shrink:0;">
-      <p>Not sure which to choose? The <strong>DeepDive Assessment</strong> gives you the most thorough diagnostic available — extended sessions, comprehensive error mapping, and priority delivery. The <strong>Full Assessment</strong> is our most popular option with homework and an 8-week plan included.</p>
+      <p>Not sure which to choose? The <strong>DeepDive Assessment</strong> gives you the most thorough diagnostic available — extended sessions, comprehensive error mapping, and priority delivery. The <strong>Full Assessment</strong> is the most popular option with homework and an 8-week plan included.</p>
+      <p style="font-size:0.8125rem;color:var(--ink-light);margin-top:8px;">Not ready? No problem — everything will be here whenever you are.</p>
     </div>
   </div>
 </section>
@@ -706,8 +708,8 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <section class="section section-alt" id="subscription">
   <div class="section-inner" style="text-align:center;">
     <div class="section-label">Weekly Subscription</div>
-    <h2 class="section-title" style="margin-left:auto;margin-right:auto;">The Fastest Path: Weekly Subscription</h2>
-    <p class="section-desc" style="margin-left:auto;margin-right:auto;">Consistent practice is what separates learners who plateau from learners who progress. Lock in your weekly sessions and build unstoppable momentum.</p>
+    <h2 class="section-title" style="margin-left:auto;margin-right:auto;">Weekly Subscription</h2>
+    <p class="section-desc" style="margin-left:auto;margin-right:auto;">Learners who practise consistently tend to progress faster. A weekly structure keeps the work steady without the guesswork of scheduling each session separately.</p>
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:860px;margin:0 auto;">
       <div class="subscription-card" style="border-color:var(--warn);background:linear-gradient(180deg,#FFF8F0 0%,var(--cream) 60%);position:relative;">
@@ -738,7 +740,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       </div>
     </div>
     <div style="padding:16px 24px;background:var(--success-bg);border-radius:10px;border:1px solid rgba(39,174,96,0.2);max-width:860px;margin:24px auto 0;">
-      <p style="font-size:0.875rem;color:var(--success);margin:0;"><strong>3x faster progress.</strong> Students who complete all 3 weekly homework checks reach the next CEFR level in 8 weeks on average.</p>
+      <p style="font-size:0.875rem;color:var(--success);margin:0;">Students who complete all 3 weekly homework checks tend to reach the next CEFR level in about 8 weeks.</p>
     </div>
     <p style="font-size:0.8125rem;color:var(--ink-light);margin-top:12px;">Marco tracks your progress and adjusts your lessons weekly.</p>
   </div>
@@ -775,7 +777,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
             </ul>
           </div>
         </div>
-        <div class="flashcard-loss">Every error in your report becomes a flashcard. Every flashcard you skip is a mistake you will make again.</div>
+        <div class="flashcard-loss">Every error in your report becomes a flashcard. Patterns you practise tend to stick; patterns you skip tend to return.</div>
         <div style="margin-top:24px;">
           <a href="#pricing" class="btn-primary">Explore Assessments &rarr; Flashcards Included Free</a>
         </div>
@@ -854,7 +856,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     </div>
 
     <div style="margin-top:48px;text-align:center;">
-      <a href="#pricing" class="btn-primary">I Want This Clarity Too &rarr;</a>
+      <a href="#pricing" class="btn-primary">Explore Assessment Options &rarr;</a>
     </div>
   </div>
 </section>
