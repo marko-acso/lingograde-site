@@ -48,9 +48,6 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .brand-logo { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); }
 .brand-logo img { height: 44px; width: auto; }
 .brand-a { color: #27AE60; text-decoration: none; }
-.nav-links { display: flex; gap: 32px; align-items: center; }
-.nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; transition: color 0.15s; }
-.nav-links a:hover { color: var(--accent); }
 .nav-menu { display: flex; gap: 28px; align-items: center; }
 .nav-menu a { font-size: 0.875rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; transition: color 0.15s; }
 .nav-menu a:hover { color: var(--accent); }
@@ -180,7 +177,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .faq-item.open .faq-q::after { content: '\2212'; }
 .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
 .faq-a-inner { padding: 0 0 20px; font-size: 0.9375rem; color: var(--ink-soft); line-height: 1.7; }
-.faq-item.open .faq-a { max-height: 300px; }
+.faq-item.open .faq-a { max-height: 1000px; }
 
 /* ── Footer ── */
 .footer { padding: 48px 32px; background: var(--accent); color: rgba(255,255,255,0.75); text-align: center; }
@@ -191,6 +188,11 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .footer-links { margin-top: 20px; display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
 .footer-links a { font-size: 0.8125rem; }
 .footer-copy { margin-top: 32px; font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+
+/* ── Layout utility classes ── */
+.grid-3col { display: grid; grid-template-columns: repeat(3, 1fr); }
+.grid-2col { display: grid; grid-template-columns: 1fr 1fr; }
+.flex-gap-lg { display: flex; gap: 32px; }
 
 /* ── Responsive: 768px ── */
 @media (max-width: 768px) {
@@ -234,16 +236,10 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .cefr-bar { flex-wrap: wrap; }
   .cefr-level { flex: 1 1 30%; }
 
-  /* Inline style overrides — grids and flex containers set via style="" */
-  div[style*="grid-template-columns:repeat(3,1fr)"],
-  div[style*="grid-template-columns: repeat(3,1fr)"],
-  div[style*="grid-template-columns:repeat(3, 1fr)"],
-  div[style*="grid-template-columns: repeat(3, 1fr)"] { grid-template-columns: 1fr !important; }
-  div[style*="grid-template-columns:1fr 1fr"],
-  div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
-  div[style*="display:flex"][style*="gap:32px"],
-  div[style*="display: flex"][style*="gap: 32px"],
-  div[style*="display:flex"][style*="gap: 32px"] { flex-direction: column; gap: 16px !important; }
+  /* Grid and flex responsive overrides */
+  .grid-3col { grid-template-columns: 1fr !important; }
+  .grid-2col { grid-template-columns: 1fr !important; }
+  .flex-gap-lg { flex-direction: column; gap: 16px !important; }
 
   /* All CTA buttons full width */
   .btn-primary, .btn-secondary, .pricing-btn { width: 100%; text-align: center; justify-content: center; box-sizing: border-box; }
@@ -320,7 +316,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <div class="hero-trust" style="margin-top:32px;">
       <strong>Internationally recognized standard</strong> — the same CEFR framework used by Goethe-Institut, telc, Cambridge, and every major European employer.
     </div>
-    <div style="margin-top:24px;display:flex;gap:32px;justify-content:center;flex-wrap:wrap;">
+    <div class="flex-gap-lg" style="margin-top:24px;justify-content:center;flex-wrap:wrap;">
       <div style="text-align:center;">
         <div style="font-family:var(--font-display);font-size:1.8rem;color:var(--accent);">15 min</div>
         <div style="font-size:0.8rem;color:var(--ink-light);">to find out where you really stand</div>
@@ -482,7 +478,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <div class="section-label">The Problem</div>
     <h2 class="section-title">You have been studying for years. But something is not adding up.</h2>
     <p class="section-desc" style="margin:0 auto 40px;">You practice regularly. You take lessons. You watch videos in your target language. And yet — conversations still feel uncertain, job applications still feel risky, and you still cannot confidently say what level you actually are.</p>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;">
+    <div class="grid-3col" style="gap:24px;margin-top:40px;">
       <div style="padding:24px;border-radius:12px;border:1.5px solid var(--border);background:var(--cream);text-align:left;">
         <div style="font-size:1.5rem;margin-bottom:12px;">&#128523;</div>
         <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;">You think you are B2</h3>
@@ -798,7 +794,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <div class="section-label">Student Experiences</div>
     <h2 class="section-title">What our students discovered</h2>
     <p class="section-desc" style="margin-bottom:48px;">These are real results from real assessments. Every student came in with a question about their level. Every student left with an answer — and a plan.</p>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+    <div class="grid-3col" style="gap:24px;">
 
       <div style="background:var(--parchment);border-radius:12px;padding:28px;border:1.5px solid var(--border);">
         <div style="display:flex;gap:4px;margin-bottom:16px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
