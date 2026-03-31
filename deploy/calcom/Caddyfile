@@ -1,0 +1,4 @@
+booking.lingograde.com {
+	reverse_proxy calcom:3000
+	encode gzip
+}

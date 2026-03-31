@@ -8,7 +8,7 @@
 <style>
 :root { --accent: #2563AB; --accent-lt: #1D4ED8; --ink: #1C1C1C; --ink-soft: #5A5A5A; --ink-light: #9CA3AF; --cream: #FFFDF7; --border: #E5E7EB; --gold: #C8952E; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--cream); color: var(--ink); }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--cream); color: var(--ink); overflow-x: hidden; }
 .nav { background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; }
 .nav img { height: 40px; }
 .nav a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.875rem; }
@@ -18,6 +18,15 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .hero p { color: var(--ink-soft); font-size: 1.1rem; max-width: 540px; margin: 0 auto; line-height: 1.7; }
 .pricing { max-width: 960px; margin: -20px auto 60px; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
 @media (max-width: 768px) { .pricing { grid-template-columns: 1fr; max-width: 400px; } }
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.4rem; }
+  .hero p { font-size: 0.95rem; }
+  .pricing { margin: -16px auto 40px; gap: 16px; }
+  .plan { padding: 24px 20px; }
+  .plan-name { font-size: 1rem; }
+  .plan-price .new { font-size: 1.5rem; }
+  .plan-btn { padding: 12px; font-size: 0.9rem; }
+}
 .plan.premium { border: 2px solid #E67E22; position: relative; }
 .plan.premium::before { content: 'MOST THOROUGH'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #E67E22; color: white; font-size: 0.7rem; font-weight: 700; padding: 4px 14px; border-radius: 10px; letter-spacing: 0.5px; }
 .plan-btn.premium { background: #E67E22; color: white; }
@@ -25,7 +34,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .plan { background: white; border-radius: 16px; padding: 32px 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid var(--border); text-align: center; transition: transform 0.15s, box-shadow 0.15s; }
 .plan:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
 .plan.featured { border: 2px solid var(--accent); position: relative; }
-.plan.featured::before { content: 'MOST POPULAR'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; font-size: 0.7rem; font-weight: 700; padding: 4px 14px; border-radius: 10px; letter-spacing: 0.5px; }
+.plan.featured::before { content: 'MOST CHOSEN'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; font-size: 0.7rem; font-weight: 700; padding: 4px 14px; border-radius: 10px; letter-spacing: 0.5px; }
 .plan-name { font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; }
 .plan-duration { font-size: 0.85rem; color: var(--ink-light); margin-bottom: 16px; }
 .plan-price { margin-bottom: 4px; }
@@ -159,10 +168,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
   </div>
 </div>
 
-<div class="footer">
+<footer class="footer">
   <p><a href="/">LingoGr<span style="color:#27AE60">A</span>de</a> — Professional Language Assessment</p>
+  <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="terms-of-service.html">Terms of Service</a>
   <p style="margin-top:8px;">&copy; 2026 LingoGrade. All rights reserved.</p>
-</div>
+</footer>
 
 <script src="js/shield.js" defer></script>
 <script src="js/marco-chat.js" defer></script>

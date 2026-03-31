@@ -17,7 +17,7 @@
 <meta property="og:description" content="Sticker packs, plush owls, and bundles. Spread the word and earn while doing it.">
 <meta property="og:image" content="og-image.png">
 <meta property="og:type" content="website">
-<link rel="icon" type="image/gif" href="assets/mascot/marco-logo-v6.1.png?v=3">
+<link rel="icon" type="image/png" href="assets/mascot/marco-logo-v6.1.png?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
@@ -788,11 +788,17 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
 <section class="section" id="individual">
   <div class="section-inner" style="max-width:600px;">
 
-    <!-- Visual: Marco + Stickers -->
-    <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin:20px 0;">
-      <img src="assets/mascot/Marco.png" alt="Marco Plush" style="width:120px;height:auto;border-radius:16px;background:#1e1e1e;padding:8px;">
-      <span style="font-size:2rem;font-weight:700;color:var(--accent);">+</span>
-      <img src="assets/mascot/lingograde-card.png" alt="30 QR Stickers" style="width:80px;height:auto;border-radius:8px;">
+    <!-- Visual: Marco Plush Gallery + Stickers -->
+    <div class="plush-gallery" style="margin:20px 0;">
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:12px;">
+        <img src="assets/mascot/Marco4.png" alt="Marco Plush – side view" data-marco-gallery style="width:140px;height:auto;border-radius:12px;cursor:pointer;">
+        <img src="assets/mascot/Marco.png" alt="Marco Plush – front view" data-marco-gallery style="width:180px;height:auto;border-radius:12px;cursor:pointer;border:2px solid var(--accent);">
+        <img src="assets/mascot/Marco2.png" alt="Marco Plush – detail view" data-marco-gallery style="width:140px;height:auto;border-radius:12px;cursor:pointer;">
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;">
+        <span style="font-size:1.5rem;font-weight:700;color:var(--accent);">+</span>
+        <img src="assets/mascot/lingograde-card.png" alt="30 QR Stickers" style="width:80px;height:auto;border-radius:8px;">
+      </div>
     </div>
 
     <!-- Title -->
@@ -850,17 +856,17 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
 
       <ul class="mega-items">
         <li><strong>1x Full Assessment</strong> &mdash; complete CEFR evaluation <span class="item-value">EUR 129.95</span></li>
-        <li><strong>1x Reassessment at 8 weeks</strong> &mdash; track your progress <span class="item-value">EUR 139.95</span></li>
+        <li><strong>1x Reassessment at 8 weeks</strong> &mdash; track your progress <span class="item-value">EUR 89.95</span></li>
         <li><strong>3x Sticker Packs</strong> (105 stickers) <span class="item-value">EUR 59.95</span></li>
         <li><strong>1x Homework Check</strong> &mdash; detailed correction report <span class="item-value">EUR 29.95</span></li>
         <li><strong>1x Marco Plush</strong> <span class="item-value">EUR 24.95</span></li>
-        <li style="border-top:2px solid var(--ink);font-weight:700;font-size:1.0625rem;"><strong>TOTAL value</strong> <span class="item-value" style="font-weight:700;font-size:1.0625rem;color:var(--ink);">EUR 384.75</span></li>
+        <li style="border-top:2px solid var(--ink);font-weight:700;font-size:1.0625rem;"><strong>TOTAL value</strong> <span class="item-value" style="font-weight:700;font-size:1.0625rem;color:var(--ink);">EUR 334.75</span></li>
       </ul>
 
       <div class="mega-price-block">
-        <div class="mega-price-old">Regular price: EUR 384.75</div>
+        <div class="mega-price-old">Regular price: EUR 334.75</div>
         <div class="mega-price-new">EUR 299.95</div>
-        <div class="mega-price-save"><img src="assets/mascot/marco-face-wink.png?v=3" alt=""> You save EUR 84.80 (22% off)</div>
+        <div class="mega-price-save"><img src="assets/mascot/marco-face-wink.png?v=3" alt=""> You save EUR 34.80 (10% off)</div>
         <p style="font-size:1rem;color:var(--ink-soft);margin-top:8px;font-style:italic;">Less than a nice dinner for two &mdash; but this keeps earning for you long after dessert.</p>
       </div>
 
@@ -1308,6 +1314,84 @@ function enlargeImage(src) {
   overlay.onclick = function() { document.body.removeChild(overlay); };
   document.body.appendChild(overlay);
 }
+
+// Marco gallery popup
+(function() {
+  var marcoSrcs = ['assets/mascot/Marco4.png', 'assets/mascot/Marco.png', 'assets/mascot/Marco2.png'];
+  var currentIdx = 0;
+
+  document.querySelectorAll('[data-marco-gallery]').forEach(function(img, i) {
+    img.addEventListener('click', function() {
+      currentIdx = i;
+      openMarcoGallery();
+    });
+  });
+
+  function openMarcoGallery() {
+    var overlay = document.createElement('div');
+    overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);display:flex;align-items:center;justify-content:center;z-index:10000;';
+
+    var container = document.createElement('div');
+    container.style.cssText = 'position:relative;display:flex;align-items:center;gap:16px;max-width:95%;';
+
+    var btnStyle = 'background:rgba(255,255,255,0.15);border:none;color:#fff;font-size:2rem;width:48px;height:48px;border-radius:50%;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;';
+
+    var prevBtn = document.createElement('button');
+    prevBtn.innerHTML = '&#8249;';
+    prevBtn.style.cssText = btnStyle;
+    prevBtn.onclick = function(e) { e.stopPropagation(); currentIdx = (currentIdx - 1 + marcoSrcs.length) % marcoSrcs.length; mainImg.src = marcoSrcs[currentIdx]; updateThumbs(); };
+
+    var mainImg = document.createElement('img');
+    mainImg.src = marcoSrcs[currentIdx];
+    mainImg.style.cssText = 'max-width:min(500px,75vw);max-height:80vh;border-radius:12px;box-shadow:0 0 40px rgba(0,0,0,0.5);';
+
+    var nextBtn = document.createElement('button');
+    nextBtn.innerHTML = '&#8250;';
+    nextBtn.style.cssText = btnStyle;
+    nextBtn.onclick = function(e) { e.stopPropagation(); currentIdx = (currentIdx + 1) % marcoSrcs.length; mainImg.src = marcoSrcs[currentIdx]; updateThumbs(); };
+
+    container.appendChild(prevBtn);
+    container.appendChild(mainImg);
+    container.appendChild(nextBtn);
+
+    var thumbRow = document.createElement('div');
+    thumbRow.style.cssText = 'position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:10px;';
+
+    var thumbs = [];
+    marcoSrcs.forEach(function(src, i) {
+      var t = document.createElement('img');
+      t.src = src;
+      t.style.cssText = 'width:60px;height:60px;object-fit:cover;border-radius:8px;cursor:pointer;border:2px solid ' + (i === currentIdx ? '#27AE60' : 'transparent') + ';opacity:' + (i === currentIdx ? '1' : '0.6') + ';transition:all 0.2s;';
+      t.onclick = function(e) { e.stopPropagation(); currentIdx = i; mainImg.src = marcoSrcs[i]; updateThumbs(); };
+      thumbRow.appendChild(t);
+      thumbs.push(t);
+    });
+
+    function updateThumbs() {
+      thumbs.forEach(function(t, i) {
+        t.style.borderColor = i === currentIdx ? '#27AE60' : 'transparent';
+        t.style.opacity = i === currentIdx ? '1' : '0.6';
+      });
+    }
+
+    var closeBtn = document.createElement('button');
+    closeBtn.innerHTML = '&times;';
+    closeBtn.style.cssText = 'position:absolute;top:16px;right:20px;background:none;border:none;color:#fff;font-size:2.5rem;cursor:pointer;z-index:10001;';
+    closeBtn.onclick = function() { document.body.removeChild(overlay); };
+
+    overlay.appendChild(container);
+    overlay.appendChild(thumbRow);
+    overlay.appendChild(closeBtn);
+    overlay.onclick = function(e) { if (e.target === overlay) document.body.removeChild(overlay); };
+    document.body.appendChild(overlay);
+
+    document.addEventListener('keydown', function handler(e) {
+      if (e.key === 'Escape') { if (overlay.parentNode) document.body.removeChild(overlay); document.removeEventListener('keydown', handler); }
+      if (e.key === 'ArrowLeft') { prevBtn.click(); }
+      if (e.key === 'ArrowRight') { nextBtn.click(); }
+    });
+  }
+})();
 
 // Currency detection — symbol swap + USD price conversion
 (function(){

@@ -23,12 +23,15 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: var(--font-body); color: var(--ink); background: var(--cream); min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 32px; }
 .container { max-width: 480px; }
-.marco-img { width: 160px; height: auto; margin-bottom: 32px; opacity: 0.9; }
+.marco-img { width: 160px; height: auto; margin-bottom: 32px; opacity: 0.9; background: transparent; }
 h1 { font-family: var(--font-display); font-size: 2.5rem; color: var(--ink); margin-bottom: 12px; }
 h1 span { color: var(--accent); }
 p { font-size: 1.125rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 32px; }
 .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: var(--accent); color: white; border-radius: 10px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: all 0.2s; }
 .btn:hover { background: var(--accent-lt); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(37,99,171,0.3); }
+.footer-minimal { background: #1C1C1C; color: white; padding: 24px; text-align: center; margin-top: 60px; }
+.footer-minimal a { color: #2563AB; text-decoration: none; font-weight: 600; }
+.footer-minimal a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -38,5 +41,12 @@ p { font-size: 1.125rem; color: var(--ink-soft); line-height: 1.7; margin-bottom
   <p>Oops, Marco fell asleep. This page doesn't exist.</p>
   <a href="/" class="btn">Back to Home</a>
 </div>
+
+<!-- Footer -->
+<footer class="footer-minimal">
+  <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="terms-of-service.html">Terms of Service</a>
+  <p style="margin-top:12px;font-size:0.85rem;opacity:0.7;">&copy; 2026 LingoGrade. All rights reserved.</p>
+</footer>
+
 </body>
 </html>

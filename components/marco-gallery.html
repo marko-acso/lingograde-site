@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meet Marco -- LingoGrade</title>
+<style>
+/* ══════════════════════════════════════════════════════════════
+   Marco Gallery Lightbox
+   WISE: Lozanov (playful, safe), Berne (Free Child), Cialdini (liking)
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Trigger button (standalone or injectable) ── */
+.marco-gallery-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background: #2563AB;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.marco-gallery-trigger:hover {
+  background: #3B82F6;
+  transform: translateY(-1px);
+}
+.marco-gallery-trigger img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+/* ── Overlay ── */
+.marco-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+  animation: marcoFadeIn 0.25s ease;
+}
+.marco-overlay.active {
+  display: flex;
+}
+@keyframes marcoFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Modal ── */
+.marco-modal {
+  position: relative;
+  background: #fff;
+  border-radius: 20px;
+  max-width: 520px;
+  width: 92vw;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+  animation: marcoSlideUp 0.3s ease;
+}
+@keyframes marcoSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Close button ── */
+.marco-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.06);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.25rem;
+  color: #4A4A4A;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+.marco-close:hover {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+/* ── Slide container ── */
+.marco-slides {
+  position: relative;
+  width: 100%;
+}
+.marco-slide {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 32px 32px;
+  text-align: center;
+  min-height: 480px;
+  justify-content: center;
+}
+.marco-slide.active {
+  display: flex;
+}
+
+/* ── Slide image ── */
+.marco-slide-img {
+  max-width: 300px;
+  max-height: 320px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 20px;
+  background: transparent;
+  border-radius: 8px;
+}
+
+/* ── Caption ── */
+.marco-slide-caption {
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-size: 1.1rem;
+  color: #1C1C1C;
+  font-weight: 500;
+  line-height: 1.5;
+  max-width: 380px;
+}
+
+/* ── Final slide (plush CTA) ── */
+.marco-slide--plush .marco-slide-caption {
+  margin-bottom: 16px;
+}
+.marco-plush-price {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.5rem;
+  color: #27AE60;
+  font-weight: 700;
+  margin: 8px 0 16px;
+}
+.marco-plush-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: #27AE60;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.marco-plush-cta:hover {
+  background: #2ECC71;
+  transform: translateY(-1px);
+}
+
+/* ── Navigation arrows ── */
+.marco-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.06);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.3rem;
+  color: #4A4A4A;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  z-index: 5;
+}
+.marco-nav:hover {
+  background: rgba(0, 0, 0, 0.12);
+}
+.marco-nav--prev { left: 8px; }
+.marco-nav--next { right: 8px; }
+.marco-nav:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* ── Dots indicator ── */
+.marco-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 16px 0 20px;
+}
+.marco-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #D0D0D0;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.marco-dot.active {
+  background: #2563AB;
+  transform: scale(1.3);
+}
+
+/* ── Counter ── */
+.marco-counter {
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-size: 0.8rem;
+  color: #8A8A8A;
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .marco-modal {
+    max-width: 100vw;
+    width: 100vw;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+  .marco-slide {
+    padding: 44px 20px 24px;
+    min-height: 420px;
+  }
+  .marco-slide-img {
+    max-width: 240px;
+    max-height: 260px;
+  }
+  .marco-slide-caption {
+    font-size: 1rem;
+  }
+  .marco-nav {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     TRIGGER BUTTON — place this wherever you want the gallery to open.
+     Or call marcoGallery.open() from any click handler.
+     ═══════════════════════════════════════════════════════════════ -->
+<button class="marco-gallery-trigger" onclick="marcoGallery.open()">
+  <img src="../assets/mascot/marco-wave.png" alt="Marco"> Meet Marco
+</button>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     GALLERY OVERLAY
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="marco-overlay" id="marcoOverlay">
+  <div class="marco-modal" id="marcoModal">
+    <button class="marco-close" onclick="marcoGallery.close()" aria-label="Close">&times;</button>
+
+    <!-- Navigation arrows -->
+    <button class="marco-nav marco-nav--prev" id="marcoPrev" onclick="marcoGallery.prev()" aria-label="Previous">&lsaquo;</button>
+    <button class="marco-nav marco-nav--next" id="marcoNext" onclick="marcoGallery.next()" aria-label="Next">&rsaquo;</button>
+
+    <div class="marco-slides" id="marcoSlides">
+
+      <!-- Slide 1: Wave -->
+      <div class="marco-slide active">
+        <img class="marco-slide-img" src="../assets/mascot/marco-wave.png" alt="Marco waving">
+        <div class="marco-slide-caption">Hey there! I'm Marco. Welcome to LingoGrade -- let's have some fun with languages.</div>
+      </div>
+
+      <!-- Slide 2: Coffee morning -->
+      <div class="marco-slide">
+        <img class="marco-slide-img" src="../assets/mascot/marco-coffee-morning.png" alt="Marco with coffee">
+        <div class="marco-slide-caption">Marco after his morning coffee. Finally ready to face grammar.</div>
+      </div>
+
+      <!-- Slide 3: Reading -->
+      <div class="marco-slide">
+        <img class="marco-slide-img" src="../assets/mascot/marco-reading.png" alt="Marco reading">
+        <div class="marco-slide-caption">Deep in your report. Every word matters -- especially the ones you already know.</div>
+      </div>
+
+      <!-- Slide 4: Tip / idea lamp -->
+      <div class="marco-slide">
+        <img class="marco-slide-img" src="../assets/mascot/marco-tip.gif" alt="Marco with idea">
+        <div class="marco-slide-caption">That little spark when something finally clicks. Marco knows the feeling.</div>
+      </div>
+
+      <!-- Slide 5: Thumbs up -->
+      <div class="marco-slide">
+        <img class="marco-slide-img" src="../assets/mascot/marco-thumbsup.png" alt="Marco thumbs up">
+        <div class="marco-slide-caption">Marco celebrating your progress. Every small step deserves a big thumbs up.</div>
+      </div>
+
+      <!-- Slide 6: Hero -->
+      <div class="marco-slide">
+        <img class="marco-slide-img" src="../assets/mascot/marco-hero.png" alt="Marco hero">
+        <div class="marco-slide-caption">Your personal language hero. Cape optional, confidence included.</div>
+      </div>
+
+      <!-- Slide 7: Chatbot -->
+      <div class="marco-slide">
+        <img class="marco-slide-img" src="../assets/mascot/marco-chatbot.png" alt="Marco chatbot">
+        <div class="marco-slide-caption">Marco ready for your lesson. Ask anything -- he does not judge, he just helps.</div>
+      </div>
+
+      <!-- Slide 8: Headset -->
+      <div class="marco-slide">
+        <img class="marco-slide-img" src="../assets/mascot/marco-headset.png" alt="Marco with headset">
+        <div class="marco-slide-caption">Headset on, world off. Time to practice speaking without overthinking it.</div>
+      </div>
+
+      <!-- Slide 9: Tea -->
+      <div class="marco-slide">
+        <img class="marco-slide-img" src="../assets/mascot/marco-tea.png" alt="Marco with tea">
+        <div class="marco-slide-caption">Sometimes learning is just a warm cup of tea and a quiet moment with new words.</div>
+      </div>
+
+      <!-- Slide 10: Sleeping -->
+      <div class="marco-slide">
+        <img class="marco-slide-img" src="../assets/mascot/marco-sleeping.png" alt="Marco sleeping">
+        <div class="marco-slide-caption">Even Marco needs rest. Your brain consolidates everything while you sleep -- science says so.</div>
+      </div>
+
+      <!-- Slide 11: Plush (final) -->
+      <div class="marco-slide marco-slide--plush">
+        <img class="marco-slide-img" src="../assets/mascot/Marco.png" alt="Marco plush owl">
+        <div class="marco-slide-caption">The real Marco. Soft, huggable, and always on your side.</div>
+        <div class="marco-plush-price">EUR 24.95</div>
+        <a href="https://lingograde.com/shop#plush" class="marco-plush-cta">Take Marco home</a>
+      </div>
+
+    </div>
+
+    <!-- Dots -->
+    <div class="marco-dots" id="marcoDots"></div>
+    <div class="marco-counter" id="marcoCounter"></div>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════════════════════════════════════
+   Marco Gallery — Pure JS, no dependencies
+   WISE: Lozanov (playful, safe), Berne (Free Child activation),
+   Cialdini (liking through repeated exposure to Marco)
+   ══════════════════════════════════════════════════════════════ */
+const marcoGallery = (() => {
+  let current = 0;
+  let slides, dots, overlay, modal, counter, totalSlides;
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  function init() {
+    overlay = document.getElementById('marcoOverlay');
+    modal   = document.getElementById('marcoModal');
+    slides  = document.querySelectorAll('#marcoSlides .marco-slide');
+    counter = document.getElementById('marcoCounter');
+    totalSlides = slides.length;
+
+    // Build dots
+    const dotsContainer = document.getElementById('marcoDots');
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'marco-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    }
+    dots = dotsContainer.querySelectorAll('.marco-dot');
+
+    // Close on overlay click (not modal)
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) close();
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!overlay.classList.contains('active')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') prev();
+      if (e.key === 'ArrowRight') next();
+    });
+
+    // Touch / swipe support
+    modal.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    modal.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    updateUI();
+  }
+
+  function handleSwipe() {
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) < 50) return; // ignore small swipes
+    if (diff > 0) next();   // swipe left = next
+    else prev();            // swipe right = prev
+  }
+
+  function goTo(index) {
+    if (index < 0 || index >= totalSlides) return;
+    slides[current].classList.remove('active');
+    if (dots[current]) dots[current].classList.remove('active');
+    current = index;
+    slides[current].classList.add('active');
+    if (dots[current]) dots[current].classList.add('active');
+    updateUI();
+  }
+
+  function next() {
+    if (current < totalSlides - 1) goTo(current + 1);
+  }
+
+  function prev() {
+    if (current > 0) goTo(current - 1);
+  }
+
+  function updateUI() {
+    const prevBtn = document.getElementById('marcoPrev');
+    const nextBtn = document.getElementById('marcoNext');
+    if (prevBtn) prevBtn.disabled = current === 0;
+    if (nextBtn) nextBtn.disabled = current === totalSlides - 1;
+    if (counter) counter.textContent = (current + 1) + ' / ' + totalSlides;
+  }
+
+  function open(startIndex) {
+    if (!overlay) init();
+    goTo(startIndex || 0);
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Auto-init when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    // Defer to next tick so DOM elements are available
+    setTimeout(init, 0);
+  }
+
+  return { open, close, next, prev, goTo };
+})();
+
+/* ── Auto-attach to any existing Marco images on the page ──
+   Adds click-to-open on any img with class "marco-img" or
+   data-marco-gallery attribute. Each image opens to its matching
+   slide if a data-marco-slide="N" attribute is present. */
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[data-marco-gallery]').forEach(el => {
+    el.style.cursor = 'pointer';
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      const slideIndex = parseInt(el.getAttribute('data-marco-slide') || '0', 10);
+      marcoGallery.open(slideIndex);
+    });
+  });
+});
+</script>
+
+</body>
+</html>
