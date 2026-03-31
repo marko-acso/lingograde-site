@@ -77,6 +77,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .nav-menu a:hover { background: var(--parchment); }
   .nav-signin { margin: 4px 32px; text-align: center; }
   .nav-cta { margin: 8px 32px 12px; text-align: center; justify-content: center; display: flex; }
+  a.cta-button, .cta-button, a[class*="btn"], button, .button { width: 100%; box-sizing: border-box; text-align: center; }
 }
 @media (max-width: 480px) {
   h1 { font-size: 1.75rem; }
@@ -111,7 +112,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <section class="section" style="padding-top:120px;text-align:center;background:linear-gradient(180deg, #1B3A5C 0%, #2A5580 40%, var(--cream) 100%);">
   <div class="section-inner" style="max-width:760px;">
     <div style="display:inline-block;padding:6px 16px;background:var(--gold);color:white;border-radius:100px;font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:24px;">Corporate Language Assessment</div>
-    <div style="margin-bottom:24px;"><img src="assets/mascot/marco-reading.png?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:200px;height:auto;"></div>
+    <div style="margin-bottom:24px;"><img src="assets/mascot/marco-reading.png?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:200px;height:auto;background:transparent;"></div>
     <h1 style="font-family:var(--font-display);font-size:clamp(2rem,4.5vw,2.8rem);line-height:1.2;margin-bottom:20px;color:white;">What if you could see exactly where<br>your team's language skills stand?</h1>
     <p style="font-size:1.125rem;color:rgba(255,255,255,0.85);max-width:600px;margin:0 auto 32px;line-height:1.7;">It seems like your team already has the language skills — they just need a structured way to prove it. LingoGrade gives every employee an individual CEFR report across 12 languages — one provider, one invoice, one consistent format. And you get a Team Summary showing exactly where your workforce stands.</p>
     <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
@@ -238,7 +239,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       <div style="padding:32px;border-radius:16px;background:var(--cream);border:1.5px solid var(--border);text-align:left;">
         <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-light);margin-bottom:8px;">Enterprise</div>
         <div style="font-size:0.9375rem;color:var(--ink-soft);margin-bottom:16px;">50+ employees</div>
-        <div class="corp-price" data-eur="79.95" data-usd="79.95" data-chf="79.95" data-gbp="79.95" style="font-size:2.5rem;font-weight:800;color:var(--ink);line-height:1;">&euro;79.95</div>
+        <div class="corp-price" data-eur="49.95" data-usd="49.95" data-chf="49.95" data-gbp="49.95" style="font-size:2.5rem;font-weight:800;color:var(--ink);line-height:1;">&euro;49.95</div>
         <div style="font-size:0.8rem;color:var(--ink-light);margin-bottom:20px;">per person</div>
         <div class="corp-save" data-eur="50" data-usd="50" data-chf="50" data-gbp="50" style="font-size:0.8rem;color:var(--success);font-weight:600;margin-bottom:16px;">Save &euro;50 per person vs. individual</div>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;font-size:0.875rem;color:var(--ink-soft);">
@@ -257,7 +258,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <div style="font-weight:700;color:var(--ink);margin-bottom:4px;">Re-Assessment (8 weeks later)</div>
           <div style="font-size:0.875rem;color:var(--ink-soft);">Measure progress. Show ROI on training spend. Same employee, same language, new report.</div>
         </div>
-        <div class="corp-reassess" data-eur="89.95" data-usd="89.95" data-chf="89.95" data-gbp="89.95" style="font-size:1.5rem;font-weight:800;color:var(--success);"><span style="font-size:0.85rem;font-weight:600;color:var(--ink-soft);">starting from</span> &euro;89.95 <span style="font-size:0.8rem;font-weight:400;color:var(--ink-light);">per person</span></div>
+        <div class="corp-reassess" data-eur="139.95" data-usd="139.95" data-chf="139.95" data-gbp="139.95" style="font-size:1.5rem;font-weight:800;color:var(--success);"><span style="font-size:0.85rem;font-weight:600;color:var(--ink-soft);">starting from</span> &euro;139.95 <span style="font-size:0.8rem;font-weight:400;color:var(--ink-light);">per person</span></div>
       </div>
     </div>
 
@@ -445,18 +446,21 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 </section>
 
 <!-- Footer -->
-<footer style="background:#1A3A5C;color:white;text-align:center;padding:48px 32px;">
-  <div style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:8px;">LingoGr<span style="color:#27AE60">A</span>de</div>
-  <p style="color:#93B5D0;font-size:0.9375rem;">Professional Language Assessment</p>
-  <div style="margin-top:24px;display:flex;gap:24px;justify-content:center;flex-wrap:wrap;">
-    <a href="index.html" style="font-size:0.875rem;color:#93B5D0;text-decoration:none;">Home</a>
-    <a href="index.html#languages" style="font-size:0.875rem;color:#93B5D0;text-decoration:none;">Languages</a>
-    <a href="index.html#pricing" style="font-size:0.875rem;color:#93B5D0;text-decoration:none;">Individual Pricing</a>
-    <a href="partners.html" style="font-size:0.875rem;color:#93B5D0;text-decoration:none;">For Partners</a>
-    <a href="mailto:corporate@lingograde.com" style="font-size:0.875rem;color:#93B5D0;text-decoration:none;">Contact</a>
+<footer style="background:#1A3A5C;color:rgba(255,255,255,0.85);text-align:center;padding:48px 32px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <div style="font-size:1.5rem;font-weight:700;letter-spacing:0.02em;">LingoGr<span style="color:#27AE60">A</span>de</div>
+  <p style="color:rgba(255,255,255,0.6);font-size:0.9375rem;margin:8px 0 24px;">Professional Language Assessment</p>
+  <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:0.875rem;">
+    <a href="index.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Home</a>
+    <a href="index.html#languages" style="color:rgba(255,255,255,0.7);text-decoration:none;">Languages</a>
+    <a href="index.html#pricing" style="color:rgba(255,255,255,0.7);text-decoration:none;">Pricing</a>
+    <a href="partners.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">For Partners</a>
+    <a href="mailto:corporate@lingograde.com" style="color:rgba(255,255,255,0.7);text-decoration:none;">Contact</a>
   </div>
-  <div style="margin-top:12px;display:flex;gap:16px;justify-content:center;"><a href="privacy-policy.html" target="_blank" style="font-size:0.75rem;color:#9ca3af;text-decoration:none;">Privacy Policy</a><a href="terms-of-service.html" target="_blank" style="font-size:0.75rem;color:#9ca3af;text-decoration:none;">Terms of Service</a></div>
-  <div style="margin-top:16px;font-size:0.75rem;color:#6B8FA8;">&copy; 2026 LingoGrade. All rights reserved.</div>
+  <div style="margin-top:16px;display:flex;gap:16px;justify-content:center;">
+    <a href="privacy-policy.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Privacy Policy</a>
+    <a href="terms-of-service.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Terms of Service</a>
+  </div>
+  <div style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.4);">&copy; 2026 LingoGrade. All rights reserved.</div>
 </footer>
 
 <script>
@@ -496,7 +500,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   });
   // Set re-assessment per-person in calculator
   var rePerEl = document.getElementById('rePerPerson');
-  if (rePerEl) rePerEl.textContent = symbol + '89.95';
+  if (rePerEl) rePerEl.textContent = symbol + '139.95';
 })();
 </script>
 <script>
@@ -520,10 +524,10 @@ function updatePricing() {
   var curKey = window._lgCurKey || 'eur';
   var tier, ppp, rePP, indivPP;
   var prices = {
-    eur:  { enterprise: 79.95, department: 89.95, team: 99.95, reassess: 89.95, individual: 129.95 },
-    usd:  { enterprise: 79.95, department: 89.95, team: 99.95, reassess: 89.95, individual: 129.95 },
-    chf:  { enterprise: 79.95, department: 89.95, team: 99.95, reassess: 89.95, individual: 129.95 },
-    gbp:  { enterprise: 79.95, department: 89.95, team: 99.95, reassess: 89.95, individual: 129.95 }
+    eur:  { enterprise: 79.95, department: 89.95, team: 99.95, reassess: 139.95, individual: 129.95 },
+    usd:  { enterprise: 79.95, department: 89.95, team: 99.95, reassess: 139.95, individual: 129.95 },
+    chf:  { enterprise: 79.95, department: 89.95, team: 99.95, reassess: 139.95, individual: 129.95 },
+    gbp:  { enterprise: 79.95, department: 89.95, team: 99.95, reassess: 139.95, individual: 129.95 }
   };
   var p = prices[curKey] || prices.eur;
   if (n >= 50) { tier = 'ENTERPRISE'; ppp = p.enterprise; }

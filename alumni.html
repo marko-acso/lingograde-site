@@ -9,9 +9,16 @@
 :root { --accent: #2563AB; --accent-lt: #1D4ED8; --ink: #1C1C1C; --ink-soft: #5A5A5A; --ink-light: #9CA3AF; --cream: #FFFDF7; --border: #E5E7EB; --gold: #C8952E; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--cream); color: var(--ink); overflow-x: hidden; }
-.nav { background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; }
+.nav { background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; position: relative; }
 .nav img { height: 40px; }
 .nav a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.875rem; }
+#nav-toggle { display: none; }
+.hamburger { display: none; font-size: 1.75rem; cursor: pointer; color: var(--ink); position: absolute; top: 12px; right: 24px; z-index: 1001; background: none; border: none; padding: 8px; }
+@media (max-width: 768px) {
+  .hamburger { display: block; }
+  .nav a:last-child { display: none; }
+  #nav-toggle:checked ~ .nav a:last-child { display: inline-flex; width: 100%; justify-content: center; margin-top: 12px; }
+}
 .hero { text-align: center; padding: 80px 20px 48px; background: linear-gradient(180deg, #EFF6FF 0%, var(--cream) 100%); }
 .badge { display: inline-block; padding: 6px 16px; background: #FEF3C7; border-radius: 20px; font-size: 0.8rem; font-weight: 600; color: var(--gold); margin-bottom: 20px; }
 .hero h1 { font-size: clamp(1.6rem, 5vw, 2.4rem); color: var(--ink); margin-bottom: 16px; line-height: 1.3; }
@@ -65,8 +72,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 </head>
 <body>
 
+<input type="checkbox" id="nav-toggle" style="display:none;">
 <div class="nav">
   <a href="/" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;"><img src="assets/mascot/marco-logo-v6.1.png?v=3" alt="Marco" style="height:44px;width:auto;" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v5.png'"> <span style="font-family:DM Serif Display,Georgia,serif;font-size:1.25rem;color:#1C1C1C;">LingoGr<span style="color:#27AE60">A</span>de</span></a>
+  <label for="nav-toggle" class="hamburger">&#9776;</label>
   <a href="/book" style="display:inline-flex;align-items:center;background:#1C1C1C;color:#FFFDF7;padding:8px 20px;border-radius:8px;font-weight:600;font-size:0.85rem;">Explore Assessments</a>
 </div>
 
@@ -130,8 +139,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
     <div class="plan-name">Quick Assessment</div>
     <div class="plan-duration">15 minutes</div>
     <div class="plan-price">
-      <span class="old">&euro;69.95</span>
-      <span class="new">&euro;55.95</span>
+      <span class="old">&euro;89.95</span>
+      <span class="new">&euro;75.95</span>
     </div>
     <div class="plan-save">You save &euro;14.00</div>
     <ul class="plan-features">
@@ -150,7 +159,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
   <div class="info-card" style="text-align:center;">
     <h3>Continue Your Progress with Targeted Lessons</h3>
     <p>After your assessment, book focused lessons that target YOUR specific errors.</p>
-    <p><strong>15-minute lesson: &euro;69.95</strong> &nbsp;&bull;&nbsp; <strong>25-minute lesson: &euro;99.95</strong></p>
+    <p><strong>15-minute lesson: &euro;89.95</strong> &nbsp;&bull;&nbsp; <strong>25-minute lesson: &euro;99.95</strong></p>
     <p style="font-size:0.85rem;color:var(--ink-light);">Alumni get priority booking. Stackable sessions available.</p>
   </div>
 </div>
@@ -168,10 +177,23 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
   </div>
 </div>
 
-<footer class="footer">
-  <p><a href="/">LingoGr<span style="color:#27AE60">A</span>de</a> — Professional Language Assessment</p>
-  <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="terms-of-service.html">Terms of Service</a>
-  <p style="margin-top:8px;">&copy; 2026 LingoGrade. All rights reserved.</p>
+<footer style="background:#1A3A5C;color:rgba(255,255,255,0.85);text-align:center;padding:48px 32px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <div style="font-size:1.5rem;font-weight:700;letter-spacing:0.02em;">LingoGr<span style="color:#27AE60">A</span>de</div>
+  <p style="color:rgba(255,255,255,0.6);font-size:0.9375rem;margin:8px 0 24px;">Professional Language Assessment</p>
+  <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:0.875rem;">
+    <a href="index.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Home</a>
+    <a href="index.html#languages" style="color:rgba(255,255,255,0.7);text-decoration:none;">Languages</a>
+    <a href="index.html#pricing" style="color:rgba(255,255,255,0.7);text-decoration:none;">Pricing</a>
+    <a href="teachers.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">For Teachers</a>
+    <a href="partners.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Partners</a>
+    <a href="shop.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Shop</a>
+    <a href="mailto:info@lingograde.com" style="color:rgba(255,255,255,0.7);text-decoration:none;">Contact</a>
+  </div>
+  <div style="margin-top:16px;display:flex;gap:16px;justify-content:center;">
+    <a href="privacy-policy.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Privacy Policy</a>
+    <a href="terms-of-service.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Terms of Service</a>
+  </div>
+  <div style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.4);">&copy; 2026 LingoGrade. All rights reserved.</div>
 </footer>
 
 <script src="js/shield.js" defer></script>

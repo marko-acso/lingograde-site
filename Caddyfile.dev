@@ -1,0 +1,8 @@
+http://localhost:3000 {
+	root * .
+	file_server
+	encode gzip
+
+	# SPA-friendly: try file first, then .html extension, then 404
+	try_files {path} {path}.html {path}/ /404.html
+}

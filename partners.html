@@ -326,6 +326,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .section { padding: 32px 20px; }
   .form-card { padding: 28px 20px; margin-top: 32px; }
   .earnings-table th, .earnings-table td { padding: 12px 16px; font-size: 0.875rem; }
+  a.cta-button, .cta-button, a[class*="btn"], button, .button { width: 100%; box-sizing: border-box; text-align: center; }
 }
 @media (max-width: 480px) {
   .hero h1 { font-size: 1.75rem; }
@@ -366,7 +367,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-mascot">
-      <img src="assets/mascot/marco-tea.png?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img">
+      <img src="assets/mascot/marco-tea.png?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="background:transparent;">
     </div>
     <div class="hero-authority">
       <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
@@ -423,17 +424,17 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         <div class="hiw-card-icon"><img src="assets/mascot/marco-face-wink.png?v=3" alt="Selfie" style="height:48px;width:auto;"></div>
         <div class="hiw-card-step">4</div>
         <h3>Bonus: selfie credit</h3>
-        <p>Snap a selfie with Marco and your placed sticker &mdash; earn <span class="cx" data-eur="&euro;5" data-usd="$5" data-gbp="&pound;5" data-chf="CHF&nbsp;5">&euro;5</span> bonus credit on top of your commissions.</p>
+        <p>Snap a selfie with Marco and your placed sticker &mdash; earn <span class="cx" data-eur="5" data-usd="5" data-gbp="5" data-chf="5">&euro;5</span> bonus credit on top of your commissions.</p>
       </div>
       <div class="hiw-card">
-        <div class="hiw-card-icon"><img src="assets/mascot/marco-alarm.png?v=3" alt="Earn" style="height:48px;width:auto;"></div>
+        <div class="hiw-card-icon"><img src="assets/mascot/marco-alarm.png?v=3" alt="Earn" style="height:48px;width:auto;background:transparent;"></div>
         <div class="hiw-card-step">5</div>
         <h3>Watch it stack</h3>
-        <p>Commission on every booked assessment (primary income) + <span class="cx" data-eur="&euro;5" data-usd="$5" data-gbp="&pound;5" data-chf="CHF&nbsp;5">&euro;5</span> per sticker selfie (bonus). Both accumulate.</p>
+        <p>Commission on every booked assessment (primary income) + <span class="cx" data-eur="5" data-usd="5" data-gbp="5" data-chf="5">&euro;5</span> per sticker selfie (bonus). Both accumulate.</p>
       </div>
     </div>
     <div class="hiw-note">
-      <strong>Commission is the main event.</strong> Every assessment booked through your personal QR code or referral link earns you commission &mdash; free, no purchase required. The selfie credit (<span class="cx" data-eur="&euro;5" data-usd="$5" data-gbp="&pound;5" data-chf="CHF&nbsp;5">&euro;5</span> per placement) is a fun bonus on top for partners with the sticker kit.
+      <strong>Commission is the main event.</strong> Every assessment booked through your personal QR code or referral link earns you commission &mdash; free, no purchase required. The selfie credit (<span class="cx" data-eur="5" data-usd="5" data-gbp="5" data-chf="5">&euro;5</span> per placement) is a fun bonus on top for partners with the sticker kit.
     </div>
     <div class="hiw-loss" style="background:var(--accent-bg);border-color:rgba(37,99,171,0.2);color:var(--accent);">
       You already recommend things you believe in &mdash; to friends, colleagues, students. The only difference is that now you have the option to earn from it. Your personal link is ready whenever you are.
@@ -500,7 +501,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       </tbody>
     </table>
     <p class="earnings-note">Revenue share details are shared upon approval. No caps, ever.</p>
-    <div style="margin-top:20px;"><img src="assets/mascot/marco-face-party.png?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:120px;height:auto;"></div>
+    <div style="margin-top:20px;"><img src="assets/mascot/marco-face-party.png?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:120px;height:auto;background:transparent;"></div>
     <!-- Loss aversion nudge -->
     <div class="loss-nudge" style="background:var(--accent-bg);border-color:rgba(37,99,171,0.2);color:var(--accent);">
       It sounds like you already recommend things you believe in. The only difference is that now you have the option to earn from it.
@@ -695,7 +696,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <div class="form-card" style="text-align:left;">
       <!-- Marco warmth near the form -->
       <div class="form-marco">
-        <img src="assets/mascot/marco-thumbsup.png?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img">
+        <img src="assets/mascot/marco-thumbsup.png?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="background:transparent;">
         <p>Share a bit about yourself. We'll review your application personally and get your partner link to you within 24 hours.</p>
       </div>
       <h3>Partner Application</h3>
@@ -848,16 +849,16 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <section class="section selfie-section" id="selfie-campaign">
   <div class="section-inner">
     <p class="section-label">Bonus: Snap &amp; Earn</p>
-    <h2 class="section-title">Selfie bonus: +<span class="cx" data-eur="&euro;5" data-usd="$5" data-gbp="&pound;5" data-chf="CHF&nbsp;5">&euro;5</span> on top of your commissions</h2>
-    <p class="section-desc">Already earning commission through your QR stickers? Add a selfie with Marco and each placed sticker for an extra <span class="cx" data-eur="&euro;5" data-usd="$5" data-gbp="&pound;5" data-chf="CHF&nbsp;5">&euro;5</span> credit &mdash; a fun bonus that stacks with your referral earnings.</p>
+    <h2 class="section-title">Selfie bonus: +<span class="cx" data-eur="5" data-usd="5" data-gbp="5" data-chf="5">&euro;5</span> on top of your commissions</h2>
+    <p class="section-desc">Already earning commission through your QR stickers? Add a selfie with Marco and each placed sticker for an extra <span class="cx" data-eur="5" data-usd="5" data-gbp="5" data-chf="5">&euro;5</span> credit &mdash; a fun bonus that stacks with your referral earnings.</p>
     <div class="selfie-grid">
       <div>
         <ul class="selfie-steps">
           <li>Take a selfie kissing your Marco plush</li>
           <li>Share on social media with #LingoGradeMarco</li>
-          <li><span class="cx" data-eur="&euro;5" data-usd="$5" data-gbp="&pound;5" data-chf="CHF&nbsp;5">&euro;5</span> credited to your account within 24h</li>
+          <li><span class="cx" data-eur="5" data-usd="5" data-gbp="5" data-chf="5">&euro;5</span> credited to your account within 24h</li>
         </ul>
-        <div class="selfie-reward">+ <span class="cx" data-eur="&euro;5" data-usd="$5" data-gbp="&pound;5" data-chf="CHF&nbsp;5">&euro;5</span> added to your partner balance</div>
+        <div class="selfie-reward">+ <span class="cx" data-eur="5" data-usd="5" data-gbp="5" data-chf="5">&euro;5</span> added to your partner balance</div>
         <div style="margin-top:20px;padding:16px 20px;background:var(--accent-bg);border:1.5px solid rgba(37,99,171,0.15);border-radius:12px;">
           <p style="font-size:0.9375rem;color:var(--ink);margin:0 0 12px;font-weight:500;">No plush? Get yours and start earning.</p>
           <a href="https://app.lingograde.com/shop/marco-plush" class="btn-primary" style="padding:10px 24px;font-size:0.875rem;">Meet Marco &rarr;</a>
@@ -866,7 +867,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       </div>
       <div class="selfie-card">
         <div class="selfie-card-placeholder">&#128139;</div>
-        <div class="selfie-card-text">Kiss + snap = <span class="cx" data-eur="&euro;5" data-usd="$5" data-gbp="&pound;5" data-chf="CHF&nbsp;5">&euro;5</span></div>
+        <div class="selfie-card-text">Kiss + snap = <span class="cx" data-eur="5" data-usd="5" data-gbp="5" data-chf="5">&euro;5</span></div>
         <div class="selfie-card-overlay">
           <span>&#129418;</span>
         </div>
@@ -892,8 +893,8 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <li>Perfect for classrooms, co-working spaces, and meetups</li>
         </ul>
         <div class="sticker-pricing">
-          <div class="sticker-price-old"><span class="cx" data-eur="&euro;9.95" data-usd="$10.95" data-gbp="&pound;9.95" data-chf="CHF&nbsp;9.95">&euro;9.95</span></div>
-          <div class="sticker-price-new"><span class="cx" data-eur="&euro;7.95" data-usd="$8.95" data-gbp="&pound;7.95" data-chf="CHF&nbsp;7.95">&euro;7.95</span></div>
+          <div class="sticker-price-old"><span class="cx" data-eur="9.95" data-usd="10.95" data-gbp="9.95" data-chf="9.95">&euro;9.95</span></div>
+          <div class="sticker-price-new"><span class="cx" data-eur="7.95" data-usd="8.95" data-gbp="7.95" data-chf="7.95">&euro;7.95</span></div>
           <div class="sticker-price-save">20% off your first pack</div>
           <div class="sticker-scarcity" style="color:var(--accent);"><img src="assets/mascot/marco-alarm.png?v=3" alt="Marco" style="height:40px;width:auto;vertical-align:middle;margin-right:4px;">Introductory partner pricing</div>
         </div>
@@ -959,19 +960,23 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 </section>
 
 <!-- ── Footer ── -->
-<footer class="footer">
-  <div class="footer-brand">LingoGr<span style="color:#27AE60">A</span>de</div>
-  <p>Professional Language Assessment</p>
-  <div class="footer-links">
-    <a href="index.html#how-it-works">How It Works</a>
-    <a href="index.html#languages">Languages</a>
-    <a href="index.html#pricing">Pricing</a>
-    <a href="teachers.html">For Teachers</a>
-    <a href="partners.html">Partners</a>
-    <a href="mailto:info@lingograde.com">Contact</a>
+<footer style="background:#1A3A5C;color:rgba(255,255,255,0.85);text-align:center;padding:48px 32px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <div style="font-size:1.5rem;font-weight:700;letter-spacing:0.02em;">LingoGr<span style="color:#27AE60">A</span>de</div>
+  <p style="color:rgba(255,255,255,0.6);font-size:0.9375rem;margin:8px 0 24px;">Professional Language Assessment</p>
+  <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:0.875rem;">
+    <a href="index.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Home</a>
+    <a href="index.html#languages" style="color:rgba(255,255,255,0.7);text-decoration:none;">Languages</a>
+    <a href="index.html#pricing" style="color:rgba(255,255,255,0.7);text-decoration:none;">Pricing</a>
+    <a href="teachers.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">For Teachers</a>
+    <a href="partners.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Partners</a>
+    <a href="shop.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Shop</a>
+    <a href="mailto:info@lingograde.com" style="color:rgba(255,255,255,0.7);text-decoration:none;">Contact</a>
   </div>
-  <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="terms-of-service.html">Terms of Service</a>
-  <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
+  <div style="margin-top:16px;display:flex;gap:16px;justify-content:center;">
+    <a href="privacy-policy.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Privacy Policy</a>
+    <a href="terms-of-service.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Terms of Service</a>
+  </div>
+  <div style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.4);">&copy; 2026 LingoGrade. All rights reserved.</div>
 </footer>
 
 <script>

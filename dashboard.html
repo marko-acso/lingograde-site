@@ -130,7 +130,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
 <!-- ── Dashboard ── -->
 <div class="dashboard">
   <div class="dashboard-header" style="display:flex;align-items:center;gap:16px;">
-    <img src="assets/mascot/marco-logo-v6.1.png" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+    <img src="assets/mascot/marco-logo-v6.1.png" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;background:transparent;">
     <div>
       <h1>Your Profile</h1>
       <p>Manage your assessment preferences and personal details.</p>
@@ -217,18 +217,23 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
 <div class="toast" id="toast"></div>
 
 <!-- ── Footer ── -->
-<footer class="footer">
-  <div class="footer-brand">LingoGr<span style="color:#27AE60">A</span>de</div>
-  <p>Professional Language Assessment</p>
-  <div class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="index.html#pricing">Pricing</a>
-    <a href="index.html#languages">Languages</a>
-    <a href="teachers.html">For Teachers</a>
-    <a href="mailto:info@lingograde.com">Contact</a>
+<footer style="background:#1A3A5C;color:rgba(255,255,255,0.85);text-align:center;padding:48px 32px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <div style="font-size:1.5rem;font-weight:700;letter-spacing:0.02em;">LingoGr<span style="color:#27AE60">A</span>de</div>
+  <p style="color:rgba(255,255,255,0.6);font-size:0.9375rem;margin:8px 0 24px;">Professional Language Assessment</p>
+  <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:0.875rem;">
+    <a href="index.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Home</a>
+    <a href="index.html#languages" style="color:rgba(255,255,255,0.7);text-decoration:none;">Languages</a>
+    <a href="index.html#pricing" style="color:rgba(255,255,255,0.7);text-decoration:none;">Pricing</a>
+    <a href="teachers.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">For Teachers</a>
+    <a href="partners.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Partners</a>
+    <a href="shop.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Shop</a>
+    <a href="mailto:info@lingograde.com" style="color:rgba(255,255,255,0.7);text-decoration:none;">Contact</a>
   </div>
-  <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="terms-of-service.html">Terms of Service</a>
-  <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
+  <div style="margin-top:16px;display:flex;gap:16px;justify-content:center;">
+    <a href="privacy-policy.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Privacy Policy</a>
+    <a href="terms-of-service.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Terms of Service</a>
+  </div>
+  <div style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.4);">&copy; 2026 LingoGrade. All rights reserved.</div>
 </footer>
 
 <script>

@@ -68,6 +68,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 /* ── Marco mascot images ── */
 .marco-img { max-width: 100%; height: auto; background: transparent; }
 
+/* ── Hover zoom on product images (desktop only) ── */
+[data-zoom]:hover { cursor: crosshair; }
+
 /* ── Hero ── */
 .hero { padding: 90px 32px 8px; text-align: center; background: linear-gradient(180deg, rgba(37,99,171,0.15) 0%, var(--cream) 100%); }
 .hero-inner { max-width: 720px; margin: 0 auto; }
@@ -765,7 +768,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
 <!-- ── Hero ── -->
 <section class="hero">
   <div class="hero-inner">
-    <img src="assets/mascot/marco-hero.png?v=3" alt="Marco the owl" class="marco-img" style="max-width:120px;margin:0 auto 8px;display:block;">
+    <img src="assets/mascot/marco-hero.png?v=3" alt="Marco the owl" class="marco-img" style="max-width:120px;margin:0 auto 8px;display:block;background:transparent;">
     <h1><em>Your QR. Their scan. Your commission.</em></h1>
     <p>Every sticker carries your personal QR code. Every scan is a potential assessment booking &mdash; and every booking earns you commission. The selfie credit is just a bonus on top.</p>
     <p style="margin-top:12px;font-size:0.9375rem;color:var(--ink-soft);line-height:1.7;">Every sticker contains your personal invisible QR code &mdash; your unique referral link embedded in every one. No ugly code visible. Just a clean sticker with Marco &mdash; and your referral link hidden inside.</p>
@@ -781,6 +784,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
   <a href="#kids" style="padding:8px 20px;background:#1e1e1e;color:#B0B0B0;border-radius:20px;text-decoration:none;font-size:0.85rem;border:1px solid #2a2a2a;">Kids</a>
   <a href="#corporate" style="padding:8px 20px;background:#1e1e1e;color:#B0B0B0;border-radius:20px;text-decoration:none;font-size:0.85rem;border:1px solid #2a2a2a;">Corporate</a>
   <a href="#partners" style="padding:8px 20px;background:#1e1e1e;color:#B0B0B0;border-radius:20px;text-decoration:none;font-size:0.85rem;border:1px solid #2a2a2a;">Partners</a>
+  <a href="#tip" style="padding:8px 20px;background:#1e1e1e;color:#B0B0B0;border-radius:20px;text-decoration:none;font-size:0.85rem;border:1px solid #2a2a2a;">Tip</a>
 </div>
 
 <!-- ── Marco Plush ── -->
@@ -791,9 +795,9 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
     <!-- Visual: Marco Plush Gallery + Stickers -->
     <div class="plush-gallery" style="margin:20px 0;">
       <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:12px;">
-        <img src="assets/mascot/Marco4.png" alt="Marco Plush – side view" data-marco-gallery style="width:140px;height:auto;border-radius:12px;cursor:pointer;">
-        <img src="assets/mascot/Marco.png" alt="Marco Plush – front view" data-marco-gallery style="width:180px;height:auto;border-radius:12px;cursor:pointer;border:2px solid var(--accent);">
-        <img src="assets/mascot/Marco2.png" alt="Marco Plush – detail view" data-marco-gallery style="width:140px;height:auto;border-radius:12px;cursor:pointer;">
+        <img src="assets/mascot/Marco4.png" alt="Marco Plush – side view" data-marco-gallery data-zoom style="width:140px;height:auto;border-radius:12px;cursor:pointer;">
+        <img src="assets/mascot/Marco.png" alt="Marco Plush – front view" data-marco-gallery data-zoom style="width:180px;height:auto;border-radius:12px;cursor:pointer;border:2px solid var(--accent);">
+        <img src="assets/mascot/Marco2.png" alt="Marco Plush – detail view" data-marco-gallery data-zoom style="width:140px;height:auto;border-radius:12px;cursor:pointer;">
       </div>
       <div style="display:flex;align-items:center;justify-content:center;gap:12px;">
         <span style="font-size:1.5rem;font-weight:700;color:var(--accent);">+</span>
@@ -824,7 +828,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
 
     <!-- CTA -->
     <div style="text-align:center;">
-      <a href="https://buy.stripe.com/9B68wPf5Ocf9bDSfjfgUM00" target="_blank" rel="noopener" class="btn-primary">Meet Marco</a>
+      <a href="https://buy.stripe.com/6oU6oH7Dmdjd0ZeefbgUM01" target="_blank" rel="noopener" class="btn-primary">Meet Marco</a>
       <p style="font-size:0.75rem;color:var(--ink-light);margin-top:8px;">Not ready? No pressure. Take your time.</p>
       <p style="font-size:0.75rem;color:var(--ink-light);margin:4px 0 0;">Plus shipping</p>
     </div>
@@ -856,17 +860,17 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
 
       <ul class="mega-items">
         <li><strong>1x Full Assessment</strong> &mdash; complete CEFR evaluation <span class="item-value">EUR 129.95</span></li>
-        <li><strong>1x Reassessment at 8 weeks</strong> &mdash; track your progress <span class="item-value">EUR 89.95</span></li>
+        <li><strong>1x Reassessment at 8 weeks</strong> &mdash; track your progress <span class="item-value">EUR 139.95</span></li>
         <li><strong>3x Sticker Packs</strong> (105 stickers) <span class="item-value">EUR 59.95</span></li>
         <li><strong>1x Homework Check</strong> &mdash; detailed correction report <span class="item-value">EUR 29.95</span></li>
         <li><strong>1x Marco Plush</strong> <span class="item-value">EUR 24.95</span></li>
-        <li style="border-top:2px solid var(--ink);font-weight:700;font-size:1.0625rem;"><strong>TOTAL value</strong> <span class="item-value" style="font-weight:700;font-size:1.0625rem;color:var(--ink);">EUR 334.75</span></li>
+        <li style="border-top:2px solid var(--ink);font-weight:700;font-size:1.0625rem;"><strong>TOTAL value</strong> <span class="item-value" style="font-weight:700;font-size:1.0625rem;color:var(--ink);">EUR 384.75</span></li>
       </ul>
 
       <div class="mega-price-block">
-        <div class="mega-price-old">Regular price: EUR 334.75</div>
+        <div class="mega-price-old">Regular price: EUR 384.75</div>
         <div class="mega-price-new">EUR 299.95</div>
-        <div class="mega-price-save"><img src="assets/mascot/marco-face-wink.png?v=3" alt=""> You save EUR 34.80 (10% off)</div>
+        <div class="mega-price-save"><img src="assets/mascot/marco-face-wink.png?v=3" alt=""> You save EUR 84.80 (22% off)</div>
         <p style="font-size:1rem;color:var(--ink-soft);margin-top:8px;font-style:italic;">Less than a nice dinner for two &mdash; but this keeps earning for you long after dessert.</p>
       </div>
 
@@ -1239,6 +1243,31 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
   </div>
 </section>
 
+<!-- ── Tip Your Assessor ── -->
+<section class="section" id="tip" style="padding:32px 32px;">
+  <div class="section-inner" style="max-width:480px;text-align:center;">
+    <h2 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:8px;">Many students like to say thank you</h2>
+    <p style="color:var(--ink-soft);font-size:0.9375rem;line-height:1.7;margin-bottom:20px;">
+      100% goes directly to your assessor. We keep nothing.
+    </p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;">
+      <a href="https://buy.stripe.com/fZudR91eY0wr5fu5IFgUM07" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;justify-content:center;width:100px;padding:14px 0;background:var(--parchment);border:1.5px solid var(--border);border-radius:10px;color:var(--ink);font-size:1.125rem;font-weight:600;text-decoration:none;transition:all 0.15s;">
+        <span data-price="5.00" style="font-weight:700;">EUR 5</span>
+      </a>
+      <a href="https://buy.stripe.com/9B6fZh5veenh9vK9YVgUM06" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;justify-content:center;width:100px;padding:14px 0;background:var(--parchment);border:1.5px solid var(--accent);border-radius:10px;color:var(--ink);font-size:1.125rem;font-weight:600;text-decoration:none;transition:all 0.15s;box-shadow:0 0 0 1px var(--accent);">
+        <span style="font-weight:700;">EUR 10</span>
+      </a>
+      <a href="https://buy.stripe.com/6oUfZh8Hq3IDazO4EBgUM04" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;justify-content:center;width:100px;padding:14px 0;background:var(--parchment);border:1.5px solid var(--border);border-radius:10px;color:var(--ink);font-size:1.125rem;font-weight:600;text-decoration:none;transition:all 0.15s;">
+        <span style="font-weight:700;">EUR 20</span>
+      </a>
+    </div>
+    <p style="font-size:0.75rem;color:var(--ink-light);">Not expected. Never solicited. Just appreciated.</p>
+  </div>
+</section>
+
 <!-- ── Trust Section ── -->
 <section class="section">
   <div class="section-inner">
@@ -1286,20 +1315,23 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
 </section>
 
 <!-- ── Footer ── -->
-<footer class="footer">
-  <div class="footer-brand">LingoGr<span style="color:#27AE60">A</span>de</div>
-  <p>Professional Language Assessment</p>
-  <div class="footer-links">
-    <a href="index.html#how-it-works">How It Works</a>
-    <a href="index.html#languages">Languages</a>
-    <a href="index.html#pricing">Pricing</a>
-    <a href="teachers.html">For Teachers</a>
-    <a href="partners.html">Partners</a>
-    <a href="shop.html">Shop</a>
-    <a href="mailto:info@lingograde.com">Contact</a>
+<footer style="background:#1A3A5C;color:rgba(255,255,255,0.85);text-align:center;padding:48px 32px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <div style="font-size:1.5rem;font-weight:700;letter-spacing:0.02em;">LingoGr<span style="color:#27AE60">A</span>de</div>
+  <p style="color:rgba(255,255,255,0.6);font-size:0.9375rem;margin:8px 0 24px;">Professional Language Assessment</p>
+  <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:0.875rem;">
+    <a href="index.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Home</a>
+    <a href="index.html#languages" style="color:rgba(255,255,255,0.7);text-decoration:none;">Languages</a>
+    <a href="index.html#pricing" style="color:rgba(255,255,255,0.7);text-decoration:none;">Pricing</a>
+    <a href="teachers.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">For Teachers</a>
+    <a href="partners.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Partners</a>
+    <a href="shop.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Shop</a>
+    <a href="mailto:info@lingograde.com" style="color:rgba(255,255,255,0.7);text-decoration:none;">Contact</a>
   </div>
-  <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="terms-of-service.html">Terms of Service</a>
-  <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
+  <div style="margin-top:16px;display:flex;gap:16px;justify-content:center;">
+    <a href="privacy-policy.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Privacy Policy</a>
+    <a href="terms-of-service.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Terms of Service</a>
+  </div>
+  <div style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.4);">&copy; 2026 LingoGrade. All rights reserved.</div>
 </footer>
 
 <script>
@@ -1398,6 +1430,7 @@ function enlargeImage(src) {
   var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
   var symbol = '\u20AC'; // EUR default
   var isUSD = false;
+  var isCNY = false;
 
   // USD timezones
   var usTzExact = ['America/New_York','America/Chicago','America/Denver','America/Los_Angeles','America/Phoenix','America/Anchorage','America/Honolulu'];
@@ -1410,9 +1443,13 @@ function enlargeImage(src) {
     symbol = '\u00A3'; // GBP
   } else if (tz.indexOf('Zurich') !== -1 || tz.indexOf('Europe/Zurich') !== -1) {
     symbol = 'CHF '; // CHF
+  } else if (tz.indexOf('Asia/Shanghai') !== -1 || tz.indexOf('Asia/Chongqing') !== -1 || tz.indexOf('Asia/Harbin') !== -1 || tz.indexOf('Asia/Urumqi') !== -1 || tz.indexOf('Asia/Hong_Kong') !== -1 || tz.indexOf('Asia/Macau') !== -1) {
+    symbol = '\u00A5'; // CNY ¥
+    isCNY = true;
   }
   window._lgCurrency = symbol;
   window._lgIsUSD = isUSD;
+  window._lgIsCNY = isCNY;
 
   // EUR → USD price mapping
   var eurToUsd = {
@@ -1423,10 +1460,20 @@ function enlargeImage(src) {
     '299.95': '349.95'
   };
 
-  // Helper: convert a EUR price string to USD if in USD mode
+  // EUR → CNY price mapping (CHF reference, rounded UP to X49.95 or X99.95)
+  var eurToCny = {
+    '19.95': '149.95',
+    '36.95': '299.95',
+    '44.95': '349.95',
+    '24.95': '199.95',
+    '299.95': '2288.95'
+  };
+
+  // Helper: convert a EUR price string to local currency
   function convertPrice(eurPrice) {
-    if (!isUSD) return eurPrice;
-    return eurToUsd[eurPrice] || eurPrice;
+    if (isUSD) return eurToUsd[eurPrice] || eurPrice;
+    if (isCNY) return eurToCny[eurPrice] || eurPrice;
+    return eurPrice;
   }
   window._lgConvertPrice = convertPrice;
   window._lgEurToUsd = eurToUsd;
@@ -1654,6 +1701,79 @@ stickerSelect.addEventListener('change', function(){
     var dy = e.touches[0].clientY - startY;
     if (dy > 60) closeModal();
   }, { passive: true });
+})();
+
+// ── Hover Zoom Lens (Amazon-style magnifier) ──
+(function() {
+  var ZOOM = 2.5;
+  var LENS_SIZE = 180;
+  var isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  if (isMobile) return; // Mobile uses tap-to-lightbox instead
+
+  document.querySelectorAll('[data-zoom]').forEach(function(img) {
+    var lens = null;
+    var result = null;
+
+    img.addEventListener('mouseenter', function() {
+      // Create lens overlay
+      lens = document.createElement('div');
+      lens.style.cssText = 'position:absolute;width:' + LENS_SIZE + 'px;height:' + LENS_SIZE + 'px;border:2px solid var(--accent);border-radius:50%;pointer-events:none;z-index:100;box-shadow:0 0 0 1px rgba(0,0,0,0.3),0 4px 16px rgba(0,0,0,0.3);background-repeat:no-repeat;cursor:none;';
+
+      // Create magnified preview panel
+      result = document.createElement('div');
+      result.style.cssText = 'position:absolute;top:0;left:calc(100% + 16px);width:320px;height:320px;border:1px solid var(--border);border-radius:12px;background-repeat:no-repeat;z-index:100;box-shadow:0 8px 32px rgba(0,0,0,0.4);background-color:#1e1e1e;';
+
+      // Make parent relative
+      var parent = img.parentElement;
+      if (getComputedStyle(parent).position === 'static') {
+        parent.style.position = 'relative';
+      }
+      parent.appendChild(lens);
+      parent.appendChild(result);
+
+      // Set background images
+      lens.style.backgroundImage = 'url(' + img.src + ')';
+      result.style.backgroundImage = 'url(' + img.src + ')';
+    });
+
+    img.addEventListener('mousemove', function(e) {
+      if (!lens || !result) return;
+      var rect = img.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+
+      // Clamp
+      x = Math.max(0, Math.min(x, rect.width));
+      y = Math.max(0, Math.min(y, rect.height));
+
+      // Percentages
+      var pctX = x / rect.width;
+      var pctY = y / rect.height;
+
+      // Position lens centered on cursor
+      var parentRect = img.parentElement.getBoundingClientRect();
+      var lensX = (rect.left - parentRect.left) + x - LENS_SIZE / 2;
+      var lensY = (rect.top - parentRect.top) + y - LENS_SIZE / 2;
+      lens.style.left = lensX + 'px';
+      lens.style.top = lensY + 'px';
+
+      // Lens background (zoomed portion under lens)
+      var lensZoom = ZOOM;
+      lens.style.backgroundSize = (rect.width * lensZoom) + 'px ' + (rect.height * lensZoom) + 'px';
+      lens.style.backgroundPosition = -(x * lensZoom - LENS_SIZE / 2) + 'px ' + -(y * lensZoom - LENS_SIZE / 2) + 'px';
+
+      // Result panel background
+      result.style.backgroundSize = (rect.width * ZOOM * 1.8) + 'px ' + (rect.height * ZOOM * 1.8) + 'px';
+      result.style.backgroundPosition = -(pctX * rect.width * ZOOM * 1.8 - 160) + 'px ' + -(pctY * rect.height * ZOOM * 1.8 - 160) + 'px';
+    });
+
+    img.addEventListener('mouseleave', function() {
+      if (lens && lens.parentNode) lens.parentNode.removeChild(lens);
+      if (result && result.parentNode) result.parentNode.removeChild(result);
+      lens = null;
+      result = null;
+    });
+  });
 })();
 </script>
 
