@@ -7,14 +7,14 @@
     "package": "full",
     "assessed_language": "Kroatisch",
     "native_language": "Englisch",
-    "assessor": "Marko",
+    "assessor": "Marco",
     "active_cefr": "A2.2",
     "passive_cefr": "B1.1",
     "confidence": "67%",
     "structural_stability": "mittel",
     "self_correction": "niedrig bis mittel",
-    "sentence_control": "instabil",
-    "recommended_reassessment": "3 Monate",
+    "sentence_control": "teilweise stabil",
+    "recommended_reassessment": "8 Wochen",
     "error_focus": [
       "Kasus/Artikel",
       "Zeitformen"
@@ -452,7 +452,7 @@
   },
   "block_d": {
     "title_native": "Summary in Your Language",
-    "cefr_summary_native": "Your active spoken Croatian is at level A2.2. You can manage in simple everyday situations, but the case system breaks down under pressure. Your passive comprehension is higher at B1.1.",
+    "cefr_summary_native": "Your active spoken Croatian is at level A2.2. You can manage in simple everyday situations, but the case system shifts under pressure. Your passive comprehension is higher at B1.1.",
     "top_problems_native": [
       "Case errors: nominative instead of accusative and dative",
       "Confusion of perfective and imperfective verbal aspect",

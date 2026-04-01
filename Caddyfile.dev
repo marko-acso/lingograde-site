@@ -5,4 +5,19 @@ http://localhost:3000 {
 
 	# SPA-friendly: try file first, then .html extension, then 404
 	try_files {path} {path}.html {path}/ /404.html
+
+	# Favicon fallback — serve logo PNG when /favicon.ico is requested
+	handle /favicon.ico {
+		rewrite * /assets/mascot/marco-logo-v6.1.png
+		file_server
+	}
+
+	# Security headers
+	header {
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "SAMEORIGIN"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+		Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://app.lingograde.com; frame-src 'none'"
+	}
 }

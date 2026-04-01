@@ -7,14 +7,14 @@
     "package": "full",
     "assessed_language": "Bulgarisch",
     "native_language": "Englisch",
-    "assessor": "Marko",
+    "assessor": "Marco",
     "active_cefr": "A2.2",
     "passive_cefr": "B1.1",
     "confidence": "70%",
     "structural_stability": "mittel",
     "self_correction": "niedrig bis mittel",
-    "sentence_control": "instabil",
-    "recommended_reassessment": "3 Monate",
+    "sentence_control": "teilweise stabil",
+    "recommended_reassessment": "8 Wochen",
     "error_focus": [
       "Kasus/Artikel",
       "Zeitformen"
@@ -452,7 +452,7 @@
   },
   "block_d": {
     "title_native": "Summary in Your Language",
-    "cefr_summary_native": "Your active spoken Bulgarian is at level A2.2. You can handle basic everyday situations, but verb aspect and the definite article system break down under pressure. Your passive understanding is higher at B1.1.",
+    "cefr_summary_native": "Your active spoken Bulgarian is at level A2.2. You can handle basic everyday situations, but verb aspect and the definite article system shift under pressure. Your passive understanding is higher at B1.1.",
     "top_problems_native": [
       "Verb aspect confusion: imperfective used for completed actions",
       "Definite article: full vs. short form mixed up (subject vs. object)",
@@ -460,7 +460,7 @@
       "Motion verbs: otivam/hodya used interchangeably",
       "Preposition confusion: v (enclosed) vs. na (open/abstract)"
     ],
-    "key_recommendation_native": "Practice the Verb Aspect Engine daily: form 5 sentence pairs with the same action — once perfective (completed), once imperfective (ongoing). This single drill will fix your biggest structural weakness.",
-    "next_steps_native": "Focus on verb aspect for the next 2 weeks, then move to definite articles and clitics. Book a re-assessment in 3 months to measure progress."
+    "key_recommendation_native": "Practice the Verb Aspect Engine daily: form 5 sentence pairs with the same action — once perfective (completed), once imperfective (ongoing). This single drill will strengthen your highest-impact focus area.",
+    "next_steps_native": "Focus on verb aspect for the next 2 weeks, then move to definite articles and clitics. Book a re-assessment in 8 weeks to measure progress."
   }
 }

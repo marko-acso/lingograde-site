@@ -15,7 +15,7 @@
   var STORE_KEY = 'marco_session';
   var LANG_KEY = 'marco_lang';
   var EMAIL_KEY = 'marco_email';
-  var MASCOT = 'assets/mascot/marco-headset.png';
+  var MASCOT = 'assets/mascot/marco-chatbot-speech-bubble.webp';
   var OWL = '\uD83E\uDD89'; // fallback emoji
 
   // ── Language greetings map ──

@@ -7,14 +7,14 @@
     "package": "full",
     "assessed_language": "Russisch",
     "native_language": "Englisch",
-    "assessor": "Marko",
+    "assessor": "Marco",
     "active_cefr": "A2.2",
     "passive_cefr": "B1.1",
     "confidence": "65%",
     "structural_stability": "niedrig bis mittel",
     "self_correction": "niedrig",
-    "sentence_control": "instabil",
-    "recommended_reassessment": "3 Monate",
+    "sentence_control": "teilweise stabil",
+    "recommended_reassessment": "8 Wochen",
     "error_focus": [
       "Kasus/Artikel",
       "Verbposition"
@@ -452,7 +452,7 @@
   },
   "block_d": {
     "title_native": "Summary in Your Language",
-    "cefr_summary_native": "Your active spoken Russian is at level A2.2. This means you can manage in simple everyday situations, but the case system breaks down under pressure. Your passive comprehension is higher, at B1.1.",
+    "cefr_summary_native": "Your active spoken Russian is at level A2.2. This means you can manage in simple everyday situations, but the case system shifts under pressure. Your passive comprehension is higher, at B1.1.",
     "top_problems_native": [
       "Case errors: nominative instead of accusative and dative",
       "Confusion of perfective and imperfective verb aspect",
@@ -460,7 +460,7 @@
       "Prepositions with wrong case",
       "Unpredictable word stress"
     ],
-    "key_recommendation_native": "Practice the Case Engine daily: say 5 sentences aloud with conscious selection of the correct case. This single exercise will correct your biggest weakness.",
-    "next_steps_native": "Focus on the case system for the next 2 weeks, then move on to verbs of motion and verb aspect. Schedule a reassessment in 3 months."
+    "key_recommendation_native": "Practice the Case Engine daily: say 5 sentences aloud with conscious selection of the correct case. This single exercise will strengthen your highest-impact focus area.",
+    "next_steps_native": "Focus on the case system for the next 2 weeks, then move on to verbs of motion and verb aspect. Schedule a reassessment in 8 weeks."
   }
 }

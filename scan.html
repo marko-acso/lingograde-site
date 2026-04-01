@@ -13,7 +13,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LingoGrade — Marco Brought You Here!</title>
 <meta name="description" content="You scanned a LingoGrade sticker. Find out your language level in 10 minutes with a professional CEFR assessment.">
-<link rel="icon" type="image/png" href="assets/mascot/marco-logo-v6.1.png">
+<meta property="og:title" content="LingoGrade — Marco Brought You Here!">
+<meta property="og:description" content="You scanned a LingoGrade sticker. Find out your language level in 10 minutes.">
+<meta property="og:image" content="https://www.lingograde.com/og-logo-v2.png">
+<meta property="og:url" content="https://www.lingograde.com/scan.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.lingograde.com/og-logo-v2.png">
+<link rel="canonical" href="https://www.lingograde.com/scan.html">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="icon" type="image/webp" href="assets/mascot/marco-face-grad-v2.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
@@ -265,7 +274,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <!-- Hero -->
 <section class="scan-hero">
   <div class="scan-hero-inner">
-    <img src="assets/mascot/marco-thumbsup.png" alt="Marco the LingoGrade owl giving a thumbs up" class="marco-hero-img">
+    <img src="assets/mascot/marco-thumbsup.webp" alt="Marco the LingoGrade owl giving a thumbs up" class="marco-hero-img">
     <h1>Marco brought you here! &#127881;</h1>
     <p>You scanned a LingoGrade sticker. Let's find out where you stand in your language journey.</p>
   </div>
@@ -334,7 +343,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <!-- Trust -->
 <section class="trust-section">
   <div class="trust-inner">
-    <img src="assets/mascot/marco-logo-v6.1.png" alt="Marco" class="trust-logo">
+    <img src="assets/mascot/marco-logo-v6.1.webp" alt="Marco" class="trust-logo">
     <p class="trust-text">Trusted by <strong>200+ partners</strong> across <strong>15 countries</strong></p>
   </div>
 </section>
@@ -371,7 +380,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
   // ── Build booking URL ──
   function buildBookingURL() {
-    var base = 'https://app.lingograde.com/book';
+    var base = 'https://booking.lingograde.com/marco';
     var p = new URLSearchParams();
     if (ref) p.set('ref', ref);
     if (campaign) p.set('c', campaign);

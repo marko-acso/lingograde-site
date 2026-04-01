@@ -7,14 +7,14 @@
     "package": "full",
     "assessed_language": "Deutsch",
     "native_language": "Englisch",
-    "assessor": "Marko",
+    "assessor": "Marco",
     "active_cefr": "B2.1",
     "passive_cefr": "B2.2",
     "confidence": "82%",
     "structural_stability": "mittel bis hoch",
     "self_correction": "hoch",
     "sentence_control": "teilstabil",
-    "recommended_reassessment": "3 Monate",
+    "recommended_reassessment": "8 Wochen",
     "error_focus": [
       "Kasus/Artikel",
       "Präpositionen"
@@ -452,7 +452,7 @@
   },
   "block_d": {
     "title_native": "Summary in Your Language",
-    "cefr_summary_native": "Your active spoken German is at level B2.1. This means you can communicate fluently in most situations, but the case system remains unstable under pressure. Your passive comprehension is higher at B2.2.",
+    "cefr_summary_native": "Your active spoken German is at level B2.1. This means you can communicate fluently in most situations, but the case system shifts under pressure. Your passive comprehension is higher at B2.2.",
     "top_problems_native": [
       "Two-way prepositions: accusative instead of dative in static situations",
       "Wrong articles in compound nouns",
@@ -460,7 +460,7 @@
       "Missing dative after specific verbs (helfen, danken, gefallen)",
       "Gender errors in common nouns"
     ],
-    "key_recommendation_native": "Practice the Case Engine every day: form 5 sentence pairs with two-way prepositions — once movement (accusative), once position (dative). This single exercise will correct your biggest structural weakness.",
-    "next_steps_native": "Focus on two-way prepositions for the next 2 weeks, then move on to dative verbs and gender. Book a reassessment in 3 months to measure your progress."
+    "key_recommendation_native": "Practice the Case Engine every day: form 5 sentence pairs with two-way prepositions — once movement (accusative), once position (dative). This single exercise will strengthen your highest-impact focus area.",
+    "next_steps_native": "Focus on two-way prepositions for the next 2 weeks, then move on to dative verbs and gender. Book a reassessment in 8 weeks to measure your progress."
   }
 }

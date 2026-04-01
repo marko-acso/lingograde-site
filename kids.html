@@ -19,7 +19,24 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.lingograde.com/assets/mascot/lingograde-card-kids.png">
-<link rel="icon" type="image/png" href="assets/mascot/marco-logo-v6.1.png?v=3">
+<link rel="canonical" href="https://www.lingograde.com/kids.html">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "LingoGrade Young Learners",
+  "provider": { "@type": "Organization", "name": "LingoGrade" },
+  "description": "Age-appropriate, play-based language sessions for children aged 6-14. Designed with child psychologists. GDPR-compliant.",
+  "serviceType": "Language Assessment for Children",
+  "audience": {
+    "@type": "PeopleAudience",
+    "suggestedMinAge": 6,
+    "suggestedMaxAge": 14
+  }
+}
+</script>
+<link rel="icon" type="image/webp" href="assets/mascot/marco-face-grad-v2.webp?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
@@ -148,7 +165,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <!-- ── Navigation ── -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-v6.1.png?v=3" alt="Marco" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v5.png'"> LingoGr<span class="brand-a">A</span>de</a>
+    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="Marco" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"> LingoGr<span class="brand-a">A</span>de</a>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -159,7 +176,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       <a href="partners.html">Partners</a>
       <a href="shop.html">Shop</a>
       <a href="https://app.lingograde.com/login" class="nav-signin">Sign In</a>
-      <a href="https://app.lingograde.com/book" class="nav-cta">Explore Assessments</a>
+      <a href="https://booking.lingograde.com/marco" class="nav-cta">Explore Assessments</a>
     </div>
   </div>
 </nav>
@@ -168,7 +185,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-badge">Coming Soon</div>
-    <img src="assets/mascot/marco-sleeping.png?v=3" alt="Marco the Owl is sleeping — getting ready for Young Learners" class="marco-sleeping">
+    <img src="assets/mascot/marco-abc-blocks.webp?v=3" alt="Marco the Owl with ABC blocks — Young Learners" class="marco-sleeping">
     <h1>Marco is getting ready for the little ones</h1>
     <p>It seems like you want the best for your child's language journey — but you are not sure exactly where they stand. That is why Marco is here. No tests. No stress. Just play. Age-appropriate, game-based language sessions for children aged 6&ndash;14.</p>
 
@@ -307,12 +324,13 @@ function submitWaitlist(e) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email: email, source: 'kids' })
-  }).then(function() {
+  }).then(function(r) {
+    if (!r.ok) throw new Error('Server error');
     form.style.display = 'none';
     document.getElementById('waitlistSuccess').style.display = 'block';
   }).catch(function() {
-    form.style.display = 'none';
-    document.getElementById('waitlistSuccess').style.display = 'block';
+    form.querySelector('button').textContent = 'Something went wrong. Try again.';
+    form.querySelector('button').style.background = '#e74c3c';
   });
   return false;
 }

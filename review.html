@@ -3,8 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Share Your Experience â€” LingoGrade</title>
-<link rel="icon" type="image/png" href="assets/mascot/marco-logo-v6.1.png">
+<title>Share Your Experience — LingoGrade</title>
+<meta name=”description” content=”Share your LingoGrade assessment experience. Your feedback helps us improve and helps others decide.”>
+<meta property=”og:title” content=”Share Your Experience — LingoGrade”>
+<meta property=”og:description” content=”Share your LingoGrade assessment experience. Your feedback helps us improve.”>
+<meta property=”og:image” content=”https://www.lingograde.com/og-logo-v2.png”>
+<meta property=”og:url” content=”https://www.lingograde.com/review.html”>
+<meta property=”og:type” content=”website”>
+<meta name=”twitter:card” content=”summary_large_image”>
+<meta name=”twitter:image” content=”https://www.lingograde.com/og-logo-v2.png”>
+<link rel=”canonical” href=”https://www.lingograde.com/review.html”>
+<link rel=”preconnect” href=”https://fonts.googleapis.com”>
+<link rel=”dns-prefetch” href=”https://www.googletagmanager.com”>
+<link rel=”icon” type=”image/webp” href=”assets/mascot/marco-face-grad-v2.webp”>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root { --accent:#2563AB;--ink:#1C1C1C;--ink-soft:#4A4A4A;--ink-light:#8A8A8A;--cream:#FFFFFF;--parchment:#F8F8F8;--border:#E0E0E0;--gold:#F59E0B;--success:#27AE60; }
@@ -52,7 +63,7 @@ textarea:focus{border-color:var(--accent);}
 </style>
 </head>
 <body>
-<div class="nav"><a href="/" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;"><img src="assets/mascot/marco-logo-v6.1.png?v=3" alt="Marco" style="height:44px;width:auto;" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v5.png'"> <span style="font-family:DM Serif Display,Georgia,serif;font-size:1.25rem;color:#1C1C1C;">LingoGr<span style="color:#27AE60">A</span>de</span></a><a href="/">Back to LingoGr<span style="color:#27AE60">A</span>de</a></div>
+<div class="nav"><a href="/" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="Marco" style="height:44px;width:auto;" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"> <span style="font-family:DM Serif Display,Georgia,serif;font-size:1.25rem;color:#1C1C1C;">LingoGr<span style="color:#27AE60">A</span>de</span></a><a href="/">Back to LingoGr<span style="color:#27AE60">A</span>de</a></div>
 <div class="quiz" id="quizSection">
 <div class="progress" id="progress"><div class="dot current"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
 <div class="step active" id="step1">
@@ -69,7 +80,7 @@ textarea:focus{border-color:var(--accent);}
 <p>Pick the one that hits closest.</p>
 <div class="options">
 <div class="opt" onclick="selectOpt(this,'valuable')">Finding out my real CEFR level</div>
-<div class="opt" onclick="selectOpt(this,'valuable')">Understanding my specific errors</div>
+<div class="opt" onclick="selectOpt(this,'valuable')">Understanding my specific patterns</div>
 <div class="opt" onclick="selectOpt(this,'valuable')">Getting a concrete plan to improve</div>
 <div class="opt" onclick="selectOpt(this,'valuable')">Having the report in my native language</div>
 <div class="opt" onclick="selectOpt(this,'valuable')">The conversation itself was eye-opening</div>
@@ -97,9 +108,9 @@ textarea:focus{border-color:var(--accent);}
 <div class="input-row"><div><label>First Name *</label><input type="text" id="reviewName" placeholder="e.g. Chiara"></div><div><label>Country</label><select id="reviewCountry"><option value="">Select...</option><option>Albania</option><option>Argentina</option><option>Australia</option><option>Austria</option><option>Belarus</option><option>Belgium</option><option>Bosnia and Herzegovina</option><option>Brazil</option><option>Bulgaria</option><option>Canada</option><option>Chile</option><option>China</option><option>Colombia</option><option>Croatia</option><option>Czech Republic</option><option>Denmark</option><option>Egypt</option><option>Estonia</option><option>Finland</option><option>France</option><option>Germany</option><option>Greece</option><option>Hungary</option><option>India</option><option>Indonesia</option><option>Iran</option><option>Iraq</option><option>Ireland</option><option>Israel</option><option>Italy</option><option>Japan</option><option>Kosovo</option><option>Latvia</option><option>Lebanon</option><option>Lithuania</option><option>Luxembourg</option><option>Mexico</option><option>Moldova</option><option>Montenegro</option><option>Morocco</option><option>Netherlands</option><option>Nigeria</option><option>North Macedonia</option><option>Norway</option><option>Pakistan</option><option>Peru</option><option>Philippines</option><option>Poland</option><option>Portugal</option><option>Romania</option><option>Russia</option><option>Saudi Arabia</option><option>Serbia</option><option>Slovakia</option><option>Slovenia</option><option>South Africa</option><option>South Korea</option><option>Spain</option><option>Sweden</option><option>Switzerland</option><option>Syria</option><option>Tunisia</option><option>Turkey</option><option>Ukraine</option><option>United Arab Emirates</option><option>United Kingdom</option><option>United States</option><option>Venezuela</option><option>Vietnam</option><option>Other</option></select></div></div>
 <div class="input-row"><div><label>Email (optional)</label><input type="email" id="reviewEmail" placeholder="So we can follow up if needed"></div></div>
 <div class="input-row"><div><label>Language Assessed</label><select id="reviewLang"><option value="">Select...</option><option>German</option><option>English</option><option>French</option><option>Spanish</option><option>Italian</option><option>Portuguese</option><option>Russian</option><option>Serbian</option><option>Croatian</option><option>Romanian</option><option>Polish</option><option>Bulgarian</option></select></div></div>
-<div style="text-align:left;margin-top:16px;"><label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:8px;">Choose your avatar</label><div style="display:flex;gap:16px;justify-content:flex-start;" id="avatarPicker"><div class="avatar-opt" onclick="pickAvatar(this,'female')" style="width:56px;height:56px;border-radius:50%;border:2px solid #E0E0E0;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:28px;transition:all 0.2s;" title="Female">👩‍💼</div><div class="avatar-opt" onclick="pickAvatar(this,'male')" style="width:56px;height:56px;border-radius:50%;border:2px solid #E0E0E0;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:28px;transition:all 0.2s;" title="Male">👨‍💼</div><div class="avatar-opt" onclick="pickAvatar(this,'neutral')" style="width:56px;height:56px;border-radius:50%;border:2px solid #E0E0E0;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:24px;transition:all 0.2s;" title="Neutral">😊</div></div></div>
+<div style="text-align:left;margin-top:16px;"><label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:8px;">Choose your avatar</label><div style="display:flex;gap:16px;justify-content:flex-start;" id="avatarPicker"><button type="button" class="avatar-opt" onclick="pickAvatar(this,'female')" style="width:56px;height:56px;border-radius:50%;border:2px solid #E0E0E0;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:28px;transition:all 0.2s;background:transparent;" title="Female" aria-label="Female avatar">👩‍💼</button><button type="button" class="avatar-opt" onclick="pickAvatar(this,'male')" style="width:56px;height:56px;border-radius:50%;border:2px solid #E0E0E0;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:28px;transition:all 0.2s;background:transparent;" title="Male" aria-label="Male avatar">👨‍💼</button><button type="button" class="avatar-opt" onclick="pickAvatar(this,'neutral')" style="width:56px;height:56px;border-radius:50%;border:2px solid #E0E0E0;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:24px;transition:all 0.2s;background:transparent;" title="Neutral" aria-label="Neutral avatar">😊</button></div></div>
 <div style="text-align:left;margin-top:12px;"><label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:4px;">Anything else? (optional)</label><textarea id="reviewFeedback" rows="2" placeholder="A sentence or two is perfect..."></textarea></div>
-<div style="text-align:left;margin-top:16px;"><label style="display:flex;align-items:flex-start;gap:8px;cursor:pointer;font-size:0.85rem;color:var(--ink-soft);line-height:1.5;"><input type="checkbox" id="reviewConsent" style="margin-top:3px;min-width:18px;min-height:18px;accent-color:var(--accent);"><span>I agree that LingoGrade may publish this review on its website. <a href="/privacy.html" target="_blank" style="color:var(--accent);text-decoration:underline;">Privacy Policy</a></span></label></div>
+<div style="text-align:left;margin-top:16px;"><label style="display:flex;align-items:flex-start;gap:8px;cursor:pointer;font-size:0.85rem;color:var(--ink-soft);line-height:1.5;"><input type="checkbox" id="reviewConsent" style="margin-top:3px;min-width:18px;min-height:18px;accent-color:var(--accent);"><span>I agree that LingoGrade may publish this review on its website. <a href="privacy-policy.html" target="_blank" style="color:var(--accent);text-decoration:underline;">Privacy Policy</a></span></label></div>
 <button class="btn-next" id="btnSubmit" onclick="submitReview()">Submit My Review</button>
 </div>
 </div>

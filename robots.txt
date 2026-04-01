@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /dashboard.html
+Disallow: /components/
+
+Sitemap: https://www.lingograde.com/sitemap.xml

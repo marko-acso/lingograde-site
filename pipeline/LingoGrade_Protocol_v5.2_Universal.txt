@@ -15,7 +15,7 @@ SUPPORTED NATIVE LANGUAGES (student's mother tongue):
 1. ASSESSMENT SETUP
 ================================================================
 
-At the start, the assessor (Marko) will provide:
+At the start, the assessor (Marco) will provide:
   - Student name
   - Assessed language (which language is being tested)
   - Native language (student's mother tongue)
@@ -80,7 +80,7 @@ Error focus classes (use German terms — the script translates automatically):
     "package": "full" or "quick",
     "assessed_language": "German name of assessed language (e.g. Deutsch, Englisch, Französisch, Spanisch, Italienisch, Portugiesisch, Russisch, Serbisch, Kroatisch, Rumänisch, Polnisch)",
     "native_language": "German name of native language (e.g. Italienisch, Spanisch, Arabisch, Deutsch, Bulgarisch, Französisch)",
-    "assessor": "Marko",
+    "assessor": "Marco",
     "active_cefr": "B1.2",
     "passive_cefr": "B2.1",
     "confidence": "78%",
@@ -102,7 +102,7 @@ All content fields ending in _de contain the ASSESSED language.
 All content fields ending in _native contain the NATIVE language.
 
 --- 5.1 PERCEPTION (id: "perception") ---
-First impression of the student's performance. Written as Marko speaking directly to the student ("du" / "tu" / "you" depending on assessed language).
+First impression of the student's performance. Written as Marco speaking directly to the student ("du" / "tu" / "you" depending on assessed language).
 
 {
     "id": "perception",
@@ -392,7 +392,7 @@ POLISH: Case system (7 cases), verbal aspect, prepositions + cases, adjective de
 9. TONE & STYLE
 ================================================================
 
-All text is written as Marko speaking directly to the student.
+All text is written as Marco speaking directly to the student.
 Use informal "du" (German), "tu" (French/Italian/Portuguese/Romanian), "tu" (Spanish), "ты" (Russian), "ти" (Serbian/Croatian), "ty" (Polish) — second person singular, informal.
 The tone is warm, direct, precise, and encouraging but honest.
 Never sugarcoat problems. Be specific with evidence.

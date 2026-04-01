@@ -7,14 +7,14 @@
     "package": "full",
     "assessed_language": "Englisch",
     "native_language": "Englisch",
-    "assessor": "Marko",
+    "assessor": "Marco",
     "active_cefr": "B2.1",
     "passive_cefr": "B2.2",
     "confidence": "80%",
     "structural_stability": "mittel",
     "self_correction": "mittel bis hoch",
     "sentence_control": "teilstabil",
-    "recommended_reassessment": "3 Monate",
+    "recommended_reassessment": "8 Wochen",
     "error_focus": [
       "Präpositionen",
       "Zeitformen"
@@ -444,7 +444,7 @@
   },
   "block_d": {
     "title_native": "Summary in Your Language",
-    "cefr_summary_native": "Your active spoken English is at the B2.1 level. This means you can communicate fluently in most situations, but prepositions and tense selection remain unstable under pressure. Your passive comprehension is higher at B2.2.",
+    "cefr_summary_native": "Your active spoken English is at the B2.1 level. This means you can communicate fluently in most situations, but prepositions and tense selection shift under pressure. Your passive comprehension is higher at B2.2.",
     "top_problems_native": [
       "Verb-dependent prepositions (depend of → depend on)",
       "Present perfect used with specific past time markers",
@@ -452,7 +452,7 @@
       "Adjective order influenced by Spanish syntax",
       "Spanish false friends (actually, realize, etc.)"
     ],
-    "key_recommendation_native": "Practice the Preposition Engine daily: form 5 sentences with verb + preposition combinations and say them out loud. This single exercise will correct your biggest structural weakness.",
-    "next_steps_native": "Focus on verb + preposition combinations for the next 2 weeks, then move on to tense selection and false friends. Schedule a reassessment in 3 months to measure progress."
+    "key_recommendation_native": "Practice the Preposition Engine daily: form 5 sentences with verb + preposition combinations and say them out loud. This single exercise will strengthen your highest-impact focus area.",
+    "next_steps_native": "Focus on verb + preposition combinations for the next 2 weeks, then move on to tense selection and false friends. Schedule a reassessment in 8 weeks to measure progress."
   }
 }

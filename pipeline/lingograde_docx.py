@@ -19,7 +19,7 @@ from datetime import datetime, timedelta
 # Import comprehensive translations
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 try:
-    from lg_translations import TOC_FULL, TOC_HEADING, CONFIDENTIAL as CONF_MAP, PREPARED_FOR, CLOSING, MARKO_NATIVE as MARKO_MAP, EMAIL as EMAIL_TR
+    from lg_translations import TOC_FULL, TOC_HEADING, CONFIDENTIAL as CONF_MAP, PREPARED_FOR, CLOSING, MARCO_NATIVE as MARKO_MAP, EMAIL as EMAIL_TR
     HAS_TRANSLATIONS = True
 except ImportError:
     HAS_TRANSLATIONS = False
@@ -83,7 +83,7 @@ TRANSLATIONS = {
     "mittel": {"ar": "متوسط", "bg": "Среден", "en": "Medium", "ru": "Средний", "uk": "Середній", "fr": "Moyen", "es": "Medio", "it": "Medio", "sr": "Средnji", "hr": "Srednji"},
     "mittel bis hoch": {"bg": "Среден до висок", "en": "Medium to High", "ru": "Средний до высокого", "uk": "Середній до високого", "fr": "Moyen à élevé", "es": "Medio a alto", "it": "Medio-alto", "sr": "Средњи до висок", "hr": "Srednji do visok"},
     "hoch": {"ar": "مرتفع", "bg": "Висок", "en": "High", "ru": "Высокий", "uk": "Високий", "fr": "Élevé", "es": "Alto", "it": "Alto", "sr": "Висок", "hr": "Visok"},
-    "instabil": {"ar": "غير مستقر", "bg": "Нестабилен", "en": "Unstable", "ru": "Нестабильный", "uk": "Нестабільний", "fr": "Instable", "es": "Inestable", "it": "Instabile", "sr": "Нестабилан", "hr": "Nestabilan"},
+    "im Aufbau": {"ar": "في طور التطوير", "bg": "В развитие", "en": "Developing", "ru": "В развитии", "uk": "В розвитку", "fr": "En développement", "es": "En desarrollo", "it": "In sviluppo", "sr": "У развоју", "hr": "U razvoju"},
     "teilstabil": {"ar": "مستقر جزئياً", "bg": "Частично стабилен", "en": "Partially Stable", "ru": "Частично стабильный", "uk": "Частково стабільний", "fr": "Partiellement stable", "es": "Parcialmente estable", "it": "Parzialmente stabile", "sr": "Делимично стабилан", "hr": "Djelomično stabilan"},
     "stabil": {"ar": "مستقر", "bg": "Стабилен", "en": "Stable", "ru": "Стабильный", "uk": "Стабільний", "fr": "Stable", "es": "Estable", "it": "Stabile", "sr": "Стабилан", "hr": "Stabilan"},
     # Labels
@@ -186,7 +186,7 @@ def calc_reassessment_date(assessment_date_str, reassessment_period):
             day_names = {1: "Tuesday", 3: "Thursday", 5: "Saturday"}
             formatted = candidate.strftime(f"{day_names[candidate.weekday()]}, %B %d, %Y")
             # Cal.com URL with date parameter
-            cal_url = f"https://cal.com/marko.check/re-assessment?date={candidate.isoformat()}"
+            cal_url = f"https://booking.lingograde.com/marco/re-assessment?date={candidate.isoformat()}"
             return candidate, formatted, cal_url
     
     return None, None, None
@@ -503,36 +503,36 @@ def create_report(data, output_path=None):
         r2.font.name = 'Arial'; r2.font.size = Pt(18); r2.font.color.rgb = clr; r2.font.bold = True
     set_table_borders(score_table)
 
-    # ── Detail strip (Error Focus, Stability, Self-Correction, Re-Assess) ──
+    # ── Detail strip (Focus Patterns, Stability, Self-Correction, Re-Assess) ──
     if package == "full":
         detail_table = doc.add_table(rows=2, cols=4)
         detail_table.alignment = WD_TABLE_ALIGNMENT.CENTER
 
         # Bilingual detail strip labels: Assessed Language + Native Language
         d_labels_all = {
-            "en": ["ERROR FOCUS", "STABILITY", "SELF-CORRECTION", "RE-ASSESS"],
-            "de": ["FEHLERFOKUS", "STABILITÄT", "SELBSTKORREKTUR", "NEUBEWERTUNG"],
-            "ru": ["ФОКУС ОШИБОК", "СТАБИЛЬНОСТЬ", "САМОКОРРЕКЦИЯ", "ПЕРЕОЦЕНКА"],
-            "uk": ["ФОКУС ПОМИЛОК", "СТАБІЛЬНІСТЬ", "САМОКОРЕКЦІЯ", "ПЕРЕОЦІНКА"],
-            "fr": ["ERREURS CLÉS", "STABILITÉ", "AUTO-CORRECTION", "RÉ-ÉVALUATION"],
-            "es": ["ERRORES CLAVE", "ESTABILIDAD", "AUTOCORRECCIÓN", "REEVALUACIÓN"],
-            "it": ["ERRORI CHIAVE", "STABILITÀ", "AUTOCORREZIONE", "RIVALUTAZIONE"],
-            "sr": ["ФОКУС ГРЕШАКА", "СТАБИЛНОСТ", "САМОКОРЕКЦИЈА", "ПОНОВНА ПРОЦЕНА"],
-            "hr": ["FOKUS GREŠAKA", "STABILNOST", "SAMOKOREKCIJA", "PONOVNA PROCJENA"],
-            "ar": ["تركيز الأخطاء", "الاستقرار", "التصحيح الذاتي", "إعادة التقييم"],
-            "pl": ["FOKUS BŁĘDÓW", "STABILNOŚĆ", "AUTOKOREKTA", "PONOWNA OCENA"],
-            "pt": ["FOCO DE ERROS", "ESTABILIDADE", "AUTOCORREÇÃO", "REAVALIAÇÃO"],
-            "cs": ["ZAMĚŘENÍ CHYB", "STABILITA", "AUTOKOREKCE", "PŘEHODNOCENÍ"],
-            "hu": ["HIBAFÓKUSZ", "STABILITÁS", "ÖNJAVÍTÁS", "ÚJRAÉRTÉKELÉS"],
-            "tr": ["HATA ODAĞI", "KARARLILIK", "ÖZ DÜZELTME", "YENİDEN DEĞERLENDİRME"],
-            "sq": ["FOKUSI I GABIMEVE", "STABILITETI", "VETËKORRIGJIMI", "RIVLERËSIMI"],
-            "ro": ["FOCUS ERORI", "STABILITATE", "AUTOCORECTARE", "REEVALUARE"],
-            "bg": ["ФОКУС НА ГРЕШКИ", "СТАБИЛНОСТ", "САМОКОРЕКЦИЯ", "ПРЕОЦЕНКА"],
+            "en": ["FOCUS PATTERNS", "STABILITY", "SELF-CORRECTION", "RE-ASSESS"],
+            "de": ["FOKUSMUSTER", "STABILITÄT", "SELBSTKORREKTUR", "NEUBEWERTUNG"],
+            "ru": ["ФОКУС-ПАТТЕРНЫ", "СТАБИЛЬНОСТЬ", "САМОКОРРЕКЦИЯ", "ПЕРЕОЦЕНКА"],
+            "uk": ["ФОКУС-ПАТЕРНИ", "СТАБІЛЬНІСТЬ", "САМОКОРЕКЦІЯ", "ПЕРЕОЦІНКА"],
+            "fr": ["SCHÉMAS CLÉS", "STABILITÉ", "AUTO-CORRECTION", "RÉ-ÉVALUATION"],
+            "es": ["PATRONES CLAVE", "ESTABILIDAD", "AUTOCORRECCIÓN", "REEVALUACIÓN"],
+            "it": ["SCHEMI CHIAVE", "STABILITÀ", "AUTOCORREZIONE", "RIVALUTAZIONE"],
+            "sr": ["ФОКУС-ОБРАСЦИ", "СТАБИЛНОСТ", "САМОКОРЕКЦИЈА", "ПОНОВНА ПРОЦЕНА"],
+            "hr": ["FOKUS-OBRASCI", "STABILNOST", "SAMOKOREKCIJA", "PONOVNA PROCJENA"],
+            "ar": ["أنماط التركيز", "الاستقرار", "التصحيح الذاتي", "إعادة التقييم"],
+            "pl": ["WZORCE FOKUSOWE", "STABILNOŚĆ", "AUTOKOREKTA", "PONOWNA OCENA"],
+            "pt": ["PADRÕES DE FOCO", "ESTABILIDADE", "AUTOCORREÇÃO", "REAVALIAÇÃO"],
+            "cs": ["ZAMĚŘENÍ VZORCŮ", "STABILITA", "AUTOKOREKCE", "PŘEHODNOCENÍ"],
+            "hu": ["FÓKUSZMINTÁZATOK", "STABILITÁS", "ÖNJAVÍTÁS", "ÚJRAÉRTÉKELÉS"],
+            "tr": ["ODAK KALIPLARI", "KARARLILIK", "ÖZ DÜZELTME", "YENİDEN DEĞERLENDİRME"],
+            "sq": ["MODELET E FOKUSIT", "STABILITETI", "VETËKORRIGJIMI", "RIVLERËSIMI"],
+            "ro": ["TIPARE DE FOCUS", "STABILITATE", "AUTOCORECTARE", "REEVALUARE"],
+            "bg": ["ФОКУС-МОДЕЛИ", "СТАБИЛНОСТ", "САМОКОРЕКЦИЯ", "ПРЕОЦЕНКА"],
         }
         d_labels_assessed = d_labels_all.get(assessed_code, d_labels_all.get("en"))
         d_labels_native = d_labels_all.get(lang_code, d_labels_all.get("en"))
 
-        # Translate error focus terms — stacked in one cell
+        # Translate focus pattern terms — stacked in one cell
         error_focus_raw = meta.get("error_focus", [])
         ef_lines = []
         for ef in error_focus_raw:
@@ -608,8 +608,8 @@ def create_report(data, output_path=None):
             corr_display,
             reassess_display
         ]
-        stability_color = RGBColor(0xE6, 0x7E, 0x22) if stab_de.lower() == "mittel" else SUCCESS
-        correction_color = RGBColor(0xE6, 0x7E, 0x22) if corr_de.lower() == "mittel" else SUCCESS
+        stability_color = ACCENT if stab_de.lower() == "mittel" else SUCCESS
+        correction_color = ACCENT if corr_de.lower() == "mittel" else SUCCESS
         d_colors = [INK, stability_color, correction_color, INK_SOFT]
 
         for i in range(4):
@@ -880,27 +880,27 @@ def create_report(data, output_path=None):
         set_table_borders(tbl, color=ACCENT_BG)
 
     # ══════════════════════════════════════
-    # HELPER: "Marko → Student" addressing
+    # HELPER: "Marco → Student" addressing
     # ══════════════════════════════════════
     def add_addressing():
-        marko_native_map = {
-            "ru": "Марко", "uk": "Марко", "sr": "Марко", "hr": "Marko",
-            "fr": "Marko", "es": "Marko", "it": "Marko", "en": "Marko",
+        marco_native_map = {
+            "ru": "Марко", "uk": "Марко", "sr": "Марко", "hr": "Marco",
+            "fr": "Marco", "es": "Marco", "it": "Marco", "en": "Marco",
         }
-        marko_n = marko_native_map.get(lang_code, "Marko")
+        marco_n = marco_native_map.get(lang_code, "Marco")
         tbl = doc.add_table(rows=1, cols=2)
         tbl.alignment = WD_TABLE_ALIGNMENT.CENTER
         # Left: German
         cell_l = tbl.cell(0, 0)
         set_cell_margins(cell_l, top=40, bottom=40, left=80, right=80)
         p = cell_l.paragraphs[0]
-        run = p.add_run(f"Marko \u2192 {display}")
+        run = p.add_run(f"Marco \u2192 {display}")
         run.font.name = 'Arial'; run.font.size = Pt(9); run.font.color.rgb = INK; run.font.bold = True
         # Right: Native
         cell_r = tbl.cell(0, 1)
         set_cell_margins(cell_r, top=40, bottom=40, left=80, right=80)
         p2 = cell_r.paragraphs[0]
-        run2 = p2.add_run(f"{marko_n} \u2192 {native_display}")
+        run2 = p2.add_run(f"{marco_n} \u2192 {native_display}")
         run2.font.name = 'Arial'; run2.font.size = Pt(9); run2.font.color.rgb = INK; run2.font.bold = True
         set_table_borders(tbl)
 
@@ -990,7 +990,7 @@ def create_report(data, output_path=None):
             add_side_by_side(
                 f"{i+1}. {item['name_de']} [{item.get('error_class', '')}]",
                 f"{i+1}. {item['name_native']} [{get_native_label(item.get('error_class', ''), lang_code)}]",
-                bold=True, color_de=ERROR_C, color_native=ERROR_C, size=9
+                bold=True, color_de=ACCENT, color_native=ACCENT, size=9
             )
             add_side_by_side(
                 item["explanation_de"],
@@ -1016,7 +1016,7 @@ def create_report(data, output_path=None):
             add_side_by_side(
                 item["original_de"],
                 item["original_native"],
-                color_de=ERROR_C, color_native=ERROR_C, size=9
+                color_de=ACCENT, color_native=ACCENT, size=9
             )
             add_side_by_side(
                 item["corrected_de"],
@@ -1101,7 +1101,7 @@ def create_report(data, output_path=None):
         for item in sec.get("items", []):
             add_side_by_side(
                 item["wrong_de"], item["wrong_native"],
-                color_de=ERROR_C, color_native=ERROR_C, size=9
+                color_de=ACCENT, color_native=ACCENT, size=9
             )
             add_side_by_side(
                 item["right_de"], item["right_native"],
@@ -1269,7 +1269,7 @@ def create_report(data, output_path=None):
             run = p.add_run(lbl)
             run.font.name = 'Arial'
             run.font.size = Pt(10)
-            run.font.color.rgb = ERROR_C
+            run.font.color.rgb = ACCENT
             run.font.bold = True
             p.paragraph_format.space_after = Pt(4)
 
@@ -1390,7 +1390,7 @@ def create_report(data, output_path=None):
             bp3.paragraph_format.space_before = Pt(4)
             run = bp3.add_run(f"{price_lbl}: ")
             run.font.name = 'Arial'; run.font.size = Pt(9); run.font.color.rgb = INK_SOFT
-            run2 = bp3.add_run("€69")
+            run2 = bp3.add_run("€139.95")
             run2.font.name = 'Arial'; run2.font.size = Pt(11); run2.font.color.rgb = SUCCESS; run2.font.bold = True
 
             bp4 = bc.add_paragraph()
@@ -1423,20 +1423,20 @@ def create_report(data, output_path=None):
         closing_map = {
             "ru": f"Этот отчёт подготовлен Марко для {native_display}.",
             "uk": f"Цей звіт підготовлений Марко для {native_display}.",
-            "fr": f"Ce rapport a été préparé par Marko pour {native_display}.",
-            "es": f"Este informe fue preparado por Marko para {native_display}.",
-            "it": f"Questo rapporto è stato preparato da Marko per {native_display}.",
+            "fr": f"Ce rapport a été préparé par Marco pour {native_display}.",
+            "es": f"Este informe fue preparado por Marco para {native_display}.",
+            "it": f"Questo rapporto è stato preparato da Marco per {native_display}.",
             "sr": f"Овај извештај је припремио Марко за {native_display}.",
-            "hr": f"Ovaj izvještaj je pripremio Marko za {native_display}.",
+            "hr": f"Ovaj izvještaj je pripremio Marcoza {native_display}.",
             "bg": f"Този доклад е подготвен от Марко за {native_display}.",
             "ar": f"أعد هذا التقرير ماركو لـ {native_display}.",
-            "pl": f"Ten raport przygotował Marko dla {native_display}.",
-            "tr": f"Bu rapor Marko tarafından {native_display} için hazırlanmıştır.",
-            "sq": f"Ky raport u përgatit nga Marko për {native_display}.",
-            "ro": f"Acest raport a fost pregătit de Marko pentru {native_display}.",
-            "hu": f"Ezt a jelentést Marko készítette {native_display} számára.",
+            "pl": f"Ten raport przygotował Marcodla {native_display}.",
+            "tr": f"Bu rapor Marcotarafından {native_display} için hazırlanmıştır.",
+            "sq": f"Ky raport u përgatit nga Marcopër {native_display}.",
+            "ro": f"Acest raport a fost pregătit de Marcopentru {native_display}.",
+            "hu": f"Ezt a jelentést Marcokészítette {native_display} számára.",
         }
-        closing_text = closing_map.get(lang_code, f"This report was prepared by Marko for {display}.")
+        closing_text = closing_map.get(lang_code, f"This report was prepared by Marco for {display}.")
         run3 = cp3.add_run(closing_text)
         run3.font.name = 'Arial'; run3.font.size = Pt(8); run3.font.color.rgb = RGBColor(0x93, 0xB5, 0xD0)
         run3.font.italic = True
@@ -1510,14 +1510,14 @@ SAMPLE_JSON = {
         "package": "full",
         "assessed_language": "Deutsch",
         "native_language": "Italienisch",
-        "assessor": "Marko",
+        "assessor": "Marco",
         "active_cefr": "B1.2",
         "passive_cefr": "B2.1",
         "confidence": "78%",
         "structural_stability": "mittel",
         "self_correction": "mittel",
         "sentence_control": "teilstabil",
-        "recommended_reassessment": "3 Monate",
+        "recommended_reassessment": "8 Wochen",
         "error_focus": ["Verbposition", "Kasus/Artikel"]
     },
     "sections": [
@@ -1525,8 +1525,8 @@ SAMPLE_JSON = {
             "id": "perception",
             "title_de": "Präzise Wahrnehmung",
             "title_native": "Precise Perception",
-            "content_de": "Du hast in dieser Sitzung gezeigt, dass du ein solides Grundgerüst im Deutschen hast. Dein Wortschatz ist angemessen für B1-Kommunikation, und du hast dich nicht gescheut, komplexere Strukturen zu versuchen. Gleichzeitig sind unter Sprechdruck deutliche Muster sichtbar geworden: Nebensatzstrukturen brechen zusammen, das Kasussystem ist instabil, und die Verbposition im Nebensatz wird regelmäßig verfehlt.",
-            "content_native": "In this session you showed that you have a solid foundation in German. Your vocabulary is adequate for B1 communication, and you weren't afraid to attempt more complex structures. At the same time, clear patterns became visible under speaking pressure: subordinate clause structures break down, the case system is unstable, and verb position in subordinate clauses is regularly missed."
+            "content_de": "Du hast in dieser Sitzung gezeigt, dass du ein solides Grundgerüst im Deutschen hast. Dein Wortschatz ist angemessen für B1-Kommunikation, und du hast dich nicht gescheut, komplexere Strukturen zu versuchen. Gleichzeitig sind unter Sprechdruck deutliche Muster sichtbar geworden: Nebensatzstrukturen verschieben sich, das Kasussystem ist teilweise stabil, und die Verbposition im Nebensatz wird regelmäßig verfehlt.",
+            "content_native": "In this session you showed that you have a solid foundation in German. Your vocabulary is adequate for B1 communication, and you weren't afraid to attempt more complex structures. At the same time, clear patterns became visible under speaking pressure: subordinate clause structures shift, the case system is partially stable, and verb position in subordinate clauses is regularly missed."
         },
         {
             "id": "strengths",
@@ -1558,7 +1558,7 @@ SAMPLE_JSON = {
             "title_de": "Zentrale Struktur-Erkenntnis",
             "title_native": "Core Structural Insight",
             "content_de": "Das zentrale Muster dieser Sitzung ist die Instabilität der Nebensatzstruktur unter Druck. In ruhigen Momenten gelingt dir die korrekte Verbendstellung. Sobald der Sprechdruck steigt, fällst du in die Hauptsatz-Wortstellung zurück. Der Motor dagegen ist systematisches Drilling der weil/dass/obwohl-Struktur.",
-            "content_native": "The central pattern of this session is the instability of subordinate clause structure under pressure. In calm moments you achieve correct verb-final position. As soon as speaking pressure increases, you fall back into main clause word order. The engine against this is systematic drilling of because/that/although structures."
+            "content_native": "The central pattern of this session is the shifting nature of subordinate clause structure under pressure. In calm moments you achieve correct verb-final position. As soon as speaking pressure increases, you fall back into main clause word order. The engine against this is systematic drilling of because/that/although structures."
         },
         {
             "id": "problems",
@@ -1752,14 +1752,14 @@ SAMPLE_JSON = {
             "title_de": "Hausaufgaben B — Präzision",
             "title_native": "Homework B — Precision",
             "items": [
-                {"wrong_de": "Falsch: ...weil ich habe keine Zeit.", "wrong_native": "Wrong: ...because I have no time.", "right_de": "Richtig: ...weil ich keine Zeit habe.", "right_native": "Correct: ...because I no time have."},
-                {"wrong_de": "Falsch: Ich habe gegangen.", "wrong_native": "Wrong: I have went.", "right_de": "Richtig: Ich bin gegangen.", "right_native": "Correct: I have gone."},
-                {"wrong_de": "Falsch: Ich bin in den Park. (statisch)", "wrong_native": "Wrong: I am in the park (motion).", "right_de": "Richtig: Ich bin im Park.", "right_native": "Correct: I am in the park."},
-                {"wrong_de": "Falsch: Ich aufstehe um 7 Uhr.", "wrong_native": "Wrong: I getup at 7.", "right_de": "Richtig: Ich stehe um 7 Uhr auf.", "right_native": "Correct: I get up at 7."},
-                {"wrong_de": "Falsch: Gestern ich bin gegangen.", "wrong_native": "Wrong: Yesterday I am went.", "right_de": "Richtig: Gestern bin ich gegangen.", "right_native": "Correct: Yesterday I went."},
-                {"wrong_de": "Falsch: Er hat gefahrt.", "wrong_native": "Wrong: He has drived.", "right_de": "Richtig: Er ist gefahren.", "right_native": "Correct: He drove / has driven."},
-                {"wrong_de": "Falsch: Ich möchte in den Kino gehen.", "wrong_native": "Wrong: I want to go in the cinema.", "right_de": "Richtig: Ich möchte ins Kino gehen.", "right_native": "Correct: I want to go to the cinema."},
-                {"wrong_de": "Falsch: ...dass er kommt morgen.", "wrong_native": "Wrong: ...that he comes tomorrow.", "right_de": "Richtig: ...dass er morgen kommt.", "right_native": "Correct: ...that he tomorrow comes."}
+                {"wrong_de": "Inkorrekt: ...weil ich habe keine Zeit.", "wrong_native": "Incorrect: ...because I have no time.", "right_de": "Korrekt: ...weil ich keine Zeit habe.", "right_native": "Correct: ...because I no time have."},
+                {"wrong_de": "Inkorrekt: Ich habe gegangen.", "wrong_native": "Incorrect: I have went.", "right_de": "Korrekt: Ich bin gegangen.", "right_native": "Correct: I have gone."},
+                {"wrong_de": "Inkorrekt: Ich bin in den Park. (statisch)", "wrong_native": "Incorrect: I am in the park (motion).", "right_de": "Korrekt: Ich bin im Park.", "right_native": "Correct: I am in the park."},
+                {"wrong_de": "Inkorrekt: Ich aufstehe um 7 Uhr.", "wrong_native": "Incorrect: I getup at 7.", "right_de": "Korrekt: Ich stehe um 7 Uhr auf.", "right_native": "Correct: I get up at 7."},
+                {"wrong_de": "Inkorrekt: Gestern ich bin gegangen.", "wrong_native": "Incorrect: Yesterday I am went.", "right_de": "Korrekt: Gestern bin ich gegangen.", "right_native": "Correct: Yesterday I went."},
+                {"wrong_de": "Inkorrekt: Er hat gefahrt.", "wrong_native": "Incorrect: He has drived.", "right_de": "Korrekt: Er ist gefahren.", "right_native": "Correct: He drove / has driven."},
+                {"wrong_de": "Inkorrekt: Ich möchte in den Kino gehen.", "wrong_native": "Incorrect: I want to go in the cinema.", "right_de": "Korrekt: Ich möchte ins Kino gehen.", "right_native": "Correct: I want to go to the cinema."},
+                {"wrong_de": "Inkorrekt: ...dass er kommt morgen.", "wrong_native": "Incorrect: ...that he comes tomorrow.", "right_de": "Korrekt: ...dass er morgen kommt.", "right_native": "Correct: ...that he tomorrow comes."}
             ]
         },
         {
@@ -1811,18 +1811,18 @@ SAMPLE_JSON = {
         "passive_native": "Passive competence (estimated comprehension ceiling): B2.1",
         "confidence_de": "Konfidenz: 78%",
         "confidence_native": "Confidence: 78%",
-        "summary_de": "Du befindest dich im oberen B1-Bereich. Dein Grundgerüst ist vorhanden, aber unter Druck instabil. Mit gezieltem Strukturtraining ist B2 in 3-4 Monaten realistisch.",
-        "summary_native": "You are in the upper B1 range. Your foundation is in place but unstable under pressure. With targeted structural training, B2 is realistic in 3-4 months.",
+        "summary_de": "Du befindest dich im oberen B1-Bereich. Dein Grundgerüst ist vorhanden, aber unter Druck mit Raum zur Stabilisierung. Mit gezieltem Strukturtraining ist B2 in 8 Wochen realistisch.",
+        "summary_native": "You are in the upper B1 range. Your foundation is in place with room to stabilize under pressure. With targeted structural training, B2 is realistic in 8 weeks.",
         "stability_de": "Strukturstabilität unter Druck: mittel",
         "stability_native": "Structural stability under pressure: medium",
         "self_correction_de": "Selbstkorrektur-Fähigkeit: mittel",
         "self_correction_native": "Self-correction ability: medium",
-        "reassessment_de": "Empfohlenes Re-Assessment: 3 Monate",
-        "reassessment_native": "Recommended re-assessment: 3 months"
+        "reassessment_de": "Empfohlenes Re-Assessment: 8 Wochen",
+        "reassessment_native": "Recommended re-assessment: 8 weeks"
     },
     "block_d": {
         "title_native": "Summary in Your Language",
-        "cefr_summary_native": "Your active spoken German is at level B1.2. This means you can communicate in everyday situations, but complex structures break down under pressure. Your passive understanding is higher at B2.1.",
+        "cefr_summary_native": "Your active spoken German is at level B1.2. This means you can communicate in everyday situations, but complex structures shift under pressure. Your passive understanding is higher at B2.1.",
         "top_problems_native": [
             "Verb position in subordinate clauses (weil, dass, obwohl)",
             "Accusative/Dative confusion with two-way prepositions",
@@ -1830,8 +1830,8 @@ SAMPLE_JSON = {
             "Separable verbs not being separated",
             "Word order after temporal adverbs (inversion)"
         ],
-        "key_recommendation_native": "Practice the Sentence Engine daily: form 5 sentences with 'weil' (because) and consciously place the verb at the end. This single drill will fix your biggest structural weakness.",
-        "next_steps_native": "Focus on subordinate clause structure for the next 2 weeks (weil + dass), then move to motion verbs and case system. Book a re-assessment in 3 months to measure progress."
+        "key_recommendation_native": "Practice the Sentence Engine daily: form 5 sentences with 'weil' (because) and consciously place the verb at the end. This single drill will address your highest-impact focus area.",
+        "next_steps_native": "Focus on subordinate clause structure for the next 2 weeks (weil + dass), then move to motion verbs and case system. Book a re-assessment in 8 weeks to measure progress."
     }
 }
 

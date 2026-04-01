@@ -7,14 +7,14 @@
     "package": "full",
     "assessed_language": "Italienisch",
     "native_language": "Englisch",
-    "assessor": "Marko",
+    "assessor": "Marco",
     "active_cefr": "B1.1",
     "passive_cefr": "B1.2",
     "confidence": "74%",
     "structural_stability": "mittel",
     "self_correction": "mittel",
     "sentence_control": "teilstabil",
-    "recommended_reassessment": "3 Monate",
+    "recommended_reassessment": "8 Wochen",
     "error_focus": [
       "Zeitformen",
       "Präpositionen"
@@ -444,7 +444,7 @@
   },
   "block_d": {
     "title_native": "Summary in your language",
-    "cefr_summary_native": "Your actively spoken Italian is at level B1.1. This means you can communicate in everyday situations, but past tenses and contracted prepositions break down under pressure. Your passive understanding is higher at B1.2.",
+    "cefr_summary_native": "Your actively spoken Italian is at level B1.1. This means you can communicate in everyday situations, but past tenses and contracted prepositions shift under pressure. Your passive understanding is higher at B1.2.",
     "top_problems_native": [
       "Passato prossimo instead of imperfetto for descriptions and habits",
       "Missing contraction of preposition + article (a il instead of al)",
@@ -452,7 +452,7 @@
       "Subjunctive avoided after expressions that require it",
       "Missing double negation"
     ],
-    "key_recommendation_native": "Practice the Tense Engine daily: form 5 sentence pairs with the same situation — once in the passato prossimo and once in the imperfetto. This one exercise corrects your biggest structural weakness.",
-    "next_steps_native": "Focus on passato prossimo vs. imperfetto for the next 2 weeks, then move on to contracted prepositions and auxiliary verbs. Book a re-assessment in 3 months."
+    "key_recommendation_native": "Practice the Tense Engine daily: form 5 sentence pairs with the same situation — once in the passato prossimo and once in the imperfetto. This one exercise strengthens your highest-impact focus area.",
+    "next_steps_native": "Focus on passato prossimo vs. imperfetto for the next 2 weeks, then move on to contracted prepositions and auxiliary verbs. Book a re-assessment in 8 weeks."
   }
 }

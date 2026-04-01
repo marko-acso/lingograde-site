@@ -7,14 +7,14 @@
     "package": "full",
     "assessed_language": "Spanisch",
     "native_language": "Englisch",
-    "assessor": "Marko",
+    "assessor": "Marco",
     "active_cefr": "B2.1",
     "passive_cefr": "B2.2",
     "confidence": "79%",
     "structural_stability": "mittel",
     "self_correction": "mittel bis hoch",
     "sentence_control": "teilstabil",
-    "recommended_reassessment": "3 Monate",
+    "recommended_reassessment": "8 Wochen",
     "error_focus": [
       "Zeitformen",
       "Präpositionen"
@@ -444,7 +444,7 @@
   },
   "block_d": {
     "title_native": "Summary in Your Language",
-    "cefr_summary_native": "Your active spoken Spanish is at level B2.1. This means you can communicate fluently in most situations, but the subjunctive and ser/estar remain unstable under pressure. Your passive understanding is higher at B2.2.",
+    "cefr_summary_native": "Your active spoken Spanish is at level B2.1. This means you can communicate fluently in most situations, but the subjunctive and ser/estar shift under pressure. Your passive understanding is higher at B2.2.",
     "top_problems_native": [
       "Subjunctive avoided after desire/doubt expressions",
       "Ser used for temporary states instead of estar",
@@ -452,7 +452,7 @@
       "Gender agreement errors with non-standard endings",
       "Overuse of 'que' as universal connector"
     ],
-    "key_recommendation_native": "Practice the Subjunctive Engine daily: form 5 sentences with expressions that require the subjunctive and speak them aloud. This single drill will fix your biggest structural weakness.",
-    "next_steps_native": "Focus on the subjunctive for the next 2 weeks, then move to ser/estar and por/para. Book a re-assessment in 3 months to measure progress."
+    "key_recommendation_native": "Practice the Subjunctive Engine daily: form 5 sentences with expressions that require the subjunctive and speak them aloud. This single drill will strengthen your highest-impact focus area.",
+    "next_steps_native": "Focus on the subjunctive for the next 2 weeks, then move to ser/estar and por/para. Book a re-assessment in 8 weeks to measure progress."
   }
 }
