@@ -15,9 +15,61 @@
 <meta name="description" content="Every sticker has your personal QR code. Every scan is a potential assessment. Every assessment earns you commission. The selfie credit is just a bonus.">
 <meta property="og:title" content="Your QR. Their Scan. Your Commission. — LingoGrade">
 <meta property="og:description" content="Sticker packs, plush owls, and bundles. Spread the word and earn while doing it.">
-<meta property="og:image" content="og-image.png">
+<meta property="og:image" content="https://www.lingograde.com/og-logo-v2.png">
+<meta property="og:url" content="https://www.lingograde.com/shop.html">
 <meta property="og:type" content="website">
-<link rel="icon" type="image/png" href="assets/mascot/marco-logo-v6.1.png?v=3">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.lingograde.com/og-logo-v2.png">
+<link rel="canonical" href="https://www.lingograde.com/shop.html">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Product",
+      "name": "Marco the Owl Plush + 30 QR Stickers",
+      "description": "Soft grey plush owl (approx. 18cm) with mortarboard cap, glasses, orange beak and feet. Includes 30 personalized QR stickers.",
+      "image": "https://www.lingograde.com/assets/mascot/Marco.png",
+      "brand": { "@type": "Brand", "name": "LingoGrade" },
+      "offers": {
+        "@type": "Offer",
+        "price": "24.95",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "9.99",
+            "currency": "EUR"
+          },
+          "freeShippingThreshold": {
+            "@type": "MonetaryAmount",
+            "value": "49.95",
+            "currency": "EUR"
+          }
+        }
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "LingoGrade QR Sticker Pack",
+      "description": "35 personalized QR stickers with your individual referral code. Available in Marco, Mila, Corporate, and Kids designs.",
+      "image": "https://www.lingograde.com/assets/mascot/lingograde-card.png",
+      "brand": { "@type": "Brand", "name": "LingoGrade" },
+      "offers": {
+        "@type": "Offer",
+        "name": "Single Pack (35 stickers)",
+        "price": "19.95",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  ]
+}
+</script>
+<link rel="icon" type="image/webp" href="assets/mascot/marco-face-grad-v2.webp?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
@@ -749,7 +801,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
 <!-- ── Navigation ── -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-v6.1.png?v=3" alt="Marco" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v5.png'"> LingoGr<span class="brand-a">A</span>de</a>
+    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="Marco" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"> LingoGr<span class="brand-a">A</span>de</a>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -760,7 +812,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
       <a href="partners.html">Partners</a>
       <a href="shop.html" style="color:var(--accent);font-weight:700;">Shop</a>
       <a href="https://app.lingograde.com/login" class="nav-signin">Sign In</a>
-      <a href="https://app.lingograde.com/book" class="nav-cta">Explore Assessments</a>
+      <a href="https://booking.lingograde.com/marco" class="nav-cta">Explore Assessments</a>
     </div>
   </div>
 </nav>
@@ -768,7 +820,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
 <!-- ── Hero ── -->
 <section class="hero">
   <div class="hero-inner">
-    <img src="assets/mascot/marco-hero.png?v=3" alt="Marco the owl" class="marco-img" style="max-width:120px;margin:0 auto 8px;display:block;background:transparent;">
+    <img src="assets/mascot/marco-mugprint-face-and-body.webp?v=3" alt="Marco the owl" class="marco-img" style="max-width:120px;margin:0 auto 8px;display:block;background:transparent;">
     <h1><em>Your QR. Their scan. Your commission.</em></h1>
     <p>Every sticker carries your personal QR code. Every scan is a potential assessment booking &mdash; and every booking earns you commission. The selfie credit is just a bonus on top.</p>
     <p style="margin-top:12px;font-size:0.9375rem;color:var(--ink-soft);line-height:1.7;">Every sticker contains your personal invisible QR code &mdash; your unique referral link embedded in every one. No ugly code visible. Just a clean sticker with Marco &mdash; and your referral link hidden inside.</p>
@@ -795,13 +847,13 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
     <!-- Visual: Marco Plush Gallery + Stickers -->
     <div class="plush-gallery" style="margin:20px 0;">
       <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:12px;">
-        <img src="assets/mascot/Marco4.png" alt="Marco Plush – side view" data-marco-gallery data-zoom style="width:140px;height:auto;border-radius:12px;cursor:pointer;">
-        <img src="assets/mascot/Marco.png" alt="Marco Plush – front view" data-marco-gallery data-zoom style="width:180px;height:auto;border-radius:12px;cursor:pointer;border:2px solid var(--accent);">
-        <img src="assets/mascot/Marco2.png" alt="Marco Plush – detail view" data-marco-gallery data-zoom style="width:140px;height:auto;border-radius:12px;cursor:pointer;">
+        <img src="assets/mascot/Marco4.webp" alt="Marco Plush – side view" data-marco-gallery data-zoom style="width:140px;height:auto;border-radius:12px;cursor:pointer;">
+        <img src="assets/mascot/Marco.webp" alt="Marco Plush – front view" data-marco-gallery data-zoom style="width:180px;height:auto;border-radius:12px;cursor:pointer;border:2px solid var(--accent);">
+        <img src="assets/mascot/Marco2.webp" alt="Marco Plush – detail view" data-marco-gallery data-zoom style="width:140px;height:auto;border-radius:12px;cursor:pointer;">
       </div>
       <div style="display:flex;align-items:center;justify-content:center;gap:12px;">
         <span style="font-size:1.5rem;font-weight:700;color:var(--accent);">+</span>
-        <img src="assets/mascot/lingograde-card.png" alt="30 QR Stickers" style="width:80px;height:auto;border-radius:8px;">
+        <img src="assets/mascot/lingograde-card.webp" alt="30 QR Stickers" style="width:80px;height:auto;border-radius:8px;">
       </div>
     </div>
 
@@ -870,13 +922,13 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
       <div class="mega-price-block">
         <div class="mega-price-old">Regular price: EUR 384.75</div>
         <div class="mega-price-new">EUR 299.95</div>
-        <div class="mega-price-save"><img src="assets/mascot/marco-face-wink.png?v=3" alt=""> You save EUR 84.80 (22% off)</div>
+        <div class="mega-price-save"><img src="assets/mascot/marco-face-wink.webp?v=3" alt="Marco winking"> You save EUR 84.80 (22% off)</div>
         <p style="font-size:1rem;color:var(--ink-soft);margin-top:8px;font-style:italic;">Less than a nice dinner for two &mdash; but this keeps earning for you long after dessert.</p>
       </div>
 
       <div style="margin-bottom:16px;">
         <a href="https://app.lingograde.com/shop/mega-bundle" class="btn-success" style="font-size:1.125rem;padding:18px 48px;align-items:center;gap:14px;">
-          <img src="assets/mascot/marco-hero.png?v=3" alt="" style="height:40px;width:auto;">
+          <img src="assets/mascot/marco-hero.webp?v=3" alt="Marco the owl" style="height:40px;width:auto;">
           <span>See the Complete Package &rarr;</span>
         </a>
       </div>
@@ -891,6 +943,27 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
   </div>
 </section>
 
+<!-- ── CHINESE-ONLY LUCKY BUNDLE (geo-gated, hidden by default) ── -->
+<section class="section" id="cn-bundle" style="display:none;">
+  <div class="section-inner" style="max-width:640px;text-align:center;">
+    <div style="background:linear-gradient(135deg,#FFF5F5 0%,#FFF 100%);border:2px solid #C41E3A;border-radius:16px;padding:36px 28px;position:relative;">
+      <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#C41E3A;color:#fff;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;padding:4px 16px;border-radius:20px;">最受欢迎</div>
+      <h2 style="font-family:var(--font-display);font-size:1.75rem;color:var(--ink);margin-bottom:8px;">🎓 LingoGrade 完整学习包</h2>
+      <p style="font-size:1.0625rem;color:var(--ink-soft);margin-bottom:24px;">Full Assessment + Reassessment + 105 Stickers + Homework + Marco Plush</p>
+      <div style="font-size:2.5rem;font-weight:700;color:#C41E3A;margin-bottom:4px;">¥288.95</div>
+      <p style="font-size:0.875rem;color:var(--ink-light);text-decoration:line-through;margin-bottom:8px;">¥2,288.95</p>
+      <p style="font-size:0.9375rem;color:var(--ink-soft);margin-bottom:24px;font-style:italic;">双八吉利价 — 好运从这里开始</p>
+      <a href="https://app.lingograde.com/shop/mega-bundle" class="btn-primary" style="background:#C41E3A;font-size:1.125rem;padding:16px 40px;">立即购买 →</a>
+      <p style="font-size:0.8125rem;color:var(--ink-light);margin-top:16px;">Includes everything in the Complete Package at our lucky price.</p>
+    </div>
+  </div>
+</section>
+<script>
+if (window._lgIsCNY) {
+  var cnBundle = document.getElementById('cn-bundle');
+  if (cnBundle) cnBundle.style.display = '';
+}
+</script>
 
 <!-- ── Free Sticker Pack Opt-In ── -->
 <section class="section">
@@ -918,7 +991,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
           <div class="carousel-wrapper">
             <div class="carousel-track" id="carousel-track">
               <div class="carousel-item far-prev" data-campaign="kids" data-index="4" onclick="goToSlide(4)">
-                <img src="assets/mascot/lingograde-card-kids.png" alt="Kids" onclick="enlargeImage(this.src)">
+                <img src="assets/mascot/lingograde-card-kids.webp" alt="Kids" onclick="enlargeImage(this.src)">
                 <svg class="bracket-overlay" viewBox="0 0 160 220" preserveAspectRatio="none">
                   <path d="M8,52 L8,16 Q8,8 16,8 L52,8" stroke-width="3" fill="none" stroke-linecap="round"/>
                   <path d="M108,8 L144,8 Q152,8 152,16 L152,52" stroke-width="3" fill="none" stroke-linecap="round"/>
@@ -927,7 +1000,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
                 <span class="scan-me-label">SCAN ME</span>
               </div>
               <div class="carousel-item prev" data-campaign="marco" data-index="0" onclick="goToSlide(0)">
-                <img src="assets/mascot/lingograde-card.png" alt="Marco Solo" onclick="enlargeImage(this.src)">
+                <img src="assets/mascot/lingograde-card.webp" alt="Marco Solo" onclick="enlargeImage(this.src)">
                 <svg class="bracket-overlay" viewBox="0 0 160 220" preserveAspectRatio="none">
                   <path d="M8,52 L8,16 Q8,8 16,8 L52,8" stroke-width="3" fill="none" stroke-linecap="round"/>
                   <path d="M108,8 L144,8 Q152,8 152,16 L152,52" stroke-width="3" fill="none" stroke-linecap="round"/>
@@ -936,7 +1009,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
                 <span class="scan-me-label">SCAN ME</span>
               </div>
               <div class="carousel-item active" data-campaign="mila" data-index="1" onclick="goToSlide(1)">
-                <img src="assets/mascot/lingograde-card-mila.png" alt="Mila Solo" onclick="enlargeImage(this.src)">
+                <img src="assets/mascot/lingograde-card-mila.webp" alt="Mila Solo" onclick="enlargeImage(this.src)">
                 <svg class="bracket-overlay" viewBox="0 0 160 220" preserveAspectRatio="none">
                   <path d="M8,52 L8,16 Q8,8 16,8 L52,8" stroke-width="3" fill="none" stroke-linecap="round"/>
                   <path d="M108,8 L144,8 Q152,8 152,16 L152,52" stroke-width="3" fill="none" stroke-linecap="round"/>
@@ -945,7 +1018,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
                 <span class="scan-me-label">SCAN ME</span>
               </div>
               <div class="carousel-item next" data-campaign="corporate" data-index="2" onclick="goToSlide(2)">
-                <img src="assets/mascot/lingograde-card-corporate.png" alt="Corporate" onclick="enlargeImage(this.src)">
+                <img src="assets/mascot/lingograde-card-corporate.webp" alt="Corporate" onclick="enlargeImage(this.src)">
                 <svg class="bracket-overlay" viewBox="0 0 160 220" preserveAspectRatio="none">
                   <path d="M8,52 L8,16 Q8,8 16,8 L52,8" stroke-width="3" fill="none" stroke-linecap="round"/>
                   <path d="M108,8 L144,8 Q152,8 152,16 L152,52" stroke-width="3" fill="none" stroke-linecap="round"/>
@@ -954,7 +1027,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
                 <span class="scan-me-label">SCAN ME</span>
               </div>
               <div class="carousel-item far-next" data-campaign="playful" data-index="3" onclick="goToSlide(3)">
-                <img src="assets/mascot/lingograde-card-kids.png" alt="Playful" onclick="enlargeImage(this.src)">
+                <img src="assets/mascot/lingograde-card-kids.webp" alt="Playful" onclick="enlargeImage(this.src)">
                 <svg class="bracket-overlay" viewBox="0 0 160 220" preserveAspectRatio="none">
                   <path d="M8,52 L8,16 Q8,8 16,8 L52,8" stroke-width="3" fill="none" stroke-linecap="round"/>
                   <path d="M108,8 L144,8 Q152,8 152,16 L152,52" stroke-width="3" fill="none" stroke-linecap="round"/>
@@ -974,11 +1047,11 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
         <div class="pack-preview" id="pack-preview">
           <h4>Your collection includes:</h4>
           <div class="pack-preview-thumbs" id="pack-preview-thumbs">
-            <img class="preview-thumb" src="assets/mascot/lingograde-card.png" alt="Design 1">
-            <img class="preview-thumb" src="assets/mascot/lingograde-card.png" alt="Design 2">
-            <img class="preview-thumb" src="assets/mascot/lingograde-card.png" alt="Design 3">
+            <img class="preview-thumb" src="assets/mascot/lingograde-card.webp" alt="Design 1">
+            <img class="preview-thumb" src="assets/mascot/lingograde-card.webp" alt="Design 2">
+            <img class="preview-thumb" src="assets/mascot/lingograde-card.webp" alt="Design 3">
             <span class="preview-plus">+</span>
-            <img class="preview-thumb bonus-thumb" src="assets/mascot/marco-logo-v6.1.png?v=3" alt="Bonus stickers">
+            <img class="preview-thumb bonus-thumb" src="assets/mascot/marco-logo-v6.1.webp?v=3" alt="Bonus stickers">
           </div>
           <p class="pack-preview-desc" id="pack-preview-desc">30 Marco stickers + 5 bonus standard</p>
         </div>
@@ -1008,9 +1081,9 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
                 <input type="radio" name="sticker-tier" value="2" style="accent-color:var(--accent);width:18px;height:18px;flex-shrink:0;" onchange="updateStickerTotal()">
                 <div style="flex:1;">
                   <div style="font-weight:700;font-size:1rem;color:var(--ink);">2 Packs &mdash; Double Pack <span style="font-weight:400;font-size:0.8rem;color:var(--ink-light);">(70 stickers)</span></div>
-                  <div style="font-size:0.85rem;color:var(--ink-soft);margin-top:2px;">&euro;36.95 <span style="color:var(--ink-soft);">(&euro;18.95/pack)</span></div>
+                  <div style="font-size:0.85rem;color:var(--ink-soft);margin-top:2px;">&euro;37.95 <span style="color:var(--ink-soft);">(&euro;18.95/pack)</span></div>
                 </div>
-                <span style="font-weight:700;font-size:0.8rem;color:#16a34a;white-space:nowrap;">Save &euro;2.95</span>
+                <span style="font-weight:700;font-size:0.8rem;color:#16a34a;white-space:nowrap;">Save &euro;1.95</span>
               </label>
 
               <!-- Tier 1 -->
@@ -1212,7 +1285,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
   <div class="section-inner">
     <div class="product-card coming-soon">
       <div class="product-img-wrap">
-        <img src="assets/mascot/marco-coffee-morning.png" alt="Marco the owl enjoying a morning coffee" style="max-width:280px;width:100%;height:auto;background:transparent;">
+        <img src="assets/mascot/marco-coffee-morning.webp" alt="Marco the owl enjoying a morning coffee" style="max-width:280px;width:100%;height:auto;background:transparent;">
       </div>
       <div class="product-info">
         <span class="coming-soon-badge">Coming Soon</span>
@@ -1220,7 +1293,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
         <p>The LingoGrade mug is in production. Drop your email &mdash; first to know, first to pour.</p>
         <div class="waitlist-form">
           <input type="email" placeholder="your@email.com" aria-label="Email for LingoGrade Mug waitlist">
-          <button type="button" onclick="alert('Thanks! We will notify you when the mug launches.');">I'm curious</button>
+          <button type="button" onclick="this.textContent='You\'re on the list!';this.disabled=true;this.style.background='#27AE60';">I'm curious</button>
         </div>
         <p style="font-size:0.85rem;color:var(--ink-light);margin-top:12px;">First to know, first to pour. Early access members get launch-day pricing before it goes up.</p>
       </div>
@@ -1232,7 +1305,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
   <div class="section-inner">
     <div class="section-label">Digital Products</div>
     <div class="product-card" style="text-align:center;grid-template-columns:1fr;">
-      <img src="assets/mascot/marco-face-wink.png?v=3" alt="LingoGrade Flashcards" style="max-width:200px;width:100%;height:auto;background:transparent;">
+      <img src="assets/mascot/marco-face-wink.webp?v=3" alt="LingoGrade Flashcards" style="max-width:200px;width:100%;height:auto;background:transparent;">
       <h2>LingoGrade Flashcards</h2>
       <p style="color:#B0B0B0;">Anki-style spaced repetition powered by FSRS. Your stats feed directly into your lesson guidance.</p>
       <div style="font-size:2rem;font-weight:700;color:#27AE60;margin:16px 0;">FREE</div>
@@ -1251,17 +1324,17 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
       100% goes directly to your assessor. We keep nothing.
     </p>
     <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;">
-      <a href="https://buy.stripe.com/fZudR91eY0wr5fu5IFgUM07" target="_blank" rel="noopener"
+      <a href="https://buy.stripe.com/6oUfZh8Hq3IDazO4EBgUM04" target="_blank" rel="noopener"
          style="display:inline-flex;align-items:center;justify-content:center;width:100px;padding:14px 0;background:var(--parchment);border:1.5px solid var(--border);border-radius:10px;color:var(--ink);font-size:1.125rem;font-weight:600;text-decoration:none;transition:all 0.15s;">
-        <span data-price="5.00" style="font-weight:700;">EUR 5</span>
+        <span data-price="20.00" style="font-weight:700;">EUR 20</span>
       </a>
       <a href="https://buy.stripe.com/9B6fZh5veenh9vK9YVgUM06" target="_blank" rel="noopener"
          style="display:inline-flex;align-items:center;justify-content:center;width:100px;padding:14px 0;background:var(--parchment);border:1.5px solid var(--accent);border-radius:10px;color:var(--ink);font-size:1.125rem;font-weight:600;text-decoration:none;transition:all 0.15s;box-shadow:0 0 0 1px var(--accent);">
-        <span style="font-weight:700;">EUR 10</span>
+        <span data-price="10.00" style="font-weight:700;">EUR 10</span>
       </a>
-      <a href="https://buy.stripe.com/6oUfZh8Hq3IDazO4EBgUM04" target="_blank" rel="noopener"
+      <a href="https://buy.stripe.com/fZudR91eY0wr5fu5IFgUM07" target="_blank" rel="noopener"
          style="display:inline-flex;align-items:center;justify-content:center;width:100px;padding:14px 0;background:var(--parchment);border:1.5px solid var(--border);border-radius:10px;color:var(--ink);font-size:1.125rem;font-weight:600;text-decoration:none;transition:all 0.15s;">
-        <span style="font-weight:700;">EUR 20</span>
+        <span data-price="5.00" style="font-weight:700;">EUR 5</span>
       </a>
     </div>
     <p style="font-size:0.75rem;color:var(--ink-light);">Not expected. Never solicited. Just appreciated.</p>
@@ -1349,7 +1422,7 @@ function enlargeImage(src) {
 
 // Marco gallery popup
 (function() {
-  var marcoSrcs = ['assets/mascot/Marco4.png', 'assets/mascot/Marco.png', 'assets/mascot/Marco2.png'];
+  var marcoSrcs = ['assets/mascot/Marco4.webp', 'assets/mascot/Marco.webp', 'assets/mascot/Marco2.webp'];
   var currentIdx = 0;
 
   document.querySelectorAll('[data-marco-gallery]').forEach(function(img, i) {
@@ -1453,8 +1526,11 @@ function enlargeImage(src) {
 
   // EUR → USD price mapping
   var eurToUsd = {
+    '5.00': '5.00',
+    '10.00': '10.00',
+    '20.00': '20.00',
     '19.95': '22.95',
-    '36.95': '42.95',
+    '37.95': '43.95',
     '44.95': '51.95',
     '24.95': '29.95',
     '299.95': '349.95'
@@ -1462,8 +1538,11 @@ function enlargeImage(src) {
 
   // EUR → CNY price mapping (CHF reference, rounded UP to X49.95 or X99.95)
   var eurToCny = {
+    '5.00': '5.00',
+    '10.00': '10.00',
+    '20.00': '20.00',
     '19.95': '149.95',
-    '36.95': '299.95',
+    '37.95': '299.95',
     '44.95': '349.95',
     '24.95': '199.95',
     '299.95': '2288.95'
@@ -1517,8 +1596,8 @@ function enlargeImage(src) {
       // Tier 3: €14.95/pack → $17.33/pack
       label.innerHTML = label.innerHTML.replace(/\u20AC14\.95\/pack/g, '$17.33/pack');
       label.innerHTML = label.innerHTML.replace(/\$14\.95\/pack/g, '$17.33/pack');
-      // Tier 2 savings: Save €2.95 → Save $3.00
-      label.innerHTML = label.innerHTML.replace(/\u20AC2\.95/g, '$3.00');
+      // Tier 2 savings: Save €1.95 → Save $1.95
+      label.innerHTML = label.innerHTML.replace(/\u20AC1\.95/g, '$1.95');
       // Tier 3 savings: Save €14.95 → Save $17.95 (3 x 22.95 = 68.85, collection = 51.95, save = 16.90)
       label.innerHTML = label.innerHTML.replace(/\u20AC14\.95/g, '$17.95');
     });
@@ -1527,8 +1606,8 @@ function enlargeImage(src) {
 
 // Sticker order total
 function updateStickerTotal(){
-  var tierPricesEUR = { '1': 19.95, '2': 36.95, '3': 44.95 };
-  var tierPricesUSD = { '1': 22.95, '2': 42.95, '3': 51.95 };
+  var tierPricesEUR = { '1': 19.95, '2': 37.95, '3': 44.95 };
+  var tierPricesUSD = { '1': 22.95, '2': 43.95, '3': 51.95 };
   var tierPrices = window._lgIsUSD ? tierPricesUSD : tierPricesEUR;
   var tierEl = document.querySelector('input[name="sticker-tier"]:checked');
   var tier = tierEl ? tierEl.value : '3';
@@ -1559,23 +1638,23 @@ var packOrder = ['marco','mila','corporate','playful','kids'];
 var packData = {
   marco: {
     desc: '30 Marco stickers in 3 designs + 5 bonus LingoGrade standard',
-    imgs: ['assets/mascot/lingograde-card.png','assets/mascot/marco-face-wink.png','assets/mascot/marco-hero.png?v=3','assets/mascot/marco-logo-v6.1.png?v=3']
+    imgs: ['assets/mascot/lingograde-card.webp','assets/mascot/marco-face-wink.webp','assets/mascot/marco-hero.webp?v=3','assets/mascot/marco-logo-v6.1.webp?v=3']
   },
   mila: {
     desc: '30 Mila stickers in 3 designs + 5 bonus LingoGrade standard',
-    imgs: ['assets/mascot/lingograde-card-mila.png','assets/mascot/marco-face-party.png','assets/mascot/marco-hero.png?v=3','assets/mascot/marco-logo-v6.1.png?v=3']
+    imgs: ['assets/mascot/lingograde-card-mila.webp','assets/mascot/marco-face-party.webp','assets/mascot/marco-hero.webp?v=3','assets/mascot/marco-logo-v6.1.webp?v=3']
   },
   corporate: {
     desc: '30 Corporate stickers in 3 designs (Marco + Mila in uniform) + 5 bonus LingoGrade standard',
-    imgs: ['assets/mascot/lingograde-card-corporate.png','assets/mascot/lingograde-card.png','assets/mascot/lingograde-card-mila.png','assets/mascot/marco-logo-v6.1.png?v=3']
+    imgs: ['assets/mascot/lingograde-card-corporate.webp','assets/mascot/lingograde-card.webp','assets/mascot/lingograde-card-mila.webp','assets/mascot/marco-logo-v6.1.webp?v=3']
   },
   playful: {
     desc: '30 Playful stickers in 3 designs (Marco + Mila casual) + 5 bonus LingoGrade standard',
-    imgs: ['assets/mascot/lingograde-card-kids.png','assets/mascot/lingograde-card.png','assets/mascot/lingograde-card-mila.png','assets/mascot/marco-logo-v6.1.png?v=3']
+    imgs: ['assets/mascot/lingograde-card-kids.webp','assets/mascot/lingograde-card.webp','assets/mascot/lingograde-card-mila.webp','assets/mascot/marco-logo-v6.1.webp?v=3']
   },
   kids: {
     desc: '30 Kids stickers in 3 designs + 5 bonus LingoGrade standard',
-    imgs: ['assets/mascot/marco-wave.png','assets/mascot/lingograde-card-kids.png','assets/mascot/marco-face-wink.png','assets/mascot/marco-logo-v6.1.png?v=3']
+    imgs: ['assets/mascot/marco-wave.webp','assets/mascot/lingograde-card-kids.webp','assets/mascot/marco-face-wink.webp','assets/mascot/marco-logo-v6.1.webp?v=3']
   }
 };
 
