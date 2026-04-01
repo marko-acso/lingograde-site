@@ -21,16 +21,15 @@
 
 ---
 
+### Priority 4 (this session)
+10. **Two Marco placements** — images found in `sliced-images/`, copied to `assets/mascot/`, placed in `index.html`:
+    - Horizontal banner (`marco-logo-whiteboard.webp`) — between FAQ and Meet Marco Plush sections
+    - "Language is personal" philosophy section (`marco-reading-branded-logo-v1.webp`) — between Corporate Teaser and Review Submission
+
 ## TODO — REMAINING
 
-### Blocked — Assets Missing
-10. **Two missing Marco placements** (from Phase 4):
-    - Horizontal banner: `marco-logo-whiteboard.webp` — image file does not exist in assets/mascot/
-    - About/mission page: `marco-reading-branded-logo-v1.webp` — image file does not exist in assets/mascot/
-    - **Action:** generate or source these images first, then place them
-
 ### Housekeeping
-11. **Git commit** — all changes from priorities 1-3 need committing
+11. **All items complete** — no remaining blockers
 
 ---
 
