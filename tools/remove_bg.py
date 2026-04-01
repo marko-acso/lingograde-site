@@ -33,7 +33,7 @@ MASCOT_DIR = PROJECT_ROOT / "assets" / "mascot"
 TARGET_IMAGES = [
     "marco-hero.png",
     "marco-sleeping.png",
-    "marco-logo-v5.png",
+    "marco-logo-v6.1.png",
 ]
 
 # Amazon plush photos - never touch

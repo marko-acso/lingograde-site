@@ -24,6 +24,13 @@ try:
 except ImportError:
     HAS_TRANSLATIONS = False
 
+import io
+try:
+    import qrcode
+    HAS_QRCODE = True
+except ImportError:
+    HAS_QRCODE = False
+
 from docx import Document
 from docx.shared import Inches, Pt, Cm, Emu, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
@@ -1398,6 +1405,78 @@ def create_report(data, output_path=None):
             bp4.paragraph_format.space_before = Pt(8)
             add_hyperlink(bp4, reassess_cal_url, "→ Book Re-Assessment", color=ACCENT, bold=True, size=10)
 
+    # ══════════════════════════════════════
+    # PRONUNCIATION HEAT MAP (optional)
+    # ══════════════════════════════════════
+    pronunciation = data.get("pronunciation_heatmap")
+    if pronunciation and isinstance(pronunciation, list) and len(pronunciation) > 0:
+        doc.add_paragraph("")
+        # Section heading
+        ph_heading = doc.add_paragraph()
+        ph_heading.alignment = WD_ALIGN_PARAGRAPH.LEFT
+        ph_heading.paragraph_format.space_after = Pt(8)
+        phr = ph_heading.add_run("Pronunciation Heat Map / Aussprache-Heatmap")
+        phr.font.name = 'Arial'; phr.font.size = Pt(13); phr.font.color.rgb = NAVY; phr.font.bold = True
+
+        ph_desc = doc.add_paragraph()
+        ph_desc.paragraph_format.space_after = Pt(8)
+        phdr = ph_desc.add_run("Color key: ")
+        phdr.font.name = 'Arial'; phdr.font.size = Pt(8); phdr.font.color.rgb = INK_SOFT
+        for label, color in [("No issues", "27AE60"), ("Focus area (>20%)", "E67E22"), ("Critical (>40%)", "C0392B")]:
+            r = ph_desc.add_run(f"  ■ {label}  ")
+            r.font.name = 'Arial'; r.font.size = Pt(8)
+            r.font.color.rgb = RGBColor(int(color[:2], 16), int(color[2:4], 16), int(color[4:], 16))
+
+        # Heat map table: Category | Phonemes | Glitch Rate | Status
+        ht = doc.add_table(rows=1 + len(pronunciation), cols=4)
+        ht.alignment = WD_TABLE_ALIGNMENT.CENTER
+        set_table_borders(ht, color="CCCCCC", sz="4")
+
+        # Header row
+        headers = ["Category", "Phonemes", "Glitch Rate", "Status"]
+        for i, h in enumerate(headers):
+            cell = ht.cell(0, i)
+            set_cell_shading(cell, HEADER_BG)
+            set_cell_margins(cell, top=60, bottom=60, left=80, right=80)
+            p = cell.paragraphs[0]
+            p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            r = p.add_run(h)
+            r.font.name = 'Arial'; r.font.size = Pt(8); r.font.color.rgb = WHITE; r.font.bold = True
+
+        # Data rows
+        for idx, item in enumerate(pronunciation):
+            row_idx = idx + 1
+            category = item.get("category", "")
+            phonemes = item.get("phonemes", "")
+            rate = item.get("glitch_rate", 0)
+            status = item.get("status", "")
+
+            # Determine row color based on glitch rate
+            if rate >= 40:
+                row_bg = "FDE8E8"  # red tint
+                status_color = ERROR_C
+            elif rate >= 20:
+                row_bg = "FEF3E2"  # orange tint
+                status_color = RGBColor(0xE6, 0x7E, 0x22)
+            else:
+                row_bg = "F0FFF4"  # green tint
+                status_color = SUCCESS
+
+            for col_idx, (text, align) in enumerate([
+                (category, WD_ALIGN_PARAGRAPH.LEFT),
+                (phonemes, WD_ALIGN_PARAGRAPH.LEFT),
+                (f"{rate}%", WD_ALIGN_PARAGRAPH.CENTER),
+                (status, WD_ALIGN_PARAGRAPH.CENTER),
+            ]):
+                cell = ht.cell(row_idx, col_idx)
+                set_cell_shading(cell, row_bg)
+                set_cell_margins(cell, top=50, bottom=50, left=80, right=80)
+                p = cell.paragraphs[0]
+                p.alignment = align
+                r = p.add_run(str(text))
+                r.font.name = 'Arial'; r.font.size = Pt(8)
+                r.font.color.rgb = status_color if col_idx == 3 else INK
+
         # ── Professional closing — Chris Voss: create forward commitment ──
         doc.add_paragraph("")
         close_table = doc.add_table(rows=1, cols=1)
@@ -1440,6 +1519,50 @@ def create_report(data, output_path=None):
         run3 = cp3.add_run(closing_text)
         run3.font.name = 'Arial'; run3.font.size = Pt(8); run3.font.color.rgb = RGBColor(0x93, 0xB5, 0xD0)
         run3.font.italic = True
+
+    # ══════════════════════════════════════
+    # STUDENT DASHBOARD QR CODE
+    # ══════════════════════════════════════
+    student_id = meta.get("student_id", "")
+    if HAS_QRCODE and student_id:
+        dashboard_url = f"https://app.lingograde.com/student?id={student_id}"
+
+        qr = qrcode.QRCode(version=1, box_size=6, border=2, error_correction=qrcode.constants.ERROR_CORRECT_M)
+        qr.add_data(dashboard_url)
+        qr.make(fit=True)
+        qr_img = qr.make_image(fill_color="#1A3A5C", back_color="white")
+        qr_buf = io.BytesIO()
+        qr_img.save(qr_buf, format="PNG")
+        qr_buf.seek(0)
+
+        doc.add_paragraph("")
+        qr_table = doc.add_table(rows=1, cols=2)
+        qr_table.alignment = WD_TABLE_ALIGNMENT.CENTER
+
+        # QR code cell
+        qr_cell = qr_table.cell(0, 0)
+        set_cell_margins(qr_cell, top=80, bottom=80, left=80, right=40)
+        qr_p = qr_cell.paragraphs[0]
+        qr_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        qr_run = qr_p.add_run()
+        qr_run.add_picture(qr_buf, width=Cm(2.5))
+
+        # Description cell
+        desc_cell = qr_table.cell(0, 1)
+        set_cell_margins(desc_cell, top=100, bottom=80, left=40, right=80)
+        dp = desc_cell.paragraphs[0]
+        dr = dp.add_run("Your Student Dashboard")
+        dr.font.name = 'Arial'; dr.font.size = Pt(10); dr.font.color.rgb = NAVY; dr.font.bold = True
+        dp2 = desc_cell.add_paragraph()
+        dp2.paragraph_format.space_before = Pt(4)
+        dr2 = dp2.add_run("Scan this QR code to access your personal dashboard — track your progress, view past assessments, and manage your account.")
+        dr2.font.name = 'Arial'; dr2.font.size = Pt(8); dr2.font.color.rgb = INK_SOFT
+
+        # Remove borders from QR table
+        no_border = {'val': 'none', 'sz': '0', 'color': 'FFFFFF'}
+        for row in qr_table.rows:
+            for cell in row.cells:
+                set_cell_border(cell, top=no_border, bottom=no_border, left=no_border, right=no_border)
 
     # ══════════════════════════════════════
     # DOCUMENT FOOTER on every page

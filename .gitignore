@@ -27,5 +27,20 @@ build/
 # Logs
 *.log
 
+# Python
+__pycache__/
+*.pyc
+
+# Mascot pipeline artifacts
+assets/mascot/raw-generations/
+assets/mascot/GPT Images/
+assets/mascot/sliced-images/_originals/
+assets/mascot/sliced-images/_bin/
+assets/mascot/sliced-images-png-backup/
+assets/mascot/Clipboard_*.png
+assets/mascot/_retired/
+assets/mascot/*.py
+assets/mascot/contact-sheets/
+
 # Claude Code
 .claude/settings.local.json

@@ -22,6 +22,9 @@
 <meta name="twitter:image" content="https://www.lingograde.com/og-logo-v2.png">
 <link rel="canonical" href="https://www.lingograde.com/">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<!-- TrustBox script -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!-- End TrustBox script -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -51,6 +54,12 @@
       "description": "Professional CEFR language assessment across 12 languages. Quick, Full, and DeepDive options with personalized reports.",
       "serviceType": "Language Assessment",
       "offers": [
+        {
+          "@type": "Offer",
+          "name": "Bot Assessment",
+          "price": "49.95",
+          "priceCurrency": "EUR"
+        },
         {
           "@type": "Offer",
           "name": "Quick Assessment",
@@ -170,7 +179,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .block-card .included-badge { font-size: 0.6875rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 12px; }
 
 /* ── Pricing ── */
-.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; max-width: 1080px; margin-left: auto; margin-right: auto; }
+.pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; max-width: 1180px; margin-left: auto; margin-right: auto; }
 .pricing-card { border-radius: 16px; border: 2px solid var(--border); padding: 36px 32px; position: relative; transition: border-color 0.2s; }
 .pricing-card:hover { border-color: var(--accent); }
 .pricing-card.featured { border-color: var(--accent); background: linear-gradient(180deg, var(--accent-bg) 0%, var(--cream) 60%); }
@@ -285,7 +294,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   /* Grids — single column on mobile */
   .steps { grid-template-columns: 1fr 1fr; gap: 24px; }
   .blocks { grid-template-columns: 1fr; }
-  .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+  .pricing-grid { grid-template-columns: 1fr 1fr; max-width: 520px; }
   .lessons-grid { grid-template-columns: 1fr; max-width: 420px; }
   .partner-card { grid-template-columns: 1fr; gap: 32px; }
   .flashcard-layout { grid-template-columns: 1fr; gap: 32px; }
@@ -314,6 +323,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
 /* ── Responsive: 480px ── */
 @media (max-width: 480px) {
+  .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
   .steps { grid-template-columns: 1fr; }
   .hero { padding: 90px 16px 32px; }
   .hero h1 { font-size: 1.75rem; }
@@ -342,7 +352,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <!-- ── Navigation ── -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="#top" class="brand-logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="Marco" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"> LingoGr<span class="brand-a">A</span>de</a>
+    <a href="#top" class="brand-logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="Marco" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"><span>LingoGr<span class="brand-a">A</span>de</span></a>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -372,6 +382,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     </div>
     <div class="hero-actions">
       <a href="#pricing" class="btn-primary">See Where I Actually Stand</a>
+      <a href="#free-analysis" class="btn-secondary" style="background:var(--success-bg);border-color:var(--success);color:var(--success);">Try Free 5-Min Analysis</a>
       <a href="#how-it-works" class="btn-secondary">How It Works</a>
     </div>
     <div class="hero-trust" style="margin-top:32px;">
@@ -651,6 +662,47 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   </div>
 </section>
 
+<!-- Free 5-Min Bot Analysis -->
+<section class="section" id="free-analysis" style="padding:64px 32px;background:linear-gradient(180deg,#F0FFF4 0%,var(--cream) 100%);">
+  <div class="section-inner" style="text-align:center;max-width:800px;margin:0 auto;">
+    <div class="section-label" style="color:var(--success);">Free — No Sign-Up Needed</div>
+    <h2 class="section-title" style="margin-left:auto;margin-right:auto;">Curious where you stand? Talk to Marco for 5 minutes.</h2>
+    <p class="section-desc" style="margin:0 auto 32px;">Marco listens to how you use the language and gives you an instant snapshot of your approximate level — free, anonymous, no strings attached. If you want the full picture, the professional assessments below go deeper.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;max-width:720px;margin:0 auto 36px;" class="partner-card">
+      <div style="padding:20px;border-radius:12px;border:1.5px solid rgba(39,174,96,0.3);background:var(--cream);text-align:center;">
+        <div style="font-family:var(--font-display);font-size:1.8rem;color:var(--success);">5 min</div>
+        <div style="font-size:0.8rem;color:var(--ink-light);">Quick conversation</div>
+      </div>
+      <div style="padding:20px;border-radius:12px;border:1.5px solid rgba(39,174,96,0.3);background:var(--cream);text-align:center;">
+        <div style="font-family:var(--font-display);font-size:1.8rem;color:var(--success);">Free</div>
+        <div style="font-size:0.8rem;color:var(--ink-light);">No payment, no sign-up</div>
+      </div>
+      <div style="padding:20px;border-radius:12px;border:1.5px solid rgba(39,174,96,0.3);background:var(--cream);text-align:center;">
+        <div style="font-family:var(--font-display);font-size:1.8rem;color:var(--success);">3 cards</div>
+        <div style="font-size:0.8rem;color:var(--ink-light);">Free flashcards generated</div>
+      </div>
+    </div>
+
+    <div style="display:inline-flex;align-items:center;gap:16px;background:var(--cream);border:2px solid var(--success);border-radius:16px;padding:20px 32px;margin-bottom:24px;">
+      <img src="assets/mascot/marco-chatbot-speech-bubble.webp?v=3" alt="Marco the owl chatbot" class="marco-img" style="width:64px;height:auto;background:transparent;" loading="lazy">
+      <div style="text-align:left;">
+        <div style="font-weight:600;color:var(--ink);font-size:1rem;">Marco is ready to chat</div>
+        <div style="font-size:0.875rem;color:var(--ink-soft);">28 languages supported. Just pick yours and start talking.</div>
+      </div>
+    </div>
+
+    <div>
+      <button onclick="var f=document.querySelector('#marco-fab');if(f)f.click();" class="btn-primary" style="background:var(--success);font-size:1.0625rem;padding:16px 40px;">Start Free Analysis with Marco</button>
+      <p style="font-size:0.8rem;color:var(--ink-light);margin-top:12px;">Not ready? No problem. Everything will be here whenever you are.</p>
+    </div>
+
+    <div style="margin-top:32px;padding:16px 24px;background:var(--accent-bg);border-radius:10px;max-width:600px;margin-left:auto;margin-right:auto;">
+      <p style="font-size:0.875rem;color:var(--ink-soft);margin:0;">Want more than a snapshot? The <strong>Bot Assessment</strong> below gives you a full written report for <span class="lg-price-inline" data-eur="49.95" data-usd="49.95" data-chf="49.95" data-gbp="49.95">&euro;49.95</span> — or book a <strong>human assessment</strong> for the deepest analysis available.</p>
+    </div>
+  </div>
+</section>
+
 <!-- Pricing -->
 <section class="section section-alt" id="pricing">
   <div class="section-inner" style="text-align:center;">
@@ -723,6 +775,25 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         </ul>
         <a href="https://booking.lingograde.com/marco/quick-assessment" class="pricing-btn pricing-btn-secondary" target="_blank">See Where I Actually Stand &rarr;</a>
       </div>
+      <div class="pricing-card" style="border-color:var(--success);background:linear-gradient(180deg,var(--success-bg) 0%,var(--cream) 60%);position:relative;">
+        <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 16px;background:var(--success);color:white;border-radius:100px;font-size:0.6875rem;font-weight:700;letter-spacing:0.06em;">AI-POWERED</div>
+        <div class="pricing-name">Bot Assessment</div>
+        <div class="pricing-duration">5-minute AI conversation</div>
+        <div class="pricing-price" data-eur="49.95" data-usd="49.95" data-chf="49.95" data-gbp="49.95" style="color:var(--success);">&euro;49.95</div>
+        <div class="pricing-price-note">Full written report, no booking needed</div>
+        <ul class="pricing-features">
+          <li style="position:relative;padding-left:24px;"><span style="position:absolute;left:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--success);"></span>Approximate CEFR level</li>
+          <li style="position:relative;padding-left:24px;"><span style="position:absolute;left:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--success);"></span>Key speaking patterns identified</li>
+          <li style="position:relative;padding-left:24px;"><span style="position:absolute;left:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--success);"></span>3 personalised flashcards</li>
+          <li style="position:relative;padding-left:24px;"><span style="position:absolute;left:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--success);"></span>Delivered instantly via email</li>
+          <li style="position:relative;padding-left:24px;"><span style="position:absolute;left:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--success);"></span>28 languages supported</li>
+          <li class="no">Human assessor analysis</li>
+          <li class="no">Detailed homework programme</li>
+          <li class="no">8-week learning plan</li>
+        </ul>
+        <button onclick="var f=document.querySelector('#marco-fab');if(f)f.click();" class="pricing-btn" style="background:var(--success);color:white;border:none;cursor:pointer;font-family:inherit;">Start Bot Assessment &rarr;</button>
+        <p style="font-size:0.8rem;color:var(--ink-light);margin-top:12px;">Want more depth? Upgrade to a human assessment anytime.</p>
+      </div>
     </div>
 
     <div style="margin-top:16px;padding:12px 24px;background:var(--success-bg);border-radius:8px;max-width:1080px;margin-left:auto;margin-right:auto;border:1px solid rgba(39,174,96,0.2);">
@@ -730,9 +801,11 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     </div>
 
     <div class="pricing-discount" style="max-width:1080px;margin-left:auto;margin-right:auto;margin-top:16px;display:flex;align-items:center;gap:20px;">
-      <img src="assets/mascot/marco-coffee-morning.webp?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:100px;height:auto;flex-shrink:0;background:transparent;" loading="lazy">
-      <p>Not sure which to choose? The <strong>DeepDive Assessment</strong> gives you the most thorough diagnostic available — extended sessions, comprehensive pattern mapping, and priority delivery. The <strong>Full Assessment</strong> is the most popular option with homework and an 8-week plan included.</p>
-      <p style="font-size:0.8125rem;color:var(--ink-light);margin-top:8px;">Not ready? No problem — everything will be here whenever you are.</p>
+      <img src="assets/mascot/marco-coffee-cozy.webp?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:100px;height:auto;flex-shrink:0;background:transparent;" loading="lazy">
+      <div>
+        <p>Not sure which to choose? Start with the <strong>free 5-minute chat</strong> for a quick snapshot. The <strong>Bot Assessment</strong> gives you a written report instantly. The <strong>Full Assessment</strong> is the most popular human option. The <strong>DeepDive</strong> is the most thorough diagnostic available.</p>
+        <p style="font-size:0.8125rem;color:var(--ink-light);margin-top:8px;">Not ready? No problem — everything will be here whenever you are.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -825,12 +898,14 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
               <li>Spaced repetition (FSRS algorithm &mdash; proven to outperform Anki)</li>
               <li>Offline mode &mdash; practice anywhere, no internet needed</li>
               <li>Progress tracking synced to your profile</li>
+              <li>Upload up to 50 flashcards per day</li>
             </ul>
           </div>
           <div class="flashcard-tier premium">
             <h4>Premium</h4>
             <div class="tier-price"><span class="lg-price-inline" data-eur="4.95" data-usd="4.95" data-chf="4.95" data-gbp="4.95">&euro;4.95</span>/month &middot; Free with Complete Program</div>
             <ul>
+              <li>Unlimited flashcard uploads daily</li>
               <li>Unlimited custom card decks</li>
               <li>AI-generated practice sentences from your specific glitches</li>
               <li>Stats visible to your assessor &mdash; lessons adapt to what you struggle with</li>
@@ -844,7 +919,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         </div>
       </div>
       <div class="flashcard-visual">
-        <img src="assets/mascot/marco-reading.webp?v=3" alt="Marco the owl studying with flashcards" class="marco-img" style="background:transparent;" loading="lazy">
+        <img src="assets/mascot/gpt-marco-studying-desk.webp?v=1" alt="Marco the owl studying with flashcards" class="marco-img" style="background:transparent;" loading="lazy">
       </div>
     </div>
   </div>
@@ -853,9 +928,16 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <!-- Reviews -->
 <section class="section" id="reviews">
   <div class="section-inner">
-    <div class="section-label">Student Experiences</div>
-    <h2 class="section-title">What our students discovered</h2>
-    <p class="section-desc" style="margin-bottom:48px;">These are real results from real assessments. Every student came in with a question about their level. Every student left with an answer — and a plan.</p>
+    <!-- TrustBox widget - Review Collector -->
+    <div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ba47415aa0a9b17480c1ab" data-style-height="52px" data-style-width="100%" data-token="9a9ff161-49a4-4cb1-a79e-d83fb709cb2b">
+      <a href="https://www.trustpilot.com/review/lingograde.com" target="_blank" rel="noopener">Trustpilot</a>
+    </div>
+    <!-- End TrustBox widget -->
+    <div style="margin-top:48px;">
+      <div class="section-label">Student Experiences</div>
+      <h2 class="section-title">What our students discovered</h2>
+      <p class="section-desc" style="margin-bottom:48px;">These are real results from real assessments. Every student came in with a question about their level. Every student left with an answer — and a plan.</p>
+    </div>
     <div class="grid-3col" style="gap:24px;">
 
       <div style="background:var(--parchment);border-radius:12px;padding:28px;border:1.5px solid var(--border);">
@@ -918,6 +1000,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
     <div style="margin-top:48px;text-align:center;">
       <a href="#pricing" class="btn-primary">Explore Assessment Options &rarr;</a>
+    </div>
     </div>
   </div>
 </section>
@@ -996,7 +1079,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <img src="assets/mascot/marco-hero.webp?v=3" alt="Marco the LingoGrade owl plush" style="width:160px;height:auto;margin-bottom:20px;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.1));display:none;background:transparent;" onload="this.style.display='inline-block'" loading="lazy">
     <h2 style="font-family:var(--font-display);font-size:clamp(1.25rem,3vw,1.75rem);color:var(--ink);margin-bottom:8px;">Meet Marco in person</h2>
     <p style="font-size:1rem;color:var(--ink-soft);line-height:1.7;margin-bottom:24px;">Get the official Marco plush. Kiss him. Post a selfie. Earn <span class="lg-price-inline" data-eur="5" data-usd="5" data-chf="5" data-gbp="5">&euro;5</span>.</p>
-    <a href="https://app.lingograde.com/shop/marco-plush" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--accent);color:white;border-radius:10px;font-weight:600;font-size:1rem;text-decoration:none;transition:all 0.2s;">Meet Marco &rarr;</a>
+    <a href="https://buy.stripe.com/9B68wPf5Ocf9bDSfjfgUM00" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--accent);color:white;border-radius:10px;font-weight:600;font-size:1rem;text-decoration:none;transition:all 0.2s;">Meet Marco &rarr;</a>
     <p style="margin-top:12px;font-size:0.75rem;color:var(--ink-light);">Physical plush required for the selfie reward. #LingoGradeMarco</p>
   </div>
 </section>

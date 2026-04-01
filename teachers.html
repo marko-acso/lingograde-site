@@ -23,7 +23,7 @@
       "provider": { "@type": "Organization", "name": "LingoGrade" }
     }
     </script>
-    <link rel="icon" type="image/webp" href="assets/mascot/marco-face-grad-v2.webp">
+    <link rel="icon" type="image/webp" href="assets/mascot/marco-face-grad-v2.webp?v=3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -250,6 +250,52 @@
             margin-bottom: 0.6rem;
         }
         .value-card p { font-size: 0.95rem; color: var(--ink-muted); line-height: 1.65; }
+
+        /* ============ CEFR CREDIBILITY ============ */
+        .cefr-credibility {
+            background: var(--ink);
+            padding: 3rem 2rem;
+        }
+        .cefr-inner {
+            max-width: var(--max-w); margin: 0 auto;
+            display: flex; align-items: center; gap: 3rem;
+        }
+        .cefr-shield {
+            flex-shrink: 0; width: 80px; height: 80px;
+            border: 2px solid var(--gold); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--gold); font-family: var(--serif); font-size: 1.1rem;
+            text-align: center; line-height: 1.2;
+        }
+        .cefr-text { flex: 1; }
+        .cefr-text h3 {
+            font-family: var(--serif); font-size: 1.2rem;
+            color: var(--parchment); margin-bottom: 0.4rem;
+        }
+        .cefr-text p {
+            font-size: 0.9rem; color: rgba(250, 248, 245, 0.55);
+            line-height: 1.65;
+        }
+        .cefr-badges {
+            display: flex; gap: 1.5rem; flex-shrink: 0;
+        }
+        .cefr-badge-item {
+            text-align: center; padding: 0.8rem 1.2rem;
+            border: 1px solid rgba(250, 248, 245, 0.1);
+            border-radius: 12px;
+        }
+        .cefr-badge-item .badge-name {
+            font-size: 0.8rem; font-weight: 700;
+            color: var(--gold-light); letter-spacing: 0.04em;
+        }
+        .cefr-badge-item .badge-type {
+            font-size: 0.7rem; color: rgba(250, 248, 245, 0.4);
+            margin-top: 0.15rem;
+        }
+        @media (max-width: 768px) {
+            .cefr-inner { flex-direction: column; text-align: center; gap: 1.5rem; }
+            .cefr-badges { flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
+        }
 
         /* ============ HOW IT WORKS ============ */
         .how { background: var(--ink); color: var(--parchment); }
@@ -622,7 +668,7 @@
 <!-- NAV -->
 <nav class="nav" id="nav">
     <div class="nav-inner">
-        <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="Marco" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"> LingoGr<span class="brand-a">A</span>de</a>
+        <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="Marco" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"><span>LingoGr<span class="brand-a">A</span>de</span></a>
         <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
             <span></span><span></span><span></span>
         </button>
@@ -641,12 +687,12 @@
 <!-- HERO -->
 <section class="hero">
     <div class="hero-inner">
-        <div class="hero-badge fade-up">Partner Network — By Invitation</div>
+        <div class="hero-badge fade-up">Partner Network — 3 Partners Per City &middot; By Invitation</div>
         <div style="margin-bottom:20px;" class="fade-up"><img src="assets/mascot/marco-face-graduation.webp" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:200px;height:auto;background:transparent;"></div>
         <h1 class="fade-up stagger-1">You already know where they struggle. Now <em>prove it.</em></h1>
-        <p class="hero-sub fade-up stagger-2">You hear the fossilized patterns, the avoidance strategies, the gap between what your students think they can do and what they actually produce under pressure. LingoGrade transforms that instinct into a certified CEFR diagnostic — and partners with you on a competitive revenue share for every referral.</p>
+        <p class="hero-sub fade-up stagger-2">You hear the fossilized patterns, the avoidance strategies, the gap between what your students think they can do and what they actually produce under pressure. LingoGrade transforms that instinct into an independent diagnostic calibrated to the Council of Europe's CEFR framework — the same standard behind Goethe-Institut, telc, and Cambridge examinations — and partners with you on a competitive revenue share for every referral.</p>
         <a href="#join" class="hero-cta fade-up stagger-3">
-            Apply Now
+            Explore the Partnership
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <p class="hero-proof fade-up stagger-3"><strong>Revenue share on every assessment</strong> &middot; No caps &middot; No minimums &middot; Paid monthly</p>
@@ -685,15 +731,15 @@
 <section class="value">
     <div class="section-inner">
         <span class="section-label fade-up">Your partnership value</span>
-        <h2 class="section-title fade-up stagger-1">Three reasons this becomes <br>your foundation tool</h2>
-        <p class="section-sub fade-up stagger-2">This is not an affiliate link you paste and forget. This is a professional CEFR diagnostic instrument that elevates how you teach and positions you as a premium educator.</p>
+        <h2 class="section-title fade-up stagger-1">Three reasons partners call this <br>their foundation tool</h2>
+        <p class="section-sub fade-up stagger-2">A professional CEFR diagnostic instrument, calibrated to the Council of Europe framework, that elevates how you teach and positions you as a premium educator.</p>
         <div class="value-cards">
             <div class="value-card fade-up">
                 <div class="value-icon diagnostic">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
                 </div>
-                <h3>A CEFR diagnostic you can teach from</h3>
-                <p>Every report maps the student's precise CEFR level across speaking, structure, vocabulary, and fluency — with detailed pattern analysis and calibrated recommendations aligned to the European standards framework. You stop guessing. You start building lessons around certified data.</p>
+                <h3>A Council of Europe diagnostic you can teach from</h3>
+                <p>Every report maps the student's precise CEFR level across speaking, structure, vocabulary, and fluency — calibrated to the same Council of Europe framework that governs Goethe-Institut, telc, and Cambridge examinations. Detailed pattern analysis. Specific structural recommendations. You stop guessing. You start building lessons around certified data.</p>
             </div>
             <div class="value-card fade-up stagger-1">
                 <div class="value-icon authority">
@@ -713,12 +759,41 @@
     </div>
 </section>
 
+<!-- CEFR CREDIBILITY -->
+<div class="cefr-credibility fade-up">
+    <div class="cefr-inner">
+        <div class="cefr-shield">CEFR<br>A1–C2</div>
+        <div class="cefr-text">
+            <h3>Calibrated to the Council of Europe framework</h3>
+            <p>Every LingoGrade assessment maps spoken performance to the same CEFR standard that governs Europe's most recognised certification bodies. Your students receive a diagnostic grounded in the framework you already teach to.</p>
+        </div>
+        <div class="cefr-badges">
+            <div class="cefr-badge-item">
+                <div class="badge-name">Goethe-Institut</div>
+                <div class="badge-type">German</div>
+            </div>
+            <div class="cefr-badge-item">
+                <div class="badge-name">Cambridge</div>
+                <div class="badge-type">English</div>
+            </div>
+            <div class="cefr-badge-item">
+                <div class="badge-name">telc</div>
+                <div class="badge-type">Multilingual</div>
+            </div>
+            <div class="cefr-badge-item">
+                <div class="badge-name">DELF/DALF</div>
+                <div class="badge-type">French</div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- HOW IT WORKS -->
 <section class="how" id="how">
     <div class="section-inner">
         <span class="section-label fade-up">The partnership process</span>
         <h2 class="section-title fade-up stagger-1">From application to first payout</h2>
-        <p class="section-sub fade-up stagger-2">We work with carefully selected language professionals. Here is the entire onboarding process.</p>
+        <p class="section-sub fade-up stagger-2">We accept a maximum of three language professionals per city to protect exclusivity. Here is the entire onboarding process.</p>
         <div class="how-steps">
             <div class="how-step fade-up">
                 <div class="step-num">01</div>
@@ -780,12 +855,48 @@
     </div>
 </section>
 
-<!-- ASSESSOR STARTER KIT -->
+<!-- PARTNER MATERIALS -->
 <section class="starter-kit" id="starter-kit">
     <div class="section-inner">
-        <span class="section-label fade-up">Professional standards</span>
-        <h2 class="section-title fade-up stagger-1">What We Recommend for <br>Premium Assessment Delivery</h2>
-        <p class="section-sub fade-up stagger-2">CEFR-certified assessments require professional-grade audio and video. Here is the equipment we recommend for every partner who wants to deliver world-class diagnostics.</p>
+        <span class="section-label fade-up">What you receive</span>
+        <h2 class="section-title fade-up stagger-1">Your partner toolkit — <br>ready within 24 hours</h2>
+        <p class="section-sub fade-up stagger-2">Everything you need to start referring students and earning from day one. All materials are personalised to your name and region.</p>
+
+        <div class="kit-grid">
+            <div class="kit-card fade-up">
+                <span class="kit-badge basic">Included</span>
+                <h3>Referral assets</h3>
+                <p>Professional materials your students see — branded to you and ready to share.</p>
+                <ul class="kit-list">
+                    <li>Unique referral link with automatic tracking</li>
+                    <li>Personalised partner QR code (print-ready)</li>
+                    <li>Branded email templates (12 languages)</li>
+                    <li>WhatsApp and social media copy snippets</li>
+                    <li>Printable classroom poster (A4/Letter)</li>
+                </ul>
+            </div>
+            <div class="kit-card pro fade-up stagger-1">
+                <span class="kit-badge professional">Included</span>
+                <h3>Partner dashboard</h3>
+                <p>Full visibility into every referral, every payout, and every report status — in real time.</p>
+                <ul class="kit-list">
+                    <li>Live referral and earnings tracker</li>
+                    <li>Monthly payout statements</li>
+                    <li>Student report status notifications</li>
+                    <li>Onboarding guide and best practices</li>
+                    <li>Direct line to the LingoGrade partner team</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EQUIPMENT RECOMMENDATIONS -->
+<section style="padding:5.5rem 2rem;">
+    <div class="section-inner">
+        <span class="section-label fade-up">Equipment recommendations</span>
+        <h2 class="section-title fade-up stagger-1">For partners who also assess</h2>
+        <p class="section-sub fade-up stagger-2">If you are interested in conducting assessments yourself, here is the equipment we recommend for professional-grade audio and video.</p>
 
         <div class="kit-grid">
             <div class="kit-card fade-up">
@@ -822,18 +933,18 @@
 <section class="audit" id="faq">
     <div class="section-inner">
         <span class="section-label fade-up">Transparent partnerships</span>
-        <h2 class="section-title fade-up stagger-1">Common questions from prospective partners</h2>
-        <p class="section-sub fade-up stagger-2">We believe in addressing every concern directly. Here are the questions we hear most from educators considering this partnership.</p>
+        <h2 class="section-title fade-up stagger-1">The accusation audit</h2>
+        <p class="section-sub fade-up stagger-2">Every concern you might have about this partnership &#8212; addressed before you have to ask.</p>
 
         <div class="audit-items">
             <div class="audit-item fade-up">
-                <div class="audit-q">"What if the assessment places my student lower than I suggested?"</div>
+                <div class="audit-q"><span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);margin-right:0.6rem;white-space:nowrap;">The Level Concern</span>"What if the assessment places my student lower than I suggested?"</div>
                 <div class="audit-a">
                     <p>This is the most important question &#8212; and we are glad you are asking it. The report never evaluates your teaching. It evaluates the student's current spoken performance under real conditions. If the result is lower than expected, the report frames this as a starting point, not a judgement. And here is the thing teachers tell us: when a student sees their real level in black and white, their motivation to work harder with you goes up, not down. The report literally recommends continued work with their current teacher as the path forward.</p>
                 </div>
             </div>
             <div class="audit-item fade-up stagger-1">
-                <div class="audit-q">"Will my students think I am just trying to earn from this?"</div>
+                <div class="audit-q"><span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);margin-right:0.6rem;white-space:nowrap;">The Trust Question</span>"Will my students think I am just trying to earn from this?"</div>
                 <div class="audit-a">
                     <p>Your students do not see your revenue share. They do not know the details. What they see is a professional assessment tool that their teacher recommended &#8212; the same way a doctor recommends a blood test. Nobody suspects the doctor of having a referral deal with the lab. You are recommending a diagnostic because it makes your teaching better. The revenue share is simply how we thank you for that recommendation.</p>
                 </div>
@@ -887,6 +998,11 @@
                 <blockquote>"Three of my B2 students turned out to be strong B1. Uncomfortable at first &#8212; but once they saw the detailed breakdown, they were more motivated than ever. And they booked more lessons with me."</blockquote>
                 <cite>&#8212; French teacher, Vienna</cite>
             </div>
+        </div>
+        <div style="max-width:780px;margin:2.5rem auto 0;background:linear-gradient(135deg, rgba(200,149,46,0.06) 0%, rgba(26,122,109,0.04) 100%);border:1px solid var(--gold-glow-strong);border-radius:20px;padding:2.5rem;text-align:center;" class="fade-up">
+            <div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:0.8rem;">What students report about the assessment</div>
+            <blockquote style="font-family:var(--serif);font-size:1.25rem;line-height:1.5;color:var(--ink);font-style:italic;max-width:600px;margin:0 auto;">"I completely forgot it was an assessment. We were just talking &#8212; about my work, my weekend, things I actually care about. Twenty minutes felt like five. Then the report arrived and I thought: how did they get all that from a conversation?"</blockquote>
+            <cite style="display:block;margin-top:1rem;font-size:0.85rem;color:var(--ink-muted);font-style:normal;">&#8212; B1 German student, referred by a partner teacher in Z&uuml;rich</cite>
         </div>
     </div>
 </section>
