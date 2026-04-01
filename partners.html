@@ -14,9 +14,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Partner Programme — LingoGrade Referrals</title>
-<meta name="description" content="Know someone learning a language? Earn every time they get assessed. No caps, no tiers, no minimum. Join the LingoGrade partner programme.">
+<meta name="description" content="You are the person people trust when they need to learn a language. Earn every time they get assessed. No caps, no tiers, no minimum. Join the LingoGrade partner programme.">
 <meta property="og:title" content="Partner Programme — LingoGrade Referrals">
-<meta property="og:description" content="Know someone learning a language? Earn every time they get assessed. No caps, no tiers, no minimum.">
+<meta property="og:description" content="You are the person people trust when they need to learn a language. Earn every time they get assessed. No caps, no tiers, no minimum.">
 <meta property="og:image" content="https://www.lingograde.com/og-logo-v2.png">
 <meta property="og:url" content="https://www.lingograde.com/partners.html">
 <meta property="og:type" content="website">
@@ -24,7 +24,7 @@
 <meta name="twitter:image" content="https://www.lingograde.com/og-logo-v2.png">
 <link rel="canonical" href="https://www.lingograde.com/partners.html">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-<link rel="icon" type="image/webp" href="assets/mascot/marco-face-grad-v2.webp?v=3">
+<link rel="icon" type="image/webp" href="/assets/mascot/marco-face-grad-v2.webp?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
@@ -167,12 +167,8 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .form-check { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 24px; }
 .form-check input[type="checkbox"] { margin-top: 4px; width: 18px; height: 18px; accent-color: var(--accent); flex-shrink: 0; }
 .form-check label { font-size: 0.875rem; color: var(--ink-soft); line-height: 1.5; cursor: pointer; }
-.form-submit { display: block; width: 100%; padding: 14px; background: var(--success); color: white; border: none; border-radius: 10px; font-family: var(--font-body); font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.15s; animation: subtlePulse 3s ease-in-out infinite; }
-.form-submit:hover { background: #219a52; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(39,174,96,0.3); animation: none; }
-@keyframes subtlePulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(39,174,96,0); }
-  50% { box-shadow: 0 0 0 6px rgba(39,174,96,0.15); }
-}
+.form-submit { display: block; width: 100%; padding: 14px; background: var(--success); color: white; border: none; border-radius: 10px; font-family: var(--font-body); font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.15s; }
+.form-submit:hover { background: #219a52; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(39,174,96,0.3); }
 .form-marco { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; padding: 14px 18px; background: var(--accent-bg); border-radius: 10px; }
 .form-marco img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
 .form-marco p { font-size: 0.875rem; color: var(--ink-soft); line-height: 1.5; }
@@ -315,6 +311,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .sticker-grid { grid-template-columns: 1fr; }
   .celebrate-cards { grid-template-columns: 1fr; }
   .hero-stats { gap: 24px; }
+  #milestones div[style*="grid-template-columns:repeat(4"] { grid-template-columns: repeat(2, 1fr) !important; }
   .brand-logo { font-size: 1.2rem; gap: 6px; }
   .brand-logo img { height: 32px; }
   .nav-hamburger { display: flex; }
@@ -344,6 +341,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .sticker-grid { grid-template-columns: 1fr; }
   .celebrate-cards { grid-template-columns: 1fr; }
   .hero-stats { flex-direction: column; gap: 16px; }
+  #milestones div[style*="grid-template-columns:repeat(4"] { grid-template-columns: 1fr !important; }
 }
 </style>
 </head>
@@ -372,19 +370,26 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-mascot">
-      <img src="assets/mascot/marco-tea.webp?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="background:transparent;">
+      <img src="assets/mascot/sliced-images/marco-mila-outfit-partner-professional.webp?v=3" alt="Marco & Mila — LingoGrade Partner Programme" class="marco-img" style="background:transparent;" onerror="this.onerror=null;this.src='assets/mascot/marco-tea.webp?v=3';">
     </div>
     <div class="hero-authority">
       <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
       Trusted by certified language assessors across Europe
     </div>
     <span class="hero-badge">Partner Programme</span>
-    <h1>Know someone learning a language?<br><em>Turn that into genuine impact &mdash; and earnings.</em></h1>
-    <p>Your personal QR code and referral link create pathways to better assessment. Every person who books through you earns commission &mdash; no caps, no tiers, no minimum. You choose how involved you want to be.</p>
+    <h1>You are the person people trust<br><em>when they need to learn a language.</em></h1>
+    <p>Friends ask you for advice. Students follow your recommendations. Colleagues trust your judgement. Now that trust has a pathway &mdash; your personal referral link earns commission on every assessment booked through you. No caps, no tiers, no minimum. You choose how involved you want to be.</p>
     <p style="font-size:0.9rem;color:var(--ink-soft);margin-top:12px;">
-      No purchase needed. Your referral link is live the moment you join. Share it digitally or go physical with stickers — either way, every booked assessment earns you commission.
+      No purchase needed. Your referral link is live the moment you join. Share it digitally or go physical with stickers &mdash; either way, every booked assessment earns you commission.
     </p>
-    <a href="#apply" class="btn-primary">See If You Qualify</a>
+    <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:24px;">
+      <a href="#apply" class="btn-primary">See If You Qualify</a>
+      <a href="#passive-path" class="btn-secondary">I just want to share a link</a>
+    </div>
+    <div id="passive-path" style="max-width:600px;margin:32px auto 0;padding:24px 28px;background:rgba(37,99,171,0.05);border:1.5px solid rgba(37,99,171,0.12);border-radius:12px;text-align:left;">
+      <h3 style="font-family:var(--font-display);font-size:1.125rem;margin-bottom:8px;">Share once, earn forever.</h3>
+      <p style="font-size:0.9375rem;color:var(--ink-soft);line-height:1.7;margin-bottom:0;">No stickers, no selfies, no active involvement required. Apply, get your personal link, send it once to the people who need it &mdash; and forget about it. Every booking through that link earns you commission for 90 days. That is the entire commitment.</p>
+    </div>
     <p style="font-size:0.8125rem;color:var(--ink-light);margin-top:12px;">Would it be wrong to see if this fits your network?</p>
     <div class="hero-stats">
       <div class="hero-stat">
@@ -484,29 +489,20 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <p class="section-label">Earnings</p>
     <h2 class="section-title">What would this look like for your network?</h2>
     <p class="section-desc" style="margin:0 auto 8px;">Most partners generate their first referral within the first month.</p>
-    <table class="earnings-table">
-      <thead>
-        <tr>
-          <th>Referrals / month</th>
-          <th>Your earnings</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="earnings-highlight">
-          <td>10 referrals</td>
-          <td>A meaningful addition to your income</td>
-        </tr>
-        <tr>
-          <td>5 referrals</td>
-          <td>A monthly subscription you actually enjoy</td>
-        </tr>
-        <tr>
-          <td>2 referrals</td>
-          <td>A nice dinner out</td>
-        </tr>
-      </tbody>
-    </table>
-    <p class="earnings-note">Revenue share details are shared upon approval. No caps, ever.</p>
+    <div style="max-width:520px;margin:32px auto 0;padding:32px;border:2px solid var(--border);border-radius:16px;background:var(--cream);">
+      <label for="referral-slider" style="font-size:0.875rem;font-weight:600;color:var(--ink);display:block;margin-bottom:12px;">How many referrals could you generate per month?</label>
+      <input type="range" id="referral-slider" min="1" max="20" value="5" style="width:100%;accent-color:var(--accent);cursor:pointer;">
+      <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:var(--ink-light);margin-top:4px;"><span>1</span><span>5</span><span>10</span><span>15</span><span>20</span></div>
+      <div style="text-align:center;margin-top:24px;">
+        <div style="font-size:0.8125rem;color:var(--ink-light);margin-bottom:4px;">With <strong id="slider-count" style="color:var(--ink);font-size:1rem;">5</strong> referrals / month</div>
+        <div id="slider-range" style="font-family:var(--font-display);font-size:1.75rem;color:var(--accent);line-height:1.3;">Estimated range shared upon approval</div>
+        <div id="slider-context" style="font-size:0.875rem;color:var(--ink-soft);margin-top:8px;">That is a meaningful monthly addition &mdash; just from sharing a link.</div>
+      </div>
+      <div id="slider-highlight" style="display:none;margin-top:16px;padding:10px 16px;background:var(--accent-bg);border-radius:8px;font-size:0.8125rem;color:var(--accent);font-weight:500;text-align:center;">
+        Partners at 10+ referrals/month unlock priority support and early access to new features.
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:20px;font-size:0.875rem;color:var(--ink-light);font-style:italic;">Exact revenue share details are shared upon approval. No caps, ever.</p>
     <div style="margin-top:20px;"><img src="assets/mascot/marco-face-party.webp?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:120px;height:auto;background:transparent;" loading="lazy"></div>
     <!-- Loss aversion nudge -->
     <div class="loss-nudge" style="background:var(--accent-bg);border-color:rgba(37,99,171,0.2);color:var(--accent);">
@@ -602,25 +598,37 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <p class="section-desc" style="margin:0 auto;">We have tried to address the concerns every thoughtful person has.</p>
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-q">Is this actually worth my time?</button>
+        <button class="faq-q"><span style="display:inline-block;padding:2px 8px;background:var(--accent-bg);border-radius:4px;font-size:0.6875rem;font-weight:600;color:var(--accent);letter-spacing:0.04em;text-transform:uppercase;margin-right:8px;vertical-align:middle;">Time Concern</span>Is this actually worth my time?</button>
         <div class="faq-a">
           <div class="faq-a-inner">You're already recommending things you believe in. This doesn't require you to become a salesperson. You share a link &mdash; the same way you'd recommend a tool to a friend. We handle everything else: the assessment, the report, the billing, the support. Your ongoing time investment is measured in seconds between referrals. That's the whole design.</div>
         </div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Why would you share commission this way?</button>
+        <button class="faq-q"><span style="display:inline-block;padding:2px 8px;background:var(--accent-bg);border-radius:4px;font-size:0.6875rem;font-weight:600;color:var(--accent);letter-spacing:0.04em;text-transform:uppercase;margin-right:8px;vertical-align:middle;">Trust</span>Why would you share commission this way?</button>
         <div class="faq-a">
           <div class="faq-a-inner">Because we need trusted recommendations more than you need us. Teachers, tutors, HR professionals, and friends are the actual voices people trust in a learning journey. When you recommend an assessment, people listen. That trust is valuable. We structure our revenue share to reflect that value accurately. No hidden fees, no fine print reversals, no surprises on payouts.</div>
         </div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">What if people click but don't book immediately?</button>
+        <button class="faq-q"><span style="display:inline-block;padding:2px 8px;background:var(--accent-bg);border-radius:4px;font-size:0.6875rem;font-weight:600;color:var(--accent);letter-spacing:0.04em;text-transform:uppercase;margin-right:8px;vertical-align:middle;">Attribution</span>What if people click but don't book immediately?</button>
         <div class="faq-a">
           <div class="faq-a-inner">We credit you for 90 days. If someone clicks your link today and books two months from now, you earn. This is three times longer than most affiliate programmes because people move at their own pace. You're not penalized for someone's timeline. And the longer you share, the more clicks accumulate &mdash; eventually they convert.</div>
         </div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">What's the catch?</button>
+        <button class="faq-q"><span style="display:inline-block;padding:2px 8px;background:var(--accent-bg);border-radius:4px;font-size:0.6875rem;font-weight:600;color:var(--accent);letter-spacing:0.04em;text-transform:uppercase;margin-right:8px;vertical-align:middle;">Authenticity</span>It feels strange to earn money from recommending something to friends.</button>
+        <div class="faq-a">
+          <div class="faq-a-inner">It sounds like you value authenticity over profit &mdash; and that is exactly why your recommendation carries weight. Think of it this way: when a doctor refers you to a specialist, they are not selling you something &mdash; they are connecting you with the right expertise. That is what you are doing. You are not pushing a product. You are pointing someone toward a professional assessment that genuinely helps them. The commission is our way of recognising that your recommendation has real value. If it still feels uncomfortable, remember: you can always decline the payout and let it convert to credit for your own assessments.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span style="display:inline-block;padding:2px 8px;background:var(--accent-bg);border-radius:4px;font-size:0.6875rem;font-weight:600;color:var(--accent);letter-spacing:0.04em;text-transform:uppercase;margin-right:8px;vertical-align:middle;">Money</span>Does monetizing my recommendations undermine my credibility?</button>
+        <div class="faq-a">
+          <div class="faq-a-inner">It sounds like credibility matters more to you than commission &mdash; and that is precisely why this works. The assessment stands on its own merit. Your referral does not change the price, the quality, or the experience for the person booking. They get exactly the same report they would get if they found us through Google. The commission is between us and you &mdash; a recognition that your recommendation saved us an advertising cost. If anything, referring people to something genuinely useful strengthens credibility. You are not selling &mdash; you are connecting.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span style="display:inline-block;padding:2px 8px;background:var(--accent-bg);border-radius:4px;font-size:0.6875rem;font-weight:600;color:var(--accent);letter-spacing:0.04em;text-transform:uppercase;margin-right:8px;vertical-align:middle;">Risk</span>What's the catch?</button>
         <div class="faq-a">
           <div class="faq-a-inner">No catch. Zero fees to join. No minimum referral targets. No exclusivity &mdash; recommend other tools if they fit your network. We don't lock people in. If at any point it stops making sense, you leave. We'd rather lose a partner than have resentful ones who feel trapped.</div>
         </div>
@@ -693,12 +701,69 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   </div>
 </section>
 
+<!-- ── Partner Journey Milestones ── -->
+<section class="section" id="milestones">
+  <div class="section-inner" style="text-align:center;">
+    <p class="section-label">Your Journey</p>
+    <h2 class="section-title">Every partner starts here</h2>
+    <p class="section-desc" style="margin:0 auto;">Small steps, real momentum. Each milestone builds on the last.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px;">
+      <div style="padding:28px 20px;border-radius:14px;border:1.5px solid var(--border);background:var(--cream);text-align:center;transition:border-color 0.15s;">
+        <div style="width:48px;height:48px;border-radius:50%;background:var(--accent-bg);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:1.5rem;">1</div>
+        <h4 style="font-size:0.9375rem;font-weight:600;color:var(--ink);margin-bottom:6px;">First Share</h4>
+        <p style="font-size:0.8125rem;color:var(--ink-soft);line-height:1.5;">You sent your link to someone who needs it. The hardest step is behind you.</p>
+      </div>
+      <div style="padding:28px 20px;border-radius:14px;border:1.5px solid var(--border);background:var(--cream);text-align:center;transition:border-color 0.15s;">
+        <div style="width:48px;height:48px;border-radius:50%;background:var(--accent-bg);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:1.5rem;">&#127919;</div>
+        <h4 style="font-size:0.9375rem;font-weight:600;color:var(--ink);margin-bottom:6px;">First Referral</h4>
+        <p style="font-size:0.8125rem;color:var(--ink-soft);line-height:1.5;">Someone booked through your link. Your first commission is earned.</p>
+      </div>
+      <div style="padding:28px 20px;border-radius:14px;border:1.5px solid var(--border);background:var(--cream);text-align:center;transition:border-color 0.15s;">
+        <div style="width:48px;height:48px;border-radius:50%;background:var(--success-bg);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:1.5rem;">10</div>
+        <h4 style="font-size:0.9375rem;font-weight:600;color:var(--ink);margin-bottom:6px;">10 Referrals</h4>
+        <p style="font-size:0.8125rem;color:var(--ink-soft);line-height:1.5;">You unlocked priority payouts and direct partner support access.</p>
+      </div>
+      <div style="padding:28px 20px;border-radius:14px;border:1.5px solid var(--accent);background:var(--accent-bg);text-align:center;transition:border-color 0.15s;">
+        <div style="width:48px;height:48px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:1.25rem;">&#9733;</div>
+        <h4 style="font-size:0.9375rem;font-weight:600;color:var(--ink);margin-bottom:6px;">Established Partner</h4>
+        <p style="font-size:0.8125rem;color:var(--ink-soft);line-height:1.5;">Featured spotlight, early access to new features, and community recognition.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── Application Form ── -->
 <section class="section section-alt" id="apply">
   <div class="section-inner" style="text-align:center;">
     <p class="section-label">Apply</p>
     <h2 class="section-title">One application. 24-hour review.</h2>
     <p class="section-desc" style="margin:0 auto;">Tell us about your network and your goals. We respond personally.</p>
+    <!-- Micro-commitment: mental pre-commitment before the form -->
+    <div style="max-width:600px;margin:32px auto;padding:24px 28px;background:var(--accent-bg);border-radius:12px;text-align:center;">
+      <p style="font-size:1.0625rem;color:var(--ink);line-height:1.7;margin-bottom:0;">Before you apply, take 10 seconds to think:<br><strong style="color:var(--accent);">Who are the 3 people in your network who would benefit from a professional language assessment?</strong></p>
+      <p style="font-size:0.8125rem;color:var(--ink-light);margin-top:10px;">If names came to mind, you already have the reach. The form below takes under 2 minutes.</p>
+    </div>
+    <!-- Micro-commitment: pre-commitment thinking exercise -->
+    <div style="max-width:600px;margin:32px auto 0;padding:28px 28px 24px;border-radius:14px;border:1.5px solid #C6F6D5;background:var(--success-bg);text-align:left;">
+      <h3 style="font-family:var(--font-display);font-size:1.125rem;margin-bottom:12px;color:var(--ink);">Before you apply, a quick thought experiment</h3>
+      <p style="font-size:0.9375rem;color:var(--ink-soft);line-height:1.7;margin-bottom:16px;">Think of <strong>three people</strong> in your network who are currently learning a language or need a professional assessment. Picture their faces. You probably already know exactly who they are.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+        <div style="padding:14px;border-radius:10px;background:var(--cream);border:1px solid var(--border);text-align:center;">
+          <div style="font-size:1.5rem;margin-bottom:4px;">1</div>
+          <div style="font-size:0.8125rem;color:var(--ink-light);">A student or colleague</div>
+        </div>
+        <div style="padding:14px;border-radius:10px;background:var(--cream);border:1px solid var(--border);text-align:center;">
+          <div style="font-size:1.5rem;margin-bottom:4px;">2</div>
+          <div style="font-size:0.8125rem;color:var(--ink-light);">A friend learning a language</div>
+        </div>
+        <div style="padding:14px;border-radius:10px;background:var(--cream);border:1px solid var(--border);text-align:center;">
+          <div style="font-size:1.5rem;margin-bottom:4px;">3</div>
+          <div style="font-size:0.8125rem;color:var(--ink-light);">Someone preparing for a cert</div>
+        </div>
+      </div>
+      <p style="font-size:0.875rem;color:var(--ink-soft);margin-top:14px;line-height:1.6;">If three names came to mind, this programme was designed for someone like you.</p>
+    </div>
+
     <div class="form-card" style="text-align:left;">
       <!-- Marco warmth near the form -->
       <div class="form-marco">
@@ -994,6 +1059,38 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     if (!wasOpen) item.classList.add('open');
   });
 });
+
+// Referral slider
+(function() {
+  var slider = document.getElementById('referral-slider');
+  var count = document.getElementById('slider-count');
+  var context = document.getElementById('slider-context');
+  var highlight = document.getElementById('slider-highlight');
+  if (!slider) return;
+  var contexts = {
+    1: 'Enough for a quality coffee each month \u2014 from a single share.',
+    2: 'A nice dinner out \u2014 from two conversations.',
+    3: 'A streaming subscription you actually enjoy.',
+    5: 'That is a meaningful monthly addition \u2014 just from sharing a link.',
+    8: 'Approaching a noticeable line in your monthly budget.',
+    10: 'A consistent secondary income stream.',
+    15: 'This is what committed partners typically earn.',
+    20: 'Top-tier partner territory. Priority support unlocked.'
+  };
+  function getContext(v) {
+    var keys = [1,2,3,5,8,10,15,20];
+    for (var i = keys.length - 1; i >= 0; i--) {
+      if (v >= keys[i]) return contexts[keys[i]];
+    }
+    return contexts[1];
+  }
+  slider.addEventListener('input', function() {
+    var v = parseInt(this.value);
+    count.textContent = v;
+    context.textContent = getContext(v);
+    highlight.style.display = v >= 10 ? 'block' : 'none';
+  });
+})();
 
 // Show next review date
 (function() {

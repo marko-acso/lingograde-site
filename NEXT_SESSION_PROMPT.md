@@ -19,6 +19,7 @@
 - 2C. Tip obligation → "Would you like to leave a tip for Marco?" (24 inf + 6 formal)
 - 2D. Prescriptive reassessment → "8-week reassessment cycle" (21 langs)
 - 2E. HW submit command → "You can submit your homework at..." (24 inf + 7 formal)
+- 2F. chunk_08 register fix — ru/uk/bg/sr/hr informal CTAs were using formal conjugations (Apr 1)
 
 ---
 
@@ -28,13 +29,24 @@
 
 ---
 
+## COMPLETED — Tier 4A: Teachers Page WISE (Apr 1)
+- CEFR credibility box (Council of Europe strip with Goethe/Cambridge/telc/DELF badges)
+- Sharper exclusivity (3 partners per city, specific cap language)
+- Starter kit split (partner materials + equipment recommendations as separate sections)
+- Flow-state proof (student testimonial about conversation-like assessment experience)
+- FAQ Voss labels (accusation audit header + 6 category labels: Level Concern, Trust, Money, Price, Credibility, Risk)
+- Loss-frame CTA (Kahneman: "Every month without diagnostics is a month students plateau on guesswork")
+
+## COMPLETED — Tier 4B: Partners Page WISE (Apr 1)
+- Silent partner option ("Share once, earn forever" passive path + secondary CTA)
+- Monetizing trust FAQ (Voss labeling + doctor/specialist reframe)
+- Identity hero ("You are the person people trust when they need to learn a language")
+- Calibrated calculator (interactive slider 1-20, contextual descriptions, 10+ highlight)
+- Removed pulse animation on submit button (Camp violation)
+- Milestone cards (First Share → First Referral → 10 Referrals → Established Partner)
+- Micro-commitments ("Who are the 3 people..." pre-form nudge)
+
 ## TODO — TIER 4: Site WISE Improvements (2-3 hrs each)
-
-### 4A. Teachers Page — 6 priorities
-CEFR credibility box, sharper exclusivity, starter kit split, flow-state proof, FAQ Voss labels, loss-frame CTA
-
-### 4B. Partners Page — 7 WISE gaps
-Silent partner option, monetizing trust FAQ, identity hero, calibrated calculator, remove pulse animation, milestone cards, micro-commitments
 
 ### 4C. Shop Page — 4 tiers
 A: AIDA core, B: Copy/safety valves, C: Visual cleanup, D: Exit-intent/guided funnel
