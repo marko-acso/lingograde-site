@@ -6,8 +6,8 @@
 ;(function () {
   'use strict';
 
-  var API_URL = 'https://api.lingograde.com/v1/free-analysis';
-  var EMAIL_URL = 'https://api.lingograde.com/v1/free-analysis/email';
+  var API_URL = 'https://app.lingograde.com/api/free-analysis';
+  var EMAIL_URL = 'https://app.lingograde.com/api/free-analysis/email';
   var MAX_ANALYSES = 3;
   var STORAGE_KEY = 'lg_fa_count';
   var MIN_CHARS = 50;
@@ -158,7 +158,7 @@
       for (var i = 0; i < e.results.length; i++) {
         transcript += e.results[i][0].transcript;
       }
-      textarea.value = transcript;
+      textarea.value += (textarea.value ? ' ' : '') + transcript;
       textarea.dispatchEvent(new Event('input'));
 
       // Auto-stop after 60s of silence
@@ -214,27 +214,26 @@
       return;
     }
 
-    // Get shield token
-    var shieldField = document.querySelector('input[name="_shield"]');
-    var shieldToken = shieldField ? shieldField.value : '';
+    // Get shield score — shield.js injects token on form submit
+    var shieldScore = null;
+    try {
+      // Trigger shield by creating a temporary form and submitting it
+      var tmpForm = document.createElement('form');
+      tmpForm.style.cssText = 'position:absolute;left:-9999px';
+      document.body.appendChild(tmpForm);
+      tmpForm.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+      var shieldField = tmpForm.querySelector('input[name="_shield"]');
+      if (shieldField && shieldField.value) {
+        var decoded = JSON.parse(atob(shieldField.value));
+        shieldScore = decoded.s || null;
+      }
+      document.body.removeChild(tmpForm);
+    } catch (e) {}
 
     // Show loading
     card.style.display = 'none';
     loading.classList.add('visible');
     results.classList.remove('visible');
-
-    // Build shield token fresh
-    if (shieldField) {
-      try {
-        var form = document.createElement('form');
-        form.style.display = 'none';
-        document.body.appendChild(form);
-        var evt = new Event('submit', { bubbles: true, cancelable: true });
-        form.dispatchEvent(evt);
-        document.body.removeChild(form);
-      } catch (e) {}
-      shieldToken = shieldField ? shieldField.value : '';
-    }
 
     // API call
     fetch(API_URL, {
@@ -243,7 +242,8 @@
       body: JSON.stringify({
         text: text,
         language: selectedLang,
-        shield: shieldToken
+        shield_score: shieldScore,
+        _hp_field: hpField.value || undefined
       })
     })
     .then(function (res) {
