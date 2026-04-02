@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Letter Highlighting — Teacher Tools — LingoGrade</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/webp" href="/assets/mascot/marco-face-grad-v2.webp?v=3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ── Variables ─────────────────────────────────────────────────────────────── */
+:root {
+  --ink:          #1C1C1C;
+  --ink-soft:     #4A4A4A;
+  --ink-light:    #8A8A8A;
+  --navy:         #1A3A5C;
+  --accent:       #2563AB;
+  --accent-lt:    #3B82F6;
+  --accent-bg:    #EFF6FF;
+  --cream:        #FFFFFF;
+  --parchment:    #F0F4F8;
+  --border:       #D1D9E3;
+  --border-soft:  #E4EAF1;
+  --success:      #16A34A;
+  --success-bg:   #F0FFF4;
+  --warn:         #D97706;
+  --warn-bg:      #FFFBEB;
+  --error:        #DC2626;
+  --error-bg:     #FEF2F2;
+  --yellow:       #FCD34D;
+  --yellow-bg:    #FEFCE8;
+  --red-hl:       #FCA5A5;
+  --red-hl-bg:    #FEF2F2;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body:    'DM Sans', -apple-system, sans-serif;
+  --tap:          48px; /* minimum touch target */
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--parchment);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+}
+
+/* ── Layout ─────────────────────────────────────────────────────────────────── */
+.page-wrap {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 16px 80px;
+}
+
+/* ── Nav ─────────────────────────────────────────────────────────────────────── */
+.nav {
+  background: var(--navy);
+  color: white;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 52px;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+.nav-brand {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-brand .brand-a { color: #27AE60; }
+.nav-tool-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.nav-user {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.nav-user a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-user a:hover { color: white; }
+
+/* ── Auth Gate ───────────────────────────────────────────────────────────────── */
+#authGate {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 16px;
+  text-align: center;
+  padding: 40px 24px;
+}
+#authGate h2 { font-family: var(--font-display); font-size: 1.5rem; color: var(--navy); }
+#authGate p { color: var(--ink-soft); font-size: 0.9375rem; }
+#authGate a {
+  display: inline-flex; align-items: center; padding: 12px 28px;
+  background: var(--accent); color: white; border-radius: 10px;
+  font-weight: 600; font-size: 0.9375rem; text-decoration: none;
+  transition: background 0.15s;
+}
+#authGate a:hover { background: var(--accent-lt); }
+
+/* ── Tabs ─────────────────────────────────────────────────────────────────────── */
+.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid var(--border);
+  margin: 20px 0 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.tab-btn {
+  flex-shrink: 0;
+  padding: 12px 20px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  color: var(--ink-soft);
+  background: none;
+  border: none;
+  border-bottom: 2.5px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.tab-btn:hover { color: var(--accent); }
+.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+.tab-panel { display: none; padding: 20px 0; }
+.tab-panel.active { display: block; }
+
+/* ── Cards ───────────────────────────────────────────────────────────────────── */
+.card {
+  background: var(--cream);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+.card-title-sm {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+/* ── Session Setup ───────────────────────────────────────────────────────────── */
+.session-bar {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+  min-width: 160px;
+}
+.field-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.field-input, .field-select {
+  width: 100%;
+  height: var(--tap);
+  padding: 0 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  background: var(--cream);
+  outline: none;
+  transition: border-color 0.15s;
+  color: var(--ink);
+}
+.field-input:focus, .field-select:focus { border-color: var(--accent); }
+.field-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A8A8A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+.session-status {
+  font-size: 0.8125rem;
+  color: var(--ink-light);
+  margin-top: 10px;
+}
+.session-status.active { color: var(--success); font-weight: 600; }
+
+/* ── Buttons ─────────────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: var(--tap);
+  padding: 0 22px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn-primary { background: var(--accent); color: white; }
+.btn-primary:hover:not(:disabled) { background: var(--accent-lt); }
+.btn-navy { background: var(--navy); color: white; }
+.btn-navy:hover:not(:disabled) { background: #234b74; }
+.btn-outline {
+  background: white;
+  color: var(--ink-soft);
+  border: 1.5px solid var(--border);
+}
+.btn-outline:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.btn-danger { background: var(--error-bg); color: var(--error); border: 1.5px solid #FCA5A5; }
+.btn-danger:hover:not(:disabled) { background: #FEE2E2; }
+.btn-sm {
+  height: 36px;
+  padding: 0 14px;
+  font-size: 0.8125rem;
+  border-radius: 8px;
+}
+
+/* ── Word Input ──────────────────────────────────────────────────────────────── */
+.word-input-wrap {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+.word-input-wrap .field-input {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ── Letter Grid ─────────────────────────────────────────────────────────────── */
+#letterGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  min-height: 64px;
+  align-items: flex-start;
+}
+.letter-btn {
+  min-width: var(--tap);
+  min-height: 64px;
+  padding: 8px 12px;
+  border: 2.5px solid var(--border);
+  border-radius: 12px;
+  background: var(--cream);
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  user-select: none;
+  -webkit-user-select: none;
+  position: relative;
+}
+.letter-btn:active { transform: scale(0.93); }
+.letter-btn .letter-label { line-height: 1; }
+.letter-btn .family-tag {
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-light);
+  line-height: 1;
+}
+
+/* Severity states */
+.letter-btn.developing {
+  background: var(--yellow-bg);
+  border-color: var(--yellow);
+}
+.letter-btn.developing .family-tag { color: #92400E; }
+
+.letter-btn.focus {
+  background: var(--red-hl-bg);
+  border-color: #F87171;
+}
+.letter-btn.focus .family-tag { color: var(--error); }
+
+/* ── Word Entry in Log ───────────────────────────────────────────────────────── */
+.log-empty {
+  color: var(--ink-light);
+  font-size: 0.9375rem;
+  text-align: center;
+  padding: 24px 0;
+}
+.log-entry {
+  border: 1.5px solid var(--border-soft);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  background: white;
+}
+.log-entry-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.log-word {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.log-meta {
+  font-size: 0.75rem;
+  color: var(--ink-light);
+}
+.log-phonemes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.phoneme-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+.phoneme-chip.developing {
+  background: var(--yellow-bg);
+  color: #92400E;
+  border: 1px solid #FDE68A;
+}
+.phoneme-chip.focus {
+  background: var(--red-hl-bg);
+  color: var(--error);
+  border: 1px solid #FCA5A5;
+}
+.log-note-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 6px;
+}
+.log-note-input {
+  flex: 1;
+  padding: 7px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color 0.15s;
+  color: var(--ink);
+}
+.log-note-input:focus { border-color: var(--accent); }
+.log-note-text {
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-top: 4px;
+}
+
+/* ── Override dropdown ───────────────────────────────────────────────────────── */
+.override-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.override-row label {
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.override-row .field-select {
+  height: 38px;
+  font-size: 0.875rem;
+  max-width: 180px;
+  padding: 0 36px 0 12px;
+}
+
+/* ── Summary panel ───────────────────────────────────────────────────────────── */
+#summaryPanel {
+  display: none;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+@media (max-width: 560px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+.stat-box {
+  background: var(--accent-bg);
+  border: 1.5px solid #BFDBFE;
+  border-radius: 12px;
+  padding: 14px 16px;
+  text-align: center;
+}
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--accent);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+  margin-top: 4px;
+}
+.family-freq-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.family-freq-row:last-child { border-bottom: none; }
+.family-name {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--navy);
+  min-width: 110px;
+}
+.freq-bar-wrap { flex: 1; height: 8px; background: var(--parchment); border-radius: 4px; overflow: hidden; }
+.freq-bar { height: 100%; background: var(--accent); border-radius: 4px; transition: width 0.5s ease; }
+.freq-count { font-size: 0.875rem; color: var(--ink-light); min-width: 28px; text-align: right; }
+
+.pair-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--parchment);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-family: var(--font-body);
+  margin: 4px;
+}
+.pair-chip .pair-sep { color: var(--ink-light); }
+
+/* ── History Tab ─────────────────────────────────────────────────────────────── */
+.history-filter-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  align-items: flex-end;
+}
+.history-filter-row .field-select,
+.history-filter-row .field-input {
+  height: 40px;
+  font-size: 0.875rem;
+  flex: 1;
+  min-width: 140px;
+}
+.session-card {
+  border: 1.5px solid var(--border-soft);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.session-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--parchment);
+  cursor: pointer;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.session-card-head:hover { background: #E8EEF5; }
+.session-date { font-weight: 600; font-size: 0.9375rem; color: var(--navy); }
+.session-meta { font-size: 0.8125rem; color: var(--ink-light); }
+.session-body { display: none; padding: 12px 16px; background: white; }
+.session-body.open { display: block; }
+
+/* phoneme heat-map cells */
+.heat-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.heat-cell {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+.heat-cell.sev-developing { background: var(--yellow-bg); color: #92400E; border: 1px solid #FDE68A; }
+.heat-cell.sev-focus      { background: var(--red-hl-bg); color: var(--error); border: 1px solid #FCA5A5; }
+
+/* ── Toast ───────────────────────────────────────────────────────────────────── */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--ink);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 999;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+.toast.success { background: var(--success); }
+.toast.warn    { background: var(--warn); }
+.toast.error   { background: var(--error); }
+
+/* ── Responsive ──────────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .card { padding: 16px; }
+  .session-bar { gap: 8px; }
+  .field-group { min-width: 120px; }
+  .letter-btn { min-width: 52px; font-size: 1.35rem; }
+  .summary-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 400px) {
+  .summary-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav class="nav">
+  <a href="index.html" class="nav-brand">LingoGr<span class="brand-a">A</span>de</a>
+  <span class="nav-tool-label">Letter Highlighting</span>
+  <div class="nav-user">
+    <span id="navUserEmail"></span>
+    <a href="#" id="navSignOut">Sign out</a>
+  </div>
+</nav>
+
+<!-- ── Auth Gate ── -->
+<div id="authGate">
+  <h2>Teacher sign-in required</h2>
+  <p>Please sign in to your LingoGrade teacher account to use this tool.</p>
+  <a href="https://app.lingograde.com/login?next=/teacher-tools">Sign in</a>
+</div>
+
+<!-- ── Main App ── -->
+<div id="appWrap" style="display:none;">
+<div class="page-wrap">
+
+  <!-- ── Tabs ── -->
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="session">Live Session</button>
+    <button class="tab-btn" data-tab="history">History</button>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       TAB: LIVE SESSION
+  ═══════════════════════════════════════════════════════════════════════════ -->
+  <div class="tab-panel active" id="tab-session">
+
+    <!-- Session Setup -->
+    <div class="card">
+      <div class="card-title">Session Setup</div>
+      <div class="session-bar">
+        <div class="field-group">
+          <label for="studentSelect">Student</label>
+          <select class="field-select" id="studentSelect">
+            <option value="">Loading students...</option>
+          </select>
+        </div>
+        <div class="field-group" style="min-width:140px;max-width:180px;">
+          <label for="studentNameInput">Or type name</label>
+          <input class="field-input" type="text" id="studentNameInput" placeholder="New student...">
+        </div>
+        <div class="field-group" style="min-width:130px;max-width:160px;">
+          <label for="langSelect">Language</label>
+          <select class="field-select" id="langSelect">
+            <option value="de">German (de)</option>
+            <option value="en">English (en)</option>
+            <option value="es">Spanish (es)</option>
+            <option value="fr">French (fr)</option>
+            <option value="it">Italian (it)</option>
+            <option value="bg">Bulgarian (bg)</option>
+            <option value="hr">Croatian (hr)</option>
+            <option value="pt">Portuguese (pt)</option>
+            <option value="ru">Russian (ru)</option>
+            <option value="sr">Serbian (sr)</option>
+            <option value="ro">Romanian (ro)</option>
+            <option value="pl">Polish (pl)</option>
+          </select>
+        </div>
+        <button class="btn btn-navy" id="btnStartSession" style="margin-top:auto;">Start Session</button>
+        <button class="btn btn-danger" id="btnEndSession" style="display:none;margin-top:auto;">End Session</button>
+      </div>
+      <div class="session-status" id="sessionStatus">No active session.</div>
+    </div>
+
+    <!-- Word Input -->
+    <div class="card" id="wordInputCard" style="opacity:0.5;pointer-events:none;">
+      <div class="card-title">Word Input</div>
+      <div class="word-input-wrap">
+        <input class="field-input" type="text" id="wordInput" placeholder="Type a word..." autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false">
+        <button class="btn btn-primary" id="btnAddWord">Add</button>
+      </div>
+
+      <!-- Override family dropdown -->
+      <div class="override-row">
+        <label for="familyOverride">Override family for next tap:</label>
+        <select class="field-select" id="familyOverride">
+          <option value="">Auto-detect</option>
+          <option value="plosive">Plosive</option>
+          <option value="fricative">Fricative</option>
+          <option value="nasal">Nasal</option>
+          <option value="approximant">Approximant</option>
+          <option value="liquid">Liquid</option>
+          <option value="affricate">Affricate</option>
+          <option value="vowel">Vowel</option>
+          <option value="diphthong">Diphthong</option>
+        </select>
+      </div>
+
+      <!-- Letter grid -->
+      <div id="letterGrid">
+        <span style="color:var(--ink-light);font-size:0.9375rem;align-self:center;">Add a word above to see letters here.</span>
+      </div>
+    </div>
+
+    <!-- Session Log -->
+    <div class="card">
+      <div class="card-title-sm">Session Log</div>
+      <div id="sessionLog">
+        <div class="log-empty">No entries yet. Add a word and highlight problem phonemes.</div>
+      </div>
+    </div>
+
+    <!-- Summary Panel (shown after End Session) -->
+    <div class="card" id="summaryPanel">
+      <div class="card-title">Session Summary</div>
+
+      <div class="summary-grid" id="summaryStats"></div>
+
+      <div class="card-title-sm" style="margin-top:16px;">Phoneme Families by Frequency</div>
+      <div id="familyFreqList"></div>
+
+      <div class="card-title-sm" style="margin-top:20px;">Suggested Minimal Pair Flashcards</div>
+      <div id="pairSuggestions"></div>
+
+      <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;">
+        <button class="btn btn-outline" id="btnNewSession">Start New Session</button>
+      </div>
+    </div>
+
+  </div><!-- /tab-session -->
+
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       TAB: HISTORY
+  ═══════════════════════════════════════════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-history">
+    <div class="card">
+      <div class="card-title">Session History</div>
+      <div class="history-filter-row">
+        <div class="field-group" style="min-width:160px;">
+          <label for="histStudentSelect">Student</label>
+          <select class="field-select" id="histStudentSelect">
+            <option value="">All students</option>
+          </select>
+        </div>
+        <div class="field-group" style="min-width:130px;max-width:160px;">
+          <label for="histLangSelect">Language</label>
+          <select class="field-select" id="histLangSelect">
+            <option value="">All languages</option>
+            <option value="de">German</option>
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="it">Italian</option>
+            <option value="bg">Bulgarian</option>
+            <option value="hr">Croatian</option>
+            <option value="pt">Portuguese</option>
+            <option value="ru">Russian</option>
+            <option value="sr">Serbian</option>
+            <option value="ro">Romanian</option>
+            <option value="pl">Polish</option>
+          </select>
+        </div>
+        <div class="field-group" style="min-width:130px;max-width:160px;">
+          <label for="histDateFrom">From</label>
+          <input class="field-input" type="date" id="histDateFrom">
+        </div>
+        <div class="field-group" style="min-width:130px;max-width:160px;">
+          <label for="histDateTo">To</label>
+          <input class="field-input" type="date" id="histDateTo">
+        </div>
+        <button class="btn btn-primary btn-sm" id="btnLoadHistory" style="margin-top:auto;height:40px;">Load</button>
+      </div>
+      <div id="historyList">
+        <div class="log-empty">Select a student and click Load to view history.</div>
+      </div>
+    </div>
+  </div><!-- /tab-history -->
+
+</div><!-- /page-wrap -->
+</div><!-- /appWrap -->
+
+<!-- ── Toast ── -->
+<div class="toast" id="toast"></div>
+
+<!-- ── Scripts ── -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="/js/supabase-init.js"></script>
+<script src="/js/phoneme-tools.js"></script>
+<script>
+/* ════════════════════════════════════════════════════════════════════════════
+   Teacher Tools — Letter Highlighting
+   Vanilla JS, no framework.
+═══════════════════════════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  /* ── State ──────────────────────────────────────────────────────────────── */
+  var state = {
+    user:          null,
+    sessionId:     null,
+    sessionDate:   null,
+    studentId:     null,
+    studentName:   '',
+    lang:          'de',
+    tokens:        [],       // [{ grapheme, originalIndex, tokenIndex, severity, family }]
+    logEntries:    [],       // [{ word, tokens, phonemeLogs, noteText, saved }]
+    sessionActive: false
+  };
+
+  /* ── DOM refs ────────────────────────────────────────────────────────────── */
+  var $ = function(id) { return document.getElementById(id); };
+
+  /* ── Utilities ───────────────────────────────────────────────────────────── */
+  function uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random() * 16 | 0;
+      var v = c === 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  }
+
+  function todayISO() {
+    var d = new Date();
+    return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  }
+
+  function formatDate(isoStr) {
+    if (!isoStr) return '';
+    var d = new Date(isoStr);
+    return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+  }
+
+  function showToast(msg, type) {
+    var t = $('toast');
+    t.textContent = msg;
+    t.className = 'toast ' + (type || '');
+    t.classList.add('show');
+    setTimeout(function() { t.classList.remove('show'); }, 3000);
+  }
+
+  /* ── Auth ─────────────────────────────────────────────────────────────────── */
+  function initAuth() {
+    window.supabase.auth.getSession().then(function(res) {
+      var session = res.data && res.data.session;
+      if (session && session.user) {
+        onSignedIn(session.user);
+      } else {
+        showAuthGate();
+      }
+    }).catch(function() {
+      showAuthGate();
+    });
+
+    window.supabase.auth.onAuthStateChange(function(event, session) {
+      if (event === 'SIGNED_IN' && session && session.user) {
+        onSignedIn(session.user);
+      } else if (event === 'SIGNED_OUT') {
+        showAuthGate();
+      }
+    });
+  }
+
+  function showAuthGate() {
+    $('authGate').style.display = 'flex';
+    $('appWrap').style.display = 'none';
+  }
+
+  function onSignedIn(user) {
+    state.user = user;
+    $('authGate').style.display = 'none';
+    $('appWrap').style.display = 'block';
+    $('navUserEmail').textContent = user.email || '';
+    loadStudents();
+  }
+
+  $('navSignOut').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.supabase.auth.signOut().then(function() {
+      showAuthGate();
+    });
+  });
+
+  /* ── Tab switching ───────────────────────────────────────────────────────── */
+  document.querySelectorAll('.tab-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+      btn.classList.add('active');
+      $('tab-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  /* ── Load students ───────────────────────────────────────────────────────── */
+  function loadStudents() {
+    if (!state.user) return;
+
+    window.supabase
+      .from('phoneme_logs')
+      .select('student_id, assessed_language')
+      .eq('assessor_id', state.user.id)
+      .order('created_at', { ascending: false })
+      .then(function(res) {
+        var data = (res.data || []);
+        // Build unique student list from logs
+        var seen = {};
+        var students = [];
+        data.forEach(function(row) {
+          if (row.student_id && !seen[row.student_id]) {
+            seen[row.student_id] = true;
+            students.push(row.student_id);
+          }
+        });
+        populateStudentDropdowns(students);
+      })
+      .catch(function() {
+        // Table might not exist yet — that is fine, just show empty state
+        populateStudentDropdowns([]);
+      });
+  }
+
+  function populateStudentDropdowns(students) {
+    var selects = [$('studentSelect'), $('histStudentSelect')];
+    selects.forEach(function(sel, idx) {
+      sel.innerHTML = '';
+      if (idx === 0) {
+        var opt = document.createElement('option');
+        opt.value = '';
+        opt.textContent = '— Select existing student —';
+        sel.appendChild(opt);
+      } else {
+        var opt0 = document.createElement('option');
+        opt0.value = '';
+        opt0.textContent = 'All students';
+        sel.appendChild(opt0);
+      }
+      students.forEach(function(s) {
+        var opt = document.createElement('option');
+        opt.value = s;
+        opt.textContent = s;
+        sel.appendChild(opt);
+      });
+    });
+  }
+
+  /* ── Session start / end ─────────────────────────────────────────────────── */
+  $('btnStartSession').addEventListener('click', startSession);
+  $('btnEndSession').addEventListener('click', endSession);
+  $('btnNewSession').addEventListener('click', function() {
+    $('summaryPanel').style.display = 'none';
+    resetSession();
+  });
+
+  function startSession() {
+    var studentFromDropdown = $('studentSelect').value.trim();
+    var studentFromInput    = $('studentNameInput').value.trim();
+    var studentName = studentFromInput || studentFromDropdown;
+
+    if (!studentName) {
+      showToast('Please select or type a student name.', 'warn');
+      return;
+    }
+
+    state.studentName  = studentName;
+    state.studentId    = studentName; // Using name as ID until a proper users table exists
+    state.lang         = $('langSelect').value;
+    state.sessionId    = uuidv4();
+    state.sessionDate  = todayISO();
+    state.logEntries   = [];
+    state.sessionActive = true;
+
+    $('btnStartSession').style.display = 'none';
+    $('btnEndSession').style.display   = '';
+    $('wordInputCard').style.opacity   = '1';
+    $('wordInputCard').style.pointerEvents = '';
+    $('summaryPanel').style.display    = 'none';
+    $('sessionLog').innerHTML = '<div class="log-empty">No entries yet. Add a word and highlight problem phonemes.</div>';
+    $('letterGrid').innerHTML = '<span style="color:var(--ink-light);font-size:0.9375rem;align-self:center;">Add a word above to see letters here.</span>';
+
+    var langLabel = $('langSelect').options[$('langSelect').selectedIndex].text;
+    $('sessionStatus').textContent = 'Session active: ' + studentName + ' — ' + langLabel + ' — ' + state.sessionDate;
+    $('sessionStatus').className = 'session-status active';
+
+    $('wordInput').focus();
+    showToast('Session started.', 'success');
+  }
+
+  function endSession() {
+    if (!state.sessionActive) return;
+    state.sessionActive = false;
+
+    $('btnStartSession').style.display = '';
+    $('btnEndSession').style.display   = 'none';
+    $('wordInputCard').style.opacity   = '0.5';
+    $('wordInputCard').style.pointerEvents = 'none';
+    $('sessionStatus').textContent = 'Session ended.';
+    $('sessionStatus').className = 'session-status';
+
+    renderSummary();
+    $('summaryPanel').style.display = '';
+    showToast('Session ended. Summary below.', 'success');
+  }
+
+  function resetSession() {
+    state.sessionId    = null;
+    state.sessionDate  = null;
+    state.logEntries   = [];
+    state.tokens       = [];
+    state.sessionActive = false;
+
+    $('btnStartSession').style.display = '';
+    $('btnEndSession').style.display   = 'none';
+    $('wordInputCard').style.opacity   = '0.5';
+    $('wordInputCard').style.pointerEvents = 'none';
+    $('sessionStatus').textContent = 'No active session.';
+    $('sessionStatus').className = 'session-status';
+    $('letterGrid').innerHTML = '<span style="color:var(--ink-light);font-size:0.9375rem;align-self:center;">Add a word above to see letters here.</span>';
+    $('sessionLog').innerHTML = '<div class="log-empty">No entries yet. Add a word and highlight problem phonemes.</div>';
+    $('studentNameInput').value = '';
+    $('studentSelect').value = '';
+  }
+
+  /* ── Word submission ─────────────────────────────────────────────────────── */
+  $('btnAddWord').addEventListener('click', submitWord);
+  $('wordInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') submitWord();
+  });
+
+  function submitWord() {
+    if (!state.sessionActive) return;
+    var raw = $('wordInput').value.trim();
+    if (!raw) return;
+
+    var word = raw;
+    $('wordInput').value = '';
+
+    // Tokenize using PhonemeTools
+    var tokens = PhonemeTools.tokenize(word, state.lang);
+    state.tokens = tokens.map(function(t, i) {
+      return {
+        grapheme:     t.grapheme,
+        originalIndex: t.originalIndex,
+        tokenIndex:   i,
+        totalTokens:  tokens.length,
+        severity:     null, // null | 'developing' | 'focus'
+        family:       PhonemeTools.getFamily(t.grapheme, state.lang),
+        position:     PhonemeTools.getPosition(i, tokens.length)
+      };
+    });
+
+    // Current word entry (not yet committed to log)
+    state.currentWord = word;
+    renderLetterGrid();
+  }
+
+  /* ── Letter Grid ─────────────────────────────────────────────────────────── */
+  function renderLetterGrid() {
+    var grid = $('letterGrid');
+    grid.innerHTML = '';
+
+    state.tokens.forEach(function(tok, i) {
+      var btn = document.createElement('button');
+      btn.className = 'letter-btn' + (tok.severity ? ' ' + tok.severity : '');
+      btn.setAttribute('aria-label', tok.grapheme + ' — ' + tok.family + ' — tap to highlight');
+      btn.dataset.index = i;
+
+      var label = document.createElement('span');
+      label.className = 'letter-label';
+      label.textContent = tok.grapheme;
+
+      var tag = document.createElement('span');
+      tag.className = 'family-tag';
+      tag.textContent = tok.family;
+
+      btn.appendChild(label);
+      btn.appendChild(tag);
+
+      btn.addEventListener('click', function() {
+        onLetterTap(i, btn);
+      });
+
+      grid.appendChild(btn);
+    });
+
+    // "Commit word to log" button
+    var commitBtn = document.createElement('button');
+    commitBtn.className = 'btn btn-outline btn-sm';
+    commitBtn.style.marginTop = '8px';
+    commitBtn.style.alignSelf = 'flex-end';
+    commitBtn.textContent = 'Save to log';
+    commitBtn.addEventListener('click', commitCurrentWord);
+    grid.appendChild(commitBtn);
+  }
+
+  function onLetterTap(index, btn) {
+    var tok = state.tokens[index];
+    var override = $('familyOverride').value;
+
+    // Cycle: null → developing → focus → null
+    if (!tok.severity) {
+      tok.severity = 'developing';
+    } else if (tok.severity === 'developing') {
+      tok.severity = 'focus';
+    } else {
+      tok.severity = null;
+    }
+
+    // Apply family override if set
+    if (override && tok.severity) {
+      tok.family = override;
+    } else if (!override && tok.severity) {
+      tok.family = PhonemeTools.getFamily(tok.grapheme, state.lang);
+    }
+
+    // Update button class
+    btn.className = 'letter-btn' + (tok.severity ? ' ' + tok.severity : '');
+    btn.querySelector('.family-tag').textContent = tok.family;
+  }
+
+  /* ── Commit word to session log ──────────────────────────────────────────── */
+  function commitCurrentWord() {
+    if (!state.currentWord) return;
+
+    var highlighted = state.tokens.filter(function(t) { return t.severity; });
+    var entry = {
+      id:          uuidv4(),
+      word:        state.currentWord,
+      tokens:      state.tokens.slice(), // copy
+      phonemeLogs: highlighted.map(function(t) {
+        return {
+          student_id:        state.studentId,
+          assessor_id:       state.user ? state.user.id : null,
+          session_id:        state.sessionId,
+          session_date:      state.sessionDate,
+          assessed_language: state.lang,
+          word:              state.currentWord,
+          phoneme:           t.grapheme,
+          phoneme_family:    t.family,
+          position:          t.position,
+          severity:          t.severity,
+          notes:             null
+        };
+      }),
+      noteText: '',
+      saved: false
+    };
+
+    state.logEntries.push(entry);
+
+    // Save each phoneme_log to Supabase
+    if (highlighted.length > 0) {
+      savePhonemelogs(entry);
+    }
+
+    renderSessionLog();
+
+    // Reset grid
+    state.tokens = [];
+    state.currentWord = null;
+    $('letterGrid').innerHTML = '<span style="color:var(--ink-light);font-size:0.9375rem;align-self:center;">Add a word above to see letters here.</span>';
+    $('wordInput').focus();
+  }
+
+  /* ── Save to Supabase ────────────────────────────────────────────────────── */
+  function savePhonemelogs(entry) {
+    if (!window.supabase || !state.user) return;
+
+    var rows = entry.phonemeLogs;
+    if (!rows.length) return;
+
+    window.supabase
+      .from('phoneme_logs')
+      .insert(rows)
+      .then(function(res) {
+        if (res.error) {
+          console.warn('[LingoGrade] phoneme_logs insert error:', res.error.message);
+        } else {
+          entry.saved = true;
+          // Update the log entry's save indicator
+          var indicator = document.querySelector('[data-entry-id="' + entry.id + '"] .log-meta');
+          if (indicator) indicator.textContent = 'saved';
+        }
+      });
+  }
+
+  function saveNoteToSupabase(entryId, noteText) {
+    if (!window.supabase || !state.user) return;
+
+    window.supabase
+      .from('phoneme_logs')
+      .update({ notes: noteText })
+      .eq('session_id', state.sessionId)
+      .eq('word', entryId)
+      .then(function() {});
+  }
+
+  /* ── Session Log render ──────────────────────────────────────────────────── */
+  function renderSessionLog() {
+    var container = $('sessionLog');
+    if (!state.logEntries.length) {
+      container.innerHTML = '<div class="log-empty">No entries yet. Add a word and highlight problem phonemes.</div>';
+      return;
+    }
+    container.innerHTML = '';
+
+    // Render newest first
+    var entries = state.logEntries.slice().reverse();
+    entries.forEach(function(entry) {
+      var div = document.createElement('div');
+      div.className = 'log-entry';
+      div.dataset.entryId = entry.id;
+
+      var head = document.createElement('div');
+      head.className = 'log-entry-head';
+
+      var wordSpan = document.createElement('span');
+      wordSpan.className = 'log-word';
+      wordSpan.textContent = entry.word.toUpperCase();
+
+      var metaSpan = document.createElement('span');
+      metaSpan.className = 'log-meta';
+      metaSpan.textContent = entry.saved ? 'saved' : 'saving...';
+
+      head.appendChild(wordSpan);
+      head.appendChild(metaSpan);
+      div.appendChild(head);
+
+      // Phoneme chips
+      var chipRow = document.createElement('div');
+      chipRow.className = 'log-phonemes';
+      var highlighted = entry.tokens.filter(function(t) { return t.severity; });
+      if (highlighted.length === 0) {
+        var noChip = document.createElement('span');
+        noChip.style.fontSize = '0.8125rem';
+        noChip.style.color = 'var(--ink-light)';
+        noChip.textContent = 'No phonemes highlighted.';
+        chipRow.appendChild(noChip);
+      } else {
+        highlighted.forEach(function(t) {
+          var chip = document.createElement('span');
+          chip.className = 'phoneme-chip ' + t.severity;
+          chip.textContent = t.grapheme + ' — ' + t.family + ' (' + t.position + ')';
+          chipRow.appendChild(chip);
+        });
+      }
+      div.appendChild(chipRow);
+
+      // Note row
+      if (entry.noteText) {
+        var noteDisplay = document.createElement('div');
+        noteDisplay.className = 'log-note-text';
+        noteDisplay.textContent = 'Note: ' + entry.noteText;
+        div.appendChild(noteDisplay);
+      }
+
+      var noteRow = document.createElement('div');
+      noteRow.className = 'log-note-row';
+
+      var noteInput = document.createElement('input');
+      noteInput.className = 'log-note-input';
+      noteInput.type = 'text';
+      noteInput.placeholder = 'Add observation...';
+      noteInput.value = entry.noteText;
+
+      var saveNoteBtn = document.createElement('button');
+      saveNoteBtn.className = 'btn btn-outline btn-sm';
+      saveNoteBtn.textContent = 'Save note';
+      saveNoteBtn.addEventListener('click', function() {
+        entry.noteText = noteInput.value.trim();
+        saveNoteToSupabase(entry.word, entry.noteText);
+        renderSessionLog();
+        showToast('Note saved.', 'success');
+      });
+
+      noteRow.appendChild(noteInput);
+      noteRow.appendChild(saveNoteBtn);
+      div.appendChild(noteRow);
+
+      container.appendChild(div);
+    });
+  }
+
+  /* ── Summary ─────────────────────────────────────────────────────────────── */
+  function renderSummary() {
+    var allHighlighted = [];
+    state.logEntries.forEach(function(entry) {
+      entry.tokens.forEach(function(t) {
+        if (t.severity) allHighlighted.push(t);
+      });
+    });
+
+    // Stats
+    var statsEl = $('summaryStats');
+    statsEl.innerHTML = '';
+    var stats = [
+      { num: state.logEntries.length, label: 'Words practiced' },
+      { num: allHighlighted.length,   label: 'Phonemes logged' },
+      { num: allHighlighted.filter(function(t) { return t.severity === 'focus'; }).length, label: 'Focus areas' },
+      { num: allHighlighted.filter(function(t) { return t.severity === 'developing'; }).length, label: 'Developing' }
+    ];
+    stats.forEach(function(s) {
+      var box = document.createElement('div');
+      box.className = 'stat-box';
+      box.innerHTML = '<div class="stat-num">' + s.num + '</div><div class="stat-label">' + s.label + '</div>';
+      statsEl.appendChild(box);
+    });
+
+    // Family frequency
+    var familyCounts = {};
+    allHighlighted.forEach(function(t) {
+      familyCounts[t.family] = (familyCounts[t.family] || 0) + 1;
+    });
+    var sorted = Object.keys(familyCounts).sort(function(a, b) { return familyCounts[b] - familyCounts[a]; });
+    var maxCount = sorted.length ? familyCounts[sorted[0]] : 1;
+
+    var freqEl = $('familyFreqList');
+    freqEl.innerHTML = '';
+    if (!sorted.length) {
+      freqEl.innerHTML = '<div class="log-empty">No phonemes were highlighted this session.</div>';
+    } else {
+      sorted.forEach(function(family) {
+        var count = familyCounts[family];
+        var row = document.createElement('div');
+        row.className = 'family-freq-row';
+        row.innerHTML =
+          '<span class="family-name">' + family + '</span>' +
+          '<div class="freq-bar-wrap"><div class="freq-bar" style="width:' + Math.round(count / maxCount * 100) + '%"></div></div>' +
+          '<span class="freq-count">' + count + '</span>';
+        freqEl.appendChild(row);
+      });
+    }
+
+    // Minimal pair suggestions
+    var pairsEl = $('pairSuggestions');
+    pairsEl.innerHTML = '';
+    var phonemeInputs = allHighlighted.map(function(t) {
+      return { grapheme: t.grapheme, lang: state.lang, family: t.family };
+    });
+    var suggestions = PhonemeTools.getTopSuggestions(phonemeInputs, 5);
+    if (!suggestions.length) {
+      pairsEl.innerHTML = '<div class="log-empty">No suggestions available for the highlighted phonemes.</div>';
+    } else {
+      var wrap = document.createElement('div');
+      wrap.style.display = 'flex';
+      wrap.style.flexWrap = 'wrap';
+      suggestions.forEach(function(s) {
+        var chip = document.createElement('span');
+        chip.className = 'pair-chip';
+        chip.innerHTML =
+          '<strong>' + s.grapheme + '</strong>' +
+          '<span class="pair-sep">|</span>' +
+          s.pair[0] + '<span class="pair-sep">/</span>' + s.pair[1];
+        wrap.appendChild(chip);
+      });
+      pairsEl.appendChild(wrap);
+    }
+  }
+
+  /* ── History Tab ─────────────────────────────────────────────────────────── */
+  $('btnLoadHistory').addEventListener('click', loadHistory);
+
+  function loadHistory() {
+    var student = $('histStudentSelect').value;
+    var lang    = $('histLangSelect').value;
+    var from    = $('histDateFrom').value;
+    var to      = $('histDateTo').value;
+
+    if (!window.supabase || !state.user) {
+      $('historyList').innerHTML = '<div class="log-empty">Not signed in.</div>';
+      return;
+    }
+
+    $('historyList').innerHTML = '<div class="log-empty">Loading...</div>';
+
+    var query = window.supabase
+      .from('phoneme_logs')
+      .select('*')
+      .eq('assessor_id', state.user.id)
+      .order('session_date', { ascending: false })
+      .order('created_at', { ascending: false });
+
+    if (student) query = query.eq('student_id', student);
+    if (lang)    query = query.eq('assessed_language', lang);
+    if (from)    query = query.gte('session_date', from);
+    if (to)      query = query.lte('session_date', to);
+
+    query.then(function(res) {
+      if (res.error) {
+        $('historyList').innerHTML = '<div class="log-empty">Could not load history. ' + res.error.message + '</div>';
+        return;
+      }
+      renderHistory(res.data || []);
+    });
+  }
+
+  function renderHistory(rows) {
+    var container = $('historyList');
+    container.innerHTML = '';
+
+    if (!rows.length) {
+      container.innerHTML = '<div class="log-empty">No sessions found for the selected filters.</div>';
+      return;
+    }
+
+    // Group by session_id
+    var sessions = {};
+    var sessionOrder = [];
+    rows.forEach(function(row) {
+      var sid = row.session_id;
+      if (!sessions[sid]) {
+        sessions[sid] = { session_id: sid, session_date: row.session_date, student_id: row.student_id, lang: row.assessed_language, logs: [] };
+        sessionOrder.push(sid);
+      }
+      sessions[sid].logs.push(row);
+    });
+
+    sessionOrder.forEach(function(sid) {
+      var s = sessions[sid];
+      var card = document.createElement('div');
+      card.className = 'session-card';
+
+      var head = document.createElement('div');
+      head.className = 'session-card-head';
+      head.innerHTML =
+        '<span class="session-date">' + formatDate(s.session_date) + '</span>' +
+        '<span class="session-meta">' + s.student_id + ' — ' + s.lang.toUpperCase() + ' — ' + s.logs.length + ' phonemes</span>';
+
+      var body = document.createElement('div');
+      body.className = 'session-body';
+
+      // Group logs by word
+      var byWord = {};
+      var wordOrder = [];
+      s.logs.forEach(function(log) {
+        if (!byWord[log.word]) { byWord[log.word] = []; wordOrder.push(log.word); }
+        byWord[log.word].push(log);
+      });
+
+      wordOrder.forEach(function(word) {
+        var wDiv = document.createElement('div');
+        wDiv.style.marginBottom = '10px';
+        wDiv.innerHTML = '<div style="font-weight:700;font-size:0.9375rem;color:var(--navy);text-transform:uppercase;margin-bottom:4px;">' + word + '</div>';
+        var heatRow = document.createElement('div');
+        heatRow.className = 'heat-row';
+        byWord[word].forEach(function(log) {
+          var cell = document.createElement('span');
+          cell.className = 'heat-cell sev-' + (log.severity || 'developing');
+          cell.textContent = log.phoneme + ' (' + log.phoneme_family + ', ' + log.position + ')';
+          heatRow.appendChild(cell);
+        });
+        wDiv.appendChild(heatRow);
+        if (byWord[word][0] && byWord[word][0].notes) {
+          var noteEl = document.createElement('div');
+          noteEl.className = 'log-note-text';
+          noteEl.style.marginTop = '4px';
+          noteEl.textContent = 'Note: ' + byWord[word][0].notes;
+          wDiv.appendChild(noteEl);
+        }
+        body.appendChild(wDiv);
+      });
+
+      head.addEventListener('click', function() {
+        body.classList.toggle('open');
+      });
+
+      card.appendChild(head);
+      card.appendChild(body);
+      container.appendChild(card);
+    });
+  }
+
+  /* ── Boot ────────────────────────────────────────────────────────────────── */
+  // Set default date range for history (last 30 days)
+  (function setDefaultDates() {
+    var today = new Date();
+    var past  = new Date();
+    past.setDate(past.getDate() - 30);
+    $('histDateTo').value   = today.toISOString().slice(0, 10);
+    $('histDateFrom').value = past.toISOString().slice(0, 10);
+  })();
+
+  // Wait for Supabase to be initialized
+  function boot() {
+    if (typeof window.supabase !== 'undefined' && window.supabase.auth) {
+      initAuth();
+    } else {
+      setTimeout(boot, 80);
+    }
+  }
+  boot();
+
+})();
+</script>
+<script src="/js/shield.js" defer></script>
+</body>
+</html>
