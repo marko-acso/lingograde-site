@@ -11,8 +11,9 @@ from datetime import datetime, timezone
 import anthropic
 import stripe
 from dotenv import load_dotenv
-from flask import Flask, abort, jsonify, request, send_file
+from flask import Flask, abort, g, jsonify, request, send_file
 from flask_cors import CORS
+from werkzeug.utils import secure_filename
 
 from analysis_prompt import SYSTEM_PROMPT as ANALYSIS_SYSTEM, build_analysis_messages
 from assessment_prompt import (
@@ -30,8 +31,9 @@ from bot_store import (
 load_dotenv()
 
 # ── Database + student dashboard ──
-from db_pool import init_pool
+from db_pool import init_pool, get_cursor
 from student_routes import student_bp
+from auth import require_auth
 
 app = Flask(__name__)
 CORS(
@@ -326,6 +328,229 @@ def frontend_config():
 @app.route("/health", methods=["GET"])
 def health():
     return jsonify({"status": "ok", "service": "lingograde-bot-api"})
+
+
+# ═══════════════════════════════════════════════════════════════════
+# Endpoint 8: POST /v1/checkout/accessory — Stripe Checkout for merch
+# ═══════════════════════════════════════════════════════════════════
+
+ACCESSORY_CATALOG = {
+    "cap": {
+        "name": "LingoGrade Cap",
+        "description": "Embroidered Marco logo on navy cotton twill. Adjustable strap.",
+        "amount": 2995,  # EUR 29.95
+    },
+    "bracelet": {
+        "name": "Marco Bracelet",
+        "description": "Woven fabric bracelet with Marco silhouette clasp. LingoGrade blue with gold accent thread.",
+        "amount": 1495,  # EUR 14.95
+    },
+    "pin": {
+        "name": "Marco Enamel Pin",
+        "description": "Hard enamel pin of Marco with mortarboard. Gold-plated metal. Butterfly clutch backing.",
+        "amount": 1295,  # EUR 12.95
+    },
+}
+
+
+@app.route("/v1/checkout/accessory", methods=["POST"])
+def checkout_accessory():
+    data = request.get_json(force=True)
+    email = (data.get("email") or "").strip()
+    product = (data.get("product") or "").strip().lower()
+
+    if not email or "@" not in email:
+        return jsonify({"error": "Valid email required"}), 400
+
+    if product not in ACCESSORY_CATALOG:
+        return jsonify({"error": f"Unknown product. Choose: {', '.join(ACCESSORY_CATALOG)}"}), 400
+
+    item = ACCESSORY_CATALOG[product]
+    origin = os.environ.get("CORS_ORIGIN", "https://www.lingograde.com")
+
+    try:
+        session = stripe.checkout.Session.create(
+            payment_method_types=["card"],
+            line_items=[{
+                "price_data": {
+                    "currency": "eur",
+                    "unit_amount": item["amount"],
+                    "product_data": {
+                        "name": item["name"],
+                        "description": item["description"],
+                    },
+                },
+                "quantity": 1,
+            }],
+            mode="payment",
+            customer_email=email,
+            success_url=f"{origin}/shop?purchase=success&product={product}",
+            cancel_url=f"{origin}/shop?purchase=cancelled",
+            metadata={"product_type": "accessory", "product": product},
+        )
+    except stripe.StripeError as e:
+        return jsonify({"error": str(e)}), 400
+
+    # Track order in DB (best-effort)
+    try:
+        with get_cursor() as cur:
+            cur.execute(
+                """INSERT INTO accessory_orders (email, product, amount_cents, stripe_session_id)
+                   VALUES (%s, %s, %s, %s)""",
+                (email, product, item["amount"], session.id),
+            )
+    except Exception:
+        pass  # DB optional; Stripe is source of truth
+
+    return jsonify({"checkout_url": session.url, "session_id": session.id})
+
+
+# ═══════════════════════════════════════════════════════════════════
+# Endpoint 9: GET /v1/stickers/map — Public sticker placement map data
+# ═══════════════════════════════════════════════════════════════════
+
+@app.route("/v1/stickers/map", methods=["GET"])
+def sticker_map():
+    try:
+        with get_cursor() as cur:
+            cur.execute(
+                """SELECT latitude, longitude, city, country, COUNT(*) as count
+                   FROM sticker_verifications
+                   WHERE status = 'verified'
+                   GROUP BY latitude, longitude, city, country
+                   ORDER BY count DESC"""
+            )
+            rows = cur.fetchall()
+
+            cur.execute(
+                """SELECT COUNT(*) as total,
+                          COUNT(DISTINCT country) as countries,
+                          COUNT(DISTINCT city) as cities
+                   FROM sticker_verifications
+                   WHERE status = 'verified'"""
+            )
+            stats = cur.fetchone()
+
+        placements = [
+            {"lat": r["latitude"], "lng": r["longitude"],
+             "city": r["city"] or "Unknown", "count": r["count"]}
+            for r in rows
+        ]
+        return jsonify({
+            "placements": placements,
+            "stats": {
+                "total": stats["total"],
+                "countries": stats["countries"],
+                "cities": stats["cities"],
+            },
+        })
+    except Exception:
+        # DB not available — return empty so frontend uses fallback
+        return jsonify({"placements": [], "stats": {"total": 0, "countries": 0, "cities": 0}})
+
+
+# ═══════════════════════════════════════════════════════════════════
+# Endpoint 10: POST /v1/stickers/verify — Submit sticker selfie
+# ═══════════════════════════════════════════════════════════════════
+
+STICKER_UPLOAD_DIR = os.environ.get("STICKER_UPLOAD_DIR", "/var/data/lingograde/stickers")
+ALLOWED_IMG_EXT = {".jpg", ".jpeg", ".png", ".webp"}
+MAX_SELFIE_SIZE = 10 * 1024 * 1024  # 10 MB
+
+
+@app.route("/v1/stickers/verify", methods=["POST"])
+@require_auth
+def sticker_verify():
+    student_id = g.student_id
+
+    sticker_uuid = (request.form.get("sticker_uuid") or "").strip()
+    lat = request.form.get("latitude")
+    lng = request.form.get("longitude")
+    city = request.form.get("city", "")
+    country = request.form.get("country", "")
+
+    if not sticker_uuid:
+        return jsonify({"error": "Sticker QR code required"}), 400
+    if not lat or not lng:
+        return jsonify({"error": "Location required — please enable GPS"}), 400
+
+    try:
+        lat = float(lat)
+        lng = float(lng)
+    except ValueError:
+        return jsonify({"error": "Invalid coordinates"}), 400
+
+    # Velocity throttle: max 3/day per student
+    try:
+        with get_cursor() as cur:
+            cur.execute(
+                """SELECT COUNT(*) as cnt FROM sticker_verifications
+                   WHERE student_id = %s::uuid
+                   AND submitted_at > now() - interval '24 hours'""",
+                (student_id,),
+            )
+            if cur.fetchone()["cnt"] >= 3:
+                return jsonify({"error": "You have reached today's limit. Try again tomorrow."}), 429
+
+            # GPS uniqueness: max 3 stickers within 50m radius per account
+            cur.execute(
+                """SELECT COUNT(*) as cnt FROM sticker_verifications
+                   WHERE student_id = %s::uuid
+                   AND earth_distance(
+                       ll_to_earth(latitude, longitude),
+                       ll_to_earth(%s, %s)
+                   ) < 50""",
+                (student_id, lat, lng),
+            )
+            nearby = cur.fetchone()["cnt"]
+    except Exception:
+        nearby = 0  # If earthdistance not installed, skip geo check
+
+    if nearby >= 3:
+        return jsonify({"error": "Too many stickers in this area. Spread them around."}), 400
+
+    # File upload
+    selfie = request.files.get("selfie")
+    if not selfie:
+        return jsonify({"error": "Selfie image required"}), 400
+
+    ext = os.path.splitext(selfie.filename or "")[1].lower()
+    if ext not in ALLOWED_IMG_EXT:
+        return jsonify({"error": f"Allowed formats: {', '.join(ALLOWED_IMG_EXT)}"}), 400
+
+    selfie.seek(0, 2)
+    if selfie.tell() > MAX_SELFIE_SIZE:
+        return jsonify({"error": "Image too large (max 10 MB)"}), 400
+    selfie.seek(0)
+
+    # Save file
+    safe_name = f"{uuid.uuid4().hex[:12]}{ext}"
+    student_dir = os.path.join(STICKER_UPLOAD_DIR, student_id)
+    os.makedirs(student_dir, exist_ok=True)
+    save_path = os.path.join(student_dir, safe_name)
+    selfie.save(save_path)
+
+    # Create verification record (pending 48h review)
+    try:
+        with get_cursor() as cur:
+            cur.execute(
+                """INSERT INTO sticker_verifications
+                   (student_id, sticker_uuid, latitude, longitude, city, country, selfie_path)
+                   VALUES (%s::uuid, %s, %s, %s, %s, %s, %s)
+                   RETURNING id""",
+                (student_id, sticker_uuid, lat, lng, city, country, save_path),
+            )
+            verification_id = str(cur.fetchone()["id"])
+    except Exception as e:
+        if "unique" in str(e).lower():
+            return jsonify({"error": "This sticker has already been claimed"}), 409
+        return jsonify({"error": "Verification submission failed"}), 500
+
+    return jsonify({
+        "verification_id": verification_id,
+        "status": "pending",
+        "message": "Your selfie is being reviewed. You will be notified within 48 hours.",
+    }), 201
 
 
 if __name__ == "__main__":
