@@ -12,9 +12,14 @@
 <meta property="og:url" content="https://www.lingograde.com/kids">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LingoGrade Young Learners — Coming Soon">
+<meta name="twitter:description" content="Age-appropriate, play-based language sessions for children aged 6-14. Because every child deserves to know they are making progress.">
 <meta name="twitter:image" content="https://www.lingograde.com/assets/mascot/lingograde-card-kids.png">
+<meta property="og:locale" content="en_US">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://www.lingograde.com/kids">
+<link rel="alternate" hreflang="en" href="https://www.lingograde.com/kids">
+<link rel="alternate" hreflang="x-default" href="https://www.lingograde.com/kids">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <script type="application/ld+json">
 {
@@ -32,8 +37,10 @@
 }
 </script>
 <link rel="icon" type="image/webp" href="/assets/mascot/marco-face-grad-v2.webp?v=3">
+<link rel="apple-touch-icon" href="/assets/mascot/marco-face-grad-v2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
 <style>
 :root {
   --ink: #1C1C1C; --ink-soft: #4A4A4A; --ink-light: #8A8A8A;
@@ -91,6 +98,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 /* ── Trust ── */
 .trust-line { font-size: 0.8125rem; color: var(--ink-light); max-width: 480px; margin: 0 auto; line-height: 1.7; }
 .trust-line strong { color: var(--ink-soft); font-weight: 600; }
+
+/* ── Accessibility ── */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
 /* ── Pricing preview ── */
 .pricing-preview { padding: 80px 32px; background: var(--cream); }
@@ -161,13 +171,13 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <!-- ── Navigation ── -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="Marco" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"><span>LingoGr<span class="brand-a">A</span>de</span></a>
+    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade - Home" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"><span>LingoGr<span class="brand-a">A</span>de</span></a>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
     <div class="nav-menu">
       <a href="index.html">Individual</a>
-      <a href="kids.html" style="color:var(--accent);font-weight:700;">Kids</a>
+      <a href="kids.html" class="nav-active">Kids</a>
       <a href="corporate.html">Corporate</a>
       <a href="partners.html">Partners</a>
       <a href="shop.html">Shop</a>
@@ -182,7 +192,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   <div class="hero-inner">
     <div class="hero-badge">Coming Soon</div>
     <img src="assets/mascot/marco-abc-blocks.webp?v=3" alt="Marco the Owl with ABC blocks — Young Learners" class="marco-sleeping">
-    <h1>Marco is getting ready for the little ones</h1>
+    <h1>Language Assessment for Young Learners (Ages 6–14)</h1>
     <p>It seems like you want the best for your child's language journey — but you are not sure exactly where they stand. That is why Marco is here. No tests. No stress. Just play. Age-appropriate, game-based language sessions for children aged 6&ndash;14.</p>
 
     <!-- Email capture -->
@@ -200,9 +210,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 </section>
 
 <!-- ── Accusation Audit ── -->
-<div style="max-width:720px;margin:32px auto;padding:28px;background:#FFF8E1;border-radius:8px;text-align:center;">
+<div class="text-center mw-720" style="margin:32px auto;padding:28px;background:#FFF8E1;border-radius:8px;">
   <p style="font-size:1.1rem;color:#444;line-height:1.8;margin:0 0 16px;">You might think evaluating a child's language sounds stressful. We thought so too. That is why we designed every session around play, stories, and Marco the Owl. Children do not even realise they are being assessed — they think they are on an adventure with their new friend.</p>
-  <p style="font-size:1.05rem;color:#2563AB;font-style:italic;margin:0;">How would it feel to finally know exactly where your child stands — and have a clear plan for what comes next?</p>
+  <p class="m-0 italic c-accent" style="font-size:1.05rem;" >How would it feel to finally know exactly where your child stands — and have a clear plan for what comes next?</p>
 </div>
 
 <!-- ── Pricing Preview ── -->
@@ -210,7 +220,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   <div class="pricing-preview-inner">
     <h2>What it will cost</h2>
     <p class="pricing-sub">Simple, transparent pricing. One session, one report, no subscriptions. Every session includes a parent-friendly report with clear next steps.</p>
-    <p style="text-align:center;font-size:0.95rem;color:#777;margin-bottom:24px;">Join parents across Europe already on the waitlist. Whether before the school year, after exams, or during summer — knowing where your child stands is the first step to helping them thrive.</p>
+    <p class="text-center mb-24" style="font-size:0.95rem;color:#777;">Join parents across Europe already on the waitlist. Whether before the school year, after exams, or during summer — knowing where your child stands is the first step to helping them thrive.</p>
     <div class="pricing-grid">
 
       <div class="pricing-card">
@@ -224,14 +234,15 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <li>Full diagnostic report</li>
           <li>Personalised learning roadmap</li>
         </ul>
-        <p style="font-size:0.85rem;color:var(--ink-soft);margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">
+        <p class="mt-12 c-ink-soft fs-085" style="padding-top:12px;border-top:1px solid var(--border);" >
           <strong>Recommended add-on:</strong> Homework programme — EUR 29.95
-          <span style="font-size:0.8rem;color:var(--ink-light);display:block;margin-top:4px;">Detailed correction report within 1 hour</span>
+          <span class="c-ink-light mt-4 fs-xs" style="display:block;" >Detailed correction report within 1 hour</span>
         </p>
         <span class="pricing-coming">Coming Soon</span>
       </div>
 
       <div class="pricing-card featured">
+        <span class="sr-only">Most Chosen</span>
         <div class="pricing-name">Full Picture</div>
         <div class="pricing-duration">25-minute session</div>
         <div class="pricing-price" data-eur="129.95" data-usd="129.95" data-gbp="129.95" data-chf="129.95">&euro;129.95</div>
@@ -292,23 +303,23 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 </section>
 
 <!-- Footer -->
-<footer style="background:#1A3A5C;color:rgba(255,255,255,0.85);text-align:center;padding:48px 32px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
-  <div style="font-size:1.5rem;font-weight:700;letter-spacing:0.02em;">LingoGr<span style="color:#27AE60">A</span>de</div>
-  <p style="color:rgba(255,255,255,0.6);font-size:0.9375rem;margin:8px 0 24px;">Professional Language Assessment</p>
-  <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:0.875rem;">
-    <a href="index.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Home</a>
-    <a href="index.html#languages" style="color:rgba(255,255,255,0.7);text-decoration:none;">Languages</a>
-    <a href="index.html#pricing" style="color:rgba(255,255,255,0.7);text-decoration:none;">Pricing</a>
-    <a href="teachers.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">For Teachers</a>
-    <a href="partners.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Partners</a>
-    <a href="shop.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Shop</a>
-    <a href="mailto:info@lingograde.com" style="color:rgba(255,255,255,0.7);text-decoration:none;">Contact</a>
+<footer class="site-footer">
+  <div class="footer-brand">LingoGr<span class="c-green">A</span>de</div>
+  <p class="footer-tagline">Professional Language Assessment</p>
+  <div class="footer-nav">
+    <a href="index.html" class="footer-link">Home</a>
+    <a href="index.html#languages" class="footer-link">Languages</a>
+    <a href="index.html#pricing" class="footer-link">Pricing</a>
+    <a href="teachers.html" class="footer-link">For Teachers</a>
+    <a href="partners.html" class="footer-link">Partners</a>
+    <a href="shop.html" class="footer-link">Shop</a>
+    <a href="mailto:info@lingograde.com" class="footer-link">Contact</a>
   </div>
-  <div style="margin-top:16px;display:flex;gap:16px;justify-content:center;">
-    <a href="privacy-policy.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Privacy Policy</a>
-    <a href="terms-of-service.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Terms of Service</a>
+  <div class="footer-legal">
+    <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+    <a href="terms-of-service.html" class="footer-legal-link">Terms of Service</a>
   </div>
-  <div style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.4);">&copy; 2026 LingoGrade. All rights reserved.</div>
+  <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
 </footer>
 
 <script>
@@ -325,7 +336,7 @@ function submitWaitlist(e) {
     form.style.display = 'none';
     document.getElementById('waitlistSuccess').style.display = 'block';
   }).catch(function() {
-    form.querySelector('button').textContent = 'Something went wrong. Try again.';
+    form.querySelector('button').textContent = 'That didn't go through — please try again.';
     form.querySelector('button').style.background = '#e74c3c';
   });
   return false;
@@ -340,35 +351,40 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
   });
 });
 
-// ── Currency geo-detection (timezone-based) ──
+// ── Currency geo-detection — IP geolocation with timezone fallback ──
 (function(){
-  var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-  var currency = 'eur'; // default EUR
+  var COUNTRY_MAP = {US:'usd',GB:'gbp',CH:'chf',LI:'chf'};
+  var SYMBOLS = {eur:'\u20AC',usd:'$',gbp:'\u00A3',chf:'CHF\u00A0'};
 
-  // USD — Americas timezones
-  if (/America\//.test(tz) || /US\//.test(tz) || /Pacific\/Honolulu/.test(tz)) {
-    currency = 'usd';
-  }
-  // GBP — UK timezones
-  else if (/Europe\/London|Europe\/Belfast|Europe\/Isle_of_Man|Europe\/Jersey|Europe\/Guernsey/.test(tz)) {
-    currency = 'gbp';
-  }
-  // CHF — Switzerland
-  else if (/Europe\/Zurich/.test(tz)) {
-    currency = 'chf';
+  function tzFallback() {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    if (/America\//.test(tz) || /US\//.test(tz) || /Pacific\/Honolulu/.test(tz)) return 'usd';
+    if (/Europe\/London|Europe\/Belfast|Europe\/Isle_of_Man|Europe\/Jersey|Europe\/Guernsey/.test(tz)) return 'gbp';
+    if (/Europe\/Zurich/.test(tz)) return 'chf';
+    // Locale reinforcement: en-US locale in non-US timezone → traveler, prefer USD
+    var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+    if (/^en-US/i.test(lang)) return 'usd';
+    return 'eur';
   }
 
-  var symbols = { eur: '\u20AC', usd: '$', gbp: '\u00A3', chf: 'CHF\u00A0' };
-  var sym = symbols[currency] || '\u20AC';
+  function applyPrices(currency) {
+    var sym = SYMBOLS[currency] || SYMBOLS.eur;
+    document.querySelectorAll('[data-eur]').forEach(function(el){
+      var val = el.getAttribute('data-' + currency) || el.getAttribute('data-eur');
+      el.textContent = sym + val;
+    });
+    window._lgCurrency = currency;
+    window._lgSymbol = sym;
+  }
 
-  // Swap all pricing elements that carry data attributes
-  document.querySelectorAll('[data-eur]').forEach(function(el){
-    var val = el.getAttribute('data-' + currency) || el.getAttribute('data-eur');
-    el.textContent = sym + val;
-  });
-
-  window._lgCurrency = currency;
-  window._lgSymbol = sym;
+  applyPrices(tzFallback());
+  fetch('https://api.country.is/')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var cc = d && d.country;
+      if (cc && COUNTRY_MAP[cc]) applyPrices(COUNTRY_MAP[cc]);
+    })
+    .catch(function(){});
 })();
 </script>
 

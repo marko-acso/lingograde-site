@@ -6,8 +6,10 @@
 <title>Client Memory — LingoGrade</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/webp" href="/assets/mascot/marco-face-grad-v2.webp?v=3">
+<link rel="apple-touch-icon" href="/assets/mascot/marco-face-grad-v2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
 <style>
 :root {
   --ink: #1C1C1C;
@@ -153,7 +155,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
 <!-- ── Navigation ── -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="Marco" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"><span>LingoGr<span class="brand-a">A</span>de</span></a>
+    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade - Home" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"><span>LingoGr<span class="brand-a">A</span>de</span></a>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -188,7 +190,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
   </div>
 
   <!-- ── Toolbar ── -->
-  <div class="toolbar" id="toolbar" style="display:none;">
+  <div class="toolbar hidden" id="toolbar">
     <button class="filter-btn active" data-cat="all">All</button>
     <button class="filter-btn" data-cat="observation">Observation</button>
     <button class="filter-btn" data-cat="preference">Preference</button>
@@ -211,7 +213,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
   </div>
 
   <!-- ── Load More ── -->
-  <div class="load-more" id="loadMore" style="display:none;">
+  <div class="load-more hidden" id="loadMore">
     <button class="btn-load" id="btnLoadMore">Load more</button>
   </div>
 </div>
@@ -265,23 +267,23 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
 <div class="toast" id="toast"></div>
 
 <!-- ── Footer ── -->
-<footer style="background:#1A3A5C;color:rgba(255,255,255,0.85);text-align:center;padding:48px 32px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
-  <div style="font-size:1.5rem;font-weight:700;letter-spacing:0.02em;">LingoGr<span style="color:#27AE60">A</span>de</div>
-  <p style="color:rgba(255,255,255,0.6);font-size:0.9375rem;margin:8px 0 24px;">Professional Language Assessment</p>
-  <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:0.875rem;">
-    <a href="index.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Home</a>
-    <a href="index.html#languages" style="color:rgba(255,255,255,0.7);text-decoration:none;">Languages</a>
-    <a href="index.html#pricing" style="color:rgba(255,255,255,0.7);text-decoration:none;">Pricing</a>
-    <a href="teachers.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">For Teachers</a>
-    <a href="partners.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Partners</a>
-    <a href="shop.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Shop</a>
-    <a href="mailto:info@lingograde.com" style="color:rgba(255,255,255,0.7);text-decoration:none;">Contact</a>
+<footer class="site-footer">
+  <div class="footer-brand">LingoGr<span class="c-green">A</span>de</div>
+  <p class="footer-tagline">Professional Language Assessment</p>
+  <div class="footer-nav">
+    <a href="index.html" class="footer-link">Home</a>
+    <a href="index.html#languages" class="footer-link">Languages</a>
+    <a href="index.html#pricing" class="footer-link">Pricing</a>
+    <a href="teachers.html" class="footer-link">For Teachers</a>
+    <a href="partners.html" class="footer-link">Partners</a>
+    <a href="shop.html" class="footer-link">Shop</a>
+    <a href="mailto:info@lingograde.com" class="footer-link">Contact</a>
   </div>
-  <div style="margin-top:16px;display:flex;gap:16px;justify-content:center;">
-    <a href="privacy-policy.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Privacy Policy</a>
-    <a href="terms-of-service.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Terms of Service</a>
+  <div class="footer-legal">
+    <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+    <a href="terms-of-service.html" class="footer-legal-link">Terms of Service</a>
   </div>
-  <div style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.4);">&copy; 2026 LingoGrade. All rights reserved.</div>
+  <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
 </footer>
 
 <!-- ── Scripts ── -->

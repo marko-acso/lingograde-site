@@ -1,0 +1,21 @@
+{
+  "name": "LingoGrade — Professional Language Assessment",
+  "short_name": "LingoGrade",
+  "description": "Know exactly where you stand. Professional CEFR language assessment with actionable feedback.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#1A3A5C",
+  "icons": [
+    {
+      "src": "/assets/mascot/marco-face-grad-v2.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

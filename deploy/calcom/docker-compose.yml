@@ -40,6 +40,8 @@ services:
       # Daily.co (video)
       DAILY_API_KEY: ${DAILY_API_KEY}
       DAILY_SCALE_PLAN: ""
+      # Back-link to main site
+      NEXT_PUBLIC_WEBSITE_URL: https://www.lingograde.com
       # Misc
       NODE_ENV: production
       CALCOM_TELEMETRY_DISABLED: 1

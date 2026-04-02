@@ -5,8 +5,17 @@ falls back to in-memory dicts for local dev.
 """
 
 import json
+import uuid as _uuid
 
 from db_pool import get_pool, get_cursor
+
+
+def _is_valid_uuid(val):
+    try:
+        _uuid.UUID(str(val))
+        return True
+    except (ValueError, AttributeError):
+        return False
 
 
 # ── In-memory fallback (local dev without Postgres) ──
@@ -56,6 +65,9 @@ def get_analysis(session_id):
 
 # ═══════════════════════════════════════════════════════════════════
 # Bot Assessments (paid chatbot sessions)
+# Production schema: id (UUID), stripe_session_id, email, language,
+#   paid, conversation (JSONB), report_data (JSONB), phase, status,
+#   created_at, completed_at
 # ═══════════════════════════════════════════════════════════════════
 
 def save_assessment(assess_id, data):
@@ -63,20 +75,19 @@ def save_assessment(assess_id, data):
         with get_cursor() as cur:
             cur.execute(
                 """INSERT INTO bot_assessments
-                   (assess_id, payment_intent_id, email, session_id, lang,
-                    status, turns, turn_count, result, report_path, created_at)
-                   VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
+                   (id, stripe_session_id, email, language,
+                    paid, conversation, report_data, phase, status, created_at)
+                   VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
                 (
                     assess_id,
-                    data["payment_intent_id"],
+                    data["stripe_session_id"],
                     data["email"],
-                    data.get("session_id", ""),
                     data["lang"],
-                    data["status"],
+                    data.get("paid", False),
                     json.dumps(data["turns"]),
-                    data["turn_count"],
                     json.dumps(data["result"]) if data.get("result") else None,
-                    data.get("report_path"),
+                    data.get("phase", 1),
+                    data["status"],
                     data["created_at"],
                 ),
             )
@@ -85,29 +96,122 @@ def save_assessment(assess_id, data):
 
 
 def get_assessment(assess_id):
-    """Returns full session dict, or None."""
+    """Returns session dict with app-friendly keys, or None."""
+    if not _is_valid_uuid(assess_id):
+        return None
     if _has_db():
         with get_cursor() as cur:
             cur.execute(
-                """SELECT assess_id, payment_intent_id, email, session_id, lang,
-                          status, turns, turn_count, result, report_path,
-                          payment_confirmed, created_at
-                   FROM bot_assessments WHERE assess_id = %s""",
+                """SELECT id, stripe_session_id, email, language,
+                          paid, conversation, report_data, phase, status,
+                          created_at, completed_at
+                   FROM bot_assessments WHERE id = %s""",
                 (assess_id,),
             )
             row = cur.fetchone()
-            if row:
-                return dict(row)
-            return None
+            if not row:
+                return None
+            r = dict(row)
+            # Map DB columns to app-friendly keys
+            r["assess_id"] = str(r.pop("id"))
+            r["stripe_session_id"] = r["stripe_session_id"]
+            r["lang"] = r.pop("language")
+            r["turns"] = r.pop("conversation")
+            r["turn_count"] = len(r["turns"]) // 2 if r["turns"] else 0
+            r["result"] = r.pop("report_data")
+            r["payment_confirmed"] = r.pop("paid")
+            return r
     else:
         return _assessments.get(assess_id)
 
 
 def update_assessment(assess_id, **fields):
+    if not _is_valid_uuid(assess_id):
+        return
+    # Map app-level field names to DB column names
+    field_map = {
+        "status": "status",
+        "turns": "conversation",
+        "result": "report_data",
+        "payment_confirmed": "paid",
+        "phase": "phase",
+    }
     if _has_db():
-        allowed = {
-            "status", "turns", "turn_count", "result", "report_path", "payment_confirmed",
-        }
+        sets = []
+        vals = []
+        for k, v in fields.items():
+            col = field_map.get(k)
+            if not col:
+                continue
+            sets.append(f"{col} = %s")
+            if k in ("turns", "result"):
+                vals.append(json.dumps(v) if v is not None else None)
+            else:
+                vals.append(v)
+        # Auto-set completed_at when status becomes 'completed'
+        if fields.get("status") == "completed":
+            sets.append("completed_at = now()")
+        if not sets:
+            return
+        vals.append(assess_id)
+        with get_cursor() as cur:
+            cur.execute(
+                f"UPDATE bot_assessments SET {', '.join(sets)} WHERE id = %s",
+                vals,
+            )
+    else:
+        session = _assessments.get(assess_id)
+        if session:
+            session.update(fields)
+
+
+# ═══════════════════════════════════════════════════════════════════
+# Free Bot Conversations (free 5-min chatbot)
+# ═══════════════════════════════════════════════════════════════════
+
+_free_bots = {}
+
+
+def save_free_bot(bot_id, data):
+    if _has_db():
+        with get_cursor() as cur:
+            cur.execute(
+                """INSERT INTO free_bot_sessions
+                   (bot_id, session_id, lang, status, turns, turn_count, result, ip, created_at)
+                   VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)""",
+                (
+                    bot_id,
+                    data.get("session_id", ""),
+                    data["lang"],
+                    data["status"],
+                    json.dumps(data["turns"]),
+                    data["turn_count"],
+                    json.dumps(data["result"]) if data.get("result") else None,
+                    data.get("ip", ""),
+                    data["created_at"],
+                ),
+            )
+    else:
+        _free_bots[bot_id] = data
+
+
+def get_free_bot(bot_id):
+    if _has_db():
+        with get_cursor() as cur:
+            cur.execute(
+                """SELECT bot_id, session_id, lang, status, turns, turn_count, result, ip, created_at
+                   FROM free_bot_sessions WHERE bot_id = %s""",
+                (bot_id,),
+            )
+            row = cur.fetchone()
+            return dict(row) if row else None
+    else:
+        return _free_bots.get(bot_id)
+
+
+def update_free_bot(bot_id, **fields):
+    if _has_db():
+        allowed = {"status", "turns", "turn_count", "result", "email"}
         sets = []
         vals = []
         for k, v in fields.items():
@@ -120,30 +224,49 @@ def update_assessment(assess_id, **fields):
                 vals.append(v)
         if not sets:
             return
-        vals.append(assess_id)
+        vals.append(bot_id)
         with get_cursor() as cur:
             cur.execute(
-                f"UPDATE bot_assessments SET {', '.join(sets)} WHERE assess_id = %s",
+                f"UPDATE free_bot_sessions SET {', '.join(sets)} WHERE bot_id = %s",
                 vals,
             )
     else:
-        session = _assessments.get(assess_id)
+        session = _free_bots.get(bot_id)
         if session:
             session.update(fields)
 
 
-def find_assessment_by_payment(payment_intent_id):
-    """Find assessment by Stripe PaymentIntent ID (for webhook)."""
+def count_free_bot_by_ip(ip, since_iso):
+    """Count free bot sessions from an IP since a timestamp (rate limiting)."""
     if _has_db():
         with get_cursor() as cur:
             cur.execute(
-                "SELECT assess_id FROM bot_assessments WHERE payment_intent_id = %s",
-                (payment_intent_id,),
+                """SELECT COUNT(*) as cnt FROM free_bot_sessions
+                   WHERE ip = %s AND created_at > %s""",
+                (ip, since_iso),
+            )
+            return cur.fetchone()["cnt"]
+    else:
+        from datetime import datetime, timezone
+        cutoff = datetime.fromisoformat(since_iso)
+        return sum(
+            1 for s in _free_bots.values()
+            if s.get("ip") == ip and datetime.fromisoformat(s["created_at"]) > cutoff
+        )
+
+
+def find_assessment_by_payment(stripe_session_id):
+    """Find assessment by Stripe session ID (for webhook)."""
+    if _has_db():
+        with get_cursor() as cur:
+            cur.execute(
+                "SELECT id FROM bot_assessments WHERE stripe_session_id = %s",
+                (stripe_session_id,),
             )
             row = cur.fetchone()
-            return row["assess_id"] if row else None
+            return str(row["id"]) if row else None
     else:
         for aid, session in _assessments.items():
-            if session.get("payment_intent_id") == payment_intent_id:
+            if session.get("stripe_session_id") == stripe_session_id:
                 return aid
         return None

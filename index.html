@@ -12,11 +12,16 @@
 <meta property="og:url" content="https://www.lingograde.com/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LingoGrade — Professional Language Assessment">
+<meta name="twitter:description" content="Know exactly where you stand. Professional CEFR assessment with actionable feedback and an 8-week learning plan.">
 <meta name="twitter:image" content="https://www.lingograde.com/og-logo-v2.png">
+<meta property="og:locale" content="en_US">
 <link rel="canonical" href="https://www.lingograde.com/">
+<link rel="alternate" hreflang="en" href="https://www.lingograde.com/">
+<link rel="alternate" hreflang="x-default" href="https://www.lingograde.com/">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <!-- TrustBox script -->
-<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<script type="text/javascript" src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
 <!-- End TrustBox script -->
 <script type="application/ld+json">
 {
@@ -28,7 +33,9 @@
       "url": "https://www.lingograde.com",
       "logo": "https://www.lingograde.com/logo.png",
       "description": "Professional CEFR language assessment with actionable feedback, personalized homework, and 8-week learning plans.",
-      "sameAs": [],
+      "sameAs": [
+        "https://www.trustpilot.com/review/lingograde.com"
+      ],
       "contactPoint": {
         "@type": "ContactPoint",
         "email": "info@lingograde.com",
@@ -77,10 +84,13 @@
 }
 </script>
 <link rel="icon" type="image/webp" href="/assets/mascot/marco-face-grad-v2.webp?v=3">
+<link rel="apple-touch-icon" href="/assets/mascot/marco-face-grad-v2.png">
+<link rel="manifest" href="/manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="assets/mascot/marco-hero.webp?v=3" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
 <style>
 :root {
   --ink: #1C1C1C;
@@ -182,7 +192,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .pricing-card { border-radius: 16px; border: 2px solid var(--border); padding: 36px 32px; position: relative; transition: border-color 0.2s; }
 .pricing-card:hover { border-color: var(--accent); }
 .pricing-card.featured { border-color: var(--accent); background: linear-gradient(180deg, var(--accent-bg) 0%, var(--cream) 60%); }
-.pricing-card.featured::before { content: 'MOST CHOSEN'; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); padding: 4px 16px; background: var(--accent); color: white; border-radius: 100px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.06em; }
+.pricing-card.featured::before { content: none; }
 .pricing-card.premium { border-color: var(--warn); background: linear-gradient(180deg, #FFF8F0 0%, var(--cream) 60%); }
 .pricing-card.premium:hover { border-color: #D35400; }
 .pricing-card.premium::before { content: 'MOST THOROUGH'; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); padding: 4px 16px; background: var(--warn); color: white; border-radius: 100px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.06em; }
@@ -224,11 +234,14 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .subscription-features li { font-size: 0.9375rem; color: var(--ink-soft); padding: 8px 0 8px 28px; position: relative; }
 .subscription-features li::before { content: ''; position: absolute; left: 0; top: 14px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 
+/* ── Accessibility ── */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
 /* ── CEFR Explainer ── */
 .cefr-bar { display: flex; gap: 0; margin-top: 32px; border-radius: 10px; overflow: hidden; }
 .cefr-level { flex: 1; padding: 16px 12px; text-align: center; color: white; }
 .cefr-level h4 { font-size: 1.125rem; font-weight: 700; margin-bottom: 2px; }
-.cefr-level p { font-size: 0.6875rem; opacity: 0.9; }
+.cefr-level p { font-size: 0.6875rem; }
 
 /* ── Partners ── */
 .partner-card { background: var(--accent-bg); border-radius: 16px; padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 40px; }
@@ -350,6 +363,8 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .flashcard-loss { margin-top: 24px; padding: 16px 20px; background: #FFF8F0; border-left: 3px solid var(--warn); border-radius: 0 8px 8px 0; font-size: 0.875rem; color: var(--ink-soft); line-height: 1.6; font-style: italic; }
 .flashcard-visual { text-align: center; }
 .flashcard-visual img { max-width: 340px; width: 100%; height: auto; }
+.testimonial-avatar { width:40px;height:40px;border-radius:50%;background:var(--navy,#1A3A5C);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:0.8125rem;font-weight:700;margin-right:8px;flex-shrink:0; }
+.testimonial-meta { display:flex;align-items:center;margin-top:12px; }
 </style>
 <script src="/js/cookie-consent.js"></script>
 </head>
@@ -364,7 +379,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       <span></span><span></span><span></span>
     </button>
     <div class="nav-menu">
-      <a href="index.html" style="color:var(--accent);font-weight:700;">Individual</a>
+      <a href="index.html" class="nav-active">Individual</a>
       <a href="kids.html">Kids</a>
       <a href="corporate.html">Corporate</a>
       <a href="partners.html">Partners</a>
@@ -381,34 +396,34 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   <div class="hero-inner">
     <div class="hero-badge">Professional CEFR Language Assessment</div>
     <h1>Most people have no idea what level they <em>actually speak at.</em></h1>
-    <p>Without a clear starting point, every lesson is a shot in the dark. LingoGrade listens to how you really speak — the mistakes you repeat, the patterns you avoid — and shows you exactly what to work on next.</p>
-    <p style="font-size:1.15rem;color:#555;margin-top:12px;font-style:italic;">Would it be a bad idea to find out where you actually stand?</p>
-    <div style="display:inline-flex;align-items:center;gap:12px;background:transparent;border:1px solid rgba(37,99,171,0.15);border-radius:12px;padding:12px 24px;margin:0 auto 28px;">
-      <img src="assets/mascot/marco-logo-book-wave.webp?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" width="160" height="160" style="width:160px;height:auto;object-fit:contain;display:none;background:transparent;" onload="this.style.display='block'">
-      <span style="font-size:0.95rem;color:var(--ink-soft);font-weight:500;">Marco says: <em style="color:var(--accent);font-style:normal;font-weight:600;">"Your next level is closer than you think."</em></span>
+    <p>Without a clear starting point, every lesson is a shot in the dark. LingoGrade listens to how you really speak — the patterns you repeat, the habits you avoid — and shows you exactly what to work on next.</p>
+    <p class="mt-12 italic" style="font-size:1.15rem;color:#555;" >Would it be a bad idea to find out where you actually stand?</p>
+    <div style="display:inline-flex;align-items:center;gap:12px;border:1px solid rgba(37,99,171,0.15);border-radius:12px;padding:12px 24px;margin:0 auto 28px;" >
+      <img src="assets/mascot/marco-logo-book-wave.webp?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" width="160" height="160" onload="this.style.display='block'" style="width:160px;height:auto;object-fit:contain;display:none;">
+      <span class="c-ink-soft" style="font-size:0.95rem;font-weight:500;">Marco says: <em class="fw-600 c-accent" style="font-style:normal;">"Your next level is closer than you think."</em></span>
     </div>
     <div class="hero-actions">
       <a href="#pricing" class="btn-primary">See Where I Actually Stand</a>
-      <a href="#free-analysis" class="btn-secondary" style="background:var(--success-bg);border-color:var(--success);color:var(--success);">Try Free 5-Min Analysis</a>
+      <a href="free-bot.html" class="btn-secondary c-success" style="background:var(--success-bg);border-;" >Try Free 5-Min Conversation</a>
       <a href="#how-it-works" class="btn-secondary">How It Works</a>
     </div>
-    <div class="hero-trust" style="margin-top:32px;">
+    <div class="hero-trust mt-32" >
       <strong>Internationally recognized standard</strong> — the same CEFR framework used by Goethe-Institut, telc, Cambridge, and every major European employer.
     </div>
-    <div class="flex-gap-lg" style="margin-top:24px;justify-content:center;flex-wrap:wrap;">
-      <div style="text-align:center;">
-        <div style="font-family:var(--font-display);font-size:1.8rem;color:var(--accent);">15 min</div>
-        <div style="font-size:0.8rem;color:var(--ink-light);">to find out where you really stand</div>
+    <div class="flex-gap-lg mt-24" style="justify-content:center;flex-wrap:wrap;">
+      <div class="text-center">
+        <div class="hero-stat-big">15 min</div>
+        <div class="subcaption">to find out where you really stand</div>
       </div>
-      <div style="width:1px;background:var(--border);"></div>
-      <div style="text-align:center;">
-        <div style="font-family:var(--font-display);font-size:1.8rem;color:var(--accent);">1h</div>
-        <div style="font-size:0.8rem;color:var(--ink-light);">report in your inbox</div>
+      <div class="hero-stat-divider"></div>
+      <div class="text-center">
+        <div class="hero-stat-big">1h</div>
+        <div class="subcaption">report in your inbox</div>
       </div>
-      <div style="width:1px;background:var(--border);"></div>
-      <div style="text-align:center;">
-        <div style="font-family:var(--font-display);font-size:1.8rem;color:var(--accent);">12 languages</div>
-        <div style="font-size:0.8rem;color:var(--ink-light);">assessed by a certified professional</div>
+      <div class="hero-stat-divider"></div>
+      <div class="text-center">
+        <div class="hero-stat-big">12 languages</div>
+        <div class="subcaption">assessed by a certified professional</div>
       </div>
     </div>
   </div>
@@ -416,27 +431,27 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
 <!-- Speaking differentiator -->
 <section class="section section-alt">
-  <div class="section-inner" style="max-width:860px;margin:0 auto;">
+  <div class="section-inner mx-auto mw-860" >
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="partner-card">
       <div>
         <div class="section-label">What makes LingoGrade different</div>
         <h2 class="section-title">The part of language learning everyone ignores — until now.</h2>
-        <p class="section-desc" style="margin-bottom:24px;">Most courses improve your reading and grammar. Apps gamify vocabulary. Textbooks drill conjugations. None of them fix how you actually speak.</p>
-        <p style="font-size:1rem;color:var(--ink-soft);line-height:1.7;margin-bottom:24px;">LingoGrade assesses your real spoken language — in a natural conversation, under normal conditions. We identify the precise structural patterns in your speech, explain why they keep happening, and build a targeted plan around those exact issues.</p>
-        <p style="font-size:1rem;color:var(--ink);font-weight:600;line-height:1.7;">Not a generic curriculum. Your glitches. Your plan. Your next level.</p>
+        <p class="section-desc mb-24" >Most courses improve your reading and grammar. Apps gamify vocabulary. Textbooks drill conjugations. None of them fix how you actually speak.</p>
+        <p class="body-text mb-24">LingoGrade assesses your real spoken language — in a natural conversation, under normal conditions. We identify the precise structural patterns in your speech, explain why they keep happening, and build a targeted plan around those exact issues.</p>
+        <p class="body-text--bold">Not a generic curriculum. Your glitches. Your plan. Your next level.</p>
       </div>
-      <div style="display:flex;flex-direction:column;gap:16px;">
-        <div style="padding:20px 24px;border-radius:12px;background:var(--cream);border:1.5px solid var(--border);">
-          <div style="font-weight:600;color:var(--ink);margin-bottom:6px;">Every app and textbook</div>
-          <div style="font-size:0.875rem;color:var(--ink-light);">Reading, grammar, vocabulary — but never your actual speaking.</div>
+      <div class="flex-col gap-16">
+        <div class="compare-card">
+          <div class="compare-card-title">Every app and textbook</div>
+          <div class="compare-card-desc">Reading, grammar, vocabulary — but never your actual speaking.</div>
         </div>
-        <div style="padding:20px 24px;border-radius:12px;background:var(--accent-bg);border:1.5px solid var(--accent);">
-          <div style="font-weight:600;color:var(--accent);margin-bottom:6px;">LingoGrade</div>
-          <div style="font-size:0.875rem;color:var(--ink-soft);">Real conversation assessment. Precise pattern analysis. Bespoke improvement plan. Delivered in 1 hour.</div>
+        <div class="compare-card compare-card--accent">
+          <div class="compare-card-title">LingoGrade</div>
+          <div class="fs-body c-ink-soft">Real conversation assessment. Precise pattern analysis. Personalised improvement plan. Delivered in 1 hour.</div>
         </div>
-        <div style="padding:20px 24px;border-radius:12px;background:var(--cream);border:1.5px solid var(--border);">
-          <div style="font-weight:600;color:var(--ink);margin-bottom:6px;">Official exams (Goethe, telc, Cambridge)</div>
-          <div style="font-size:0.875rem;color:var(--ink-light);">A certificate and a pass/fail. Zero feedback on what to improve.</div>
+        <div class="compare-card">
+          <div class="compare-card-title">Official exams (Goethe, telc, Cambridge)</div>
+          <div class="compare-card-desc">A certificate and a pass/fail. Zero feedback on what to improve.</div>
         </div>
       </div>
     </div>
@@ -447,33 +462,33 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
 <!-- Speed comparison -->
 <section class="section" style="padding:36px 20px;background:#fff;">
-  <div class="section-inner" style="max-width:760px;margin:0 auto;">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" class="partner-card">
-      <div style="padding:24px;border-radius:12px;background:#f9fafb;border:1.5px solid #e5e7eb;">
-        <div style="font-size:0.7rem;font-weight:700;color:#9ca3af;letter-spacing:0.06em;margin-bottom:10px;text-transform:uppercase;">Official Exams (Goethe-Institut, telc, Cambridge)</div>
-        <div style="font-size:2.2rem;font-weight:800;color:#d1d5db;line-height:1;margin-bottom:10px;">1–2 weeks</div>
-        <div style="font-size:0.875rem;color:#9ca3af;line-height:1.6;">Certificate issued. Pass or fail. No explanation of what went wrong or how to improve.</div>
+  <div class="section-inner mx-auto mw-760" >
+    <div class="grid-2 gap-16 partner-card">
+      <div class="speed-card speed-card--muted">
+        <div class="speed-label speed-label--muted">Official Exams (Goethe-Institut, telc, Cambridge)</div>
+        <div class="speed-value speed-value--muted">1–2 weeks</div>
+        <div class="speed-desc speed-desc--muted">Certificate issued. Pass or fail. No roadmap for what to focus on next or how to improve.</div>
       </div>
-      <div style="padding:24px;border-radius:12px;background:var(--accent-bg);border:1.5px solid var(--accent);">
-        <div style="font-size:0.7rem;font-weight:700;color:var(--accent);letter-spacing:0.06em;margin-bottom:10px;text-transform:uppercase;">LingoGrade</div>
-        <div style="font-size:2.2rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:10px;">1 hour</div>
-        <div style="font-size:0.875rem;color:var(--ink-soft);line-height:1.6;">Full PDF report. Precise CEFR level, speaking patterns explained, targeted solutions, and a personalised improvement plan.</div>
+      <div class="speed-card speed-card--accent">
+        <div class="speed-label speed-label--accent">LingoGrade</div>
+        <div class="speed-value speed-value--accent">1 hour</div>
+        <div class="speed-desc speed-desc--accent">Full PDF report. Precise CEFR level, speaking patterns explained, targeted solutions, and a personalized improvement plan.</div>
       </div>
     </div>
-    <p style="text-align:center;font-size:0.8rem;color:#9ca3af;margin-top:14px;line-height:1.6;">Official exams certify your level. LingoGrade tells you exactly what is holding you back — and how to fix it. &nbsp;<a href="#languages" style="color:var(--accent);text-decoration:none;font-weight:600;">See sample reports in 12 languages &rarr;</a></p>
+    <p class="text-center lh-16 fs-xs" style="color:#9ca3af;margin-top:14px;" >Official exams certify your level. LingoGrade tells you exactly what is holding you back — and how to fix it. &nbsp;<a class="fw-600 c-accent no-underline" href="#languages" >See sample reports in 12 languages &rarr;</a></p>
   </div>
 </section>
 
 <!-- Language Assessment Grid -->
 <section class="section" id="languages" style="padding:64px 32px;">
-  <div class="section-inner" style="text-align:center;max-width:960px;margin:0 auto;">
+  <div class="section-inner text-center mx-auto mw-960" >
     <div class="section-label">Available Languages</div>
     <h2 class="section-title">12 languages assessed. Reports in 25+ native languages.</h2>
-    <p class="section-desc" style="margin:0 auto 24px;">Every report is delivered bilingually — the assessed language plus your native language. Choose a language below to preview a real sample report.</p>
+    <p class="section-desc mx-auto mb-24">Every report is delivered bilingually — the assessed language plus your native language. Choose a language below to preview a real sample report.</p>
     <!-- Native Language Selector -->
     <div style="margin:0 auto 32px;max-width:340px;">
-      <label for="nativeLangSelect" style="display:block;font-size:0.8rem;color:var(--ink-light);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.05em;font-weight:600;">Your native language</label>
-      <select id="nativeLangSelect" onchange="translateLanguages(this.value)" style="width:100%;padding:10px 14px;border-radius:10px;border:1.5px solid var(--border);font-size:1rem;color:var(--ink);background:var(--cream);cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 12 12%22><path d=%22M2 4l4 4 4-4%22 fill=%22none%22 stroke=%22%236b7280%22 stroke-width=%221.5%22/></svg>');background-repeat:no-repeat;background-position:right 14px center;">
+      <label class="fw-600 c-ink-light mb-6 fs-xs uppercase" for="nativeLangSelect" style="display:block;letter-spacing:0.05em;" >Your native language</label>
+      <select id="nativeLangSelect" onchange="translateLanguages(this.value)" class="styled-select">
         <option value="en">&#127468;&#127463; English</option>
         <option value="es">&#127466;&#127480; Espa&ntilde;ol</option>
         <option value="zh">&#127464;&#127475; &#20013;&#25991;</option>
@@ -483,99 +498,99 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         <option value="tr">&#127481;&#127479; T&uuml;rk&ccedil;e</option>
         <option value="uk">&#127482;&#127462; &#1059;&#1082;&#1088;&#1072;&#1111;&#1085;&#1089;&#1100;&#1082;&#1072;</option>
       </select>
-      <p style="font-size:0.7rem;color:var(--ink-light);margin-top:6px;">8 display languages shown. Reports available in 25+ native languages.</p>
+      <p class="c-ink-light mt-6 fs-2xs" >8 display languages shown. Reports available in 25+ native languages.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin-bottom:32px;">
-      <a href="samples/sample_german_b2_en.pdf" data-sample="sample_german_b2" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
-        <div style="font-size:2rem;margin-bottom:6px;">&#127465;&#127466;</div>
-        <div data-lang="de" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">German</div>
-        <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">B2 Sample</div>
+    <div class="mb-32" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;">
+      <a href="samples/sample_german_b2_en.pdf" data-sample="sample_german_b2" target="_blank" class="lang-card" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+        <div class="emoji-lg">&#127465;&#127466;</div>
+        <div data-lang="de" class="title-sm">German</div>
+        <div class="caption mt-12">B2 Sample</div>
       </a>
-      <a href="samples/sample_english_b2_en.pdf" data-sample="sample_english_b2" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
-        <div style="font-size:2rem;margin-bottom:6px;">&#127468;&#127463;</div>
-        <div data-lang="en" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">English</div>
-        <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">B2 Sample</div>
+      <a href="samples/sample_english_b2_en.pdf" data-sample="sample_english_b2" target="_blank" class="lang-card" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+        <div class="emoji-lg">&#127468;&#127463;</div>
+        <div data-lang="en" class="title-sm">English</div>
+        <div class="caption mt-12">B2 Sample</div>
       </a>
-      <a href="samples/sample_french_b1_en.pdf" data-sample="sample_french_b1" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
-        <div style="font-size:2rem;margin-bottom:6px;">&#127467;&#127479;</div>
-        <div data-lang="fr" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">French</div>
-        <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">B1 Sample</div>
+      <a href="samples/sample_french_b1_en.pdf" data-sample="sample_french_b1" target="_blank" class="lang-card" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+        <div class="emoji-lg">&#127467;&#127479;</div>
+        <div data-lang="fr" class="title-sm">French</div>
+        <div class="caption mt-12">B1 Sample</div>
       </a>
-      <a href="samples/sample_spanish_b2_en.pdf" data-sample="sample_spanish_b2" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
-        <div style="font-size:2rem;margin-bottom:6px;">&#127466;&#127480;</div>
-        <div data-lang="es" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Spanish</div>
-        <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">B2 Sample</div>
+      <a href="samples/sample_spanish_b2_en.pdf" data-sample="sample_spanish_b2" target="_blank" class="lang-card" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+        <div class="emoji-lg">&#127466;&#127480;</div>
+        <div data-lang="es" class="title-sm">Spanish</div>
+        <div class="caption mt-12">B2 Sample</div>
       </a>
-      <a href="samples/sample_italian_b1_en.pdf" data-sample="sample_italian_b1" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
-        <div style="font-size:2rem;margin-bottom:6px;">&#127470;&#127481;</div>
-        <div data-lang="it" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Italian</div>
-        <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">B1 Sample</div>
+      <a href="samples/sample_italian_b1_en.pdf" data-sample="sample_italian_b1" target="_blank" class="lang-card" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+        <div class="emoji-lg">&#127470;&#127481;</div>
+        <div data-lang="it" class="title-sm">Italian</div>
+        <div class="caption mt-12">B1 Sample</div>
       </a>
-      <a href="samples/sample_portuguese_b1_en.pdf" data-sample="sample_portuguese_b1" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
-        <div style="font-size:2rem;margin-bottom:6px;">&#127477;&#127481;</div>
-        <div data-lang="pt" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Portuguese</div>
-        <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">B1 Sample</div>
+      <a href="samples/sample_portuguese_b1_en.pdf" data-sample="sample_portuguese_b1" target="_blank" class="lang-card" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+        <div class="emoji-lg">&#127477;&#127481;</div>
+        <div data-lang="pt" class="title-sm">Portuguese</div>
+        <div class="caption mt-12">B1 Sample</div>
       </a>
-      <a href="samples/sample_russian_a2_en.pdf" data-sample="sample_russian_a2" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
-        <div style="font-size:2rem;margin-bottom:6px;">&#127479;&#127482;</div>
-        <div data-lang="ru" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Russian</div>
-        <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">A2 Sample</div>
+      <a href="samples/sample_russian_a2_en.pdf" data-sample="sample_russian_a2" target="_blank" class="lang-card" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+        <div class="emoji-lg">&#127479;&#127482;</div>
+        <div data-lang="ru" class="title-sm">Russian</div>
+        <div class="caption mt-12">A2 Sample</div>
       </a>
-      <a href="samples/sample_serbian_a2_en.pdf" data-sample="sample_serbian_a2" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
-        <div style="font-size:2rem;margin-bottom:6px;">&#127479;&#127480;</div>
-        <div data-lang="sr" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Serbian</div>
-        <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">A2 Sample</div>
+      <a href="samples/sample_serbian_a2_en.pdf" data-sample="sample_serbian_a2" target="_blank" class="lang-card" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+        <div class="emoji-lg">&#127479;&#127480;</div>
+        <div data-lang="sr" class="title-sm">Serbian</div>
+        <div class="caption mt-12">A2 Sample</div>
       </a>
-      <a href="samples/sample_croatian_a2_en.pdf" data-sample="sample_croatian_a2" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
-        <div style="font-size:2rem;margin-bottom:6px;">&#127469;&#127479;</div>
-        <div data-lang="hr" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Croatian</div>
-        <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">A2 Sample</div>
+      <a href="samples/sample_croatian_a2_en.pdf" data-sample="sample_croatian_a2" target="_blank" class="lang-card" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+        <div class="emoji-lg">&#127469;&#127479;</div>
+        <div data-lang="hr" class="title-sm">Croatian</div>
+        <div class="caption mt-12">A2 Sample</div>
       </a>
-      <a href="samples/sample_romanian_a2_en.pdf" data-sample="sample_romanian_a2" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
-        <div style="font-size:2rem;margin-bottom:6px;">&#127479;&#127476;</div>
-        <div data-lang="ro" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Romanian</div>
-        <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">A2 Sample</div>
+      <a href="samples/sample_romanian_a2_en.pdf" data-sample="sample_romanian_a2" target="_blank" class="lang-card" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+        <div class="emoji-lg">&#127479;&#127476;</div>
+        <div data-lang="ro" class="title-sm">Romanian</div>
+        <div class="caption mt-12">A2 Sample</div>
       </a>
-      <a href="samples/sample_polish_a2_en.pdf" data-sample="sample_polish_a2" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
-        <div style="font-size:2rem;margin-bottom:6px;">&#127477;&#127473;</div>
-        <div data-lang="pl" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Polish</div>
-        <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">A2 Sample</div>
+      <a href="samples/sample_polish_a2_en.pdf" data-sample="sample_polish_a2" target="_blank" class="lang-card" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+        <div class="emoji-lg">&#127477;&#127473;</div>
+        <div data-lang="pl" class="title-sm">Polish</div>
+        <div class="caption mt-12">A2 Sample</div>
       </a>
-      <a href="samples/sample_bulgarian_a2_en.pdf" data-sample="sample_bulgarian_a2" target="_blank" style="display:flex;flex-direction:column;align-items:center;padding:20px 12px;border-radius:12px;border:1.5px solid var(--border);text-decoration:none;transition:all 0.15s;background:var(--cream);" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
-        <div style="font-size:2rem;margin-bottom:6px;">&#127463;&#127468;</div>
-        <div data-lang="bg" style="font-weight:600;color:var(--ink);font-size:0.9375rem;">Bulgarian</div>
-        <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">A2 Sample</div>
+      <a href="samples/sample_bulgarian_a2_en.pdf" data-sample="sample_bulgarian_a2" target="_blank" class="lang-card" onmouseover="this.style.borderColor='var(--accent)';this.style.boxShadow='0 2px 12px rgba(37,99,171,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+        <div class="emoji-lg">&#127463;&#127468;</div>
+        <div data-lang="bg" class="title-sm">Bulgarian</div>
+        <div class="caption mt-12">A2 Sample</div>
       </a>
     </div>
-    <p style="font-size:0.85rem;color:var(--ink-light);line-height:1.6;">Each sample is a real LingoGrade report. Click any language to download the PDF.</p>
+    <p class="lh-16 c-ink-light fs-085" >Each sample is a real LingoGrade report. Click any language to download the PDF.</p>
   </div>
 </section>
 
 <!-- Pain section -->
 <section class="section section-alt">
-  <div class="section-inner" style="text-align:center;max-width:760px;margin:0 auto;">
-    <div class="section-label">The Problem</div>
-    <h2 class="section-title">You have been studying for years. But something is not adding up.</h2>
+  <div class="section-inner text-center mx-auto mw-760" >
+    <div class="section-label">The Pattern</div>
+    <h3 class="section-title">You have been studying for years. But something is not adding up.</h3>
     <p class="section-desc" style="margin:0 auto 40px;">You practice regularly. You take lessons. You watch videos in your target language. And yet — conversations still feel uncertain, job applications still feel risky, and you still cannot confidently say what level you actually are.</p>
-    <div class="grid-3col" style="gap:24px;margin-top:40px;">
-      <div style="padding:24px;border-radius:12px;border:1.5px solid var(--border);background:var(--cream);text-align:left;">
-        <div style="font-size:1.5rem;margin-bottom:12px;">&#128523;</div>
-        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;">You think you are B2</h3>
-        <p style="font-size:0.875rem;color:var(--ink-soft);line-height:1.6;">But your passive structures are B1. Your teacher has been politely avoiding the conversation.</p>
+    <div class="grid-3col gap-24 mt-40" >
+      <div class="info-card text-left" >
+        <div class="emoji-lg mb-12 fs-xl" >&#128523;</div>
+        <h3 class="fw-600 mb-8">You think you are B2</h3>
+        <p class="speed-desc speed-desc--accent">But your passive structures are B1. Your teacher has been politely avoiding the conversation.</p>
       </div>
-      <div style="padding:24px;border-radius:12px;border:1.5px solid var(--border);background:var(--cream);text-align:left;">
-        <div style="font-size:1.5rem;margin-bottom:12px;">&#128196;</div>
-        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;">You are preparing for an exam</h3>
-        <p style="font-size:0.875rem;color:var(--ink-soft);line-height:1.6;">But without knowing your real starting point, you are preparing for the wrong things and wasting weeks.</p>
+      <div class="info-card text-left" >
+        <div class="emoji-lg mb-12 fs-xl" >&#128196;</div>
+        <h3 class="fw-600 mb-8">You are preparing for an exam</h3>
+        <p class="speed-desc speed-desc--accent">But without knowing your real starting point, you might be focusing on areas that are not your real priority — and losing weeks.</p>
       </div>
-      <div style="padding:24px;border-radius:12px;border:1.5px solid var(--border);background:var(--cream);text-align:left;">
-        <div style="font-size:1.5rem;margin-bottom:12px;">&#128188;</div>
-        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;">You need to prove your level</h3>
-        <p style="font-size:0.875rem;color:var(--ink-soft);line-height:1.6;">For a job, a visa, a university application. You cannot afford to guess — and you cannot afford to be wrong.</p>
+      <div class="info-card text-left" >
+        <div class="emoji-lg mb-12 fs-xl" >&#128188;</div>
+        <h3 class="fw-600 mb-8">You need to prove your level</h3>
+        <p class="speed-desc speed-desc--accent">For a job, a visa, a university application. You need confidence in your result — not guesswork.</p>
       </div>
     </div>
-    <p style="margin-top:40px;font-size:1.0625rem;color:var(--ink);font-weight:500;">One 15-minute conversation changes all of this.</p>
-    <a href="#pricing" class="btn-primary" style="margin-top:20px;">Explore Assessment Options</a>
+    <p class="c-ink fs-md2 mt-40" style="font-weight:500;" >One 15-minute conversation changes all of this.</p>
+    <a href="#pricing" class="btn-primary mt-20" >Explore Assessment Options</a>
   </div>
 </section>
 
@@ -583,17 +598,17 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <section class="section" id="how-it-works">
   <div class="section-inner">
     <div class="section-label">How It Works</div>
-    <h2 class="section-title">Four steps to complete clarity</h2>
+    <h3 class="section-title">Four steps to complete clarity</h3>
     <p class="section-desc">No test anxiety. No multiple choice. No preparation. Just a natural conversation that reveals exactly where your skills are — and a precise plan to move them forward.</p>
     <div class="steps">
       <div class="step">
-        <img src="assets/mascot/marco-reading.webp" alt="Marco reading" class="step-icon" width="120" height="120" style="transform:scale(1.5);" loading="lazy">
+        <img src="assets/mascot/marco-reading.webp?v=3" alt="Marco reading" class="step-icon" width="120" height="120" style="transform:scale(1.5);" loading="lazy">
         <div class="step-num">1</div>
         <h3>Choose Your Assessment</h3>
         <p>DeepDive Assessment for the most thorough diagnostic available. Full Assessment for a complete diagnostic with homework and an 8-week plan. Quick Assessment for a focused baseline. All include your full CEFR report.</p>
       </div>
       <div class="step">
-        <img src="assets/mascot/marco-alarm.webp" alt="Marco with alarm clock" class="step-icon" width="120" height="120" style="background:transparent;" loading="lazy">
+        <img src="assets/mascot/marco-alarm.webp" alt="Marco with alarm clock" class="step-icon" width="120" height="120"  loading="lazy">
         <div class="step-num">2</div>
         <h3>Book a Slot</h3>
         <p>Select a time that works for you and pay securely online. Availability is updated in real time. You will receive a confirmation immediately.</p>
@@ -605,7 +620,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         <p>Join a relaxed video call. Just talk naturally — no scripts, no multiple choice, no stress. Our assessor adapts to your level and draws out your real abilities.</p>
       </div>
       <div class="step">
-        <img src="assets/mascot/marco-thumbsup.webp" alt="Marco thumbs up" class="step-icon" width="120" height="120" style="background:transparent;transform:scale(1.0);" loading="lazy">
+        <img src="assets/mascot/marco-thumbsup.webp" alt="Marco thumbs up" class="step-icon" width="120" height="120" loading="lazy" style="transform:scale(1.0);">
         <div class="step-num">4</div>
         <h3>Receive Your Report</h3>
         <p>Within 1 hour, a professional PDF lands in your inbox. Your CEFR level, your key patterns explained, targeted solutions, and your next steps — precisely defined.</p>
@@ -618,7 +633,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <section class="section section-alt" id="what-you-get">
   <div class="section-inner">
     <div class="section-label">What You Get</div>
-    <h2 class="section-title">Not just a level. A complete picture.</h2>
+    <h3 class="section-title">Not just a level. A complete picture.</h3>
     <p class="section-desc">Most assessments tell you where you are. LingoGrade tells you where you are, why you are stuck, and exactly what to do next. Every report is structured into five evidence-based blocks.</p>
     <div class="blocks">
       <div class="block-card included">
@@ -639,14 +654,14 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         <p>Three targeted exercise types built around your specific weak points: structural writing, precision drills, and guided speaking practice. Ready to start the same day.</p>
       </div>
       <div class="block-card">
-        <span class="block-tag block-tag-e">Block E</span>
-        <h3>8-Week Learning Plan</h3>
-        <p>A week-by-week structured plan designed to move you to the next CEFR level. Each phase builds on the previous one with clear milestones and measurable progress.</p>
-      </div>
-      <div class="block-card">
         <span class="block-tag block-tag-d">Block D</span>
         <h3>Native Language Translation</h3>
         <p>Your complete report translated into your mother tongue. Essential for beginners and for anyone who wants to share their results with family, an employer, or a school.</p>
+      </div>
+      <div class="block-card">
+        <span class="block-tag block-tag-e">Block E</span>
+        <h3>8-Week Learning Plan</h3>
+        <p>A week-by-week structured plan designed to move you to the next CEFR level. Each phase builds on the previous one with clear milestones and measurable progress.</p>
       </div>
     </div>
   </div>
@@ -656,80 +671,80 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <section class="section">
   <div class="section-inner">
     <div class="section-label">CEFR Standard</div>
-    <h2 class="section-title">The international standard. Precisely applied.</h2>
+    <h3 class="section-title">The international standard. Precisely applied.</h3>
     <p class="section-desc">Your assessment uses the Common European Framework of Reference — the same standard recognized by universities, employers, and governments in over 40 countries. Your result is not an opinion. It is a calibrated professional judgment.</p>
     <div class="cefr-bar">
-      <div class="cefr-level" style="background:#6B8F71"><h3>A1</h3><p>Beginner</p></div>
-      <div class="cefr-level" style="background:#4D9B78"><h3>A2</h3><p>Elementary</p></div>
-      <div class="cefr-level" style="background:#3A7DB8"><h3>B1</h3><p>Intermediate</p></div>
-      <div class="cefr-level" style="background:#2563AB"><h3>B2</h3><p>Upper Int.</p></div>
-      <div class="cefr-level" style="background:#7B4F9E"><h3>C1</h3><p>Advanced</p></div>
-      <div class="cefr-level" style="background:#5A2D82"><h3>C2</h3><p>Mastery</p></div>
+      <div class="cefr-level" style="background:#4A6E4E"><h3>A1</h3><p>Beginner</p></div>
+      <div class="cefr-level" style="background:#2D7050"><h3>A2</h3><p>Elementary</p></div>
+      <div class="cefr-level" style="background:#1E5A90"><h3>B1</h3><p>Intermediate</p></div>
+      <div class="cefr-level" style="background:#1B4E8A"><h3>B2</h3><p>Upper Int.</p></div>
+      <div class="cefr-level" style="background:#5E3280"><h3>C1</h3><p>Advanced</p></div>
+      <div class="cefr-level" style="background:#451F68"><h3>C2</h3><p>Mastery</p></div>
     </div>
   </div>
 </section>
 
 <!-- Free 5-Min Bot Analysis -->
 <section class="section" id="free-analysis" style="padding:64px 32px;background:linear-gradient(180deg,#F0FFF4 0%,var(--cream) 100%);">
-  <div class="section-inner" style="text-align:center;max-width:800px;margin:0 auto;">
-    <div class="section-label" style="color:var(--success);">Free — No Sign-Up Needed</div>
-    <h2 class="section-title" style="margin-left:auto;margin-right:auto;">Curious where you stand? Talk to Marco for 5 minutes.</h2>
-    <p class="section-desc" style="margin:0 auto 32px;">Marco listens to how you use the language and gives you an instant snapshot of your approximate level — free, anonymous, no strings attached. If you want the full picture, the professional assessments below go deeper.</p>
+  <div class="section-inner text-center mx-auto mw-800" >
+    <div class="section-label c-success">Free — No Sign-Up Needed</div>
+    <h3 class="section-title mx-auto">Curious where you stand? Talk to Marco for 5 minutes.</h3>
+    <p class="section-desc mb-32 mx-auto" >Marco listens to how you use the language and gives you an instant snapshot of your approximate level — free, anonymous, no strings attached. If you want the full picture, the professional assessments below go deeper.</p>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;max-width:720px;margin:0 auto 36px;" class="partner-card">
-      <div style="padding:20px;border-radius:12px;border:1.5px solid rgba(39,174,96,0.3);background:var(--cream);text-align:center;">
-        <div style="font-family:var(--font-display);font-size:1.8rem;color:var(--success);">5 min</div>
-        <div style="font-size:0.8rem;color:var(--ink-light);">Quick conversation</div>
+    <div class="partner-card mw-720" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin:0 auto 36px;">
+      <div class="info-card text-center" style="border-color:rgba(39,174,96,0.3);">
+        <div class="hero-stat-big c-success" >5 min</div>
+        <div class="subcaption">Quick conversation</div>
       </div>
-      <div style="padding:20px;border-radius:12px;border:1.5px solid rgba(39,174,96,0.3);background:var(--cream);text-align:center;">
-        <div style="font-family:var(--font-display);font-size:1.8rem;color:var(--success);">Free</div>
-        <div style="font-size:0.8rem;color:var(--ink-light);">No payment, no sign-up</div>
+      <div class="info-card text-center" style="border-color:rgba(39,174,96,0.3);">
+        <div class="hero-stat-big c-success" >Free</div>
+        <div class="subcaption">No payment, no sign-up</div>
       </div>
-      <div style="padding:20px;border-radius:12px;border:1.5px solid rgba(39,174,96,0.3);background:var(--cream);text-align:center;">
-        <div style="font-family:var(--font-display);font-size:1.8rem;color:var(--success);">3 cards</div>
-        <div style="font-size:0.8rem;color:var(--ink-light);">Free flashcards generated</div>
+      <div class="info-card text-center" style="border-color:rgba(39,174,96,0.3);">
+        <div class="hero-stat-big c-success" >3 cards</div>
+        <div class="subcaption">Free flashcards generated</div>
       </div>
     </div>
 
-    <div style="display:inline-flex;align-items:center;gap:16px;background:var(--cream);border:2px solid var(--success);border-radius:16px;padding:20px 32px;margin-bottom:24px;">
-      <img src="assets/mascot/marco-chatbot-speech-bubble.webp?v=3" alt="Marco the owl chatbot" class="marco-img" width="64" height="64" style="width:64px;height:auto;background:transparent;" loading="lazy">
-      <div style="text-align:left;">
-        <div style="font-weight:600;color:var(--ink);font-size:1rem;">Marco is ready to chat</div>
-        <div style="font-size:0.875rem;color:var(--ink-soft);">28 languages supported. Just pick yours and start talking.</div>
+    <div class="mb-24 gap-16 bg-cream" style="display:inline-flex;align-items:center;border:2px solid var(--success);border-radius:16px;padding:20px 32px;" >
+      <img src="assets/mascot/marco-chatbot-speech-bubble.webp?v=3" alt="Marco the owl chatbot" class="marco-img" width="64" height="64" loading="lazy" style="width:64px;height:auto;">
+      <div class="text-left" >
+        <div class="fw-600 fs-base c-ink" >Marco is ready to chat</div>
+        <div class="fs-body c-ink-soft">Chats in 28 languages. Just pick yours and start talking.</div>
       </div>
     </div>
 
     <div>
-      <button onclick="var f=document.querySelector('#marco-fab');if(f)f.click();" class="btn-primary" style="background:var(--success);font-size:1.0625rem;padding:16px 40px;">Start Free Analysis with Marco</button>
-      <p style="font-size:0.8rem;color:var(--ink-light);margin-top:12px;">Not ready? No problem. Everything will be here whenever you are.</p>
+      <a href="free-bot.html" class="btn-primary no-underline fs-md2" style="background:var(--success);padding:16px 40px;" >Start Free Conversation with Marco</a>
+      <p class="subcaption mt-12">Not ready? Take your time. Everything will be here whenever you are.</p>
     </div>
 
-    <div style="margin-top:32px;padding:16px 24px;background:var(--accent-bg);border-radius:10px;max-width:600px;margin-left:auto;margin-right:auto;">
-      <p style="font-size:0.875rem;color:var(--ink-soft);margin:0;">Want more than a snapshot? The <strong>Bot Assessment</strong> below gives you a full written report for <span class="lg-price-inline" data-eur="49.95" data-usd="49.95" data-chf="49.95" data-gbp="49.95">&euro;49.95</span> — or book a <strong>human assessment</strong> for the deepest analysis available.</p>
+    <div class="mx-auto mt-32 bg-accent-bg" style="padding:16px 24px;border-radius:10px;max-width:600px;" >
+      <p class="fs-body c-ink-soft m-0" >Want more than a snapshot? The <strong>Bot Assessment</strong> below gives you a full written report for <span class="lg-price-inline" data-eur="49.95" data-usd="49.95" data-chf="49.95" data-gbp="49.95">&euro;49.95</span> — or book a <strong>human assessment</strong> for the deepest analysis available.</p>
     </div>
   </div>
 </section>
 
 <!-- Pricing -->
 <section class="section section-alt" id="pricing">
-  <div class="section-inner" style="text-align:center;">
+  <div class="section-inner text-center">
     <div class="section-label">Pricing</div>
-    <h2 class="section-title" style="margin-left:auto;margin-right:auto;">One conversation. Complete clarity.</h2>
-    <p class="section-desc" style="margin-left:auto;margin-right:auto;">All assessments include a professional bilingual PDF report delivered within 1 hour. No preparation needed — just show up and talk. <img src="assets/mascot/marco-alarm.webp?v=3" alt="Marco alarm" class="marco-icon" width="48" height="48" style="margin-left:6px;background:transparent;" loading="lazy"></p>
+    <h3 class="section-title mx-auto">One conversation. Complete clarity.</h3>
+    <p class="section-desc mx-auto">All assessments include a professional bilingual PDF report delivered within 1 hour. No preparation needed — just show up and talk. <img src="assets/mascot/marco-alarm.webp?v=3" alt="Marco alarm" class="marco-icon" width="48" height="48" loading="lazy" style="margin-left:6px;"></p>
 
-    <div style="max-width:720px;margin:0 auto 32px;text-align:center;padding:24px;background:#f8f9fa;border-radius:8px;">
-      <p style="font-size:1.05rem;color:#444;line-height:1.7;margin:0;">You are probably thinking this sounds too good to be true — or that it is just another online language test dressed up differently. That is a fair reaction. LingoGrade is not a test. There is no pass, no fail, no trick questions. It is a professional diagnostic conversation — and it ends with a clear picture of your level and what to work on next.</p>
+    <div class="text-center mw-720" style="margin:0 auto 32px;padding:24px;background:#f8f9fa;border-radius:8px;">
+      <p class="lh-17 m-0" style="font-size:1.05rem;color:#444;" >You are probably thinking this sounds too good to be true — or that it is just another online language test dressed up differently. That is a fair reaction. LingoGrade is not a test. There is no pass, no fail, no trick questions. It is a professional diagnostic conversation — and it ends with a clear picture of your level and what to work on next.</p>
     </div>
 
-    <div style="max-width:720px;margin:0 auto 40px;text-align:center;">
+    <div class="text-center mw-720" style="margin:0 auto 40px;">
       <p style="font-size:0.95rem;color:#777;">A Goethe-Institut exam costs &euro;250+, takes 4 hours, and delivers results in 2 weeks with zero feedback. LingoGrade: from &euro;89.95, 15 minutes, results in 1 hour, complete improvement plan included.</p>
-      <p style="font-size:0.9rem;color:#999;margin-top:8px;font-style:italic;">Would it be wrong to find out exactly where you stand before committing to months of study?</p>
     </div>
 
     <div class="pricing-grid" style="position:relative;">
       <!-- Marco pointing at the recommended card -->
-      <img src="assets/mascot/marco-thumbsup.webp?v=3" alt="Marco the owl pointing" width="100" height="100" style="position:absolute;top:-60px;right:-40px;width:100px;height:auto;z-index:10;pointer-events:none;display:none;background:transparent;" onload="this.style.display='block'" loading="lazy">
+      <img src="assets/mascot/marco-thumbsup.webp?v=3" alt="Marco the owl pointing" width="100" height="100" onload="this.style.display='block'" loading="lazy" style="position:absolute;top:-60px;right:-40px;width:100px;height:auto;z-index:10;pointer-events:none;display:none;">
       <div class="pricing-card premium">
+        <span class="sr-only">Most Thorough</span>
         <div class="pricing-name">DeepDive Assessment</div>
         <div class="pricing-duration">15 + 25 minutes (5-min break)</div>
         <div class="pricing-price" data-eur="249.95" data-usd="249.95" data-chf="249.95" data-gbp="249.95">&euro;249.95</div>
@@ -742,18 +757,19 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <li>Two sessions with a 5-minute break</li>
           <li>The deepest analysis of your spoken language</li>
         </ul>
-        <p style="font-size:0.85rem;color:var(--ink-soft);margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">
+        <p class="mt-12 c-ink-soft fs-085" style="padding-top:12px;border-top:1px solid var(--border);" >
           <strong>Recommended add-on:</strong> Homework programme — <span class="lg-price-inline" data-eur="29.95" data-usd="29.95" data-chf="29.95" data-gbp="29.95">&euro;29.95</span>
-          <span style="font-size:0.8rem;color:var(--ink-light);display:block;margin-top:4px;">Detailed correction report within 1 hour</span>
+          <span class="c-ink-light mt-4 fs-xs" style="display:block;" >Detailed correction report within 1 hour</span>
         </p>
-        <p style="font-size:0.8125rem;color:var(--success);font-weight:600;margin-top:12px;padding-top:10px;border-top:1px solid var(--border);">&#127873; Complete your assessment to unlock your free sticker pack</p>
+        <p class="helper-text c-success fw-600 mt-12" style="padding-top:10px;border-top:1px solid var(--border);">&#127873; Complete your assessment to unlock your free sticker pack</p>
         <a href="https://booking.lingograde.com/marco/deepdive-assessment" class="pricing-btn pricing-btn-premium" target="_blank">See the Full Picture &rarr;</a>
       </div>
       <div class="pricing-card featured">
+        <div class="fw-700 c-white tracking-wide" aria-label="Most chosen — selected by 7 in 10 first-time clients" style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 16px;background:var(--accent);border-radius:100px;font-size:0.6875rem;" >MOST CHOSEN</div>
         <div class="pricing-name">Full Assessment</div>
         <div class="pricing-duration">25-minute session</div>
         <div class="pricing-price" data-eur="129.95" data-usd="129.95" data-chf="129.95" data-gbp="129.95">&euro;129.95</div>
-        <div class="pricing-price-note">Complete assessment package</div>
+        <div class="pricing-price-note">Complete assessment package &middot; Chosen by 7 in 10 first-time clients</div>
         <ul class="pricing-features">
           <li>Extended CEFR analysis</li>
           <li>5 structural problems + 5 solutions</li>
@@ -762,7 +778,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <li>Sentence engine + mini block</li>
           <li>Bilingual report, 1-hour delivery</li>
         </ul>
-        <p style="font-size:0.8125rem;color:var(--success);font-weight:600;margin-top:12px;padding-top:10px;border-top:1px solid var(--border);">&#127873; Complete your assessment to unlock your free sticker pack</p>
+        <p class="helper-text c-success fw-600 mt-12" style="padding-top:10px;border-top:1px solid var(--border);">&#127873; Complete your assessment to unlock your free sticker pack</p>
         <a href="https://booking.lingograde.com/marco/full-assessment" class="pricing-btn pricing-btn-primary" target="_blank">See the Full Assessment &rarr;</a>
       </div>
       <div class="pricing-card">
@@ -782,48 +798,53 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         </ul>
         <a href="https://booking.lingograde.com/marco/quick-assessment" class="pricing-btn pricing-btn-secondary" target="_blank">See Where I Actually Stand &rarr;</a>
       </div>
-      <div class="pricing-card" style="border-color:var(--success);background:linear-gradient(180deg,var(--success-bg) 0%,var(--cream) 60%);position:relative;">
-        <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 16px;background:var(--success);color:white;border-radius:100px;font-size:0.6875rem;font-weight:700;letter-spacing:0.06em;">AI-POWERED</div>
+      <div class="pricing-card c-success" style="border-background:linear-gradient(180deg,var(--success-bg) 0%,var(--cream) 60%);position:relative;">
+        <div class="fw-700 c-white tracking-wide" style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 16px;background:var(--success);border-radius:100px;font-size:0.6875rem;" >AI-POWERED</div>
         <div class="pricing-name">Bot Assessment</div>
         <div class="pricing-duration">5-minute AI conversation</div>
-        <div class="pricing-price" data-eur="49.95" data-usd="49.95" data-chf="49.95" data-gbp="49.95" style="color:var(--success);">&euro;49.95</div>
+        <div class="pricing-price c-success" data-eur="49.95" data-usd="49.95" data-chf="49.95" data-gbp="49.95">&euro;49.95</div>
         <div class="pricing-price-note">Full written report, no booking needed</div>
         <ul class="pricing-features">
-          <li style="position:relative;padding-left:24px;"><span style="position:absolute;left:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--success);"></span>Approximate CEFR level</li>
-          <li style="position:relative;padding-left:24px;"><span style="position:absolute;left:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--success);"></span>Key speaking patterns identified</li>
-          <li style="position:relative;padding-left:24px;"><span style="position:absolute;left:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--success);"></span>3 personalised flashcards</li>
-          <li style="position:relative;padding-left:24px;"><span style="position:absolute;left:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--success);"></span>Delivered instantly via email</li>
-          <li style="position:relative;padding-left:24px;"><span style="position:absolute;left:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--success);"></span>28 languages supported</li>
+          <li class="dot-item"><span ></span>Approximate CEFR level</li>
+          <li class="dot-item"><span ></span>Key speaking patterns identified</li>
+          <li class="dot-item"><span ></span>3 personalized flashcards</li>
+          <li class="dot-item"><span ></span>Delivered instantly via email</li>
+          <li class="dot-item"><span ></span>AI chat in 28 languages</li>
           <li class="no">Human assessor analysis</li>
           <li class="no">Detailed homework programme</li>
           <li class="no">8-week learning plan</li>
         </ul>
-        <button onclick="var f=document.querySelector('#marco-fab');if(f)f.click();" class="pricing-btn" style="background:var(--success);color:white;border:none;cursor:pointer;font-family:inherit;">Start Bot Assessment &rarr;</button>
-        <p style="font-size:0.8rem;color:var(--ink-light);margin-top:12px;">Want more depth? Upgrade to a human assessment anytime.</p>
+        <button onclick="var f=document.querySelector('#marco-fab');if(f)f.click();" class="pricing-btn c-white" style="background:var(--success);border:none;cursor:pointer;font-family:inherit;">Start Bot Assessment &rarr;</button>
+        <p class="subcaption mt-12">Want more depth? Upgrade to a human assessment anytime.</p>
       </div>
     </div>
 
-    <div style="margin-top:16px;padding:12px 24px;background:var(--success-bg);border-radius:8px;max-width:1080px;margin-left:auto;margin-right:auto;border:1px solid rgba(39,174,96,0.2);">
-      <p style="font-size:0.875rem;color:var(--success);margin:0;"><img src="assets/mascot/marco-alarm.webp?v=3" alt="Marco alarm" class="marco-icon" width="60" height="60" style="width:60px;height:auto;margin-right:6px;background:transparent;" loading="lazy">Sessions are offered on selected days. Availability is updated in real time.</p>
+    <div class="mx-auto mt-16" style="padding:12px 24px;background:var(--success-bg);border-radius:8px;max-width:1080px;border:1px solid rgba(39,174,96,0.2);">
+      <p class="fs-body c-success"><img src="assets/mascot/marco-alarm.webp?v=3" alt="Marco alarm" class="marco-icon" width="60" height="60" loading="lazy" style="width:60px;height:auto;margin-right:6px;">Sessions are offered on selected days. Availability is updated in real time.</p>
     </div>
 
-    <div class="pricing-discount" style="max-width:1080px;margin-left:auto;margin-right:auto;margin-top:16px;display:flex;align-items:center;gap:20px;">
-      <img src="assets/mascot/marco-coffee-cozy.webp?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" width="100" height="100" style="width:100px;height:auto;flex-shrink:0;background:transparent;" loading="lazy">
+    <div class="pricing-discount mx-auto mt-16" style="max-width:1080px;display:flex;align-items:center;gap:20px;">
+      <img src="assets/mascot/marco-coffee-cozy.webp?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" width="100" height="100" loading="lazy" style="width:100px;height:auto;flex-shrink:0;">
       <div>
         <p>Not sure which to choose? Start with the <strong>free 5-minute chat</strong> for a quick snapshot. The <strong>Bot Assessment</strong> gives you a written report instantly. The <strong>Full Assessment</strong> is the most popular human option. The <strong>DeepDive</strong> is the most thorough diagnostic available.</p>
-        <p style="font-size:0.8125rem;color:var(--ink-light);margin-top:8px;">Not ready? No problem — everything will be here whenever you are.</p>
+        <p class="c-ink-light mt-8 fs-smm" >Not ready? Take your time — everything will be here whenever you are.</p>
       </div>
+    </div>
+
+    <div class="text-center mx-auto mt-16 bg-accent-bg" style="padding:14px 24px;border-radius:8px;max-width:1080px;border:1px solid rgba(37,99,171,0.15);" >
+      <p class="fw-600 fs-md c-accent m-0" >14-Day Money-Back Guarantee</p>
+      <p class="c-ink-soft fs-smm" style="margin:6px 0 0;" >If your assessment hasn't been delivered yet, you can request a full refund within 14 days of purchase — no questions asked. Once your report is delivered, the standard cancellation policy applies.</p>
     </div>
   </div>
 </section>
 
 <!-- Targeted Lessons -->
 <section class="section" id="lessons">
-  <div class="section-inner" style="text-align:center;">
+  <div class="section-inner text-center">
     <div class="section-label">Targeted Lessons</div>
-    <h2 class="section-title" style="margin-left:auto;margin-right:auto;">Continue Your Progress with Targeted Lessons</h2>
-    <p class="section-desc" style="margin-left:auto;margin-right:auto;">Every lesson targets YOUR specific patterns identified in your assessment. Stackable sessions with 5-minute breaks. Available via video or voice call.</p>
-    <p style="font-size:0.8125rem;color:var(--ink-light);margin:8px auto 0;max-width:600px;">Every lesson is guided by Marco — your diagnostic data drives every question.</p>
+    <h3 class="section-title mx-auto">Continue Your Progress with Targeted Lessons</h3>
+    <p class="section-desc mx-auto">Every lesson targets YOUR specific patterns identified in your assessment. Stackable sessions with 5-minute breaks. Available via video or voice call.</p>
+    <p class="c-ink-light fs-smm" style="margin:8px auto 0;max-width:600px;" >Every lesson is guided by Marco — your diagnostic data drives every question.</p>
 
     <div class="lessons-grid">
       <div class="lesson-card">
@@ -838,29 +859,29 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       </div>
     </div>
 
-    <div style="margin-top:24px;max-width:700px;margin-left:auto;margin-right:auto;">
-      <p style="font-size:0.875rem;color:var(--ink-soft);line-height:1.7;">Stackable sessions with 5-minute breaks between each. Every lesson is built around your specific patterns — no generic curriculum, no wasted time.</p>
+    <div class="mx-auto mt-24" style="max-width:700px;">
+      <p class="lh-17 fs-body c-ink-soft" >Stackable sessions with 5-minute breaks between each. Every lesson is built around your specific patterns — no generic curriculum, no wasted time.</p>
     </div>
   </div>
 </section>
 
 <!-- Weekly Subscription -->
 <section class="section section-alt" id="subscription">
-  <div class="section-inner" style="text-align:center;">
+  <div class="section-inner text-center">
     <div class="section-label">Weekly Subscription</div>
-    <h2 class="section-title" style="margin-left:auto;margin-right:auto;">Weekly Subscription</h2>
-    <p class="section-desc" style="margin-left:auto;margin-right:auto;">Learners who practise consistently tend to progress faster. A weekly structure keeps the work steady without the guesswork of scheduling each session separately.</p>
+    <h3 class="section-title mx-auto">Weekly Subscription</h3>
+    <p class="section-desc mx-auto">Learners who practise consistently tend to progress faster. A weekly structure keeps the work steady without the guesswork of scheduling each session separately.</p>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:860px;margin:0 auto;">
-      <div class="subscription-card" style="border-color:var(--warn);background:linear-gradient(180deg,#FFF8F0 0%,var(--cream) 60%);position:relative;">
-        <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 16px;background:var(--warn);color:white;border-radius:100px;font-size:0.6875rem;font-weight:700;letter-spacing:0.06em;">ULTIMATE</div>
+    <div class="mx-auto mw-860 gap-24" style="display:grid;grid-template-columns:1fr 1fr;" >
+      <div class="subscription-card c-warn" style="border-background:linear-gradient(180deg,#FFF8F0 0%,var(--cream) 60%);position:relative;" >
+        <div class="fw-700 c-white tracking-wide" style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 16px;background:var(--warn);border-radius:100px;font-size:0.6875rem;" >ULTIMATE</div>
         <h3>Complete Program</h3>
-        <div class="sub-price" data-eur="249.95" data-usd="249.95" data-chf="249.95" data-gbp="249.95" data-suffix="/week">Starting from &euro;249.95<span style="font-size:1rem;color:var(--ink-light);">/week</span></div>
-        <p style="font-size:0.8125rem;color:var(--ink-light);margin-bottom:24px;">All-inclusive &middot; Nothing extra to pay</p>
+        <div class="sub-price" data-eur="249.95" data-usd="249.95" data-chf="249.95" data-gbp="249.95" data-suffix="/week">Starting from &euro;249.95<span class="fs-base c-ink-light">/week</span></div>
+        <p class="helper-text mb-24">All-inclusive &middot; Nothing extra to pay</p>
         <ul class="subscription-features">
-          <li>3 lessons per week (any combination)</li>
+          <li>3 lessons per week (25 or 15 min, any combination)</li>
           <li>1 homework check included (<span class="lg-price-inline" data-eur="29.95" data-usd="29.95" data-chf="29.95" data-gbp="29.95">&euro;29.95</span> value)</li>
-          <li style="color:var(--warn);font-weight:600;">Most picked: Additional homework checks: <span class="lg-price-inline" data-eur="29.95" data-usd="29.95" data-chf="29.95" data-gbp="29.95">&euro;29.95</span> each</li>
+          <li class="fw-600 c-warn" >Most picked: Additional homework checks: <span class="lg-price-inline" data-eur="29.95" data-usd="29.95" data-chf="29.95" data-gbp="29.95">&euro;29.95</span> each</li>
           <li>Priority scheduling</li>
           <li>Monthly reassessment included</li>
           <li>Flashcard app premium included (<span class="lg-price-inline" data-eur="4.95" data-usd="4.95" data-chf="4.95" data-gbp="4.95">&euro;4.95</span>/mo value)</li>
@@ -869,8 +890,8 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       </div>
       <div class="subscription-card">
         <h3>Weekly Subscription</h3>
-        <div class="sub-price" data-eur="89.95" data-usd="89.95" data-chf="89.95" data-gbp="89.95" data-suffix="/lesson">From &euro;89.95<span style="font-size:1rem;color:var(--ink-light);">/lesson</span></div>
-        <p style="font-size:0.8125rem;color:var(--ink-light);margin-bottom:24px;">Homework included &middot; Monthly billing</p>
+        <div class="sub-price" data-eur="89.95" data-usd="89.95" data-chf="89.95" data-gbp="89.95" data-suffix="/lesson">From &euro;89.95<span class="fs-base c-ink-light">/lesson</span></div>
+        <p class="helper-text mb-24">Homework included &middot; Monthly billing</p>
         <ul class="subscription-features">
           <li>3 lessons per week (25 or 15 min)</li>
           <li>1 homework check included (<span class="lg-price-inline" data-eur="29.95" data-usd="29.95" data-chf="29.95" data-gbp="29.95">&euro;29.95</span> value)</li>
@@ -880,10 +901,10 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         </ul>
       </div>
     </div>
-    <div style="padding:16px 24px;background:var(--success-bg);border-radius:10px;border:1px solid rgba(39,174,96,0.2);max-width:860px;margin:24px auto 0;">
-      <p style="font-size:0.875rem;color:var(--success);margin:0;">Students who complete all 3 weekly homework checks tend to reach the next CEFR level in about 8 weeks.</p>
+    <div class="mw-860" style="padding:16px 24px;background:var(--success-bg);border-radius:10px;border:1px solid rgba(39,174,96,0.2);margin:24px auto 0;">
+      <p class="fs-body c-success">Students who complete all 3 weekly homework checks tend to reach the next CEFR level in about 8 weeks.</p>
     </div>
-    <p style="font-size:0.8125rem;color:var(--ink-light);margin-top:12px;">Marco tracks your progress and adjusts your lessons weekly.</p>
+    <p class="mt-12 c-ink-light fs-smm" >Marco tracks your progress and adjusts your lessons weekly.</p>
   </div>
 </section>
 
@@ -891,8 +912,8 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <section class="section" id="flashcards">
   <div class="section-inner">
     <div class="section-label">Practice App</div>
-    <h2 class="section-title">Your Glitches. Your Cards. Your Pace.</h2>
-    <p class="section-desc">The LingoGrade flashcard app turns your assessment results into personalised practice cards.</p>
+    <h3 class="section-title">Your Glitches. Your Cards. Your Pace.</h3>
+    <p class="section-desc">The LingoGrade flashcard app turns your assessment results into personalized practice cards.</p>
 
     <div class="flashcard-layout">
       <div>
@@ -911,11 +932,11 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           </div>
           <div class="flashcard-tier packs">
             <div class="tier-badge tier-badge--onetime">ONE-TIME PURCHASE</div>
-            <h3>Problem Packs</h3>
+            <h3>Pattern Packs</h3>
             <div class="tier-price"><span class="lg-price-inline" data-eur="19.95" data-usd="19.95" data-chf="19.95" data-gbp="19.95">&euro;19.95</span> per focus area</div>
             <div class="tier-price-note">Pay once, keep forever &mdash; no subscription needed</div>
             <ul>
-              <li>Deep-dive cards for a single problem area (e.g. vowel length, word stress)</li>
+              <li>Deep-dive cards for a single pattern area (e.g. vowel length, word stress)</li>
               <li>Generated from your personal assessment data</li>
               <li>All three media: sound, writing &amp; image on every card</li>
               <li>3-pack bundle: <span class="lg-price-inline" data-eur="49.95" data-usd="49.95" data-chf="49.95" data-gbp="49.95">&euro;49.95</span> (save <span class="lg-price-inline" data-eur="9.90" data-usd="9.90" data-chf="9.90" data-gbp="9.90">&euro;9.90</span>)</li>
@@ -936,12 +957,12 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           </div>
         </div>
         <div class="flashcard-loss">Every glitch in your report becomes a flashcard. Patterns you practise tend to stick; patterns you skip tend to return.</div>
-        <div style="margin-top:24px;">
+        <div class="mt-24" >
           <a href="#pricing" class="btn-primary">Explore Assessments &rarr; Flashcards Included Free</a>
         </div>
       </div>
       <div class="flashcard-visual">
-        <img src="assets/mascot/gpt-marco-studying-desk.webp?v=1" alt="Marco the owl studying with flashcards" class="marco-img" width="200" height="200" style="background:transparent;" loading="lazy">
+        <img src="assets/mascot/gpt-marco-studying-desk.webp?v=1" alt="Marco the owl studying with flashcards" class="marco-img" width="200" height="200"  loading="lazy">
       </div>
     </div>
   </div>
@@ -950,8 +971,8 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <!-- Reviews -->
 <section class="section" id="reviews">
   <div class="section-inner">
-    <!-- TrustBox widget - Review Collector -->
-    <div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ba47415aa0a9b17480c1ab" data-style-height="52px" data-style-width="100%" data-token="9a9ff161-49a4-4cb1-a79e-d83fb709cb2b">
+    <!-- TrustBox widget - Micro Review Count (star display) -->
+    <div class="trustpilot-widget" data-locale="en-US" data-template-id="53aa8807dec7e10d38f59f32" data-businessunit-id="69ba47415aa0a9b17480c1ab" data-style-height="150px" data-style-width="100%" data-theme="light" data-stars="4,5">
       <a href="https://www.trustpilot.com/review/lingograde.com" target="_blank" rel="noopener">Trustpilot</a>
     </div>
     <!-- End TrustBox widget -->
@@ -960,67 +981,67 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       <h2 class="section-title">What our students discovered</h2>
       <p class="section-desc" style="margin-bottom:48px;">These are real results from real assessments. Every student came in with a question about their level. Every student left with an answer — and a plan.</p>
     </div>
-    <div class="grid-3col" style="gap:24px;">
+    <div class="grid-3col gap-24" >
 
-      <div style="background:var(--parchment);border-radius:12px;padding:28px;border:1.5px solid var(--border);">
-        <div style="display:flex;gap:4px;margin-bottom:16px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p style="font-size:0.9375rem;color:var(--ink);line-height:1.7;margin-bottom:20px;font-style:italic;">"I had been telling myself I was B2 for two years. The assessment showed my active level was solid B2 but my passive structures were stuck at B1. That one insight explained why I always felt lost in fast conversations. Now I know exactly what to fix."</p>
-        <div style="font-weight:600;font-size:0.875rem;">Marcus T.</div>
-        <div style="font-size:0.8rem;color:var(--ink-light);">German assessment &mdash; Netherlands</div>
+      <div class="info-card">
+        <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="note-italic">"I had been telling myself I was B2 for two years. The assessment showed my active level was solid B2 but my passive structures were stuck at B1. That one insight explained why I always felt lost in fast conversations. Now I know exactly what to fix."</p>
+        <div class="testimonial-meta"><div class="testimonial-avatar">MT</div><div><div class="fw-600 fs-body">Marcus T.</div><div class="subcaption">&#127475;&#127473; German &middot; Full Assessment &middot; Feb 2026</div></div></div>
+        <div class="c-success mt-6 fs-2xs" >&#10003; Verified assessment</div>
       </div>
 
-      <div style="background:var(--parchment);border-radius:12px;padding:28px;border:1.5px solid var(--border);">
-        <div style="display:flex;gap:4px;margin-bottom:16px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p style="font-size:0.9375rem;color:var(--ink);line-height:1.7;margin-bottom:20px;font-style:italic;">"I was preparing for a C1 exam and had no idea if I was ready. The Full Assessment confirmed my level was strong C1 in speaking but identified three specific grammar patterns holding me back. I focused on those for three weeks and passed the exam."</p>
-        <div style="font-weight:600;font-size:0.875rem;">Chiara M.</div>
-        <div style="font-size:0.8rem;color:var(--ink-light);">English assessment &mdash; Italy</div>
+      <div class="info-card">
+        <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="note-italic">"I was preparing for a C1 exam and had no idea if I was ready. The Full Assessment confirmed my level was strong C1 in speaking but identified three specific grammar patterns holding me back. I focused on those for three weeks and passed the exam."</p>
+        <div class="testimonial-meta"><div class="testimonial-avatar">CM</div><div><div class="fw-600 fs-body">Chiara M.</div><div class="subcaption">&#127470;&#127481; English &middot; Full Assessment &middot; Jan 2026</div></div></div>
+        <div class="c-success mt-6 fs-2xs" >&#10003; Verified assessment</div>
       </div>
 
-      <div style="background:var(--parchment);border-radius:12px;padding:28px;border:1.5px solid var(--border);">
-        <div style="display:flex;gap:4px;margin-bottom:16px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p style="font-size:0.9375rem;color:var(--ink);line-height:1.7;margin-bottom:20px;font-style:italic;">"I needed to prove my French level for a job application in Paris. My employer asked for B2. I assumed I was there but was not certain. The report gave me an official-standard assessment I could reference with complete confidence. I got the job."</p>
-        <div style="font-weight:600;font-size:0.875rem;">Aleksandar P.</div>
-        <div style="font-size:0.8rem;color:var(--ink-light);">French assessment &mdash; Serbia</div>
+      <div class="info-card">
+        <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="note-italic">"I needed to prove my French level for a job application in Paris. My employer asked for B2. I assumed I was there but was not certain. The report gave me an official-standard assessment I could reference with complete confidence. I got the job."</p>
+        <div class="testimonial-meta"><div class="testimonial-avatar">AP</div><div><div class="fw-600 fs-body">Aleksandar P.</div><div class="subcaption">&#127479;&#127480; French &middot; Quick Assessment &middot; Mar 2026</div></div></div>
+        <div class="c-success mt-6 fs-2xs" >&#10003; Verified assessment</div>
       </div>
 
-      <div style="background:var(--parchment);border-radius:12px;padding:28px;border:1.5px solid var(--border);">
-        <div style="display:flex;gap:4px;margin-bottom:16px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p style="font-size:0.9375rem;color:var(--ink);line-height:1.7;margin-bottom:20px;font-style:italic;">"I have been living in Germany for four years and my German felt good but stuck. The assessment revealed I was actually B2 active, C1 passive — higher than I thought. But it also showed exactly which structures I was avoiding subconsciously. The homework was immediately useful."</p>
-        <div style="font-weight:600;font-size:0.875rem;">Natasha K.</div>
-        <div style="font-size:0.8rem;color:var(--ink-light);">German assessment &mdash; Russia</div>
+      <div class="info-card">
+        <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="note-italic">"I have been living in Germany for four years and my German felt good but stuck. The assessment revealed I was actually B2 active, C1 passive — higher than I thought. But it also showed exactly which structures I was avoiding subconsciously. The homework was immediately useful."</p>
+        <div class="testimonial-meta"><div class="testimonial-avatar">NK</div><div><div class="fw-600 fs-body">Natasha K.</div><div class="subcaption">&#127479;&#127482; German &middot; DeepDive Assessment &middot; Dec 2025</div></div></div>
+        <div class="c-success mt-6 fs-2xs" >&#10003; Verified assessment</div>
       </div>
 
-      <div style="background:var(--parchment);border-radius:12px;padding:28px;border:1.5px solid var(--border);">
-        <div style="display:flex;gap:4px;margin-bottom:16px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p style="font-size:0.9375rem;color:var(--ink);line-height:1.7;margin-bottom:20px;font-style:italic;">"As a language teacher myself I was curious and slightly nervous about being assessed. The conversation felt completely natural. The report was more detailed than I expected — it identified patterns in my Spanish I had not noticed in my own speech. Genuinely impressive."</p>
-        <div style="font-weight:600;font-size:0.875rem;">Helena W.</div>
-        <div style="font-size:0.8rem;color:var(--ink-light);">Spanish assessment &mdash; Poland</div>
+      <div class="info-card">
+        <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="note-italic">"As a language teacher myself I was curious and slightly nervous about being assessed. The conversation felt completely natural. The report was more detailed than I expected — it identified patterns in my Spanish I had not noticed in my own speech. Genuinely impressive."</p>
+        <div class="testimonial-meta"><div class="testimonial-avatar">HW</div><div><div class="fw-600 fs-body">Helena W.</div><div class="subcaption">&#127477;&#127473; Spanish &middot; Full Assessment &middot; Jan 2026</div></div></div>
+        <div class="c-success mt-6 fs-2xs" >&#10003; Verified assessment</div>
       </div>
 
-      <div style="background:var(--parchment);border-radius:12px;padding:28px;border:1.5px solid var(--border);">
-        <div style="display:flex;gap:4px;margin-bottom:16px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p style="font-size:0.9375rem;color:var(--ink);line-height:1.7;margin-bottom:20px;font-style:italic;">"I had not studied Italian seriously for three years and had no idea what level I had retained. The Quick Assessment was perfect — 15 minutes, a clear A2/B1 result, and three specific things to work on first. It saved me weeks of guessing where to restart."</p>
-        <div style="font-weight:600;font-size:0.875rem;">Daniel F.</div>
-        <div style="font-size:0.8rem;color:var(--ink-light);">Italian assessment &mdash; UK</div>
+      <div class="info-card">
+        <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="note-italic">"I had not studied Italian seriously for three years and had no idea what level I had retained. The Quick Assessment was perfect — 15 minutes, a clear A2/B1 result, and three specific things to work on first. It saved me weeks of guessing where to restart."</p>
+        <div class="testimonial-meta"><div class="testimonial-avatar">DF</div><div><div class="fw-600 fs-body">Daniel F.</div><div class="subcaption">&#127468;&#127463; Italian &middot; Quick Assessment &middot; Feb 2026</div></div></div>
+        <div class="c-success mt-6 fs-2xs" >&#10003; Verified assessment</div>
       </div>
 
-      <div style="background:var(--parchment);border-radius:12px;padding:28px;border:1.5px solid var(--border);">
-        <div style="display:flex;gap:4px;margin-bottom:16px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p style="font-size:0.9375rem;color:var(--ink);line-height:1.7;margin-bottom:20px;font-style:italic;">"I was completely honest that I was a beginner in Russian and worried the session would be awkward. It was not at all. The assessor adapted immediately and the report came with a native language translation so I could understand every recommendation. Exactly what I needed."</p>
-        <div style="font-weight:600;font-size:0.875rem;">Sofia L.</div>
-        <div style="font-size:0.8rem;color:var(--ink-light);">Russian assessment &mdash; Bulgaria</div>
+      <div class="info-card">
+        <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="note-italic">"I was completely honest that I was a beginner in Russian and worried the session would be awkward. It was not at all. The assessor adapted immediately and the report came with a native language translation so I could understand every recommendation. Exactly what I needed."</p>
+        <div class="testimonial-meta"><div class="testimonial-avatar">SL</div><div><div class="fw-600 fs-body">Sofia L.</div><div class="subcaption">&#127463;&#127468; Russian &middot; Full Assessment &middot; Mar 2026</div></div></div>
+        <div class="c-success mt-6 fs-2xs" >&#10003; Verified assessment</div>
       </div>
 
-      <div style="background:var(--parchment);border-radius:12px;padding:28px;border:1.5px solid var(--border);">
-        <div style="display:flex;gap:4px;margin-bottom:16px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p style="font-size:0.9375rem;color:var(--ink);line-height:1.7;margin-bottom:20px;font-style:italic;">"My company requires B2 English for a promotion. I had been avoiding the official exam because I was not sure I would pass. LingoGrade showed me I was already strong B2 — my nerves were the only obstacle. I booked the exam the same day I got the report."</p>
-        <div style="font-weight:600;font-size:0.875rem;">Tomasz R.</div>
-        <div style="font-size:0.8rem;color:var(--ink-light);">English assessment &mdash; Poland</div>
+      <div class="info-card">
+        <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="note-italic">"My company requires B2 English for a promotion. I had been avoiding the official exam because I was not sure I would pass. LingoGrade showed me I was already strong B2 — my nerves were the only obstacle. I booked the exam the same day I got the report."</p>
+        <div class="testimonial-meta"><div class="testimonial-avatar">TR</div><div><div class="fw-600 fs-body">Tomasz R.</div><div class="subcaption">&#127477;&#127473; English &middot; Full Assessment &middot; Nov 2025</div></div></div>
+        <div class="c-success mt-6 fs-2xs" >&#10003; Verified assessment</div>
       </div>
 
     </div>
 
-    <div style="margin-top:48px;text-align:center;">
+    <div class="text-center" style="margin-top:48px;">
       <a href="#pricing" class="btn-primary">Explore Assessment Options &rarr;</a>
     </div>
     </div>
@@ -1028,25 +1049,25 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 </section>
 
 <!-- Corporate Teaser -->
-<div style="text-align:center;padding:40px 20px;">
-  <p style="font-size:1.1rem;color:#555;">Looking for team assessments? <a href="corporate.html" style="color:#2563AB;font-weight:600;">See our Corporate Programme &rarr;</a></p>
+<div class="text-center" style="padding:40px 20px;">
+  <p style="font-size:1.1rem;color:#555;">Looking for team assessments? <a class="fw-600 c-accent" href="corporate.html" >See our Corporate Programme &rarr;</a></p>
 </div>
 
 <!-- Our Philosophy -->
-<section style="padding:48px 32px;text-align:center;background:linear-gradient(135deg,var(--cream) 0%,#FFF8F0 100%);">
-  <div style="max-width:640px;margin:0 auto;">
-    <img src="assets/mascot/marco-reading-branded-logo-v1.webp" alt="Marco and Mila reading together — LingoGrade" width="200" height="200" style="width:200px;height:auto;margin-bottom:20px;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.08));display:none;background:transparent;" onload="this.style.display='inline-block'" loading="lazy">
-    <h2 style="font-family:var(--font-display);font-size:clamp(1.25rem,3vw,1.75rem);color:var(--ink);margin-bottom:8px;">Language is personal</h2>
-    <p style="font-size:1rem;color:var(--ink-soft);line-height:1.7;">Every learner has a unique pattern. We measure it precisely, explain it clearly, and guide what comes next — no guessing, no generic advice.</p>
+<section class="text-center" style="padding:48px 32px;background:linear-gradient(135deg,var(--cream) 0%,#FFF8F0 100%);">
+  <div class="mx-auto mw-640" >
+    <img class="mb-20" src="assets/mascot/marco-reading-branded-logo-v1.webp" alt="Marco and Mila reading together — LingoGrade" width="200" height="200" onload="this.style.display='inline-block'" loading="lazy" style="width:200px;height:auto;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.08));display:none;" >
+    <h3 class="subheading mb-8" style="font-size:clamp(1.25rem,3vw,1.75rem);">Language is personal</h3>
+    <p class="body-text">Every learner has a unique pattern. We measure it precisely, explain it clearly, and guide what comes next — no guessing, no generic advice.</p>
   </div>
 </section>
 
 <!-- Review Submission -->
 <section class="section" id="share-experience">
-  <div class="section-inner" style="max-width:640px;margin:0 auto;text-align:center;">
+  <div class="section-inner text-center mx-auto mw-640" >
     <div class="section-label">Your Experience</div>
-    <h2 class="section-title">Had an assessment? Tell us how it went.</h2>
-    <p class="section-desc" style="margin:0 auto 24px;">Your feedback helps other learners decide with confidence. Approved reviews appear on this page. Write to us at <a href="mailto:info@lingograde.com" style="color:var(--accent);">info@lingograde.com</a> — we would love to hear from you.</p>
+    <h3 class="section-title">Had an assessment? Tell us how it went.</h3>
+    <p class="section-desc mx-auto mb-24">Your feedback helps other learners decide with confidence. Approved reviews appear on this page. Write to us at <a href="mailto:info@lingograde.com" class="c-accent">info@lingograde.com</a> — we would love to hear from you.</p>
     <a href="review.html" class="btn-primary" style="display:inline-flex;">Share My Experience</a>
   </div>
 </section>
@@ -1055,9 +1076,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <section class="section section-alt" id="faq">
   <div class="section-inner">
     <div class="section-label">FAQ</div>
-    <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:8px;">
-      <img src="assets/mascot/marco-face-wink.webp?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" width="120" height="120" style="width:120px;height:auto;background:transparent;" loading="lazy">
-      <h2 class="section-title" style="margin:0;">Common questions</h2>
+    <div class="mb-8 gap-16" style="display:flex;align-items:center;justify-content:center;" >
+      <img src="assets/mascot/marco-face-wink.webp?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" width="120" height="120" loading="lazy" style="width:120px;height:auto;">
+      <h2 class="section-title m-0" >Common questions</h2>
     </div>
     <div class="faq-list">
       <div class="faq-item">
@@ -1078,7 +1099,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">When do I receive my report?</button>
-        <div class="faq-a"><div class="faq-a-inner">Within 1 hour of your session. You will receive a professionally designed PDF report delivered directly to your email — with your CEFR level, pattern analysis, targeted solutions, and personalised improvement plan.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Within 1 hour of your session. You will receive a professionally designed PDF report delivered directly to your email — with your CEFR level, pattern analysis, targeted solutions, and personalized improvement plan.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">Can my teacher use this for our lessons?</button>
@@ -1098,46 +1119,46 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">How do the targeted lessons and weekly subscription work?</button>
-        <div class="faq-a"><div class="faq-a-inner">After your assessment, you can book targeted lessons (25 or 15 minutes) that focus specifically on the patterns identified in your report. Sessions are stackable with 5-minute breaks and available via video or voice call. The Complete Program (starting from <span class="lg-price-inline" data-eur="249.95" data-usd="249.95" data-chf="249.95" data-gbp="249.95">&euro;249.95</span>/week) includes 1 homework check, priority scheduling, monthly reassessment, and the flashcard app premium — additional homework checks are <span class="lg-price-inline" data-eur="29.95" data-usd="29.95" data-chf="29.95" data-gbp="29.95">&euro;29.95</span> each (most picked add-on). The weekly subscription gives you 3 lessons per week with 1 homework check included (value <span class="lg-price-inline" data-eur="29.95" data-usd="29.95" data-chf="29.95" data-gbp="29.95">&euro;29.95</span>) and additional checks at <span class="lg-price-inline" data-eur="29.95" data-usd="29.95" data-chf="29.95" data-gbp="29.95">&euro;29.95</span> each, starting from <span class="lg-price-inline" data-eur="89.95" data-usd="89.95" data-chf="89.95" data-gbp="89.95">&euro;89.95</span> per lesson. Students who complete all 3 weekly homework checks progress 3x faster.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">After your assessment, you can book targeted lessons (25 or 15 minutes) that focus specifically on the patterns identified in your report. Sessions are stackable with 5-minute breaks and available via video or voice call. The Complete Program (starting from <span class="lg-price-inline" data-eur="249.95" data-usd="249.95" data-chf="249.95" data-gbp="249.95">&euro;249.95</span>/week) includes 1 homework check, priority scheduling, monthly reassessment, and the flashcard app premium — additional homework checks are <span class="lg-price-inline" data-eur="29.95" data-usd="29.95" data-chf="29.95" data-gbp="29.95">&euro;29.95</span> each (most picked add-on). The weekly subscription gives you 3 lessons per week with 1 homework check included (value <span class="lg-price-inline" data-eur="29.95" data-usd="29.95" data-chf="29.95" data-gbp="29.95">&euro;29.95</span>) and additional checks at <span class="lg-price-inline" data-eur="29.95" data-usd="29.95" data-chf="29.95" data-gbp="29.95">&euro;29.95</span> each, starting from <span class="lg-price-inline" data-eur="89.95" data-usd="89.95" data-chf="89.95" data-gbp="89.95">&euro;89.95</span> per lesson. Students who complete all 3 weekly homework checks tend to show stronger improvement in their reassessments.</div></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Marco Banner -->
-<section style="padding:40px 32px;text-align:center;background:var(--cream);border-top:1px solid var(--border);">
-  <img src="assets/mascot/marco-logo-whiteboard.webp" alt="Marco the LingoGrade owl with book and graduation cap" width="480" height="480" style="max-width:480px;width:100%;height:auto;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.08));display:none;background:transparent;" onload="this.style.display='inline-block'" loading="lazy">
+<section class="text-center bg-cream" style="padding:40px 32px;border-top:1px solid var(--border);" >
+  <img src="assets/mascot/marco-logo-whiteboard.webp" alt="Marco the LingoGrade owl with book and graduation cap" width="480" height="480" onload="this.style.display='inline-block'" loading="lazy" style="max-width:480px;width:100%;height:auto;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.08));display:none;">
 </section>
 
 <!-- Meet Marco Plush -->
-<section style="padding:48px 32px;text-align:center;background:linear-gradient(135deg,#FFF8F0 0%,var(--cream) 100%);border-top:1px solid var(--border);">
-  <div style="max-width:720px;margin:0 auto;">
-    <img src="assets/mascot/marco-hero.webp?v=3" alt="Marco the LingoGrade owl plush" width="160" height="160" style="width:160px;height:auto;margin-bottom:20px;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.1));display:none;background:transparent;" onload="this.style.display='inline-block'" loading="lazy">
-    <h2 style="font-family:var(--font-display);font-size:clamp(1.25rem,3vw,1.75rem);color:var(--ink);margin-bottom:8px;">Meet Marco in person</h2>
-    <p style="font-size:1rem;color:var(--ink-soft);line-height:1.7;margin-bottom:24px;">Get the official Marco plush. Kiss him. Post a selfie. Earn <span class="lg-price-inline" data-eur="5" data-usd="5" data-chf="5" data-gbp="5">&euro;5</span>.</p>
-    <a href="https://buy.stripe.com/9B68wPf5Ocf9bDSfjfgUM00" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--accent);color:white;border-radius:10px;font-weight:600;font-size:1rem;text-decoration:none;transition:all 0.2s;">Meet Marco &rarr;</a>
-    <p style="margin-top:12px;font-size:0.75rem;color:var(--ink-light);">Physical plush required for the selfie reward. #LingoGradeMarco</p>
+<section class="text-center" style="padding:48px 32px;background:linear-gradient(135deg,#FFF8F0 0%,var(--cream) 100%);border-top:1px solid var(--border);">
+  <div class="mx-auto mw-720" >
+    <img class="mb-20" src="assets/mascot/marco-hero.webp?v=3" alt="Marco the LingoGrade owl plush" width="160" height="160" onload="this.style.display='inline-block'" loading="lazy" style="width:160px;height:auto;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.1));display:none;" >
+    <h3 class="subheading mb-8" style="font-size:clamp(1.25rem,3vw,1.75rem);">Meet Marco in person</h3>
+    <p class="body-text mb-24">Get the official Marco plush. Kiss him. Post a selfie. Earn <span class="lg-price-inline" data-eur="5" data-usd="5" data-chf="5" data-gbp="5">&euro;5</span>.</p>
+    <a class="fw-600 fs-base c-white no-underline gap-8" href="https://buy.stripe.com/9B68wPf5Ocf9bDSfjfgUM00" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:14px 32px;background:var(--accent);border-radius:10px;transition:all 0.2s;" >Meet Marco &rarr;</a>
+    <p class="mt-12 fs-sm c-ink-light" >Physical plush required for the selfie reward. #LingoGradeMarco</p>
   </div>
 </section>
 
 <!-- Footer -->
-<footer style="background:#1A3A5C;color:rgba(255,255,255,0.85);text-align:center;padding:48px 32px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
-  <div style="font-size:1.5rem;font-weight:700;letter-spacing:0.02em;">LingoGr<span style="color:#27AE60">A</span>de</div>
-  <p style="color:rgba(255,255,255,0.6);font-size:0.9375rem;margin:8px 0 24px;">Professional Language Assessment</p>
-  <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:0.875rem;">
-    <a href="#how-it-works" style="color:rgba(255,255,255,0.7);text-decoration:none;">How It Works</a>
-    <a href="#languages" style="color:rgba(255,255,255,0.7);text-decoration:none;">Languages</a>
-    <a href="#pricing" style="color:rgba(255,255,255,0.7);text-decoration:none;">Pricing</a>
-    <a href="teachers.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">For Teachers</a>
-    <a href="partners.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Partners</a>
-    <a href="shop.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Shop</a>
-    <a href="mailto:info@lingograde.com" style="color:rgba(255,255,255,0.7);text-decoration:none;">Contact</a>
+<footer class="site-footer">
+  <div class="footer-brand">LingoGr<span class="c-green">A</span>de</div>
+  <p class="footer-tagline">Professional Language Assessment</p>
+  <div class="footer-nav">
+    <a href="#how-it-works" class="footer-link">How It Works</a>
+    <a href="#languages" class="footer-link">Languages</a>
+    <a href="#pricing" class="footer-link">Pricing</a>
+    <a href="teachers.html" class="footer-link">For Teachers</a>
+    <a href="partners.html" class="footer-link">Partners</a>
+    <a href="shop.html" class="footer-link">Shop</a>
+    <a href="mailto:info@lingograde.com" class="footer-link">Contact</a>
   </div>
-  <div style="margin-top:16px;display:flex;gap:16px;justify-content:center;">
-    <a href="privacy-policy.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Privacy Policy</a>
-    <a href="terms-of-service.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Terms of Service</a>
+  <div class="footer-legal">
+    <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+    <a href="terms-of-service.html" class="footer-legal-link">Terms of Service</a>
   </div>
-  <div style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.4);">&copy; 2026 LingoGrade. All rights reserved.</div>
+  <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
 </footer>
 
 <script>
@@ -1203,71 +1224,68 @@ function translateLanguages(lang) {
 }
 </script>
 <script>
-// Currency geo-detection — timezone-based
+// Currency geo-detection — IP geolocation with timezone fallback
 (function(){
-  var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-  var symbol = '\u20AC'; // EUR default
-  var code = 'EUR';
+  var COUNTRY_CURRENCY = {US:'USD',GB:'GBP',CH:'CHF',LI:'CHF'};
+  var SYMBOLS = {EUR:'\u20AC',USD:'$',GBP:'\u00A3',CHF:'CHF\u00A0'};
 
-  // US timezones
-  var usTz = ['America/New_York','America/Chicago','America/Denver','America/Los_Angeles',
-    'America/Anchorage','America/Phoenix','America/Detroit','America/Indiana',
-    'America/Kentucky','America/Boise','America/Juneau','America/Sitka',
-    'America/Yakutat','America/Nome','America/Adak','America/Menominee',
-    'Pacific/Honolulu','America/North_Dakota'];
-  var isUS = false;
-  for (var i = 0; i < usTz.length; i++) {
-    if (tz.indexOf(usTz[i]) !== -1) { isUS = true; break; }
-  }
-  // Also catch any America/ timezone that is clearly US
-  if (!isUS && (tz === 'US/Eastern' || tz === 'US/Central' || tz === 'US/Mountain' || tz === 'US/Pacific' || tz === 'US/Hawaii' || tz === 'US/Alaska')) {
-    isUS = true;
+  function tzFallback() {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    if (/America\/(New_York|Chicago|Denver|Los_Angeles|Anchorage|Phoenix|Detroit|Indiana|Kentucky|Boise|Juneau|Sitka|Yakutat|Nome|Adak|Menominee|North_Dakota)|Pacific\/Honolulu|US\//.test(tz)) return 'USD';
+    if (/Europe\/London|Europe\/Belfast|Europe\/Isle_of_Man|Europe\/Jersey|Europe\/Guernsey/.test(tz)) return 'GBP';
+    if (/Europe\/Zurich/.test(tz)) return 'CHF';
+    // Locale reinforcement: en-US locale in non-US timezone → traveler, prefer USD
+    var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+    if (/^en-US/i.test(lang)) return 'USD';
+    return 'EUR';
   }
 
-  if (isUS) {
-    symbol = '$';
-    code = 'USD';
-  } else if (tz.indexOf('London') !== -1 || tz.indexOf('Europe/London') !== -1 || tz.indexOf('Europe/Belfast') !== -1 || tz.indexOf('Europe/Isle_of_Man') !== -1 || tz.indexOf('Europe/Jersey') !== -1 || tz.indexOf('Europe/Guernsey') !== -1) {
-    symbol = '\u00A3';
-    code = 'GBP';
-  } else if (tz.indexOf('Zurich') !== -1 || tz.indexOf('Europe/Zurich') !== -1) {
-    symbol = 'CHF\u00A0';
-    code = 'CHF';
+  function applyPrices(code) {
+    var symbol = SYMBOLS[code] || SYMBOLS.EUR;
+    window._lgCurrency = symbol;
+    window._lgCurrencyCode = code;
+
+    function resolvePrice(el) {
+      return el.getAttribute('data-' + code.toLowerCase()) || el.getAttribute('data-eur');
+    }
+
+    document.querySelectorAll('.pricing-price[data-eur], .lesson-price[data-eur]').forEach(function(el){
+      el.textContent = symbol + resolvePrice(el);
+    });
+
+    document.querySelectorAll('.sub-price[data-eur]').forEach(function(el){
+      var suffix = el.getAttribute('data-suffix') || '';
+      el.innerHTML = 'From ' + symbol + resolvePrice(el) + '<span class="fs-base c-ink-light">' + suffix + '</span>';
+    });
+
+    document.querySelectorAll('.lg-price[data-eur]').forEach(function(el){
+      var span = el.querySelector('span');
+      var spanHTML = span ? ' ' + span.outerHTML : '';
+      el.innerHTML = symbol + resolvePrice(el) + spanHTML;
+    });
+
+    document.querySelectorAll('.lg-price-inline[data-eur]').forEach(function(el){
+      el.textContent = symbol + resolvePrice(el);
+    });
   }
 
-  window._lgCurrency = symbol;
-  window._lgCurrencyCode = code;
-
-  // Helper: resolve price for current currency code, fallback to EUR
-  function resolvePrice(el) {
-    return el.getAttribute('data-' + code.toLowerCase()) || el.getAttribute('data-eur');
-  }
-
-  // 1. Handle pricing-price and lesson-price elements
-  document.querySelectorAll('.pricing-price[data-eur], .lesson-price[data-eur]').forEach(function(el){
-    el.textContent = symbol + resolvePrice(el);
-  });
-
-  // 2. Handle sub-price elements (have "From" prefix and suffix span)
-  document.querySelectorAll('.sub-price[data-eur]').forEach(function(el){
-    var suffix = el.getAttribute('data-suffix') || '';
-    el.innerHTML = 'From ' + symbol + resolvePrice(el) + '<span style="font-size:1rem;color:var(--ink-light);">' + suffix + '</span>';
-  });
-
-  // 3. Handle corporate / lg-price elements (symbol + price + inner span kept)
-  document.querySelectorAll('.lg-price[data-eur]').forEach(function(el){
-    var span = el.querySelector('span');
-    var spanHTML = span ? ' ' + span.outerHTML : '';
-    el.innerHTML = symbol + resolvePrice(el) + spanHTML;
-  });
-
-  // 4. Handle inline price spans
-  document.querySelectorAll('.lg-price-inline[data-eur]').forEach(function(el){
-    el.textContent = symbol + resolvePrice(el);
-  });
+  // Try IP geolocation first, fall back to timezone
+  applyPrices(tzFallback()); // instant render with timezone guess
+  fetch('https://api.country.is/')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var cc = d && d.country;
+      if (cc && COUNTRY_CURRENCY[cc]) applyPrices(COUNTRY_CURRENCY[cc]);
+    })
+    .catch(function(){}); // silently keep timezone result
 })();
 </script>
 <script src="js/shield.js" defer></script>
 <script src="js/marco-chat.js" defer></script>
+<noscript>
+    <div class="noscript-banner">
+        <a href="mailto:hello@lingograde.com" >Questions? Email us</a>
+    </div>
+</noscript>
 </body>
 </html>

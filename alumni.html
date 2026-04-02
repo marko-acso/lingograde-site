@@ -3,16 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Welcome Back — LingoGrade</title>
+<title>Alumni Reassessment — Track Your Language Progress | LingoGrade</title>
 <meta name="description" content="See how your language skills have grown. Alumni reassessment at exclusive rates — because your progress deserves to be seen.">
-<meta property="og:title" content="Welcome Back — LingoGrade">
+<meta property="og:title" content="Alumni Reassessment — Track Your Language Progress | LingoGrade">
 <meta property="og:description" content="See how your language skills have grown. Alumni reassessment at exclusive rates.">
 <meta property="og:image" content="https://www.lingograde.com/og-logo-v2.png">
 <meta property="og:url" content="https://www.lingograde.com/alumni">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Alumni Reassessment — Track Your Language Progress | LingoGrade">
+<meta name="twitter:description" content="See how your language skills have grown. Alumni reassessment at exclusive rates.">
 <meta name="twitter:image" content="https://www.lingograde.com/og-logo-v2.png">
+<meta property="og:locale" content="en_US">
 <link rel="canonical" href="https://www.lingograde.com/alumni">
+<link rel="alternate" hreflang="en" href="https://www.lingograde.com/alumni">
+<link rel="alternate" hreflang="x-default" href="https://www.lingograde.com/alumni">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <script type="application/ld+json">
 {
@@ -54,8 +59,10 @@
 }
 </script>
 <link rel="icon" type="image/webp" href="/assets/mascot/marco-face-grad-v2.webp?v=3">
+<link rel="apple-touch-icon" href="/assets/mascot/marco-face-grad-v2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
 <style>
 :root { --accent: #2563AB; --accent-lt: #1D4ED8; --ink: #1C1C1C; --ink-soft: #5A5A5A; --ink-light: #9CA3AF; --cream: #FFFDF7; --border: #E5E7EB; --gold: #C8952E; --success: #27AE60; --font-display: 'DM Serif Display', Georgia, serif; --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -94,6 +101,9 @@ body { font-family: var(--font-body); background: var(--cream); color: var(--ink
   .plan-price .new { font-size: 1.5rem; }
   .plan-btn { padding: 12px; font-size: 0.9rem; }
 }
+
+/* ── Accessibility ── */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
 /* ── Plan cards ── */
 .plan { background: white; border-radius: 16px; padding: 32px 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid var(--border); text-align: center; transition: transform 0.15s, box-shadow 0.15s; }
@@ -142,11 +152,11 @@ body { font-family: var(--font-body); background: var(--cream); color: var(--ink
 </head>
 <body>
 
-<input type="checkbox" id="nav-toggle" style="display:none;">
+<input type="checkbox" id="nav-toggle" class="hidden">
 <div class="nav">
-  <a href="/" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="Marco" style="height:44px;width:auto;" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"> <span style="font-family:var(--font-display);font-size:1.25rem;color:#1C1C1C;">LingoGr<span style="color:#27AE60">A</span>de</span></a>
+  <a class="no-underline gap-8" href="/" style="display:inline-flex;align-items:center;" ><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade - Home" style="height:44px;width:auto;" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"> <span class="font-display c-ink" style="font-size:1.25rem;" >LingoGr<span class="c-green">A</span>de</span></a>
   <label for="nav-toggle" class="hamburger">&#9776;</label>
-  <a href="index.html#pricing" style="display:inline-flex;align-items:center;background:#1C1C1C;color:#FFFDF7;padding:8px 20px;border-radius:8px;font-weight:600;font-size:0.85rem;">Explore Assessments</a>
+  <a class="fw-600 fs-085" href="index.html#pricing" style="display:inline-flex;align-items:center;background:#1C1C1C;color:#FFFDF7;padding:8px 20px;border-radius:8px;" >Explore Assessments</a>
 </div>
 
 <div class="hero">
@@ -155,13 +165,14 @@ body { font-family: var(--font-body); background: var(--cream); color: var(--ink
   <p>A reassessment shows you exactly what shifted since last time. What improved. What stayed. Where to look next.</p>
 </div>
 
-<div style="max-width:640px;margin:0 auto 28px;text-align:center;">
-  <p style="font-size:1.05rem;color:#555;line-height:1.7;">Same format you already know. No test, no stress. Just a conversation that gives you a clear picture.</p>
+<div class="text-center mw-640" style="margin:0 auto 28px;">
+  <p class="lh-17" style="font-size:1.05rem;color:#555;">Same format you already know. No test, no stress. Just a conversation that gives you a clear picture.</p>
 </div>
 
 <div class="pricing">
   <!-- DeepDive -->
   <div class="plan premium">
+    <span class="sr-only">Most Thorough</span>
     <div class="plan-name">DeepDive Assessment</div>
     <div class="plan-duration">15 + 25 minutes (with break)</div>
     <div class="plan-price">
@@ -176,15 +187,16 @@ body { font-family: var(--font-body); background: var(--cream); color: var(--ink
       <li>Side-by-side comparison with your previous report</li>
       <li>The most thorough picture of where your German stands</li>
     </ul>
-    <p style="font-size:0.85rem;color:var(--ink-soft);margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">
+    <p class="mt-12 c-ink-soft fs-085" style="padding-top:12px;border-top:1px solid var(--border);" >
       <strong>Optional add-on:</strong> Homework programme &mdash; EUR 29.95
-      <span style="font-size:0.8rem;color:var(--ink-light);display:block;margin-top:4px;">Detailed correction report within 1 hour</span>
+      <span class="c-ink-light mt-4 fs-xs" style="display:block;" >Detailed correction report within 1 hour</span>
     </p>
     <a href="https://booking.lingograde.com/marco/deepdive-assessment-alumni" class="plan-btn premium">Book the DeepDive</a>
   </div>
 
   <!-- Full (MOST CHOSEN, first on mobile) -->
   <div class="plan featured plan-full">
+    <span class="sr-only">Most Chosen</span>
     <div class="plan-name">Full Assessment</div>
     <div class="plan-duration">25 minutes</div>
     <div class="plan-price">
@@ -227,17 +239,17 @@ body { font-family: var(--font-body); background: var(--cream); color: var(--ink
 
 <!-- Lessons -->
 <div style="max-width:600px;margin:0 auto 40px;padding:0 20px;">
-  <div class="info-card" style="text-align:center;">
+  <div class="info-card text-center">
     <h3>Continue with Targeted Lessons</h3>
     <p>After your reassessment, book focused lessons that work directly on what showed up in your report.</p>
     <p><strong>15-minute lesson:</strong> <span data-eur="89.95" data-usd="89.95" data-chf="89.95" data-gbp="89.95">&euro;89.95</span> &nbsp;&bull;&nbsp; <strong>25-minute lesson:</strong> <span data-eur="129.95" data-usd="129.95" data-chf="129.95" data-gbp="129.95">&euro;129.95</span></p>
-    <p style="font-size:0.85rem;color:var(--ink-light);">Alumni get priority booking. Sessions are stackable.</p>
+    <p class="c-ink-light fs-085" >Alumni get priority booking. Sessions are stackable.</p>
   </div>
 </div>
 
 <!-- Testimonials -->
 <div class="testimonials">
-  <h3 style="text-align:center;font-family:var(--font-display);font-size:1.3rem;margin-bottom:20px;">What alumni said after reassessing</h3>
+  <h3 class="text-center mb-20 font-display" style="font-size:1.3rem;" >What alumni said after reassessing</h3>
   <div class="testimonial-grid">
     <div class="testimonial">
       <p>"I was curious whether anything had changed after 8 weeks. Turns out, more than I expected."</p>
@@ -264,27 +276,56 @@ body { font-family: var(--font-body); background: var(--cream); color: var(--ink
   <a href="/sample-report.pdf" target="_blank">See what a real assessment report looks like &rarr;</a>
 </div>
 
-<p style="text-align:center;font-size:0.85rem;color:var(--ink-light);max-width:480px;margin:0 auto 60px;padding:0 20px;">Not ready to reassess? No problem. Your data is here whenever you want it.</p>
+<p class="text-center c-ink-light fs-085" style="max-width:480px;margin:0 auto 60px;padding:0 20px;" >Not ready to reassess? Take your time. Your data is here whenever you want it.</p>
 
-<footer style="background:#1A3A5C;color:rgba(255,255,255,0.85);text-align:center;padding:48px 32px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
-  <div style="font-size:1.5rem;font-weight:700;letter-spacing:0.02em;">LingoGr<span style="color:#27AE60">A</span>de</div>
-  <p style="color:rgba(255,255,255,0.6);font-size:0.9375rem;margin:8px 0 24px;">Professional Language Assessment</p>
-  <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:0.875rem;">
-    <a href="index.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Home</a>
-    <a href="index.html#languages" style="color:rgba(255,255,255,0.7);text-decoration:none;">Languages</a>
-    <a href="index.html#pricing" style="color:rgba(255,255,255,0.7);text-decoration:none;">Pricing</a>
-    <a href="teachers.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">For Teachers</a>
-    <a href="partners.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Partners</a>
-    <a href="shop.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Shop</a>
-    <a href="mailto:info@lingograde.com" style="color:rgba(255,255,255,0.7);text-decoration:none;">Contact</a>
+<footer class="site-footer">
+  <div class="footer-brand">LingoGr<span class="c-green">A</span>de</div>
+  <p class="footer-tagline">Professional Language Assessment</p>
+  <div class="footer-nav">
+    <a href="index.html" class="footer-link">Home</a>
+    <a href="index.html#languages" class="footer-link">Languages</a>
+    <a href="index.html#pricing" class="footer-link">Pricing</a>
+    <a href="teachers.html" class="footer-link">For Teachers</a>
+    <a href="partners.html" class="footer-link">Partners</a>
+    <a href="shop.html" class="footer-link">Shop</a>
+    <a href="mailto:info@lingograde.com" class="footer-link">Contact</a>
   </div>
-  <div style="margin-top:16px;display:flex;gap:16px;justify-content:center;">
-    <a href="privacy-policy.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Privacy Policy</a>
-    <a href="terms-of-service.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Terms of Service</a>
+  <div class="footer-legal">
+    <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+    <a href="terms-of-service.html" class="footer-legal-link">Terms of Service</a>
   </div>
-  <div style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.4);">&copy; 2026 LingoGrade. All rights reserved.</div>
+  <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
 </footer>
 
+<script>
+// ── Currency geo-detection — IP geolocation with timezone fallback ──
+(function(){
+  var COUNTRY_MAP = {US:'usd',GB:'gbp',CH:'chf',LI:'chf'};
+  var SYMBOLS = {eur:'\u20AC',usd:'$',gbp:'\u00A3',chf:'CHF\u00A0'};
+  function tzFallback() {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    if (/America\//.test(tz) || /US\//.test(tz) || /Pacific\/Honolulu/.test(tz)) return 'usd';
+    if (/Europe\/(London|Belfast|Isle_of_Man|Jersey|Guernsey)/.test(tz)) return 'gbp';
+    if (/Europe\/Zurich/.test(tz)) return 'chf';
+    return 'eur';
+  }
+  function applyPrices(cur) {
+    var sym = SYMBOLS[cur] || SYMBOLS.eur;
+    document.querySelectorAll('[data-eur]').forEach(function(el){
+      var val = el.getAttribute('data-' + cur) || el.getAttribute('data-eur');
+      el.textContent = sym + val;
+    });
+  }
+  applyPrices(tzFallback());
+  fetch('https://api.country.is/')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var cc = d && d.country;
+      if (cc && COUNTRY_MAP[cc]) applyPrices(COUNTRY_MAP[cc]);
+    })
+    .catch(function(){});
+})();
+</script>
 <script src="js/shield.js" defer></script>
 <script src="js/marco-chat.js" defer></script>
 </body>

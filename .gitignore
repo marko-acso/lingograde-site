@@ -44,3 +44,5 @@ assets/mascot/contact-sheets/
 
 # Claude Code
 .claude/settings.local.json
+
+.vercel

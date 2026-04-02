@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LingoGrade — Free 5-Minute Conversation with Marco</title>
+<meta name="description" content="Chat with Marco the owl for 5 minutes and discover your language level. Free, no login required. Get your CEFR estimate, strengths, focus areas, and 3 personalized flashcards.">
+<meta property="og:title" content="LingoGrade — Free 5-Minute Conversation">
+<meta property="og:description" content="Chat with Marco for free. Discover your CEFR level, strengths, and focus areas in 5 minutes.">
+<meta property="og:image" content="https://www.lingograde.com/og-logo-v2.png">
+<meta property="og:url" content="https://www.lingograde.com/free-bot">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LingoGrade — Free 5-Minute Conversation">
+<meta name="twitter:description" content="Chat with Marco for free. Discover your CEFR level, strengths, and focus areas in 5 minutes.">
+<meta name="twitter:image" content="https://www.lingograde.com/og-logo-v2.png">
+<meta property="og:locale" content="en_US">
+<link rel="canonical" href="https://www.lingograde.com/free-bot">
+<link rel="alternate" hreflang="en" href="https://www.lingograde.com/free-bot">
+<link rel="alternate" hreflang="x-default" href="https://www.lingograde.com/free-bot">
+<link rel="icon" type="image/webp" href="/assets/mascot/marco-face-grad-v2.webp?v=3">
+<link rel="apple-touch-icon" href="/assets/mascot/marco-face-grad-v2.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
+<style>
+:root {
+  --ink: #1C1C1C;
+  --ink-soft: #4A4A4A;
+  --ink-light: #8A8A8A;
+  --accent: #2563AB;
+  --accent-lt: #3B82F6;
+  --accent-bg: #EFF6FF;
+  --cream: #FFFFFF;
+  --parchment: #F8F8F8;
+  --border: #E0E0E0;
+  --success: #27AE60;
+  --success-bg: #F0FFF4;
+  --warn: #E67E22;
+  --warn-bg: #FFF8F0;
+  --error: #C0392B;
+  --navy: #1A3A5C;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+  --max-w: 720px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--ink); background: var(--cream); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+/* ── Navigation ── */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: 1080px; margin: 0 auto; padding: 4px 32px; display: flex; align-items: center; justify-content: space-between; }
+.brand-logo { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); }
+.brand-logo img { height: 44px; width: auto; }
+.brand-a { color: #27AE60; text-decoration: none; }
+.nav-menu { display: flex; gap: 28px; align-items: center; }
+.nav-menu a { font-size: 0.875rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; transition: color 0.15s; }
+.nav-menu a:hover { color: var(--accent); }
+.nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+.nav-hamburger span { display: block; width: 24px; height: 2.5px; background: var(--ink); border-radius: 2px; transition: all 0.2s; }
+.nav-cta { display: inline-flex; align-items: center; padding: 8px 20px; background: var(--accent); color: white !important; border-radius: 8px; font-weight: 600; font-size: 0.875rem; text-decoration: none; transition: background 0.15s; }
+.nav-cta:hover { background: var(--accent-lt); }
+
+/* ── Pick Language View ── */
+.pick-view { padding: 100px 24px 48px; text-align: center; min-height: 100vh; background: linear-gradient(180deg, var(--success-bg) 0%, var(--cream) 100%); }
+.pick-inner { max-width: var(--max-w); margin: 0 auto; }
+.pick-owl { width: 100px; height: auto; margin-bottom: 20px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1)); }
+.pick-view h1 { font-family: var(--font-display); font-size: clamp(1.75rem, 4vw, 2.5rem); line-height: 1.25; color: var(--ink); margin-bottom: 12px; }
+.pick-view h1 em { font-style: normal; color: var(--success); }
+.pick-view .subtitle { font-size: 1rem; color: var(--ink-soft); max-width: 540px; margin: 0 auto 8px; line-height: 1.7; }
+.pick-view .note { font-size: 0.875rem; color: var(--ink-light); margin-bottom: 32px; }
+
+.lang-label { font-size: 0.875rem; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+.lang-grid { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; }
+.lang-btn { padding: 8px 16px; border: 1.5px solid var(--border); border-radius: 8px; background: var(--cream); font-family: var(--font-body); font-size: 0.8125rem; color: var(--ink-soft); cursor: pointer; transition: all 0.15s; }
+.lang-btn:hover { border-color: var(--success); color: var(--success); }
+.lang-btn.active { background: var(--success); color: white; border-color: var(--success); }
+
+.start-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 40px; background: var(--success); color: white; border: none; border-radius: 10px; font-family: var(--font-body); font-size: 1.0625rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.start-btn:hover { background: #219150; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(39,174,96,0.3); }
+.start-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+
+.pick-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; max-width: 600px; margin-left: auto; margin-right: auto; text-align: center; }
+.pick-feature { padding: 16px; }
+.pick-feature .icon { font-size: 1.5rem; margin-bottom: 6px; }
+.pick-feature h3 { font-size: 0.875rem; font-weight: 600; margin-bottom: 4px; }
+.pick-feature p { font-size: 0.8125rem; color: var(--ink-light); line-height: 1.4; }
+
+/* ── Chat View ── */
+.chat-wrapper { display: none; flex-direction: column; height: 100vh; background: var(--parchment); }
+.chat-header { padding: 16px 24px; background: var(--cream); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 16px; }
+.chat-header-info { flex: 1; }
+.chat-header-info h2 { font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 2px; }
+.chat-header-info p { font-size: 0.8125rem; color: var(--ink-light); }
+.chat-timer { font-size: 0.8125rem; color: var(--ink-light); font-variant-numeric: tabular-nums; margin-left: auto; padding-left: 16px; white-space: nowrap; }
+.chat-turn-indicator { font-size: 0.75rem; color: var(--ink-light); white-space: nowrap; }
+
+.chat-messages { flex: 1; overflow-y: auto; padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+.msg { max-width: 75%; display: flex; gap: 10px; animation: msgIn 0.25s ease; }
+@keyframes msgIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.msg-bot { align-self: flex-start; }
+.msg-user { align-self: flex-end; flex-direction: row-reverse; }
+.msg-avatar { width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0; object-fit: cover; background: transparent; }
+.msg-bubble { padding: 12px 16px; border-radius: 14px; font-size: 0.9375rem; line-height: 1.6; }
+.msg-bot .msg-bubble { background: var(--cream); border: 1px solid var(--border); border-bottom-left-radius: 4px; }
+.msg-user .msg-bubble { background: var(--success); color: white; border-bottom-right-radius: 4px; }
+
+.typing-indicator { display: flex; gap: 4px; padding: 12px 16px; background: var(--cream); border: 1px solid var(--border); border-radius: 14px; border-bottom-left-radius: 4px; align-self: flex-start; margin-left: 46px; }
+.typing-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ink-light); animation: typingBounce 1.2s infinite; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes typingBounce { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-6px); } }
+
+.chat-input-bar { padding: 16px 24px; background: var(--cream); border-top: 1px solid var(--border); display: flex; gap: 12px; align-items: flex-end; }
+.chat-input { flex: 1; padding: 12px 16px; border: 1.5px solid var(--border); border-radius: 12px; font-family: var(--font-body); font-size: 0.9375rem; resize: none; outline: none; max-height: 120px; line-height: 1.5; transition: border-color 0.15s; }
+.chat-input:focus { border-color: var(--success); }
+.chat-send { padding: 12px 20px; background: var(--success); color: white; border: none; border-radius: 12px; font-weight: 600; font-size: 0.9375rem; cursor: pointer; transition: background 0.15s; font-family: var(--font-body); white-space: nowrap; }
+.chat-send:hover { background: #219150; }
+.chat-send:disabled { background: #ccc; cursor: not-allowed; }
+
+/* ── Results View ── */
+.results-wrapper { display: none; }
+.results-hero { padding: 100px 32px 48px; text-align: center; background: linear-gradient(180deg, var(--success-bg) 0%, var(--cream) 100%); }
+.results-hero h1 { font-family: var(--font-display); font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: 12px; }
+.results-hero p { font-size: 1rem; color: var(--ink-soft); }
+.cefr-badge { display: inline-flex; align-items: center; gap: 12px; padding: 20px 32px; background: var(--cream); border: 2px solid var(--success); border-radius: 16px; margin: 24px 0 16px; }
+.cefr-badge .cefr-level { font-family: var(--font-display); font-size: 3rem; color: var(--success); }
+.cefr-badge .cefr-desc { text-align: left; }
+.cefr-badge .cefr-desc strong { font-size: 1rem; display: block; }
+.cefr-badge .cefr-desc span { font-size: 0.8125rem; color: var(--ink-light); }
+
+.results-section { padding: 40px 32px; }
+.results-inner { max-width: var(--max-w); margin: 0 auto; }
+.section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
+.section-title { font-family: var(--font-display); font-size: clamp(1.25rem, 3vw, 1.75rem); line-height: 1.3; color: var(--ink); margin-bottom: 16px; }
+
+.result-card { padding: 16px 20px; border-radius: 12px; border: 1.5px solid var(--border); background: var(--cream); margin-bottom: 10px; }
+.result-card h4 { font-size: 0.9375rem; font-weight: 600; margin-bottom: 4px; }
+.result-card p { font-size: 0.875rem; color: var(--ink-soft); line-height: 1.6; }
+.result-card.strength { border-left: 4px solid var(--success); }
+.result-card.focus { border-left: 4px solid var(--warn); }
+
+.flashcard-preview { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
+.fc-card { padding: 20px; border-radius: 12px; border: 1.5px solid var(--accent); background: var(--accent-bg); text-align: center; }
+.fc-card .fc-front { font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; text-decoration: line-through; text-decoration-color: var(--warn); }
+.fc-card .fc-back { font-size: 1rem; color: var(--success); font-weight: 600; margin-bottom: 6px; }
+.fc-card .fc-note { font-size: 0.8125rem; color: var(--ink-soft); line-height: 1.4; }
+
+.marco-comment { padding: 20px 24px; background: var(--success-bg); border-radius: 12px; border: 1.5px solid rgba(39,174,96,0.2); margin-top: 20px; display: flex; gap: 16px; align-items: flex-start; }
+.marco-comment img { width: 48px; height: auto; flex-shrink: 0; }
+.marco-comment p { font-size: 0.9375rem; color: var(--ink-soft); line-height: 1.7; font-style: italic; }
+
+/* ── Funnel CTAs ── */
+.funnel-section { text-align: center; padding: 48px 32px; background: linear-gradient(180deg, var(--cream) 0%, var(--accent-bg) 100%); }
+.funnel-section h2 { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 8px; }
+.funnel-section .funnel-sub { font-size: 1rem; color: var(--ink-soft); margin-bottom: 24px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+.funnel-grid { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; max-width: 600px; margin: 0 auto; }
+.funnel-card { flex: 1; min-width: 240px; padding: 24px; border-radius: 12px; border: 1.5px solid var(--border); background: var(--cream); text-align: center; }
+.funnel-card h3 { font-family: var(--font-display); font-size: 1.125rem; margin-bottom: 4px; }
+.funnel-card .funnel-price { font-family: var(--font-display); font-size: 1.5rem; color: var(--success); margin-bottom: 8px; }
+.funnel-card p { font-size: 0.8125rem; color: var(--ink-soft); margin-bottom: 16px; line-height: 1.5; }
+.funnel-card .funnel-btn { display: block; padding: 12px; border-radius: 10px; font-weight: 600; font-size: 0.9375rem; text-decoration: none; transition: all 0.15s; }
+.funnel-btn-primary { background: var(--success); color: white; }
+.funnel-btn-primary:hover { background: #219150; }
+.funnel-btn-secondary { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+.funnel-btn-secondary:hover { background: var(--accent-bg); }
+.funnel-safety { font-size: 0.8125rem; color: var(--ink-light); margin-top: 20px; font-style: italic; }
+
+/* ── Email capture ── */
+.email-section { margin-top: 28px; padding: 24px; background: var(--parchment); border-radius: 12px; text-align: center; }
+.email-section p { font-size: 0.9375rem; color: var(--ink-soft); margin-bottom: 12px; }
+.email-row { display: flex; gap: 8px; max-width: 400px; margin: 0 auto; }
+.email-input { flex: 1; padding: 10px 16px; border: 1.5px solid var(--border); border-radius: 8px; font-family: var(--font-body); font-size: 0.9375rem; color: var(--ink); }
+.email-input:focus { outline: none; border-color: var(--success); }
+.email-save { padding: 10px 20px; background: var(--success); color: white; border: none; border-radius: 8px; font-family: var(--font-body); font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: background 0.15s; }
+.email-save:hover { background: #219150; }
+.email-thanks { display: none; font-size: 0.875rem; color: var(--success); margin-top: 8px; }
+
+/* ── Rate Limit View ── */
+.rate-limit-view { display: none; padding: 120px 24px 48px; text-align: center; min-height: 80vh; }
+.rate-limit-view img { width: 100px; height: auto; margin-bottom: 20px; }
+.rate-limit-view h2 { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 12px; }
+.rate-limit-view p { font-size: 1rem; color: var(--ink-soft); max-width: 480px; margin: 0 auto 24px; line-height: 1.7; }
+
+/* ── Footer ── */
+.footer { background: var(--navy); color: rgba(255,255,255,0.85); text-align: center; padding: 48px 32px; }
+.footer-brand { font-size: 1.5rem; font-weight: 700; letter-spacing: 0.02em; }
+.footer-brand .green { color: #27AE60; }
+.footer p { color: rgba(255,255,255,0.6); font-size: 0.9375rem; margin: 8px 0 24px; }
+.footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; font-size: 0.875rem; }
+.footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; }
+.footer-links a:hover { color: white; }
+.footer-legal { margin-top: 16px; display: flex; gap: 16px; justify-content: center; }
+.footer-legal a { font-size: 0.75rem; color: rgba(255,255,255,0.5); text-decoration: none; }
+.footer-copy { margin-top: 16px; font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .nav-inner { padding: 8px 16px; }
+  .brand-logo { font-size: 1.2rem; gap: 6px; }
+  .brand-logo img { height: 32px; }
+  .nav-hamburger { display: flex; }
+  .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; flex-direction: column; gap: 0; padding: 8px 0; border-bottom: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .nav-menu.open { display: flex; }
+  .nav-menu a { padding: 12px 32px; font-size: 1rem; }
+  .nav-cta { margin: 8px 32px 12px; text-align: center; justify-content: center; display: flex; }
+  .pick-view { padding: 80px 16px 32px; }
+  .pick-features { grid-template-columns: 1fr; gap: 8px; }
+  .chat-header { flex-wrap: wrap; gap: 10px; padding: 12px 16px; }
+  .chat-messages { padding: 16px; }
+  .msg { max-width: 88%; }
+  .chat-input-bar { padding: 12px 16px; }
+  .flashcard-preview { grid-template-columns: 1fr; }
+  .funnel-grid { flex-direction: column; }
+  .email-row { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PICK LANGUAGE VIEW                                 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div id="pick-view" class="pick-view">
+
+<nav class="nav"><div class="nav-inner">
+  <a class="brand-logo" href="/">
+    <img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade - Home" width="44" height="44">
+    <span>LingoGr<span class="brand-a">A</span>de</span>
+  </a>
+  <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="nav-menu">
+    <a href="/">Individual</a><a href="kids.html">Kids</a><a href="corporate.html">Corporate</a><a href="partners.html">Partners</a><a href="shop.html">Shop</a>
+    <a href="https://booking.lingograde.com/marco" class="nav-cta">Explore Assessments</a>
+  </div>
+</div></nav>
+
+<div class="pick-inner">
+  <img src="assets/mascot/marco-chatbot-speech-bubble.webp?v=3" alt="Marco the Owl" class="pick-owl" width="100" height="100">
+  <h1>Curious where you <em>actually</em> stand?</h1>
+  <p class="subtitle">Chat with Marco for 5 minutes. He will listen, ask a few questions, and show you a snapshot of your language level.</p>
+  <p class="note">Free. No login. No payment. Just a conversation.</p>
+
+  <div class="lang-label">Which language would you like to practise?</div>
+  <div class="lang-grid" id="lang-grid"></div>
+
+  <button type="button" class="start-btn" id="start-btn" disabled onclick="startConversation()">Start Talking with Marco</button>
+
+  <div class="pick-features">
+    <div class="pick-feature">
+      <div class="icon">&#127919;</div>
+      <h3>CEFR Estimate</h3>
+      <p>Your approximate level from A1 to C2</p>
+    </div>
+    <div class="pick-feature">
+      <div class="icon">&#127775;</div>
+      <h3>Strengths</h3>
+      <p>What you are already doing well</p>
+    </div>
+    <div class="pick-feature">
+      <div class="icon">&#127183;</div>
+      <h3>3 Flashcards</h3>
+      <p>Personalised cards from your conversation</p>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAT VIEW                                          -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div id="chat-view" class="chat-wrapper">
+  <div class="chat-header">
+    <a href="/" style="flex-shrink:0;">
+      <img src="assets/mascot/marco-chatbot-speech-bubble.webp?v=3" alt="Marco" width="40" height="40" style="width:40px;height:auto;border-radius:50%;" >
+    </a>
+    <div class="chat-header-info">
+      <h2>Talking with Marco</h2>
+      <p>Just chat naturally. There are no wrong answers.</p>
+    </div>
+    <div class="chat-timer" id="chat-timer">0:00</div>
+  </div>
+
+  <div class="chat-messages" id="chat-messages"></div>
+
+  <div class="chat-input-bar">
+    <textarea class="chat-input" id="chat-input" rows="1" placeholder="Type your response..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMessage();}"></textarea>
+    <button class="chat-send" id="send-btn" onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- RESULTS VIEW                                       -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div id="results-view" class="results-wrapper">
+
+  <nav class="nav"><div class="nav-inner">
+    <a class="brand-logo" href="/">
+      <img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade - Home" width="44" height="44">
+      <span>LingoGr<span class="brand-a">A</span>de</span>
+    </a>
+    <a href="/" class="nav-cta">Back to LingoGrade</a>
+  </div></nav>
+
+  <div class="results-hero">
+    <img class="mb-16" src="assets/mascot/marco-face-party.webp?v=3" alt="Marco" width="80" height="80" loading="lazy" style="width:80px;height:auto;" >
+    <h1>Your Language Snapshot</h1>
+    <p>Here is what Marco noticed in your conversation.</p>
+    <div class="cefr-badge">
+      <div class="cefr-level" id="res-cefr-level">--</div>
+      <div class="cefr-desc">
+        <strong id="res-cefr-label">Calculating...</strong>
+        <span>Estimated CEFR level</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Strengths -->
+  <div class="results-section">
+    <div class="results-inner">
+      <div class="section-label c-success">Strengths</div>
+      <h2 class="section-title">What you are doing well</h2>
+      <div id="res-strengths"></div>
+    </div>
+  </div>
+
+  <!-- Focus Areas -->
+  <div class="results-section bg-parchment" >
+    <div class="results-inner">
+      <div class="section-label c-warn" >Focus Areas</div>
+      <h2 class="section-title">Patterns worth exploring</h2>
+      <div id="res-focus"></div>
+    </div>
+  </div>
+
+  <!-- Flashcards -->
+  <div class="results-section">
+    <div class="results-inner">
+      <div class="section-label c-accent">Your Free Flashcards</div>
+      <h2 class="section-title">3 cards from your conversation</h2>
+      <div class="flashcard-preview" id="res-flashcards"></div>
+    </div>
+  </div>
+
+  <!-- Marco comment -->
+  <div class="results-section bg-parchment" >
+    <div class="results-inner">
+      <div class="marco-comment">
+        <img src="assets/mascot/marco-chatbot-speech-bubble.webp?v=3" alt="Marco" width="48" height="48">
+        <p id="res-marco-comment"></p>
+      </div>
+
+      <div class="email-section">
+        <p>Would you like Marco to save your results?</p>
+        <div class="email-row">
+          <input type="email" class="email-input" id="res-email" placeholder="your@email.com">
+          <button type="button" class="email-save" id="res-email-save" onclick="saveEmail()">Save</button>
+        </div>
+        <div class="email-thanks" id="res-email-thanks">Saved. Marco will remember you.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Funnel CTAs -->
+  <div class="funnel-section">
+    <h2>Explore the full picture</h2>
+    <p class="funnel-sub">This snapshot covers the surface. A full assessment maps the patterns underneath.</p>
+    <div class="funnel-grid">
+      <div class="funnel-card">
+        <h3>Bot Assessment</h3>
+        <div class="funnel-price">&euro;49.95</div>
+        <p>15-20 min AI conversation. Full report with 5 patterns, 5 strengths, lever corrections, and a 4-week study plan.</p>
+        <a href="chatbot-assessment.html" class="funnel-btn funnel-btn-primary">Explore Bot Assessment</a>
+      </div>
+      <div class="funnel-card">
+        <h3>Human Assessment</h3>
+        <div class="funnel-price">From &euro;89.95</div>
+        <p>Live session with a professional assessor. Bilingual PDF report, homework programme, and 8-week roadmap.</p>
+        <a href="https://booking.lingograde.com/marco" class="funnel-btn funnel-btn-secondary" target="_blank">Explore Human Assessment</a>
+      </div>
+    </div>
+    <p class="funnel-safety">Not ready? Take your time. Your data is here whenever you want it.</p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-brand">LingoGr<span class="green">A</span>de</div>
+    <p>Professional Language Assessment</p>
+    <div class="footer-links"><a href="/">Home</a><a href="teachers.html">For Teachers</a><a href="partners.html">Partners</a><a href="shop.html">Shop</a><a href="mailto:info@lingograde.com">Contact</a></div>
+    <div class="footer-legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms of Service</a></div>
+    <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
+  </footer>
+
+</div><!-- /results-view -->
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- RATE LIMIT VIEW                                    -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div id="rate-limit-view" class="rate-limit-view">
+  <nav class="nav"><div class="nav-inner">
+    <a class="brand-logo" href="/">
+      <img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade - Home" width="44" height="44">
+      <span>LingoGr<span class="brand-a">A</span>de</span>
+    </a>
+    <a href="/" class="nav-cta">Back to LingoGrade</a>
+  </div></nav>
+  <img src="assets/mascot/marco-tea.webp" alt="Marco resting" style="width:100px;height:auto;">
+  <h2>Marco has chatted with you a few times today</h2>
+  <p>Come back tomorrow for another free conversation. Or, if you are curious now, a full assessment goes much deeper.</p>
+  <div class="mt-16 gap-16" style="display:flex;justify-content:center;flex-wrap:wrap;" >
+    <a class="fw-600 c-white no-underline gap-8" href="chatbot-assessment.html" style="display:inline-flex;align-items:center;padding:14px 28px;background:var(--success);border-radius:10px;transition:all 0.2s;" >Explore Bot Assessment &mdash; &euro;49.95</a>
+    <a class="fw-600 c-ink no-underline gap-8" href="https://booking.lingograde.com/marco" target="_blank" style="display:inline-flex;align-items:center;padding:14px 28px;border:1.5px solid var(--border);border-radius:10px;" >Book Human Assessment</a>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SCRIPTS                                            -->
+<!-- ═══════════════════════════════════════════════════ -->
+<script>
+;(function() {
+  'use strict';
+
+  var API_BASE = 'https://api.lingograde.com/v1';
+  var FREE_BOT_API = API_BASE + '/free-bot';
+  var RATE_KEY = 'lg_freebot_count';
+  var RATE_DATE_KEY = 'lg_freebot_date';
+  var LOCAL_RATE_LIMIT = 3;
+  var MASCOT_IMG = 'assets/mascot/marco-chatbot-speech-bubble.webp?v=3';
+
+  var LANGS = [
+    { label: 'English', code: 'en' },
+    { label: 'Deutsch', code: 'de' },
+    { label: 'Fran\u00e7ais', code: 'fr' },
+    { label: 'Espa\u00f1ol', code: 'es' },
+    { label: 'Italiano', code: 'it' },
+    { label: '\u0420\u0443\u0441\u0441\u043a\u0438\u0439', code: 'ru' },
+    { label: '\u0423\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430', code: 'uk' },
+    { label: '\u4e2d\u6587', code: 'zh' },
+    { label: '\u0627\u0644\u0639\u0631\u0628\u064a\u0629', code: 'ar' },
+    { label: 'T\u00fcrk\u00e7e', code: 'tr' },
+    { label: 'Portugu\u00eas', code: 'pt' },
+    { label: 'Polski', code: 'pl' },
+    { label: 'Magyar', code: 'hu' },
+    { label: 'Rom\u00e2n\u0103', code: 'ro' },
+    { label: '\u0411\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u0438', code: 'bg' },
+    { label: 'Srpski', code: 'sr' },
+    { label: 'Hrvatski', code: 'hr' },
+    { label: 'Shqip', code: 'sq' },
+    { label: 'Nederlands', code: 'nl' },
+    { label: 'Svenska', code: 'sv' },
+    { label: 'Norsk', code: 'no' },
+    { label: 'Dansk', code: 'da' },
+    { label: 'Suomi', code: 'fi' },
+    { label: '\u65e5\u672c\u8a9e', code: 'ja' },
+    { label: '\ud55c\uad6d\uc5b4', code: 'ko' },
+    { label: '\u0939\u093f\u0928\u094d\u0926\u0940', code: 'hi' },
+    { label: '\u0641\u0627\u0631\u0633\u06cc', code: 'fa' },
+    { label: '\u0540\u0561\u0575\u0565\u0580\u0565\u0576', code: 'hy' }
+  ];
+
+  // ── State ──
+  var selectedLang = null;
+  var botId = null;
+  var timerInterval = null;
+  var timerSeconds = 0;
+  var sending = false;
+  var lastSendTime = 0;
+
+  // ── DOM refs ──
+  var pickView = document.getElementById('pick-view');
+  var chatView = document.getElementById('chat-view');
+  var resultsView = document.getElementById('results-view');
+  var rateLimitView = document.getElementById('rate-limit-view');
+  var langGrid = document.getElementById('lang-grid');
+  var startBtn = document.getElementById('start-btn');
+  var chatMessages = document.getElementById('chat-messages');
+  var chatInput = document.getElementById('chat-input');
+  var sendBtn = document.getElementById('send-btn');
+  var timerEl = document.getElementById('chat-timer');
+
+  // ── Check local rate limit ──
+  function checkLocalRate() {
+    var today = new Date().toISOString().slice(0, 10);
+    var storedDate = localStorage.getItem(RATE_DATE_KEY);
+    if (storedDate !== today) {
+      localStorage.setItem(RATE_DATE_KEY, today);
+      localStorage.setItem(RATE_KEY, '0');
+      return true;
+    }
+    var count = parseInt(localStorage.getItem(RATE_KEY) || '0', 10);
+    return count < LOCAL_RATE_LIMIT;
+  }
+
+  function incrementLocalRate() {
+    var count = parseInt(localStorage.getItem(RATE_KEY) || '0', 10);
+    localStorage.setItem(RATE_KEY, String(count + 1));
+  }
+
+  // ── Check rate limit on page load ──
+  if (!checkLocalRate()) {
+    pickView.style.display = 'none';
+    rateLimitView.style.display = 'block';
+  }
+
+  // ── Build language grid ──
+  LANGS.forEach(function(lang) {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'lang-btn';
+    btn.textContent = lang.label;
+    btn.dataset.code = lang.code;
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.lang-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      selectedLang = lang.code;
+      startBtn.disabled = false;
+    });
+    langGrid.appendChild(btn);
+  });
+
+  // ── Start conversation ──
+  window.startConversation = function() {
+    if (!selectedLang || sending) return;
+
+    if (!checkLocalRate()) {
+      pickView.style.display = 'none';
+      rateLimitView.style.display = 'block';
+      return;
+    }
+
+    startBtn.disabled = true;
+    startBtn.textContent = 'Marco is getting ready...';
+
+    var sessionId = localStorage.getItem('marco_session') || '';
+
+    fetch(FREE_BOT_API + '/start', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ lang: selectedLang, session_id: sessionId })
+    })
+    .then(function(r) {
+      if (r.status === 429) {
+        pickView.style.display = 'none';
+        rateLimitView.style.display = 'block';
+        return null;
+      }
+      return r.json();
+    })
+    .then(function(data) {
+      if (!data) return;
+      if (data.error) {
+        startBtn.disabled = false;
+        startBtn.textContent = 'Start Talking with Marco';
+        alert(data.message || data.error);
+        return;
+      }
+      botId = data.bot_id;
+      incrementLocalRate();
+      showChatView(data.first_message);
+    })
+    .catch(function(err) {
+      startBtn.disabled = false;
+      startBtn.textContent = 'Start Talking with Marco';
+      console.error('Start error:', err);
+    });
+  };
+
+  // ── Show chat view ──
+  function showChatView(firstMessage) {
+    pickView.style.display = 'none';
+    chatView.style.display = 'flex';
+    addBotMessage(firstMessage);
+    chatInput.focus();
+    startTimer();
+  }
+
+  // ── Timer ──
+  function startTimer() {
+    timerInterval = setInterval(function() {
+      timerSeconds++;
+      var m = Math.floor(timerSeconds / 60);
+      var s = timerSeconds % 60;
+      timerEl.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+    }, 1000);
+  }
+
+  function stopTimer() {
+    if (timerInterval) clearInterval(timerInterval);
+  }
+
+  // ── Add messages ──
+  function addBotMessage(text) {
+    var div = document.createElement('div');
+    div.className = 'msg msg-bot';
+    div.innerHTML = '<img src="' + MASCOT_IMG + '" alt="Marco" class="msg-avatar" width="36" height="36">' +
+      '<div class="msg-bubble">' + escapeHtml(text) + '</div>';
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function addUserMessage(text) {
+    var div = document.createElement('div');
+    div.className = 'msg msg-user';
+    div.innerHTML = '<div class="msg-bubble">' + escapeHtml(text) + '</div>';
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function showTyping() {
+    var div = document.createElement('div');
+    div.className = 'typing-indicator';
+    div.id = 'typing';
+    div.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function hideTyping() {
+    var el = document.getElementById('typing');
+    if (el) el.remove();
+  }
+
+  function escapeHtml(str) {
+    var d = document.createElement('div');
+    d.textContent = str;
+    return d.innerHTML;
+  }
+
+  // ── Send message ──
+  window.sendMessage = function() {
+    var text = chatInput.value.trim();
+    if (!text || sending || !botId) return;
+
+    // Throttle: 1.5s between sends
+    var now = Date.now();
+    if (now - lastSendTime < 1500) return;
+    lastSendTime = now;
+
+    sending = true;
+    sendBtn.disabled = true;
+    chatInput.value = '';
+    addUserMessage(text);
+    showTyping();
+
+    fetch(FREE_BOT_API + '/turn', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ bot_id: botId, message: text })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      hideTyping();
+      sending = false;
+      sendBtn.disabled = false;
+
+      if (data.error) {
+        addBotMessage('That didn't go through. Could you try again?');
+        return;
+      }
+
+      addBotMessage(data.response);
+
+      if (data.complete && data.result) {
+        stopTimer();
+        chatInput.disabled = true;
+        sendBtn.disabled = true;
+        setTimeout(function() {
+          showResults(data.result);
+        }, 2000);
+      } else {
+        chatInput.focus();
+      }
+    })
+    .catch(function(err) {
+      hideTyping();
+      sending = false;
+      sendBtn.disabled = false;
+      console.error('Turn error:', err);
+      addBotMessage('That didn't go through. Could you try again?');
+    });
+  };
+
+  // ── Show results ──
+  function showResults(result) {
+    chatView.style.display = 'none';
+    resultsView.style.display = 'block';
+    window.scrollTo(0, 0);
+
+    // CEFR badge
+    var cefrLevel = document.getElementById('res-cefr-level');
+    var cefrLabel = document.getElementById('res-cefr-label');
+    cefrLevel.textContent = result.cefr_estimate || '--';
+    cefrLabel.textContent = result.cefr_label || '';
+
+    // Strengths
+    var strengthsDiv = document.getElementById('res-strengths');
+    strengthsDiv.innerHTML = '';
+    (result.strengths || []).forEach(function(s) {
+      var card = document.createElement('div');
+      card.className = 'result-card strength';
+      card.innerHTML = '<p>' + escapeHtml(s) + '</p>';
+      strengthsDiv.appendChild(card);
+    });
+
+    // Focus areas
+    var focusDiv = document.getElementById('res-focus');
+    focusDiv.innerHTML = '';
+    (result.focus_areas || []).forEach(function(f) {
+      var card = document.createElement('div');
+      card.className = 'result-card focus';
+      card.innerHTML = '<p>' + escapeHtml(f) + '</p>';
+      focusDiv.appendChild(card);
+    });
+
+    // Flashcards
+    var fcDiv = document.getElementById('res-flashcards');
+    fcDiv.innerHTML = '';
+    (result.flashcards || []).forEach(function(fc) {
+      var card = document.createElement('div');
+      card.className = 'fc-card';
+      card.innerHTML = '<div class="fc-front">' + escapeHtml(fc.front || '') + '</div>' +
+        '<div class="fc-back">' + escapeHtml(fc.back || '') + '</div>' +
+        '<div class="fc-note">' + escapeHtml(fc.note || '') + '</div>';
+      fcDiv.appendChild(card);
+    });
+
+    // Marco comment
+    var commentEl = document.getElementById('res-marco-comment');
+    commentEl.textContent = result.marco_comment || '';
+  }
+
+  // ── Save email ──
+  window.saveEmail = function() {
+    var email = document.getElementById('res-email').value.trim();
+    if (!email || email.indexOf('@') < 0) return;
+
+    document.getElementById('res-email-save').disabled = true;
+    document.getElementById('res-email-save').textContent = 'Saving...';
+
+    // Best-effort email save — we don't block on this
+    fetch(FREE_BOT_API + '/email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, bot_id: botId })
+    }).then(function(r) {
+      if (!r.ok) {
+        document.getElementById('res-email-thanks').textContent = 'That didn't go through. Try again?';
+        document.getElementById('res-email-thanks').style.color = 'var(--warn)';
+        document.getElementById('res-email-save').disabled = false;
+        document.getElementById('res-email-save').textContent = 'Save';
+      }
+    }).catch(function() {
+      document.getElementById('res-email-thanks').textContent = 'That didn't go through. Try again?';
+      document.getElementById('res-email-thanks').style.color = 'var(--warn)';
+      document.getElementById('res-email-save').disabled = false;
+      document.getElementById('res-email-save').textContent = 'Save';
+    });
+
+    localStorage.setItem('marco_email', email);
+    document.getElementById('res-email-thanks').style.display = 'block';
+    document.getElementById('res-email-save').textContent = 'Saved';
+  };
+
+})();
+</script>
+
+<script src="js/shield.js" defer></script>
+<script src="js/cookie-consent.js" defer></script>
+</body>
+</html>

@@ -12,14 +12,21 @@
 <meta property="og:url" content="https://www.lingograde.com/map">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sticker Map — Where Marco Has Landed | LingoGrade">
+<meta name="twitter:description" content="Every dot is a verified sticker placement by a real LingoGrade ambassador. Watch the global community grow in real time.">
 <meta name="twitter:image" content="https://www.lingograde.com/og-logo-v2.png">
+<meta property="og:locale" content="en_US">
 <link rel="canonical" href="https://www.lingograde.com/map">
+<link rel="alternate" hreflang="en" href="https://www.lingograde.com/map">
+<link rel="alternate" hreflang="x-default" href="https://www.lingograde.com/map">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+<link rel="stylesheet" href="/css/leaflet.css">
+<script src="/js/leaflet.js" defer></script>
 <link rel="icon" type="image/webp" href="/assets/mascot/marco-face-grad-v2.webp?v=3">
+<link rel="apple-touch-icon" href="/assets/mascot/marco-face-grad-v2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
 <style>
 :root {
   --ink: #E0E0E0;
@@ -97,7 +104,7 @@ body { font-family: var(--font-body); background: var(--bg); color: var(--ink); 
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="Marco" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"><span>LingoGr<span class="brand-a">A</span>de</span></a>
+    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade - Home" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"><span>LingoGr<span class="brand-a">A</span>de</span></a>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -107,7 +114,7 @@ body { font-family: var(--font-body); background: var(--bg); color: var(--ink); 
       <a href="corporate.html">Corporate</a>
       <a href="partners.html">Partners</a>
       <a href="shop.html">Shop</a>
-      <a href="map.html" style="color:var(--accent);font-weight:700;">Map</a>
+      <a href="map.html" class="nav-active">Map</a>
       <a href="https://app.lingograde.com/login" class="nav-signin">Sign In</a>
       <a href="https://booking.lingograde.com/marco" class="nav-cta">Explore Assessments</a>
     </div>
@@ -148,9 +155,9 @@ body { font-family: var(--font-body); background: var(--bg); color: var(--ink); 
 </div>
 
 <footer class="footer">
-  <div style="font-size:1.5rem;font-weight:700;letter-spacing:0.02em;">LingoGr<span style="color:#27AE60">A</span>de</div>
-  <p style="color:rgba(255,255,255,0.6);font-size:0.9375rem;margin:8px 0 24px;">Professional Language Assessment</p>
-  <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:0.875rem;">
+  <div class="footer-brand">LingoGr<span class="c-green">A</span>de</div>
+  <p class="footer-tagline">Professional Language Assessment</p>
+  <div class="footer-nav">
     <a href="index.html">Home</a>
     <a href="index.html#languages">Languages</a>
     <a href="index.html#pricing">Pricing</a>
@@ -159,11 +166,11 @@ body { font-family: var(--font-body); background: var(--bg); color: var(--ink); 
     <a href="shop.html">Shop</a>
     <a href="mailto:info@lingograde.com">Contact</a>
   </div>
-  <div style="margin-top:16px;display:flex;gap:16px;justify-content:center;">
-    <a href="privacy-policy.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);">Privacy Policy</a>
-    <a href="terms-of-service.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);">Terms of Service</a>
+  <div class="footer-legal">
+    <a class="fs-sm" href="privacy-policy.html" style="color:rgba(255,255,255,0.5);">Privacy Policy</a>
+    <a class="fs-sm" href="terms-of-service.html" style="color:rgba(255,255,255,0.5);">Terms of Service</a>
   </div>
-  <div style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.4);">&copy; 2026 LingoGrade. All rights reserved.</div>
+  <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
 </footer>
 
 <script>
@@ -229,9 +236,9 @@ document.addEventListener('DOMContentLoaded', function() {
         opacity: 1,
         fillOpacity: 0.85
       }).addTo(map).bindPopup(
-        '<div style="font-family:DM Sans,sans-serif;text-align:center;">' +
-        '<strong style="font-size:1rem;">' + p.city + '</strong><br>' +
-        '<span style="color:#2563AB;font-weight:700;">' + p.count + '</span> sticker' + (p.count > 1 ? 's' : '') + ' placed' +
+        '<div class="text-center" style="font-family:DM Sans,sans-serif;">' +
+        '<strong class="fs-base" >' + p.city + '</strong><br>' +
+        '<span class="fw-700 c-accent" >' + p.count + '</span> sticker' + (p.count > 1 ? 's' : '') + ' placed' +
         '</div>'
       );
     });

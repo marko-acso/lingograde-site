@@ -10,11 +10,20 @@
 <meta property="og:image" content="https://www.lingograde.com/og-logo-v2.png">
 <meta property="og:url" content="https://www.lingograde.com/chatbot-assessment">
 <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bot Assessment — LingoGrade">
+<meta name="twitter:description" content="Professional AI language assessment. 15-20 minutes, instant results. CEFR level, 5 focus areas, 5 strengths, 4-week study plan.">
+<meta name="twitter:image" content="https://www.lingograde.com/og-logo-v2.png">
+<meta property="og:locale" content="en_US">
 <link rel="canonical" href="https://www.lingograde.com/chatbot-assessment">
+<link rel="alternate" hreflang="en" href="https://www.lingograde.com/chatbot-assessment">
+<link rel="alternate" hreflang="x-default" href="https://www.lingograde.com/chatbot-assessment">
 <link rel="icon" type="image/webp" href="/assets/mascot/marco-face-grad-v2.webp?v=3">
+<link rel="apple-touch-icon" href="/assets/mascot/marco-face-grad-v2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
 <style>
 :root {
   --ink: #1C1C1C;
@@ -208,7 +217,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <nav class="nav">
   <div class="nav-inner">
     <a class="brand-logo" href="/">
-      <img src="assets/mascot/marco-logo-reading-book.webp" alt="LingoGrade" height="44" width="44">
+      <img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade - Home" height="44" width="44">
       <span>LingoGr<span class="brand-a">A</span>de</span>
     </a>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
@@ -231,28 +240,28 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <div class="hero-badge">AI-Powered Assessment</div>
     <h1>A real conversation with Marco. A <em>real report</em> about your language.</h1>
     <p>15-20 minutes of structured dialogue with our AI assessor. You walk away with your CEFR level, 5 focus areas, 5 strengths, and a 4-week study plan — delivered instantly.</p>
-    <div style="display:inline-flex;align-items:center;gap:16px;background:var(--cream);border:2px solid var(--success);border-radius:16px;padding:20px 32px;margin-bottom:24px;">
-      <img src="assets/mascot/marco-chatbot-speech-bubble.webp?v=3" alt="Marco the owl" width="64" height="64" style="width:64px;height:auto;background:transparent;" loading="lazy">
-      <div style="text-align:left;">
-        <div style="font-weight:600;font-size:1rem;">Marco is your assessor</div>
-        <div style="font-size:0.875rem;color:var(--ink-soft);">Patient, curious, encouraging. 28 languages.</div>
+    <div class="mb-24 gap-16 bg-cream" style="display:inline-flex;align-items:center;border:2px solid var(--success);border-radius:16px;padding:20px 32px;" >
+      <img src="assets/mascot/marco-chatbot-speech-bubble.webp?v=3" alt="Marco the owl" width="64" height="64" loading="lazy" style="width:64px;height:auto;">
+      <div class="text-left" >
+        <div class="fw-600 fs-base" >Marco is your assessor</div>
+        <div class="fs-body c-ink-soft">Patient, curious, encouraging. Chats in 28 languages.</div>
       </div>
     </div>
     <div>
-      <button onclick="startPayment()" class="btn-primary" style="background:var(--success);font-size:1.0625rem;padding:16px 40px;">
+      <button onclick="startPayment()" class="btn-primary fs-md2" style="background:var(--success);padding:16px 40px;" >
         Start Bot Assessment &mdash; <span class="lg-price-inline" data-eur="49.95" data-usd="49.95" data-chf="49.95" data-gbp="49.95">&euro;49.95</span>
       </button>
-      <p style="font-size:0.8rem;color:var(--ink-light);margin-top:12px;">One-time payment. No subscription. Instant results.</p>
+      <p class="subcaption mt-12">One-time payment. No subscription. Instant results.</p>
     </div>
   </div>
 </section>
 
 <!-- What You Get -->
 <section class="section">
-  <div class="section-inner" style="text-align:center;">
-    <div class="section-label" style="color:var(--success);">What You Get</div>
-    <h2 class="section-title" style="margin:0 auto 8px;">Your personalised mini-report includes</h2>
-    <p class="section-desc" style="margin:0 auto;">Delivered instantly in your browser. No waiting, no booking.</p>
+  <div class="section-inner text-center">
+    <div class="section-label c-success">What You Get</div>
+    <h2 class="section-title mx-auto mb-8">Your personalized mini-report includes</h2>
+    <p class="section-desc mx-auto">Delivered instantly in your browser. No waiting, no booking.</p>
     <div class="get-grid">
       <div class="get-card">
         <div class="get-icon">&#127919;</div>
@@ -281,7 +290,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       </div>
       <div class="get-card">
         <div class="get-icon">&#128172;</div>
-        <h3>28 Languages</h3>
+        <h3>Chat in 28 Languages</h3>
         <p>Pick your target language and Marco adapts the entire conversation.</p>
       </div>
     </div>
@@ -290,11 +299,11 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
 <!-- Comparison Table -->
 <section class="section section-alt">
-  <div class="section-inner" style="text-align:center;">
+  <div class="section-inner text-center">
     <div class="section-label">Compare Your Options</div>
-    <h2 class="section-title" style="margin:0 auto 8px;">Free snapshot, AI report, or human deep-dive?</h2>
-    <p class="section-desc" style="margin:0 auto;">Each option builds on the last. Start wherever feels right.</p>
-    <div style="overflow-x:auto;margin-top:32px;">
+    <h2 class="section-title mx-auto mb-8">Free snapshot, AI report, or human deep-dive?</h2>
+    <p class="section-desc mx-auto">Each option builds on the last. Start wherever feels right.</p>
+    <div class="mt-32" style="overflow-x:auto;">
       <table class="compare-table">
         <thead>
           <tr>
@@ -373,9 +382,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           </tr>
           <tr>
             <td></td>
-            <td><a href="/#free-analysis" class="btn-secondary" style="padding:10px 20px;font-size:0.8125rem;">Try Free</a></td>
-            <td class="col-bot"><button onclick="startPayment()" class="btn-primary" style="background:var(--success);padding:10px 20px;font-size:0.8125rem;">Start Now</button></td>
-            <td><a href="https://booking.lingograde.com/marco" class="btn-secondary" style="padding:10px 20px;font-size:0.8125rem;" target="_blank">Book</a></td>
+            <td><a href="free-bot.html" class="btn-secondary fs-smm" style="padding:10px 20px;" >Try Free</a></td>
+            <td class="col-bot"><button onclick="startPayment()" class="btn-primary fs-smm" style="background:var(--success);padding:10px 20px;" >Start Now</button></td>
+            <td><a href="https://booking.lingograde.com/marco" class="btn-secondary fs-smm" target="_blank" style="padding:10px 20px;">Book</a></td>
           </tr>
         </tbody>
       </table>
@@ -385,71 +394,71 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
 <!-- How It Works -->
 <section class="section">
-  <div class="section-inner" style="text-align:center;">
+  <div class="section-inner text-center">
     <div class="section-label">How It Works</div>
-    <h2 class="section-title" style="margin:0 auto 8px;">Five phases, one natural conversation</h2>
-    <p class="section-desc" style="margin:0 auto;">Marco guides you through a structured dialogue. Each phase reveals a different dimension of your language ability.</p>
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:40px;text-align:center;">
+    <h2 class="section-title mx-auto mb-8">Five phases, one natural conversation</h2>
+    <p class="section-desc mx-auto">Marco guides you through a structured dialogue. Each phase reveals a different dimension of your language ability.</p>
+    <div class="text-center gap-16 mt-40" style="display:grid;grid-template-columns:repeat(5,1fr);" >
       <div>
-        <div style="width:48px;height:48px;border-radius:50%;background:var(--success);color:white;font-family:var(--font-display);font-size:1.25rem;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">1</div>
-        <h3 style="font-size:0.9375rem;font-weight:600;margin-bottom:4px;">Warm-Up</h3>
-        <p style="font-size:0.8125rem;color:var(--ink-light);">Casual intro in your target language. 2-3 min.</p>
+        <div class="step-circle">1</div>
+        <h3 class="fs-md fw-600 mb-6">Warm-Up</h3>
+        <p class="helper-text">Casual intro in your target language. 2-3 min.</p>
       </div>
       <div>
-        <div style="width:48px;height:48px;border-radius:50%;background:var(--success);color:white;font-family:var(--font-display);font-size:1.25rem;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">2</div>
-        <h3 style="font-size:0.9375rem;font-weight:600;margin-bottom:4px;">Grammar Probe</h3>
-        <p style="font-size:0.8125rem;color:var(--ink-light);">Structured prompts testing key constructs. 5 min.</p>
+        <div class="step-circle">2</div>
+        <h3 class="fs-md fw-600 mb-6">Grammar Probe</h3>
+        <p class="helper-text">Structured prompts testing key constructs. 5 min.</p>
       </div>
       <div>
-        <div style="width:48px;height:48px;border-radius:50%;background:var(--success);color:white;font-family:var(--font-display);font-size:1.25rem;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">3</div>
-        <h3 style="font-size:0.9375rem;font-weight:600;margin-bottom:4px;">Vocabulary</h3>
-        <p style="font-size:0.8125rem;color:var(--ink-light);">Topic-based word retrieval. 3 min.</p>
+        <div class="step-circle">3</div>
+        <h3 class="fs-md fw-600 mb-6">Vocabulary</h3>
+        <p class="helper-text">Topic-based word retrieval. 3 min.</p>
       </div>
       <div>
-        <div style="width:48px;height:48px;border-radius:50%;background:var(--success);color:white;font-family:var(--font-display);font-size:1.25rem;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">4</div>
-        <h3 style="font-size:0.9375rem;font-weight:600;margin-bottom:4px;">Comprehension</h3>
-        <p style="font-size:0.8125rem;color:var(--ink-light);">Read a passage, answer questions. 3 min.</p>
+        <div class="step-circle">4</div>
+        <h3 class="fs-md fw-600 mb-6">Comprehension</h3>
+        <p class="helper-text">Read a passage, answer questions. 3 min.</p>
       </div>
       <div>
-        <div style="width:48px;height:48px;border-radius:50%;background:var(--success);color:white;font-family:var(--font-display);font-size:1.25rem;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">5</div>
-        <h3 style="font-size:0.9375rem;font-weight:600;margin-bottom:4px;">Free Expression</h3>
-        <p style="font-size:0.8125rem;color:var(--ink-light);">Open-ended prompt. 3-5 min.</p>
+        <div class="step-circle">5</div>
+        <h3 class="fs-md fw-600 mb-6">Free Expression</h3>
+        <p class="helper-text">Open-ended prompt. 3-5 min.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Final CTA -->
-<section class="section" style="text-align:center;padding:64px 32px;background:linear-gradient(180deg,var(--cream) 0%,var(--success-bg) 100%);">
-  <div style="max-width:600px;margin:0 auto;">
-    <img src="assets/mascot/marco-thumbsup.webp?v=3" alt="Marco" width="100" height="100" style="width:100px;height:auto;margin-bottom:20px;background:transparent;" loading="lazy">
+<section class="section text-center" style="padding:64px 32px;background:linear-gradient(180deg,var(--cream) 0%,var(--success-bg) 100%);">
+  <div class="mx-auto" style="max-width:600px;">
+    <img class="mb-20" src="assets/mascot/marco-thumbsup.webp?v=3" alt="Marco" width="100" height="100" loading="lazy" style="width:100px;height:auto;" >
     <h2 class="section-title" style="margin:0 auto 12px;">Ready to find out where you stand?</h2>
-    <p style="font-size:1rem;color:var(--ink-soft);margin-bottom:24px;line-height:1.7;">No booking, no scheduling. Just you and Marco, right now.</p>
-    <button onclick="startPayment()" class="btn-primary" style="background:var(--success);font-size:1.0625rem;padding:16px 40px;">
+    <p class="mb-24 lh-17 fs-base c-ink-soft" >No booking, no scheduling. Just you and Marco, right now.</p>
+    <button onclick="startPayment()" class="btn-primary fs-md2" style="background:var(--success);padding:16px 40px;" >
       Start Bot Assessment &mdash; <span class="lg-price-inline" data-eur="49.95" data-usd="49.95" data-chf="49.95" data-gbp="49.95">&euro;49.95</span>
     </button>
-    <p style="font-size:0.8rem;color:var(--ink-light);margin-top:12px;">Not ready? No problem. Everything will be here whenever you are.</p>
+    <p class="subcaption mt-12">Not ready? Take your time. Everything will be here whenever you are.</p>
   </div>
 </section>
 
 <!-- Footer -->
-<footer style="background:#1A3A5C;color:rgba(255,255,255,0.85);text-align:center;padding:48px 32px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
-  <div style="font-size:1.5rem;font-weight:700;letter-spacing:0.02em;">LingoGr<span style="color:#27AE60">A</span>de</div>
-  <p style="color:rgba(255,255,255,0.6);font-size:0.9375rem;margin:8px 0 24px;">Professional Language Assessment</p>
-  <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:0.875rem;">
-    <a href="/#how-it-works" style="color:rgba(255,255,255,0.7);text-decoration:none;">How It Works</a>
-    <a href="/#languages" style="color:rgba(255,255,255,0.7);text-decoration:none;">Languages</a>
-    <a href="/#pricing" style="color:rgba(255,255,255,0.7);text-decoration:none;">Pricing</a>
-    <a href="teachers.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">For Teachers</a>
-    <a href="partners.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Partners</a>
-    <a href="shop.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Shop</a>
-    <a href="mailto:info@lingograde.com" style="color:rgba(255,255,255,0.7);text-decoration:none;">Contact</a>
+<footer class="site-footer">
+  <div class="footer-brand">LingoGr<span class="c-green">A</span>de</div>
+  <p class="footer-tagline">Professional Language Assessment</p>
+  <div class="footer-nav">
+    <a href="/#how-it-works" class="footer-link">How It Works</a>
+    <a href="/#languages" class="footer-link">Languages</a>
+    <a href="/#pricing" class="footer-link">Pricing</a>
+    <a href="teachers.html" class="footer-link">For Teachers</a>
+    <a href="partners.html" class="footer-link">Partners</a>
+    <a href="shop.html" class="footer-link">Shop</a>
+    <a href="mailto:info@lingograde.com" class="footer-link">Contact</a>
   </div>
-  <div style="margin-top:16px;display:flex;gap:16px;justify-content:center;">
-    <a href="privacy-policy.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Privacy Policy</a>
-    <a href="terms-of-service.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Terms of Service</a>
+  <div class="footer-legal">
+    <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+    <a href="terms-of-service.html" class="footer-legal-link">Terms of Service</a>
   </div>
-  <div style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.4);">&copy; 2026 LingoGrade. All rights reserved.</div>
+  <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
 </footer>
 
 </div><!-- /landing-view -->
@@ -461,7 +470,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <div id="chat-view" class="chat-wrapper">
   <div class="chat-header">
     <a href="/" style="flex-shrink:0;">
-      <img src="assets/mascot/marco-chatbot-speech-bubble.webp?v=3" alt="Marco" width="40" height="40" style="width:40px;height:auto;border-radius:50%;background:transparent;">
+      <img src="assets/mascot/marco-chatbot-speech-bubble.webp?v=3" alt="Marco" width="40" height="40" style="width:40px;height:auto;border-radius:50%;" >
     </a>
     <div class="chat-header-info">
       <h2>Bot Assessment</h2>
@@ -499,7 +508,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   <nav class="nav">
     <div class="nav-inner">
       <a class="brand-logo" href="/">
-        <img src="assets/mascot/marco-logo-reading-book.webp" alt="LingoGrade" height="44" width="44">
+        <img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade - Home" height="44" width="44">
         <span>LingoGr<span class="brand-a">A</span>de</span>
       </a>
       <a href="/" class="nav-cta">Back to LingoGrade</a>
@@ -507,7 +516,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   </nav>
 
   <div class="report-hero">
-    <img src="assets/mascot/marco-face-party.webp?v=3" alt="Marco celebrating" width="80" height="80" style="width:80px;height:auto;margin-bottom:16px;background:transparent;" loading="lazy">
+    <img class="mb-16" src="assets/mascot/marco-face-party.webp?v=3" alt="Marco celebrating" width="80" height="80" loading="lazy" style="width:80px;height:auto;" >
     <h1>Your Bot Assessment Report</h1>
     <p>Here is what Marco discovered about your language.</p>
     <div class="cefr-badge" id="report-cefr">
@@ -524,14 +533,14 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   <!-- Patterns -->
   <div class="report-section">
     <div class="report-inner">
-      <div class="section-label" style="color:var(--warn);">Structural Patterns Identified</div>
+      <div class="section-label c-warn" >Structural Patterns Identified</div>
       <h2 class="section-title">What Marco noticed</h2>
       <div id="report-patterns"></div>
     </div>
   </div>
 
   <!-- Levers -->
-  <div class="report-section" style="background:var(--parchment);">
+  <div class="report-section bg-parchment" >
     <div class="report-inner">
       <div class="section-label">Focus Areas</div>
       <h2 class="section-title">Where to focus your energy</h2>
@@ -542,17 +551,17 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   <!-- Strengths -->
   <div class="report-section">
     <div class="report-inner">
-      <div class="section-label" style="color:var(--success);">Strengths</div>
+      <div class="section-label c-success">Strengths</div>
       <h2 class="section-title">What you are doing well</h2>
       <div id="report-strengths"></div>
     </div>
   </div>
 
   <!-- Study Plan -->
-  <div class="report-section" style="background:var(--parchment);">
+  <div class="report-section bg-parchment" >
     <div class="report-inner">
       <div class="section-label">4-Week Study Plan</div>
-      <h2 class="section-title">Your personalised roadmap</h2>
+      <h2 class="section-title">Your personalized roadmap</h2>
       <div id="report-plan"></div>
     </div>
   </div>
@@ -565,25 +574,25 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       <a href="https://www.lingograde.com/flashcards" class="btn-secondary" target="_blank">Flashcards for Your Focus Areas &mdash; &euro;19.95</a>
       <button onclick="emailReport()" class="btn-secondary">Email This Report</button>
     </div>
-    <p style="font-size:0.8125rem;color:var(--ink-light);margin-top:16px;">The human assessment goes deeper — a professional assessor analyses your speech across more dimensions, with a bilingual PDF report and an 8-week plan.</p>
+    <p class="mt-16 c-ink-light fs-smm" >The human assessment goes deeper — a professional assessor analyses your speech across more dimensions, with a bilingual PDF report and an 8-week plan.</p>
   </div>
 
   <!-- Footer -->
-  <footer style="background:#1A3A5C;color:rgba(255,255,255,0.85);text-align:center;padding:48px 32px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
-    <div style="font-size:1.5rem;font-weight:700;letter-spacing:0.02em;">LingoGr<span style="color:#27AE60">A</span>de</div>
-    <p style="color:rgba(255,255,255,0.6);font-size:0.9375rem;margin:8px 0 24px;">Professional Language Assessment</p>
-    <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:0.875rem;">
-      <a href="/" style="color:rgba(255,255,255,0.7);text-decoration:none;">Home</a>
-      <a href="teachers.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">For Teachers</a>
-      <a href="partners.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Partners</a>
-      <a href="shop.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Shop</a>
-      <a href="mailto:info@lingograde.com" style="color:rgba(255,255,255,0.7);text-decoration:none;">Contact</a>
+  <footer class="site-footer">
+    <div class="footer-brand">LingoGr<span class="c-green">A</span>de</div>
+    <p class="footer-tagline">Professional Language Assessment</p>
+    <div class="footer-nav">
+      <a href="/" class="footer-link">Home</a>
+      <a href="teachers.html" class="footer-link">For Teachers</a>
+      <a href="partners.html" class="footer-link">Partners</a>
+      <a href="shop.html" class="footer-link">Shop</a>
+      <a href="mailto:info@lingograde.com" class="footer-link">Contact</a>
     </div>
-    <div style="margin-top:16px;display:flex;gap:16px;justify-content:center;">
-      <a href="privacy-policy.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Privacy Policy</a>
-      <a href="terms-of-service.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Terms of Service</a>
+    <div class="footer-legal">
+      <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+      <a href="terms-of-service.html" class="footer-legal-link">Terms of Service</a>
     </div>
-    <div style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.4);">&copy; 2026 LingoGrade. All rights reserved.</div>
+    <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
   </footer>
 </div><!-- /report-view -->
 
@@ -657,7 +666,7 @@ function startPayment() {
   .catch(function(err) {
     btn.disabled = false;
     btn.innerHTML = origText;
-    alert('Something went wrong setting up payment. Please try again.');
+    alert('That didn't go through. Please try again.');
     console.error('Payment error:', err);
   });
 }
@@ -877,7 +886,7 @@ function endAssessment() {
   })
   .catch(function(err) {
     hideTyping();
-    addMessage('Something went wrong generating your report. Please refresh and try again — your session is saved.', false);
+    addMessage('The report could not be generated right now. Please refresh and try again — your session is saved.', false);
     console.error('End error:', err);
   });
 }
@@ -1046,42 +1055,51 @@ document.getElementById('chat-input').addEventListener('input', function() {
 });
 </script>
 
-<!-- Currency geo-detection -->
+<!-- Currency geo-detection — IP geolocation with timezone fallback -->
 <script>
 (function(){
-  var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-  var symbol = '\u20AC';
-  var code = 'EUR';
+  var COUNTRY_CURRENCY = {US:'USD',GB:'GBP',CH:'CHF',LI:'CHF'};
+  var SYMBOLS = {EUR:'\u20AC',USD:'$',GBP:'\u00A3',CHF:'CHF\u00A0'};
 
-  var usTz = ['America/New_York','America/Chicago','America/Denver','America/Los_Angeles',
-    'America/Anchorage','America/Phoenix','America/Detroit','America/Indiana',
-    'America/Kentucky','America/Boise','America/Juneau','America/Sitka',
-    'America/Yakutat','America/Nome','America/Adak','America/Menominee',
-    'Pacific/Honolulu','America/North_Dakota'];
-  var isUS = false;
-  for (var i = 0; i < usTz.length; i++) {
-    if (tz.indexOf(usTz[i]) !== -1) { isUS = true; break; }
-  }
-  if (!isUS && (tz === 'US/Eastern' || tz === 'US/Central' || tz === 'US/Mountain' || tz === 'US/Pacific' || tz === 'US/Hawaii' || tz === 'US/Alaska')) {
-    isUS = true;
+  function tzFallback() {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    if (/America\/(New_York|Chicago|Denver|Los_Angeles|Anchorage|Phoenix|Detroit|Indiana|Kentucky|Boise|Juneau|Sitka|Yakutat|Nome|Adak|Menominee|North_Dakota)|Pacific\/Honolulu|US\//.test(tz)) return 'USD';
+    if (/Europe\/London|Europe\/Belfast/.test(tz)) return 'GBP';
+    if (/Europe\/Zurich/.test(tz)) return 'CHF';
+    // Locale reinforcement: en-US locale in non-US timezone → traveler, prefer USD
+    var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+    if (/^en-US/i.test(lang)) return 'USD';
+    return 'EUR';
   }
 
-  if (isUS) { symbol = '$'; code = 'USD'; }
-  else if (tz.indexOf('London') !== -1 || tz.indexOf('Europe/London') !== -1) { symbol = '\u00A3'; code = 'GBP'; }
-  else if (tz.indexOf('Zurich') !== -1 || tz.indexOf('Europe/Zurich') !== -1) { symbol = 'CHF\u00A0'; code = 'CHF'; }
-
-  window._lgCurrency = symbol;
-  window._lgCurrencyCode = code;
-
-  function resolvePrice(el) {
-    return el.getAttribute('data-' + code.toLowerCase()) || el.getAttribute('data-eur');
+  function applyPrices(code) {
+    var symbol = SYMBOLS[code] || SYMBOLS.EUR;
+    window._lgCurrency = symbol;
+    window._lgCurrencyCode = code;
+    function resolvePrice(el) {
+      return el.getAttribute('data-' + code.toLowerCase()) || el.getAttribute('data-eur');
+    }
+    document.querySelectorAll('.lg-price-inline[data-eur]').forEach(function(el){
+      el.textContent = symbol + resolvePrice(el);
+    });
   }
 
-  document.querySelectorAll('.lg-price-inline[data-eur]').forEach(function(el){
-    el.textContent = symbol + resolvePrice(el);
-  });
+  applyPrices(tzFallback());
+  fetch('https://api.country.is/')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var cc = d && d.country;
+      if (cc && COUNTRY_CURRENCY[cc]) applyPrices(COUNTRY_CURRENCY[cc]);
+    })
+    .catch(function(){});
 })();
 </script>
 <script src="js/shield.js" defer></script>
+<noscript>
+<style>.hero .btn-primary, .report-ctas .btn-primary, .compare-table .btn-primary { display: none !important; }</style>
+<div class="text-center fs-md" style="position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFF3CD;color:#856404;padding:14px 24px;font-family:-apple-system,sans-serif;border-bottom:2px solid #FFE69C;">
+  JavaScript is required for the bot assessment. <a class="fw-600" href="https://booking.lingograde.com/marco" style="color:#1A3A5C;text-decoration:underline;">Book a human assessment instead &rarr;</a>
+</div>
+</noscript>
 </body>
 </html>

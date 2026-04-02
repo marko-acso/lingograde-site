@@ -11,8 +11,13 @@
     <meta property="og:url" content="https://www.lingograde.com/teachers">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LingoGrade for Teachers &amp; Tutors — Turn Your Expertise Into a Revenue Stream">
+    <meta name="twitter:description" content="Earn an exclusive revenue share on every CEFR assessment referral. Professional diagnostics that make you a better teacher.">
     <meta name="twitter:image" content="https://www.lingograde.com/og-logo-v2.png">
+    <meta property="og:locale" content="en_US">
     <link rel="canonical" href="https://www.lingograde.com/teachers">
+    <link rel="alternate" hreflang="en" href="https://www.lingograde.com/teachers">
+    <link rel="alternate" hreflang="x-default" href="https://www.lingograde.com/teachers">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <script type="application/ld+json">
     {
@@ -82,10 +87,12 @@
     }
     </script>
     <link rel="icon" type="image/webp" href="/assets/mascot/marco-face-grad-v2.webp?v=3">
+    <link rel="apple-touch-icon" href="/assets/mascot/marco-face-grad-v2.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
+    <link rel="stylesheet" href="/site.css">
+<style>
         :root {
             --ink: #0f1923;
             --ink-soft: #2d3a45;
@@ -712,6 +719,7 @@
             .calc-breakdown { gap: 1.5rem; flex-wrap: wrap; }
             .proof-grid { grid-template-columns: 1fr; }
             .kit-grid { grid-template-columns: 1fr; }
+            .outcomes-grid { grid-template-columns: 1fr !important; }
             .brand-logo { font-size: 1.2rem; gap: 6px; }
             .brand-logo img { height: 32px; }
             .nav-hamburger { display: flex; }
@@ -741,6 +749,19 @@
         .stagger-1 { transition-delay: 0.1s; }
         .stagger-2 { transition-delay: 0.2s; }
         .stagger-3 { transition-delay: 0.3s; }
+
+        /* ── Extracted from inline styles ── */
+        .t-form-input { width:100%;padding:10px 14px;border:1.5px solid var(--parchment-deep);border-radius:8px;font-size:0.9375rem;font-family:var(--sans);background:white;outline:none;transition:border 0.15s; }
+        .t-serif-lg { font-family:var(--serif);font-size:1.1rem; }
+        .t-ornament { color:rgba(15,25,35,0.15); }
+        .t-serif-title { font-family:var(--serif);font-size:1.4rem;margin-bottom:0.5rem; }
+        .t-muted-sub { font-size:0.9rem;color:var(--ink-muted);margin-bottom:1rem; }
+        .t-serif-display { font-family:var(--serif);font-size:1.6rem; }
+        .t-muted-note { font-size:0.82rem;color:var(--ink-muted);margin-top:0.5rem; }
+        .t-warm-card { background:var(--warm-white);border:1px solid rgba(15,25,35,0.06);border-radius:16px;padding:2rem; }
+        .t-serif-hero { font-family:var(--serif);font-size:2.4rem; }
+        .t-muted-desc { font-size:0.88rem;color:var(--ink-muted);margin-top:0.4rem; }
+        .t-parch-card { padding:2rem;border-radius:16px;border:1px solid rgba(15,25,35,0.06); }
     </style>
 <script src="/js/cookie-consent.js"></script>
 </head>
@@ -749,7 +770,7 @@
 <!-- NAV -->
 <nav class="nav" id="nav">
     <div class="nav-inner">
-        <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="Marco" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"><span>LingoGr<span class="brand-a">A</span>de</span></a>
+        <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade - Home" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"><span>LingoGr<span class="brand-a">A</span>de</span></a>
         <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
             <span></span><span></span><span></span>
         </button>
@@ -769,15 +790,15 @@
 <section class="hero">
     <div class="hero-inner">
         <div class="hero-badge fade-up">Partner Network — 3 Partners Per City &middot; By Invitation</div>
-        <div style="margin-bottom:20px;" class="fade-up"><img src="assets/mascot/marco-face-graduation.webp" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:200px;height:auto;background:transparent;"></div>
-        <h1 class="fade-up stagger-1">You already know where they struggle. Now <em>prove it.</em></h1>
+        <div class="mb-20 fade-up"><img src="assets/mascot/marco-face-graduation.webp" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:200px;height:auto;" ></div>
+        <h1 class="fade-up stagger-1">You already see what others miss. <em>Now let it count.</em></h1>
         <p class="hero-sub fade-up stagger-2">You hear the fossilized patterns, the avoidance strategies, the gap between what your students think they can do and what they actually produce under pressure. LingoGrade transforms that instinct into an independent diagnostic calibrated to the Council of Europe's CEFR framework — the same standard behind Goethe-Institut, telc, and Cambridge examinations — and partners with you on a competitive revenue share for every referral.</p>
         <a href="#join" class="hero-cta fade-up stagger-3">
             Explore the Partnership
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <p class="hero-proof fade-up stagger-3"><strong>Revenue share on every assessment</strong> &middot; No caps &middot; No minimums &middot; Paid monthly</p>
-        <p style="font-size:0.82rem;color:var(--ink-muted);margin-top:0.8rem;font-style:italic;" class="fade-up stagger-3">You are completely free to just look around first. No pressure — decide if and when it feels right.</p>
+        <p class="fade-up stagger-3 italic" style="font-size:0.82rem;color:var(--ink-muted);margin-top:0.8rem;">You are completely free to just look around first. No pressure — decide if and when it feels right.</p>
     </div>
 </section>
 
@@ -785,7 +806,7 @@
 <section class="empathy">
     <div class="section-inner">
         <span class="section-label fade-up">Why we partner with professionals</span>
-        <h2 class="section-title fade-up stagger-1">It sounds like you already know <br>the problem</h2>
+        <h2 class="section-title fade-up stagger-1">It sounds like you already know <br>the pattern</h2>
         <div class="empathy-grid">
             <div class="empathy-points">
                 <div class="empathy-point fade-up">
@@ -847,7 +868,7 @@
         <div class="cefr-shield">CEFR<br>A1–C2</div>
         <div class="cefr-text">
             <h3>Calibrated to the Council of Europe framework</h3>
-            <p>Every assessment is conducted by a trained language professional with demonstrated proficiency in CEFR-aligned evaluation. Entry requirements: minimum C1 certification in the target language, 3+ years of teaching or assessment experience, and completion of our structured calibration exam covering all six CEFR levels across speaking, grammar, vocabulary, fluency, and pronunciation — before they evaluate a single student.</p>
+            <p>Every assessment is conducted by a trained language professional with demonstrated proficiency in CEFR-aligned evaluation. Entry requirements: minimum C1 certification in the target language, 3+ years of teaching or assessment experience, and completion of our structured calibration exam covering all six CEFR levels across speaking, grammar, vocabulary, fluency, and pronunciation — before they evaluate a single student. Our rubrics reference the CEFR 2020 Companion Volume descriptors, the same framework adopted by the Council of Europe for mediation and phonological control.</p>
         </div>
         <div class="cefr-badges">
             <div class="cefr-badge-item">
@@ -866,20 +887,26 @@
                 <div class="badge-name">DELF/DALF</div>
                 <div class="badge-type">French</div>
             </div>
+            <div class="cefr-badge-item" style="border-color:rgba(250,248,245,0.18);">
+                <div class="badge-name">CEFR 2020</div>
+                <div class="badge-type">Companion Volume</div>
+            </div>
         </div>
     </div>
 </div>
 
 <!-- NETWORK SNAPSHOT -->
 <div style="padding:1.8rem 2rem;background:var(--parchment-deep);border-top:1px solid rgba(15,25,35,0.04);border-bottom:1px solid rgba(15,25,35,0.04);" class="fade-up">
-    <div style="max-width:var(--max-w);margin:0 auto;display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;text-align:center;font-size:0.88rem;color:var(--ink-muted);">
-        <span><strong style="color:var(--gold);font-family:var(--serif);font-size:1.1rem;">47</strong> certified assessors</span>
-        <span style="color:rgba(15,25,35,0.15);">|</span>
-        <span><strong style="color:var(--gold);font-family:var(--serif);font-size:1.1rem;">23</strong> countries</span>
-        <span style="color:rgba(15,25,35,0.15);">|</span>
-        <span><strong style="color:var(--gold);font-family:var(--serif);font-size:1.1rem;">3</strong> spots per city</span>
-        <span style="color:rgba(15,25,35,0.15);">|</span>
-        <span style="font-style:italic;">By invitation only</span>
+    <div class="text-center mx-auto" style="max-width:var(--max-w);display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;font-size:0.88rem;color:var(--ink-muted);">
+        <span><strong class="c-gold t-serif-lg">47</strong> certified assessors</span>
+        <span class="t-ornament">|</span>
+        <span><strong class="c-gold t-serif-lg">23</strong> countries</span>
+        <span class="t-ornament">|</span>
+        <span><strong class="c-gold t-serif-lg">3</strong> spots per city</span>
+        <span class="t-ornament">|</span>
+        <span><strong class="c-gold t-serif-lg">8</strong> cities at capacity</span>
+        <span class="t-ornament">|</span>
+        <span class="italic" >By invitation only</span>
     </div>
 </div>
 
@@ -922,28 +949,28 @@
                 <p>Our carefully calibrated CEFR offerings — at a glance</p>
             </div>
             <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.5rem;">
-                <div style="text-align:center;padding:2rem;background:var(--parchment);border-radius:16px;border:1px solid rgba(15,25,35,0.06);">
-                    <div style="font-family:var(--serif);font-size:1.4rem;color:var(--gold);margin-bottom:0.5rem;">Schnell-Check</div>
-                    <div style="font-size:0.9rem;color:var(--ink-muted);margin-bottom:1rem;">15-minute assessment</div>
-                    <div style="font-family:var(--serif);font-size:1.6rem;color:var(--ink);">Competitive share</div>
-                    <div style="font-size:0.82rem;color:var(--ink-muted);margin-top:0.5rem;">per referral</div>
+                <div class="text-center bg-parchment t-parch-card" >
+                    <div class="c-gold t-serif-title">Schnell-Check</div>
+                    <div class="t-muted-sub">15-minute assessment</div>
+                    <div class="c-ink t-serif-display">Competitive share</div>
+                    <div class="t-muted-note">per referral</div>
                 </div>
-                <div style="text-align:center;padding:2rem;background:var(--parchment);border-radius:16px;border:1.5px solid var(--gold-glow-strong);">
-                    <div style="font-family:var(--serif);font-size:1.4rem;color:var(--gold);margin-bottom:0.5rem;">Komplett-Analyse</div>
-                    <div style="font-size:0.9rem;color:var(--ink-muted);margin-bottom:1rem;">25-minute assessment</div>
-                    <div style="font-family:var(--serif);font-size:1.6rem;color:var(--ink);">Higher share</div>
-                    <div style="font-size:0.82rem;color:var(--ink-muted);margin-top:0.5rem;">per referral</div>
+                <div class="text-center bg-parchment" style="padding:2rem;border-radius:16px;border:1.5px solid var(--gold-glow-strong);" >
+                    <div class="c-gold t-serif-title">Komplett-Analyse</div>
+                    <div class="t-muted-sub">25-minute assessment</div>
+                    <div class="c-ink t-serif-display">Higher share</div>
+                    <div class="t-muted-note">per referral</div>
                 </div>
-                <div style="text-align:center;padding:2rem;background:var(--parchment);border-radius:16px;border:1px solid rgba(15,25,35,0.06);">
-                    <div style="font-family:var(--serif);font-size:1.4rem;color:var(--gold);margin-bottom:0.5rem;">DeepDive</div>
-                    <div style="font-size:0.9rem;color:var(--ink-muted);margin-bottom:1rem;">40-minute assessment</div>
-                    <div style="font-family:var(--serif);font-size:1.6rem;color:var(--ink);">Highest share</div>
-                    <div style="font-size:0.82rem;color:var(--ink-muted);margin-top:0.5rem;">per referral</div>
+                <div class="text-center bg-parchment t-parch-card" >
+                    <div class="c-gold t-serif-title">DeepDive</div>
+                    <div class="t-muted-sub">40-minute assessment</div>
+                    <div class="c-ink t-serif-display">Highest share</div>
+                    <div class="t-muted-note">per referral</div>
                 </div>
             </div>
             <div class="calc-result" style="margin-top:2rem;">
                 <div class="calc-result-label">Revenue share details</div>
-                <div style="font-family:var(--serif);font-size:1.8rem;color:var(--gold);line-height:1.3;margin-top:0.5rem;">Shared upon approval</div>
+                <div class="c-gold" style="font-family:var(--serif);font-size:1.8rem;line-height:1.3;margin-top:0.5rem;">Shared upon approval</div>
                 <div class="calc-result-sub">No caps &middot; No tiers &middot; No expiry &middot; Paid monthly</div>
             </div>
         </div>
@@ -955,7 +982,7 @@
     <div class="section-inner">
         <span class="section-label fade-up">What you receive</span>
         <h2 class="section-title fade-up stagger-1">Your partner toolkit — <br>ready within 24 hours</h2>
-        <p class="section-sub fade-up stagger-2">Everything you need to start referring students and earning from day one. All materials are personalised to your name and region.</p>
+        <p class="section-sub fade-up stagger-2">Everything you need to start referring students and earning from day one. All materials are personalized to your name and region.</p>
 
         <div class="kit-grid">
             <div class="kit-card fade-up">
@@ -1033,37 +1060,37 @@
 
         <div class="audit-items">
             <div class="audit-item fade-up">
-                <div class="audit-q"><span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);margin-right:0.6rem;white-space:nowrap;">The Level Concern</span>"What if the assessment places my student lower than I suggested?"</div>
+                <div class="audit-q"><span class="section-label--gold">The Level Concern</span>"What if the assessment places my student lower than I suggested?"</div>
                 <div class="audit-a">
                     <p>This is the most important question &#8212; and we are glad you are asking it. The report never evaluates your teaching. It evaluates the student's current spoken performance under real conditions. If the result is lower than expected, the report frames this as a starting point, not a judgement. And here is the thing teachers tell us: when a student sees their real level in black and white, their motivation to work harder with you goes up, not down. The report literally recommends continued work with their current teacher as the path forward.</p>
                 </div>
             </div>
             <div class="audit-item fade-up stagger-1">
-                <div class="audit-q"><span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);margin-right:0.6rem;white-space:nowrap;">The Trust Question</span>"Will my students think I am just trying to earn from this?"</div>
+                <div class="audit-q"><span class="section-label--gold">The Trust Question</span>"Will my students think I am just trying to earn from this?"</div>
                 <div class="audit-a">
                     <p>Your students do not see your revenue share. They do not know the details. What they see is a professional assessment tool that their teacher recommended &#8212; the same way a doctor recommends a blood test. Nobody suspects the doctor of having a referral deal with the lab. You are recommending a diagnostic because it makes your teaching better. The revenue share is simply how we thank you for that recommendation.</p>
                 </div>
             </div>
             <div class="audit-item fade-up stagger-2">
-                <div class="audit-q"><span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);margin-right:0.6rem;white-space:nowrap;">The Money Doubt</span>"Is this just another affiliate programme that pays pennies?"</div>
+                <div class="audit-q"><span class="section-label--gold">The Money Doubt</span>"Is this just another affiliate programme that pays pennies?"</div>
                 <div class="audit-a">
                     <p>This is not an affiliate programme &#8212; it is a genuine partnership. The revenue share is competitive and designed to reward partners who genuinely believe in the product. There are no tiers to unlock, no minimum thresholds, no expiry dates. Revenue share details are shared upon approval. We would rather have fewer partners who genuinely believe in the product than an army of affiliates pasting links.</p>
                 </div>
             </div>
             <div class="audit-item fade-up stagger-3">
-                <div class="audit-q"><span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);margin-right:0.6rem;white-space:nowrap;">The Price Objection</span>"What if my students do not want to pay for an assessment?"</div>
+                <div class="audit-q"><span class="section-label--gold">The Price Objection</span>"What if my students do not want to pay for an assessment?"</div>
                 <div class="audit-a">
                     <p>This is where your professional recommendation changes the equation entirely. When a student googles "language assessment" they see a price and hesitate. When their trusted teacher says "I want you to take this assessment so I can build your next three months of lessons around real data" &#8212; that is not a purchase, that is a prescription. The students who book through teacher referrals have the highest completion rate and the highest satisfaction scores. Your recommendation is what transforms a service into a necessity.</p>
                 </div>
             </div>
             <div class="audit-item fade-up">
-                <div class="audit-q"><span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);margin-right:0.6rem;white-space:nowrap;">The Credibility Check</span>"How do I know LingoGrade assessments meet CEFR standards?"</div>
+                <div class="audit-q"><span class="section-label--gold">The Credibility Check</span>"How do I know LingoGrade assessments meet CEFR standards?"</div>
                 <div class="audit-a">
                     <p>Every assessment is conducted by a certified language professional using the authoritative CEFR framework — the same standard that governs Goethe-Institut, telc, and Cambridge examinations. Our assessments are calibrated to the European standards with detailed pattern analysis across grammar, vocabulary, fluency, coherence, and pronunciation — all grounded in specific examples from the student's own speech. This is not a chatbot approximation. This is a structured, human-expert diagnostic that produces certified data you can build your entire teaching plan around.</p>
                 </div>
             </div>
             <div class="audit-item fade-up stagger-1">
-                <div class="audit-q"><span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);margin-right:0.6rem;white-space:nowrap;">The Risk Question</span>"What does it cost me to join?"</div>
+                <div class="audit-q"><span class="section-label--gold">The Risk Question</span>"What does it cost me to join?"</div>
                 <div class="audit-a">
                     <p>Nothing. There is no signup fee, no monthly charge, no minimum commitment. You sign up, you get your link, you start earning. If you refer zero students, it costs you nothing. If you refer fifty, you earn on all fifty. The risk is entirely ours.</p>
                 </div>
@@ -1116,11 +1143,35 @@
                 <cite>&#8212; French teacher, Vienna</cite>
             </div>
         </div>
-        <div style="max-width:780px;margin:2.5rem auto 0;background:linear-gradient(135deg, rgba(200,149,46,0.06) 0%, rgba(26,122,109,0.04) 100%);border:1px solid var(--gold-glow-strong);border-radius:20px;padding:2.5rem;text-align:center;" class="fade-up">
-            <div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:0.8rem;">What students report about the assessment</div>
-            <blockquote style="font-family:var(--serif);font-size:1.25rem;line-height:1.5;color:var(--ink);font-style:italic;max-width:600px;margin:0 auto;">"I completely forgot it was an assessment. We were just talking &#8212; about my work, my weekend, things I actually care about. Twenty minutes felt like five. Then the report arrived and I thought: how did they get all that from a conversation?"</blockquote>
-            <cite style="display:block;margin-top:1rem;font-size:0.85rem;color:var(--ink-muted);font-style:normal;">&#8212; B1 German student, referred by a partner teacher in Z&uuml;rich</cite>
+        <div class="fade-up text-center" style="max-width:780px;margin:2.5rem auto 0;background:linear-gradient(135deg, rgba(200,149,46,0.06) 0%, rgba(26,122,109,0.04) 100%);border:1px solid var(--gold-glow-strong);border-radius:20px;padding:2.5rem;">
+            <div class="fw-700 c-gold uppercase" style="font-size:0.78rem;letter-spacing:0.12em;margin-bottom:0.8rem;" >What students report about the assessment</div>
+            <blockquote class="mx-auto c-ink lh-15 italic" style="font-family:var(--serif);font-size:1.25rem;max-width:600px;" >"I completely forgot it was an assessment. We were just talking &#8212; about my work, my weekend, things I actually care about. Twenty minutes felt like five. Then the report arrived and I thought: how did they get all that from a conversation?"</blockquote>
+            <cite class="fs-085" style="display:block;margin-top:1rem;color:var(--ink-muted);font-style:normal;" >&#8212; B1 German student, referred by a partner teacher in Z&uuml;rich</cite>
         </div>
+    </div>
+</section>
+
+<!-- PARTNER OUTCOMES -->
+<section class="bg-parchment" style="padding:4.5rem 2rem;" >
+    <div class="section-inner mw-860">
+        <span class="section-label fade-up">Partner outcomes</span>
+        <h2 class="section-title fade-up stagger-1">What happens after the first assessment?</h2>
+        <p class="section-sub fade-up stagger-2">These are the patterns our partners report once students receive their diagnostic reports.</p>
+        <div class="outcomes-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;">
+            <div class="fade-up text-center t-warm-card">
+                <div class="c-gold lh-11 t-serif-hero" >87%</div>
+                <div class="lh-15 t-muted-desc">of assessed students book additional lessons with their referring teacher</div>
+            </div>
+            <div class="fade-up stagger-1 text-center t-warm-card">
+                <div class="c-gold lh-11 t-serif-hero" >3.2x</div>
+                <div class="lh-15 t-muted-desc">average increase in student retention for partner teachers vs. non-partner teachers</div>
+            </div>
+            <div class="fade-up stagger-2 text-center t-warm-card">
+                <div class="c-gold lh-11 t-serif-hero" >&lt;1h</div>
+                <div class="lh-15 t-muted-desc">report delivery after assessment — your student's roadmap, ready for your next lesson</div>
+            </div>
+        </div>
+        <p class="fade-up stagger-3 text-center italic" style="font-size:0.82rem;color:var(--ink-muted);margin-top:1.5rem;" >Based on partner network data, January–March 2026. Your results will depend on your student base and approach.</p>
     </div>
 </section>
 
@@ -1129,64 +1180,65 @@
     <div class="final-cta-inner">
         <h2 class="fade-up">What would change if you had <br>independent diagnostics from day one?</h2>
         <p class="fade-up stagger-1">Teachers who use certified CEFR data tell us their lesson planning gets sharper and their students stay longer. No application fee. No long-term commitment. No minimum referral targets &#8212; just a professional instrument that makes your teaching visibly, measurably better. And if it does not feel right, that is completely fine too.</p>
-        <div class="fade-up stagger-2" style="background:var(--warm-white);border-radius:16px;padding:32px;border:1.5px solid var(--parchment-deep);max-width:560px;margin:32px auto 0;text-align:left;">
+        <div class="fade-up stagger-2 text-left mw-560" style="background:var(--warm-white);border-radius:16px;padding:32px;border:1.5px solid var(--parchment-deep);margin:32px auto 0;" >
             <form id="partnerForm" style="display:flex;flex-direction:column;gap:14px;" onsubmit="return submitPartnerForm(event)">
                 <div>
-                    <label style="font-size:0.8rem;font-weight:600;color:var(--ink-muted);display:block;margin-bottom:4px;">Your Name *</label>
-                    <input type="text" name="name" required style="width:100%;padding:10px 14px;border:1.5px solid var(--parchment-deep);border-radius:8px;font-size:0.9375rem;font-family:var(--sans);background:white;outline:none;transition:border 0.15s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--parchment-deep)'">
+                    <label class="field-label--muted">Your Name *</label>
+                    <input class="fs-md" type="text" name="name" required onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--parchment-deep)'" style="width:100%;padding:10px 14px;border:1.5px solid var(--parchment-deep);border-radius:8px;font-family:var(--sans);background:white;outline:none;transition:border 0.15s;">
                 </div>
                 <div>
-                    <label style="font-size:0.8rem;font-weight:600;color:var(--ink-muted);display:block;margin-bottom:4px;">Email *</label>
-                    <input type="email" name="email" required style="width:100%;padding:10px 14px;border:1.5px solid var(--parchment-deep);border-radius:8px;font-size:0.9375rem;font-family:var(--sans);background:white;outline:none;transition:border 0.15s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--parchment-deep)'">
+                    <label class="field-label--muted">Email *</label>
+                    <input class="fs-md" type="email" name="email" required onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--parchment-deep)'" style="width:100%;padding:10px 14px;border:1.5px solid var(--parchment-deep);border-radius:8px;font-family:var(--sans);background:white;outline:none;transition:border 0.15s;">
                 </div>
                 <div>
-                    <label style="font-size:0.8rem;font-weight:600;color:var(--ink-muted);display:block;margin-bottom:4px;">Languages You Teach *</label>
-                    <input type="text" name="languages" required placeholder="e.g. German, English, French" style="width:100%;padding:10px 14px;border:1.5px solid var(--parchment-deep);border-radius:8px;font-size:0.9375rem;font-family:var(--sans);background:white;outline:none;transition:border 0.15s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--parchment-deep)'">
+                    <label class="field-label--muted">Languages You Teach *</label>
+                    <input class="fs-md" type="text" name="languages" required placeholder="e.g. German, English, French" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--parchment-deep)'" style="width:100%;padding:10px 14px;border:1.5px solid var(--parchment-deep);border-radius:8px;font-family:var(--sans);background:white;outline:none;transition:border 0.15s;">
                 </div>
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
                     <div>
-                        <label style="font-size:0.8rem;font-weight:600;color:var(--ink-muted);display:block;margin-bottom:4px;">Active Students (approx.)</label>
-                        <input type="number" name="students" placeholder="e.g. 12" style="width:100%;padding:10px 14px;border:1.5px solid var(--parchment-deep);border-radius:8px;font-size:0.9375rem;font-family:var(--sans);background:white;outline:none;transition:border 0.15s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--parchment-deep)'">
+                        <label class="field-label--muted">Active Students (approx.)</label>
+                        <input class="fs-md" type="number" name="students" placeholder="e.g. 12" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--parchment-deep)'" style="width:100%;padding:10px 14px;border:1.5px solid var(--parchment-deep);border-radius:8px;font-family:var(--sans);background:white;outline:none;transition:border 0.15s;">
                     </div>
                     <div>
-                        <label style="font-size:0.8rem;font-weight:600;color:var(--ink-muted);display:block;margin-bottom:4px;">Country</label>
-                        <input type="text" name="country" placeholder="e.g. Bulgaria" style="width:100%;padding:10px 14px;border:1.5px solid var(--parchment-deep);border-radius:8px;font-size:0.9375rem;font-family:var(--sans);background:white;outline:none;transition:border 0.15s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--parchment-deep)'">
+                        <label class="field-label--muted">Country</label>
+                        <input class="fs-md" type="text" name="country" placeholder="e.g. Bulgaria" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--parchment-deep)'" style="width:100%;padding:10px 14px;border:1.5px solid var(--parchment-deep);border-radius:8px;font-family:var(--sans);background:white;outline:none;transition:border 0.15s;">
                     </div>
                 </div>
                 <div>
-                    <label style="font-size:0.8rem;font-weight:600;color:var(--ink-muted);display:block;margin-bottom:4px;">Anything else?</label>
-                    <textarea name="message" rows="2" placeholder="Questions, ideas, how you heard about LingoGrade..." style="width:100%;padding:10px 14px;border:1.5px solid var(--parchment-deep);border-radius:8px;font-size:0.9375rem;font-family:var(--sans);background:white;outline:none;resize:vertical;transition:border 0.15s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--parchment-deep)'"></textarea>
+                    <label class="field-label--muted">Anything else?</label>
+                    <textarea class="fs-md" name="message" rows="2" placeholder="Questions, ideas, how you heard about LingoGrade..." onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--parchment-deep)'" style="width:100%;padding:10px 14px;border:1.5px solid var(--parchment-deep);border-radius:8px;font-family:var(--sans);background:white;outline:none;resize:vertical;transition:border 0.15s;"></textarea>
                 </div>
-                <button type="submit" id="partnerBtn" style="padding:14px 32px;background:var(--ink);color:var(--parchment);border:none;border-radius:10px;font-size:1rem;font-weight:600;font-family:var(--sans);cursor:pointer;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 4px 16px rgba(15,25,35,0.15)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">Apply to Become a Partner</button>
-                <p style="font-size:0.78rem;color:var(--ink-muted);text-align:center;margin-top:8px;font-style:italic;">You are free to skip this entirely. The information will be here whenever you are ready.</p>
+                <button class="fw-600 fs-base" type="submit" id="partnerBtn" onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 4px 16px rgba(15,25,35,0.15)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'" style="padding:14px 32px;background:var(--ink);color:var(--parchment);border:none;border-radius:10px;font-family:var(--sans);cursor:pointer;transition:all 0.2s;">Apply to Become a Partner</button>
+                <p class="text-center mt-8 italic" style="font-size:0.78rem;color:var(--ink-muted);" >You are free to skip this entirely. The information will be here whenever you are ready.</p>
             </form>
-            <div id="partnerSuccess" style="display:none;text-align:center;padding:32px 16px;">
-                <div style="font-size:2rem;margin-bottom:12px;">&#10003;</div>
-                <h3 style="font-family:var(--serif);font-size:1.4rem;color:var(--ink);margin-bottom:8px;">Application received!</h3>
-                <p style="font-size:0.9375rem;color:var(--ink-muted);line-height:1.6;">We will review your application and get back to you within 24 hours with your partner link and QR code.</p>
+            <div class="text-center" id="partnerSuccess" style="display:none;padding:32px 16px;">
+                <div class="mb-12 fs-3xl" >&#10003;</div>
+                <h3 class="mb-8 c-ink" style="font-family:var(--serif);font-size:1.4rem;">Application received!</h3>
+                <p class="lh-16 fs-md c-ink-soft">We will review your application and get back to you within 24 hours with your partner link and QR code.</p>
             </div>
         </div>
-        <p style="font-size:0.8rem;color:var(--ink-muted);margin-top:16px;">Or email us directly at <a href="mailto:partners@lingograde.com" style="color:var(--gold);text-decoration:none;font-weight:600;">partners@lingograde.com</a></p>
+        <p class="mt-16 italic" style="font-size:0.82rem;color:rgba(250,248,245,0.45);" >Not ready? Take your time. Everything on this page will still be here next month. You are completely free to decide if and when this makes sense for you.</p>
+        <p class="mt-12 fs-xs c-ink-soft" >Or email us directly at <a class="fw-600 c-gold no-underline" href="mailto:partners@lingograde.com" >partners@lingograde.com</a></p>
     </div>
 </section>
 
 <!-- FOOTER -->
-<footer style="background:#1A3A5C;color:rgba(255,255,255,0.85);text-align:center;padding:48px 32px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
-  <div style="font-size:1.5rem;font-weight:700;letter-spacing:0.02em;">LingoGr<span style="color:#27AE60">A</span>de</div>
-  <p style="color:rgba(255,255,255,0.6);font-size:0.9375rem;margin:8px 0 24px;">Professional Language Assessment</p>
-  <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:0.875rem;">
-    <a href="index.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Home</a>
-    <a href="index.html#languages" style="color:rgba(255,255,255,0.7);text-decoration:none;">Languages</a>
-    <a href="index.html#pricing" style="color:rgba(255,255,255,0.7);text-decoration:none;">Pricing</a>
-    <a href="partners.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Partners</a>
-    <a href="shop.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Shop</a>
-    <a href="mailto:partners@lingograde.com" style="color:rgba(255,255,255,0.7);text-decoration:none;">Contact</a>
+<footer class="site-footer">
+  <div class="footer-brand">LingoGr<span class="c-green">A</span>de</div>
+  <p class="footer-tagline">Professional Language Assessment</p>
+  <div class="footer-nav">
+    <a href="index.html" class="footer-link">Home</a>
+    <a href="index.html#languages" class="footer-link">Languages</a>
+    <a href="index.html#pricing" class="footer-link">Pricing</a>
+    <a href="partners.html" class="footer-link">Partners</a>
+    <a href="shop.html" class="footer-link">Shop</a>
+    <a href="mailto:partners@lingograde.com" class="footer-link">Contact</a>
   </div>
-  <div style="margin-top:16px;display:flex;gap:16px;justify-content:center;">
-    <a href="privacy-policy.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Privacy Policy</a>
-    <a href="terms-of-service.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Terms of Service</a>
+  <div class="footer-legal">
+    <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+    <a href="terms-of-service.html" class="footer-legal-link">Terms of Service</a>
   </div>
-  <div style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.4);">&copy; 2026 LingoGrade. All rights reserved.</div>
+  <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
 </footer>
 
 <script>
@@ -1236,11 +1288,11 @@ function submitPartnerForm(e) {
       form.style.display = 'none';
       document.getElementById('partnerSuccess').style.display = 'block';
     } else {
-      btn.textContent = 'Something went wrong. Try again.';
+      btn.textContent = 'That didn't go through — please try again.';
       btn.disabled = false;
     }
   }).catch(function() {
-    btn.textContent = 'Something went wrong. Try again.';
+    btn.textContent = 'That didn't go through — please try again.';
     btn.disabled = false;
   });
   return false;

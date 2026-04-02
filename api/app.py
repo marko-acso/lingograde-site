@@ -21,11 +21,17 @@ from assessment_prompt import (
     build_start_message,
     build_turn_message,
 )
+from free_bot_prompt import (
+    SYSTEM_PROMPT as FREE_BOT_SYSTEM,
+    build_start_message as free_bot_start_message,
+    build_turn_message as free_bot_turn_message,
+)
 from mini_report import generate_mini_report
 from bot_store import (
     save_analysis, get_analysis,
     save_assessment, get_assessment, update_assessment,
     find_assessment_by_payment,
+    save_free_bot, get_free_bot, update_free_bot, count_free_bot_by_ip,
 )
 
 load_dotenv()
@@ -105,7 +111,185 @@ def analyse():
 
 
 # ═══════════════════════════════════════════════════════════════════
-# Endpoint 2: POST /v1/payment/intent — Create Stripe PaymentIntent
+# Endpoint 2a: POST /v1/free-bot/start — Begin free 5-min conversation
+# ═══════════════════════════════════════════════════════════════════
+
+FREE_BOT_MAX_TURNS = 8
+FREE_BOT_RATE_LIMIT = 3  # per IP per 24h
+
+@app.route("/v1/free-bot/start", methods=["POST"])
+def free_bot_start():
+    data = request.get_json(force=True)
+    lang = data.get("lang", "en")
+    session_id = data.get("session_id", "")
+    ip = request.headers.get("X-Forwarded-For", request.remote_addr or "").split(",")[0].strip()
+
+    # Rate limit by IP
+    from datetime import timedelta
+    cutoff = (datetime.now(timezone.utc) - timedelta(hours=24)).isoformat()
+    if count_free_bot_by_ip(ip, cutoff) >= FREE_BOT_RATE_LIMIT:
+        return jsonify({"error": "rate_limit", "message": "You have reached today's limit. Come back tomorrow."}), 429
+
+    # Check for prior free analysis
+    prior_record = get_analysis(session_id) if session_id else None
+    prior = prior_record.get("result") if prior_record else None
+
+    start_msg = free_bot_start_message(lang, prior)
+    try:
+        response = claude.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=300,
+            system=FREE_BOT_SYSTEM,
+            messages=[start_msg],
+        )
+        raw = response.content[0].text.strip()
+        if raw.startswith("```"):
+            raw = raw.split("\n", 1)[1].rsplit("```", 1)[0].strip()
+        first = json.loads(raw)
+    except (json.JSONDecodeError, anthropic.APIError) as e:
+        return jsonify({"error": f"Failed to start conversation: {e}"}), 500
+
+    bot_id = "fb_" + uuid.uuid4().hex[:16]
+    save_free_bot(bot_id, {
+        "session_id": session_id,
+        "lang": lang,
+        "status": "active",
+        "turns": [
+            {"role": "user", "content": start_msg["content"]},
+            {"role": "assistant", "content": response.content[0].text},
+        ],
+        "turn_count": 1,
+        "result": None,
+        "ip": ip,
+        "created_at": datetime.now(timezone.utc).isoformat(),
+    })
+
+    return jsonify({
+        "bot_id": bot_id,
+        "first_message": first.get("response", ""),
+    })
+
+
+# ═══════════════════════════════════════════════════════════════════
+# Endpoint 2b: POST /v1/free-bot/turn — Send a message in free conversation
+# ═══════════════════════════════════════════════════════════════════
+
+@app.route("/v1/free-bot/turn", methods=["POST"])
+def free_bot_turn():
+    data = request.get_json(force=True)
+    bot_id = data.get("bot_id", "")
+    message = (data.get("message") or "").strip()
+
+    session = get_free_bot(bot_id)
+    if not session:
+        return jsonify({"error": "Session not found"}), 404
+    if session["status"] != "active":
+        return jsonify({"error": "Conversation already completed"}), 400
+    if not message:
+        return jsonify({"error": "Empty message"}), 400
+
+    turns = session["turns"]
+    turn_msg = free_bot_turn_message(message)
+    turns.append({"role": "user", "content": turn_msg["content"]})
+    turn_count = session["turn_count"] + 1
+
+    # Force completion after max turns
+    force_complete = turn_count >= FREE_BOT_MAX_TURNS
+    extra_instruction = ""
+    if force_complete:
+        extra_instruction = "\n\n[SYSTEM: This is the final turn. You MUST set complete: true and include the full result object now.]"
+
+    messages = turns[:]
+    if extra_instruction:
+        messages[-1] = {"role": "user", "content": messages[-1]["content"] + extra_instruction}
+
+    try:
+        response = claude.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=600 if force_complete else 300,
+            system=FREE_BOT_SYSTEM,
+            messages=messages,
+        )
+        raw = response.content[0].text.strip()
+        if raw.startswith("```"):
+            raw = raw.split("\n", 1)[1].rsplit("```", 1)[0].strip()
+        parsed = json.loads(raw)
+    except (json.JSONDecodeError, anthropic.APIError) as e:
+        return jsonify({"error": f"AI response failed: {e}"}), 500
+
+    turns.append({"role": "assistant", "content": response.content[0].text})
+
+    bot_response = parsed.get("response", "")
+    is_complete = parsed.get("complete", False)
+
+    if is_complete or force_complete:
+        result = parsed.get("result", {})
+        update_free_bot(bot_id, status="complete", turns=turns, turn_count=turn_count, result=result)
+        return jsonify({
+            "response": bot_response,
+            "complete": True,
+            "result": result,
+        })
+
+    update_free_bot(bot_id, turns=turns, turn_count=turn_count)
+    return jsonify({
+        "response": bot_response,
+        "complete": False,
+        "turn": turn_count,
+        "max_turns": FREE_BOT_MAX_TURNS,
+    })
+
+
+# ═══════════════════════════════════════════════════════════════════
+# Endpoint 2c: POST /v1/free-bot/email — Attach email to free bot session
+# ═══════════════════════════════════════════════════════════════════
+
+@app.route("/v1/free-bot/email", methods=["POST"])
+def free_bot_email():
+    data = request.get_json(force=True)
+    bot_id = data.get("bot_id", "")
+    email = (data.get("email") or "").strip()
+
+    if not bot_id:
+        return jsonify({"error": "bot_id required"}), 400
+    if not email or "@" not in email:
+        return jsonify({"error": "Valid email required"}), 400
+
+    session = get_free_bot(bot_id)
+    if not session:
+        return jsonify({"error": "Session not found"}), 404
+
+    update_free_bot(bot_id, email=email)
+    return jsonify({"status": "ok"})
+
+
+# ═══════════════════════════════════════════════════════════════════
+# Endpoint 2d: GET /v1/free-bot/complete/<bot_id> — Retrieve completed result
+# ═══════════════════════════════════════════════════════════════════
+
+@app.route("/v1/free-bot/complete/<bot_id>", methods=["GET"])
+def free_bot_complete(bot_id):
+    session = get_free_bot(bot_id)
+    if not session:
+        return jsonify({"error": "Session not found"}), 404
+
+    if session["status"] != "complete":
+        return jsonify({
+            "complete": False,
+            "status": session["status"],
+            "turn_count": session["turn_count"],
+            "max_turns": FREE_BOT_MAX_TURNS,
+        })
+
+    return jsonify({
+        "complete": True,
+        "result": session["result"],
+        "lang": session["lang"],
+    })
+
+
+# ═══════════════════════════════════════════════════════════════════
+# Endpoint 3: POST /v1/payment/intent — Create Stripe PaymentIntent
 # ═══════════════════════════════════════════════════════════════════
 
 @app.route("/v1/payment/intent", methods=["POST"])
@@ -144,7 +328,7 @@ def assess_start():
     data = request.get_json(force=True)
     payment_intent_id = data.get("payment_intent_id", "")
     email = (data.get("email") or "").strip()
-    session_id = data.get("session_id", "")
+    prior_session_id = data.get("session_id", "")
     lang = data.get("lang", "en")
 
     # Verify payment
@@ -156,7 +340,7 @@ def assess_start():
         return jsonify({"error": f"Payment verification failed: {e}"}), 400
 
     # Check for prior free analysis
-    prior_record = get_analysis(session_id) if session_id else None
+    prior_record = get_analysis(prior_session_id) if prior_session_id else None
     prior = prior_record.get("result") if prior_record else None
 
     # Generate first AI message
@@ -175,20 +359,18 @@ def assess_start():
     except (json.JSONDecodeError, anthropic.APIError) as e:
         return jsonify({"error": f"Failed to start session: {e}"}), 500
 
-    assess_id = "as_" + uuid.uuid4().hex[:16]
+    assess_id = str(uuid.uuid4())
     save_assessment(assess_id, {
-        "payment_intent_id": payment_intent_id,
+        "stripe_session_id": payment_intent_id,
         "email": email,
-        "session_id": session_id,
         "lang": lang,
         "status": "active",
         "turns": [
             {"role": "user", "content": start_msg["content"]},
             {"role": "assistant", "content": response.content[0].text},
         ],
-        "turn_count": 1,
         "result": None,
-        "report_path": None,
+        "phase": 1,
         "created_at": datetime.now(timezone.utc).isoformat(),
     })
 
@@ -220,7 +402,6 @@ def assess_turn():
     turn_msg = build_turn_message(message)
     turns = session["turns"]
     turns.append({"role": "user", "content": turn_msg["content"]})
-    turn_count = session["turn_count"] + 1
 
     try:
         response = claude.messages.create(
@@ -250,8 +431,8 @@ def assess_turn():
         )
         generate_mini_report(result, session["lang"], session["email"], report_path)
         update_assessment(assess_id,
-            status="complete", turns=turns, turn_count=turn_count,
-            result=result, report_path=report_path,
+            status="completed", turns=turns,
+            result=result,
         )
 
         return jsonify({
@@ -261,7 +442,7 @@ def assess_turn():
             "report_url": f"/v1/assess/report/{assess_id}",
         })
 
-    update_assessment(assess_id, turns=turns, turn_count=turn_count)
+    update_assessment(assess_id, turns=turns)
 
     return jsonify({
         "response": bot_response,
@@ -278,10 +459,11 @@ def assess_report(assess_id):
     session = get_assessment(assess_id)
     if not session:
         abort(404)
-    if not session.get("report_path") or not os.path.exists(session["report_path"]):
+    report_path = os.path.join(REPORT_DIR, f"LingoGrade_Bot_Report_{assess_id}.pdf")
+    if not os.path.exists(report_path):
         abort(404)
     return send_file(
-        session["report_path"],
+        report_path,
         mimetype="application/pdf",
         as_attachment=True,
         download_name=f"LingoGrade_Bot_Report.pdf",
@@ -305,6 +487,12 @@ def stripe_webhook():
     if event["type"] == "payment_intent.succeeded":
         pi = event["data"]["object"]
         matched_id = find_assessment_by_payment(pi["id"])
+        if matched_id:
+            update_assessment(matched_id, payment_confirmed=True)
+
+    elif event["type"] == "checkout.session.completed":
+        cs = event["data"]["object"]
+        matched_id = find_assessment_by_payment(cs["id"])
         if matched_id:
             update_assessment(matched_id, payment_confirmed=True)
 
@@ -416,34 +604,33 @@ def sticker_map():
     try:
         with get_cursor() as cur:
             cur.execute(
-                """SELECT latitude, longitude, city, country, COUNT(*) as count
-                   FROM sticker_verifications
+                """SELECT lat, lng, location_label, COUNT(*) as count
+                   FROM sticker_placements
                    WHERE status = 'verified'
-                   GROUP BY latitude, longitude, city, country
+                   GROUP BY lat, lng, location_label
                    ORDER BY count DESC"""
             )
             rows = cur.fetchall()
 
             cur.execute(
                 """SELECT COUNT(*) as total,
-                          COUNT(DISTINCT country) as countries,
-                          COUNT(DISTINCT city) as cities
-                   FROM sticker_verifications
+                          COUNT(DISTINCT location_label) as locations
+                   FROM sticker_placements
                    WHERE status = 'verified'"""
             )
             stats = cur.fetchone()
 
         placements = [
-            {"lat": r["latitude"], "lng": r["longitude"],
-             "city": r["city"] or "Unknown", "count": r["count"]}
+            {"lat": r["lat"], "lng": r["lng"],
+             "city": r["location_label"] or "Unknown", "count": r["count"]}
             for r in rows
         ]
         return jsonify({
             "placements": placements,
             "stats": {
                 "total": stats["total"],
-                "countries": stats["countries"],
-                "cities": stats["cities"],
+                "countries": stats["locations"],
+                "cities": stats["locations"],
             },
         })
     except Exception:
@@ -486,7 +673,7 @@ def sticker_verify():
     try:
         with get_cursor() as cur:
             cur.execute(
-                """SELECT COUNT(*) as cnt FROM sticker_verifications
+                """SELECT COUNT(*) as cnt FROM sticker_placements
                    WHERE student_id = %s::uuid
                    AND submitted_at > now() - interval '24 hours'""",
                 (student_id,),
@@ -494,19 +681,22 @@ def sticker_verify():
             if cur.fetchone()["cnt"] >= 3:
                 return jsonify({"error": "You have reached today's limit. Try again tomorrow."}), 429
 
-            # GPS uniqueness: max 3 stickers within 50m radius per account
+            # GPS uniqueness: max 3 within 50m — Haversine in Python
             cur.execute(
-                """SELECT COUNT(*) as cnt FROM sticker_verifications
-                   WHERE student_id = %s::uuid
-                   AND earth_distance(
-                       ll_to_earth(latitude, longitude),
-                       ll_to_earth(%s, %s)
-                   ) < 50""",
-                (student_id, lat, lng),
+                """SELECT lat, lng FROM sticker_placements
+                   WHERE student_id = %s::uuid""",
+                (student_id,),
             )
-            nearby = cur.fetchone()["cnt"]
+            import math
+            def _hav(la1, lo1, la2, lo2):
+                R = 6371000
+                rl1, rl2 = math.radians(la1), math.radians(la2)
+                dl, dg = math.radians(la2 - la1), math.radians(lo2 - lo1)
+                a = math.sin(dl/2)**2 + math.cos(rl1)*math.cos(rl2)*math.sin(dg/2)**2
+                return R * 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+            nearby = sum(1 for p in cur.fetchall() if _hav(lat, lng, p["lat"], p["lng"]) < 50)
     except Exception:
-        nearby = 0  # If earthdistance not installed, skip geo check
+        nearby = 0
 
     if nearby >= 3:
         return jsonify({"error": "Too many stickers in this area. Spread them around."}), 400
@@ -535,12 +725,13 @@ def sticker_verify():
     # Create verification record (pending 48h review)
     try:
         with get_cursor() as cur:
+            location_label = ", ".join(filter(None, [city, country])) or None
             cur.execute(
-                """INSERT INTO sticker_verifications
-                   (student_id, sticker_uuid, latitude, longitude, city, country, selfie_path)
-                   VALUES (%s::uuid, %s, %s, %s, %s, %s, %s)
+                """INSERT INTO sticker_placements
+                   (student_id, sticker_uuid, lat, lng, location_label, selfie_path)
+                   VALUES (%s::uuid, %s, %s, %s, %s, %s)
                    RETURNING id""",
-                (student_id, sticker_uuid, lat, lng, city, country, save_path),
+                (student_id, sticker_uuid, lat, lng, location_label, save_path),
             )
             verification_id = str(cur.fetchone()["id"])
     except Exception as e:

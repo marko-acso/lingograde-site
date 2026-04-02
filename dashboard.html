@@ -9,10 +9,15 @@
 <meta property="og:image" content="https://www.lingograde.com/og-logo-v2.png">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://www.lingograde.com/dashboard">
+<link rel="alternate" hreflang="en" href="https://www.lingograde.com/dashboard">
+<link rel="alternate" hreflang="x-default" href="https://www.lingograde.com/dashboard">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="icon" type="image/webp" href="/assets/mascot/marco-face-grad-v2.webp?v=3">
+<link rel="apple-touch-icon" href="/assets/mascot/marco-face-grad-v2.png">
+<noscript><meta http-equiv="refresh" content="0;url=https://app.lingograde.com/login?redirect=dashboard"></noscript>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
 <style>
 :root {
   --ink: #1C1C1C;
@@ -204,7 +209,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
 <!-- ── Navigation ── -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="Marco" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"><span>LingoGr<span class="brand-a">A</span>de</span></a>
+    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade - Home" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"><span>LingoGr<span class="brand-a">A</span>de</span></a>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -221,9 +226,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
 </nav>
 
 <!-- ── Dashboard ── -->
-<div class="dashboard" id="dashboardContent" style="display:none;">
-  <div class="dashboard-header" style="display:flex;align-items:center;gap:16px;">
-    <img src="assets/mascot/marco-logo-v6.1.webp" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;background:transparent;">
+<div class="dashboard hidden" id="dashboardContent">
+  <div class="dashboard-header gap-16" style="display:flex;align-items:center;" >
+    <img src="assets/mascot/marco-logo-v6.1.webp" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;" >
     <div>
       <h1 id="dashboardGreeting">Your Dashboard</h1>
       <p>Track your assessments, progress, and homework.</p>
@@ -238,7 +243,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
   </div>
 
   <!-- ── Progress Card ── -->
-  <div class="card" id="cardProgress" style="display:none;">
+  <div class="card hidden" id="cardProgress">
     <div class="card-title">Your Progress</div>
     <div class="card-desc">How your language skills are developing.</div>
     <div id="progressContent"></div>
@@ -331,23 +336,23 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
 <div class="toast" id="toast"></div>
 
 <!-- ── Footer ── -->
-<footer style="background:#1A3A5C;color:rgba(255,255,255,0.85);text-align:center;padding:48px 32px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
-  <div style="font-size:1.5rem;font-weight:700;letter-spacing:0.02em;">LingoGr<span style="color:#27AE60">A</span>de</div>
-  <p style="color:rgba(255,255,255,0.6);font-size:0.9375rem;margin:8px 0 24px;">Professional Language Assessment</p>
-  <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:0.875rem;">
-    <a href="index.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Home</a>
-    <a href="index.html#languages" style="color:rgba(255,255,255,0.7);text-decoration:none;">Languages</a>
-    <a href="index.html#pricing" style="color:rgba(255,255,255,0.7);text-decoration:none;">Pricing</a>
-    <a href="teachers.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">For Teachers</a>
-    <a href="partners.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Partners</a>
-    <a href="shop.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Shop</a>
-    <a href="mailto:info@lingograde.com" style="color:rgba(255,255,255,0.7);text-decoration:none;">Contact</a>
+<footer class="site-footer">
+  <div class="footer-brand">LingoGr<span class="c-green">A</span>de</div>
+  <p class="footer-tagline">Professional Language Assessment</p>
+  <div class="footer-nav">
+    <a href="index.html" class="footer-link">Home</a>
+    <a href="index.html#languages" class="footer-link">Languages</a>
+    <a href="index.html#pricing" class="footer-link">Pricing</a>
+    <a href="teachers.html" class="footer-link">For Teachers</a>
+    <a href="partners.html" class="footer-link">Partners</a>
+    <a href="shop.html" class="footer-link">Shop</a>
+    <a href="mailto:info@lingograde.com" class="footer-link">Contact</a>
   </div>
-  <div style="margin-top:16px;display:flex;gap:16px;justify-content:center;">
-    <a href="privacy-policy.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Privacy Policy</a>
-    <a href="terms-of-service.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Terms of Service</a>
+  <div class="footer-legal">
+    <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+    <a href="terms-of-service.html" class="footer-legal-link">Terms of Service</a>
   </div>
-  <div style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.4);">&copy; 2026 LingoGrade. All rights reserved.</div>
+  <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
 </footer>
 
 <script>
@@ -615,13 +620,13 @@ function renderUploadZone(pending) {
     '<div class="upload-zone-sub">PDF, DOCX, DOC, JPG, PNG &mdash; max 10 MB</div>' +
     '<button class="btn-file-pick" type="button" onclick="event.stopPropagation();document.getElementById(\'fileInput\').click()">Choose File</button>' +
     '</div>' +
-    '<input type="file" id="fileInput" accept=".pdf,.docx,.doc,.jpg,.jpeg,.png" style="display:none" onchange="handleFileInputChange(this)">' +
-    '<div id="uploadPreview" style="display:none;" class="upload-preview">' +
+    '<input type="file" id="fileInput" accept=".pdf,.docx,.doc,.jpg,.jpeg,.png" class="hidden" onchange="handleFileInputChange(this)">' +
+    '<div class="hidden upload-preview" id="uploadPreview">' +
     '<span class="upload-preview-name" id="uploadPreviewName"></span>' +
     '<span class="upload-preview-size" id="uploadPreviewSize"></span>' +
     '<button class="btn-upload-confirm" id="btnUpload" type="button" onclick="doUpload()">Upload</button>' +
     '</div>' +
-    '<div class="upload-progress" id="uploadProgress" style="display:none;"><div class="upload-progress-bar" id="uploadProgressBar"></div></div>' +
+    '<div class="upload-progress hidden" id="uploadProgress"><div class="upload-progress-bar" id="uploadProgressBar"></div></div>' +
     '</div>';
 }
 

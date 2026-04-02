@@ -152,9 +152,9 @@ def get_earnings():
 def get_stickers():
     with get_cursor() as cur:
         cur.execute(
-            """SELECT id, sticker_uuid, city, country, status,
+            """SELECT id, sticker_uuid, location_label, status,
                       submitted_at, verified_at
-               FROM sticker_verifications
+               FROM sticker_placements
                WHERE student_id = %s
                ORDER BY submitted_at DESC
                LIMIT 100""",
@@ -164,11 +164,12 @@ def get_stickers():
 
     stickers = []
     for r in rows:
+        parts = (r["location_label"] or "").split(", ", 1)
         stickers.append({
             "id": str(r["id"]),
             "sticker_uuid": r["sticker_uuid"],
-            "city": r["city"],
-            "country": r["country"],
+            "city": parts[0] if parts[0] else None,
+            "country": parts[1] if len(parts) > 1 else None,
             "status": r["status"],
             "submitted_at": r["submitted_at"].isoformat() if r["submitted_at"] else None,
             "verified_at": r["verified_at"].isoformat() if r["verified_at"] else None,

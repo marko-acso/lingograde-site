@@ -6,8 +6,10 @@
 <title>Letter Highlighting — Teacher Tools — LingoGrade</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/webp" href="/assets/mascot/marco-face-grad-v2.webp?v=3">
+<link rel="apple-touch-icon" href="/assets/mascot/marco-face-grad-v2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
 <style>
 /* ── Variables ─────────────────────────────────────────────────────────────── */
 :root {
@@ -595,7 +597,7 @@ body {
 </div>
 
 <!-- ── Main App ── -->
-<div id="appWrap" style="display:none;">
+<div id="appWrap" class="hidden">
 <div class="page-wrap">
 
   <!-- ── Tabs ── -->
@@ -672,7 +674,7 @@ body {
 
       <!-- Letter grid -->
       <div id="letterGrid">
-        <span style="color:var(--ink-light);font-size:0.9375rem;align-self:center;">Add a word above to see letters here.</span>
+        <span class="fs-md c-ink-light self-center" >Add a word above to see letters here.</span>
       </div>
     </div>
 
@@ -680,7 +682,7 @@ body {
     <div class="card">
       <div class="card-title-sm">Session Log</div>
       <div id="sessionLog">
-        <div class="log-empty">No entries yet. Add a word and highlight problem phonemes.</div>
+        <div class="log-empty">No entries yet. Add a word and highlight focus phonemes.</div>
       </div>
     </div>
 
@@ -690,13 +692,13 @@ body {
 
       <div class="summary-grid" id="summaryStats"></div>
 
-      <div class="card-title-sm" style="margin-top:16px;">Phoneme Families by Frequency</div>
+      <div class="card-title-sm mt-16" >Phoneme Families by Frequency</div>
       <div id="familyFreqList"></div>
 
-      <div class="card-title-sm" style="margin-top:20px;">Suggested Minimal Pair Flashcards</div>
+      <div class="card-title-sm mt-20" >Suggested Minimal Pair Flashcards</div>
       <div id="pairSuggestions"></div>
 
-      <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;">
+      <div class="mt-20" style="display:flex;gap:10px;flex-wrap:wrap;">
         <button class="btn btn-outline" id="btnNewSession">Start New Session</button>
       </div>
     </div>
@@ -947,8 +949,8 @@ body {
     $('wordInputCard').style.opacity   = '1';
     $('wordInputCard').style.pointerEvents = '';
     $('summaryPanel').style.display    = 'none';
-    $('sessionLog').innerHTML = '<div class="log-empty">No entries yet. Add a word and highlight problem phonemes.</div>';
-    $('letterGrid').innerHTML = '<span style="color:var(--ink-light);font-size:0.9375rem;align-self:center;">Add a word above to see letters here.</span>';
+    $('sessionLog').innerHTML = '<div class="log-empty">No entries yet. Add a word and highlight focus phonemes.</div>';
+    $('letterGrid').innerHTML = '<span class="fs-md c-ink-light self-center" >Add a word above to see letters here.</span>';
 
     var langLabel = $('langSelect').options[$('langSelect').selectedIndex].text;
     $('sessionStatus').textContent = 'Session active: ' + studentName + ' — ' + langLabel + ' — ' + state.sessionDate;
@@ -988,8 +990,8 @@ body {
     $('wordInputCard').style.pointerEvents = 'none';
     $('sessionStatus').textContent = 'No active session.';
     $('sessionStatus').className = 'session-status';
-    $('letterGrid').innerHTML = '<span style="color:var(--ink-light);font-size:0.9375rem;align-self:center;">Add a word above to see letters here.</span>';
-    $('sessionLog').innerHTML = '<div class="log-empty">No entries yet. Add a word and highlight problem phonemes.</div>';
+    $('letterGrid').innerHTML = '<span class="fs-md c-ink-light self-center" >Add a word above to see letters here.</span>';
+    $('sessionLog').innerHTML = '<div class="log-empty">No entries yet. Add a word and highlight focus phonemes.</div>';
     $('studentNameInput').value = '';
     $('studentSelect').value = '';
   }
@@ -1131,7 +1133,7 @@ body {
     // Reset grid
     state.tokens = [];
     state.currentWord = null;
-    $('letterGrid').innerHTML = '<span style="color:var(--ink-light);font-size:0.9375rem;align-self:center;">Add a word above to see letters here.</span>';
+    $('letterGrid').innerHTML = '<span class="fs-md c-ink-light self-center" >Add a word above to see letters here.</span>';
     $('wordInput').focus();
   }
 
@@ -1172,7 +1174,7 @@ body {
   function renderSessionLog() {
     var container = $('sessionLog');
     if (!state.logEntries.length) {
-      container.innerHTML = '<div class="log-empty">No entries yet. Add a word and highlight problem phonemes.</div>';
+      container.innerHTML = '<div class="log-empty">No entries yet. Add a word and highlight focus phonemes.</div>';
       return;
     }
     container.innerHTML = '';
@@ -1507,7 +1509,7 @@ body {
       wordOrder.forEach(function(word) {
         var wDiv = document.createElement('div');
         wDiv.style.marginBottom = '10px';
-        wDiv.innerHTML = '<div style="font-weight:700;font-size:0.9375rem;color:var(--navy);text-transform:uppercase;margin-bottom:4px;">' + word + '</div>';
+        wDiv.innerHTML = '<div class="mb-4 fw-700 fs-md uppercase" style="color:var(--navy);" >' + word + '</div>';
         var heatRow = document.createElement('div');
         heatRow.className = 'heat-row';
         byWord[word].forEach(function(log) {

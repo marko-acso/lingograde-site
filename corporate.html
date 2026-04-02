@@ -12,8 +12,13 @@
 <meta property="og:url" content="https://www.lingograde.com/corporate">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LingoGrade Corporate — Language Assessment for Teams">
+<meta name="twitter:description" content="Assess your team across 12 languages. Individual CEFR reports + Team Summary. Competitive volume pricing.">
 <meta name="twitter:image" content="https://www.lingograde.com/assets/mascot/lingograde-card-corporate.png">
+<meta property="og:locale" content="en_US">
 <link rel="canonical" href="https://www.lingograde.com/corporate">
+<link rel="alternate" hreflang="en" href="https://www.lingograde.com/corporate">
+<link rel="alternate" hreflang="x-default" href="https://www.lingograde.com/corporate">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <script type="application/ld+json">
 {
@@ -52,8 +57,10 @@
 }
 </script>
 <link rel="icon" type="image/webp" href="/assets/mascot/marco-face-grad-v2.webp?v=3">
+<link rel="apple-touch-icon" href="/assets/mascot/marco-face-grad-v2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
 <style>
 :root {
   --ink: #1C1C1C; --ink-soft: #4A4A4A; --ink-light: #8A8A8A;
@@ -126,14 +133,14 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="Marco" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"><span>LingoGr<span class="brand-a">A</span>de</span></a>
+    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade - Home" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"><span>LingoGr<span class="brand-a">A</span>de</span></a>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
     <div class="nav-menu">
       <a href="index.html">Individual</a>
       <a href="kids.html">Kids</a>
-      <a href="corporate.html" style="color:var(--accent);font-weight:700;">Corporate</a>
+      <a href="corporate.html" class="nav-active">Corporate</a>
       <a href="partners.html">Partners</a>
       <a href="shop.html">Shop</a>
       <a href="https://app.lingograde.com/login" class="nav-signin">Sign In</a>
@@ -143,13 +150,13 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 </nav>
 
 <!-- Hero -->
-<section class="section" style="padding-top:120px;text-align:center;background:linear-gradient(180deg, #1B3A5C 0%, #2A5580 40%, var(--cream) 100%);">
-  <div class="section-inner" style="max-width:760px;">
-    <div style="display:inline-block;padding:6px 16px;background:var(--gold);color:white;border-radius:100px;font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:24px;">Corporate Language Assessment</div>
-    <div style="margin-bottom:24px;"><img src="assets/mascot/marco-mila-outfit-corporate.webp?v=3" alt="Marco and Mila — LingoGrade Corporate" class="marco-img" style="width:200px;height:auto;background:transparent;"></div>
-    <h1 style="font-family:var(--font-display);font-size:clamp(2rem,4.5vw,2.8rem);line-height:1.2;margin-bottom:20px;color:white;">What if you could see exactly where<br>your team's language skills stand?</h1>
-    <p style="font-size:1.125rem;color:rgba(255,255,255,0.85);max-width:600px;margin:0 auto 32px;line-height:1.7;">It seems like your team already has the language skills — they just need a structured way to prove it. LingoGrade gives every employee an individual CEFR report across 12 languages — one provider, one invoice, one consistent format. And you get a Team Summary showing exactly where your workforce stands.</p>
-    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+<section class="section text-center" style="padding-top:120px;background:linear-gradient(180deg, #1B3A5C 0%, #2A5580 40%, var(--cream) 100%);">
+  <div class="section-inner mw-760">
+    <div class="inline-badge inline-badge--gold">Corporate Language Assessment</div>
+    <div class="mb-24" ><img src="assets/mascot/marco-mila-outfit-corporate.webp?v=3" alt="Marco and Mila — LingoGrade Corporate" class="marco-img" style="width:200px;height:auto;" ></div>
+    <h1 class="mb-20 c-white font-display" style="font-size:clamp(2rem,4.5vw,2.8rem);line-height:1.2;" >What if you could see exactly where<br>your team's language skills stand?</h1>
+    <p class="lh-17 fs-lg" style="color:rgba(255,255,255,0.85);max-width:600px;margin:0 auto 32px;">It seems like your team already has the language skills — they just need a structured way to prove it. LingoGrade gives every employee an individual CEFR report across 12 languages — one provider, one invoice, one consistent format. And you get a Team Summary showing exactly where your workforce stands.</p>
+    <div class="flex-center-wrap">
       <a href="#contact" class="btn-primary">Request a Quote</a>
       <a href="#pricing" class="btn-secondary">See Pricing</a>
       <a href="samples/corporate_sample_report.pdf" target="_blank" class="btn-secondary" style="border-color:rgba(255,255,255,0.5);color:rgba(255,255,255,0.9);" download>Download Sample Report</a>
@@ -159,95 +166,95 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
 <!-- Why Corporate -->
 <section class="section section-alt">
-  <div class="section-inner" style="max-width:860px;">
+  <div class="section-inner mw-860">
     <div class="section-label">The Clarity You Have Been Missing</div>
     <h2 class="section-title">It sounds like you've been allocating training budgets without knowing where the actual gaps are.</h2>
-    <p style="font-size:1rem;color:var(--ink-soft);line-height:1.7;margin-bottom:24px;">Employees self-report B2 on their CV. Managers assume it is accurate. Training budgets disappear into programs that can't be measured. Nobody knows where the real gaps are — until a deal falls apart, an email gets misunderstood, or a client relationship suffers.</p>
-    <p style="font-size:1rem;color:var(--ink);font-weight:600;line-height:1.7;">Would it be unreasonable to expect precise, CEFR-certified language data for your entire team — in less than a week? LingoGrade delivers exactly that. 25 minutes per employee. Every gap exposed. Every next step clear.</p>
+    <p class="body-text mb-24">Employees self-report B2 on their CV. Managers assume it is accurate. Training budgets disappear into programs that can't be measured. Nobody knows where the real gaps are — until a deal falls apart, an email gets misunderstood, or a client relationship suffers.</p>
+    <p class="body-text--bold">Would it be unreasonable to expect precise, CEFR-certified language data for your entire team — in less than a week? LingoGrade delivers exactly that. 25 minutes per employee. Every gap exposed. Every next step clear.</p>
   </div>
 </section>
 
 <!-- What You Get -->
 <section class="section">
-  <div class="section-inner" style="max-width:900px;">
+  <div class="section-inner mw-900" >
     <div class="section-label">What Your Company Gets</div>
     <h2 class="section-title" style="margin-bottom:40px;">Your team gets clarity. You get leverage.</h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;" class="advantages-grid">
+    <div class="advantages-grid gap-32" style="display:grid;grid-template-columns:1fr 1fr;">
       <div>
-        <h3 style="font-family:var(--font-display);font-size:1.25rem;margin-bottom:12px;">For Each Employee — The Individual</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
-          <li style="padding-left:24px;position:relative;font-size:0.9375rem;color:var(--ink-soft);"><span style="position:absolute;left:0;color:var(--accent);">&#10003;</span> Individual CEFR level (active + passive)</li>
-          <li style="padding-left:24px;position:relative;font-size:0.9375rem;color:var(--ink-soft);"><span style="position:absolute;left:0;color:var(--accent);">&#10003;</span> 5 structural patterns with explanation</li>
-          <li style="padding-left:24px;position:relative;font-size:0.9375rem;color:var(--ink-soft);"><span style="position:absolute;left:0;color:var(--accent);">&#10003;</span> 5 targeted solutions</li>
-          <li style="padding-left:24px;position:relative;font-size:0.9375rem;color:var(--ink-soft);"><span style="position:absolute;left:0;color:var(--accent);">&#10003;</span> Personalized homework (3 types)</li>
-          <li style="padding-left:24px;position:relative;font-size:0.9375rem;color:var(--ink-soft);"><span style="position:absolute;left:0;color:var(--accent);">&#10003;</span> 8-week structured learning plan</li>
-          <li style="padding-left:24px;position:relative;font-size:0.9375rem;color:var(--ink-soft);"><span style="position:absolute;left:0;color:var(--accent);">&#10003;</span> Full bilingual report (assessed + native language)</li>
+        <h3 class="subheading">For Each Employee — The Individual</h3>
+        <ul class="check-list">
+          <li class="check-item"><span class="check-icon">&#10003;</span> Individual CEFR level (active + passive)</li>
+          <li class="check-item"><span class="check-icon">&#10003;</span> 5 structural patterns with explanation</li>
+          <li class="check-item"><span class="check-icon">&#10003;</span> 5 targeted solutions</li>
+          <li class="check-item"><span class="check-icon">&#10003;</span> Personalized homework (3 types)</li>
+          <li class="check-item"><span class="check-icon">&#10003;</span> 8-week structured learning plan</li>
+          <li class="check-item"><span class="check-icon">&#10003;</span> Full bilingual report (assessed + native language)</li>
         </ul>
       </div>
       <div>
-        <h3 style="font-family:var(--font-display);font-size:1.25rem;margin-bottom:12px;">For You — The Decision-Maker</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
-          <li style="padding-left:24px;position:relative;font-size:0.9375rem;color:var(--ink-soft);"><span style="position:absolute;left:0;color:var(--accent);">&#10003;</span> Team Summary Report — level distribution at a glance</li>
-          <li style="padding-left:24px;position:relative;font-size:0.9375rem;color:var(--ink-soft);"><span style="position:absolute;left:0;color:var(--accent);">&#10003;</span> Strengths and gaps across the group</li>
-          <li style="padding-left:24px;position:relative;font-size:0.9375rem;color:var(--ink-soft);"><span style="position:absolute;left:0;color:var(--accent);">&#10003;</span> Data to justify training budget allocation</li>
-          <li style="padding-left:24px;position:relative;font-size:0.9375rem;color:var(--ink-soft);"><span style="position:absolute;left:0;color:var(--accent);">&#10003;</span> Single invoice for the entire group</li>
-          <li style="padding-left:24px;position:relative;font-size:0.9375rem;color:var(--ink-soft);"><span style="position:absolute;left:0;color:var(--accent);">&#10003;</span> Coordinated scheduling for your team</li>
-          <li style="padding-left:24px;position:relative;font-size:0.9375rem;color:var(--ink-soft);"><span style="position:absolute;left:0;color:var(--accent);">&#10003;</span> 12 languages — one provider, one format</li>
+        <h3 class="subheading">For You — The Decision-Maker</h3>
+        <ul class="check-list">
+          <li class="check-item"><span class="check-icon">&#10003;</span> Team Summary Report — level distribution at a glance</li>
+          <li class="check-item"><span class="check-icon">&#10003;</span> Strengths and gaps across the group</li>
+          <li class="check-item"><span class="check-icon">&#10003;</span> Data to justify training budget allocation</li>
+          <li class="check-item"><span class="check-icon">&#10003;</span> Single invoice for the entire group</li>
+          <li class="check-item"><span class="check-icon">&#10003;</span> Coordinated scheduling for your team</li>
+          <li class="check-item"><span class="check-icon">&#10003;</span> 12 languages — one provider, one format</li>
         </ul>
       </div>
     </div>
-    <div style="margin-top:32px;text-align:center;">
-      <a href="samples/corporate_sample_report.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:var(--accent-bg);border:1.5px solid var(--accent);border-radius:10px;color:var(--accent);font-weight:600;font-size:0.9375rem;text-decoration:none;transition:all 0.15s;" download>&#128196; Download a Sample Report (PDF)</a>
-      <p style="font-size:0.8rem;color:var(--ink-light);margin-top:8px;">See exactly what your employees will receive — a real German B2 corporate assessment.</p>
+    <div class="text-center mt-32" >
+      <a class="fw-600 fs-md c-accent no-underline gap-8 bg-accent-bg" href="samples/corporate_sample_report.pdf" target="_blank" download style="display:inline-flex;align-items:center;padding:12px 24px;border:1.5px solid var(--accent);border-radius:10px;transition:all 0.15s;" >&#128196; Download a Sample Report (PDF)</a>
+      <p class="c-ink-light mt-8 fs-xs" >See exactly what your employees will receive — a real German B2 corporate assessment.</p>
     </div>
   </div>
 </section>
 
 <!-- 12 Languages -->
 <section class="section section-alt">
-  <div class="section-inner" style="text-align:center;max-width:860px;">
+  <div class="section-inner text-center mw-860" >
     <div class="section-label">12 Languages, One Provider</div>
     <h2 class="section-title">Is it really fair to your team to juggle multiple vendors?</h2>
-    <p class="section-desc" style="margin:0 auto 32px;">A Bulgarian company with German, English, and French business relationships can assess all three through LingoGrade. A multinational operating across the Balkans can assess staff in Serbian, Croatian, Romanian, and Bulgarian — one provider, one invoice, one consistent report format. No more coordination headaches.</p>
+    <p class="section-desc mb-32 mx-auto" >A Bulgarian company with German, English, and French business relationships can assess all three through LingoGrade. A multinational operating across the Balkans can assess staff in Serbian, Croatian, Romanian, and Bulgarian — one provider, one invoice, one consistent report format. No more coordination headaches.</p>
     <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
-      <span style="padding:8px 16px;border-radius:8px;background:var(--cream);border:1px solid var(--border);font-size:0.875rem;font-weight:500;">&#127465;&#127466; German</span>
-      <span style="padding:8px 16px;border-radius:8px;background:var(--cream);border:1px solid var(--border);font-size:0.875rem;font-weight:500;">&#127468;&#127463; English</span>
-      <span style="padding:8px 16px;border-radius:8px;background:var(--cream);border:1px solid var(--border);font-size:0.875rem;font-weight:500;">&#127467;&#127479; French</span>
-      <span style="padding:8px 16px;border-radius:8px;background:var(--cream);border:1px solid var(--border);font-size:0.875rem;font-weight:500;">&#127466;&#127480; Spanish</span>
-      <span style="padding:8px 16px;border-radius:8px;background:var(--cream);border:1px solid var(--border);font-size:0.875rem;font-weight:500;">&#127470;&#127481; Italian</span>
-      <span style="padding:8px 16px;border-radius:8px;background:var(--cream);border:1px solid var(--border);font-size:0.875rem;font-weight:500;">&#127477;&#127481; Portuguese</span>
-      <span style="padding:8px 16px;border-radius:8px;background:var(--cream);border:1px solid var(--border);font-size:0.875rem;font-weight:500;">&#127479;&#127482; Russian</span>
-      <span style="padding:8px 16px;border-radius:8px;background:var(--cream);border:1px solid var(--border);font-size:0.875rem;font-weight:500;">&#127479;&#127480; Serbian</span>
-      <span style="padding:8px 16px;border-radius:8px;background:var(--cream);border:1px solid var(--border);font-size:0.875rem;font-weight:500;">&#127469;&#127479; Croatian</span>
-      <span style="padding:8px 16px;border-radius:8px;background:var(--cream);border:1px solid var(--border);font-size:0.875rem;font-weight:500;">&#127479;&#127476; Romanian</span>
-      <span style="padding:8px 16px;border-radius:8px;background:var(--cream);border:1px solid var(--border);font-size:0.875rem;font-weight:500;">&#127477;&#127473; Polish</span>
-      <span style="padding:8px 16px;border-radius:8px;background:var(--cream);border:1px solid var(--border);font-size:0.875rem;font-weight:500;">&#127463;&#127468; Bulgarian</span>
+      <span class="chip">&#127465;&#127466; German</span>
+      <span class="chip">&#127468;&#127463; English</span>
+      <span class="chip">&#127467;&#127479; French</span>
+      <span class="chip">&#127466;&#127480; Spanish</span>
+      <span class="chip">&#127470;&#127481; Italian</span>
+      <span class="chip">&#127477;&#127481; Portuguese</span>
+      <span class="chip">&#127479;&#127482; Russian</span>
+      <span class="chip">&#127479;&#127480; Serbian</span>
+      <span class="chip">&#127469;&#127479; Croatian</span>
+      <span class="chip">&#127479;&#127476; Romanian</span>
+      <span class="chip">&#127477;&#127473; Polish</span>
+      <span class="chip">&#127463;&#127468; Bulgarian</span>
     </div>
-    <p style="font-size:0.85rem;color:var(--ink-light);margin-top:16px;">Reports delivered bilingually in 25+ native languages.</p>
+    <p class="mt-16 c-ink-light fs-085" >Reports delivered bilingually in 25+ native languages.</p>
   </div>
 </section>
 
-<div style="max-width:720px;margin:0 auto 32px;text-align:center;padding:24px;background:#f8f9fa;border-radius:8px;">
-  <p style="font-size:1.05rem;color:#444;line-height:1.7;margin:0;">You are probably thinking: another vendor, another line item, another thing to coordinate. We get it. That is exactly why every corporate engagement comes with a single point of contact, a single invoice, and a single format across all 12 languages. The only thing that multiplies is clarity.</p>
+<div class="text-center mw-720" style="margin:0 auto 32px;padding:24px;background:#f8f9fa;border-radius:8px;">
+  <p class="lh-17 m-0" style="font-size:1.05rem;color:#444;" >You are probably thinking: another vendor, another line item, another thing to coordinate. We get it. That is exactly why every corporate engagement comes with a single point of contact, a single invoice, and a single format across all 12 languages. The only thing that multiplies is clarity.</p>
 </div>
 
 <!-- Pricing -->
 <section class="section" id="pricing">
-  <div class="section-inner" style="text-align:center;max-width:960px;">
+  <div class="section-inner text-center mw-960" >
     <div class="section-label">Corporate Pricing</div>
-    <h2 class="section-title" style="margin:0 auto 8px;">Would it be unreasonable to expect this level of precision at scale?</h2>
+    <h2 class="section-title mx-auto mb-8">Would it be unreasonable to expect this level of precision at scale?</h2>
     <p class="section-desc" style="margin:0 auto 16px;">Every corporate assessment is the complete 25-minute Full Assessment with all diagnostic blocks. No shortcuts, no stripped-down versions. Precise data, delivered within hours.</p>
-    <p style="font-size:0.875rem;color:var(--ink-soft);font-style:italic;margin:0 auto 40px;max-width:600px;">Voice-only assessments available for corporate teams at a reduced rate. Contact us for details.</p>
+    <p class="fs-body c-ink-soft italic" style="margin:0 auto 40px;max-width:600px;" >Voice-only assessments available for corporate teams at a reduced rate. Contact us for details.</p>
 
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:32px;" class="pricing-tiers">
+    <div class="pricing-tiers mb-32 gap-24" style="display:grid;grid-template-columns:repeat(3,1fr);" >
       <!-- Team -->
-      <div style="padding:32px;border-radius:16px;background:var(--cream);border:1.5px solid var(--border);text-align:left;">
-        <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-light);margin-bottom:8px;">Team</div>
-        <div style="font-size:0.9375rem;color:var(--ink-soft);margin-bottom:16px;">5 &ndash; 14 employees</div>
-        <div class="corp-price" data-eur="99.95" data-usd="99.95" data-chf="99.95" data-gbp="99.95" style="font-size:2.5rem;font-weight:800;color:var(--ink);line-height:1;">&euro;99.95</div>
-        <div style="font-size:0.8rem;color:var(--ink-light);margin-bottom:20px;">per person</div>
-        <div class="corp-save" data-eur="30" data-usd="30" data-chf="30" data-gbp="30" style="font-size:0.8rem;color:var(--success);font-weight:600;margin-bottom:16px;">Save &euro;30 per person vs. individual</div>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;font-size:0.875rem;color:var(--ink-soft);">
+      <div class="info-card text-left" style="padding:32px;border-radius:16px;">
+        <div class="mb-8 fw-700 c-ink-light fs-2xs uppercase tracking-wide" >Team</div>
+        <div class="fs-md c-ink-soft mb-16">5 &ndash; 14 employees</div>
+        <div class="corp-price c-ink fs-4xl fw-700" data-eur="99.95" data-usd="99.95" data-chf="99.95" data-gbp="99.95" style="line-height:1;" >&euro;99.95</div>
+        <div class="subcaption mb-20">per person</div>
+        <div class="corp-save subcaption c-success fw-600 mb-16" data-eur="30" data-usd="30" data-chf="30" data-gbp="30">Save &euro;30 per person vs. individual</div>
+        <ul class="check-list fs-body c-ink-soft gap-8" >
           <li>&#10003; Individual Full Assessment report</li>
           <li>&#10003; Team Summary Report</li>
           <li>&#10003; Single invoice</li>
@@ -255,14 +262,14 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         </ul>
       </div>
       <!-- Department -->
-      <div style="padding:32px;border-radius:16px;background:var(--gold-bg);border:1.5px solid var(--gold);text-align:left;position:relative;">
-        <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:white;padding:4px 16px;border-radius:100px;font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Most Chosen</div>
-        <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Department</div>
-        <div style="font-size:0.9375rem;color:var(--ink-soft);margin-bottom:16px;">15 &ndash; 49 employees</div>
-        <div class="corp-price" data-eur="89.95" data-usd="89.95" data-chf="89.95" data-gbp="89.95" style="font-size:2.5rem;font-weight:800;color:var(--accent);line-height:1;">&euro;89.95</div>
-        <div style="font-size:0.8rem;color:var(--ink-light);margin-bottom:20px;">per person</div>
-        <div class="corp-save" data-eur="40" data-usd="40" data-chf="40" data-gbp="40" style="font-size:0.8rem;color:var(--success);font-weight:600;margin-bottom:16px;">Save &euro;40 per person vs. individual</div>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;font-size:0.875rem;color:var(--ink-soft);">
+      <div class="text-left" style="padding:32px;border-radius:16px;background:var(--gold-bg);border:1.5px solid var(--gold);position:relative;">
+        <div class="fw-700 c-white fs-2xs uppercase tracking-wide" style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);padding:4px 16px;border-radius:100px;" >Most Chosen</div>
+        <div class="mb-8 fw-700 c-gold fs-2xs uppercase tracking-wide" >Department</div>
+        <div class="fs-md c-ink-soft mb-16">15 &ndash; 49 employees</div>
+        <div class="corp-price c-accent fs-4xl fw-700" data-eur="89.95" data-usd="89.95" data-chf="89.95" data-gbp="89.95" style="line-height:1;" >&euro;89.95</div>
+        <div class="subcaption mb-20">per person</div>
+        <div class="corp-save subcaption c-success fw-600 mb-16" data-eur="40" data-usd="40" data-chf="40" data-gbp="40">Save &euro;40 per person vs. individual</div>
+        <ul class="check-list fs-body c-ink-soft gap-8" >
           <li>&#10003; Everything in Team</li>
           <li>&#10003; Priority scheduling</li>
           <li>&#10003; Group strengths &amp; gaps analysis</li>
@@ -270,13 +277,13 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         </ul>
       </div>
       <!-- Enterprise -->
-      <div style="padding:32px;border-radius:16px;background:var(--cream);border:1.5px solid var(--border);text-align:left;">
-        <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-light);margin-bottom:8px;">Enterprise</div>
-        <div style="font-size:0.9375rem;color:var(--ink-soft);margin-bottom:16px;">50+ employees</div>
-        <div class="corp-price" data-eur="49.95" data-usd="49.95" data-chf="49.95" data-gbp="49.95" style="font-size:2.5rem;font-weight:800;color:var(--ink);line-height:1;">&euro;49.95</div>
-        <div style="font-size:0.8rem;color:var(--ink-light);margin-bottom:20px;">per person</div>
-        <div class="corp-save" data-eur="50" data-usd="50" data-chf="50" data-gbp="50" style="font-size:0.8rem;color:var(--success);font-weight:600;margin-bottom:16px;">Save &euro;50 per person vs. individual</div>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;font-size:0.875rem;color:var(--ink-soft);">
+      <div class="info-card text-left" style="padding:32px;border-radius:16px;">
+        <div class="mb-8 fw-700 c-ink-light fs-2xs uppercase tracking-wide" >Enterprise</div>
+        <div class="fs-md c-ink-soft mb-16">50+ employees</div>
+        <div class="corp-price c-ink fs-4xl fw-700" data-eur="49.95" data-usd="49.95" data-chf="49.95" data-gbp="49.95" style="line-height:1;" >&euro;49.95</div>
+        <div class="subcaption mb-20">per person</div>
+        <div class="corp-save subcaption c-success fw-600 mb-16" data-eur="50" data-usd="50" data-chf="50" data-gbp="50">Save &euro;50 per person vs. individual</div>
+        <ul class="check-list fs-body c-ink-soft gap-8" >
           <li>&#10003; Everything in Department</li>
           <li>&#10003; Dedicated assessment coordinator</li>
           <li>&#10003; Custom scheduling blocks</li>
@@ -286,29 +293,29 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     </div>
 
     <!-- Re-assessment -->
-    <div style="padding:24px 32px;border-radius:12px;background:var(--success-bg);border:1px solid rgba(39,174,96,0.2);max-width:700px;margin:0 auto 24px;text-align:left;">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+    <div class="text-left" style="padding:24px 32px;border-radius:12px;background:var(--success-bg);border:1px solid rgba(39,174,96,0.2);max-width:700px;margin:0 auto 24px;">
+      <div class="gap-16" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;" >
         <div>
-          <div style="font-weight:700;color:var(--ink);margin-bottom:4px;">Re-Assessment (8 weeks later)</div>
-          <div style="font-size:0.875rem;color:var(--ink-soft);">Measure progress. Show ROI on training spend. Same employee, same language, new report.</div>
+          <div class="mb-4 fw-700 c-ink" >Re-Assessment (8 weeks later)</div>
+          <div class="fs-body c-ink-soft">Measure progress. Show ROI on training spend. Same employee, same language, new report.</div>
         </div>
-        <div class="corp-reassess" data-eur="139.95" data-usd="139.95" data-chf="139.95" data-gbp="139.95" style="font-size:1.5rem;font-weight:800;color:var(--success);"><span style="font-size:0.85rem;font-weight:600;color:var(--ink-soft);">starting from</span> &euro;139.95 <span style="font-size:0.8rem;font-weight:400;color:var(--ink-light);">per person</span></div>
+        <div class="corp-reassess c-success fs-xl fw-700" data-eur="139.95" data-usd="139.95" data-chf="139.95" data-gbp="139.95" ><span class="fw-600 c-ink-soft fs-085" >starting from</span> &euro;139.95 <span class="c-ink-light fw-400 fs-xs" >per person</span></div>
       </div>
     </div>
 
-    <a href="#contact" class="btn-primary" style="margin-top:16px;">Request a Quote</a>
-    <p style="font-size:0.8rem;color:var(--ink-light);margin-top:12px;">We respond within 24 hours. No commitment required.</p>
+    <a href="#contact" class="btn-primary mt-16" >Request a Quote</a>
+    <p class="subcaption mt-12">We respond within 24 hours. No commitment required.</p>
   </div>
 </section>
 
 <!-- Corporate Subscription -->
-<section class="section" style="background:var(--accent-bg);">
-  <div class="section-inner" style="text-align:center;max-width:760px;">
+<section class="section bg-accent-bg" >
+  <div class="section-inner text-center mw-760" >
     <div class="section-label">Ongoing Development</div>
-    <h2 class="section-title" style="margin:0 auto 12px;">It sounds like assessment alone won't solve the problem. You need progress.</h2>
-    <p class="section-desc" style="margin:0 auto 32px;">Knowing where your team stands is only the first step. Without structured follow-up, those gaps stay open. Give your team weekly targeted lessons based on their individual results &mdash; every session addresses their specific weaknesses, not generic curriculum.</p>
-    <div style="padding:32px;border-radius:16px;background:var(--cream);border:1.5px solid var(--border);text-align:left;max-width:560px;margin:0 auto;">
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;font-size:0.9375rem;color:var(--ink-soft);">
+    <h2 class="section-title" style="margin:0 auto 12px;">It sounds like assessment alone won't address the pattern. You need progress.</h2>
+    <p class="section-desc mb-32 mx-auto" >Knowing where your team stands is only the first step. Without structured follow-up, those gaps stay open. Give your team weekly targeted lessons based on their individual results &mdash; every session addresses their specific weaknesses, not generic curriculum.</p>
+    <div class="mx-auto text-left mw-560 bg-cream" style="padding:32px;border-radius:16px;border:1.5px solid var(--border);" >
+      <ul class="fs-md c-ink-soft" style="list-style:none;display:flex;flex-direction:column;gap:12px;">
         <li>&#10003; Weekly 15-minute targeted lessons per employee</li>
         <li>&#10003; Based on individual assessment results</li>
         <li>&#10003; Homework checks included</li>
@@ -316,7 +323,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         <li>&#10003; Bulk lesson pricing for teams</li>
         <li>&#10003; Voice-only option available</li>
       </ul>
-      <div style="text-align:center;margin-top:24px;">
+      <div class="text-center mt-24" >
         <a href="#contact" class="btn-primary">Contact Us for Team Subscriptions</a>
       </div>
     </div>
@@ -325,94 +332,94 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
 <!-- Use Cases -->
 <section class="section section-alt">
-  <div class="section-inner" style="max-width:860px;">
+  <div class="section-inner mw-860">
     <div class="section-label">Where Clarity Matters Most</div>
-    <h2 class="section-title" style="margin-bottom:32px;">Four scenarios where precise language data changes the outcome</h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;" class="advantages-grid">
-      <div style="padding:24px;border-radius:12px;background:var(--cream);border:1.5px solid var(--border);">
-        <div style="font-weight:700;color:var(--ink);margin-bottom:8px;">Pre-hire Language Screening</div>
-        <div style="font-size:0.875rem;color:var(--ink-soft);line-height:1.6;">What if you could verify a candidate's actual language level before making a hiring decision? A 25-minute conversation reveals exactly where they stand.</div>
+    <h2 class="section-title mb-32" >Four scenarios where precise language data changes the outcome</h2>
+    <div class="advantages-grid gap-24" style="display:grid;grid-template-columns:1fr 1fr;">
+      <div class="info-card bg-cream" >
+        <div class="fw-700 c-ink mb-8">Pre-hire Language Screening</div>
+        <div class="speed-desc speed-desc--accent">What if you could verify a candidate's actual language level before making a hiring decision? A 25-minute conversation reveals exactly where they stand.</div>
       </div>
-      <div style="padding:24px;border-radius:12px;background:var(--cream);border:1.5px solid var(--border);">
-        <div style="font-weight:700;color:var(--ink);margin-bottom:8px;">Training Needs Analysis</div>
-        <div style="font-size:0.875rem;color:var(--ink-soft);line-height:1.6;">Would it help to know exactly which employees need which training? The Team Summary shows precisely where the gaps are, so every training euro is allocated with confidence.</div>
+      <div class="info-card bg-cream" >
+        <div class="fw-700 c-ink mb-8">Training Needs Analysis</div>
+        <div class="speed-desc speed-desc--accent">Would it help to know exactly which employees need which training? The Team Summary shows precisely where the gaps are, so every training euro is allocated with confidence.</div>
       </div>
-      <div style="padding:24px;border-radius:12px;background:var(--cream);border:1.5px solid var(--border);">
-        <div style="font-weight:700;color:var(--ink);margin-bottom:8px;">Training ROI Measurement</div>
-        <div style="font-size:0.875rem;color:var(--ink-soft);line-height:1.6;">How would it feel to show leadership measurable progress backed by CEFR data? Re-assess after 8 weeks and present concrete before-and-after results.</div>
+      <div class="info-card bg-cream" >
+        <div class="fw-700 c-ink mb-8">Training ROI Measurement</div>
+        <div class="speed-desc speed-desc--accent">How would it feel to show leadership measurable progress backed by CEFR data? Re-assess after 8 weeks and present concrete before-and-after results.</div>
       </div>
-      <div style="padding:24px;border-radius:12px;background:var(--cream);border:1.5px solid var(--border);">
-        <div style="font-weight:700;color:var(--ink);margin-bottom:8px;">Internal Mobility &amp; Promotion</div>
-        <div style="font-size:0.875rem;color:var(--ink-soft);line-height:1.6;">What if internal promotions into language-dependent roles were backed by objective data? LingoGrade gives you a CEFR-certified answer to support confident decisions.</div>
+      <div class="info-card bg-cream" >
+        <div class="fw-700 c-ink mb-8">Internal Mobility &amp; Promotion</div>
+        <div class="speed-desc speed-desc--accent">What if internal promotions into language-dependent roles were backed by objective data? LingoGrade gives you a CEFR-certified answer to support confident decisions.</div>
       </div>
     </div>
-    <div style="text-align:center;margin:32px 0;">
-      <a href="#contact" style="display:inline-block;padding:14px 36px;background:#2563AB;color:white;border-radius:6px;font-weight:600;text-decoration:none;font-size:1.05rem;">Explore Corporate Assessment</a>
+    <div class="text-center" style="margin:32px 0;">
+      <a class="fw-600 c-white no-underline" href="#contact" style="display:inline-block;padding:14px 36px;background:#2563AB;border-radius:6px;font-size:1.05rem;" >Explore Corporate Assessment</a>
     </div>
   </div>
 </section>
 
 <!-- How It Works -->
 <section class="section">
-  <div class="section-inner" style="max-width:760px;">
+  <div class="section-inner mw-760">
     <div class="section-label">How It Works</div>
-    <h2 class="section-title" style="margin-bottom:32px;">Three steps. Zero disruption. Your choice.</h2>
-    <div style="display:flex;flex-direction:column;gap:24px;">
-      <div style="display:flex;gap:20px;align-items:flex-start;">
-        <div style="min-width:40px;height:40px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.1rem;">1</div>
-        <div><div style="font-weight:700;margin-bottom:4px;">You send us the list</div><div style="font-size:0.9375rem;color:var(--ink-soft);">Employee names, languages to assess, and preferred scheduling window. We handle the rest.</div></div>
+    <h2 class="section-title mb-32" >Three steps. Zero disruption. Your choice.</h2>
+    <div class="gap-24" style="display:flex;flex-direction:column;" >
+      <div class="flex-col" style="flex-direction:row;gap:20px;align-items:flex-start;">
+        <div class="c-white font-display" style="min-width:40px;height:40px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:1.1rem;" >1</div>
+        <div><div class="fw-700 mb-4" >You send us the list</div><div class="fs-md c-ink-soft">Employee names, languages to assess, and preferred scheduling window. We handle the rest.</div></div>
       </div>
-      <div style="display:flex;gap:20px;align-items:flex-start;">
-        <div style="min-width:40px;height:40px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.1rem;">2</div>
-        <div><div style="font-weight:700;margin-bottom:4px;">Each employee gets a 25-minute voice call</div><div style="font-size:0.9375rem;color:var(--ink-soft);">Video or voice-only — employee's choice. A relaxed conversation — no test anxiety, no preparation needed. The assessor adapts to each person's level. Your team won't resist this.</div></div>
+      <div class="flex-col" style="flex-direction:row;gap:20px;align-items:flex-start;">
+        <div class="c-white font-display" style="min-width:40px;height:40px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:1.1rem;" >2</div>
+        <div><div class="fw-700 mb-4" >Each employee gets a 25-minute voice call</div><div class="fs-md c-ink-soft">Video or voice-only — employee's choice. A relaxed conversation — no test anxiety, no preparation needed. The assessor adapts to each person's level. Your team won't resist this.</div></div>
       </div>
-      <div style="display:flex;gap:20px;align-items:flex-start;">
-        <div style="min-width:40px;height:40px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.1rem;">3</div>
-        <div><div style="font-weight:700;margin-bottom:4px;">Reports delivered within 1 hour</div><div style="font-size:0.9375rem;color:var(--ink-soft);">Each employee receives their individual PDF report. You receive the Team Summary with all results at a glance.</div></div>
+      <div class="flex-col" style="flex-direction:row;gap:20px;align-items:flex-start;">
+        <div class="c-white font-display" style="min-width:40px;height:40px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:1.1rem;" >3</div>
+        <div><div class="fw-700 mb-4" >Reports delivered within 1 hour</div><div class="fs-md c-ink-soft">Each employee receives their individual PDF report. You receive the Team Summary with all results at a glance.</div></div>
       </div>
     </div>
-    <div style="text-align:center;margin:32px 0;">
-      <a href="#contact" style="display:inline-block;padding:14px 36px;background:#27AE60;color:white;border-radius:6px;font-weight:600;text-decoration:none;font-size:1.05rem;">Explore Team Options</a>
+    <div class="text-center" style="margin:32px 0;">
+      <a class="fw-600 c-white no-underline" href="#contact" style="display:inline-block;padding:14px 36px;background:#27AE60;border-radius:6px;font-size:1.05rem;" >Explore Team Options</a>
     </div>
   </div>
 </section>
 
 <!-- CTA with Form -->
-<section class="section section-alt" style="text-align:center;" id="contact">
-  <div class="section-inner" style="max-width:640px;">
+<section class="section section-alt text-center" id="contact">
+  <div class="section-inner mw-640" >
     <h2 class="section-title">Would it help to see a quote tailored to your team?</h2>
-    <p class="section-desc" style="margin:0 auto 32px;">Tell us about your team and we will send you a detailed quote within 24 hours. No commitment required.</p>
-    <p style="text-align:center;font-size:0.95rem;color:#777;margin-bottom:24px;">Most corporate engagements are completed within 5 business days. Scheduling is flexible and adapts to your team's availability.</p>
-    <div style="background:var(--cream);border-radius:16px;padding:32px;border:1.5px solid var(--border);text-align:left;">
-      <form id="corpForm" style="display:flex;flex-direction:column;gap:16px;" onsubmit="return submitCorpForm(event)">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+    <p class="section-desc mb-32 mx-auto" >Tell us about your team and we will send you a detailed quote within 24 hours. No commitment required.</p>
+    <p class="text-center mb-24" style="font-size:0.95rem;color:#777;">Most corporate engagements are completed within 5 business days. Scheduling is flexible and adapts to your team's availability.</p>
+    <div class="text-left bg-cream" style="border-radius:16px;padding:32px;border:1.5px solid var(--border);" >
+      <form id="corpForm" class="flex-col gap-16" onsubmit="return submitCorpForm(event)">
+        <div class="grid-2 gap-16">
           <div>
-            <label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:4px;">Company Name *</label>
-            <input type="text" name="company" required style="width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9375rem;font-family:var(--font-body);outline:none;transition:border 0.15s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
+            <label class="field-label">Company Name *</label>
+            <input type="text" name="company" required class="form-input" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
           </div>
           <div>
-            <label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:4px;">Contact Person *</label>
-            <input type="text" name="name" required style="width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9375rem;font-family:var(--font-body);outline:none;transition:border 0.15s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
-          </div>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-          <div>
-            <label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:4px;">Email *</label>
-            <input type="email" name="email" required style="width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9375rem;font-family:var(--font-body);outline:none;transition:border 0.15s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
-          </div>
-          <div>
-            <label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:4px;">Phone</label>
-            <input type="tel" name="phone" style="width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9375rem;font-family:var(--font-body);outline:none;transition:border 0.15s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
+            <label class="field-label">Contact Person *</label>
+            <input type="text" name="name" required class="form-input" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
           </div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div class="grid-2 gap-16">
           <div>
-            <label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:4px;">Number of Employees *</label>
-            <input type="number" name="team_size" id="teamSize" required min="2" placeholder="e.g. 15" oninput="updatePricing()" style="width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9375rem;font-family:var(--font-body);outline:none;transition:border 0.15s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
+            <label class="field-label">Email *</label>
+            <input type="email" name="email" required class="form-input" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
           </div>
           <div>
-            <label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:4px;">Timeline</label>
-            <select name="timeline" style="width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9375rem;font-family:var(--font-body);background:white;outline:none;transition:border 0.15s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
+            <label class="field-label">Phone</label>
+            <input type="tel" name="phone" class="form-input" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
+          </div>
+        </div>
+        <div class="grid-2 gap-16">
+          <div>
+            <label class="field-label">Number of Employees *</label>
+            <input type="number" name="team_size" id="teamSize" required min="2" placeholder="e.g. 15" oninput="updatePricing()" class="form-input" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
+          </div>
+          <div>
+            <label class="field-label">Timeline</label>
+            <select class="fs-md" name="timeline" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'" style="width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);background:white;outline:none;transition:border 0.15s;">
               <option value="">Select...</option>
               <option value="asap">As soon as possible</option>
               <option value="1week">Within 1 week</option>
@@ -423,22 +430,22 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         </div>
         <!-- Live Pricing Calculator -->
         <div id="pricingCalc" style="display:none;padding:20px 24px;border-radius:12px;background:linear-gradient(135deg,var(--gold-bg),#F0FFF4);border:1.5px solid var(--gold);margin:4px 0;">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;">
+          <div class="gap-16" style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;" >
             <div>
-              <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;font-weight:700;" id="tierLabel">TEAM TIER</div>
-              <div style="font-size:0.8rem;color:var(--ink-soft);margin-bottom:8px;"><span id="pricePerPerson">99.95</span> per person &middot; <span id="employeeCount">0</span> employees</div>
-              <div style="font-size:1.75rem;font-weight:800;color:var(--ink);line-height:1;"><span class="cur-sym">&#8364;</span><span id="totalPrice">0</span></div>
-              <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">Initial assessment</div>
+              <div class="mb-4 fw-700 c-accent fs-2xs uppercase tracking-wide" id="tierLabel" >TEAM TIER</div>
+              <div class="mb-8 c-ink-soft fs-xs" ><span id="pricePerPerson">99.95</span> per person &middot; <span id="employeeCount">0</span> employees</div>
+              <div class="c-ink fs-2xl fw-700" style="line-height:1;" ><span class="cur-sym">&#8364;</span><span id="totalPrice">0</span></div>
+              <div class="caption mt-12">Initial assessment</div>
             </div>
             <div style="text-align:right;">
-              <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--success);margin-bottom:4px;">RE-ASSESSMENT (3-6 MONTHS)</div>
-              <div style="font-size:0.8rem;color:var(--ink-soft);margin-bottom:8px;"><span id="rePerPerson"></span> per person &middot; <span id="reEmployeeCount">0</span> employees</div>
-              <div style="font-size:1.75rem;font-weight:800;color:var(--success);line-height:1;"><span class="cur-sym">&#8364;</span><span id="reTotal">0</span></div>
-              <div style="font-size:0.75rem;color:var(--ink-light);margin-top:2px;">Follow-up to measure progress</div>
+              <div class="mb-4 fw-700 c-success fs-2xs uppercase tracking-wide" >RE-ASSESSMENT (3-6 MONTHS)</div>
+              <div class="mb-8 c-ink-soft fs-xs" ><span id="rePerPerson"></span> per person &middot; <span id="reEmployeeCount">0</span> employees</div>
+              <div class="c-success fs-2xl fw-700" style="line-height:1;" ><span class="cur-sym">&#8364;</span><span id="reTotal">0</span></div>
+              <div class="caption mt-12">Follow-up to measure progress</div>
             </div>
           </div>
-          <div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(37,99,171,0.15);font-size:0.8rem;color:var(--ink-soft);">
-            <strong style="color:var(--ink);">Total with re-assessment: <span class="cur-sym">&#8364;</span><span id="grandTotal">0</span></strong> &middot; You save <span class="cur-sym">&#8364;</span><span id="totalSaving">0</span> vs. individual pricing
+          <div class="mt-12 c-ink-soft fs-xs" style="padding-top:12px;border-top:1px solid rgba(37,99,171,0.15);" >
+            <strong class="c-ink">Total with re-assessment: <span class="cur-sym">&#8364;</span><span id="grandTotal">0</span></strong> &middot; You save <span class="cur-sym">&#8364;</span><span id="totalSaving">0</span> vs. individual pricing
           </div>
         </div>
         <input type="hidden" name="quoted_tier" id="quotedTier">
@@ -447,94 +454,122 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         <input type="hidden" name="quoted_reassessment_total" id="quotedReTotal">
         <input type="hidden" name="quoted_grand_total" id="quotedGrand">
         <div>
-          <label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:4px;">Languages to Assess *</label>
-          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;">
-            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="German" style="accent-color:var(--gold);"> German</label>
-            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="English" style="accent-color:var(--gold);"> English</label>
-            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="French" style="accent-color:var(--gold);"> French</label>
-            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="Spanish" style="accent-color:var(--gold);"> Spanish</label>
-            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="Italian" style="accent-color:var(--gold);"> Italian</label>
-            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="Portuguese" style="accent-color:var(--gold);"> Portuguese</label>
-            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="Russian" style="accent-color:var(--gold);"> Russian</label>
-            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="Serbian" style="accent-color:var(--gold);"> Serbian</label>
-            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="Croatian" style="accent-color:var(--gold);"> Croatian</label>
-            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="Romanian" style="accent-color:var(--gold);"> Romanian</label>
-            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="Polish" style="accent-color:var(--gold);"> Polish</label>
-            <label style="display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;"><input type="checkbox" name="languages" value="Bulgarian" style="accent-color:var(--gold);"> Bulgarian</label>
+          <label class="field-label">Languages to Assess *</label>
+          <div class="mt-4 gap-8" style="display:flex;flex-wrap:wrap;" >
+            <label class="filter-btn"><input type="checkbox" name="languages" value="German" class="accent-gold"> German</label>
+            <label class="filter-btn"><input type="checkbox" name="languages" value="English" class="accent-gold"> English</label>
+            <label class="filter-btn"><input type="checkbox" name="languages" value="French" class="accent-gold"> French</label>
+            <label class="filter-btn"><input type="checkbox" name="languages" value="Spanish" class="accent-gold"> Spanish</label>
+            <label class="filter-btn"><input type="checkbox" name="languages" value="Italian" class="accent-gold"> Italian</label>
+            <label class="filter-btn"><input type="checkbox" name="languages" value="Portuguese" class="accent-gold"> Portuguese</label>
+            <label class="filter-btn"><input type="checkbox" name="languages" value="Russian" class="accent-gold"> Russian</label>
+            <label class="filter-btn"><input type="checkbox" name="languages" value="Serbian" class="accent-gold"> Serbian</label>
+            <label class="filter-btn"><input type="checkbox" name="languages" value="Croatian" class="accent-gold"> Croatian</label>
+            <label class="filter-btn"><input type="checkbox" name="languages" value="Romanian" class="accent-gold"> Romanian</label>
+            <label class="filter-btn"><input type="checkbox" name="languages" value="Polish" class="accent-gold"> Polish</label>
+            <label class="filter-btn"><input type="checkbox" name="languages" value="Bulgarian" class="accent-gold"> Bulgarian</label>
           </div>
         </div>
         <div>
-          <label style="font-size:0.8rem;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:4px;">Anything else we should know?</label>
-          <textarea name="message" rows="3" placeholder="Purpose of assessment, special requirements, questions..." style="width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9375rem;font-family:var(--font-body);outline:none;resize:vertical;transition:border 0.15s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+          <label class="field-label">Anything else we should know?</label>
+          <textarea class="fs-md" name="message" rows="3" placeholder="Purpose of assessment, special requirements, questions..." onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'" style="width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);outline:none;resize:vertical;transition:border 0.15s;"></textarea>
         </div>
-        <button type="submit" id="corpBtn" style="padding:14px 32px;background:var(--gold);color:white;border:none;border-radius:10px;font-size:1rem;font-weight:600;font-family:var(--font-body);cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='#E5AB42'" onmouseout="this.style.background='#D4952A'">Request a Quote</button>
+        <button class="fw-600 fs-base c-white" type="submit" id="corpBtn" onmouseover="this.style.background='#E5AB42'" onmouseout="this.style.background='#D4952A'" style="padding:14px 32px;background:var(--gold);border:none;border-radius:10px;font-family:var(--font-body);cursor:pointer;transition:all 0.2s;">Request a Quote</button>
       </form>
-      <div id="corpSuccess" style="display:none;text-align:center;padding:32px 16px;">
-        <div style="font-size:2rem;margin-bottom:12px;color:var(--gold);">&#10003;</div>
-        <h3 style="font-family:var(--font-display);font-size:1.4rem;color:var(--ink);margin-bottom:8px;">Quote request received!</h3>
-        <p style="font-size:0.9375rem;color:var(--ink-soft);line-height:1.6;">We will send you a detailed quote within 24 hours. Check your inbox.</p>
+      <div class="text-center" id="corpSuccess" style="display:none;padding:32px 16px;">
+        <div class="mb-12 c-gold fs-3xl" >&#10003;</div>
+        <h3 class="mb-8 c-ink font-display" style="font-size:1.4rem;" >Quote request received!</h3>
+        <p class="lh-16 fs-md c-ink-soft" >We will send you a detailed quote within 24 hours. Check your inbox.</p>
       </div>
     </div>
-    <p style="font-size:0.8rem;color:var(--ink-light);margin-top:16px;">Or email us directly at <a href="mailto:corporate@lingograde.com" style="color:var(--gold);text-decoration:none;font-weight:600;">corporate@lingograde.com</a></p>
+    <p class="mt-16 c-ink-light fs-xs" >Or email us directly at <a class="fw-600 c-gold no-underline" href="mailto:corporate@lingograde.com" >corporate@lingograde.com</a></p>
+  </div>
+</section>
+
+<!-- Corporate Testimonial -->
+<section class="section section-alt">
+  <div class="section-inner text-center mw-720" >
+    <div class="section-label">What Teams Say</div>
+    <h2 class="section-title" style="margin:0 auto 32px;">Trusted by HR teams across Europe</h2>
+    <div class="info-card text-left mx-auto" style="max-width:600px;" >
+      <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="note-italic">"We rolled LingoGrade out to 23 employees across three offices. Within two weeks, every team member had a clear CEFR level and a personalised development plan. The reports gave our managers something concrete to work with — not vague self-assessments, but structured, evidence-based profiles. The turnaround was fast, the process was smooth, and the team actually enjoyed it."</p>
+      <div class="fw-600 fs-body">Katharina V.</div>
+      <div class="subcaption">&#127465;&#127466; HR Director, International Logistics &mdash; Germany &middot; Mar 2026</div>
+    </div>
   </div>
 </section>
 
 <!-- Footer -->
-<footer style="background:#1A3A5C;color:rgba(255,255,255,0.85);text-align:center;padding:48px 32px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
-  <div style="font-size:1.5rem;font-weight:700;letter-spacing:0.02em;">LingoGr<span style="color:#27AE60">A</span>de</div>
-  <p style="color:rgba(255,255,255,0.6);font-size:0.9375rem;margin:8px 0 24px;">Professional Language Assessment</p>
-  <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:0.875rem;">
-    <a href="index.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Home</a>
-    <a href="index.html#languages" style="color:rgba(255,255,255,0.7);text-decoration:none;">Languages</a>
-    <a href="index.html#pricing" style="color:rgba(255,255,255,0.7);text-decoration:none;">Pricing</a>
-    <a href="partners.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">For Partners</a>
-    <a href="mailto:corporate@lingograde.com" style="color:rgba(255,255,255,0.7);text-decoration:none;">Contact</a>
+<footer class="site-footer">
+  <div class="footer-brand">LingoGr<span class="c-green">A</span>de</div>
+  <p class="footer-tagline">Professional Language Assessment</p>
+  <div class="footer-nav">
+    <a href="index.html" class="footer-link">Home</a>
+    <a href="index.html#languages" class="footer-link">Languages</a>
+    <a href="index.html#pricing" class="footer-link">Pricing</a>
+    <a href="teachers.html" class="footer-link">For Teachers</a>
+    <a href="partners.html" class="footer-link">Partners</a>
+    <a href="shop.html" class="footer-link">Shop</a>
+    <a href="mailto:corporate@lingograde.com" class="footer-link">Contact</a>
   </div>
-  <div style="margin-top:16px;display:flex;gap:16px;justify-content:center;">
-    <a href="privacy-policy.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Privacy Policy</a>
-    <a href="terms-of-service.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Terms of Service</a>
+  <div class="footer-legal">
+    <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+    <a href="terms-of-service.html" class="footer-legal-link">Terms of Service</a>
   </div>
-  <div style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.4);">&copy; 2026 LingoGrade. All rights reserved.</div>
+  <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
 </footer>
 
 <script>
-// Currency geo-detection — timezone-based
+// Currency geo-detection — IP geolocation with timezone fallback
 (function(){
-  var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-  var symbol = '\u20AC'; // EUR default
-  var isUSD = false;
-  var curKey = 'eur';
-  if (tz.indexOf('America/') === 0) {
-    symbol = '$'; isUSD = true; curKey = 'usd';
-  } else if (tz.indexOf('London') !== -1 || tz.indexOf('Europe/Belfast') !== -1 || tz.indexOf('Europe/Isle_of_Man') !== -1 || tz.indexOf('Europe/Jersey') !== -1 || tz.indexOf('Europe/Guernsey') !== -1) {
-    symbol = '\u00A3'; curKey = 'gbp';
-  } else if (tz.indexOf('Zurich') !== -1 || tz.indexOf('Europe/Zurich') !== -1) {
-    symbol = 'CHF '; curKey = 'chf';
-  }
-  window._lgSymbol = symbol;
-  window._lgIsUSD = isUSD;
-  window._lgCurKey = curKey;
+  var COUNTRY_MAP = {US:'usd',GB:'gbp',CH:'chf',LI:'chf'};
+  var SYMBOLS = {eur:'\u20AC',usd:'$',gbp:'\u00A3',chf:'CHF\u00A0'};
 
-  // Swap static pricing card prices
-  document.querySelectorAll('.corp-price').forEach(function(el){
-    var price = el.getAttribute('data-' + curKey) || el.getAttribute('data-eur');
-    el.textContent = symbol + price;
-  });
-  document.querySelectorAll('.corp-save').forEach(function(el){
-    var amt = el.getAttribute('data-' + curKey) || el.getAttribute('data-eur');
-    el.textContent = 'Save ' + symbol + amt + ' per person vs. individual';
-  });
-  document.querySelectorAll('.corp-reassess').forEach(function(el){
-    var price = el.getAttribute('data-' + curKey) || el.getAttribute('data-eur');
-    el.innerHTML = '<span style="font-size:0.85rem;font-weight:600;color:var(--ink-soft);">starting from</span> ' + symbol + price + ' <span style="font-size:0.8rem;font-weight:400;color:var(--ink-light);">per person</span>';
-  });
-  // Swap currency symbols in live calculator
-  document.querySelectorAll('.cur-sym').forEach(function(el){
-    el.textContent = symbol;
-  });
-  // Set re-assessment per-person in calculator
-  var rePerEl = document.getElementById('rePerPerson');
-  if (rePerEl) rePerEl.textContent = symbol + '139.95';
+  function tzFallback() {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    if (/America\//.test(tz) || /US\//.test(tz)) return 'usd';
+    if (/Europe\/London|Europe\/Belfast|Europe\/Isle_of_Man|Europe\/Jersey|Europe\/Guernsey/.test(tz)) return 'gbp';
+    if (/Europe\/Zurich/.test(tz)) return 'chf';
+    // Locale reinforcement: en-US locale in non-US timezone → traveler, prefer USD
+    var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+    if (/^en-US/i.test(lang)) return 'usd';
+    return 'eur';
+  }
+
+  function applyPrices(curKey) {
+    var symbol = SYMBOLS[curKey] || SYMBOLS.eur;
+    window._lgSymbol = symbol;
+    window._lgIsUSD = curKey === 'usd';
+    window._lgCurKey = curKey;
+
+    document.querySelectorAll('.corp-price').forEach(function(el){
+      var price = el.getAttribute('data-' + curKey) || el.getAttribute('data-eur');
+      el.textContent = symbol + price;
+    });
+    document.querySelectorAll('.corp-save').forEach(function(el){
+      var amt = el.getAttribute('data-' + curKey) || el.getAttribute('data-eur');
+      el.textContent = 'Save ' + symbol + amt + ' per person vs. individual';
+    });
+    document.querySelectorAll('.corp-reassess').forEach(function(el){
+      var price = el.getAttribute('data-' + curKey) || el.getAttribute('data-eur');
+      el.innerHTML = '<span class="fw-600 c-ink-soft fs-085" >starting from</span> ' + symbol + price + ' <span class="c-ink-light fw-400 fs-xs" >per person</span>';
+    });
+    document.querySelectorAll('.cur-sym').forEach(function(el){
+      el.textContent = symbol;
+    });
+    var rePerEl = document.getElementById('rePerPerson');
+    if (rePerEl) rePerEl.textContent = symbol + '139.95';
+  }
+
+  applyPrices(tzFallback());
+  fetch('https://api.country.is/')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var cc = d && d.country;
+      if (cc && COUNTRY_MAP[cc]) applyPrices(COUNTRY_MAP[cc]);
+    })
+    .catch(function(){});
 })();
 </script>
 <script>
@@ -609,17 +644,44 @@ function submitCorpForm(e) {
       form.style.display = 'none';
       document.getElementById('corpSuccess').style.display = 'block';
     } else {
-      btn.textContent = 'Something went wrong. Try again.';
+      btn.textContent = 'That didn't go through — please try again.';
       btn.disabled = false;
     }
   }).catch(function() {
-    btn.textContent = 'Something went wrong. Try again.';
+    btn.textContent = 'That didn't go through — please try again.';
     btn.disabled = false;
   });
   return false;
 }
 </script>
+<!-- Sticky floating CTA — visible between hero and contact form -->
+<a class="fw-600 c-white no-underline" href="#contact" id="stickyQuote" style="display:none;position:fixed;bottom:24px;right:24px;z-index:900;padding:14px 28px;background:var(--gold);border-radius:10px;font-size:0.95rem;font-family:var(--font-body);box-shadow:0 4px 20px rgba(0,0,0,0.2);transition:opacity 0.3s,transform 0.3s;" >Request a Quote</a>
+<script>
+(function(){
+  var btn = document.getElementById('stickyQuote');
+  var hero = document.querySelector('.section'); /* first section = hero */
+  var contact = document.getElementById('contact');
+  if (!btn || !hero || !contact) return;
+  var visible = false;
+  function check(){
+    var heroBottom = hero.getBoundingClientRect().bottom;
+    var contactTop = contact.getBoundingClientRect().top;
+    var show = heroBottom < 0 && contactTop > window.innerHeight;
+    if (show !== visible) {
+      visible = show;
+      btn.style.display = show ? 'block' : 'none';
+    }
+  }
+  window.addEventListener('scroll', check, {passive:true});
+  check();
+})();
+</script>
 <script src="js/shield.js" defer></script>
 <script src="js/marco-chat.js" defer></script>
+<noscript>
+    <div class="noscript-banner">
+        <a href="mailto:hello@lingograde.com" >Questions? Email us</a>
+    </div>
+</noscript>
 </body>
 </html>
