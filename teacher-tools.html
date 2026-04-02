@@ -970,6 +970,7 @@ body {
     $('sessionStatus').className = 'session-status';
 
     renderSummary();
+    generateFlashcards();
     $('summaryPanel').style.display = '';
     showToast('Session ended. Summary below.', 'success');
   }
@@ -1327,6 +1328,100 @@ body {
       });
       pairsEl.appendChild(wrap);
     }
+  }
+
+  /* ── Flashcard Generation ─────────────────────────────────────────────── */
+  function generateFlashcards() {
+    if (!window.supabase || !state.user) return;
+    if (!state.logEntries.length) return;
+
+    // Collect unique highlighted phonemes with max severity
+    var phonemeMap = {};
+    state.logEntries.forEach(function(entry) {
+      entry.tokens.forEach(function(t) {
+        if (!t.severity) return;
+        var key = t.grapheme + '|' + t.family;
+        if (!phonemeMap[key]) {
+          phonemeMap[key] = { grapheme: t.grapheme, family: t.family, severity: t.severity, words: [] };
+        }
+        if (t.severity === 'focus') phonemeMap[key].severity = 'focus';
+        if (phonemeMap[key].words.indexOf(entry.word) === -1) {
+          phonemeMap[key].words.push(entry.word);
+        }
+      });
+    });
+
+    var phonemes = Object.keys(phonemeMap).map(function(k) { return phonemeMap[k]; });
+    if (!phonemes.length) return;
+
+    var deckId = uuidv4();
+    var now = new Date().toISOString();
+    var deck = {
+      id: deckId,
+      user_id: state.studentId,
+      title: 'Pronunciation \u2014 ' + state.studentName + ' \u2014 ' + state.sessionDate,
+      source_assessment_id: state.sessionId,
+      assessed_language: state.lang,
+      native_language: 'en',
+      cefr_level: null,
+      card_count: 0,
+      created_at: now
+    };
+
+    var cards = [];
+    phonemes.forEach(function(p) {
+      var pairs = PhonemeTools.getSuggestions(p.grapheme, state.lang, p.family);
+      var wordList = p.words.slice(0, 3).join(', ');
+
+      // Card 1: minimal pair (always)
+      var front = p.grapheme.toUpperCase() + ' \u2014 ' + p.family;
+      if (wordList) front += '\nAs in: ' + wordList;
+      var back = 'Focus sound: ' + p.grapheme;
+      if (pairs.length > 0) back += '\nMinimal pair: ' + pairs[0][0] + ' / ' + pairs[0][1];
+      back += '\nFamily: ' + p.family;
+
+      cards.push({
+        id: uuidv4(), deck_id: deckId, user_id: state.studentId,
+        front: front, back: back,
+        explanation: 'Logged during lesson on ' + state.sessionDate + '. Severity: ' + p.severity + '.',
+        error_class: 'Pronunciation', source_section: 'phoneme_logs',
+        due: now, stability: 0, difficulty: 0, elapsed_days: 0, scheduled_days: 0,
+        reps: 0, lapses: 0, state: 0, last_review: null,
+        created_at: now, updated_at: now
+      });
+
+      // Card 2: isolation drill (focus severity only, needs second pair)
+      if (p.severity === 'focus' && pairs.length > 1) {
+        cards.push({
+          id: uuidv4(), deck_id: deckId, user_id: state.studentId,
+          front: 'Listen and repeat:\n' + pairs[1][0] + ' \u2192 ' + pairs[1][1],
+          back: 'Focus: ' + p.grapheme + ' (' + p.family + ')\nSay each word slowly, then faster.',
+          explanation: 'Isolation drill for focus sound ' + p.grapheme + '.',
+          error_class: 'Pronunciation', source_section: 'phoneme_logs',
+          due: now, stability: 0, difficulty: 0, elapsed_days: 0, scheduled_days: 0,
+          reps: 0, lapses: 0, state: 0, last_review: null,
+          created_at: now, updated_at: now
+        });
+      }
+    });
+
+    deck.card_count = cards.length;
+
+    window.supabase.from('decks').insert(deck).then(function(res) {
+      if (res.error) {
+        console.warn('[LingoGrade] deck insert error:', res.error.message);
+        showToast('Could not create flashcard deck.', 'error');
+        return;
+      }
+      window.supabase.from('cards').insert(cards).then(function(cRes) {
+        if (cRes.error) {
+          console.warn('[LingoGrade] cards insert error:', cRes.error.message);
+          showToast('Deck created but cards failed.', 'warn');
+        } else {
+          showToast(cards.length + ' pronunciation flashcards generated.', 'success');
+        }
+      });
+    });
   }
 
   /* ── History Tab ─────────────────────────────────────────────────────────── */

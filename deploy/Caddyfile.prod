@@ -17,10 +17,41 @@ www.lingograde.com {
 		X-Content-Type-Options "nosniff"
 		X-Frame-Options "SAMEORIGIN"
 		Referrer-Policy "strict-origin-when-cross-origin"
-		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+		Permissions-Policy "camera=(), microphone=(self), geolocation=()"
 		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-		Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://app.lingograde.com; frame-src 'none'"
+		Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://js.stripe.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://app.lingograde.com https://api.lingograde.com; frame-src https://js.stripe.com"
 	}
+}
+
+# Bot API (Flask on port 5050)
+api.lingograde.com {
+	reverse_proxy localhost:5050
+
+	header {
+		Access-Control-Allow-Origin "https://www.lingograde.com"
+		Access-Control-Allow-Methods "GET, POST, OPTIONS"
+		Access-Control-Allow-Headers "Content-Type, Stripe-Signature"
+		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+	}
+
+	@options method OPTIONS
+	respond @options 204
+}
+
+# Student dashboard API (same Flask, cookie auth)
+app.lingograde.com {
+	reverse_proxy localhost:5050
+
+	header {
+		Access-Control-Allow-Origin "https://www.lingograde.com"
+		Access-Control-Allow-Methods "GET, POST, PATCH, OPTIONS"
+		Access-Control-Allow-Headers "Content-Type"
+		Access-Control-Allow-Credentials "true"
+		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+	}
+
+	@options method OPTIONS
+	respond @options 204
 }
 
 # Redirect bare domain to www

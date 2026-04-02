@@ -3,14 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-32D60T2ZKT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-32D60T2ZKT');
-</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Partner Programme — LingoGrade Referrals</title>
@@ -18,12 +11,109 @@
 <meta property="og:title" content="Partner Programme — LingoGrade Referrals">
 <meta property="og:description" content="You are the person people trust when they need to learn a language. Earn every time they get assessed. No caps, no tiers, no minimum.">
 <meta property="og:image" content="https://www.lingograde.com/og-logo-v2.png">
-<meta property="og:url" content="https://www.lingograde.com/partners.html">
+<meta property="og:url" content="https://www.lingograde.com/partners">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.lingograde.com/og-logo-v2.png">
-<link rel="canonical" href="https://www.lingograde.com/partners.html">
+<link rel="canonical" href="https://www.lingograde.com/partners">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Partner Programme — LingoGrade Referrals",
+      "url": "https://www.lingograde.com/partners",
+      "description": "Earn a revenue share on every LingoGrade assessment referral. No caps, no tiers, no minimum. Join the LingoGrade partner programme.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "LingoGrade",
+        "url": "https://www.lingograde.com"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this actually worth my time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You're already recommending things you believe in. This doesn't require you to become a salesperson. You share a link — the same way you'd recommend a tool to a friend. We handle everything else: the assessment, the report, the billing, the support. Your ongoing time investment is measured in seconds between referrals. That's the whole design."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why would you share commission this way?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because we need trusted recommendations more than you need us. Teachers, tutors, HR professionals, and friends are the actual voices people trust in a learning journey. When you recommend an assessment, people listen. That trust is valuable. We structure our revenue share to reflect that value accurately. No hidden fees, no fine print reversals, no surprises on payouts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if people click but don't book immediately?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We credit you for 90 days. If someone clicks your link today and books two months from now, you earn. This is three times longer than most affiliate programmes because people move at their own pace. You're not penalized for someone's timeline."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "It feels strange to earn money from recommending something to friends.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It sounds like you value authenticity over profit — and that is exactly why your recommendation carries weight. Think of it this way: when a doctor refers you to a specialist, they are not selling you something — they are connecting you with the right expertise. The commission is our way of recognising that your recommendation has real value. If it still feels uncomfortable, you can always decline the payout and let it convert to credit for your own assessments."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does monetizing my recommendations undermine my credibility?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The assessment stands on its own merit. Your referral does not change the price, the quality, or the experience for the person booking. The commission is between us and you — a recognition that your recommendation saved us an advertising cost. You are not selling — you are connecting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the catch?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No catch. Zero fees to join. No minimum referral targets. No exclusivity — recommend other tools if they fit your network. We don't lock people in. If at any point it stops making sense, you leave. We'd rather lose a partner than have resentful ones who feel trapped."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if my students find out I earn commission?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your referral does not change their price by a single cent. They pay the same amount whether they find us through Google or through your link. The commission comes from our marketing budget, not from their pocket. Many partners are upfront about it and find that honesty strengthens trust, not weakens it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "I don't want to be that person pushing affiliate links.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The partners who do well here are not the ones posting links everywhere. They mention LingoGrade exactly once, in a moment where it genuinely fits — a colleague preparing for certification, a student needing a baseline, a friend relocating. You share your link in that moment, and that is it. No follow-ups, no countdown timers. If people book, they book because they needed it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if the assessment disappoints someone I referred?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every assessment is conducted by a certified assessor using CEFR-aligned methodology. If someone you referred has a concern, our support team responds within 24 hours. If the assessment genuinely falls short of what we promise, we make it right — including a full reassessment at no cost."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 <link rel="icon" type="image/webp" href="/assets/mascot/marco-face-grad-v2.webp?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -311,6 +401,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .sticker-grid { grid-template-columns: 1fr; }
   .celebrate-cards { grid-template-columns: 1fr; }
   .hero-stats { gap: 24px; }
+  #silent-partner div[style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
   #milestones div[style*="grid-template-columns:repeat(4"] { grid-template-columns: repeat(2, 1fr) !important; }
   .brand-logo { font-size: 1.2rem; gap: 6px; }
   .brand-logo img { height: 32px; }
@@ -341,9 +432,21 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .sticker-grid { grid-template-columns: 1fr; }
   .celebrate-cards { grid-template-columns: 1fr; }
   .hero-stats { flex-direction: column; gap: 16px; }
+  #silent-partner div[style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
   #milestones div[style*="grid-template-columns:repeat(4"] { grid-template-columns: 1fr !important; }
+  #partner-map { height: 280px; }
+  .partner-map-stats { gap: 20px; }
 }
+
+/* Sticker Map */
+.partner-map-wrap { border-radius: 16px; overflow: hidden; border: 2px solid var(--border); margin-top: 24px; }
+#partner-map { height: 380px; width: 100%; background: #1a1a2e; }
+.partner-map-stats { display: flex; gap: 32px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+.partner-map-stat { text-align: center; }
+.partner-map-stat-num { font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: var(--accent); }
+.partner-map-stat-label { font-size: 0.75rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
 </style>
+<script src="/js/cookie-consent.js"></script>
 </head>
 <body>
 
@@ -480,6 +583,36 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <div class="reciprocity-banner">
       <p><strong>We provide the platform, the tracking, the tools &mdash; completely free.</strong> Your only investment is the trust you already have with your network.</p>
     </div>
+  </div>
+</section>
+
+<!-- ── Silent Partner ── -->
+<section class="section" id="silent-partner">
+  <div class="section-inner" style="text-align:center;">
+    <p class="section-label">The Silent Partner Path</p>
+    <h2 class="section-title">What if you could earn without changing anything you already do?</h2>
+    <p class="section-desc" style="margin:0 auto 40px;">You are not becoming an affiliate marketer. You are not building a side hustle. You are doing exactly what you already do &mdash; recommending things that work &mdash; except now there is a link that tracks it.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:900px;margin:0 auto;">
+      <div style="padding:28px 24px;border-radius:14px;border:1.5px solid var(--border);background:var(--cream);text-align:left;">
+        <div style="font-size:1.75rem;margin-bottom:12px;">&#128268;</div>
+        <h4 style="font-size:0.9375rem;font-weight:600;color:var(--ink);margin-bottom:8px;">Share once</h4>
+        <p style="font-size:0.875rem;color:var(--ink-soft);line-height:1.6;">Drop your link in one message, one email signature, or one group chat. That single action creates a 90-day attribution window.</p>
+      </div>
+      <div style="padding:28px 24px;border-radius:14px;border:1.5px solid var(--border);background:var(--cream);text-align:left;">
+        <div style="font-size:1.75rem;margin-bottom:12px;">&#128164;</div>
+        <h4 style="font-size:0.9375rem;font-weight:600;color:var(--ink);margin-bottom:8px;">Forget about it</h4>
+        <p style="font-size:0.875rem;color:var(--ink-soft);line-height:1.6;">No follow-ups. No "checking in." No content calendar. People click when they are ready, not when you remind them.</p>
+      </div>
+      <div style="padding:28px 24px;border-radius:14px;border:1.5px solid var(--border);background:var(--cream);text-align:left;">
+        <div style="font-size:1.75rem;margin-bottom:12px;">&#128176;</div>
+        <h4 style="font-size:0.9375rem;font-weight:600;color:var(--ink);margin-bottom:8px;">Earn when they book</h4>
+        <p style="font-size:0.875rem;color:var(--ink-soft);line-height:1.6;">Commission appears in your dashboard. Payouts arrive monthly. You did not sell anything &mdash; you connected someone with something useful.</p>
+      </div>
+    </div>
+    <div style="max-width:640px;margin:32px auto 0;padding:20px 24px;background:var(--success-bg);border:1.5px solid #C6F6D5;border-radius:12px;">
+      <p style="font-size:0.9375rem;color:var(--ink-soft);line-height:1.7;margin:0;"><strong style="color:var(--ink);">The difference between a partner and a salesperson:</strong> a salesperson needs you to buy. A partner shares what they genuinely use and moves on. That is the entire design of this programme.</p>
+    </div>
+    <p style="font-size:0.8125rem;color:var(--ink-light);margin-top:16px;">Not sure this is for you? That is completely fine &mdash; you are free to explore and decide later.</p>
   </div>
 </section>
 
@@ -631,6 +764,24 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         <button class="faq-q"><span style="display:inline-block;padding:2px 8px;background:var(--accent-bg);border-radius:4px;font-size:0.6875rem;font-weight:600;color:var(--accent);letter-spacing:0.04em;text-transform:uppercase;margin-right:8px;vertical-align:middle;">Risk</span>What's the catch?</button>
         <div class="faq-a">
           <div class="faq-a-inner">No catch. Zero fees to join. No minimum referral targets. No exclusivity &mdash; recommend other tools if they fit your network. We don't lock people in. If at any point it stops making sense, you leave. We'd rather lose a partner than have resentful ones who feel trapped.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span style="display:inline-block;padding:2px 8px;background:var(--accent-bg);border-radius:4px;font-size:0.6875rem;font-weight:600;color:var(--accent);letter-spacing:0.04em;text-transform:uppercase;margin-right:8px;vertical-align:middle;">Transparency</span>What if my students find out I earn commission?</button>
+        <div class="faq-a">
+          <div class="faq-a-inner">It sounds like transparency matters to you &mdash; and that is exactly the right instinct. Here is the reality: your referral does not change their price by a single cent. They pay the same amount whether they find us through Google or through your link. The commission comes from our marketing budget, not from their pocket. Many partners are upfront about it: "Yes, I earn a small referral fee &mdash; but I would recommend this regardless." That honesty tends to strengthen trust, not weaken it. And if full disclosure still feels uncomfortable, you can always decline the payout.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span style="display:inline-block;padding:2px 8px;background:var(--accent-bg);border-radius:4px;font-size:0.6875rem;font-weight:600;color:var(--accent);letter-spacing:0.04em;text-transform:uppercase;margin-right:8px;vertical-align:middle;">Identity</span>I don't want to be "that person" pushing affiliate links.</button>
+        <div class="faq-a">
+          <div class="faq-a-inner">It sounds like you have seen what that looks like &mdash; and you want no part of it. Neither do we. The partners who do well here are not the ones posting links everywhere. They are the ones who mention LingoGrade exactly once, in a moment where it genuinely fits. A colleague asks how to prepare for a language certification. A student needs a baseline before starting lessons. A friend is relocating and needs proof of proficiency. You share your link in that moment &mdash; and that is it. No follow-ups, no "just checking in," no countdown timers. If people book, they book because they needed it. That is the opposite of pushing.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span style="display:inline-block;padding:2px 8px;background:var(--accent-bg);border-radius:4px;font-size:0.6875rem;font-weight:600;color:var(--accent);letter-spacing:0.04em;text-transform:uppercase;margin-right:8px;vertical-align:middle;">Reputation</span>What if the assessment disappoints someone I referred?</button>
+        <div class="faq-a">
+          <div class="faq-a-inner">It sounds like your reputation matters more to you than any commission &mdash; and that is exactly the kind of partner we want. Here is what we can tell you: every assessment is conducted by a certified assessor using CEFR-aligned methodology. The report is detailed, specific, and actionable &mdash; not a score on a screen. But if someone you referred has a concern, we address it directly. Our support team responds within 24 hours. If the assessment genuinely falls short of what we promise, we make it right &mdash; including a full reassessment at no cost. Your reputation is safe because we stake ours on every single report.</div>
         </div>
       </div>
     </div>
@@ -1030,6 +1181,38 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   </div>
 </section>
 
+<!-- ── Sticker Map — Global Reach ── -->
+<section class="section" id="sticker-map" style="padding:48px 32px;">
+  <div class="section-inner">
+    <div class="section-label" style="text-align:center;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-light);margin-bottom:8px;">Community</div>
+    <h2 style="font-family:var(--font-display);font-size:1.75rem;text-align:center;margin-bottom:8px;">Where Marco has landed</h2>
+    <p style="color:var(--ink-soft);font-size:1rem;text-align:center;max-width:560px;margin:0 auto;">Every dot is a verified sticker placement by a real LingoGrade partner. This is where your referral network already exists.</p>
+
+    <div class="partner-map-wrap">
+      <div id="partner-map"></div>
+    </div>
+
+    <div class="partner-map-stats">
+      <div class="partner-map-stat">
+        <div class="partner-map-stat-num" id="pmap-total-stickers">127</div>
+        <div class="partner-map-stat-label">Stickers placed</div>
+      </div>
+      <div class="partner-map-stat">
+        <div class="partner-map-stat-num" id="pmap-total-countries">14</div>
+        <div class="partner-map-stat-label">Countries</div>
+      </div>
+      <div class="partner-map-stat">
+        <div class="partner-map-stat-num" id="pmap-total-cities">38</div>
+        <div class="partner-map-stat-label">Cities</div>
+      </div>
+    </div>
+
+    <p style="font-size:0.85rem;color:var(--ink-soft);text-align:center;margin-top:16px;">
+      <a href="map.html" style="color:var(--accent);text-decoration:none;font-weight:600;">View full map &rarr;</a>
+    </p>
+  </div>
+</section>
+
 <!-- ── Footer ── -->
 <footer style="background:#1A3A5C;color:rgba(255,255,255,0.85);text-align:center;padding:48px 32px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
   <div style="font-size:1.5rem;font-weight:700;letter-spacing:0.02em;">LingoGr<span style="color:#27AE60">A</span>de</div>
@@ -1130,5 +1313,109 @@ document.querySelectorAll('.faq-q').forEach(btn => {
 })();
 </script>
 <script src="js/marco-chat.js" defer></script>
+<script>
+// ── Partner Sticker Map (Leaflet) ──
+document.addEventListener('DOMContentLoaded', function() {
+  var mapEl = document.getElementById('partner-map');
+  if (!mapEl || typeof L === 'undefined') return;
+
+  var map = L.map('partner-map', {
+    center: [35, 15],
+    zoom: 3,
+    minZoom: 2,
+    maxZoom: 12,
+    scrollWheelZoom: false,
+    attributionControl: true
+  });
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(map);
+
+  var fallbackPlacements = [
+    { lat: 42.6977, lng: 23.3219, city: 'Sofia', count: 18 },
+    { lat: 48.2082, lng: 16.3738, city: 'Vienna', count: 12 },
+    { lat: 52.5200, lng: 13.4050, city: 'Berlin', count: 9 },
+    { lat: 48.8566, lng: 2.3522, city: 'Paris', count: 7 },
+    { lat: 51.5074, lng: -0.1278, city: 'London', count: 8 },
+    { lat: 47.3769, lng: 8.5417, city: 'Zurich', count: 11 },
+    { lat: 41.9028, lng: 12.4964, city: 'Rome', count: 5 },
+    { lat: 40.4168, lng: -3.7038, city: 'Madrid', count: 4 },
+    { lat: 55.6761, lng: 12.5683, city: 'Copenhagen', count: 3 },
+    { lat: 59.3293, lng: 18.0686, city: 'Stockholm', count: 3 },
+    { lat: 50.0755, lng: 14.4378, city: 'Prague', count: 6 },
+    { lat: 47.4979, lng: 19.0402, city: 'Budapest', count: 4 },
+    { lat: 44.4268, lng: 26.1025, city: 'Bucharest', count: 3 },
+    { lat: 40.7128, lng: -74.0060, city: 'New York', count: 5 },
+    { lat: 37.7749, lng: -122.4194, city: 'San Francisco', count: 3 },
+    { lat: 43.7696, lng: 11.2558, city: 'Florence', count: 2 },
+    { lat: 45.4642, lng: 9.1900, city: 'Milan', count: 4 },
+    { lat: 52.3676, lng: 4.9041, city: 'Amsterdam', count: 5 },
+    { lat: 38.7223, lng: -9.1393, city: 'Lisbon', count: 3 },
+    { lat: 53.3498, lng: -6.2603, city: 'Dublin', count: 2 },
+    { lat: 46.2044, lng: 6.1432, city: 'Geneva', count: 3 },
+    { lat: 42.3601, lng: -71.0589, city: 'Boston', count: 2 },
+    { lat: 41.0082, lng: 28.9784, city: 'Istanbul', count: 3 },
+    { lat: 35.6762, lng: 139.6503, city: 'Tokyo', count: 2 },
+    { lat: 22.3193, lng: 114.1694, city: 'Hong Kong', count: 2 },
+    { lat: -33.8688, lng: 151.2093, city: 'Sydney', count: 1 },
+    { lat: 25.2048, lng: 55.2708, city: 'Dubai', count: 2 },
+    { lat: 1.3521, lng: 103.8198, city: 'Singapore', count: 1 }
+  ];
+  var fallbackStats = { total: 127, countries: 14, cities: 38 };
+
+  function renderMarkers(placements) {
+    placements.forEach(function(p) {
+      var size = Math.min(12, 6 + p.count * 0.5);
+      L.circleMarker([p.lat, p.lng], {
+        radius: size,
+        fillColor: '#2563AB',
+        color: '#fff',
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.85
+      }).addTo(map).bindPopup(
+        '<div style="font-family:DM Sans,sans-serif;text-align:center;">' +
+        '<strong style="font-size:1rem;">' + p.city + '</strong><br>' +
+        '<span style="color:#2563AB;font-weight:700;">' + p.count + '</span> sticker' + (p.count > 1 ? 's' : '') + ' placed' +
+        '</div>'
+      );
+    });
+  }
+
+  function updateStats(stats) {
+    var el;
+    el = document.getElementById('pmap-total-stickers'); if (el) el.textContent = stats.total;
+    el = document.getElementById('pmap-total-countries'); if (el) el.textContent = stats.countries;
+    el = document.getElementById('pmap-total-cities'); if (el) el.textContent = stats.cities;
+  }
+
+  var API = window.LG_API || 'https://api.lingograde.com';
+  fetch(API + '/v1/stickers/map')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.placements && data.placements.length > 0) {
+        renderMarkers(data.placements);
+        updateStats(data.stats);
+      } else {
+        renderMarkers(fallbackPlacements);
+        updateStats(fallbackStats);
+      }
+    })
+    .catch(function() {
+      renderMarkers(fallbackPlacements);
+      updateStats(fallbackStats);
+    });
+
+  function resizeMap() {
+    var h = window.innerWidth <= 768 ? 280 : 380;
+    mapEl.style.height = h + 'px';
+    map.invalidateSize();
+  }
+  window.addEventListener('resize', resizeMap);
+});
+</script>
 </body>
 </html>

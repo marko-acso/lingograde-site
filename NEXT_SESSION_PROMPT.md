@@ -46,24 +46,30 @@
 - Milestone cards (First Share → First Referral → 10 Referrals → Established Partner)
 - Micro-commitments ("Who are the 3 people..." pre-form nudge)
 
-## TODO — TIER 4: Site WISE Improvements (2-3 hrs each)
-
-### 4C. Shop Page — 4 tiers
-A: AIDA core, B: Copy/safety valves, C: Visual cleanup, D: Exit-intent/guided funnel
+## COMPLETED — Tier 4C: Shop Page WISE (Apr 1)
+- **4C-A. AIDA Core:** Trust strip in hero (500+/4.8/12/127), FAQ/Objections section (6 Voss accusation audit items: Value Concern, Trust, Money, Price, Risk, Commitment), final "Ready?" 3-path guided CTA (free link / Marco EUR 24.95 / Complete Package EUR 299.95) with safety valve
+- **4C-B. Copy/Safety Valves:** Mega bundle "Massive savings" → "One decision", removed vague "Available while stock lasts" scarcity, added mega bundle safety valve ("Not the right time? No problem"), free sticker imperatives → observational, "Wear the brand. Own the identity." → "The things that make it yours", Chinese bundle "立即购买" (Buy Now) → "查看详情" (See Details)
+- **4C-C. Visual Cleanup:** Removed bracketPulse animation on carousel (Camp violation — no pulsing animations on products, matching partners page precedent)
+- **4C-D. Guided Funnel:** 3-column final CTA section with ascending commitment (free dashboard / Meet Marco / Complete Package), MOST CHOSEN badge on middle tier, bottom safety valve
+- **4C-E. Shop Polish (Apr 2):** Consolidated hero paragraphs (3→2, merged duplicate "invisible QR" copy), added BYAF safety valves to 4 missing CTAs (Sticker Pack, Free Sticker Opt-In, Need More Stickers, Assessor), merged 2 duplicate FAQ/Accusation Audit sections into 1 (9 items: Trust, Money, Credibility, Level Concern, Risk, Price, Commitment, Payout), removed duplicate "locked pricing" message
 
 ---
 
-## TODO — TIER 5: Content Creation (3-5 hrs each)
+## COMPLETED — Tier 5: Content Creation (Apr 2)
+- **5A. Camp Protocol** — Full assessor training supplement (10 sections): Camp pillars, BYAF compliance, self-selection upsells, CTA Level 5 optimization, fake scarcity policy, session scripts, report-as-Camp-document, 9 common violations with fixes, self-assessment checklist
+- **5B. Drip Email System** — Complete 5-day Camp+Voss sequence: Day 0 (no sell) → Day 1 (HW 20%) → Day 3 (Reassess 15%) → Day 5 (2xHW 10%) → Day 7 (0% Camp pure) → Day 10 (silence) → Day 30 (value) → Week 8 (reassessment). 24-language matrix, segmentation (6 segments), discount ladder, personalisation variables, automation rules, suppression logic, anti-patterns, technical specs
 
-### 5A. Assessor Training Manual — Camp Protocol Section
-BYAF compliance, self-selection upsells, CTA optimization, fake scarcity avoidance
+---
 
-### 5B. Drip Email System — Build From Scratch
-5-day Camp+Voss sequence, 24 languages, personalization, segmentation, automation triggers
+## COMPLETED — Google OAuth (Apr 2)
+- New GCP project `lingograde-492105`, OAuth client created
+- Supabase auth config updated via CLI (client ID + secret pushed to `sbfjhsfvsbyjguplywfj`)
+- Redirect URI (`supabase.co/auth/v1/callback`) + JS origin (`app.lingograde.com`) configured
+- Consent screen published (Testing → In Production), basic scopes only (email/profile/openid)
+- Branding set: logo, privacy-policy.html, terms-of-service.html, developer contacts
 
 ---
 
 ## STILL PENDING
 - **mila-hero.png** — Needs generation (same style as marco-hero.png). Fallback works.
 - **Apple OAuth:** Needs Apple Developer Program ($99/yr) — skipped for now
-- **Google OAuth consent screen:** Currently in Testing mode. Submit for verification before 100 users.

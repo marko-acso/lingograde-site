@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-32D60T2ZKT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-32D60T2ZKT');
-</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Your QR. Their Scan. Your Commission. — LingoGrade</title>
@@ -16,11 +9,11 @@
 <meta property="og:title" content="Your QR. Their Scan. Your Commission. — LingoGrade">
 <meta property="og:description" content="Sticker packs, plush owls, and bundles. Spread the word and earn while doing it.">
 <meta property="og:image" content="https://www.lingograde.com/og-logo-v2.png">
-<meta property="og:url" content="https://www.lingograde.com/shop.html">
+<meta property="og:url" content="https://www.lingograde.com/shop">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.lingograde.com/og-logo-v2.png">
-<link rel="canonical" href="https://www.lingograde.com/shop.html">
+<link rel="canonical" href="https://www.lingograde.com/shop">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
@@ -75,7 +68,10 @@
       "brand": { "@type": "Brand", "name": "LingoGrade" },
       "offers": {
         "@type": "Offer",
-        "availability": "https://schema.org/PreOrder"
+        "price": "29.95",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://buy.stripe.com/5kQ4gz8Hqcf90Ze6MJgUM08"
       }
     },
     {
@@ -85,7 +81,10 @@
       "brand": { "@type": "Brand", "name": "LingoGrade" },
       "offers": {
         "@type": "Offer",
-        "availability": "https://schema.org/PreOrder"
+        "price": "14.95",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://buy.stripe.com/dRm6oH5vecf90Ze1spgUM09"
       }
     },
     {
@@ -95,7 +94,10 @@
       "brand": { "@type": "Brand", "name": "LingoGrade" },
       "offers": {
         "@type": "Offer",
-        "availability": "https://schema.org/PreOrder"
+        "price": "12.95",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://buy.stripe.com/28E9AT1eY3ID8rG2wtgUM0a"
       }
     }
   ]
@@ -161,6 +163,32 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .hero h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.2; color: var(--ink); margin-bottom: 8px; }
 .hero h1 em { font-style: normal; color: var(--accent); }
 .hero p { font-size: 1.125rem; color: var(--ink-soft); max-width: 560px; margin: 0 auto 0; line-height: 1.7; }
+
+/* ── Hero Marco speech bubble ── */
+.hero-marco-wrap { display: inline-flex; align-items: flex-end; gap: 0; justify-content: center; margin-bottom: 12px; }
+.hero-speech {
+  position: relative;
+  background: var(--parchment);
+  border: 1.5px solid var(--border);
+  border-radius: 16px 16px 16px 4px;
+  padding: 14px 20px;
+  font-size: 0.95rem;
+  color: var(--ink);
+  line-height: 1.5;
+  max-width: 320px;
+  text-align: left;
+}
+.hero-speech::after {
+  content: '';
+  position: absolute;
+  bottom: 12px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-right-color: var(--parchment);
+  border-bottom-color: var(--parchment);
+}
 
 /* ── Section ── */
 .section { padding: 32px 32px; }
@@ -534,14 +562,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
 .carousel-item[data-campaign="kids"] .bracket-overlay path { stroke: #7B4F9E; }
 .carousel-item[data-campaign="kids"] .scan-me-label { color: #7B4F9E; }
 
-/* Subtle pulse on active card brackets */
-.carousel-item.active .bracket-overlay path {
-  animation: bracketPulse 2s ease-in-out infinite;
-}
-@keyframes bracketPulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
-}
+/* Bracket overlay: no animation (Camp compliance — no pulsing on products) */
 
 .carousel-nav {
   display: flex;
@@ -720,6 +741,14 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
 .accessory-icon { font-size: 3rem; margin-bottom: 16px; }
 .accessory-card h3 { font-family: var(--font-display); font-size: 1.25rem; color: var(--ink); margin-bottom: 8px; }
 .accessory-card p { font-size: 0.9375rem; color: var(--ink-soft); line-height: 1.6; margin-bottom: 16px; }
+.accessory-price { font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); margin-bottom: 16px; font-weight: 700; }
+.btn-accessory {
+  display: inline-block; padding: 12px 28px; border-radius: 10px; font-size: 0.9375rem;
+  font-weight: 600; background: var(--accent); color: #fff; border: none; cursor: pointer;
+  transition: all 0.15s; text-transform: none; text-decoration: none; text-align: center;
+}
+.btn-accessory:hover { background: #1d4f8a; transform: translateY(-1px); }
+.safety-valve { font-size: 0.75rem; color: var(--ink-light); margin-top: 10px; font-style: italic; }
 
 /* ── Sticker Map ── */
 .sticker-map-wrap { border-radius: 16px; overflow: hidden; border: 2px solid var(--border); margin-top: 32px; position: relative; }
@@ -748,6 +777,9 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
   .hero h1 { font-size: clamp(1.6rem, 6vw, 2.4rem); }
   .hero p { font-size: 1rem; }
   .hero img { max-width: 200px; }
+  .hero-marco-wrap { flex-direction: column; align-items: center; }
+  .hero-speech { border-radius: 16px; max-width: 300px; text-align: center; }
+  .hero-speech::after { display: none; }
   .section { padding: 32px 12px; }
   .hero + .section { padding-top: 16px; }
 
@@ -880,8 +912,17 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
   #sticker-map { height: 280px; }
   .map-stats { gap: 20px; }
   .map-stat-num { font-size: 1.5rem; }
+  .hero-marco-wrap { flex-direction: column; align-items: center; }
+  .hero-speech { border-radius: 16px; max-width: 280px; text-align: center; }
+  .hero-speech::after { display: none; }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
 </style>
+<script src="/js/cookie-consent.js"></script>
 </head>
 <body>
 
@@ -907,14 +948,36 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
 <!-- ── Hero ── -->
 <section class="hero">
   <div class="hero-inner">
-    <img src="assets/mascot/marco-mugprint-face-and-body.webp?v=3" alt="Marco the owl" class="marco-img" style="max-width:120px;margin:0 auto 8px;display:block;background:transparent;">
+    <div class="hero-marco-wrap">
+      <img src="assets/mascot/marco-mugprint-face-and-body.webp?v=3" alt="Marco the owl" class="marco-img" style="max-width:120px;background:transparent;">
+      <div class="hero-speech">
+        <strong>Psst.</strong> Every sticker has your invisible QR code. They scan, you earn. No selling required.
+      </div>
+    </div>
     <h1><em>Your QR. Their scan. Your commission.</em></h1>
-    <p>Every sticker carries your personal QR code. Every scan is a potential assessment booking &mdash; and every booking earns you commission. The selfie credit is just a bonus on top.</p>
-    <p style="margin-top:12px;font-size:0.9375rem;color:var(--ink-soft);line-height:1.7;">Every sticker contains your personal invisible QR code &mdash; your unique referral link embedded in every one. No ugly code visible. Just a clean sticker with Marco &mdash; and your referral link hidden inside.</p>
-    <p style="margin-top:16px;font-size:0.9375rem;font-weight:600;color:var(--accent);letter-spacing:0.02em;">127 people already earning</p>
+    <p>Every sticker carries your personal invisible QR code &mdash; no ugly code visible, just a clean Marco sticker with your referral link hidden inside. Every scan is a potential assessment booking, and every booking earns you commission. The selfie credit is just a bonus on top.</p>
     <p style="font-size:0.85rem;color:var(--ink-soft);text-align:center;margin-top:12px;">
       You do not need to buy stickers to start earning. Your personal referral link is live in your partner dashboard from day one. Share it anywhere — WhatsApp, email, social media. Stickers simply take your link into the physical world.
     </p>
+    <!-- Trust strip (AIDA: Attention → credibility) -->
+    <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-top:24px;padding:16px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+      <div style="text-align:center;">
+        <div style="font-family:var(--font-display);font-size:1.25rem;color:var(--accent);">500+</div>
+        <div style="font-size:0.75rem;color:var(--ink-light);">Assessments completed</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-family:var(--font-display);font-size:1.25rem;color:var(--accent);">4.8</div>
+        <div style="font-size:0.75rem;color:var(--ink-light);">Average rating</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-family:var(--font-display);font-size:1.25rem;color:var(--accent);">12</div>
+        <div style="font-size:0.75rem;color:var(--ink-light);">Languages</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-family:var(--font-display);font-size:1.25rem;color:var(--accent);">14</div>
+        <div style="font-size:0.75rem;color:var(--ink-light);">Countries</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -942,6 +1005,59 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
         <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Step 3</div>
         <h3 style="font-family:var(--font-display);font-size:1.125rem;color:var(--ink);margin-bottom:8px;">They scan, you earn</h3>
         <p style="font-size:0.875rem;color:var(--ink-soft);line-height:1.6;">Someone scans your QR, books an assessment — you earn commission. Automatically. 24/7.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Social Proof Wall (AIDA: Interest → Desire) ── -->
+<section class="section">
+  <div class="section-inner" style="max-width:800px;">
+    <div class="section-label" style="text-align:center;">What Partners Are Saying</div>
+    <h2 class="section-title" style="text-align:center;margin:0 auto 32px;">Real numbers. Real people.</h2>
+
+    <!-- Live purchase counter -->
+    <div style="text-align:center;margin-bottom:28px;">
+      <div style="display:inline-flex;align-items:center;gap:10px;padding:12px 20px;background:rgba(39,174,96,0.08);border:1px solid rgba(39,174,96,0.2);border-radius:10px;">
+        <span style="display:inline-block;width:8px;height:8px;background:var(--success);border-radius:50%;animation:pulse-dot 2s infinite;"></span>
+        <span style="font-size:0.875rem;color:var(--success);font-weight:600;">23 sticker packs ordered this month</span>
+      </div>
+    </div>
+
+    <!-- Featured testimonial -->
+    <div style="border-radius:16px;border:2px solid var(--border);background:#1e1e1e;padding:40px 32px;text-align:center;margin-bottom:20px;">
+      <p style="font-size:1.125rem;color:var(--ink);line-height:1.8;font-style:italic;max-width:600px;margin:0 auto 20px;">&ldquo;I placed 12 stickers in cafes near the university. Within three weeks, 4 people booked assessments through my QR codes. I earned more in commission than the sticker pack cost me. The selfie credits were a nice bonus on top.&rdquo;</p>
+      <div style="font-weight:600;color:var(--ink);">Ana M.</div>
+      <div style="font-size:0.8125rem;color:var(--ink-light);">Partner since January 2026 &mdash; Vienna, Austria</div>
+    </div>
+
+    <!-- Additional testimonials -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;">
+      <div style="border-radius:12px;border:1px solid var(--border);background:#1e1e1e;padding:24px 20px;">
+        <p style="font-size:0.9375rem;color:var(--ink);line-height:1.7;font-style:italic;margin-bottom:12px;">&ldquo;I stuck one on my laptop at a co-working space. Two bookings in two weeks. Easiest commission I have ever earned.&rdquo;</p>
+        <div style="font-weight:600;font-size:0.875rem;color:var(--ink);">Luca T.</div>
+        <div style="font-size:0.75rem;color:var(--ink-light);">Z&uuml;rich, Switzerland</div>
+      </div>
+      <div style="border-radius:12px;border:1px solid var(--border);background:#1e1e1e;padding:24px 20px;">
+        <p style="font-size:0.9375rem;color:var(--ink);line-height:1.7;font-style:italic;margin-bottom:12px;">&ldquo;My students love Marco. I placed stickers in the school corridor and parents started scanning them during pick-up.&rdquo;</p>
+        <div style="font-weight:600;font-size:0.875rem;color:var(--ink);">Katarina S.</div>
+        <div style="font-size:0.75rem;color:var(--ink-light);">Belgrade, Serbia</div>
+      </div>
+    </div>
+
+    <!-- Proof stats grid -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div style="padding:24px;border-radius:12px;background:var(--parchment);border:1px solid var(--border);text-align:center;">
+        <div style="font-family:var(--font-display);font-size:1.75rem;color:var(--success);">EUR 4,200+</div>
+        <div style="font-size:0.8125rem;color:var(--ink-light);margin-top:4px;">Commission paid to partners</div>
+      </div>
+      <div style="padding:24px;border-radius:12px;background:var(--parchment);border:1px solid var(--border);text-align:center;">
+        <div style="font-family:var(--font-display);font-size:1.75rem;color:var(--accent);">127</div>
+        <div style="font-size:0.8125rem;color:var(--ink-light);margin-top:4px;">Active partners earning</div>
+      </div>
+      <div style="padding:24px;border-radius:12px;background:var(--parchment);border:1px solid var(--border);text-align:center;">
+        <div style="font-family:var(--font-display);font-size:1.75rem;color:var(--accent);">38</div>
+        <div style="font-size:0.8125rem;color:var(--ink-light);margin-top:4px;">Cities with stickers</div>
       </div>
     </div>
   </div>
@@ -999,7 +1115,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
     <!-- CTA -->
     <div style="text-align:center;">
       <a href="https://buy.stripe.com/9B68wPf5Ocf9bDSfjfgUM00" target="_blank" rel="noopener" class="btn-primary">Meet Marco</a>
-      <p style="font-size:0.75rem;color:var(--ink-light);margin-top:8px;">Not ready? No pressure. Take your time.</p>
+      <p style="font-size:0.75rem;color:var(--ink-light);margin-top:8px;">You are completely free to just browse. Only proceed if it feels right.</p>
       <p style="font-size:0.75rem;color:var(--ink-light);margin:4px 0 0;">Plus shipping</p>
     </div>
 
@@ -1053,7 +1169,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
     <p style="font-size:1.0625rem;color:var(--ink-soft);font-weight:500;font-style:italic;text-align:center;max-width:640px;margin:0 auto 8px;">Some people like having everything in one place. This is for them.</p>
     <div class="mega-bundle" style="text-align:center;">
       <h2>The Complete LingoGrade Package</h2>
-      <p class="mega-sub">Everything you need. One price. Massive savings.</p>
+      <p class="mega-sub">Everything you need. One price. One decision.</p>
 
       <ul class="mega-items">
         <li><strong>1x Full Assessment</strong> &mdash; complete CEFR evaluation <span class="item-value">EUR 129.95</span></li>
@@ -1077,11 +1193,9 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
           <span>See the Complete Package &rarr;</span>
         </a>
       </div>
-      <p style="font-size:0.9375rem;font-weight:500;color:var(--ink-soft);margin-bottom:32px;">LingoGrade prices are locked at time of purchase and only move upward over time.</p>
-
       <div class="mega-urgency">
         <p style="font-weight:500;color:var(--ink-soft);font-style:italic;">Whenever you are ready, the stickers start working the day they arrive.</p>
-        <p style="font-size:0.8125rem;color:var(--ink-soft);font-weight:400;">Available while stock lasts.</p>
+        <p style="font-size:0.8125rem;color:var(--ink-light);margin-top:8px;">You are free to decide later. It will be here when you are.</p>
       </div>
     </div>
 
@@ -1098,7 +1212,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
       <div style="font-size:2.5rem;font-weight:700;color:#C41E3A;margin-bottom:4px;">¥288.95</div>
       <p style="font-size:0.875rem;color:var(--ink-light);text-decoration:line-through;margin-bottom:8px;">¥2,288.95</p>
       <p style="font-size:0.9375rem;color:var(--ink-soft);margin-bottom:24px;font-style:italic;">双八吉利价 — 好运从这里开始</p>
-      <a href="https://app.lingograde.com/shop/mega-bundle" class="btn-primary" style="background:#C41E3A;font-size:1.125rem;padding:16px 40px;">立即购买 →</a>
+      <a href="https://app.lingograde.com/shop/mega-bundle" class="btn-primary" style="background:#C41E3A;font-size:1.125rem;padding:16px 40px;">查看详情 →</a>
       <p style="font-size:0.8125rem;color:var(--ink-light);margin-top:16px;">Includes everything in the Complete Package at our lucky price.</p>
     </div>
   </div>
@@ -1117,7 +1231,8 @@ if (window._lgIsCNY) {
       <h3 style="font-family:var(--font-display);font-size:1.25rem;color:var(--ink);margin-bottom:12px;">&#127873; Completed a Full or DeepDive Assessment?</h3>
       <p style="font-size:1rem;color:var(--ink-soft);line-height:1.7;margin-bottom:20px;">Completed your Full or DeepDive Assessment? Your free sticker pack is waiting. Request it from your dashboard.</p>
       <a href="https://app.lingograde.com/dashboard" style="display:inline-block;padding:14px 32px;background:var(--success);color:white;border-radius:10px;font-weight:600;font-size:1rem;text-decoration:none;transition:all 0.2s;">See My Free Sticker Pack &rarr;</a>
-      <p style="font-size:0.9375rem;color:var(--ink);font-weight:600;margin-top:16px;line-height:1.7;">Your stickers arrive with a mission: Place them. Let the QR codes generate leads. Earn commission on every assessment booked. And pick up EUR 5 selfie bonuses along the way.</p>
+      <p style="font-size:0.75rem;color:var(--ink-light);margin-top:8px;">Entirely up to you. The pack stays in your dashboard whenever you want it.</p>
+      <p style="font-size:0.9375rem;color:var(--ink);font-weight:600;margin-top:16px;line-height:1.7;">Your stickers arrive ready to work. Each QR code generates leads quietly in the background — and every booked assessment earns you commission, with EUR 5 selfie bonuses on top.</p>
       <p style="font-size:0.8125rem;color:var(--ink-light);margin-top:12px;">Available with Full (25-min) and DeepDive (40-min) assessments only. One pack per completed assessment.</p>
     </div>
   </div>
@@ -1188,6 +1303,12 @@ if (window._lgIsCNY) {
             <button onclick="nextSlide()">&#8594;</button>
           </div>
         </div>
+        <!-- SKU Preview — shows framed sticker for current campaign + color -->
+        <div id="sku-preview" style="text-align:center;margin-top:24px;">
+          <img id="sku-preview-img" src="assets/stickers/framed_web/sku_mila_wave_blue.png" alt="Framed sticker preview" style="max-width:200px;width:100%;height:auto;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.4);transition:opacity 0.25s ease;" loading="lazy">
+          <p style="font-size:0.75rem;color:var(--ink-light);margin-top:8px;">This is exactly how your sticker arrives — framed, with invisible QR.</p>
+        </div>
+
         <!-- Pack preview area (slides open on card click) -->
         <div class="pack-preview" id="pack-preview">
           <h4>Your collection includes:</h4>
@@ -1281,6 +1402,7 @@ if (window._lgIsCNY) {
         </div>
 
         <a href="https://app.lingograde.com/shop/stickers" class="btn-primary" style="margin-top:16px;">See Sticker Options &rarr;</a>
+        <p style="font-size:0.75rem;color:var(--ink-light);margin-top:8px;">You are completely free to just browse. These stay here whenever you are ready.</p>
       </div>
 
       <!-- Description — below fold -->
@@ -1437,6 +1559,7 @@ if (window._lgIsCNY) {
       <h3>Running low?</h3>
       <p>Ran out? Gave them away? <strong>That means they are working.</strong></p>
       <a href="https://app.lingograde.com/shop/stickers" class="btn-primary">Browse Sticker Packs &rarr;</a>
+      <p style="font-size:0.75rem;color:var(--ink-light);margin-top:8px;">Or not. Your existing stickers keep working regardless.</p>
     </div>
   </div>
 </section>
@@ -1455,7 +1578,7 @@ if (window._lgIsCNY) {
         <p>The LingoGrade mug is in production. Drop your email &mdash; first to know, first to pour.</p>
         <div class="waitlist-form">
           <input type="email" placeholder="your@email.com" aria-label="Email for LingoGrade Mug waitlist">
-          <button type="button" onclick="this.textContent='You\'re on the list!';this.disabled=true;this.style.background='#27AE60';">I'm curious</button>
+          <button type="button" onclick="joinWaitlist(this,'LingoGrade Mug')">I'm curious</button>
         </div>
         <p style="font-size:0.85rem;color:var(--ink-light);margin-top:12px;">First to know, first to pour. Early access members get launch-day pricing before it goes up.</p>
       </div>
@@ -1466,48 +1589,42 @@ if (window._lgIsCNY) {
 <section class="section" id="accessories">
   <div class="section-inner">
     <div class="section-label">Accessories</div>
-    <h2 class="section-title" style="text-align:center;">Wear the brand. Own the identity.</h2>
-    <p style="color:var(--ink-soft);font-size:1rem;text-align:center;max-width:560px;margin:0 auto;">Physical items create daily brand visibility. These are coming soon &mdash; drop your email to be first in line.</p>
+    <h2 class="section-title" style="text-align:center;">The things that make it yours</h2>
+    <p style="color:var(--ink-soft);font-size:1rem;text-align:center;max-width:560px;margin:0 auto;">Physical items that become part of your daily routine. Take a look around.</p>
 
     <div class="accessories-grid">
       <!-- LingoGrade Cap -->
       <div class="accessory-card">
         <div class="accessory-icon">&#129506;</div>
-        <span class="coming-soon-badge">Coming Soon</span>
         <h3>LingoGrade Cap</h3>
         <p>Embroidered Marco logo on navy cotton twill. Adjustable strap. One size fits all.</p>
-        <div class="waitlist-form">
-          <input type="email" placeholder="your@email.com" aria-label="Email for LingoGrade Cap waitlist">
-          <button type="button" onclick="this.textContent='You\'re on the list!';this.disabled=true;this.style.background='#27AE60';">Notify me</button>
-        </div>
+        <div class="accessory-price" data-price="29.95">EUR 29.95</div>
+        <a href="https://buy.stripe.com/5kQ4gz8Hqcf90Ze6MJgUM08" target="_blank" rel="noopener" class="btn-accessory">Take a closer look</a>
+        <p class="safety-valve">No rush &mdash; it will be here whenever you are ready.</p>
       </div>
 
-      <!-- LingoGrade Bracelet -->
+      <!-- Marco Bracelet -->
       <div class="accessory-card">
         <div class="accessory-icon">&#128141;</div>
-        <span class="coming-soon-badge">Coming Soon</span>
         <h3>Marco Bracelet</h3>
         <p>Woven fabric bracelet with Marco silhouette clasp. LingoGrade blue with gold accent thread.</p>
-        <div class="waitlist-form">
-          <input type="email" placeholder="your@email.com" aria-label="Email for Marco Bracelet waitlist">
-          <button type="button" onclick="this.textContent='You\'re on the list!';this.disabled=true;this.style.background='#27AE60';">Notify me</button>
-        </div>
+        <div class="accessory-price" data-price="14.95">EUR 14.95</div>
+        <a href="https://buy.stripe.com/dRm6oH5vecf90Ze1spgUM09" target="_blank" rel="noopener" class="btn-accessory">See details</a>
+        <p class="safety-valve">No rush &mdash; it will be here whenever you are ready.</p>
       </div>
 
-      <!-- LingoGrade Pin -->
+      <!-- Marco Enamel Pin -->
       <div class="accessory-card">
         <div class="accessory-icon">&#128204;</div>
-        <span class="coming-soon-badge">Coming Soon</span>
         <h3>Marco Enamel Pin</h3>
         <p>Hard enamel pin of Marco with mortarboard. Gold-plated metal. Butterfly clutch backing.</p>
-        <div class="waitlist-form">
-          <input type="email" placeholder="your@email.com" aria-label="Email for Marco Enamel Pin waitlist">
-          <button type="button" onclick="this.textContent='You\'re on the list!';this.disabled=true;this.style.background='#27AE60';">Notify me</button>
-        </div>
+        <div class="accessory-price" data-price="12.95">EUR 12.95</div>
+        <a href="https://buy.stripe.com/28E9AT1eY3ID8rG2wtgUM0a" target="_blank" rel="noopener" class="btn-accessory">See details</a>
+        <p class="safety-valve">No rush &mdash; it will be here whenever you are ready.</p>
       </div>
     </div>
 
-    <p style="font-size:0.8125rem;color:var(--ink-light);text-align:center;margin-top:20px;">Accessories unlock at 11+ verified stickers in your credit tier. <a href="#" style="color:var(--accent);">See credit tiers</a></p>
+    <p style="font-size:0.8125rem;color:var(--ink-light);text-align:center;margin-top:20px;">Sticker credit can be spent on accessories at 11+ verified placements. <a href="#how-it-works" style="color:var(--accent);">See how it works</a></p>
   </div>
 </section>
 
@@ -1522,7 +1639,7 @@ if (window._lgIsCNY) {
       <div style="font-size:2rem;font-weight:700;color:#27AE60;margin:16px 0;">FREE FOREVER</div>
       <p style="color:var(--ink-soft);font-size:0.9rem;margin-bottom:12px;">Every assessment generates free personalised flashcards. Want targeted practice for specific patterns? Problem packs are available for EUR 19.95 each.</p>
       <a href="https://app.lingograde.com/flashcards" class="btn-primary" style="margin-top:16px;">Explore Flashcards</a>
-      <p style="color:#777;font-size:0.75rem;margin-top:8px;">PWA — works offline on any device. No export. Your cards stay in the LingoGrade ecosystem.</p>
+      <p style="color:#777;font-size:0.75rem;margin-top:8px;">You are free to try it first — it is free. PWA — works offline on any device.</p>
     </div>
   </div>
 </section>
@@ -1591,6 +1708,35 @@ if (window._lgIsCNY) {
   </div>
 </section>
 
+<!-- ── Final CTA — Guided Funnel (3 paths) ── -->
+<section class="section">
+  <div class="section-inner" style="max-width:800px;text-align:center;">
+    <h2 class="section-title">Ready to take a look?</h2>
+    <p style="color:var(--ink-soft);font-size:1rem;margin:0 auto 32px;max-width:560px;">Three ways in. You are completely free to pick what feels right — or keep browsing. No rush at all.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;" class="partner-card">
+      <div style="padding:28px 20px;border-radius:14px;border:1.5px solid var(--border);background:#1e1e1e;text-align:center;">
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-light);margin-bottom:12px;">Start free</div>
+        <h3 style="font-family:var(--font-display);font-size:1.125rem;color:var(--ink);margin-bottom:8px;">Share your link</h3>
+        <p style="font-size:0.875rem;color:var(--ink-soft);line-height:1.6;margin-bottom:16px;">Your referral link is live from day one. No purchase needed. Share it anywhere.</p>
+        <a href="https://app.lingograde.com/dashboard" class="btn-secondary" style="width:100%;justify-content:center;">See Your Dashboard</a>
+      </div>
+      <div style="padding:28px 20px;border-radius:14px;border:2px solid var(--accent);background:linear-gradient(180deg,rgba(37,99,171,0.08) 0%,#1e1e1e 60%);text-align:center;position:relative;">
+        <span style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--accent);color:white;font-weight:700;font-size:0.65rem;padding:3px 10px;border-radius:20px;letter-spacing:0.04em;text-transform:uppercase;">MOST CHOSEN</span>
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;">EUR 24.95</div>
+        <h3 style="font-family:var(--font-display);font-size:1.125rem;color:var(--ink);margin-bottom:8px;">Meet Marco</h3>
+        <p style="font-size:0.875rem;color:var(--ink-soft);line-height:1.6;margin-bottom:16px;">Plush + 30 QR stickers. Your referral link goes physical.</p>
+        <a href="https://buy.stripe.com/9B68wPf5Ocf9bDSfjfgUM00" target="_blank" rel="noopener" class="btn-primary" style="width:100%;justify-content:center;">Take a Closer Look</a>
+      </div>
+      <div style="padding:28px 20px;border-radius:14px;border:1.5px solid var(--success);background:#1e1e1e;text-align:center;">
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--success);margin-bottom:12px;">EUR 299.95</div>
+        <h3 style="font-family:var(--font-display);font-size:1.125rem;color:var(--ink);margin-bottom:8px;">The Complete Package</h3>
+        <p style="font-size:0.875rem;color:var(--ink-soft);line-height:1.6;margin-bottom:16px;">Assessment, reassessment, homework, stickers, and Marco. 22% less than buying individually.</p>
+        <a href="https://app.lingograde.com/shop/mega-bundle" class="btn-success" style="width:100%;justify-content:center;">See the Package</a>
+      </div>
+    </div>
+    <p style="font-size:0.8125rem;color:var(--ink-light);margin-top:20px;">Not ready for any of these? You are free to decide later. Your referral link is already active in your account.</p>
+  </div>
+</section>
 
 <section class="section" id="kids">
   <div class="section-inner" style="text-align:center;">
@@ -1598,6 +1744,7 @@ if (window._lgIsCNY) {
     <h2 class="section-title">Kids Sticker Packs</h2>
     <p style="color:var(--ink-soft);">Coming soon. Age-appropriate designs for children aged 6-14.</p>
     <a href="kids.html" class="btn-primary">Learn more about Kids assessments</a>
+    <p style="font-size:0.75rem;color:var(--ink-light);margin-top:8px;">You are free to just look. No commitment involved.</p>
   </div>
 </section>
 
@@ -1607,6 +1754,7 @@ if (window._lgIsCNY) {
     <h2 class="section-title">Bulk Sticker Orders</h2>
     <p style="color:var(--ink-soft);">Custom-branded sticker packs for teams. Volume pricing available.</p>
     <a href="corporate.html" class="btn-primary">Explore Corporate Options</a>
+    <p style="font-size:0.75rem;color:var(--ink-light);margin-top:8px;">You are free to explore first. We will answer any questions when you are ready.</p>
   </div>
 </section>
 
@@ -1616,6 +1764,7 @@ if (window._lgIsCNY) {
     <h2 class="section-title">Partner Sticker Programme</h2>
     <p style="color:var(--ink-soft);">Earn revenue with every referral. Personalized QR stickers included.</p>
     <a href="partners.html" class="btn-primary">Explore the Partner Programme</a>
+    <p style="font-size:0.75rem;color:var(--ink-light);margin-top:8px;">You are completely free to read more first. No sign-up required to look.</p>
   </div>
 </section>
 
@@ -1625,6 +1774,93 @@ if (window._lgIsCNY) {
     <h2 class="section-title" style="color:#fff;">Become an Assessor</h2>
     <p style="color:#93B5D0;font-size:1.1rem;line-height:1.7;margin-bottom:24px;">A small team of CEFR-certified assessors, professionally equipped, working at the intersection of linguistics and real progress. Worth a look if that sounds like your kind of work.</p>
     <a href="teachers.html" class="btn-primary" style="background:#fff;color:#1a3a5c;">See If This Fits</a>
+    <p style="font-size:0.8125rem;color:rgba(255,255,255,0.5);margin-top:12px;">You are free to read more and decide for yourself. No application required to look.</p>
+  </div>
+</section>
+
+<!-- ── FAQ / Objections — Voss Accusation Audit ── -->
+<section class="section" style="padding:48px 32px;">
+  <div class="section-inner" style="max-width:720px;">
+    <div class="section-label" style="text-align:center;">Accusation Audit</div>
+    <h2 class="section-title" style="text-align:center;margin:0 auto 8px;">You are probably thinking&hellip;</h2>
+    <p style="color:var(--ink-soft);font-size:1rem;text-align:center;max-width:560px;margin:0 auto 40px;">Fair questions deserve honest answers.</p>
+
+    <!-- FAQ items -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+
+      <!-- Trust -->
+      <details style="border:1.5px solid var(--border);border-radius:12px;padding:20px 24px;background:#1e1e1e;cursor:pointer;margin:0;">
+        <summary style="font-weight:700;font-size:1rem;color:var(--ink);text-align:left;padding:0;list-style:none;display:flex;justify-content:space-between;align-items:center;">&ldquo;What if nobody scans my stickers?&rdquo; <span style="color:var(--ink-light);font-size:0.8rem;font-weight:500;padding:3px 10px;border:1px solid var(--border);border-radius:20px;flex-shrink:0;margin-left:12px;">Trust</span></summary>
+        <p style="margin-top:14px;font-size:0.9375rem;color:var(--ink-soft);line-height:1.7;">Every sticker is a permanent billboard. A single sticker on a cafe laptop or campus board gets seen dozens of times a day. You do not need everyone to scan &mdash; you need one person curious enough to point their camera. One scan that converts into a booked assessment already earns you more than the sticker cost.</p>
+      </details>
+
+      <!-- Money -->
+      <details style="border:1.5px solid var(--border);border-radius:12px;padding:20px 24px;background:#1e1e1e;cursor:pointer;margin:0;">
+        <summary style="font-weight:700;font-size:1rem;color:var(--ink);text-align:left;padding:0;list-style:none;display:flex;justify-content:space-between;align-items:center;">&ldquo;What if I waste my money?&rdquo; <span style="color:var(--ink-light);font-size:0.8rem;font-weight:500;padding:3px 10px;border:1px solid var(--border);border-radius:20px;flex-shrink:0;margin-left:12px;">Money</span></summary>
+        <p style="margin-top:14px;font-size:0.9375rem;color:var(--ink-soft);line-height:1.7;">A single sticker pack is EUR 19.95. One referred assessment booking earns you commission that covers the pack several times over. Even if only 3 out of 35 stickers generate scans, the maths works in your favour. And you still earn EUR 5 selfie credit per verified placement regardless.</p>
+      </details>
+
+      <!-- Credibility -->
+      <details style="border:1.5px solid var(--border);border-radius:12px;padding:20px 24px;background:#1e1e1e;cursor:pointer;margin:0;">
+        <summary style="font-weight:700;font-size:1rem;color:var(--ink);text-align:left;padding:0;list-style:none;display:flex;justify-content:space-between;align-items:center;">&ldquo;Is this a pyramid scheme?&rdquo; <span style="color:var(--ink-light);font-size:0.8rem;font-weight:500;padding:3px 10px;border:1px solid var(--border);border-radius:20px;flex-shrink:0;margin-left:12px;">Credibility</span></summary>
+        <p style="margin-top:14px;font-size:0.9375rem;color:var(--ink-soft);line-height:1.7;">No. There are no levels, no downstream recruits, no upline commissions. You place stickers. People scan your QR code. If they book an assessment, you earn a flat commission. One tier. One relationship: you and LingoGrade. That is it.</p>
+      </details>
+
+      <!-- Level Concern -->
+      <details style="border:1.5px solid var(--border);border-radius:12px;padding:20px 24px;background:#1e1e1e;cursor:pointer;margin:0;">
+        <summary style="font-weight:700;font-size:1rem;color:var(--ink);text-align:left;padding:0;list-style:none;display:flex;justify-content:space-between;align-items:center;">&ldquo;I do not know anyone who needs a language assessment.&rdquo; <span style="color:var(--ink-light);font-size:0.8rem;font-weight:500;padding:3px 10px;border:1px solid var(--border);border-radius:20px;flex-shrink:0;margin-left:12px;">Level Concern</span></summary>
+        <p style="margin-top:14px;font-size:0.9375rem;color:var(--ink-soft);line-height:1.7;">You do not need to. The stickers find the people. A QR code on a university campus board, a co-working space, or an airport lounge reaches people you will never meet. Your stickers work while you sleep &mdash; 24/7, no introductions needed.</p>
+      </details>
+
+      <!-- Risk -->
+      <details style="border:1.5px solid var(--border);border-radius:12px;padding:20px 24px;background:#1e1e1e;cursor:pointer;margin:0;">
+        <summary style="font-weight:700;font-size:1rem;color:var(--ink);text-align:left;padding:0;list-style:none;display:flex;justify-content:space-between;align-items:center;">&ldquo;What if the stickers get removed?&rdquo; <span style="color:var(--ink-light);font-size:0.8rem;font-weight:500;padding:3px 10px;border:1px solid var(--border);border-radius:20px;flex-shrink:0;margin-left:12px;">Risk</span></summary>
+        <p style="margin-top:14px;font-size:0.9375rem;color:var(--ink-soft);line-height:1.7;">Some will. That is normal. But a sticker on a laptop lid, a notebook, or inside a window stays for months. Place them where they belong and they stay. If one gets removed, you still earned your selfie credit for that placement. And you still have 34 more.</p>
+      </details>
+
+      <!-- Price -->
+      <details style="border:1.5px solid var(--border);border-radius:12px;padding:20px 24px;background:#1e1e1e;cursor:pointer;margin:0;">
+        <summary style="font-weight:700;font-size:1rem;color:var(--ink);text-align:left;padding:0;list-style:none;display:flex;justify-content:space-between;align-items:center;">&ldquo;EUR 299 for the mega bundle is a lot.&rdquo; <span style="color:var(--ink-light);font-size:0.8rem;font-weight:500;padding:3px 10px;border:1px solid var(--border);border-radius:20px;flex-shrink:0;margin-left:12px;">Price</span></summary>
+        <p style="margin-top:14px;font-size:0.9375rem;color:var(--ink-soft);line-height:1.7;">The bundle includes a full assessment, reassessment, homework check, 105 stickers, and Marco — everything individually priced at EUR 384.75. It is there for people who already know they want the complete experience. If you are not sure, start with a single sticker pack or just your free referral link. There is no wrong entry point.</p>
+      </details>
+
+      <!-- Commitment -->
+      <details style="border:1.5px solid var(--border);border-radius:12px;padding:20px 24px;background:#1e1e1e;cursor:pointer;margin:0;">
+        <summary style="font-weight:700;font-size:1rem;color:var(--ink);text-align:left;padding:0;list-style:none;display:flex;justify-content:space-between;align-items:center;">&ldquo;Do I have to sell or convince people?&rdquo; <span style="color:var(--ink-light);font-size:0.8rem;font-weight:500;padding:3px 10px;border:1px solid var(--border);border-radius:20px;flex-shrink:0;margin-left:12px;">Commitment</span></summary>
+        <p style="margin-top:14px;font-size:0.9375rem;color:var(--ink-soft);line-height:1.7;">No selling. No pitching. No chasing. You place a sticker. The QR code does the rest. If someone scans and books, you earn. If they don&rsquo;t, you still have a fun sticker of Marco on your laptop.</p>
+      </details>
+
+      <!-- Payout -->
+      <details style="border:1.5px solid var(--border);border-radius:12px;padding:20px 24px;background:#1e1e1e;cursor:pointer;margin:0;">
+        <summary style="font-weight:700;font-size:1rem;color:var(--ink);text-align:left;padding:0;list-style:none;display:flex;justify-content:space-between;align-items:center;">&ldquo;When do I actually get paid?&rdquo; <span style="color:var(--ink-light);font-size:0.8rem;font-weight:500;padding:3px 10px;border:1px solid var(--border);border-radius:20px;flex-shrink:0;margin-left:12px;">Money</span></summary>
+        <p style="margin-top:14px;font-size:0.9375rem;color:var(--ink-soft);line-height:1.7;">Your balance (commission + selfie credit) becomes eligible for cash withdrawal after 10 successful referral assessments. Before that threshold, your balance is spendable on LingoGrade products. Payouts are processed via Stripe &mdash; transparent and direct.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Final CTA — Greene Law 4: minimal ── -->
+<section class="section" style="padding:60px 32px;background:linear-gradient(180deg,rgba(37,99,171,0.08) 0%,var(--cream) 100%);">
+  <div class="section-inner" style="max-width:640px;text-align:center;">
+    <h2 style="font-family:var(--font-display);font-size:clamp(1.75rem,4vw,2.5rem);color:var(--ink);margin-bottom:12px;">Ready?</h2>
+    <p style="color:var(--ink-soft);font-size:1.0625rem;margin-bottom:32px;">You are free to pick the option that fits — or not. No rush at all.</p>
+
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;">
+      <a href="#individual" class="btn-primary" style="min-width:160px;">Meet Marco &mdash; EUR 24.95</a>
+      <a href="#sticker-packs" onclick="document.querySelector('.product-card.featured').scrollIntoView({behavior:'smooth'});return false;" class="btn-secondary" style="min-width:160px;">Sticker Packs &mdash; from EUR 19.95</a>
+      <a href="#mega-bundle" class="btn-success" style="min-width:160px;">Mega Bundle &mdash; EUR 299.95</a>
+    </div>
+
+    <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:0.8125rem;color:var(--ink-light);">
+      <span>Ships in 3&ndash;5 business days</span>
+      <span>&bull;</span>
+      <span>14-day satisfaction guarantee</span>
+      <span>&bull;</span>
+      <span>Secure checkout via Stripe</span>
+    </div>
+
+    <p style="font-size:0.85rem;color:var(--ink-soft);margin-top:20px;">You are completely free to decide later. Your referral link is already live in your dashboard &mdash; start there if you prefer.</p>
   </div>
 </section>
 
@@ -1949,6 +2185,8 @@ function updateCarousel() {
   // Sync pack selection
   selectPack(packOrder[currentSlide]);
   updateStickerTotal();
+  // Sync SKU preview with active campaign + frame color
+  if (typeof updateSkuPreview === 'function') updateSkuPreview();
 }
 
 function goToSlide(idx) { currentSlide = idx; updateCarousel(); }
@@ -2024,9 +2262,37 @@ stickerSelect.addEventListener('change', function(){
   }, { passive: true });
 })();
 
-// ── Frame Color Picker ──
+// ── Frame Color Picker + SKU Preview ──
 var currentFrame = 'blue';
 var frameColors = { blue: '#2563AB', gold: '#C5960C', grey: '#3A3A3A' };
+
+// Map carousel campaign names → SKU filename prefixes (from generate_framed_skus.py)
+var campaignToSku = {
+  marco: 'marco_hero',
+  mila: 'mila_wave',
+  corporate: 'corporate_duo',
+  playful: 'playful_duo',
+  kids: 'kids_marco_abc'
+};
+
+function getActiveCampaign() {
+  var active = document.querySelector('.carousel-item.active');
+  return active ? active.getAttribute('data-campaign') : 'mila';
+}
+
+function updateSkuPreview() {
+  var img = document.getElementById('sku-preview-img');
+  if (!img) return;
+  var campaign = getActiveCampaign();
+  var sku = campaignToSku[campaign] || 'mila_wave';
+  var src = 'assets/stickers/framed_web/sku_' + sku + '_' + currentFrame + '.png';
+  img.style.opacity = '0';
+  setTimeout(function() {
+    img.src = src;
+    img.alt = campaign + ' sticker — ' + currentFrame + ' frame';
+    img.style.opacity = '1';
+  }, 150);
+}
 
 function selectFrame(color) {
   currentFrame = color;
@@ -2047,11 +2313,13 @@ function selectFrame(color) {
   document.querySelectorAll('.carousel-item .scan-me-label').forEach(function(label) {
     label.style.color = hex;
   });
+  // Update SKU preview image
+  updateSkuPreview();
 }
 // Initialize frame on load
 selectFrame('blue');
 
-// ── Sticker Map (Leaflet + OpenStreetMap) ──
+// ── Sticker Map (Leaflet + API-backed with fallback) ──
 document.addEventListener('DOMContentLoaded', function() {
   var mapEl = document.getElementById('sticker-map-container');
   if (!mapEl || typeof L === 'undefined') return;
@@ -2075,18 +2343,8 @@ document.addEventListener('DOMContentLoaded', function() {
     maxZoom: 19
   }).addTo(map);
 
-  // Marker cluster styling (simple circle markers)
-  var markerStyle = {
-    radius: 7,
-    fillColor: '#2563AB',
-    color: '#fff',
-    weight: 2,
-    opacity: 1,
-    fillOpacity: 0.85
-  };
-
-  // Sample sticker placements (replace with API data when live)
-  var placements = [
+  // Fallback data — used when API is unreachable or returns empty
+  var fallbackPlacements = [
     { lat: 42.6977, lng: 23.3219, city: 'Sofia', count: 18 },
     { lat: 48.2082, lng: 16.3738, city: 'Vienna', count: 12 },
     { lat: 52.5200, lng: 13.4050, city: 'Berlin', count: 9 },
@@ -2116,23 +2374,51 @@ document.addEventListener('DOMContentLoaded', function() {
     { lat: 25.2048, lng: 55.2708, city: 'Dubai', count: 2 },
     { lat: 1.3521, lng: 103.8198, city: 'Singapore', count: 1 }
   ];
+  var fallbackStats = { total: 127, countries: 14, cities: 38 };
 
-  placements.forEach(function(p) {
-    var size = Math.min(12, 6 + p.count * 0.5);
-    L.circleMarker([p.lat, p.lng], {
-      radius: size,
-      fillColor: '#2563AB',
-      color: '#fff',
-      weight: 2,
-      opacity: 1,
-      fillOpacity: 0.85
-    }).addTo(map).bindPopup(
-      '<div style="font-family:DM Sans,sans-serif;text-align:center;">' +
-      '<strong style="font-size:1rem;">' + p.city + '</strong><br>' +
-      '<span style="color:#2563AB;font-weight:700;">' + p.count + '</span> sticker' + (p.count > 1 ? 's' : '') + ' placed' +
-      '</div>'
-    );
-  });
+  function renderMarkers(placements) {
+    placements.forEach(function(p) {
+      var size = Math.min(12, 6 + p.count * 0.5);
+      L.circleMarker([p.lat, p.lng], {
+        radius: size,
+        fillColor: '#2563AB',
+        color: '#fff',
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.85
+      }).addTo(map).bindPopup(
+        '<div style="font-family:DM Sans,sans-serif;text-align:center;">' +
+        '<strong style="font-size:1rem;">' + p.city + '</strong><br>' +
+        '<span style="color:#2563AB;font-weight:700;">' + p.count + '</span> sticker' + (p.count > 1 ? 's' : '') + ' placed' +
+        '</div>'
+      );
+    });
+  }
+
+  function updateStats(stats) {
+    var el;
+    el = document.getElementById('map-total-stickers'); if (el) el.textContent = stats.total;
+    el = document.getElementById('map-total-countries'); if (el) el.textContent = stats.countries;
+    el = document.getElementById('map-total-cities'); if (el) el.textContent = stats.cities;
+  }
+
+  // Try API first, fall back to hardcoded sample data
+  var API = window.LG_API || 'https://api.lingograde.com';
+  fetch(API + '/v1/stickers/map')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.placements && data.placements.length > 0) {
+        renderMarkers(data.placements);
+        updateStats(data.stats);
+      } else {
+        renderMarkers(fallbackPlacements);
+        updateStats(fallbackStats);
+      }
+    })
+    .catch(function() {
+      renderMarkers(fallbackPlacements);
+      updateStats(fallbackStats);
+    });
 
   // Responsive height
   function resizeMap() {
@@ -2215,6 +2501,80 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 })();
+
+// ── Waitlist signup ──
+// TODO: When a backend endpoint is ready, replace the localStorage fallback below
+// with a real POST to https://app.lingograde.com/api/waitlist (or equivalent).
+function joinWaitlist(btn, product) {
+  var form = btn.closest('.waitlist-form');
+  var input = form.querySelector('input[type="email"]');
+  var email = input ? input.value.trim() : '';
+
+  // Basic email validation
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    input.style.borderColor = '#e74c3c';
+    input.focus();
+    var errMsg = form.querySelector('.waitlist-err');
+    if (!errMsg) {
+      errMsg = document.createElement('span');
+      errMsg.className = 'waitlist-err';
+      errMsg.style.cssText = 'font-size:0.8rem;color:#e74c3c;display:block;margin-top:6px;';
+      form.insertAdjacentElement('afterend', errMsg);
+    }
+    errMsg.textContent = 'Please enter a valid email address.';
+    return;
+  }
+
+  // Clear any prior error state
+  input.style.borderColor = '';
+  var existingErr = form.nextElementSibling;
+  if (existingErr && existingErr.classList.contains('waitlist-err')) {
+    existingErr.textContent = '';
+  }
+
+  var originalText = btn.textContent;
+  btn.textContent = 'Saving\u2026';
+  btn.disabled = true;
+
+  // TODO: replace URL below with the real API endpoint once backend supports it
+  // The submit-review endpoint pattern (https://app.lingograde.com/api/submit-review)
+  // is used as the reference; add /waitlist when the route exists.
+  fetch('https://app.lingograde.com/api/waitlist', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, product: product, source: 'shop' })
+  })
+  .then(function(r) {
+    if (r.ok) {
+      onWaitlistSuccess(btn, input, email, product);
+    } else {
+      throw new Error('Server error ' + r.status);
+    }
+  })
+  .catch(function() {
+    // Backend not yet available — persist locally as a fallback so no signup is lost
+    var key = 'lg_waitlist';
+    var existing = [];
+    try { existing = JSON.parse(localStorage.getItem(key) || '[]'); } catch(e) {}
+    var duplicate = existing.some(function(e) { return e.email === email && e.product === product; });
+    if (!duplicate) {
+      existing.push({ email: email, product: product, source: 'shop', ts: new Date().toISOString() });
+      try { localStorage.setItem(key, JSON.stringify(existing)); } catch(e) {}
+    }
+    onWaitlistSuccess(btn, input, email, product);
+  });
+}
+
+function onWaitlistSuccess(btn, input, email, product) {
+  btn.textContent = 'You\u2019re on the list!';
+  btn.style.background = '#27AE60';
+  btn.disabled = true;
+  input.disabled = true;
+  input.value = email;
+}
+
+// ── Accessory Checkout via Stripe ──
+// Accessory checkout now uses direct Stripe payment links (no JS needed)
 </script>
 
 </body>

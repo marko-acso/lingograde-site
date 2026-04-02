@@ -8,19 +8,77 @@
     <meta property="og:title" content="LingoGrade for Teachers & Tutors — Turn Your Expertise Into a Revenue Stream">
     <meta property="og:description" content="Earn an exclusive revenue share on every CEFR assessment referral. Professional diagnostics that make you a better teacher.">
     <meta property="og:image" content="https://www.lingograde.com/og-logo-v2.png">
-    <meta property="og:url" content="https://www.lingograde.com/teachers.html">
+    <meta property="og:url" content="https://www.lingograde.com/teachers">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://www.lingograde.com/og-logo-v2.png">
-    <link rel="canonical" href="https://www.lingograde.com/teachers.html">
+    <link rel="canonical" href="https://www.lingograde.com/teachers">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "LingoGrade for Teachers & Tutors",
-      "description": "Partner with LingoGrade. Earn an exclusive revenue share on every CEFR assessment referral.",
-      "provider": { "@type": "Organization", "name": "LingoGrade" }
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "name": "LingoGrade for Teachers & Tutors",
+          "url": "https://www.lingograde.com/teachers",
+          "description": "Partner with LingoGrade. Earn an exclusive revenue share on every CEFR assessment referral.",
+          "publisher": { "@type": "Organization", "name": "LingoGrade", "url": "https://www.lingograde.com" }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What if the assessment places my student lower than I suggested?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The report never evaluates your teaching. It evaluates the student's current spoken performance under real conditions. If the result is lower than expected, the report frames this as a starting point, not a judgement. When a student sees their real level in black and white, their motivation to work harder with you goes up, not down. The report literally recommends continued work with their current teacher as the path forward."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Will my students think I am just trying to earn from this?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Your students do not see your revenue share. What they see is a professional assessment tool that their teacher recommended — the same way a doctor recommends a blood test. You are recommending a diagnostic because it makes your teaching better. The revenue share is simply how we thank you for that recommendation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is this just another affiliate programme that pays pennies?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "This is not an affiliate programme — it is a genuine partnership. The revenue share is competitive and designed to reward partners who genuinely believe in the product. There are no tiers to unlock, no minimum thresholds, no expiry dates. Revenue share details are shared upon approval."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What if my students do not want to pay for an assessment?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "When a student googles 'language assessment' they see a price and hesitate. When their trusted teacher says 'I want you to take this assessment so I can build your next three months of lessons around real data' — that is not a purchase, that is a prescription. The students who book through teacher referrals have the highest completion rate and the highest satisfaction scores."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I know LingoGrade assessments meet CEFR standards?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Every assessment is conducted by a certified language professional using the authoritative CEFR framework — the same standard that governs Goethe-Institut, telc, and Cambridge examinations. Our assessments are calibrated to the European standards with detailed pattern analysis across grammar, vocabulary, fluency, coherence, and pronunciation — all grounded in specific examples from the student's own speech."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What does it cost me to join?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Nothing. There is no signup fee, no monthly charge, no minimum commitment. You sign up, you get your link, you start earning. If you refer zero students, it costs you nothing. If you refer fifty, you earn on all fifty. The risk is entirely ours."
+              }
+            }
+          ]
+        }
+      ]
     }
     </script>
     <link rel="icon" type="image/webp" href="/assets/mascot/marco-face-grad-v2.webp?v=3">
@@ -548,6 +606,28 @@
             font-size: 0.95rem; color: var(--ink-muted); line-height: 1.7;
         }
 
+        /* ============ TRUST NUMBERS ============ */
+        .trust-numbers {
+            padding: 4rem 2rem;
+            background: var(--parchment);
+        }
+        .trust-numbers-grid {
+            max-width: var(--max-w); margin: 0 auto;
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 2rem; text-align: center;
+        }
+        .trust-num-item .num {
+            font-family: var(--serif); font-size: 2.4rem;
+            color: var(--gold); line-height: 1.1;
+        }
+        .trust-num-item .label {
+            font-size: 0.88rem; color: var(--ink-muted);
+            margin-top: 0.3rem; line-height: 1.5;
+        }
+        @media (max-width: 768px) {
+            .trust-numbers-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        }
+
         /* ============ SOCIAL PROOF ============ */
         .proof-grid {
             display: grid; grid-template-columns: repeat(3, 1fr);
@@ -662,6 +742,7 @@
         .stagger-2 { transition-delay: 0.2s; }
         .stagger-3 { transition-delay: 0.3s; }
     </style>
+<script src="/js/cookie-consent.js"></script>
 </head>
 <body>
 
@@ -696,6 +777,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <p class="hero-proof fade-up stagger-3"><strong>Revenue share on every assessment</strong> &middot; No caps &middot; No minimums &middot; Paid monthly</p>
+        <p style="font-size:0.82rem;color:var(--ink-muted);margin-top:0.8rem;font-style:italic;" class="fade-up stagger-3">You are completely free to just look around first. No pressure — decide if and when it feels right.</p>
     </div>
 </section>
 
@@ -765,7 +847,7 @@
         <div class="cefr-shield">CEFR<br>A1–C2</div>
         <div class="cefr-text">
             <h3>Calibrated to the Council of Europe framework</h3>
-            <p>Every LingoGrade assessment maps spoken performance to the same CEFR standard that governs Europe's most recognised certification bodies. Your students receive a diagnostic grounded in the framework you already teach to.</p>
+            <p>Every assessment is conducted by a trained language professional with demonstrated proficiency in CEFR-aligned evaluation. Entry requirements: minimum C1 certification in the target language, 3+ years of teaching or assessment experience, and completion of our structured calibration exam covering all six CEFR levels across speaking, grammar, vocabulary, fluency, and pronunciation — before they evaluate a single student.</p>
         </div>
         <div class="cefr-badges">
             <div class="cefr-badge-item">
@@ -788,12 +870,25 @@
     </div>
 </div>
 
+<!-- NETWORK SNAPSHOT -->
+<div style="padding:1.8rem 2rem;background:var(--parchment-deep);border-top:1px solid rgba(15,25,35,0.04);border-bottom:1px solid rgba(15,25,35,0.04);" class="fade-up">
+    <div style="max-width:var(--max-w);margin:0 auto;display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;text-align:center;font-size:0.88rem;color:var(--ink-muted);">
+        <span><strong style="color:var(--gold);font-family:var(--serif);font-size:1.1rem;">47</strong> certified assessors</span>
+        <span style="color:rgba(15,25,35,0.15);">|</span>
+        <span><strong style="color:var(--gold);font-family:var(--serif);font-size:1.1rem;">23</strong> countries</span>
+        <span style="color:rgba(15,25,35,0.15);">|</span>
+        <span><strong style="color:var(--gold);font-family:var(--serif);font-size:1.1rem;">3</strong> spots per city</span>
+        <span style="color:rgba(15,25,35,0.15);">|</span>
+        <span style="font-style:italic;">By invitation only</span>
+    </div>
+</div>
+
 <!-- HOW IT WORKS -->
 <section class="how" id="how">
     <div class="section-inner">
         <span class="section-label fade-up">The partnership process</span>
         <h2 class="section-title fade-up stagger-1">From application to first payout</h2>
-        <p class="section-sub fade-up stagger-2">We accept a maximum of three language professionals per city to protect exclusivity. Here is the entire onboarding process.</p>
+        <p class="section-sub fade-up stagger-2">We accept a maximum of three language professionals per city to protect exclusivity. Fewer than 50 assessors are currently certified across our entire network. Here is the entire onboarding process.</p>
         <div class="how-steps">
             <div class="how-step fade-up">
                 <div class="step-num">01</div>
@@ -977,6 +1072,28 @@
     </div>
 </section>
 
+<!-- TRUST NUMBERS -->
+<section class="trust-numbers fade-up">
+    <div class="trust-numbers-grid">
+        <div class="trust-num-item">
+            <div class="num">1,200+</div>
+            <div class="label">Assessments delivered</div>
+        </div>
+        <div class="trust-num-item">
+            <div class="num">23</div>
+            <div class="label">Countries represented</div>
+        </div>
+        <div class="trust-num-item">
+            <div class="num">4.9/5</div>
+            <div class="label">Partner satisfaction</div>
+        </div>
+        <div class="trust-num-item">
+            <div class="num">12</div>
+            <div class="label">Languages assessed</div>
+        </div>
+    </div>
+</section>
+
 <!-- SOCIAL PROOF -->
 <section class="proof">
     <div class="section-inner">
@@ -1010,8 +1127,8 @@
 <!-- FINAL CTA -->
 <section class="final-cta" id="join">
     <div class="final-cta-inner">
-        <h2 class="fade-up">Every month without independent diagnostics <br>is a month your students plateau on guesswork</h2>
-        <p class="fade-up stagger-1">The teachers who partner with us stop losing students to vague progress and start retaining them with certified data. No application fee. No long-term commitment. No minimum referral targets &#8212; just a professional CEFR instrument that makes your teaching visibly, measurably better.</p>
+        <h2 class="fade-up">What would change if you had <br>independent diagnostics from day one?</h2>
+        <p class="fade-up stagger-1">Teachers who use certified CEFR data tell us their lesson planning gets sharper and their students stay longer. No application fee. No long-term commitment. No minimum referral targets &#8212; just a professional instrument that makes your teaching visibly, measurably better. And if it does not feel right, that is completely fine too.</p>
         <div class="fade-up stagger-2" style="background:var(--warm-white);border-radius:16px;padding:32px;border:1.5px solid var(--parchment-deep);max-width:560px;margin:32px auto 0;text-align:left;">
             <form id="partnerForm" style="display:flex;flex-direction:column;gap:14px;" onsubmit="return submitPartnerForm(event)">
                 <div>
@@ -1041,6 +1158,7 @@
                     <textarea name="message" rows="2" placeholder="Questions, ideas, how you heard about LingoGrade..." style="width:100%;padding:10px 14px;border:1.5px solid var(--parchment-deep);border-radius:8px;font-size:0.9375rem;font-family:var(--sans);background:white;outline:none;resize:vertical;transition:border 0.15s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--parchment-deep)'"></textarea>
                 </div>
                 <button type="submit" id="partnerBtn" style="padding:14px 32px;background:var(--ink);color:var(--parchment);border:none;border-radius:10px;font-size:1rem;font-weight:600;font-family:var(--sans);cursor:pointer;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 4px 16px rgba(15,25,35,0.15)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">Apply to Become a Partner</button>
+                <p style="font-size:0.78rem;color:var(--ink-muted);text-align:center;margin-top:8px;font-style:italic;">You are free to skip this entirely. The information will be here whenever you are ready.</p>
             </form>
             <div id="partnerSuccess" style="display:none;text-align:center;padding:32px 16px;">
                 <div style="font-size:2rem;margin-bottom:12px;">&#10003;</div>

@@ -8,7 +8,7 @@
 <meta property="og:title" content="Student Dashboard — LingoGrade">
 <meta property="og:image" content="https://www.lingograde.com/og-logo-v2.png">
 <meta property="og:type" content="website">
-<link rel="canonical" href="https://www.lingograde.com/dashboard.html">
+<link rel="canonical" href="https://www.lingograde.com/dashboard">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="icon" type="image/webp" href="/assets/mascot/marco-face-grad-v2.webp?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -95,6 +95,82 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
 .footer-links a { font-size: 0.8125rem; }
 .footer-copy { margin-top: 32px; font-size: 0.75rem; color: rgba(255,255,255,0.5); }
 
+/* ── Loading Overlay ── */
+.loading-overlay { position: fixed; inset: 0; background: var(--parchment); display: flex; align-items: center; justify-content: center; z-index: 300; }
+.spinner { width: 36px; height: 36px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.7s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── CEFR Badges ── */
+.badge { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; }
+.badge-cefr-a { background: var(--accent-bg); color: var(--accent); }
+.badge-cefr-b { background: var(--success-bg); color: var(--success); }
+.badge-cefr-c { background: #FFF8E1; color: #D4A017; }
+.badge-type { background: var(--parchment); color: var(--ink-soft); border: 1px solid var(--border); }
+.badge-pending { background: #FFF3E0; color: var(--warn); }
+.badge-submitted { background: var(--accent-bg); color: var(--accent); }
+.badge-reviewed { background: var(--success-bg); color: var(--success); }
+
+/* ── Assessments Table ── */
+.assess-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.assess-table th { text-align: left; font-size: 0.75rem; font-weight: 600; color: var(--ink-light); padding: 0 0 10px; text-transform: uppercase; letter-spacing: 0.05em; }
+.assess-table td { padding: 12px 0; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.assess-table tr:last-child td { border-bottom: none; }
+.assess-table .col-date { width: 30%; }
+.assess-table .col-lang { width: 30%; }
+.assess-table .col-cefr { width: 20%; }
+.assess-table .col-dl { width: 20%; text-align: right; }
+.btn-dl { display: inline-block; padding: 5px 14px; background: var(--accent); color: white; border-radius: 6px; font-size: 0.8rem; font-weight: 600; text-decoration: none; font-family: var(--font-body); transition: background 0.15s; }
+.btn-dl:hover { background: var(--accent-lt); }
+.empty-state { font-size: 0.875rem; color: var(--ink-light); padding: 12px 0; }
+
+/* ── Progress Card ── */
+.progress-lang { margin-bottom: 20px; }
+.progress-lang:last-child { margin-bottom: 0; }
+.progress-lang-name { font-size: 0.8rem; font-weight: 600; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+.progress-track { display: flex; align-items: center; gap: 0; flex-wrap: wrap; gap: 4px; }
+.progress-step { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.progress-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--border); }
+.progress-dot.achieved { background: var(--accent); }
+.progress-dot.current { background: var(--accent); box-shadow: 0 0 0 3px var(--accent-bg); }
+.progress-step-label { font-size: 0.7rem; color: var(--ink-light); }
+.progress-step.is-current .progress-step-label { color: var(--accent); font-weight: 600; }
+.progress-connector { width: 24px; height: 2px; background: var(--border); margin-bottom: 18px; flex-shrink: 0; }
+.progress-connector.achieved { background: var(--accent); }
+.progress-current-label { font-size: 0.8125rem; color: var(--ink-soft); margin-top: 10px; }
+.progress-current-label strong { color: var(--ink); }
+
+/* ── Homework ── */
+.hw-section-title { font-size: 0.75rem; font-weight: 700; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; margin-top: 4px; }
+.hw-item { padding: 14px 0; border-bottom: 1px solid var(--border); }
+.hw-item:last-child { border-bottom: none; }
+.hw-item-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.hw-item-title { font-size: 0.9rem; font-weight: 500; color: var(--ink); flex: 1; min-width: 120px; }
+.hw-countdown { font-size: 0.8rem; color: var(--ink-light); white-space: nowrap; }
+.hw-countdown.overdue { color: var(--error); font-weight: 600; }
+.hw-meta { font-size: 0.8rem; color: var(--ink-light); }
+.hw-feedback-toggle { font-size: 0.8rem; color: var(--accent); cursor: pointer; background: none; border: none; font-family: var(--font-body); padding: 0; margin-top: 6px; display: block; }
+.hw-feedback-toggle:hover { text-decoration: underline; }
+.hw-feedback-body { font-size: 0.85rem; color: var(--ink-soft); background: var(--parchment); border-radius: 8px; padding: 12px 14px; margin-top: 8px; display: none; line-height: 1.6; }
+.hw-feedback-body.open { display: block; }
+.hw-separator { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+
+/* ── Drag-Drop Upload ── */
+.upload-zone { border: 2px dashed var(--border); border-radius: 12px; padding: 28px 20px; text-align: center; cursor: pointer; transition: background 0.15s, border-color 0.15s; }
+.upload-zone:hover, .upload-zone.dragover { background: var(--accent-bg); border-color: var(--accent); }
+.upload-zone-text { font-size: 0.875rem; color: var(--ink-soft); margin-bottom: 10px; }
+.upload-zone-sub { font-size: 0.75rem; color: var(--ink-light); }
+.btn-file-pick { display: inline-block; margin-top: 12px; padding: 7px 18px; border: 1.5px solid var(--accent); border-radius: 7px; font-size: 0.8rem; font-weight: 600; color: var(--accent); cursor: pointer; font-family: var(--font-body); background: none; transition: all 0.15s; }
+.btn-file-pick:hover { background: var(--accent-bg); }
+.upload-preview { margin-top: 16px; padding: 12px 14px; background: var(--parchment); border-radius: 8px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.upload-preview-name { font-size: 0.875rem; color: var(--ink); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.upload-preview-size { font-size: 0.8rem; color: var(--ink-light); white-space: nowrap; }
+.btn-upload-confirm { padding: 7px 18px; background: var(--accent); color: white; border: none; border-radius: 7px; font-size: 0.8rem; font-weight: 600; font-family: var(--font-body); cursor: pointer; transition: background 0.15s; }
+.btn-upload-confirm:hover { background: var(--accent-lt); }
+.btn-upload-confirm:disabled { opacity: 0.5; cursor: not-allowed; }
+.upload-hw-select { margin-bottom: 12px; }
+.upload-progress { height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; margin-top: 10px; }
+.upload-progress-bar { height: 100%; background: var(--accent); border-radius: 2px; width: 0; transition: width 0.2s; }
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .brand-logo { font-size: 1.2rem; gap: 6px; }
@@ -109,10 +185,21 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
   .nav-inner { padding: 8px 16px; }
   .dashboard { padding: 90px 16px 40px; }
   .card { padding: 20px; }
+  .assess-table .col-date { width: 35%; }
+  .assess-table .col-lang { width: 30%; }
+  .assess-table .col-cefr { display: none; }
+  .assess-table th.col-cefr { display: none; }
+  .assess-table .col-dl { width: 35%; }
 }
 </style>
+<script src="/js/cookie-consent.js"></script>
 </head>
 <body>
+
+<!-- ── Loading Overlay ── -->
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="spinner"></div>
+</div>
 
 <!-- ── Navigation ── -->
 <nav class="nav">
@@ -134,16 +221,37 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
 </nav>
 
 <!-- ── Dashboard ── -->
-<div class="dashboard">
+<div class="dashboard" id="dashboardContent" style="display:none;">
   <div class="dashboard-header" style="display:flex;align-items:center;gap:16px;">
     <img src="assets/mascot/marco-logo-v6.1.webp" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;background:transparent;">
     <div>
-      <h1>Your Profile</h1>
-      <p>Manage your assessment preferences and personal details.</p>
+      <h1 id="dashboardGreeting">Your Dashboard</h1>
+      <p>Track your assessments, progress, and homework.</p>
     </div>
   </div>
 
-  <!-- ── Assessment Settings Card ── -->
+  <!-- ── Assessment History Card ── -->
+  <div class="card" id="cardAssessments">
+    <div class="card-title">Your Assessments</div>
+    <div class="card-desc">All your completed assessments.</div>
+    <div id="assessmentsContent"><div class="spinner" style="margin:8px 0;"></div></div>
+  </div>
+
+  <!-- ── Progress Card ── -->
+  <div class="card" id="cardProgress" style="display:none;">
+    <div class="card-title">Your Progress</div>
+    <div class="card-desc">How your language skills are developing.</div>
+    <div id="progressContent"></div>
+  </div>
+
+  <!-- ── Homework Card ── -->
+  <div class="card" id="cardHomework">
+    <div class="card-title">Homework</div>
+    <div class="card-desc">Submit your homework and track your progress.</div>
+    <div id="homeworkContent"><div class="spinner" style="margin:8px 0;"></div></div>
+  </div>
+
+  <!-- ── Profile Settings Card ── -->
   <div class="card">
     <div class="card-title">Assessment Settings</div>
     <div class="card-desc">These settings apply to your next assessment report.</div>
@@ -243,31 +351,380 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
 </footer>
 
 <script>
-// ── Load student profile and set default country ──
-(function loadProfile() {
-  fetch('https://app.lingograde.com/api/student/profile', {
-    credentials: 'include'
-  })
-  .then(function(r) { return r.ok ? r.json() : null; })
-  .then(function(data) {
-    if (!data) return;
-    var select = document.getElementById('displayCountry');
-    // Use display_country if set, otherwise fall back to country_of_residence
-    var country = data.display_country || data.country_of_residence || '';
-    if (country && select.querySelector('option[value="' + country + '"]')) {
-      select.value = country;
-    }
-    // Populate preferred name
-    if (data.preferred_name) {
-      document.getElementById('preferredName').value = data.preferred_name;
-    }
-    // Populate formality preference
-    if (data.formality_preference) {
-      document.getElementById('formalityPreference').value = data.formality_preference;
-    }
-  })
-  .catch(function() { /* Profile load failed silently — user can still select manually */ });
+// ── Helpers ──
+function showToast(message, type) {
+  var toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.className = 'toast ' + (type || '');
+  toast.classList.add('show');
+  setTimeout(function() { toast.classList.remove('show'); }, 3000);
+}
+
+function formatDate(iso) {
+  var d = new Date(iso);
+  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+}
+
+function cefrBadgeClass(level) {
+  if (!level) return 'badge-cefr-a';
+  var l = level.toUpperCase();
+  if (l.startsWith('A')) return 'badge-cefr-a';
+  if (l.startsWith('B')) return 'badge-cefr-b';
+  return 'badge-cefr-c';
+}
+
+// ── Auth Gate + Profile Load ──
+(function init() {
+  fetch('https://app.lingograde.com/api/student/profile', { credentials: 'include' })
+    .then(function(r) {
+      if (r.status === 401 || !r.ok) {
+        window.location.href = 'https://app.lingograde.com/login?redirect=dashboard';
+        return null;
+      }
+      return r.json();
+    })
+    .then(function(data) {
+      if (!data) return;
+      document.getElementById('loadingOverlay').style.display = 'none';
+      document.getElementById('dashboardContent').style.display = '';
+
+      var name = data.preferred_name || data.full_name || '';
+      if (name) {
+        document.getElementById('dashboardGreeting').textContent = 'Welcome back, ' + name.split(' ')[0] + '.';
+      }
+
+      var select = document.getElementById('displayCountry');
+      var country = data.display_country || data.country_of_residence || '';
+      if (country && select.querySelector('option[value="' + country + '"]')) {
+        select.value = country;
+      }
+      if (data.preferred_name) {
+        document.getElementById('preferredName').value = data.preferred_name;
+      }
+      if (data.formality_preference) {
+        document.getElementById('formalityPreference').value = data.formality_preference;
+      }
+
+      loadAssessments();
+      loadHomework();
+    })
+    .catch(function() {
+      window.location.href = 'https://app.lingograde.com/login?redirect=dashboard';
+    });
 })();
+
+// ── Assessment History ──
+var _assessments = [];
+
+function loadAssessments() {
+  fetch('https://app.lingograde.com/api/student/assessments', { credentials: 'include' })
+    .then(function(r) { return r.ok ? r.json() : { assessments: [] }; })
+    .then(function(data) {
+      _assessments = (data.assessments || []).slice().sort(function(a, b) {
+        return new Date(b.date) - new Date(a.date);
+      });
+      renderAssessments(_assessments);
+      renderProgress(_assessments);
+    })
+    .catch(function() {
+      _assessments = [];
+      renderAssessments([]);
+      renderProgress([]);
+    });
+}
+
+function renderAssessments(list) {
+  var el = document.getElementById('assessmentsContent');
+  if (!list.length) {
+    el.innerHTML = '<p class="empty-state">No assessments yet. Your first assessment will appear here.</p>';
+    return;
+  }
+  var rows = list.map(function(a) {
+    var cls = cefrBadgeClass(a.cefr_level);
+    return '<tr>' +
+      '<td class="col-date">' + formatDate(a.date) + '</td>' +
+      '<td class="col-lang">' + escHtml(a.language) + '</td>' +
+      '<td class="col-cefr"><span class="badge ' + cls + '">' + escHtml(a.cefr_level) + '</span></td>' +
+      '<td class="col-dl"><a class="btn-dl" href="' + escHtml(a.pdf_url) + '" target="_blank" rel="noopener">Download</a></td>' +
+      '</tr>';
+  }).join('');
+  el.innerHTML = '<table class="assess-table">' +
+    '<thead><tr>' +
+    '<th class="col-date">Date</th>' +
+    '<th class="col-lang">Language</th>' +
+    '<th class="col-cefr">Level</th>' +
+    '<th class="col-dl"></th>' +
+    '</tr></thead>' +
+    '<tbody>' + rows + '</tbody>' +
+    '</table>';
+}
+
+// ── Progress ──
+var CEFR_ORDER = ['A1','A2','B1','B2','C1','C2'];
+
+function renderProgress(list) {
+  var card = document.getElementById('cardProgress');
+  var el = document.getElementById('progressContent');
+  if (!list.length) { card.style.display = 'none'; return; }
+
+  var byLang = {};
+  list.forEach(function(a) {
+    if (!byLang[a.language]) byLang[a.language] = [];
+    byLang[a.language].push(a);
+  });
+
+  var langs = Object.keys(byLang);
+  var html = langs.map(function(lang) {
+    var entries = byLang[lang].slice().sort(function(a, b) { return new Date(a.date) - new Date(b.date); });
+    var achieved = entries.map(function(e) { return e.cefr_level.toUpperCase(); });
+    var latest = achieved[achieved.length - 1];
+    var latestIdx = CEFR_ORDER.indexOf(latest);
+
+    var steps = CEFR_ORDER.map(function(lvl, i) {
+      var isAchieved = i <= latestIdx;
+      var isCurrent = lvl === latest;
+      var dotCls = isCurrent ? 'progress-dot current' : (isAchieved ? 'progress-dot achieved' : 'progress-dot');
+      var stepCls = 'progress-step' + (isCurrent ? ' is-current' : '');
+      return '<div class="' + stepCls + '"><div class="' + dotCls + '"></div><div class="progress-step-label">' + lvl + '</div></div>' +
+        (i < CEFR_ORDER.length - 1 ? '<div class="progress-connector' + (isAchieved && i < latestIdx ? ' achieved' : '') + '"></div>' : '');
+    }).join('');
+
+    return '<div class="progress-lang">' +
+      '<div class="progress-lang-name">' + escHtml(lang) + '</div>' +
+      '<div class="progress-track">' + steps + '</div>' +
+      '<div class="progress-current-label">Current level: <strong>' + latest + '</strong>' +
+        (entries.length > 1 ? ' &mdash; ' + entries.length + ' assessments completed' : '') +
+      '</div>' +
+      '</div>';
+  }).join('');
+
+  el.innerHTML = html;
+  card.style.display = '';
+}
+
+// ── Homework ──
+var _pendingHw = [];
+var _countdownInterval = null;
+
+function loadHomework() {
+  fetch('https://app.lingograde.com/api/student/homework', { credentials: 'include' })
+    .then(function(r) { return r.ok ? r.json() : { homework: [] }; })
+    .then(function(data) {
+      renderHomework(data.homework || []);
+    })
+    .catch(function() {
+      renderHomework([]);
+    });
+}
+
+function renderHomework(list) {
+  var el = document.getElementById('homeworkContent');
+  if (_countdownInterval) { clearInterval(_countdownInterval); _countdownInterval = null; }
+
+  if (!list.length) {
+    el.innerHTML = '<p class="empty-state">No homework assigned yet.</p>';
+    _pendingHw = [];
+    return;
+  }
+
+  var pending = list.filter(function(h) { return h.status === 'pending'; });
+  var past = list.filter(function(h) { return h.status !== 'pending'; })
+    .slice().sort(function(a, b) { return new Date(b.submitted_at) - new Date(a.submitted_at); });
+
+  _pendingHw = pending;
+
+  var html = '';
+
+  if (pending.length) {
+    html += '<div class="hw-section-title">Pending</div>';
+    html += pending.map(function(h) {
+      return '<div class="hw-item" id="hwitem-' + escHtml(h.id) + '">' +
+        '<div class="hw-item-row">' +
+        '<span class="hw-item-title">' + escHtml(h.title) + '</span>' +
+        '<span class="badge badge-type">Type ' + escHtml(h.type) + '</span>' +
+        '<span class="badge badge-pending">Pending</span>' +
+        '<span class="hw-countdown" id="countdown-' + escHtml(h.id) + '"></span>' +
+        '</div>' +
+        '</div>';
+    }).join('');
+  }
+
+  if (pending.length) {
+    html += '<hr class="hw-separator">';
+    html += renderUploadZone(pending);
+  }
+
+  if (past.length) {
+    if (pending.length) html += '<hr class="hw-separator">';
+    html += '<div class="hw-section-title">Past Submissions</div>';
+    html += past.map(function(h) {
+      var statusCls = h.status === 'reviewed' ? 'badge-reviewed' : 'badge-submitted';
+      var statusLabel = h.status === 'reviewed' ? 'Reviewed' : 'Submitted';
+      var feedbackHtml = '';
+      if (h.status === 'reviewed' && h.feedback) {
+        var fid = 'fb-' + h.id;
+        feedbackHtml = '<button class="hw-feedback-toggle" onclick="toggleFeedback(\'' + fid + '\', this)">Show feedback</button>' +
+          '<div class="hw-feedback-body" id="' + fid + '">' + escHtml(h.feedback) + '</div>';
+      }
+      return '<div class="hw-item">' +
+        '<div class="hw-item-row">' +
+        '<span class="hw-item-title">' + escHtml(h.title) + '</span>' +
+        '<span class="badge badge-type">Type ' + escHtml(h.type) + '</span>' +
+        '<span class="badge ' + statusCls + '">' + statusLabel + '</span>' +
+        (h.submitted_at ? '<span class="hw-meta">' + formatDate(h.submitted_at) + '</span>' : '') +
+        '</div>' +
+        feedbackHtml +
+        '</div>';
+    }).join('');
+  }
+
+  el.innerHTML = html;
+
+  if (pending.length) {
+    updateCountdowns();
+    _countdownInterval = setInterval(updateCountdowns, 60000);
+
+    var zone = document.getElementById('uploadZone');
+    if (zone) {
+      zone.addEventListener('dragover', function(e) { e.preventDefault(); zone.classList.add('dragover'); });
+      zone.addEventListener('dragleave', function() { zone.classList.remove('dragover'); });
+      zone.addEventListener('drop', function(e) {
+        e.preventDefault();
+        zone.classList.remove('dragover');
+        var f = e.dataTransfer.files[0];
+        if (f) handleFileSelect(f);
+      });
+    }
+  }
+}
+
+function renderUploadZone(pending) {
+  var options = pending.map(function(h) {
+    return '<option value="' + escHtml(h.id) + '">' + escHtml(h.title) + ' (Type ' + escHtml(h.type) + ')</option>';
+  }).join('');
+
+  return '<div>' +
+    '<div class="hw-section-title">Submit Homework</div>' +
+    (pending.length > 1
+      ? '<div class="form-group upload-hw-select"><label class="form-label" for="hwSelect">Select assignment</label>' +
+        '<select class="form-select" id="hwSelect">' + options + '</select></div>'
+      : '<input type="hidden" id="hwSelect" value="' + escHtml(pending[0].id) + '">') +
+    '<div class="upload-zone" id="uploadZone" onclick="document.getElementById(\'fileInput\').click()">' +
+    '<div class="upload-zone-text">Drag and drop your file here</div>' +
+    '<div class="upload-zone-sub">PDF, DOCX, DOC, JPG, PNG &mdash; max 10 MB</div>' +
+    '<button class="btn-file-pick" type="button" onclick="event.stopPropagation();document.getElementById(\'fileInput\').click()">Choose File</button>' +
+    '</div>' +
+    '<input type="file" id="fileInput" accept=".pdf,.docx,.doc,.jpg,.jpeg,.png" style="display:none" onchange="handleFileInputChange(this)">' +
+    '<div id="uploadPreview" style="display:none;" class="upload-preview">' +
+    '<span class="upload-preview-name" id="uploadPreviewName"></span>' +
+    '<span class="upload-preview-size" id="uploadPreviewSize"></span>' +
+    '<button class="btn-upload-confirm" id="btnUpload" type="button" onclick="doUpload()">Upload</button>' +
+    '</div>' +
+    '<div class="upload-progress" id="uploadProgress" style="display:none;"><div class="upload-progress-bar" id="uploadProgressBar"></div></div>' +
+    '</div>';
+}
+
+var _selectedFile = null;
+
+function handleFileInputChange(input) {
+  if (input.files && input.files[0]) handleFileSelect(input.files[0]);
+}
+
+function handleFileSelect(file) {
+  if (file.size > 10 * 1024 * 1024) {
+    showToast('File is too large. Maximum size is 10 MB.', 'error');
+    return;
+  }
+  _selectedFile = file;
+  document.getElementById('uploadPreviewName').textContent = file.name;
+  document.getElementById('uploadPreviewSize').textContent = formatBytes(file.size);
+  document.getElementById('uploadPreview').style.display = 'flex';
+}
+
+function formatBytes(bytes) {
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+  return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+}
+
+function doUpload() {
+  if (!_selectedFile) return;
+  var hwId = document.getElementById('hwSelect').value;
+  if (!hwId) { showToast('Please select an assignment.', 'error'); return; }
+
+  var btn = document.getElementById('btnUpload');
+  btn.disabled = true;
+  btn.textContent = 'Uploading...';
+
+  var progressWrap = document.getElementById('uploadProgress');
+  var progressBar = document.getElementById('uploadProgressBar');
+  progressWrap.style.display = 'block';
+  progressBar.style.width = '0';
+
+  var formData = new FormData();
+  formData.append('file', _selectedFile);
+  formData.append('homework_id', hwId);
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'https://app.lingograde.com/api/student/homework/upload');
+  xhr.withCredentials = true;
+
+  xhr.upload.onprogress = function(e) {
+    if (e.lengthComputable) {
+      progressBar.style.width = Math.round((e.loaded / e.total) * 100) + '%';
+    }
+  };
+
+  xhr.onload = function() {
+    progressWrap.style.display = 'none';
+    btn.disabled = false;
+    btn.textContent = 'Upload';
+    _selectedFile = null;
+    if (xhr.status >= 200 && xhr.status < 300) {
+      showToast('Homework submitted successfully.', 'success');
+      loadHomework();
+    } else {
+      showToast('Upload failed. Please try again.', 'error');
+    }
+  };
+
+  xhr.onerror = function() {
+    progressWrap.style.display = 'none';
+    btn.disabled = false;
+    btn.textContent = 'Upload';
+    showToast('Upload failed. Please try again.', 'error');
+  };
+
+  xhr.send(formData);
+}
+
+function updateCountdowns() {
+  var now = Date.now();
+  _pendingHw.forEach(function(h) {
+    var el = document.getElementById('countdown-' + h.id);
+    if (!el) return;
+    var deadline = new Date(h.deadline).getTime();
+    var diff = deadline - now;
+    if (diff <= 0) {
+      el.textContent = 'Overdue';
+      el.classList.add('overdue');
+    } else {
+      var totalMins = Math.floor(diff / 60000);
+      var hrs = Math.floor(totalMins / 60);
+      var mins = totalMins % 60;
+      el.textContent = hrs + 'h ' + mins + 'm remaining';
+      el.classList.remove('overdue');
+    }
+  });
+}
+
+function toggleFeedback(id, btn) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  el.classList.toggle('open');
+  btn.textContent = el.classList.contains('open') ? 'Hide feedback' : 'Show feedback';
+}
 
 // ── Save profile fields ──
 function saveDisplayCountry() {
@@ -311,13 +768,10 @@ function saveDisplayCountry() {
   });
 }
 
-// ── Toast notification ──
-function showToast(message, type) {
-  var toast = document.getElementById('toast');
-  toast.textContent = message;
-  toast.className = 'toast ' + (type || '');
-  toast.classList.add('show');
-  setTimeout(function() { toast.classList.remove('show'); }, 3000);
+// ── XSS-safe escape ──
+function escHtml(str) {
+  if (str == null) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 </script>
 <script src="js/shield.js" defer></script>
