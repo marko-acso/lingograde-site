@@ -152,13 +152,15 @@
 
     var silenceTimer = null;
 
+    var preRecordingText = '';
+
     recognition.onresult = function (e) {
       clearTimeout(silenceTimer);
       var transcript = '';
       for (var i = 0; i < e.results.length; i++) {
         transcript += e.results[i][0].transcript;
       }
-      textarea.value += (textarea.value ? ' ' : '') + transcript;
+      textarea.value = preRecordingText + (preRecordingText ? ' ' : '') + transcript;
       textarea.dispatchEvent(new Event('input'));
 
       // Auto-stop after 60s of silence
@@ -179,6 +181,7 @@
 
   function startRecording() {
     if (!recognition) return;
+    preRecordingText = textarea.value;
     // Set language for recognition if selected
     if (selectedLang) {
       var langMap = { en: 'en-US', de: 'de-DE', fr: 'fr-FR', es: 'es-ES', it: 'it-IT', ru: 'ru-RU', uk: 'uk-UA', zh: 'zh-CN', ar: 'ar-SA', tr: 'tr-TR', pt: 'pt-PT', pl: 'pl-PL', hu: 'hu-HU', ro: 'ro-RO', bg: 'bg-BG', sr: 'sr-RS', hr: 'hr-HR', sq: 'sq-AL', nl: 'nl-NL', sv: 'sv-SE', no: 'nb-NO', da: 'da-DK', fi: 'fi-FI', ja: 'ja-JP', ko: 'ko-KR', hi: 'hi-IN', fa: 'fa-IR', hy: 'hy-AM' };
