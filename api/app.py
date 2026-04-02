@@ -33,6 +33,7 @@ load_dotenv()
 # ── Database + student dashboard ──
 from db_pool import init_pool, get_cursor
 from student_routes import student_bp
+from dashboard_routes import dashboard_bp
 from auth import require_auth
 
 app = Flask(__name__)
@@ -48,6 +49,7 @@ CORS(
 # Init DB pool + register student dashboard blueprint
 init_pool(app)
 app.register_blueprint(student_bp)
+app.register_blueprint(dashboard_bp)
 
 stripe.api_key = os.environ["STRIPE_SECRET_KEY"]
 STRIPE_WEBHOOK_SECRET = os.environ.get("STRIPE_WEBHOOK_SECRET", "")

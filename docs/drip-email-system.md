@@ -19,12 +19,15 @@
 10. [Day 10 — Silence](#10-day-10--silence)
 11. [Day 30 — Value Newsletter](#11-day-30--value-newsletter)
 12. [Week 8 — Reassessment Window](#12-week-8--reassessment-window)
-13. [24-Language Matrix](#13-24-language-matrix)
-14. [Discount Ladder](#14-discount-ladder)
-15. [Personalisation Variables](#15-personalisation-variables)
-16. [Automation Rules](#16-automation-rules)
-17. [Anti-Patterns](#17-anti-patterns)
-18. [Metrics & Success Criteria](#18-metrics--success-criteria)
+13. [Partner Onboarding Sequence](#13-partner-onboarding-sequence)
+14. [Subscriber Welcome + Schedule](#14-subscriber-welcome--schedule)
+15. [Homework Delivery Email](#15-homework-delivery-email)
+16. [24-Language Matrix](#16-24-language-matrix)
+17. [Discount Ladder](#17-discount-ladder)
+18. [Personalisation Variables](#18-personalisation-variables)
+19. [Automation Rules](#19-automation-rules)
+20. [Anti-Patterns](#20-anti-patterns)
+21. [Metrics & Success Criteria](#21-metrics--success-criteria)
 
 ---
 
@@ -52,6 +55,28 @@ Every email LingoGrade sends must pass three tests:
 - "Don't forget!" (Implies they're forgetful. Patronising.)
 - Any email with more than one CTA. One email, one action, one decision.
 - Any email longer than 200 words in the body.
+
+### Lozanov Language Rule
+
+Every email is student-facing copy. The same language rules that govern reports apply here:
+
+- **Never use "error," "mistake," "wrong," "fail," or "weakness."** Use "pattern," "focus area," "developing structure," or "growth point."
+- **Never frame the student's level as a deficit.** "Your B1 assessment" — not "You scored B1" or "You're still at B1."
+- This applies to all 24 language variants. Translators must be briefed: the target-language equivalent of "error" is equally banned.
+- If `{specific_pattern_reference}` or `{one_specific_finding}` pulls text containing banned words from the report system, the variable must be filtered before injection. Fallback to generic phrasing rather than sending banned language.
+
+### Berne Tone Rule
+
+Every email operates from **Adult ego state** — factual, calm, respectful of the reader's autonomy. The reader is addressed as an equal making their own decisions, never as a child being guided.
+
+| Banned (Parent → Child) | Required (Adult → Adult) |
+|--------------------------|--------------------------|
+| "We're so proud of your progress!" | "Your patterns have shifted." |
+| "Don't worry if you're not ready yet." | "Available whenever you decide." |
+| "We know this can feel overwhelming." | "Take your time with it." |
+| "Great job booking your assessment!" | "Your session is confirmed." |
+
+If an email draft reads like a teacher praising a student or a parent reassuring a child, rewrite it. The student is an adult. Speak to them like one.
 
 ---
 
@@ -240,7 +265,7 @@ LingoGrade
 
 **Timing:** 120 hours after Day 0.
 
-**Discount:** 10% off 2x Homework Bundle (59.90 → 53.90).
+**Discount:** 10% off 2x Homework Bundle (59.90 → 53.95).
 
 **Subject line template:**
 
@@ -401,7 +426,214 @@ LingoGrade
 
 ---
 
-## 13. 24-Language Matrix
+## 13. Partner Onboarding Sequence
+
+**Trigger:** Partner signup completed.
+
+**Timing:** Immediately upon partner account activation.
+
+### Email 1 — Welcome + Dashboard Access (Day 0)
+
+**Subject line:** `Your partner dashboard is live`
+
+**Body:**
+
+```
+Hi {first_name},
+
+Your partner account is active. Here is your dashboard: {dashboard_link}
+
+Inside you will find:
+- Your personal referral link (live now — share it anywhere)
+- Sticker order tracking (if applicable)
+- Earnings and referral history
+
+Your referral link works immediately. Every assessment booked through it is tracked and credited to your account.
+
+If anything in the dashboard is unclear, reply to this email.
+
+{partner_manager_name}
+LingoGrade Partners
+```
+
+**Rules:**
+- One CTA: the dashboard link. No product upsells.
+- No "congratulations" or "welcome aboard" — Adult-to-Adult. They signed up; now here are the tools.
+- Sender: partner manager name, not "LingoGrade Team."
+
+### Email 2 — First Referral Tips (Day 3)
+
+**Subject line:** `Three ways partners get their first referral`
+
+**Body:**
+
+```
+Hi {first_name},
+
+Partners who earn first tend to do one of three things:
+
+1. Share the referral link in a class group chat (WhatsApp, Telegram, or similar).
+2. Mention LingoGrade during a lesson when a student asks about their level.
+3. Place a sticker where students wait — lobby, hallway, co-working space.
+
+Your link: {referral_link}
+
+None of these require a pitch. The link does the explaining.
+
+If you have questions about how referrals are tracked, reply here.
+
+{partner_manager_name}
+LingoGrade Partners
+```
+
+**Rules:**
+- Practical, not motivational. No "you've got this" or "we believe in you."
+- Three concrete actions, not abstract strategy.
+- BYAF implied: the list is a menu, not a mandate.
+
+### Email 3 — Sticker Placement Guide (Day 7)
+
+**Subject line:** `Where stickers work best`
+
+**Body:**
+
+```
+Hi {first_name},
+
+If you ordered stickers, here is what the data shows:
+
+- Eye-level surfaces near seating (cafés, waiting areas) get the most scans.
+- Smooth, clean surfaces hold longest — glass, laminate, painted walls.
+- One sticker per location is enough. Clustering reduces scans.
+
+Your sticker tracking is live in your dashboard. Every scan is logged with location and timestamp.
+
+If you did not order stickers, your referral link covers the same ground digitally.
+
+{partner_manager_name}
+LingoGrade Partners
+```
+
+**Rules:**
+- Only sent if partner has sticker order OR after Day 3 email. Suppressed if partner unsubscribed.
+- No pressure to order stickers. Digital referral link is positioned as equally valid.
+- Data-driven framing ("what the data shows"), not opinion.
+- This is the last partner onboarding email. Sequence ends here. Further communication is monthly partner newsletter only.
+
+---
+
+## 14. Subscriber Welcome + Schedule
+
+**Trigger:** Subscription started (Weekly or Complete tier).
+
+**Timing:** Immediately upon subscription activation.
+
+### Email 1 — Welcome + What Happens Next (Day 0)
+
+**Subject line:** `Your {subscription_tier} subscription is active`
+
+**Body:**
+
+```
+Hi {first_name},
+
+Your {subscription_tier} subscription is now active. Here is what happens next:
+
+{if Weekly}
+- One session per week, same assessor, same time slot.
+- Your first session is {first_session_date} at {first_session_time}.
+- Homework is included — it arrives within 55 minutes of each session.
+- Flashcard app premium access is active in your dashboard.
+{/if}
+
+{if Complete}
+- Sessions scheduled per your selected cadence.
+- Full assessment + homework + flashcard premium + reassessment — all included.
+- Your first session is {first_session_date} at {first_session_time}.
+- Your reassessment is pre-booked at the 8-week mark.
+{/if}
+
+Calendar invite attached. Your dashboard shows your full schedule: {dashboard_link}
+
+If you need to reschedule, reply to this email at least 24 hours before your session.
+
+{assessor_first_name}
+LingoGrade
+```
+
+**Rules:**
+- Conditional content based on subscription tier. Only show what applies.
+- Calendar invite attached as .ics file — reduce friction, do not make them find the booking manually.
+- Sender: assigned assessor, not "LingoGrade Team." The subscriber has a named person.
+- No upsell. They already bought the top tier. Respect the purchase.
+- One CTA: dashboard link.
+
+### Email 2 — After First Session (Day 1 post-session)
+
+**Subject line:** `Your first session report`
+
+**Body:**
+
+```
+Hi {first_name},
+
+Your report from {session_date} is attached.
+
+{if homework_included}
+Your homework exercise is in progress and will arrive within 55 minutes.
+{/if}
+
+Your next session: {next_session_date} at {next_session_time}.
+
+If anything in the report needs clarification, reply here.
+
+{assessor_first_name}
+LingoGrade
+```
+
+**Rules:**
+- Transactional. Report delivery + next session reminder.
+- No commentary on performance. The report speaks for itself.
+- This template repeats after every session in the subscription. Keep it identical — predictability is a feature.
+- Maximum 60 words in body.
+
+---
+
+## 15. Homework Delivery Email
+
+**Trigger:** Homework exercise completed by assessor (within 55-minute SLA).
+
+**Timing:** Immediately upon homework completion.
+
+**Subject line:** `Your {language} homework corrections`
+
+**Body:**
+
+```
+Hi {first_name},
+
+Your homework corrections are attached.
+
+The exercise focused on {homework_focus_area}. The corrections include specific notes on each pattern — read through them at your own pace.
+
+If anything in the corrections is unclear, reply to this email. We will clarify within 24 hours.
+
+{assessor_first_name}
+LingoGrade
+```
+
+**Rules:**
+- Transactional only. No upsell. No "ready for more?" No mention of other products.
+- `{homework_focus_area}` pulled from the homework record — e.g., "dative prepositions" or "subjunctive usage." If unavailable, use: "the patterns identified in your assessment."
+- Corrections attached as PDF. No "click here to view."
+- Sender: the assessor who corrected the homework.
+- Maximum 80 words in body.
+- Lozanov rule applies: corrections document must never use "error," "mistake," or "wrong." Use "pattern," "focus area," "alternative structure."
+- No follow-up email after this. The homework is delivered; the student works with it on their own terms.
+
+---
+
+## 16. 24-Language Matrix
 
 All emails are sent in the student's native language (not the assessed language). The assessed language is referenced by name within the email.
 
@@ -409,30 +641,30 @@ All emails are sent in the student's native language (not the assessed language)
 
 | # | Language | Code | Formality | Tip Amounts |
 |---|----------|------|-----------|-------------|
-| 1 | German | de | Informal (du) | 5/10/20 |
-| 2 | English | en | Neutral | 5/10/20 |
-| 3 | French | fr | Formal (vous) | 5/10/20 |
-| 4 | Spanish | es | Informal (tú) | 5/10/20 |
-| 5 | Italian | it | Informal (tu) | 5/10/20 |
-| 6 | Portuguese | pt | Informal (você) | 5/10/20 |
-| 7 | Russian | ru | Informal (ты) | 5/10/20 |
-| 8 | Ukrainian | uk | Informal (ти) | 5/10/20 |
-| 9 | Serbian | sr | Informal (ти) | 5/10/20 |
-| 10 | Croatian | hr | Informal (ti) | 5/10/20 |
-| 11 | Bulgarian | bg | Informal (ти) | 5/10/20 |
-| 12 | Romanian | ro | Informal (tu) | 5/10/20 |
-| 13 | Polish | pl | Informal (ty) | 5/10/20 |
-| 14 | Turkish | tr | Formal (siz) | 5/10/20 |
-| 15 | Hungarian | hu | Formal (Ön) | 5/10/20 |
-| 16 | Dutch | nl | Informal (je) | 5/10/20 |
-| 17 | Swedish | sv | Informal (du) | 5/10/20 |
-| 18 | Norwegian | no | Informal (du) | 5/10/20 |
-| 19 | Danish | da | Informal (du) | 5/10/20 |
-| 20 | Finnish | fi | Informal (sinä) | 5/10/20 |
-| 21 | Chinese | zh | Formal (您) | 8/18/88 |
-| 22 | Japanese | ja | Formal (です/ます) | 5/10/20 |
-| 23 | Korean | ko | Formal (존댓말) | 5/10/20 |
-| 24 | Arabic | ar | Formal (أنتم) | 5/10/20 |
+| 1 | German | de | Informal (du) | 20/10/5 |
+| 2 | English | en | Neutral | 20/10/5 |
+| 3 | French | fr | Formal (vous) | 20/10/5 |
+| 4 | Spanish | es | Informal (tú) | 20/10/5 |
+| 5 | Italian | it | Informal (tu) | 20/10/5 |
+| 6 | Portuguese | pt | Informal (você) | 20/10/5 |
+| 7 | Russian | ru | Informal (ты) | 20/10/5 |
+| 8 | Ukrainian | uk | Informal (ти) | 20/10/5 |
+| 9 | Serbian | sr | Informal (ти) | 20/10/5 |
+| 10 | Croatian | hr | Informal (ti) | 20/10/5 |
+| 11 | Bulgarian | bg | Informal (ти) | 20/10/5 |
+| 12 | Romanian | ro | Informal (tu) | 20/10/5 |
+| 13 | Polish | pl | Informal (ty) | 20/10/5 |
+| 14 | Turkish | tr | Formal (siz) | 20/10/5 |
+| 15 | Hungarian | hu | Formal (Ön) | 20/10/5 |
+| 16 | Dutch | nl | Informal (je) | 20/10/5 |
+| 17 | Swedish | sv | Informal (du) | 20/10/5 |
+| 18 | Norwegian | no | Informal (du) | 20/10/5 |
+| 19 | Danish | da | Informal (du) | 20/10/5 |
+| 20 | Finnish | fi | Informal (sinä) | 20/10/5 |
+| 21 | Chinese | zh | Formal (您) | 88/18/8 |
+| 22 | Japanese | ja | Formal (です/ます) | 20/10/5 |
+| 23 | Korean | ko | Formal (존댓말) | 20/10/5 |
+| 24 | Arabic | ar | Formal (أنتم) | 20/10/5 |
 
 ### Translation Rules
 
@@ -454,13 +686,13 @@ All emails are sent in the student's native language (not the assessed language)
 
 ---
 
-## 14. Discount Ladder
+## 17. Discount Ladder
 
 | Day | Product | Discount | Example (EUR) |
 |-----|---------|----------|---------------|
 | 1 | Homework Check | 20% | 29.95 → 23.95 |
 | 3 | Reassessment | 15% | 139.95 → 118.95 |
-| 5 | 2x Homework Bundle | 10% | 59.90 → 53.90 |
+| 5 | 2x Homework Bundle | 10% | 59.90 → 53.95 |
 | 7 | Lesson intro | 0% | 89.95 (full price) |
 | 30+ | Everything | 0% | Full price permanently |
 
@@ -483,7 +715,7 @@ All emails are sent in the student's native language (not the assessed language)
 
 ---
 
-## 15. Personalisation Variables
+## 18. Personalisation Variables
 
 ### Required Variables (must populate or suppress email)
 
@@ -516,7 +748,7 @@ If a required variable cannot be populated:
 
 ---
 
-## 16. Automation Rules
+## 19. Automation Rules
 
 ### Sequence Entry
 
@@ -569,7 +801,7 @@ IF rate_limit_exceeded:
 
 ---
 
-## 17. Anti-Patterns
+## 20. Anti-Patterns
 
 ### Things That Will Never Exist in This System
 
@@ -595,7 +827,7 @@ Duolingo's retention model is built on guilt, streaks, and FOMO. LingoGrade's mo
 
 ---
 
-## 18. Metrics & Success Criteria
+## 21. Metrics & Success Criteria
 
 ### What We Measure
 

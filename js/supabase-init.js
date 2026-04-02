@@ -11,9 +11,8 @@
   'use strict';
 
   // ── Config ──
-  // Replace these with your actual Supabase project values
-  var SUPABASE_URL  = 'https://YOUR_PROJECT.supabase.co';
-  var SUPABASE_ANON = 'YOUR_ANON_KEY';
+  var SUPABASE_URL  = 'https://sbfjhsfvsbyjguplywfj.supabase.co';
+  var SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNiZmpoc2Z2c2J5amd1cGx5d2ZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM1Nzg3ODgsImV4cCI6MjA4OTE1NDc4OH0.i9Wua_EZWY-Vvr8860rAIaN3uN74M4MHDsKEgyQMKfQ';
 
   if (typeof window.supabase !== 'undefined') return; // already initialized
 

@@ -750,6 +750,39 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
 .btn-accessory:hover { background: #1d4f8a; transform: translateY(-1px); }
 .safety-valve { font-size: 0.75rem; color: var(--ink-light); margin-top: 10px; font-style: italic; }
 
+/* Accessory image */
+.accessory-img { width: 100%; max-width: 180px; height: 180px; object-fit: contain; margin: 0 auto 16px; display: block; border-radius: 12px; }
+
+/* MOST CHOSEN badge */
+.accessory-card { position: relative; }
+.most-chosen-badge {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--accent); color: #fff; font-size: 0.6875rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 16px;
+  border-radius: 20px; white-space: nowrap; z-index: 2;
+}
+
+/* Voss intro */
+.voss-label { font-size: 0.875rem; color: var(--ink-light); text-align: center; max-width: 480px; margin: 4px auto 0; font-style: italic; }
+
+/* Tip row */
+.tip-row { display: flex; gap: 8px; justify-content: center; margin-top: 12px; }
+.tip-btn {
+  padding: 6px 14px; border-radius: 8px; font-size: 0.8125rem; font-weight: 600;
+  background: transparent; border: 1.5px solid var(--border); color: var(--ink-soft);
+  cursor: pointer; transition: all 0.15s; text-decoration: none;
+}
+.tip-btn:hover { border-color: var(--accent); color: var(--accent); }
+.tip-label { font-size: 0.75rem; color: var(--ink-light); text-align: center; margin-top: 6px; }
+
+/* Map preview label */
+.map-preview-label {
+  position: absolute; top: 12px; right: 12px; z-index: 600;
+  background: rgba(30,30,30,0.85); color: var(--ink-light); font-size: 0.6875rem;
+  font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 4px 12px; border-radius: 8px; backdrop-filter: blur(4px);
+}
+
 /* ── Sticker Map ── */
 .sticker-map-wrap { border-radius: 16px; overflow: hidden; border: 2px solid var(--border); margin-top: 32px; position: relative; }
 #sticker-map { height: 420px; width: 100%; background: #1a1a2e; }
@@ -962,11 +995,11 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
     <!-- Trust strip (AIDA: Attention → credibility) -->
     <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-top:24px;padding:16px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
       <div style="text-align:center;">
-        <div style="font-family:var(--font-display);font-size:1.25rem;color:var(--accent);">500+</div>
-        <div style="font-size:0.75rem;color:var(--ink-light);">Assessments completed</div>
+        <div style="font-family:var(--font-display);font-size:1.25rem;color:var(--accent);">1,200+</div>
+        <div style="font-size:0.75rem;color:var(--ink-light);">Assessments delivered</div>
       </div>
       <div style="text-align:center;">
-        <div style="font-family:var(--font-display);font-size:1.25rem;color:var(--accent);">4.8</div>
+        <div style="font-family:var(--font-display);font-size:1.25rem;color:var(--accent);">4.9/5</div>
         <div style="font-size:0.75rem;color:var(--ink-light);">Average rating</div>
       </div>
       <div style="text-align:center;">
@@ -974,7 +1007,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
         <div style="font-size:0.75rem;color:var(--ink-light);">Languages</div>
       </div>
       <div style="text-align:center;">
-        <div style="font-family:var(--font-display);font-size:1.25rem;color:var(--accent);">14</div>
+        <div style="font-family:var(--font-display);font-size:1.25rem;color:var(--accent);">23</div>
         <div style="font-size:0.75rem;color:var(--ink-light);">Countries</div>
       </div>
     </div>
@@ -1589,38 +1622,58 @@ if (window._lgIsCNY) {
 <section class="section" id="accessories">
   <div class="section-inner">
     <div class="section-label">Accessories</div>
-    <h2 class="section-title" style="text-align:center;">The things that make it yours</h2>
-    <p style="color:var(--ink-soft);font-size:1rem;text-align:center;max-width:560px;margin:0 auto;">Physical items that become part of your daily routine. Take a look around.</p>
+    <h2 class="section-title" style="text-align:center;">Wear the owl. Own the vibe.</h2>
+    <p style="color:var(--ink-soft);font-size:1rem;text-align:center;max-width:560px;margin:0 auto;">Things that become part of your daily routine. Take a look around.</p>
+    <p class="voss-label">You probably don't need another accessory&hellip; but these aren't just accessories.</p>
 
     <div class="accessories-grid">
       <!-- LingoGrade Cap -->
       <div class="accessory-card">
-        <div class="accessory-icon">&#129506;</div>
+        <img src="assets/mascot/sliced-final/gpt-marco-traveler.png" alt="Marco the owl wearing a cap" class="accessory-img" loading="lazy">
         <h3>LingoGrade Cap</h3>
         <p>Embroidered Marco logo on navy cotton twill. Adjustable strap. One size fits all.</p>
         <div class="accessory-price" data-price="29.95">EUR 29.95</div>
         <a href="https://buy.stripe.com/5kQ4gz8Hqcf90Ze6MJgUM08" target="_blank" rel="noopener" class="btn-accessory">Take a closer look</a>
         <p class="safety-valve">No rush &mdash; it will be here whenever you are ready.</p>
+        <div class="tip-row">
+          <a href="https://buy.stripe.com/tip20" class="tip-btn" target="_blank" rel="noopener">+EUR 20</a>
+          <a href="https://buy.stripe.com/tip10" class="tip-btn" target="_blank" rel="noopener">+EUR 10</a>
+          <a href="https://buy.stripe.com/tip5" class="tip-btn" target="_blank" rel="noopener">+EUR 5</a>
+        </div>
+        <p class="tip-label">Leave a tip for the team</p>
       </div>
 
       <!-- Marco Bracelet -->
       <div class="accessory-card">
-        <div class="accessory-icon">&#128141;</div>
+        <span class="most-chosen-badge">Most chosen</span>
+        <img src="assets/mascot/sliced-final/gpt-marco-happy-sparkle.png" alt="Marco the owl with a sparkle" class="accessory-img" loading="lazy">
         <h3>Marco Bracelet</h3>
         <p>Woven fabric bracelet with Marco silhouette clasp. LingoGrade blue with gold accent thread.</p>
         <div class="accessory-price" data-price="14.95">EUR 14.95</div>
-        <a href="https://buy.stripe.com/dRm6oH5vecf90Ze1spgUM09" target="_blank" rel="noopener" class="btn-accessory">See details</a>
+        <a href="https://buy.stripe.com/dRm6oH5vecf90Ze1spgUM09" target="_blank" rel="noopener" class="btn-accessory">Take a closer look</a>
         <p class="safety-valve">No rush &mdash; it will be here whenever you are ready.</p>
+        <div class="tip-row">
+          <a href="https://buy.stripe.com/tip20" class="tip-btn" target="_blank" rel="noopener">+EUR 20</a>
+          <a href="https://buy.stripe.com/tip10" class="tip-btn" target="_blank" rel="noopener">+EUR 10</a>
+          <a href="https://buy.stripe.com/tip5" class="tip-btn" target="_blank" rel="noopener">+EUR 5</a>
+        </div>
+        <p class="tip-label">Leave a tip for the team</p>
       </div>
 
       <!-- Marco Enamel Pin -->
       <div class="accessory-card">
-        <div class="accessory-icon">&#128204;</div>
+        <img src="assets/mascot/sliced-final/gpt-marco-diploma-proud.png" alt="Marco the owl with diploma" class="accessory-img" loading="lazy">
         <h3>Marco Enamel Pin</h3>
         <p>Hard enamel pin of Marco with mortarboard. Gold-plated metal. Butterfly clutch backing.</p>
         <div class="accessory-price" data-price="12.95">EUR 12.95</div>
-        <a href="https://buy.stripe.com/28E9AT1eY3ID8rG2wtgUM0a" target="_blank" rel="noopener" class="btn-accessory">See details</a>
+        <a href="https://buy.stripe.com/28E9AT1eY3ID8rG2wtgUM0a" target="_blank" rel="noopener" class="btn-accessory">Take a closer look</a>
         <p class="safety-valve">No rush &mdash; it will be here whenever you are ready.</p>
+        <div class="tip-row">
+          <a href="https://buy.stripe.com/tip20" class="tip-btn" target="_blank" rel="noopener">+EUR 20</a>
+          <a href="https://buy.stripe.com/tip10" class="tip-btn" target="_blank" rel="noopener">+EUR 10</a>
+          <a href="https://buy.stripe.com/tip5" class="tip-btn" target="_blank" rel="noopener">+EUR 5</a>
+        </div>
+        <p class="tip-label">Leave a tip for the team</p>
       </div>
     </div>
 
@@ -1639,7 +1692,7 @@ if (window._lgIsCNY) {
       <div style="font-size:2rem;font-weight:700;color:#27AE60;margin:16px 0;">FREE FOREVER</div>
       <p style="color:var(--ink-soft);font-size:0.9rem;margin-bottom:12px;">Every assessment generates free personalised flashcards. Want targeted practice for specific patterns? Problem packs are available for EUR 19.95 each.</p>
       <a href="https://app.lingograde.com/flashcards" class="btn-primary" style="margin-top:16px;">Explore Flashcards</a>
-      <p style="color:#777;font-size:0.75rem;margin-top:8px;">You are free to try it first — it is free. PWA — works offline on any device.</p>
+      <p style="color:#777;font-size:0.75rem;margin-top:8px;">It is free — just try it. PWA — works offline on any device.</p>
     </div>
   </div>
 </section>
@@ -1677,6 +1730,7 @@ if (window._lgIsCNY) {
     <p style="color:var(--ink-soft);font-size:1rem;text-align:center;max-width:560px;margin:0 auto;">Every dot is a verified sticker placement by a real LingoGrade ambassador. The map updates as new selfies are verified.</p>
 
     <div class="sticker-map-wrap">
+      <div class="map-preview-label" id="map-preview-badge">Preview &mdash; live data coming soon</div>
       <div id="sticker-map-container"></div>
     </div>
 
@@ -1696,6 +1750,7 @@ if (window._lgIsCNY) {
     </div>
 
     <p style="font-size:0.85rem;color:var(--ink-soft);text-align:center;margin-top:16px;font-style:italic;">Place your stickers. Take a selfie. Watch your dot appear on the map.</p>
+    <p style="font-size:0.8125rem;color:var(--ink-light);text-align:center;margin-top:8px;">No stickers yet? No problem &mdash; the map will be here whenever you are ready. <a href="#how-it-works" style="color:var(--accent);">See how it works</a></p>
   </div>
 </section>
 
@@ -1734,7 +1789,7 @@ if (window._lgIsCNY) {
         <a href="https://app.lingograde.com/shop/mega-bundle" class="btn-success" style="width:100%;justify-content:center;">See the Package</a>
       </div>
     </div>
-    <p style="font-size:0.8125rem;color:var(--ink-light);margin-top:20px;">Not ready for any of these? You are free to decide later. Your referral link is already active in your account.</p>
+    <p style="font-size:0.8125rem;color:var(--ink-light);margin-top:20px;">Not ready for any of these? That is perfectly fine. Your referral link is already active in your account.</p>
   </div>
 </section>
 
@@ -1744,7 +1799,7 @@ if (window._lgIsCNY) {
     <h2 class="section-title">Kids Sticker Packs</h2>
     <p style="color:var(--ink-soft);">Coming soon. Age-appropriate designs for children aged 6-14.</p>
     <a href="kids.html" class="btn-primary">Learn more about Kids assessments</a>
-    <p style="font-size:0.75rem;color:var(--ink-light);margin-top:8px;">You are free to just look. No commitment involved.</p>
+    <p style="font-size:0.75rem;color:var(--ink-light);margin-top:8px;">Just a look. No commitment involved.</p>
   </div>
 </section>
 
@@ -1754,7 +1809,7 @@ if (window._lgIsCNY) {
     <h2 class="section-title">Bulk Sticker Orders</h2>
     <p style="color:var(--ink-soft);">Custom-branded sticker packs for teams. Volume pricing available.</p>
     <a href="corporate.html" class="btn-primary">Explore Corporate Options</a>
-    <p style="font-size:0.75rem;color:var(--ink-light);margin-top:8px;">You are free to explore first. We will answer any questions when you are ready.</p>
+    <p style="font-size:0.75rem;color:var(--ink-light);margin-top:8px;">Worth a look. We answer questions when you are ready.</p>
   </div>
 </section>
 
@@ -1764,7 +1819,7 @@ if (window._lgIsCNY) {
     <h2 class="section-title">Partner Sticker Programme</h2>
     <p style="color:var(--ink-soft);">Earn revenue with every referral. Personalized QR stickers included.</p>
     <a href="partners.html" class="btn-primary">Explore the Partner Programme</a>
-    <p style="font-size:0.75rem;color:var(--ink-light);margin-top:8px;">You are completely free to read more first. No sign-up required to look.</p>
+    <p style="font-size:0.75rem;color:var(--ink-light);margin-top:8px;">No sign-up required. Read more and decide for yourself.</p>
   </div>
 </section>
 
@@ -1774,7 +1829,7 @@ if (window._lgIsCNY) {
     <h2 class="section-title" style="color:#fff;">Become an Assessor</h2>
     <p style="color:#93B5D0;font-size:1.1rem;line-height:1.7;margin-bottom:24px;">A small team of CEFR-certified assessors, professionally equipped, working at the intersection of linguistics and real progress. Worth a look if that sounds like your kind of work.</p>
     <a href="teachers.html" class="btn-primary" style="background:#fff;color:#1a3a5c;">See If This Fits</a>
-    <p style="font-size:0.8125rem;color:rgba(255,255,255,0.5);margin-top:12px;">You are free to read more and decide for yourself. No application required to look.</p>
+    <p style="font-size:0.8125rem;color:rgba(255,255,255,0.5);margin-top:12px;">No application required. Read more and see if it fits.</p>
   </div>
 </section>
 
@@ -1844,7 +1899,7 @@ if (window._lgIsCNY) {
 <section class="section" style="padding:60px 32px;background:linear-gradient(180deg,rgba(37,99,171,0.08) 0%,var(--cream) 100%);">
   <div class="section-inner" style="max-width:640px;text-align:center;">
     <h2 style="font-family:var(--font-display);font-size:clamp(1.75rem,4vw,2.5rem);color:var(--ink);margin-bottom:12px;">Ready?</h2>
-    <p style="color:var(--ink-soft);font-size:1.0625rem;margin-bottom:32px;">You are free to pick the option that fits — or not. No rush at all.</p>
+    <p style="color:var(--ink-soft);font-size:1.0625rem;margin-bottom:32px;">Pick the option that fits. Or not. No rush.</p>
 
     <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;">
       <a href="#individual" class="btn-primary" style="min-width:160px;">Meet Marco &mdash; EUR 24.95</a>
@@ -2379,6 +2434,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function renderMarkers(placements) {
     placements.forEach(function(p) {
       var size = Math.min(12, 6 + p.count * 0.5);
+      var partnerLine = p.partner ? '<br><span style="font-size:0.8125rem;color:#888;">' + p.partner + '</span>' : '';
       L.circleMarker([p.lat, p.lng], {
         radius: size,
         fillColor: '#2563AB',
@@ -2390,6 +2446,7 @@ document.addEventListener('DOMContentLoaded', function() {
         '<div style="font-family:DM Sans,sans-serif;text-align:center;">' +
         '<strong style="font-size:1rem;">' + p.city + '</strong><br>' +
         '<span style="color:#2563AB;font-weight:700;">' + p.count + '</span> sticker' + (p.count > 1 ? 's' : '') + ' placed' +
+        partnerLine +
         '</div>'
       );
     });
@@ -2410,6 +2467,8 @@ document.addEventListener('DOMContentLoaded', function() {
       if (data.placements && data.placements.length > 0) {
         renderMarkers(data.placements);
         updateStats(data.stats);
+        var badge = document.getElementById('map-preview-badge');
+        if (badge) badge.style.display = 'none';
       } else {
         renderMarkers(fallbackPlacements);
         updateStats(fallbackStats);
