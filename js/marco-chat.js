@@ -12,9 +12,15 @@
   'use strict';
 
   var API = 'https://app.lingograde.com/api/chat';
+  var BOT_API = 'https://api.lingograde.com';
+  var ANALYSIS_API = BOT_API + '/v1/analyse';
+  var ASSESS_API = BOT_API + '/v1/assess';
+  var PAYMENT_API = BOT_API + '/v1/payment/intent';
+  var STRIPE_PK = null; // fetched from /v1/config on first payment attempt
   var STORE_KEY = 'marco_session';
   var LANG_KEY = 'marco_lang';
   var EMAIL_KEY = 'marco_email';
+  var ANALYSIS_KEY = 'marco_analysis';
   var MASCOT = 'assets/mascot/marco-chatbot-speech-bubble.webp';
   var OWL = '\uD83E\uDD89'; // fallback emoji
 
@@ -324,6 +330,178 @@
     }
   };
 
+  // ── Analysis + Assessment flow translations ──
+  var ANALYSIS_MSGS = {
+    en: {
+      tryFree: 'Try a free 5-min snapshot',
+      inputPrompt: 'Write 3-5 sentences in the language you\'re learning — about yourself, your work, or anything you enjoy. I\'ll give you an instant snapshot!',
+      inputPlaceholder: 'Write a few sentences here...',
+      micLabel: 'Or tap to speak',
+      analyseBtn: 'Analyse now',
+      tooShort: 'A bit more, please — I need at least a few sentences to give you a good snapshot.',
+      loading: 'Analyzing your language patterns...',
+      strengths: 'Strengths',
+      focusAreas: 'Focus Areas',
+      flashcards: 'Your 3 Free Flashcards',
+      tapToFlip: 'Tap a card to flip',
+      upsellQ: 'Would it be crazy to get a full 15-20 min structured session and a personal mini-report — for just \u20AC49.95?',
+      upsellYes: 'Yes, let\'s do it — \u20AC49.95',
+      upsellHuman: 'Book a human session instead',
+      upsellNo: 'Not today, thanks',
+      payTitle: 'Chatbot Assessment',
+      payBtn: 'Pay \u20AC49.95 & Start',
+      payEmail: 'Email for your report',
+      assessDone: 'Your mini-report is ready!',
+      downloadReport: 'Download Mini-Report (PDF)',
+      fullUpsell: 'Your mini-report shows real potential. A full human assessment goes deeper — 5 problems, 5 corrections, homework, and an 8-week plan. Ready to go further?',
+      bookFull: 'Book Full Assessment — \u20AC129.95'
+    },
+    de: {
+      tryFree: 'Kostenloser 5-Min-Snapshot',
+      inputPrompt: 'Schreib 3-5 S\u00E4tze in der Sprache, die du lernst — \u00FCber dich, deine Arbeit oder etwas, das dir Spa\u00DF macht. Ich gebe dir einen sofortigen Snapshot!',
+      inputPlaceholder: 'Schreib ein paar S\u00E4tze hier...',
+      micLabel: 'Oder tippe, um zu sprechen',
+      analyseBtn: 'Jetzt analysieren',
+      tooShort: 'Noch ein bisschen mehr, bitte — ich brauche mindestens ein paar S\u00E4tze.',
+      loading: 'Analysiere deine Sprachmuster...',
+      strengths: 'St\u00E4rken',
+      focusAreas: 'Fokus-Bereiche',
+      flashcards: 'Deine 3 kostenlosen Flashcards',
+      tapToFlip: 'Tippe auf eine Karte zum Umdrehen',
+      upsellQ: 'W\u00E4re es verr\u00FCckt, eine volle 15-20 Min. strukturierte Session und einen pers\u00F6nlichen Mini-Bericht zu bekommen — f\u00FCr nur \u20AC49,95?',
+      upsellYes: 'Ja, los geht\'s — \u20AC49,95',
+      upsellHuman: 'Lieber eine menschliche Session buchen',
+      upsellNo: 'Nicht heute, danke',
+      payTitle: 'Chatbot-Assessment',
+      payBtn: '\u20AC49,95 bezahlen & starten',
+      payEmail: 'E-Mail f\u00FCr deinen Bericht',
+      assessDone: 'Dein Mini-Bericht ist fertig!',
+      downloadReport: 'Mini-Bericht herunterladen (PDF)',
+      fullUpsell: 'Dein Mini-Bericht zeigt echtes Potenzial. Ein volles menschliches Assessment geht tiefer. Bereit?',
+      bookFull: 'Volles Assessment buchen — \u20AC129,95'
+    },
+    fr: {
+      tryFree: 'Essayer un snapshot gratuit (5 min)',
+      inputPrompt: '\u00C9cris 3-5 phrases dans la langue que tu apprends — sur toi, ton travail, ou ce qui te pla\u00EEt. Je te donne un aper\u00E7u instantan\u00E9!',
+      inputPlaceholder: '\u00C9cris quelques phrases ici...',
+      micLabel: 'Ou appuie pour parler',
+      analyseBtn: 'Analyser maintenant',
+      tooShort: 'Un peu plus, s\'il te pla\u00EEt — j\'ai besoin d\'au moins quelques phrases.',
+      loading: 'Analyse de tes patterns linguistiques...',
+      strengths: 'Points forts',
+      focusAreas: 'Axes de progr\u00E8s',
+      flashcards: 'Tes 3 flashcards gratuites',
+      tapToFlip: 'Appuie sur une carte pour la retourner',
+      upsellQ: 'Ce serait fou d\'avoir une session structur\u00E9e de 15-20 min et un mini-rapport personnel — pour seulement 49,95\u20AC?',
+      upsellYes: 'Oui, allons-y — 49,95\u20AC',
+      upsellHuman: 'R\u00E9server une session humaine',
+      upsellNo: 'Pas aujourd\'hui, merci',
+      payTitle: '\u00C9valuation Chatbot',
+      payBtn: 'Payer 49,95\u20AC & commencer',
+      payEmail: 'Email pour ton rapport',
+      assessDone: 'Ton mini-rapport est pr\u00EAt!',
+      downloadReport: 'T\u00E9l\u00E9charger le mini-rapport (PDF)',
+      fullUpsell: 'Ton mini-rapport montre un vrai potentiel. Un bilan humain complet va plus loin. Pr\u00EAt?',
+      bookFull: 'R\u00E9server le bilan complet — 129,95\u20AC'
+    },
+    es: {
+      tryFree: 'Prueba un snapshot gratuito (5 min)',
+      inputPrompt: 'Escribe 3-5 frases en el idioma que est\u00E1s aprendiendo — sobre ti, tu trabajo o algo que te guste. \u00A1Te doy un an\u00E1lisis instant\u00E1neo!',
+      inputPlaceholder: 'Escribe algunas frases aqu\u00ED...',
+      micLabel: 'O toca para hablar',
+      analyseBtn: 'Analizar ahora',
+      tooShort: 'Un poco m\u00E1s, por favor — necesito al menos unas frases.',
+      loading: 'Analizando tus patrones ling\u00FC\u00EDsticos...',
+      strengths: 'Fortalezas',
+      focusAreas: '\u00C1reas de enfoque',
+      flashcards: 'Tus 3 flashcards gratis',
+      tapToFlip: 'Toca una tarjeta para voltearla',
+      upsellQ: '\u00BFSer\u00EDa una locura tener una sesi\u00F3n estructurada de 15-20 min y un mini-informe personal — por solo \u20AC49,95?',
+      upsellYes: 'S\u00ED, vamos — \u20AC49,95',
+      upsellHuman: 'Reservar una sesi\u00F3n humana',
+      upsellNo: 'Hoy no, gracias',
+      payTitle: 'Evaluaci\u00F3n Chatbot',
+      payBtn: 'Pagar \u20AC49,95 y empezar',
+      payEmail: 'Email para tu informe',
+      assessDone: '\u00A1Tu mini-informe est\u00E1 listo!',
+      downloadReport: 'Descargar mini-informe (PDF)',
+      fullUpsell: 'Tu mini-informe muestra potencial real. Una evaluaci\u00F3n humana completa profundiza m\u00E1s. \u00BFListo?',
+      bookFull: 'Reservar evaluaci\u00F3n completa — \u20AC129,95'
+    },
+    it: {
+      tryFree: 'Prova uno snapshot gratuito (5 min)',
+      inputPrompt: 'Scrivi 3-5 frasi nella lingua che stai imparando — su di te, il tuo lavoro o qualcosa che ti piace. Ti do un\'analisi istantanea!',
+      inputPlaceholder: 'Scrivi qualche frase qui...',
+      micLabel: 'Oppure tocca per parlare',
+      analyseBtn: 'Analizza ora',
+      tooShort: 'Un po\' di pi\u00F9, per favore — mi servono almeno alcune frasi.',
+      loading: 'Analisi dei tuoi pattern linguistici...',
+      strengths: 'Punti di forza',
+      focusAreas: 'Aree di focus',
+      flashcards: 'Le tue 3 flashcard gratuite',
+      tapToFlip: 'Tocca una carta per girarla',
+      upsellQ: 'Sarebbe pazzesco avere una sessione strutturata di 15-20 min e un mini-report personale — per soli \u20AC49,95?',
+      upsellYes: 'S\u00EC, facciamolo — \u20AC49,95',
+      upsellHuman: 'Prenota una sessione umana',
+      upsellNo: 'Non oggi, grazie',
+      payTitle: 'Valutazione Chatbot',
+      payBtn: 'Paga \u20AC49,95 e inizia',
+      payEmail: 'Email per il tuo report',
+      assessDone: 'Il tuo mini-report \u00E8 pronto!',
+      downloadReport: 'Scarica mini-report (PDF)',
+      fullUpsell: 'Il tuo mini-report mostra vero potenziale. Una valutazione umana completa va pi\u00F9 in profondit\u00E0. Pronto?',
+      bookFull: 'Prenota valutazione completa — \u20AC129,95'
+    },
+    ru: {
+      tryFree: '\u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439 \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u044B\u0439 \u0441\u043D\u0430\u043F\u0448\u043E\u0442 (5 \u043C\u0438\u043D)',
+      inputPrompt: '\u041D\u0430\u043F\u0438\u0448\u0438 3-5 \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u0439 \u043D\u0430 \u044F\u0437\u044B\u043A\u0435, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u0443\u0447\u0438\u0448\u044C \u2014 \u043E \u0441\u0435\u0431\u0435, \u0440\u0430\u0431\u043E\u0442\u0435 \u0438\u043B\u0438 \u043E \u0442\u043E\u043C, \u0447\u0442\u043E \u0442\u0435\u0431\u0435 \u043D\u0440\u0430\u0432\u0438\u0442\u0441\u044F. \u042F \u0434\u0430\u043C \u043C\u0433\u043D\u043E\u0432\u0435\u043D\u043D\u044B\u0439 \u0430\u043D\u0430\u043B\u0438\u0437!',
+      inputPlaceholder: '\u041D\u0430\u043F\u0438\u0448\u0438 \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u0439 \u0437\u0434\u0435\u0441\u044C...',
+      micLabel: '\u0418\u043B\u0438 \u043D\u0430\u0436\u043C\u0438, \u0447\u0442\u043E\u0431\u044B \u0433\u043E\u0432\u043E\u0440\u0438\u0442\u044C',
+      analyseBtn: '\u0410\u043D\u0430\u043B\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u0442\u044C',
+      tooShort: '\u0415\u0449\u0451 \u043D\u0435\u043C\u043D\u043E\u0433\u043E, \u043F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430 \u2014 \u043C\u043D\u0435 \u043D\u0443\u0436\u043D\u043E \u0445\u043E\u0442\u044F \u0431\u044B \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u0439.',
+      loading: '\u0410\u043D\u0430\u043B\u0438\u0437\u0438\u0440\u0443\u044E \u0442\u0432\u043E\u0438 \u044F\u0437\u044B\u043A\u043E\u0432\u044B\u0435 \u043F\u0430\u0442\u0442\u0435\u0440\u043D\u044B...',
+      strengths: '\u0421\u0438\u043B\u044C\u043D\u044B\u0435 \u0441\u0442\u043E\u0440\u043E\u043D\u044B',
+      focusAreas: '\u041E\u0431\u043B\u0430\u0441\u0442\u0438 \u0444\u043E\u043A\u0443\u0441\u0430',
+      flashcards: '\u0422\u0432\u043E\u0438 3 \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u044B\u0435 \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438',
+      tapToFlip: '\u041D\u0430\u0436\u043C\u0438 \u043D\u0430 \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0443, \u0447\u0442\u043E\u0431\u044B \u043F\u0435\u0440\u0435\u0432\u0435\u0440\u043D\u0443\u0442\u044C',
+      upsellQ: '\u0411\u044B\u043B\u043E \u0431\u044B \u0431\u0435\u0437\u0443\u043C\u0438\u0435\u043C \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u043F\u043E\u043B\u043D\u0443\u044E 15-20 \u043C\u0438\u043D. \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u0443\u044E \u0441\u0435\u0441\u0441\u0438\u044E \u0438 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0439 \u043C\u0438\u043D\u0438-\u043E\u0442\u0447\u0451\u0442 \u2014 \u0432\u0441\u0435\u0433\u043E \u0437\u0430 \u20AC49,95?',
+      upsellYes: '\u0414\u0430, \u0434\u0430\u0432\u0430\u0439 — \u20AC49,95',
+      upsellHuman: '\u0417\u0430\u0431\u0440\u043E\u043D\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0441\u0435\u0441\u0441\u0438\u044E \u0441 \u0447\u0435\u043B\u043E\u0432\u0435\u043A\u043E\u043C',
+      upsellNo: '\u041D\u0435 \u0441\u0435\u0433\u043E\u0434\u043D\u044F, \u0441\u043F\u0430\u0441\u0438\u0431\u043E',
+      payTitle: 'Chatbot-\u043E\u0446\u0435\u043D\u043A\u0430',
+      payBtn: '\u041E\u043F\u043B\u0430\u0442\u0438\u0442\u044C \u20AC49,95 \u0438 \u043D\u0430\u0447\u0430\u0442\u044C',
+      payEmail: 'Email \u0434\u043B\u044F \u043E\u0442\u0447\u0451\u0442\u0430',
+      assessDone: '\u0422\u0432\u043E\u0439 \u043C\u0438\u043D\u0438-\u043E\u0442\u0447\u0451\u0442 \u0433\u043E\u0442\u043E\u0432!',
+      downloadReport: '\u0421\u043A\u0430\u0447\u0430\u0442\u044C \u043C\u0438\u043D\u0438-\u043E\u0442\u0447\u0451\u0442 (PDF)',
+      fullUpsell: '\u0422\u0432\u043E\u0439 \u043C\u0438\u043D\u0438-\u043E\u0442\u0447\u0451\u0442 \u043F\u043E\u043A\u0430\u0437\u044B\u0432\u0430\u0435\u0442 \u0440\u0435\u0430\u043B\u044C\u043D\u044B\u0439 \u043F\u043E\u0442\u0435\u043D\u0446\u0438\u0430\u043B. \u041F\u043E\u043B\u043D\u043E\u0435 \u0447\u0435\u043B\u043E\u0432\u0435\u0447\u0435\u0441\u043A\u043E\u0435 \u0430\u0441\u0441\u0435\u0441\u043C\u0435\u043D\u0442 \u0438\u0434\u0451\u0442 \u0433\u043B\u0443\u0431\u0436\u0435. \u0413\u043E\u0442\u043E\u0432?',
+      bookFull: '\u0417\u0430\u0431\u0440\u043E\u043D\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u043F\u043E\u043B\u043D\u043E\u0435 \u0430\u0441\u0441\u0435\u0441\u043C\u0435\u043D\u0442 — \u20AC129,95'
+    },
+    zh: {
+      tryFree: '\u514D\u8D39\u8BD5\u7528\u5FEB\u7167\uFF085\u5206\u949F\uFF09',
+      inputPrompt: '\u7528\u4F60\u6B63\u5728\u5B66\u4E60\u7684\u8BED\u8A00\u5199\u4E09\u5230\u4E94\u53E5\u8BDD\u2014\u2014\u5173\u4E8E\u4F60\u81EA\u5DF1\u3001\u4F60\u7684\u5DE5\u4F5C\u6216\u4F60\u559C\u6B22\u7684\u4EFB\u4F55\u4E1C\u897F\u3002\u6211\u4F1A\u7ED9\u4F60\u5373\u65F6\u5206\u6790\uFF01',
+      inputPlaceholder: '\u5728\u8FD9\u91CC\u5199\u51E0\u53E5\u8BDD...',
+      micLabel: '\u6216\u70B9\u51FB\u8BF4\u8BDD',
+      analyseBtn: '\u7ACB\u5373\u5206\u6790',
+      tooShort: '\u8BF7\u518D\u591A\u5199\u4E00\u70B9\u2014\u2014\u6211\u81F3\u5C11\u9700\u8981\u51E0\u53E5\u8BDD\u3002',
+      loading: '\u6B63\u5728\u5206\u6790\u4F60\u7684\u8BED\u8A00\u6A21\u5F0F...',
+      strengths: '\u4F18\u52BF',
+      focusAreas: '\u5173\u6CE8\u9886\u57DF',
+      flashcards: '\u4F60\u76843\u5F20\u514D\u8D39\u95EA\u5361',
+      tapToFlip: '\u70B9\u51FB\u5361\u7247\u7FFB\u8F6C',
+      upsellQ: '\u53EA\u9700\u20AC49.95\u5C31\u80FD\u83B7\u5F97\u4E0015-20\u5206\u949F\u7684\u7ED3\u6784\u5316\u8BDD\u548C\u4E2A\u4EBA\u8FF7\u4F60\u62A5\u544A\uFF0C\u8FD9\u4E0D\u662F\u5F88\u68D2\u5417\uFF1F',
+      upsellYes: '\u597D\u7684\uFF0C\u5F00\u59CB — \u20AC49.95',
+      upsellHuman: '\u9884\u7EA6\u4EBA\u5DE5\u8BC4\u4F30',
+      upsellNo: '\u4ECA\u5929\u4E0D\u7528\uFF0C\u8C22\u8C22',
+      payTitle: '\u804A\u5929\u673A\u5668\u4EBA\u8BC4\u4F30',
+      payBtn: '\u652F\u4ED8\u20AC49.95\u5E76\u5F00\u59CB',
+      payEmail: '\u63A5\u6536\u62A5\u544A\u7684\u90AE\u7BB1',
+      assessDone: '\u4F60\u7684\u8FF7\u4F60\u62A5\u544A\u5DF2\u51C6\u5907\u597D\uFF01',
+      downloadReport: '\u4E0B\u8F7D\u8FF7\u4F60\u62A5\u544A (PDF)',
+      fullUpsell: '\u4F60\u7684\u8FF7\u4F60\u62A5\u544A\u663E\u793A\u4E86\u771F\u6B63\u7684\u6F5C\u529B\u3002\u5B8C\u6574\u7684\u4EBA\u5DE5\u8BC4\u4F30\u66F4\u6DF1\u5165\u3002\u51C6\u5907\u597D\u4E86\u5417\uFF1F',
+      bookFull: '\u9884\u7EA6\u5B8C\u6574\u8BC4\u4F30 — \u20AC129.95'
+    }
+  };
+
   // ── Package definitions for sales flow ──
   var PACKAGES = [
     { id: 'quick', name: 'Quick Assessment', price: '\u20AC69.95', time: '15 minutes', slug: 'quick' },
@@ -463,6 +641,53 @@
     '.mc-pkg-card .mc-pkg-name{font-weight:700;color:#1A3A5C;font-size:.9rem}',
     '.mc-pkg-card .mc-pkg-price{color:#27AE60;font-weight:600;font-size:.85rem;margin-top:2px}',
     '.mc-pkg-card .mc-pkg-voss{font-style:italic;color:#555;font-size:.82rem;margin-top:6px}',
+    // Free analysis button style
+    '.mc-sales-btns .mc-btn-free{background:#F0F7FF;color:#2563AB;border-color:#2563AB;font-weight:600}',
+    '.mc-sales-btns .mc-btn-free:hover{background:#2563AB;color:#fff}',
+    // Analysis input
+    '.mc-analysis-block textarea{width:100%;border:1px solid #D1D5DB;border-radius:10px;padding:8px 12px;font-size:.82rem;',
+    'font-family:inherit;min-height:80px;resize:vertical;outline:none;margin-top:6px;box-sizing:border-box}',
+    '.mc-analysis-block textarea:focus{border-color:#2563AB}',
+    '.mc-analysis-block .mc-analysis-actions{display:flex;gap:6px;margin-top:6px;align-items:center}',
+    '.mc-analysis-block .mc-mic-btn{background:none;border:1px solid #D1D5DB;border-radius:8px;padding:6px 8px;cursor:pointer;font-size:1rem}',
+    '.mc-analysis-block .mc-mic-btn.active{border-color:#EF4444;color:#EF4444}',
+    '.mc-analysis-block .mc-analyse-submit{flex:1;padding:8px;border-radius:10px;background:#27AE60;color:#fff;border:none;',
+    'font-size:.85rem;font-weight:600;cursor:pointer;font-family:inherit;transition:background .15s}',
+    '.mc-analysis-block .mc-analyse-submit:hover{background:#219150}',
+    '.mc-analysis-block .mc-analyse-submit:disabled{background:#ccc;cursor:not-allowed}',
+    // Analysis result card
+    '.mc-analysis-card{background:#F0F7FF;border:1.5px solid #2563AB;border-radius:12px;padding:12px;font-size:.82rem}',
+    '.mc-analysis-card .mc-cefr-badge{display:inline-block;background:#2563AB;color:#fff;border-radius:6px;padding:2px 8px;font-weight:700;font-size:.9rem;margin-bottom:8px}',
+    '.mc-analysis-card .mc-section-label{font-weight:600;color:#1A3A5C;margin:6px 0 2px}',
+    '.mc-analysis-card ul{margin:0;padding-left:14px}',
+    '.mc-analysis-card li{margin-bottom:2px}',
+    '.mc-analysis-card .mc-marco-comment{margin-top:8px;font-style:italic;color:#374151;padding:6px 8px;background:#fff;border-radius:8px}',
+    // Flashcards
+    '.mc-flashcard-row{display:flex;flex-direction:column;gap:6px;margin-top:8px}',
+    '.mc-flashcard{width:100%;background:#fff;border:1px solid #D1D5DB;border-radius:10px;padding:8px 12px;cursor:pointer;',
+    'font-size:.78rem;transition:background .15s;user-select:none}',
+    '.mc-flashcard .fc-front{color:#C0392B;font-weight:600}',
+    '.mc-flashcard .fc-back{display:none;color:#27AE60;margin-top:4px}',
+    '.mc-flashcard .fc-note{display:none;color:#555;font-size:.72rem;margin-top:2px}',
+    '.mc-flashcard.flipped .fc-front{display:none}',
+    '.mc-flashcard.flipped .fc-back,.mc-flashcard.flipped .fc-note{display:block}',
+    // Stripe payment panel
+    '#mc-stripe-panel{position:absolute;top:0;left:0;right:0;bottom:56px;background:#fff;z-index:10;',
+    'display:flex;flex-direction:column;padding:16px;gap:10px;overflow-y:auto}',
+    '#mc-stripe-panel .mc-stripe-header{display:flex;justify-content:space-between;align-items:center;font-weight:600;color:#1A3A5C;font-size:.9rem}',
+    '#mc-stripe-panel .mc-stripe-close{background:none;border:none;cursor:pointer;font-size:1.1rem;color:#6B7280}',
+    '#mc-card-element{border:1px solid #D1D5DB;border-radius:10px;padding:10px}',
+    '#mc-card-errors{color:#EF4444;font-size:.78rem;min-height:16px}',
+    '#mc-stripe-email{border:1px solid #D1D5DB;border-radius:10px;padding:8px 12px;font-size:.82rem;font-family:inherit;outline:none;width:100%;box-sizing:border-box}',
+    '#mc-stripe-email:focus{border-color:#2563AB}',
+    '#mc-stripe-submit{background:#27AE60;color:#fff;border:none;border-radius:10px;padding:10px;font-size:.9rem;font-weight:600;cursor:pointer;transition:background .15s}',
+    '#mc-stripe-submit:hover{background:#219150}',
+    '#mc-stripe-submit:disabled{background:#ccc;cursor:not-allowed}',
+    // Report preview
+    '.mc-report-preview{background:#F0F7FF;border:1.5px solid #2563AB;border-radius:12px;padding:12px;font-size:.82rem}',
+    '.mc-report-preview .mc-report-dl{display:block;margin-top:8px;padding:8px;background:#2563AB;color:#fff;text-align:center;',
+    'border-radius:8px;text-decoration:none;font-weight:600;font-size:.85rem}',
+    '.mc-report-preview .mc-report-dl:hover{background:#1a4f8a}',
     '@media(max-width:768px){',
     '#marco-fab{width:44px;height:44px;bottom:16px;right:16px}',
     '}',
@@ -509,9 +734,12 @@
   var isOpen = false;
   var sending = false;
   var chosenLang = getSavedLang();
-  var flowPhase = 'idle'; // idle | lang-confirm | lang-grid | email | sales-intent | sales-lang | sales-duration | sales-challenge | sales-offer | sales-faq | chat
+  var flowPhase = 'idle'; // idle | lang-confirm | lang-grid | email | sales-intent | sales-lang | sales-duration | sales-challenge | sales-offer | sales-faq | chat | analysis-input | analysis-loading | analysis-result | bot-assess-upsell | bot-assess-payment | bot-assess-active | bot-assess-done
   var salesData = { learningLang: null, learningLangLabel: null, duration: null, challenge: null };
   var exitEmailShown = false;
+  var assessMode = false;
+  var assessSessionId = null;
+  var lastAnalysisResult = null;
 
   // ── Page context detection ──
   var pageContext = (function () {
@@ -731,9 +959,12 @@
     var checkText = ctx.checkLevel || sm.checkLevel;
     var lookText = ctx.justLooking || sm.justLooking;
 
+    var freeLabel = ANALYSIS_MSGS[chosenLang] || ANALYSIS_MSGS.en;
+
     var html = intentText +
       '<div class="mc-sales-btns">' +
       '<button class="mc-btn-primary" data-action="check-level">' + checkText + '</button>' +
+      '<button class="mc-btn-free" data-action="try-free">' + freeLabel.tryFree + '</button>' +
       '<button data-action="just-looking">' + lookText + '</button>' +
       '</div>';
 
@@ -743,6 +974,12 @@
       disableButtons(el);
       addMsg('usr', checkText);
       showSalesLangPick();
+    });
+
+    el.querySelector('[data-action="try-free"]').addEventListener('click', function () {
+      disableButtons(el);
+      addMsg('usr', freeLabel.tryFree);
+      showAnalysisInput();
     });
 
     el.querySelector('[data-action="just-looking"]').addEventListener('click', function () {
@@ -992,6 +1229,521 @@
     }
   }
 
+  // ═══════════════════════════════════════════════════════════════
+  // FREE ANALYSIS FLOW
+  // ═══════════════════════════════════════════════════════════════
+
+  function analysisMsg() {
+    return ANALYSIS_MSGS[chosenLang] || ANALYSIS_MSGS.en;
+  }
+
+  // ── Analysis Step 1: Text input (+ optional mic) ──
+  function showAnalysisInput() {
+    flowPhase = 'analysis-input';
+    setInputEnabled(false);
+    var am = analysisMsg();
+
+    var hasSpeech = !!(window.SpeechRecognition || window.webkitSpeechRecognition);
+    var micBtn = hasSpeech
+      ? '<button class="mc-mic-btn" data-action="mic" title="' + am.micLabel + '">\uD83C\uDF99\uFE0F</button>'
+      : '';
+
+    var html = am.inputPrompt +
+      '<div class="mc-analysis-block">' +
+      '<textarea placeholder="' + am.inputPlaceholder + '" class="mc-analysis-textarea"></textarea>' +
+      '<div class="mc-analysis-actions">' +
+      micBtn +
+      '<button class="mc-analyse-submit" data-action="analyse">' + am.analyseBtn + '</button>' +
+      '</div></div>';
+
+    var el = addMsgHtml('bot', html);
+    var textarea = el.querySelector('.mc-analysis-textarea');
+    var submitBtn = el.querySelector('[data-action="analyse"]');
+
+    // Mic button (Web Speech API)
+    if (hasSpeech) {
+      var micButton = el.querySelector('[data-action="mic"]');
+      var recognition = null;
+      micButton.addEventListener('click', function () {
+        if (recognition) {
+          recognition.stop();
+          recognition = null;
+          micButton.classList.remove('active');
+          return;
+        }
+        var SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+        recognition = new SpeechRec();
+        recognition.lang = chosenLang || 'en';
+        recognition.continuous = true;
+        recognition.interimResults = true;
+        micButton.classList.add('active');
+        recognition.onresult = function (e) {
+          var transcript = '';
+          for (var i = 0; i < e.results.length; i++) {
+            transcript += e.results[i][0].transcript;
+          }
+          textarea.value = transcript;
+        };
+        recognition.onend = function () {
+          micButton.classList.remove('active');
+          recognition = null;
+        };
+        recognition.start();
+      });
+    }
+
+    submitBtn.addEventListener('click', function () {
+      var text = textarea.value.trim();
+      if (text.length < 30) {
+        addMsg('bot', am.tooShort);
+        textarea.focus();
+        return;
+      }
+      textarea.disabled = true;
+      submitBtn.disabled = true;
+      if (hasSpeech) {
+        var mb = el.querySelector('[data-action="mic"]');
+        if (mb) mb.disabled = true;
+      }
+      submitAnalysis(text);
+    });
+
+    textarea.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && e.ctrlKey) {
+        e.preventDefault();
+        submitBtn.click();
+      }
+    });
+  }
+
+  // ── Analysis Step 2: Submit to API ──
+  function submitAnalysis(text) {
+    flowPhase = 'analysis-loading';
+    var am = analysisMsg();
+    addMsg('usr', text.length > 120 ? text.slice(0, 120) + '...' : text);
+    var typing = showTyping();
+
+    fetch(ANALYSIS_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        text: text,
+        lang: chosenLang || 'en',
+        session_id: getSession(),
+        email: localStorage.getItem(EMAIL_KEY) || undefined
+      })
+    })
+    .then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(function (data) {
+      typing.remove();
+      if (data.error) {
+        addMsg('bot', data.error);
+        flowPhase = 'chat';
+        setInputEnabled(true);
+        return;
+      }
+      lastAnalysisResult = data;
+      localStorage.setItem(ANALYSIS_KEY, JSON.stringify(data));
+      showAnalysisResult(data);
+    })
+    .catch(function () {
+      typing.remove();
+      addMsg('bot', OWL + ' Oops, my nest lost signal. Please try again in a moment!');
+      flowPhase = 'chat';
+      setInputEnabled(true);
+    });
+  }
+
+  // ── Analysis Step 3: Show results ──
+  function showAnalysisResult(data) {
+    flowPhase = 'analysis-result';
+    var am = analysisMsg();
+
+    // Build strengths list
+    var strengthsHtml = '';
+    if (data.strengths) {
+      for (var i = 0; i < data.strengths.length; i++) {
+        strengthsHtml += '<li>\u2713 ' + escHtml(data.strengths[i]) + '</li>';
+      }
+    }
+
+    // Build focus areas list
+    var focusHtml = '';
+    if (data.focus_areas) {
+      for (var j = 0; j < data.focus_areas.length; j++) {
+        focusHtml += '<li>\u25CB ' + escHtml(data.focus_areas[j]) + '</li>';
+      }
+    }
+
+    var html = '<div class="mc-analysis-card">' +
+      '<div class="mc-cefr-badge">' + escHtml(data.cefr_estimate || '?') + '</div> ' +
+      '<span style="font-size:.78rem;color:#6B7280">' + escHtml(data.cefr_label || '') + '</span>' +
+      '<div class="mc-section-label">' + am.strengths + '</div>' +
+      '<ul>' + strengthsHtml + '</ul>' +
+      '<div class="mc-section-label">' + am.focusAreas + '</div>' +
+      '<ul>' + focusHtml + '</ul>' +
+      '<div class="mc-marco-comment">' + OWL + ' ' + escHtml(data.marco_comment || '') + '</div>' +
+      '</div>';
+
+    addMsgHtml('bot', html);
+
+    // Show flashcards after a brief pause
+    setTimeout(function () {
+      showAnalysisFlashcards(data.flashcards || []);
+    }, 400);
+  }
+
+  // ── Analysis Step 4: Flashcards ──
+  function showAnalysisFlashcards(cards) {
+    var am = analysisMsg();
+    if (!cards.length) {
+      showBotAssessUpsell();
+      return;
+    }
+
+    var html = '<div class="mc-section-label">' + am.flashcards + '</div>' +
+      '<div style="font-size:.72rem;color:#6B7280;margin-bottom:4px">' + am.tapToFlip + '</div>' +
+      '<div class="mc-flashcard-row">';
+
+    for (var i = 0; i < cards.length; i++) {
+      html += '<div class="mc-flashcard" data-idx="' + i + '">' +
+        '<div class="fc-front">' + escHtml(cards[i].front || '') + '</div>' +
+        '<div class="fc-back">' + escHtml(cards[i].back || '') + '</div>' +
+        '<div class="fc-note">' + escHtml(cards[i].note || '') + '</div>' +
+        '</div>';
+    }
+    html += '</div>';
+
+    var el = addMsgHtml('bot', html);
+    var fcards = el.querySelectorAll('.mc-flashcard');
+    for (var j = 0; j < fcards.length; j++) {
+      fcards[j].addEventListener('click', function () {
+        this.classList.toggle('flipped');
+      });
+    }
+
+    // After flashcards, show upsell
+    setTimeout(function () {
+      showBotAssessUpsell();
+    }, 600);
+  }
+
+  // ── HTML escape helper ──
+  function escHtml(str) {
+    var div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // BOT ASSESSMENT UPSELL + PAYMENT
+  // ═══════════════════════════════════════════════════════════════
+
+  // ── Upsell: Offer bot assessment ──
+  function showBotAssessUpsell() {
+    flowPhase = 'bot-assess-upsell';
+    setInputEnabled(false);
+    var am = analysisMsg();
+
+    var html = am.upsellQ +
+      '<div class="mc-sales-btns" style="margin-top:8px">' +
+      '<button class="mc-btn-primary" data-action="upsell-yes">' + am.upsellYes + '</button>' +
+      '<button data-action="upsell-human">' + am.upsellHuman + '</button>' +
+      '<button data-action="upsell-no">' + am.upsellNo + '</button>' +
+      '</div>';
+
+    var el = addMsgHtml('bot', html);
+
+    el.querySelector('[data-action="upsell-yes"]').addEventListener('click', function () {
+      disableButtons(el);
+      addMsg('usr', am.upsellYes);
+      showBotAssessPayment();
+    });
+
+    el.querySelector('[data-action="upsell-human"]').addEventListener('click', function () {
+      disableButtons(el);
+      addMsg('usr', am.upsellHuman);
+      var email = localStorage.getItem(EMAIL_KEY) || '';
+      var url = 'https://app.lingograde.com/book?package=quick' + (email ? '&email=' + encodeURIComponent(email) : '');
+      window.open(url, '_blank');
+      finishSalesFlow();
+    });
+
+    el.querySelector('[data-action="upsell-no"]').addEventListener('click', function () {
+      disableButtons(el);
+      addMsg('usr', am.upsellNo);
+      finishSalesFlow();
+    });
+  }
+
+  // ── Payment: Embedded Stripe Elements ──
+  function showBotAssessPayment() {
+    flowPhase = 'bot-assess-payment';
+    var am = analysisMsg();
+
+    var panel = document.createElement('div');
+    panel.id = 'mc-stripe-panel';
+    panel.innerHTML =
+      '<div class="mc-stripe-header">' +
+      '<span>' + am.payTitle + ' \u2014 \u20AC49.95</span>' +
+      '<button class="mc-stripe-close">\u2715</button>' +
+      '</div>' +
+      '<input type="email" id="mc-stripe-email" placeholder="' + am.payEmail + '" value="' + (localStorage.getItem(EMAIL_KEY) || '') + '">' +
+      '<div id="mc-card-element"></div>' +
+      '<div id="mc-card-errors"></div>' +
+      '<button id="mc-stripe-submit">' + am.payBtn + '</button>';
+
+    chat.appendChild(panel);
+
+    panel.querySelector('.mc-stripe-close').addEventListener('click', function () {
+      panel.remove();
+      finishSalesFlow();
+    });
+
+    // Lazy-load Stripe.js
+    loadStripe(function () {
+      initStripePanel(panel);
+    });
+  }
+
+  function loadStripe(cb) {
+    // Fetch publishable key from API if not yet loaded
+    var keyReady = STRIPE_PK
+      ? Promise.resolve()
+      : fetch(BOT_API + '/v1/config')
+          .then(function (r) { return r.json(); })
+          .then(function (cfg) {
+            if (!cfg.stripe_pk) throw new Error('Stripe not configured on server');
+            STRIPE_PK = cfg.stripe_pk;
+          });
+
+    keyReady
+      .then(function () {
+        if (window.Stripe) { cb(); return; }
+        var s = document.createElement('script');
+        s.src = 'https://js.stripe.com/v3/';
+        s.onload = cb;
+        s.onerror = function () {
+          var errEl = document.getElementById('mc-card-errors');
+          if (errEl) errEl.textContent = 'Failed to load payment system. Please try again.';
+        };
+        document.head.appendChild(s);
+      })
+      .catch(function (err) {
+        var errEl = document.getElementById('mc-card-errors');
+        if (errEl) errEl.textContent = err.message || 'Payment system unavailable.';
+      });
+  }
+
+  function initStripePanel(panel) {
+    var stripeInstance = Stripe(STRIPE_PK);
+    var elements = stripeInstance.elements();
+    var cardElement = elements.create('card', {
+      style: {
+        base: {
+          fontSize: '14px',
+          fontFamily: '"DM Sans", -apple-system, sans-serif',
+          color: '#1C1C1C',
+          '::placeholder': { color: '#9CA3AF' }
+        },
+        invalid: { color: '#EF4444' }
+      }
+    });
+    cardElement.mount('#mc-card-element');
+
+    var errorEl = document.getElementById('mc-card-errors');
+    cardElement.on('change', function (event) {
+      errorEl.textContent = event.error ? event.error.message : '';
+    });
+
+    var submitBtn = document.getElementById('mc-stripe-submit');
+    submitBtn.addEventListener('click', function () {
+      var email = document.getElementById('mc-stripe-email').value.trim();
+      if (!email || email.indexOf('@') === -1) {
+        errorEl.textContent = 'Please enter a valid email address.';
+        return;
+      }
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Processing...';
+      panel.querySelector('.mc-stripe-close').disabled = true;
+
+      // Step 1: Create PaymentIntent
+      fetch(PAYMENT_API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email,
+          session_id: getSession(),
+          package: 'bot-assessment'
+        })
+      })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (data.error) throw new Error(data.error);
+        // Step 2: Confirm payment
+        return stripeInstance.confirmCardPayment(data.client_secret, {
+          payment_method: {
+            card: cardElement,
+            billing_details: { email: email }
+          }
+        });
+      })
+      .then(function (result) {
+        if (result.error) throw new Error(result.error.message);
+        // Payment succeeded
+        localStorage.setItem(EMAIL_KEY, email);
+        panel.remove();
+        addMsg('bot', OWL + ' Payment successful! Let\'s begin your assessment.');
+        startBotAssessment(result.paymentIntent.id, email);
+      })
+      .catch(function (err) {
+        submitBtn.disabled = false;
+        var am = analysisMsg();
+        submitBtn.textContent = am.payBtn;
+        panel.querySelector('.mc-stripe-close').disabled = false;
+        errorEl.textContent = err.message || 'Payment failed. Please try again.';
+      });
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════════
+  // BOT ASSESSMENT SESSION
+  // ═══════════════════════════════════════════════════════════════
+
+  function startBotAssessment(paymentIntentId, email) {
+    flowPhase = 'bot-assess-active';
+    assessMode = true;
+    setInputEnabled(false);
+    var typing = showTyping();
+
+    fetch(ASSESS_API + '/start', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        payment_intent_id: paymentIntentId,
+        email: email,
+        session_id: getSession(),
+        lang: chosenLang || 'en'
+      })
+    })
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      typing.remove();
+      if (data.error) {
+        addMsg('bot', 'Something went wrong: ' + data.error);
+        assessMode = false;
+        flowPhase = 'chat';
+        setInputEnabled(true);
+        return;
+      }
+      assessSessionId = data.assess_session_id;
+      addMsg('bot', data.first_message);
+      setInputEnabled(true);
+      input.placeholder = 'Type your response...';
+      input.focus();
+    })
+    .catch(function () {
+      typing.remove();
+      addMsg('bot', OWL + ' Failed to start assessment session. Please contact support.');
+      assessMode = false;
+      flowPhase = 'chat';
+      setInputEnabled(true);
+    });
+  }
+
+  function sendAssessTurn() {
+    var text = input.value.trim();
+    if (!text || sending) return;
+
+    addMsg('usr', text);
+    input.value = '';
+    sending = true;
+    sendBtn.disabled = true;
+
+    var typing = showTyping();
+
+    fetch(ASSESS_API + '/turn', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        assess_session_id: assessSessionId,
+        message: text
+      })
+    })
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      typing.remove();
+      if (data.error) {
+        addMsg('bot', 'Hmm: ' + data.error);
+        return;
+      }
+      addMsg('bot', data.response || '');
+
+      if (data.complete) {
+        finishBotAssessment(data);
+      }
+    })
+    .catch(function () {
+      typing.remove();
+      addMsg('bot', OWL + ' Lost signal for a moment. Please try sending that again.');
+    })
+    .finally(function () {
+      sending = false;
+      sendBtn.disabled = false;
+      if (assessMode) input.focus();
+    });
+  }
+
+  function finishBotAssessment(data) {
+    flowPhase = 'bot-assess-done';
+    assessMode = false;
+    var am = analysisMsg();
+
+    setInputEnabled(false);
+
+    // Show report preview with download link
+    setTimeout(function () {
+      var result = data.result || {};
+      var html = '<div class="mc-report-preview">' +
+        '<div style="font-weight:600;color:#1A3A5C;margin-bottom:6px">' + am.assessDone + '</div>' +
+        '<div class="mc-cefr-badge" style="display:inline-block;background:#2563AB;color:#fff;border-radius:6px;padding:2px 8px;font-weight:700">' +
+        escHtml(result.cefr_active || '?') + '</div> ' +
+        '<span style="font-size:.78rem;color:#6B7280">Active</span>' +
+        (data.report_url
+          ? '<a class="mc-report-dl" href="' + BOT_API + data.report_url + '" target="_blank" rel="noopener">' + am.downloadReport + '</a>'
+          : '') +
+        '</div>';
+
+      addMsgHtml('bot', html);
+
+      // Final upsell to human assessment
+      setTimeout(function () {
+        showFullAssessUpsell();
+      }, 1200);
+    }, 600);
+  }
+
+  function showFullAssessUpsell() {
+    var am = analysisMsg();
+
+    var html = am.fullUpsell +
+      '<div class="mc-sales-btns" style="margin-top:8px">' +
+      '<a href="https://app.lingograde.com/book?package=full" target="_blank" rel="noopener" ' +
+      'style="display:block;text-align:center;padding:10px 14px;border-radius:10px;background:#27AE60;color:#fff;' +
+      'font-weight:600;font-size:.9rem;text-decoration:none;transition:background .15s">' + am.bookFull + '</a>' +
+      '</div>';
+
+    addMsgHtml('bot', html);
+
+    // Return to general chat after upsell
+    setTimeout(function () {
+      finishSalesFlow();
+    }, 500);
+  }
+
   // ── Finish sales flow → open general chat ──
   function finishSalesFlow() {
     flowPhase = 'chat';
@@ -1126,6 +1878,7 @@
   }
 
   function send() {
+    if (assessMode) { sendAssessTurn(); return; }
     var text = input.value.trim();
     if (!text || sending || flowPhase !== 'chat') return;
 
