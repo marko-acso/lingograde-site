@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Memory — LingoGrade</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/webp" href="/assets/mascot/marco-face-grad-v2.webp?v=3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1C1C1C;
+  --ink-soft: #4A4A4A;
+  --ink-light: #8A8A8A;
+  --accent: #2563AB;
+  --accent-lt: #3B82F6;
+  --accent-bg: #EFF6FF;
+  --cream: #FFFFFF;
+  --parchment: #F8F8F8;
+  --border: #E0E0E0;
+  --success: #27AE60;
+  --success-bg: #F0FFF4;
+  --warn: #E67E22;
+  --error: #C0392B;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+  --max-w: 1080px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--ink); background: var(--parchment); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+/* ── Navigation ── */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 4px 32px; display: flex; align-items: center; justify-content: space-between; }
+.nav-menu { display: flex; gap: 28px; align-items: center; }
+.nav-menu a { font-size: 0.875rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; transition: color 0.15s; }
+.nav-menu a:hover { color: var(--accent); }
+.nav-signin { padding: 8px 16px; border: 1.5px solid var(--border); border-radius: 8px; transition: all 0.15s; }
+.nav-signin:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
+.nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+.nav-hamburger span { display: block; width: 24px; height: 2.5px; background: var(--ink); border-radius: 2px; transition: all 0.2s; }
+.nav-cta { display: inline-flex; align-items: center; padding: 8px 20px; background: var(--accent); color: white !important; border-radius: 8px; font-weight: 600; font-size: 0.875rem; transition: background 0.15s; text-decoration: none; }
+.nav-cta:hover { background: var(--accent-lt); }
+.brand-logo { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); }
+.brand-logo img { height: 44px; width: auto; }
+.brand-a { color: #27AE60; text-decoration: none; }
+
+/* ── Page Layout ── */
+.page { max-width: 860px; margin: 0 auto; padding: 100px 24px 60px; }
+.page-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+.page-header h1 { font-family: var(--font-display); font-size: 1.75rem; color: var(--ink); }
+.page-header p { font-size: 0.9375rem; color: var(--ink-soft); }
+
+/* ── Student Selector ── */
+.student-bar { display: flex; gap: 12px; align-items: center; margin-bottom: 24px; flex-wrap: wrap; }
+.student-bar select, .student-bar input { padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 0.9375rem; font-family: var(--font-body); background: white; outline: none; transition: border 0.15s; }
+.student-bar select:focus, .student-bar input:focus { border-color: var(--accent); }
+.student-bar select { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A8A8A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; cursor: pointer; }
+.student-bar input[type="search"] { flex: 1; min-width: 200px; }
+
+/* ── Toolbar ── */
+.toolbar { display: flex; gap: 8px; align-items: center; margin-bottom: 20px; flex-wrap: wrap; }
+.filter-btn { padding: 6px 14px; border: 1.5px solid var(--border); border-radius: 20px; background: white; font-size: 0.8125rem; font-family: var(--font-body); cursor: pointer; transition: all 0.15s; color: var(--ink-soft); }
+.filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+.filter-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+.toolbar-spacer { flex: 1; }
+.btn-add { display: inline-flex; align-items: center; gap: 6px; padding: 8px 20px; background: var(--accent); color: white; border: none; border-radius: 8px; font-size: 0.875rem; font-weight: 600; font-family: var(--font-body); cursor: pointer; transition: all 0.15s; }
+.btn-add:hover { background: var(--accent-lt); transform: translateY(-1px); }
+.btn-gdpr { padding: 8px 16px; border: 1.5px solid var(--border); border-radius: 8px; background: white; font-size: 0.8125rem; font-family: var(--font-body); cursor: pointer; color: var(--ink-soft); transition: all 0.15s; }
+.btn-gdpr:hover { border-color: var(--warn); color: var(--warn); }
+
+/* ── Memory Cards ── */
+.memory-list { display: flex; flex-direction: column; gap: 12px; }
+.memory-card { background: var(--cream); border-radius: 12px; border: 1.5px solid var(--border); padding: 20px 24px; transition: border-color 0.15s; position: relative; }
+.memory-card:hover { border-color: var(--accent-lt); }
+.memory-card.pinned { border-left: 4px solid var(--accent); }
+.memory-meta { display: flex; gap: 10px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
+.memory-category { font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 2px 10px; border-radius: 12px; }
+.cat-observation  { background: #EFF6FF; color: #2563AB; }
+.cat-preference   { background: #FFF7ED; color: #C2410C; }
+.cat-trigger      { background: #FEF2F2; color: #B91C1C; }
+.cat-progress     { background: #F0FFF4; color: #15803D; }
+.cat-logistics    { background: #F5F3FF; color: #6D28D9; }
+.cat-parent_note  { background: #FFFBEB; color: #B45309; }
+.memory-date { font-size: 0.75rem; color: var(--ink-light); }
+.memory-title { font-family: var(--font-display); font-size: 1rem; margin-bottom: 4px; }
+.memory-body { font-size: 0.875rem; color: var(--ink-soft); line-height: 1.65; white-space: pre-wrap; }
+.memory-tags { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+.memory-tag { font-size: 0.6875rem; padding: 2px 8px; background: var(--parchment); border-radius: 8px; color: var(--ink-light); }
+.memory-actions { position: absolute; top: 16px; right: 16px; display: flex; gap: 4px; opacity: 0; transition: opacity 0.15s; }
+.memory-card:hover .memory-actions { opacity: 1; }
+.memory-actions button { background: none; border: none; cursor: pointer; padding: 4px 8px; font-size: 0.8125rem; color: var(--ink-light); border-radius: 6px; transition: all 0.15s; }
+.memory-actions button:hover { background: var(--parchment); color: var(--ink); }
+.memory-actions button.pin-active { color: var(--accent); }
+.memory-actions button.btn-del:hover { color: var(--error); }
+
+/* ── Empty State ── */
+.empty-state { text-align: center; padding: 60px 24px; color: var(--ink-light); }
+.empty-state h3 { font-family: var(--font-display); font-size: 1.25rem; color: var(--ink-soft); margin-bottom: 8px; }
+
+/* ── Modal ── */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 300; display: none; align-items: center; justify-content: center; padding: 24px; }
+.modal-overlay.open { display: flex; }
+.modal { background: white; border-radius: 16px; padding: 32px; max-width: 560px; width: 100%; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+.modal h2 { font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 20px; }
+.modal .form-group { margin-bottom: 16px; }
+.modal .form-label { font-size: 0.8rem; font-weight: 600; color: var(--ink-soft); display: block; margin-bottom: 6px; }
+.modal .form-input, .modal .form-select { width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 0.9375rem; font-family: var(--font-body); background: white; outline: none; transition: border 0.15s; }
+.modal .form-input:focus, .modal .form-select:focus { border-color: var(--accent); }
+.modal textarea.form-input { resize: vertical; min-height: 100px; line-height: 1.6; }
+.modal-footer { display: flex; gap: 10px; justify-content: flex-end; margin-top: 24px; }
+.btn-cancel { padding: 10px 20px; border: 1.5px solid var(--border); border-radius: 8px; background: white; font-size: 0.875rem; font-family: var(--font-body); cursor: pointer; color: var(--ink-soft); transition: all 0.15s; }
+.btn-cancel:hover { border-color: var(--ink-light); }
+.btn-submit { padding: 10px 24px; background: var(--accent); color: white; border: none; border-radius: 8px; font-size: 0.875rem; font-weight: 600; font-family: var(--font-body); cursor: pointer; transition: all 0.15s; }
+.btn-submit:hover { background: var(--accent-lt); }
+.btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ── Load More ── */
+.load-more { text-align: center; margin-top: 20px; }
+.btn-load { padding: 10px 28px; border: 1.5px solid var(--border); border-radius: 8px; background: white; font-size: 0.875rem; font-family: var(--font-body); cursor: pointer; color: var(--ink-soft); transition: all 0.15s; }
+.btn-load:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── Toast ── */
+.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--ink); color: white; padding: 12px 24px; border-radius: 10px; font-size: 0.875rem; font-weight: 500; opacity: 0; transition: all 0.3s ease; z-index: 400; pointer-events: none; }
+.toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+.toast.success { background: var(--success); }
+.toast.error { background: var(--error); }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .brand-logo { font-size: 1.2rem; gap: 6px; }
+  .brand-logo img { height: 32px; }
+  .nav-hamburger { display: flex; }
+  .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; flex-direction: column; gap: 0; padding: 8px 0; border-bottom: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .nav-menu.open { display: flex; }
+  .nav-menu a { padding: 12px 32px; font-size: 1rem; }
+  .nav-menu a:hover { background: var(--parchment); }
+  .nav-signin { margin: 4px 32px; text-align: center; }
+  .nav-cta { margin: 8px 32px 12px; text-align: center; justify-content: center; display: flex; }
+  .nav-inner { padding: 8px 16px; }
+  .page { padding: 90px 16px 40px; }
+  .memory-card { padding: 16px; }
+  .memory-actions { opacity: 1; }
+  .modal { padding: 24px; margin: 16px; }
+}
+</style>
+<script src="/js/cookie-consent.js"></script>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="Marco" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"><span>LingoGr<span class="brand-a">A</span>de</span></a>
+    <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-menu">
+      <a href="index.html">Individual</a>
+      <a href="kids.html">Kids</a>
+      <a href="corporate.html">Corporate</a>
+      <a href="partners.html">Partners</a>
+      <a href="shop.html">Shop</a>
+      <a href="https://app.lingograde.com/login" class="nav-signin">Sign In</a>
+      <a href="https://booking.lingograde.com/marco" class="nav-cta">Explore Assessments</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Page ── -->
+<div class="page">
+  <div class="page-header">
+    <img src="assets/mascot/marco-logo-v6.1.webp" alt="Marco" style="width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+    <div>
+      <h1>Client Memory</h1>
+      <p>Persistent notes about your students across sessions.</p>
+    </div>
+  </div>
+
+  <!-- ── Student Selector ── -->
+  <div class="student-bar">
+    <select id="studentSelect">
+      <option value="">Select a student...</option>
+    </select>
+    <input type="search" id="searchInput" placeholder="Search memories..." disabled>
+  </div>
+
+  <!-- ── Toolbar ── -->
+  <div class="toolbar" id="toolbar" style="display:none;">
+    <button class="filter-btn active" data-cat="all">All</button>
+    <button class="filter-btn" data-cat="observation">Observation</button>
+    <button class="filter-btn" data-cat="preference">Preference</button>
+    <button class="filter-btn" data-cat="trigger">Trigger</button>
+    <button class="filter-btn" data-cat="progress">Progress</button>
+    <button class="filter-btn" data-cat="logistics">Logistics</button>
+    <button class="filter-btn" data-cat="parent_note">Parent</button>
+    <div class="toolbar-spacer"></div>
+    <button class="btn-gdpr" id="btnExport" title="GDPR Export">Export</button>
+    <button class="btn-gdpr" id="btnDeleteAll" title="GDPR Delete All" style="color:var(--error);border-color:var(--error);">Delete All</button>
+    <button class="btn-add" id="btnAdd">+ Add Note</button>
+  </div>
+
+  <!-- ── Memory List ── -->
+  <div class="memory-list" id="memoryList">
+    <div class="empty-state" id="emptyState">
+      <h3>Select a student to begin</h3>
+      <p>Choose a student from the dropdown above to view or add memory notes.</p>
+    </div>
+  </div>
+
+  <!-- ── Load More ── -->
+  <div class="load-more" id="loadMore" style="display:none;">
+    <button class="btn-load" id="btnLoadMore">Load more</button>
+  </div>
+</div>
+
+<!-- ── Add/Edit Modal ── -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <h2 id="modalTitle">Add Memory Note</h2>
+    <input type="hidden" id="editId" value="">
+
+    <div class="form-group">
+      <label class="form-label" for="memCategory">Category</label>
+      <select class="form-select" id="memCategory">
+        <option value="observation">Observation</option>
+        <option value="preference">Preference</option>
+        <option value="trigger">Trigger</option>
+        <option value="progress">Progress</option>
+        <option value="logistics">Logistics</option>
+        <option value="parent_note">Parent Note</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="memTitle">Title</label>
+      <input class="form-input" type="text" id="memTitle" placeholder="Brief summary...">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="memBody">Details</label>
+      <textarea class="form-input" id="memBody" placeholder="What did you observe? What should you remember for next time?"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="memTags">Tags (comma-separated)</label>
+      <input class="form-input" type="text" id="memTags" placeholder="e.g. anxiety, verb-tense, B2-plateau">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="memDate">Session Date (optional)</label>
+      <input class="form-input" type="date" id="memDate">
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+      <button class="btn-submit" id="btnSubmit" onclick="submitMemory()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Toast ── -->
+<div class="toast" id="toast"></div>
+
+<!-- ── Footer ── -->
+<footer style="background:#1A3A5C;color:rgba(255,255,255,0.85);text-align:center;padding:48px 32px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <div style="font-size:1.5rem;font-weight:700;letter-spacing:0.02em;">LingoGr<span style="color:#27AE60">A</span>de</div>
+  <p style="color:rgba(255,255,255,0.6);font-size:0.9375rem;margin:8px 0 24px;">Professional Language Assessment</p>
+  <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:0.875rem;">
+    <a href="index.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Home</a>
+    <a href="index.html#languages" style="color:rgba(255,255,255,0.7);text-decoration:none;">Languages</a>
+    <a href="index.html#pricing" style="color:rgba(255,255,255,0.7);text-decoration:none;">Pricing</a>
+    <a href="teachers.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">For Teachers</a>
+    <a href="partners.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Partners</a>
+    <a href="shop.html" style="color:rgba(255,255,255,0.7);text-decoration:none;">Shop</a>
+    <a href="mailto:info@lingograde.com" style="color:rgba(255,255,255,0.7);text-decoration:none;">Contact</a>
+  </div>
+  <div style="margin-top:16px;display:flex;gap:16px;justify-content:center;">
+    <a href="privacy-policy.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Privacy Policy</a>
+    <a href="terms-of-service.html" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">Terms of Service</a>
+  </div>
+  <div style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.4);">&copy; 2026 LingoGrade. All rights reserved.</div>
+</footer>
+
+<!-- ── Scripts ── -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="/js/supabase-init.js"></script>
+<script src="/js/client-memory.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var state = {
+    studentId: null,
+    assessorId: null,
+    category: null,
+    search: '',
+    page: 0,
+    memories: []
+  };
+
+  var CATEGORY_LABELS = {
+    observation: 'Observation',
+    preference: 'Preference',
+    trigger: 'Trigger',
+    progress: 'Progress',
+    logistics: 'Logistics',
+    parent_note: 'Parent Note'
+  };
+
+  // ── Init: get current user (assessor) ──
+  async function init() {
+    var session = await window.supabase.auth.getSession();
+    if (!session.data.session) {
+      window.location.href = 'https://app.lingograde.com/login?redirect=/client-memory';
+      return;
+    }
+    state.assessorId = session.data.session.user.id;
+    await loadStudents();
+    bindEvents();
+  }
+
+  // ── Load assigned students ──
+  // Lookup map: student_id → display name
+  var studentNames = {};
+
+  async function loadStudents() {
+    var select = document.getElementById('studentSelect');
+
+    // Try student_profiles table first (preferred)
+    var profileRes = await window.supabase
+      .from('student_profiles')
+      .select('id, full_name, preferred_name')
+      .order('full_name');
+
+    if (profileRes.data && profileRes.data.length > 0) {
+      profileRes.data.forEach(function (p) {
+        var name = p.preferred_name || p.full_name;
+        studentNames[p.id] = name;
+        var opt = document.createElement('option');
+        opt.value = p.id;
+        opt.textContent = name;
+        select.appendChild(opt);
+      });
+    } else {
+      // Fallback: derive from existing memories (before profiles are populated)
+      var memRes = await window.supabase
+        .from('client_memories')
+        .select('student_id')
+        .eq('assessor_id', state.assessorId);
+
+      if (memRes.data && memRes.data.length > 0) {
+        var seen = {};
+        memRes.data.forEach(function (row) {
+          if (!seen[row.student_id]) {
+            seen[row.student_id] = true;
+            var opt = document.createElement('option');
+            opt.value = row.student_id;
+            opt.textContent = row.student_id.substring(0, 8) + '...';
+            select.appendChild(opt);
+          }
+        });
+      }
+    }
+
+    // Allow entering a student UUID manually (for first-time entries)
+    var optManual = document.createElement('option');
+    optManual.value = '__manual__';
+    optManual.textContent = 'Enter student ID manually...';
+    select.appendChild(optManual);
+  }
+
+  // ── Bind events ──
+  function bindEvents() {
+    document.getElementById('studentSelect').addEventListener('change', onStudentChange);
+    document.getElementById('searchInput').addEventListener('input', debounce(onSearch, 300));
+    document.getElementById('btnAdd').addEventListener('click', openAddModal);
+    document.getElementById('btnExport').addEventListener('click', exportMemories);
+    document.getElementById('btnDeleteAll').addEventListener('click', deleteAllMemories);
+    document.getElementById('btnLoadMore').addEventListener('click', loadMore);
+
+    document.querySelectorAll('.filter-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        state.category = btn.dataset.cat === 'all' ? null : btn.dataset.cat;
+        state.page = 0;
+        state.memories = [];
+        loadMemories();
+      });
+    });
+
+    // Close modal on overlay click
+    document.getElementById('modal').addEventListener('click', function (e) {
+      if (e.target === this) closeModal();
+    });
+
+    // Close modal on Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeModal();
+    });
+  }
+
+  // ── Student change ──
+  function onStudentChange() {
+    var val = document.getElementById('studentSelect').value;
+    if (val === '__manual__') {
+      var id = prompt('Enter student UUID:');
+      if (id && id.length >= 8) {
+        state.studentId = id.trim();
+        // Add this ID to dropdown for convenience
+        var select = document.getElementById('studentSelect');
+        var opt = document.createElement('option');
+        opt.value = state.studentId;
+        opt.textContent = state.studentId.substring(0, 8) + '...';
+        select.insertBefore(opt, select.lastElementChild);
+        select.value = state.studentId;
+      } else {
+        document.getElementById('studentSelect').value = '';
+        return;
+      }
+    } else {
+      state.studentId = val || null;
+    }
+
+    document.getElementById('searchInput').disabled = !state.studentId;
+    document.getElementById('toolbar').style.display = state.studentId ? 'flex' : 'none';
+    state.page = 0;
+    state.memories = [];
+    state.category = null;
+    state.search = '';
+    document.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
+    document.querySelector('.filter-btn[data-cat="all"]').classList.add('active');
+
+    if (state.studentId) {
+      loadMemories();
+    } else {
+      renderEmpty('Select a student to begin', 'Choose a student from the dropdown above to view or add memory notes.');
+    }
+  }
+
+  // ── Search ──
+  function onSearch() {
+    state.search = document.getElementById('searchInput').value.trim();
+    state.page = 0;
+    state.memories = [];
+    loadMemories();
+  }
+
+  // ── Load memories ──
+  async function loadMemories() {
+    if (!state.studentId) return;
+
+    var res = await ClientMemory.list(state.studentId, {
+      category: state.category,
+      search: state.search || null,
+      page: state.page
+    });
+
+    if (res.error) {
+      showToast('Failed to load memories.', 'error');
+      return;
+    }
+
+    if (state.page === 0) {
+      state.memories = res.data || [];
+    } else {
+      state.memories = state.memories.concat(res.data || []);
+    }
+
+    render();
+    document.getElementById('loadMore').style.display =
+      (res.data && res.data.length >= ClientMemory.PAGE_SIZE) ? 'block' : 'none';
+  }
+
+  function loadMore() {
+    state.page++;
+    loadMemories();
+  }
+
+  // ── Render ──
+  function render() {
+    var list = document.getElementById('memoryList');
+
+    if (state.memories.length === 0) {
+      renderEmpty('No memories yet', 'Click "+ Add Note" to create the first entry for this student.');
+      return;
+    }
+
+    list.innerHTML = state.memories.map(function (m) {
+      var catClass = 'cat-' + m.category;
+      var pinnedClass = m.is_pinned ? ' pinned' : '';
+      var tags = (m.tags || []).map(function (t) {
+        return '<span class="memory-tag">' + escHtml(t) + '</span>';
+      }).join('');
+      var dateStr = m.session_date || m.created_at.substring(0, 10);
+
+      return '<div class="memory-card' + pinnedClass + '" data-id="' + m.id + '">' +
+        '<div class="memory-actions">' +
+          '<button onclick="togglePin(\'' + m.id + '\',' + m.is_pinned + ')" title="Pin" class="' + (m.is_pinned ? 'pin-active' : '') + '">' + (m.is_pinned ? '&#9733;' : '&#9734;') + '</button>' +
+          '<button onclick="editMemory(\'' + m.id + '\')" title="Edit">&#9998;</button>' +
+          '<button onclick="deleteMemory(\'' + m.id + '\')" title="Delete" class="btn-del">&#10005;</button>' +
+        '</div>' +
+        '<div class="memory-meta">' +
+          '<span class="memory-category ' + catClass + '">' + CATEGORY_LABELS[m.category] + '</span>' +
+          '<span class="memory-date">' + dateStr + '</span>' +
+        '</div>' +
+        '<div class="memory-title">' + escHtml(m.title) + '</div>' +
+        '<div class="memory-body">' + escHtml(m.body) + '</div>' +
+        (tags ? '<div class="memory-tags">' + tags + '</div>' : '') +
+      '</div>';
+    }).join('');
+  }
+
+  function renderEmpty(title, subtitle) {
+    document.getElementById('memoryList').innerHTML =
+      '<div class="empty-state"><h3>' + title + '</h3><p>' + subtitle + '</p></div>';
+    document.getElementById('loadMore').style.display = 'none';
+  }
+
+  // ── Modal ──
+  function openAddModal() {
+    document.getElementById('editId').value = '';
+    document.getElementById('modalTitle').textContent = 'Add Memory Note';
+    document.getElementById('memCategory').value = 'observation';
+    document.getElementById('memTitle').value = '';
+    document.getElementById('memBody').value = '';
+    document.getElementById('memTags').value = '';
+    document.getElementById('memDate').value = '';
+    document.getElementById('modal').classList.add('open');
+    document.getElementById('memTitle').focus();
+  }
+
+  window.editMemory = async function (id) {
+    var res = await ClientMemory.get(id);
+    if (res.error || !res.data) { showToast('Could not load memory.', 'error'); return; }
+    var m = res.data;
+    document.getElementById('editId').value = m.id;
+    document.getElementById('modalTitle').textContent = 'Edit Memory Note';
+    document.getElementById('memCategory').value = m.category;
+    document.getElementById('memTitle').value = m.title;
+    document.getElementById('memBody').value = m.body;
+    document.getElementById('memTags').value = (m.tags || []).join(', ');
+    document.getElementById('memDate').value = m.session_date || '';
+    document.getElementById('modal').classList.add('open');
+    document.getElementById('memTitle').focus();
+  };
+
+  window.closeModal = function () {
+    document.getElementById('modal').classList.remove('open');
+  };
+
+  window.submitMemory = async function () {
+    var title = document.getElementById('memTitle').value.trim();
+    var body = document.getElementById('memBody').value.trim();
+    if (!title || !body) { showToast('Title and details are required.', 'error'); return; }
+
+    var btn = document.getElementById('btnSubmit');
+    btn.disabled = true;
+    btn.textContent = 'Saving...';
+
+    var tags = document.getElementById('memTags').value
+      .split(',').map(function (t) { return t.trim(); }).filter(Boolean);
+
+    var entry = {
+      student_id:   state.studentId,
+      assessor_id:  state.assessorId,
+      category:     document.getElementById('memCategory').value,
+      title:        title,
+      body:         body,
+      tags:         tags,
+      session_date: document.getElementById('memDate').value || null
+    };
+
+    var editId = document.getElementById('editId').value;
+    var res;
+    if (editId) {
+      delete entry.student_id;
+      delete entry.assessor_id;
+      res = await ClientMemory.update(editId, entry);
+    } else {
+      res = await ClientMemory.create(entry);
+    }
+
+    btn.disabled = false;
+    btn.textContent = 'Save';
+
+    if (res.error) {
+      showToast('Save failed: ' + res.error.message, 'error');
+      return;
+    }
+
+    showToast(editId ? 'Memory updated.' : 'Memory added.', 'success');
+    closeModal();
+    state.page = 0;
+    state.memories = [];
+    loadMemories();
+  };
+
+  // ── Pin ──
+  window.togglePin = async function (id, current) {
+    var res = await ClientMemory.togglePin(id, current);
+    if (res.error) { showToast('Pin failed.', 'error'); return; }
+    state.page = 0;
+    state.memories = [];
+    loadMemories();
+  };
+
+  // ── Delete ──
+  window.deleteMemory = async function (id) {
+    if (!confirm('Delete this memory note? This cannot be undone.')) return;
+    var res = await ClientMemory.remove(id);
+    if (res.error) { showToast('Delete failed.', 'error'); return; }
+    showToast('Memory deleted.', 'success');
+    state.memories = state.memories.filter(function (m) { return m.id !== id; });
+    render();
+  };
+
+  // ── GDPR Export ──
+  async function exportMemories() {
+    if (!state.studentId) return;
+    var res = await ClientMemory.exportAll(state.studentId);
+    if (res.error) { showToast('Export failed.', 'error'); return; }
+    var blob = new Blob([JSON.stringify(res.data, null, 2)], { type: 'application/json' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'client-memory-' + state.studentId.substring(0, 8) + '.json';
+    a.click();
+    URL.revokeObjectURL(url);
+    showToast('Export downloaded.', 'success');
+  }
+
+  // ── GDPR Delete All ──
+  async function deleteAllMemories() {
+    if (!state.studentId) return;
+    var name = studentNames[state.studentId] || state.studentId.substring(0, 8);
+    if (!confirm('Permanently delete ALL memory notes for ' + name + '?\n\nThis cannot be undone.')) return;
+    if (!confirm('Are you sure? Type "delete" below to confirm.') || prompt('Type "delete" to confirm:') !== 'delete') {
+      showToast('Deletion cancelled.', '');
+      return;
+    }
+    var res = await ClientMemory.deleteAll(state.studentId);
+    if (res.error) { showToast('Delete failed: ' + res.error.message, 'error'); return; }
+    showToast('All memories deleted for ' + name + '.', 'success');
+    state.memories = [];
+    state.page = 0;
+    render();
+  }
+
+  // ── Helpers ──
+  function showToast(message, type) {
+    var toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.className = 'toast ' + (type || '');
+    toast.classList.add('show');
+    setTimeout(function () { toast.classList.remove('show'); }, 3000);
+  }
+
+  function escHtml(str) {
+    var d = document.createElement('div');
+    d.textContent = str;
+    return d.innerHTML;
+  }
+
+  function debounce(fn, ms) {
+    var timer;
+    return function () {
+      clearTimeout(timer);
+      timer = setTimeout(fn, ms);
+    };
+  }
+
+  // ── Boot ──
+  init();
+})();
+</script>
+<script src="js/shield.js" defer></script>
+</body>
+</html>
