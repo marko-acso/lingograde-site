@@ -45,6 +45,7 @@
   ];
 
   var selectedLang = null;
+  var lastCefr = null;
   var recognition = null;
   var isRecording = false;
 
@@ -270,6 +271,7 @@
     loading.classList.remove('visible');
     results.classList.add('visible');
 
+    lastCefr = data.cefr || null;
     cefrBadge.textContent = data.cefr || '?';
     summary.textContent = data.summary || '';
 
@@ -304,14 +306,22 @@
     var email = emailInput.value.trim();
     if (!email || !email.includes('@')) return;
 
+    emailSave.disabled = true;
     fetch(EMAIL_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email })
-    }).catch(function () {});
-
-    emailInput.style.display = 'none';
-    emailSave.style.display = 'none';
-    emailThanks.style.display = 'block';
+      body: JSON.stringify({ email: email, language: selectedLang, cefr: lastCefr })
+    }).then(function (res) {
+      if (!res.ok) throw new Error();
+      emailInput.style.display = 'none';
+      emailSave.style.display = 'none';
+      emailThanks.style.display = 'block';
+    }).catch(function () {
+      emailSave.disabled = false;
+      emailThanks.style.display = 'block';
+      emailThanks.textContent = 'Something went wrong — try again.';
+      emailThanks.style.color = '#e74c3c';
+      setTimeout(function () { emailThanks.style.display = 'none'; }, 3000);
+    });
   });
 })();
