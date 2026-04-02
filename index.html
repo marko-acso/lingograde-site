@@ -337,6 +337,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .flashcard-tier.packs { border-color: var(--success); background: #f0faf4; }
 .flashcard-tier { border-radius: 12px; border: 1.5px solid var(--border); padding: 28px; background: var(--cream); position: relative; }
 .tier-badge { position: absolute; top: -10px; right: 16px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; padding: 3px 10px; border-radius: 20px; }
+.tier-badge--free { background: var(--ink); color: #fff; }
 .tier-badge--onetime { background: var(--success); color: #fff; }
 .tier-badge--subscription { background: var(--accent); color: #fff; }
 .flashcard-tier.premium { border-color: var(--accent); background: var(--accent-bg); }
@@ -897,6 +898,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       <div>
         <div class="flashcard-tiers">
           <div class="flashcard-tier">
+            <div class="tier-badge tier-badge--free">FREE FOREVER</div>
             <h3>Free Tier</h3>
             <div class="tier-price">Included with every assessment</div>
             <ul>
@@ -904,11 +906,11 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
               <li>Spaced repetition (FSRS algorithm &mdash; proven to outperform Anki)</li>
               <li>Offline mode &mdash; practice anywhere, no internet needed</li>
               <li>Progress tracking synced to your profile</li>
-              <li>Upload up to 50 flashcards per day</li>
+              <li>Upload up to 50 cards per day</li>
             </ul>
           </div>
           <div class="flashcard-tier packs">
-            <div class="tier-badge tier-badge--onetime">ONE-TIME</div>
+            <div class="tier-badge tier-badge--onetime">ONE-TIME PURCHASE</div>
             <h3>Problem Packs</h3>
             <div class="tier-price"><span class="lg-price-inline" data-eur="19.95" data-usd="19.95" data-chf="19.95" data-gbp="19.95">&euro;19.95</span> per focus area</div>
             <div class="tier-price-note">Pay once, keep forever &mdash; no subscription needed</div>
@@ -920,12 +922,12 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
             </ul>
           </div>
           <div class="flashcard-tier premium">
-            <div class="tier-badge tier-badge--subscription">MONTHLY</div>
+            <div class="tier-badge tier-badge--subscription">MONTHLY SUBSCRIPTION</div>
             <h3>Premium</h3>
             <div class="tier-price"><span class="lg-price-inline" data-eur="4.95" data-usd="4.95" data-chf="4.95" data-gbp="4.95">&euro;4.95</span>/month</div>
-            <div class="tier-price-note">Monthly subscription &middot; Free with Complete Program</div>
+            <div class="tier-price-note">Cancel anytime &middot; Free with Complete Program</div>
             <ul>
-              <li>Unlimited flashcard uploads daily</li>
+              <li>No daily upload limit &mdash; unlimited cards</li>
               <li>Unlimited custom card decks</li>
               <li>AI-generated practice sentences from your specific glitches</li>
               <li>Stats visible to your assessor &mdash; lessons adapt to what you struggle with</li>
