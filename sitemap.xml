@@ -6,52 +6,52 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.lingograde.com/corporate.html</loc>
+    <loc>https://www.lingograde.com/corporate</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.lingograde.com/kids.html</loc>
+    <loc>https://www.lingograde.com/kids</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lingograde.com/alumni.html</loc>
+    <loc>https://www.lingograde.com/alumni</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lingograde.com/shop.html</loc>
+    <loc>https://www.lingograde.com/shop</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.lingograde.com/partners.html</loc>
+    <loc>https://www.lingograde.com/partners</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.lingograde.com/teachers.html</loc>
+    <loc>https://www.lingograde.com/teachers</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lingograde.com/scan.html</loc>
+    <loc>https://www.lingograde.com/scan</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.lingograde.com/review.html</loc>
+    <loc>https://www.lingograde.com/review</loc>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://www.lingograde.com/privacy-policy.html</loc>
+    <loc>https://www.lingograde.com/privacy-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://www.lingograde.com/terms-of-service.html</loc>
+    <loc>https://www.lingograde.com/terms-of-service</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
