@@ -167,35 +167,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 /* ── Hero ── */
 .hero { padding: 140px 32px 48px; text-align: center; background: linear-gradient(180deg, rgba(37,99,171,0.15) 0%, var(--cream) 100%); }
 .hero-inner { max-width: 720px; margin: 0 auto; }
-.hero h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.2; color: var(--ink); margin-bottom: 8px; }
+.hero h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.2; color: var(--ink); margin-bottom: 20px; }
 .hero h1 em { font-style: normal; color: var(--accent); }
 .hero p { font-size: 1.125rem; color: var(--ink-soft); max-width: 560px; margin: 0 auto 32px; line-height: 1.7; }
-
-/* ── Hero Marco speech bubble ── */
-.hero-marco-wrap { display: inline-flex; align-items: flex-end; gap: 0; justify-content: center; margin-bottom: 12px; }
-.hero-speech {
-  position: relative;
-  background: var(--parchment);
-  border: 1.5px solid var(--border);
-  border-radius: 16px 16px 16px 4px;
-  padding: 14px 20px;
-  font-size: 0.95rem;
-  color: var(--ink);
-  line-height: 1.5;
-  max-width: 320px;
-  text-align: left;
-}
-.hero-speech::after {
-  content: '';
-  position: absolute;
-  bottom: 12px;
-  left: -10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-right-color: var(--parchment);
-  border-bottom-color: var(--parchment);
-}
 
 /* ── Section ── */
 .section { padding: 40px 32px; }
@@ -772,9 +746,6 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
   .hero h1 { font-size: clamp(1.6rem, 6vw, 2.4rem); }
   .hero p { font-size: 1rem; }
   .hero img { max-width: 200px; }
-  .hero-marco-wrap { flex-direction: column; align-items: center; }
-  .hero-speech { border-radius: 16px; max-width: 300px; text-align: center; }
-  .hero-speech::after { display: none; }
   .section { padding: 32px 12px; }
 
   /* Partner card: single column on mobile */
@@ -909,9 +880,6 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
   #sticker-map { height: 280px; }
   .map-stats { gap: 20px; }
   .map-stat-num { font-size: 1.5rem; }
-  .hero-marco-wrap { flex-direction: column; align-items: center; }
-  .hero-speech { border-radius: 16px; max-width: 280px; text-align: center; }
-  .hero-speech::after { display: none; }
 }
 
 /* pulse-dot animation removed — too aggressive per WISE philosophy */
@@ -976,8 +944,8 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
   </div>
 </section>
 
-<!-- ── How It Works — 3 Steps ── -->
-<section class="section section--padded">
+<!-- ── How It Works — 3 Steps (hidden: duplicate of Sticker Guide below) ── -->
+<section class="section section--padded" style="display:none;">
   <div class="section-inner text-center mw-900" >
     <div class="section-label">How It Works</div>
     <h2 class="section-title mx-auto mb-8">Kiss. Snap. Earn.</h2>
@@ -1153,7 +1121,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
     <div class="section-label">The Complete Package</div>
     <p class="text-center mw-640 c-ink-soft italic fs-md2 fw-500 mx-auto mb-8" >Some people like having everything in one place. This is for them.</p>
     <div class="mega-bundle text-center">
-      <span class="card-badge card-badge--success">BEST VALUE — 22% OFF</span>
+      <span class="card-badge card-badge--success">Best value — 22% off</span>
       <h2>The Complete LingoGrade Package</h2>
       <p class="mega-sub">Everything you need. One price. One decision.</p>
 
@@ -1228,7 +1196,7 @@ if (window._lgIsCNY) {
   <div class="section-inner">
     <div class="section-label">Featured Product</div>
     <div class="product-card featured">
-      <span class="card-badge card-badge--accent">FEATURED</span>
+      <span class="card-badge card-badge--accent">Featured</span>
       <!-- 3D Carousel — full width, centered -->
       <div class="product-img-wrap">
         <div class="carousel-section">
@@ -1414,7 +1382,7 @@ if (window._lgIsCNY) {
     <div class="section-label">Sticker Guide</div>
     <h2 class="guide-headline">Place it. They scan it. <em>You earn.</em></h2>
     <p class="guide-subhead">Every sticker is a QR code with your referral link. Every scan is a potential assessment &mdash; and every assessment is your commission. The EUR 5 selfie bonus? That is just extra.</p>
-    <p class="text-center mw-640 fs-md c-ink-soft lh-18 mt-16 mx-auto">Your stickers look like regular Marco stickers. But each one contains an invisible QR code linked to YOUR referral page. Place them anywhere. When someone scans &mdash; even accidentally with their phone camera &mdash; they land on your personal referral page. If they book an assessment, you earn a commission. Automatically.</p>
+    <p class="text-center mw-640 fs-md c-ink-soft lh-18 mt-16 mx-auto">Your stickers look like regular Marco stickers. But each one contains an invisible QR code linked to your referral page. Place them anywhere. When someone scans &mdash; even accidentally with their phone camera &mdash; they land on your personal referral page. If they book an assessment, you earn a commission. Automatically.</p>
 
     <!-- Steps -->
     <div class="guide-steps">
@@ -1645,7 +1613,7 @@ if (window._lgIsCNY) {
       <img src="assets/mascot/gpt-marco-studying-desk.webp?v=1" alt="Marco the owl studying with flashcards" class="rounded-16" style="max-width:220px;width:100%;height:auto;" loading="lazy">
       <h2>LingoGrade Flashcards</h2>
       <p class="c-ink-soft">Spaced repetition powered by FSRS — a modern algorithm with strong retention research behind it. Your flashcard stats feed directly into your lesson guidance.</p>
-      <div class="fw-700 fs-3xl c-success mt-16 mb-16" >FREE FOREVER</div>
+      <div class="fw-700 fs-3xl c-success mt-16 mb-16" >Free forever</div>
       <p class="mb-12 c-ink-soft fs-09">Every assessment generates free personalized flashcards. Want targeted practice for specific patterns? Pattern packs are available for EUR 19.95 each.</p>
       <a href="https://app.lingograde.com/flashcards" class="btn-primary mt-16" >Explore Flashcards</a>
       <p class="fs-sm mt-8 c-ink-light" >It is free — just try it. PWA — works offline on any device.</p>
@@ -1749,33 +1717,30 @@ if (window._lgIsCNY) {
   </div>
 </section>
 
+<!-- ── Explore More — consolidated from 3 stubs ── -->
 <section class="section" id="kids">
-  <div class="section-inner text-center">
-    <div class="section-label">For Young Learners</div>
-    <h2 class="section-title">Kids Sticker Packs</h2>
-    <p class="c-ink-soft">Coming soon. Age-appropriate designs for children aged 6-14.</p>
-    <a href="kids.html" class="btn-primary">Explore Kids Assessments</a>
-    <p class="caption-mt">Just a look. No commitment involved.</p>
-  </div>
-</section>
-
-<section class="section" id="corporate">
-  <div class="section-inner text-center">
-    <div class="section-label">For Companies</div>
-    <h2 class="section-title">Bulk Sticker Orders</h2>
-    <p class="c-ink-soft">Custom-branded sticker packs for teams. Volume pricing available.</p>
-    <a href="corporate.html" class="btn-primary">Explore Corporate Options</a>
-    <p class="caption-mt">Worth a look. We answer questions when you are ready.</p>
-  </div>
-</section>
-
-<section class="section" id="partners">
-  <div class="section-inner text-center">
-    <div class="section-label">For Partners</div>
-    <h2 class="section-title">Partner Sticker Programme</h2>
-    <p class="c-ink-soft">Earn revenue with every referral. Personalized QR stickers included.</p>
-    <a href="partners.html" class="btn-primary">Explore the Partner Programme</a>
-    <p class="caption-mt">No sign-up required. Read more and decide for yourself.</p>
+  <div class="section-inner">
+    <h2 class="section-title text-center mb-32">Explore More</h2>
+    <div class="partner-card grid-3 gap-20">
+      <div class="shop-card text-center">
+        <div class="section-label">For Young Learners</div>
+        <h3 class="title-display-sm">Kids Sticker Packs</h3>
+        <p class="c-ink-soft mb-16">Age-appropriate designs for children aged 6–14. Coming soon.</p>
+        <a href="kids.html" class="btn-secondary w-full justify-center">Explore Kids</a>
+      </div>
+      <div class="shop-card text-center" id="corporate">
+        <div class="section-label">For Companies</div>
+        <h3 class="title-display-sm">Bulk Sticker Orders</h3>
+        <p class="c-ink-soft mb-16">Custom-branded sticker packs for teams. Volume pricing available.</p>
+        <a href="corporate.html" class="btn-secondary w-full justify-center">Explore Corporate</a>
+      </div>
+      <div class="shop-card text-center" id="partners">
+        <div class="section-label">For Partners</div>
+        <h3 class="title-display-sm">Partner Programme</h3>
+        <p class="c-ink-soft mb-16">Earn revenue with every referral. Personalized QR stickers included.</p>
+        <a href="partners.html" class="btn-secondary w-full justify-center">Explore Partners</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1851,8 +1816,8 @@ if (window._lgIsCNY) {
   </div>
 </section>
 
-<!-- ── Final CTA — Greene Law 4: minimal ── -->
-<section class="section" style="padding:60px 32px;background:linear-gradient(180deg,rgba(37,99,171,0.08) 0%,var(--cream) 100%);">
+<!-- ── Final CTA — Greene Law 4: minimal (hidden: duplicate of 3-path CTA above) ── -->
+<section class="section" style="display:none;padding:60px 32px;background:linear-gradient(180deg,rgba(37,99,171,0.08) 0%,var(--cream) 100%);">
   <div class="section-inner mw-640 text-center" >
     <h2 class="mb-12 c-ink font-display" style="font-size:clamp(1.75rem,4vw,2.5rem);" >Ready?</h2>
     <p class="mb-32 c-ink-soft fs-md2" >Pick the option that fits. Or not. No rush.</p>

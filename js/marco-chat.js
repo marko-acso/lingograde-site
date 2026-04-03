@@ -584,7 +584,7 @@
     '#marco-chat .mc-hdr button{background:none;border:none;color:#fff;font-size:1.3rem;cursor:pointer;padding:0 4px;line-height:1}',
     '#marco-chat .mc-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}',
     '#marco-chat .mc-msg{max-width:85%;padding:10px 14px;border-radius:14px;font-size:.875rem;line-height:1.5;word-wrap:break-word}',
-    '#marco-chat .mc-msg.bot{background:#EFF6FF;color:#1C1C1C;align-self:flex-start;border-bottom-left-radius:4px}',
+    '#marco-chat .mc-msg.bot{background:#EFF6FF;color:#2D3748;align-self:flex-start;border-bottom-left-radius:4px}',
     '#marco-chat .mc-msg.usr{background:#2563AB;color:#fff;align-self:flex-end;border-bottom-right-radius:4px}',
     '#marco-chat .mc-msg.typing{background:#EFF6FF;align-self:flex-start;border-bottom-left-radius:4px}',
     '#marco-chat .mc-msg.typing span{display:inline-block;width:6px;height:6px;border-radius:50%;background:#8A8A8A;',
@@ -609,7 +609,7 @@
     '.mc-confirm-btns button.mc-btn-primary:hover{background:#1a4f8a}',
     // Language grid
     '.mc-lang-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:8px;max-height:240px;overflow-y:auto;padding-right:4px}',
-    '.mc-lang-grid button{padding:6px 4px;border-radius:8px;border:1px solid #D1D5DB;background:#fff;color:#1C1C1C;',
+    '.mc-lang-grid button{padding:6px 4px;border-radius:8px;border:1px solid #D1D5DB;background:#fff;color:#2D3748;',
     'font-size:.78rem;font-family:inherit;cursor:pointer;transition:all .15s;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}',
     '.mc-lang-grid button:hover{background:#2563AB;color:#fff;border-color:#2563AB}',
     // Email capture
@@ -634,7 +634,7 @@
     '.mc-sales-btns button.mc-btn-book{background:#27AE60;color:#fff;border-color:#27AE60;font-weight:600;font-size:.9rem;padding:10px 14px}',
     '.mc-sales-btns button.mc-btn-book:hover{background:#219150}',
     '.mc-sales-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:5px;margin-top:8px}',
-    '.mc-sales-grid button{padding:7px 10px;border-radius:8px;border:1px solid #D1D5DB;background:#fff;color:#1C1C1C;',
+    '.mc-sales-grid button{padding:7px 10px;border-radius:8px;border:1px solid #D1D5DB;background:#fff;color:#2D3748;',
     'font-size:.8rem;font-family:inherit;cursor:pointer;transition:all .15s;text-align:center}',
     '.mc-sales-grid button:hover{background:#2563AB;color:#fff;border-color:#2563AB}',
     '.mc-pkg-card{background:#F0F7FF;border:1.5px solid #2563AB;border-radius:12px;padding:12px;margin-top:8px}',
@@ -1546,7 +1546,7 @@
         base: {
           fontSize: '14px',
           fontFamily: '"DM Sans", -apple-system, sans-serif',
-          color: '#1C1C1C',
+          color: '#2D3748',
           '::placeholder': { color: '#9CA3AF' }
         },
         invalid: { color: '#EF4444' }
