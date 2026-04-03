@@ -492,9 +492,34 @@ def stripe_webhook():
 
     elif event["type"] == "checkout.session.completed":
         cs = event["data"]["object"]
-        matched_id = find_assessment_by_payment(cs["id"])
-        if matched_id:
-            update_assessment(matched_id, payment_confirmed=True)
+        meta = cs.get("metadata", {})
+
+        if meta.get("product_type") == "kids_assessment":
+            # Record kids booking in DB
+            try:
+                with get_cursor() as cur:
+                    cur.execute(
+                        """INSERT INTO kids_bookings
+                           (parent_email, child_name, age_group, package,
+                            guardian_name, stripe_session_id, amount_cents, currency)
+                           VALUES (%s, %s, %s, %s, %s, %s, %s, %s)""",
+                        (
+                            meta.get("parent_email"),
+                            meta.get("child_name"),
+                            meta.get("age_group"),
+                            meta.get("package"),
+                            meta.get("guardian_name"),
+                            cs["id"],
+                            cs.get("amount_total", 0),
+                            cs.get("currency", "eur"),
+                        ),
+                    )
+            except Exception:
+                pass  # Stripe is source of truth; DB is supplementary
+        else:
+            matched_id = find_assessment_by_payment(cs["id"])
+            if matched_id:
+                update_assessment(matched_id, payment_confirmed=True)
 
     return jsonify({"status": "ok"})
 
@@ -744,6 +769,90 @@ def sticker_verify():
         "status": "pending",
         "message": "Your selfie is being reviewed. You will be notified within 48 hours.",
     }), 201
+
+
+# ═══════════════════════════════════════════════════════════════════
+# Endpoint 11: POST /v1/checkout/kids — Stripe Checkout for kids assessment
+# ═══════════════════════════════════════════════════════════════════
+
+KIDS_PACKAGES = {
+    "quick": {
+        "name": "Kids Quick Check",
+        "description": "15-minute assessment for ages 6-17. Pre-A1 to B2. Visual report with parent summary.",
+        "amounts": {"eur": 8995, "usd": 8995, "gbp": 8995, "chf": 8995},
+    },
+    "full": {
+        "name": "Kids Full Picture",
+        "description": "25-minute assessment for ages 6-17. Pre-A1 to B2. Full report with parent guide + homework.",
+        "amounts": {"eur": 12995, "usd": 12995, "gbp": 12995, "chf": 12995},
+    },
+    "deep-dive": {
+        "name": "Kids Deep Dive",
+        "description": "40-minute assessment (15+25 with break) for ages 6-17. Comprehensive report + parent consultation.",
+        "amounts": {"eur": 24995, "usd": 24995, "gbp": 24995, "chf": 24995},
+    },
+}
+
+ALLOWED_CURRENCIES = {"eur", "usd", "gbp", "chf"}
+
+
+@app.route("/v1/checkout/kids", methods=["POST"])
+def checkout_kids():
+    data = request.get_json(force=True)
+    parent_email = (data.get("parent_email") or "").strip()
+    child_name = (data.get("child_name") or "").strip()
+    age_group = (data.get("age_group") or "").strip()
+    package = (data.get("package") or "").strip().lower()
+    currency = (data.get("currency") or "eur").strip().lower()
+    guardian_name = (data.get("guardian_name") or "").strip()
+
+    if not parent_email or "@" not in parent_email:
+        return jsonify({"error": "Valid parent email required"}), 400
+    if not child_name:
+        return jsonify({"error": "Child's name required"}), 400
+    if age_group not in ("6-8", "9-11", "12-14", "15-17"):
+        return jsonify({"error": "age_group must be 6-8, 9-11, 12-14, or 15-17"}), 400
+    if package not in KIDS_PACKAGES:
+        return jsonify({"error": f"Unknown package. Choose: {', '.join(KIDS_PACKAGES)}"}), 400
+    if currency not in ALLOWED_CURRENCIES:
+        currency = "eur"
+
+    pkg = KIDS_PACKAGES[package]
+    amount = pkg["amounts"][currency]
+    origin = os.environ.get("CORS_ORIGIN", "https://www.lingograde.com")
+
+    try:
+        session = stripe.checkout.Session.create(
+            payment_method_types=["card"],
+            line_items=[{
+                "price_data": {
+                    "currency": currency,
+                    "unit_amount": amount,
+                    "product_data": {
+                        "name": pkg["name"],
+                        "description": pkg["description"],
+                    },
+                },
+                "quantity": 1,
+            }],
+            mode="payment",
+            customer_email=parent_email,
+            success_url=f"{origin}/kids?purchase=success&package={package}",
+            cancel_url=f"{origin}/kids?purchase=cancelled",
+            metadata={
+                "product_type": "kids_assessment",
+                "package": package,
+                "child_name": child_name,
+                "age_group": age_group,
+                "guardian_name": guardian_name,
+                "parent_email": parent_email,
+            },
+            consent_collection={"terms_of_service": "required"},
+        )
+    except stripe.StripeError as e:
+        return jsonify({"error": str(e)}), 400
+
+    return jsonify({"checkout_url": session.url, "session_id": session.id})
 
 
 if __name__ == "__main__":

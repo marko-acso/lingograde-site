@@ -36,7 +36,9 @@ def get_profile():
         cur.execute(
             """SELECT id, email, full_name, preferred_name,
                       formality_preference, country_of_residence,
-                      display_country
+                      display_country, is_child, date_of_birth,
+                      age_group, parent_email, guardian_name,
+                      parental_consent_at
                FROM students WHERE id = %s""",
             (g.student_id,),
         )
@@ -52,7 +54,12 @@ def get_profile():
 # PATCH /api/student/profile
 # ═══════════════════════════════════════════════════════════════════
 
-_PATCHABLE = {"preferred_name", "formality_preference", "display_country"}
+_PATCHABLE = {
+    "preferred_name", "formality_preference", "display_country",
+    "is_child", "date_of_birth", "age_group", "parent_email", "guardian_name",
+}
+
+_VALID_AGE_GROUPS = {"6-8", "9-11", "12-14", "15-17"}
 
 @student_bp.route("/profile", methods=["PATCH"])
 @require_auth
@@ -66,6 +73,13 @@ def patch_profile():
     # Validate formality if provided
     if "formality_preference" in updates and updates["formality_preference"] not in ("informal", "formal"):
         return jsonify({"error": "formality_preference must be 'informal' or 'formal'"}), 400
+
+    # Validate kids fields if provided
+    if "age_group" in updates and updates["age_group"] not in _VALID_AGE_GROUPS:
+        return jsonify({"error": f"age_group must be one of {sorted(_VALID_AGE_GROUPS)}"}), 400
+
+    if "is_child" in updates:
+        updates["is_child"] = bool(updates["is_child"])
 
     set_clause = ", ".join(f"{k} = %s" for k in updates)
     values = list(updates.values()) + [g.student_id]
@@ -88,7 +102,7 @@ def patch_profile():
 def get_assessments():
     with get_cursor() as cur:
         cur.execute(
-            """SELECT id, date, language, cefr_level, pdf_path
+            """SELECT id, date, language, cefr_level, pdf_path, package_type
                FROM assessments
                WHERE student_id = %s
                ORDER BY date DESC""",
@@ -103,6 +117,7 @@ def get_assessments():
             "date": r["date"].isoformat(),
             "language": r["language"],
             "cefr_level": r["cefr_level"],
+            "package_type": r["package_type"],
             "pdf_url": f"{PDF_BASE_URL}/{r['pdf_path']}" if r["pdf_path"] else None,
         })
 

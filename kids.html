@@ -111,7 +111,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .pricing-card { border-radius: 16px; border: 2px solid var(--border); padding: 32px 24px; position: relative; transition: border-color 0.2s; background: white; }
 .pricing-card:hover { border-color: var(--accent); }
 .pricing-card.featured { border-color: var(--accent); background: linear-gradient(180deg, var(--accent-bg) 0%, white 60%); }
-.pricing-card.featured::before { content: 'MOST CHOSEN'; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); padding: 4px 16px; background: var(--accent); color: white; border-radius: 100px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.06em; }
+.pricing-card.featured::before { content: 'RECOMMENDED'; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); padding: 4px 16px; background: var(--accent); color: white; border-radius: 100px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.06em; }
 .pricing-name { font-family: var(--font-display); font-size: 1.35rem; color: var(--ink); margin-bottom: 4px; }
 .pricing-duration { font-size: 0.8125rem; color: var(--ink-light); margin-bottom: 16px; }
 .pricing-price { font-family: var(--font-display); font-size: 2.25rem; color: var(--accent); margin-bottom: 4px; }
@@ -120,6 +120,28 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .pricing-features li { font-size: 0.8125rem; color: var(--ink-soft); padding: 5px 0 5px 22px; position: relative; text-align: left; }
 .pricing-features li::before { content: ''; position: absolute; left: 0; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 .pricing-coming { display: block; width: 100%; padding: 12px; text-align: center; border-radius: 10px; font-weight: 600; font-size: 0.875rem; background: var(--parchment); color: var(--ink-light); border: 1.5px solid var(--border); cursor: default; }
+.pricing-btn { display: block; width: 100%; padding: 12px; text-align: center; border-radius: 10px; font-weight: 600; font-size: 0.875rem; background: var(--accent); color: white; border: none; cursor: pointer; font-family: var(--font-body); transition: background 0.15s; }
+.pricing-btn:hover { background: var(--accent-lt); }
+.pricing-btn.featured-btn { background: var(--warm); }
+.pricing-btn.featured-btn:hover { background: var(--warm-lt); }
+
+/* ── Booking modal ── */
+.booking-overlay { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); justify-content: center; align-items: center; }
+.booking-overlay.open { display: flex; }
+.booking-modal { background: white; border-radius: 16px; padding: 36px 32px; max-width: 420px; width: 90vw; box-shadow: 0 8px 32px rgba(0,0,0,0.15); position: relative; }
+.booking-modal h3 { font-family: var(--font-display); font-size: 1.35rem; margin-bottom: 4px; }
+.booking-modal .modal-sub { font-size: 0.875rem; color: var(--ink-soft); margin-bottom: 20px; }
+.booking-modal label { display: block; font-size: 0.8125rem; font-weight: 600; color: var(--ink-soft); margin-bottom: 4px; margin-top: 14px; }
+.booking-modal input, .booking-modal select { width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-family: var(--font-body); font-size: 0.9375rem; outline: none; transition: border-color 0.15s; }
+.booking-modal input:focus, .booking-modal select:focus { border-color: var(--accent); }
+.booking-consent { display: flex; gap: 8px; align-items: flex-start; margin-top: 18px; }
+.booking-consent input[type="checkbox"] { width: auto; margin-top: 3px; }
+.booking-consent span { font-size: 0.8125rem; color: var(--ink-soft); line-height: 1.5; }
+.booking-submit { margin-top: 20px; width: 100%; padding: 14px; background: var(--accent); color: white; border: none; border-radius: 10px; font-family: var(--font-body); font-weight: 600; font-size: 1rem; cursor: pointer; transition: background 0.15s; }
+.booking-submit:hover { background: var(--accent-lt); }
+.booking-submit:disabled { background: var(--border); cursor: not-allowed; }
+.booking-close { position: absolute; top: 12px; right: 16px; background: none; border: none; font-size: 1.5rem; color: var(--ink-light); cursor: pointer; line-height: 1; }
+.booking-error { color: #e74c3c; font-size: 0.8125rem; margin-top: 8px; display: none; }
 
 /* ── Features preview ── */
 .features { padding: 80px 32px; background: var(--parchment); }
@@ -210,9 +232,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 </section>
 
 <!-- ── Accusation Audit ── -->
-<div class="text-center mw-720" style="margin:32px auto;padding:28px;background:#FFF8E1;border-radius:8px;">
-  <p style="font-size:1.1rem;color:#444;line-height:1.8;margin:0 0 16px;">You might think evaluating a child's language sounds stressful. We thought so too. That is why we designed every session around play, stories, and Marco the Owl. Children do not even realise they are being assessed — they think they are on an adventure with their new friend.</p>
-  <p class="m-0 italic c-accent" style="font-size:1.05rem;" >How would it feel to finally know exactly where your child stands — and have a clear plan for what comes next?</p>
+<div class="text-center mw-720 mx-auto mt-32 mb-32" style="padding:28px;background:#FFF8E1;border-radius:8px;">
+  <p class="fs-11 lh-18 m-0 mb-16" style="color:#444;">You might think evaluating a child's language sounds stressful. We thought so too. That is why we designed every session around play, stories, and Marco the Owl. Children do not even realise they are being assessed — they think they are on an adventure with their new friend.</p>
+  <p class="m-0 italic c-accent fs-105" >How would it feel to finally know exactly where your child stands — and have a clear plan for what comes next?</p>
 </div>
 
 <!-- ── Pricing Preview ── -->
@@ -220,7 +242,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   <div class="pricing-preview-inner">
     <h2>What it will cost</h2>
     <p class="pricing-sub">Simple, transparent pricing. One session, one report, no subscriptions. Every session includes a parent-friendly report with clear next steps.</p>
-    <p class="text-center mb-24" style="font-size:0.95rem;color:#777;">Join parents across Europe already on the waitlist. Whether before the school year, after exams, or during summer — knowing where your child stands is the first step to helping them thrive.</p>
+    <p class="text-center mb-24 fs-095" style="color:#777;">Join parents across Europe already on the waitlist. Whether before the school year, after exams, or during summer — knowing where your child stands is the first step to helping them thrive.</p>
     <div class="pricing-grid">
 
       <div class="pricing-card">
@@ -234,15 +256,15 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <li>Full diagnostic report</li>
           <li>Personalised learning roadmap</li>
         </ul>
-        <p class="mt-12 c-ink-soft fs-085" style="padding-top:12px;border-top:1px solid var(--border);" >
+        <p class="mt-12 c-ink-soft fs-085 bt-border" >
           <strong>Recommended add-on:</strong> Homework programme — EUR 29.95
-          <span class="c-ink-light mt-4 fs-xs" style="display:block;" >Detailed correction report within 1 hour</span>
+          <span class="c-ink-light mt-4 fs-xs d-block" >Detailed correction report within 1 hour</span>
         </p>
-        <span class="pricing-coming">Coming Soon</span>
+        <button class="pricing-btn" onclick="openBooking('deep-dive')">Explore Deep Dive</button>
       </div>
 
       <div class="pricing-card featured">
-        <span class="sr-only">Most Chosen</span>
+        <span class="sr-only">Recommended</span>
         <div class="pricing-name">Full Picture</div>
         <div class="pricing-duration">25-minute session</div>
         <div class="pricing-price" data-eur="129.95" data-usd="129.95" data-gbp="129.95" data-chf="129.95">&euro;129.95</div>
@@ -253,7 +275,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <li>Detailed report with next steps</li>
           <li>Teacher-ready summary included</li>
         </ul>
-        <span class="pricing-coming">Coming Soon</span>
+        <button class="pricing-btn featured-btn" onclick="openBooking('full')">Explore Full Picture</button>
       </div>
 
       <div class="pricing-card">
@@ -266,10 +288,11 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <li>CEFR level (Pre-A1 &ndash; B1)</li>
           <li>Parent-friendly PDF report</li>
         </ul>
-        <span class="pricing-coming">Coming Soon</span>
+        <button class="pricing-btn" onclick="openBooking('quick')">Explore Quick Check</button>
       </div>
 
     </div>
+    <p class="text-center mt-24 fs-085" style="color:#999;max-width:480px;margin-left:auto;margin-right:auto;margin-top:24px;">Not ready yet? No problem — Marco will be here whenever you are. You can also <a href="#" onclick="document.getElementById('waitlistForm').scrollIntoView({behavior:'smooth'});return false" style="color:var(--accent)">join the waitlist</a> instead.</p>
   </div>
 </section>
 
@@ -321,6 +344,38 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   </div>
   <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
 </footer>
+
+<!-- ── Booking Modal ── -->
+<div class="booking-overlay" id="bookingOverlay" onclick="if(event.target===this)closeBooking()">
+  <div class="booking-modal">
+    <button class="booking-close" onclick="closeBooking()">&times;</button>
+    <h3 id="bookingTitle">Book Assessment</h3>
+    <p class="modal-sub" id="bookingSub"></p>
+    <form id="bookingForm" onsubmit="return submitBooking(event)">
+      <input type="hidden" id="bookingPackage" value="">
+      <label for="parentEmail">Your email (parent/guardian)</label>
+      <input type="email" id="parentEmail" required placeholder="parent@email.com">
+      <label for="guardianName">Your name</label>
+      <input type="text" id="guardianName" required placeholder="Full name">
+      <label for="childName">Child's first name</label>
+      <input type="text" id="childName" required placeholder="First name">
+      <label for="ageGroup">Age group</label>
+      <select id="ageGroup" required>
+        <option value="">Select age group</option>
+        <option value="6-8">6–8 years</option>
+        <option value="9-11">9–11 years</option>
+        <option value="12-14">12–14 years</option>
+        <option value="15-17">15–17 years</option>
+      </select>
+      <div class="booking-consent">
+        <input type="checkbox" id="consentCheck" required>
+        <span>I confirm I am the parent or legal guardian. I consent to my child participating in a play-based language assessment session. I have read the <a href="privacy-policy.html" target="_blank">Privacy Policy</a> and <a href="terms-of-service.html" target="_blank">Terms of Service</a>.</span>
+      </div>
+      <div class="booking-error" id="bookingError"></div>
+      <button type="submit" class="booking-submit" id="bookingSubmit">Proceed when ready</button>
+    </form>
+  </div>
+</div>
 
 <script>
 function submitWaitlist(e) {
@@ -386,6 +441,79 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
     })
     .catch(function(){});
 })();
+
+// ── Booking modal ──
+var PACKAGE_LABELS = {
+  'quick': 'Quick Check',
+  'full': 'Full Picture',
+  'deep-dive': 'Deep Dive'
+};
+
+function openBooking(pkg) {
+  document.getElementById('bookingPackage').value = pkg;
+  document.getElementById('bookingTitle').textContent = 'Book ' + PACKAGE_LABELS[pkg];
+  var sym = window._lgSymbol || '\u20AC';
+  var prices = { 'quick': '89.95', 'full': '129.95', 'deep-dive': '249.95' };
+  document.getElementById('bookingSub').textContent = PACKAGE_LABELS[pkg] + ' \u2014 ' + sym + prices[pkg];
+  document.getElementById('bookingError').style.display = 'none';
+  document.getElementById('bookingSubmit').disabled = false;
+  document.getElementById('bookingSubmit').textContent = 'Proceed when ready';
+  document.getElementById('bookingOverlay').classList.add('open');
+}
+
+function closeBooking() {
+  document.getElementById('bookingOverlay').classList.remove('open');
+}
+
+function submitBooking(e) {
+  e.preventDefault();
+  var btn = document.getElementById('bookingSubmit');
+  var errEl = document.getElementById('bookingError');
+  btn.disabled = true;
+  btn.textContent = 'Processing\u2026';
+  errEl.style.display = 'none';
+
+  var payload = {
+    parent_email: document.getElementById('parentEmail').value.trim(),
+    guardian_name: document.getElementById('guardianName').value.trim(),
+    child_name: document.getElementById('childName').value.trim(),
+    age_group: document.getElementById('ageGroup').value,
+    package: document.getElementById('bookingPackage').value,
+    currency: window._lgCurrency || 'eur'
+  };
+
+  fetch('https://api.lingograde.com/v1/checkout/kids', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    if (data.error) {
+      errEl.textContent = data.error;
+      errEl.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Proceed when ready';
+      return;
+    }
+    if (data.checkout_url) {
+      window.location.href = data.checkout_url;
+    }
+  })
+  .catch(function() {
+    errEl.textContent = 'Something went wrong. Please try again.';
+    errEl.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Proceed when ready';
+  });
+
+  return false;
+}
+
+// Close modal on Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeBooking();
+});
 </script>
 
 </body>
