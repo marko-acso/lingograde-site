@@ -227,8 +227,8 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
 
 <!-- ── Dashboard ── -->
 <div class="dashboard hidden" id="dashboardContent">
-  <div class="dashboard-header gap-16" style="display:flex;align-items:center;" >
-    <img src="assets/mascot/marco-logo-v6.1.webp" alt="Marco the Owl — LingoGrade Mascot" class="marco-img" style="width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;" >
+  <div class="dashboard-header gap-16 d-flex items-center" >
+    <img src="assets/mascot/marco-logo-v6.1.webp" alt="Marco the Owl — LingoGrade Mascot" class="marco-img flex-shrink-0" style="width:56px;height:56px;border-radius:50%;object-fit:cover;" >
     <div>
       <h1 id="dashboardGreeting">Your Dashboard</h1>
       <p>Track your assessments, progress, and homework.</p>
@@ -239,7 +239,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
   <div class="card" id="cardAssessments">
     <div class="card-title">Your Assessments</div>
     <div class="card-desc">All your completed assessments.</div>
-    <div id="assessmentsContent"><div class="spinner" style="margin:8px 0;"></div></div>
+    <div id="assessmentsContent"><div class="spinner mt-8 mb-8"></div></div>
   </div>
 
   <!-- ── Progress Card ── -->
@@ -253,7 +253,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
   <div class="card" id="cardHomework">
     <div class="card-title">Homework</div>
     <div class="card-desc">Submit your homework and track your progress.</div>
-    <div id="homeworkContent"><div class="spinner" style="margin:8px 0;"></div></div>
+    <div id="homeworkContent"><div class="spinner mt-8 mb-8"></div></div>
   </div>
 
   <!-- ── Profile Settings Card ── -->

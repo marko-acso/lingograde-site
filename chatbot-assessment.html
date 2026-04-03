@@ -240,7 +240,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <div class="hero-badge">AI-Powered Assessment</div>
     <h1>A real conversation with Marco. A <em>real report</em> about your language.</h1>
     <p>15-20 minutes of structured dialogue with our AI assessor. You walk away with your CEFR level, 5 focus areas, 5 strengths, and a 4-week study plan — delivered instantly.</p>
-    <div class="mb-24 gap-16 bg-cream" style="display:inline-flex;align-items:center;border:2px solid var(--success);border-radius:16px;padding:20px 32px;" >
+    <div class="mb-24 gap-16 bg-cream d-inline-flex items-center" style="border:2px solid var(--success);border-radius:16px;padding:20px 32px;" >
       <img src="assets/mascot/marco-chatbot-speech-bubble.webp?v=3" alt="Marco the owl" width="64" height="64" loading="lazy" style="width:64px;height:auto;">
       <div class="text-left" >
         <div class="fw-600 fs-base" >Marco is your assessor</div>
@@ -248,7 +248,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       </div>
     </div>
     <div>
-      <button onclick="startPayment()" class="btn-primary fs-md2" style="background:var(--success);padding:16px 40px;" >
+      <button onclick="startPayment()" class="btn-primary fs-md2 bg-success" style="padding:16px 40px;" >
         Start Bot Assessment &mdash; <span class="lg-price-inline" data-eur="49.95" data-usd="49.95" data-chf="49.95" data-gbp="49.95">&euro;49.95</span>
       </button>
       <p class="subcaption mt-12">One-time payment. No subscription. Instant results.</p>
@@ -303,7 +303,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <div class="section-label">Compare Your Options</div>
     <h2 class="section-title mx-auto mb-8">Free snapshot, AI report, or human deep-dive?</h2>
     <p class="section-desc mx-auto">Each option builds on the last. Start wherever feels right.</p>
-    <div class="mt-32" style="overflow-x:auto;">
+    <div class="mt-32" style="overflow-x:auto;"><!-- keep: browser scroll -->
       <table class="compare-table">
         <thead>
           <tr>
@@ -383,7 +383,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <tr>
             <td></td>
             <td><a href="free-bot.html" class="btn-secondary fs-smm" style="padding:10px 20px;" >Try Free</a></td>
-            <td class="col-bot"><button onclick="startPayment()" class="btn-primary fs-smm" style="background:var(--success);padding:10px 20px;" >Start Now</button></td>
+            <td class="col-bot"><button onclick="startPayment()" class="btn-primary fs-smm bg-success" style="padding:10px 20px;" >Start Now</button></td>
             <td><a href="https://booking.lingograde.com/marco" class="btn-secondary fs-smm" target="_blank" style="padding:10px 20px;">Book</a></td>
           </tr>
         </tbody>
@@ -398,7 +398,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <div class="section-label">How It Works</div>
     <h2 class="section-title mx-auto mb-8">Five phases, one natural conversation</h2>
     <p class="section-desc mx-auto">Marco guides you through a structured dialogue. Each phase reveals a different dimension of your language ability.</p>
-    <div class="text-center gap-16 mt-40" style="display:grid;grid-template-columns:repeat(5,1fr);" >
+    <div class="text-center gap-16 mt-40 d-grid" style="grid-template-columns:repeat(5,1fr);" >
       <div>
         <div class="step-circle">1</div>
         <h3 class="fs-md fw-600 mb-6">Warm-Up</h3>
@@ -430,11 +430,11 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
 <!-- Final CTA -->
 <section class="section text-center" style="padding:64px 32px;background:linear-gradient(180deg,var(--cream) 0%,var(--success-bg) 100%);">
-  <div class="mx-auto" style="max-width:600px;">
+  <div class="mx-auto mw-600">
     <img class="mb-20" src="assets/mascot/marco-thumbsup.webp?v=3" alt="Marco" width="100" height="100" loading="lazy" style="width:100px;height:auto;" >
-    <h2 class="section-title" style="margin:0 auto 12px;">Ready to find out where you stand?</h2>
+    <h2 class="section-title m-0 mx-auto mb-12" >Ready to find out where you stand?</h2>
     <p class="mb-24 lh-17 fs-base c-ink-soft" >No booking, no scheduling. Just you and Marco, right now.</p>
-    <button onclick="startPayment()" class="btn-primary fs-md2" style="background:var(--success);padding:16px 40px;" >
+    <button onclick="startPayment()" class="btn-primary fs-md2 bg-success" style="padding:16px 40px;" >
       Start Bot Assessment &mdash; <span class="lg-price-inline" data-eur="49.95" data-usd="49.95" data-chf="49.95" data-gbp="49.95">&euro;49.95</span>
     </button>
     <p class="subcaption mt-12">Not ready? Take your time. Everything will be here whenever you are.</p>
@@ -469,7 +469,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <!-- ═══════════════════════════════════════════════════ -->
 <div id="chat-view" class="chat-wrapper">
   <div class="chat-header">
-    <a href="/" style="flex-shrink:0;">
+    <a href="/" class="flex-shrink-0">
       <img src="assets/mascot/marco-chatbot-speech-bubble.webp?v=3" alt="Marco" width="40" height="40" style="width:40px;height:auto;border-radius:50%;" >
     </a>
     <div class="chat-header-info">
@@ -516,7 +516,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   </nav>
 
   <div class="report-hero">
-    <img class="mb-16" src="assets/mascot/marco-face-party.webp?v=3" alt="Marco celebrating" width="80" height="80" loading="lazy" style="width:80px;height:auto;" >
+    <img class="mb-16" src="assets/mascot/marco-face-party.webp?v=3" alt="Marco celebrating" width="80" height="80" loading="lazy" style="width:80px;height:auto;">
     <h1>Your Bot Assessment Report</h1>
     <p>Here is what Marco discovered about your language.</p>
     <div class="cefr-badge" id="report-cefr">

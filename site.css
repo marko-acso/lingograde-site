@@ -577,8 +577,98 @@
 .mw-560 { max-width: 560px; }
 .hidden { display: none; }
 .accent-gold { accent-color: var(--gold); }
+.bt-border { padding-top: 12px; border-top: 1px solid var(--border); }
+.mb-36 { margin-bottom: 36px; }
+
+/* ── Additional layout utilities ── */
+.d-block { display: block; }
+.d-inline-block { display: inline-block; }
+.d-flex { display: flex; }
+.d-inline-flex { display: inline-flex; }
+.d-grid { display: grid; }
+.d-none { display: none; }
+.w-full { width: 100%; }
+.justify-center { justify-content: center; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-shrink-0 { flex-shrink: 0; }
+.flex-1 { flex: 1; }
+.gap-10 { gap: 10px; }
+.gap-12 { gap: 12px; }
+.gap-14 { gap: 14px; }
+.gap-20 { gap: 20px; }
+.mt-2 { margin-top: 2px; }
+.mt-14 { margin-top: 14px; }
+.mb-28 { margin-bottom: 28px; }
+.mb-40 { margin-bottom: 40px; }
+.mb-48 { margin-bottom: 48px; }
+.min-w-160 { min-width: 160px; }
+.mw-340 { max-width: 340px; }
+.mw-440 { max-width: 440px; }
+.mw-480 { max-width: 480px; }
+.mw-500 { max-width: 500px; }
+.mw-600 { max-width: 600px; }
+.mw-700 { max-width: 700px; }
+.mw-1080 { max-width: 1080px; }
+.pos-relative { position: relative; }
+
+/* ── Additional typography utilities ── */
+.lh-18 { line-height: 1.8; }
+.fw-500 { font-weight: 500; }
+.fs-11 { font-size: 1.1rem; }
+.fs-105 { font-size: 1.05rem; }
+.fs-09 { font-size: 0.9rem; }
+.fs-095 { font-size: 0.95rem; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+
+/* ── Border radius utilities ── */
+.rounded-8 { border-radius: 8px; }
+.rounded-10 { border-radius: 10px; }
+.rounded-12 { border-radius: 12px; }
+.rounded-14 { border-radius: 14px; }
+.rounded-16 { border-radius: 16px; }
+.rounded-full { border-radius: 50%; }
+
+/* ── Common inline component patterns ── */
+.cursor-pointer { cursor: pointer; }
+.no-outline { outline: none; }
+.transition-all { transition: all 0.2s; }
+.border-border { border: 1.5px solid var(--border); }
+.bg-success { background: var(--success); }
+.bg-accent { background: var(--accent); }
+.bg-success-bg { background: var(--success-bg); }
+.bg-white { background: white; }
+.c-white-50 { color: rgba(255,255,255,0.5); }
+.nowrap { white-space: nowrap; }
+.border-thin { border-width: 1px; }
+.line-through { text-decoration: line-through; }
+.p-16 { padding: 16px; }
+.py-16 { padding-top: 16px; padding-bottom: 16px; }
+.px-32 { padding-left: 32px; padding-right: 32px; }
+.p-24 { padding: 24px; }
+.p-32 { padding: 32px; }
+.border-none { border: none; }
+.list-none { list-style: none; }
+.list-disc { list-style: disc; padding-left: 20px; }
+.overflow-hidden { overflow: hidden; }
+.border-success-color { border-color: var(--success); }
+.border-accent-color { border-color: var(--accent); }
+
+/* ── Shop component classes ── */
+.section--padded { padding: 48px 32px; }
+.shop-step-card { padding: 32px 20px; border-radius: 14px; }
+.testimonial-card { border-radius: 12px; border: 1px solid var(--border); background: #1e1e1e; padding: 24px 20px; }
+.stat-card { padding: 24px; border-radius: 12px; background: #1e1e1e; border: 1.5px solid var(--border); }
+.stat-card--accent { padding: 24px; border-radius: 12px; background: #1e1e1e; border: 1.5px solid var(--accent); }
+.cta-path-card { padding: 28px 20px; border-radius: 14px; border: 1.5px solid var(--border); background: #1e1e1e; }
+.tip-amount-btn { display: inline-flex; align-items: center; justify-content: center; width: 100px; padding: 14px 0; border: 1.5px solid var(--border); border-radius: 10px; transition: all 0.15s; }
+.featured-testimonial { border-radius: 16px; border: 2px solid var(--border); background: #1e1e1e; padding: 40px 32px; }
+.success-highlight-box { padding: 20px 24px; border-radius: 12px; background: rgba(39,174,96,0.08); border: 1.5px solid var(--success); }
+.success-opt-in-box { border-radius: 14px; border: 2px solid var(--success); background: rgba(39,174,96,0.08); padding: 32px 28px; }
 
 @media (max-width: 768px) {
+  .grid-3 { grid-template-columns: 1fr; }
   .site-footer { padding: 32px 20px; }
   .footer-nav { flex-direction: column; gap: 12px; }
   .grid-2 { grid-template-columns: 1fr; }

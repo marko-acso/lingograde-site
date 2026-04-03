@@ -34,7 +34,7 @@ def _allowed_file(filename):
 def get_profile():
     with get_cursor() as cur:
         cur.execute(
-            """SELECT id, email, student_code, native_language,
+            """SELECT id, email, full_name, preferred_name,
                       is_child, date_of_birth, age_group,
                       parent_email, guardian_name, parental_consent_at
                FROM students WHERE id = %s""",
@@ -53,7 +53,7 @@ def get_profile():
 # ═══════════════════════════════════════════════════════════════════
 
 _PATCHABLE = {
-    "native_language",
+    "preferred_name",
     "is_child", "date_of_birth", "age_group", "parent_email", "guardian_name",
 }
 
@@ -96,12 +96,10 @@ def patch_profile():
 def get_assessments():
     with get_cursor() as cur:
         cur.execute(
-            """SELECT id, assessed_at, language_assessed,
-                      cefr_active, cefr_passive, report_pdf_path,
-                      package, status
+            """SELECT id, date, language, cefr_level, pdf_path
                FROM assessments
                WHERE student_id = %s
-               ORDER BY assessed_at DESC NULLS LAST""",
+               ORDER BY date DESC NULLS LAST""",
             (g.student_id,),
         )
         rows = cur.fetchall()
@@ -110,13 +108,10 @@ def get_assessments():
     for r in rows:
         assessments.append({
             "id": str(r["id"]),
-            "date": r["assessed_at"].isoformat() if r["assessed_at"] else None,
-            "language": r["language_assessed"],
-            "cefr_active": r["cefr_active"],
-            "cefr_passive": r["cefr_passive"],
-            "package": r["package"],
-            "status": r["status"],
-            "pdf_url": f"{PDF_BASE_URL}/{r['report_pdf_path']}" if r["report_pdf_path"] else None,
+            "date": r["date"].isoformat() if r["date"] else None,
+            "language": r["language"],
+            "cefr_level": r["cefr_level"],
+            "pdf_url": f"{PDF_BASE_URL}/{r['pdf_path']}" if r["pdf_path"] else None,
         })
 
     return jsonify({"assessments": assessments})

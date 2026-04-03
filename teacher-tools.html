@@ -643,7 +643,7 @@ body {
           </select>
         </div>
         <button class="btn btn-navy" id="btnStartSession" style="margin-top:auto;">Start Session</button>
-        <button class="btn btn-danger" id="btnEndSession" style="display:none;margin-top:auto;">End Session</button>
+        <button class="btn btn-danger hidden" id="btnEndSession" style="margin-top:auto;">End Session</button>
       </div>
       <div class="session-status" id="sessionStatus">No active session.</div>
     </div>
@@ -698,7 +698,7 @@ body {
       <div class="card-title-sm mt-20" >Suggested Minimal Pair Flashcards</div>
       <div id="pairSuggestions"></div>
 
-      <div class="mt-20" style="display:flex;gap:10px;flex-wrap:wrap;">
+      <div class="mt-20 d-flex gap-10 flex-wrap">
         <button class="btn btn-outline" id="btnNewSession">Start New Session</button>
       </div>
     </div>
@@ -744,7 +744,7 @@ body {
           <label for="histDateTo">To</label>
           <input class="field-input" type="date" id="histDateTo">
         </div>
-        <button class="btn btn-primary btn-sm" id="btnLoadHistory" style="margin-top:auto;height:40px;">Load</button>
+        <button class="btn btn-primary btn-sm" id="btnLoadHistory" style="margin-top:auto;height:40px;">Load</button><!-- margin-top:auto keeps flex alignment -->
       </div>
       <div id="historyList">
         <div class="log-empty">Select a student and click Load to view history.</div>
