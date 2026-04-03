@@ -107,6 +107,7 @@
   --warn: #E67E22;
   --error: #C0392B;
   --purple: #7B4F9E;
+  --navy: #1A3A5C;
   --font-display: 'DM Serif Display', Georgia, serif;
   --font-body: 'DM Sans', -apple-system, sans-serif;
   --max-w: 1080px;
@@ -276,6 +277,11 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .grid-2col { display: grid; grid-template-columns: 1fr 1fr; }
 .flex-gap-lg { display: flex; gap: 32px; }
 
+/* ── Responsive: 900px (tablet intermediate) ── */
+@media (max-width: 900px) {
+  .grid-3col { grid-template-columns: repeat(2, 1fr); }
+}
+
 /* ── Responsive: 768px ── */
 @media (max-width: 768px) {
   /* Navigation */
@@ -363,8 +369,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .flashcard-loss { margin-top: 24px; padding: 16px 20px; background: #FFF8F0; border-left: 3px solid var(--warn); border-radius: 0 8px 8px 0; font-size: 0.875rem; color: var(--ink-soft); line-height: 1.6; font-style: italic; }
 .flashcard-visual { text-align: center; }
 .flashcard-visual img { max-width: 340px; width: 100%; height: auto; }
-.testimonial-avatar { width:40px;height:40px;border-radius:50%;background:var(--navy,#1A3A5C);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:0.8125rem;font-weight:700;margin-right:8px;flex-shrink:0; }
-.testimonial-meta { display:flex;align-items:center;margin-top:12px; }
+.testimonial-avatar { width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:0.8125rem;font-weight:700;margin-right:8px;flex-shrink:0; }
+.testimonial-meta { display:flex;align-items:center;margin-top:auto;padding-top:12px; }
+.trustpilot-fallback { display:inline-flex;align-items:center;text-decoration:none;padding:12px 0; }
 </style>
 <script src="/js/cookie-consent.js"></script>
 </head>
@@ -606,7 +613,11 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   <div class="section-inner">
     <!-- TrustBox widget - Micro Review Count (star display) -->
     <div class="trustpilot-widget" data-locale="en-US" data-template-id="53aa8807dec7e10d38f59f32" data-businessunit-id="69ba47415aa0a9b17480c1ab" data-style-height="150px" data-style-width="100%" data-theme="light" data-stars="4,5">
-      <a href="https://www.trustpilot.com/review/lingograde.com" target="_blank" rel="noopener">Trustpilot</a>
+      <a href="https://www.trustpilot.com/review/lingograde.com" target="_blank" rel="noopener" class="trustpilot-fallback">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#00B67A" style="vertical-align:middle;margin-right:6px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+        <span style="font-weight:600;color:#1A1A1A;">Trustpilot</span>
+        <span style="color:#8A8A8A;margin-left:4px;font-size:0.875rem;">See our reviews</span>
+      </a>
     </div>
     <!-- End TrustBox widget -->
     <div class="mt-40">
@@ -620,21 +631,21 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="note-italic">"I had been telling myself I was B2 for two years. The assessment showed my active level was solid B2 but my passive structures were stuck at B1. That one insight explained why I always felt lost in fast conversations. Now I know exactly what to fix."</p>
         <div class="testimonial-meta"><div class="testimonial-avatar">MT</div><div><div class="fw-600 fs-body">Marcus T.</div><div class="subcaption">&#127475;&#127473; German &middot; Full Assessment &middot; Feb 2026</div></div></div>
-        <div class="c-success mt-6 fs-2xs" >&#10003; Verified assessment</div>
+        <div class="c-success mt-6 fs-2xs">&#10003; Verified assessment</div>
       </div>
 
       <div class="info-card">
         <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="note-italic">"I was preparing for a C1 exam and had no idea if I was ready. The Full Assessment confirmed my level was strong C1 in speaking but identified three specific grammar patterns holding me back. I focused on those for three weeks and passed the exam."</p>
         <div class="testimonial-meta"><div class="testimonial-avatar">CM</div><div><div class="fw-600 fs-body">Chiara M.</div><div class="subcaption">&#127470;&#127481; English &middot; Full Assessment &middot; Jan 2026</div></div></div>
-        <div class="c-success mt-6 fs-2xs" >&#10003; Verified assessment</div>
+        <div class="c-success mt-6 fs-2xs">&#10003; Verified assessment</div>
       </div>
 
       <div class="info-card">
         <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="note-italic">"I needed to prove my French level for a job application in Paris. My employer asked for B2. I assumed I was there but was not certain. The report gave me an official-standard assessment I could reference with complete confidence. I got the job."</p>
         <div class="testimonial-meta"><div class="testimonial-avatar">AP</div><div><div class="fw-600 fs-body">Aleksandar P.</div><div class="subcaption">&#127479;&#127480; French &middot; Quick Assessment &middot; Mar 2026</div></div></div>
-        <div class="c-success mt-6 fs-2xs" >&#10003; Verified assessment</div>
+        <div class="c-success mt-6 fs-2xs">&#10003; Verified assessment</div>
       </div>
 
     </div>

@@ -430,6 +430,8 @@
   border-radius: 12px;
   padding: 28px;
   border: 1.5px solid var(--border);
+  display: flex;
+  flex-direction: column;
 }
 
 /* ── Content button/chip ── */
@@ -544,6 +546,7 @@
   line-height: 1.7;
   margin-bottom: 20px;
   font-style: italic;
+  flex: 1;
 }
 .note-body {
   margin-top: 14px;
@@ -658,7 +661,7 @@
 /* ── Shop component classes ── */
 .section--padded { padding: 48px 32px; }
 .shop-step-card { padding: 32px 20px; border-radius: 14px; }
-.testimonial-card { border-radius: 12px; border: 1px solid var(--border); background: #1e1e1e; padding: 24px 20px; }
+/* .testimonial-card removed — unused dead code */
 .stat-card { padding: 24px; border-radius: 12px; background: #1e1e1e; border: 1.5px solid var(--border); }
 .stat-card--accent { padding: 24px; border-radius: 12px; background: #1e1e1e; border: 1.5px solid var(--accent); }
 .cta-path-card { padding: 28px 20px; border-radius: 14px; border: 1.5px solid var(--border); background: #1e1e1e; }
