@@ -34,11 +34,9 @@ def _allowed_file(filename):
 def get_profile():
     with get_cursor() as cur:
         cur.execute(
-            """SELECT id, email, full_name, preferred_name,
-                      formality_preference, country_of_residence,
-                      display_country, is_child, date_of_birth,
-                      age_group, parent_email, guardian_name,
-                      parental_consent_at
+            """SELECT id, email, student_code, native_language,
+                      is_child, date_of_birth, age_group,
+                      parent_email, guardian_name, parental_consent_at
                FROM students WHERE id = %s""",
             (g.student_id,),
         )
@@ -55,7 +53,7 @@ def get_profile():
 # ═══════════════════════════════════════════════════════════════════
 
 _PATCHABLE = {
-    "preferred_name", "formality_preference", "display_country",
+    "native_language",
     "is_child", "date_of_birth", "age_group", "parent_email", "guardian_name",
 }
 
@@ -69,10 +67,6 @@ def patch_profile():
 
     if not updates:
         return jsonify({"error": "Nothing to update"}), 400
-
-    # Validate formality if provided
-    if "formality_preference" in updates and updates["formality_preference"] not in ("informal", "formal"):
-        return jsonify({"error": "formality_preference must be 'informal' or 'formal'"}), 400
 
     # Validate kids fields if provided
     if "age_group" in updates and updates["age_group"] not in _VALID_AGE_GROUPS:
@@ -102,10 +96,12 @@ def patch_profile():
 def get_assessments():
     with get_cursor() as cur:
         cur.execute(
-            """SELECT id, date, language, cefr_level, pdf_path, package_type
+            """SELECT id, assessed_at, language_assessed,
+                      cefr_active, cefr_passive, report_pdf_path,
+                      package, status
                FROM assessments
                WHERE student_id = %s
-               ORDER BY date DESC""",
+               ORDER BY assessed_at DESC NULLS LAST""",
             (g.student_id,),
         )
         rows = cur.fetchall()
@@ -114,11 +110,13 @@ def get_assessments():
     for r in rows:
         assessments.append({
             "id": str(r["id"]),
-            "date": r["date"].isoformat(),
-            "language": r["language"],
-            "cefr_level": r["cefr_level"],
-            "package_type": r["package_type"],
-            "pdf_url": f"{PDF_BASE_URL}/{r['pdf_path']}" if r["pdf_path"] else None,
+            "date": r["assessed_at"].isoformat() if r["assessed_at"] else None,
+            "language": r["language_assessed"],
+            "cefr_active": r["cefr_active"],
+            "cefr_passive": r["cefr_passive"],
+            "package": r["package"],
+            "status": r["status"],
+            "pdf_url": f"{PDF_BASE_URL}/{r['report_pdf_path']}" if r["report_pdf_path"] else None,
         })
 
     return jsonify({"assessments": assessments})
