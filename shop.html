@@ -296,9 +296,6 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .mega-price-save img { height: 22px; width: auto; }
 .mega-urgency { max-width: 540px; margin: 24px auto 0; }
 .mega-urgency p { font-size: 0.9375rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 8px; }
-.mega-urgency .urgency-alarm { display: flex; align-items: flex-start; gap: 10px; font-weight: 600; color: var(--warn); font-size: 0.9375rem; margin-bottom: 8px; }
-.mega-urgency .urgency-alarm img { height: 20px; width: auto; margin-top: 2px; }
-.mega-urgency .urgency-scarcity { font-size: 0.8125rem; font-weight: 700; color: var(--error); text-transform: uppercase; letter-spacing: 0.04em; }
 
 
 /* ── Need More Stickers ── */
@@ -318,9 +315,6 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .trust-bar p { font-size: 0.9375rem; color: var(--ink-soft); line-height: 1.8; }
 .trust-bar strong { color: var(--ink); }
 
-/* ── Scarcity text with alarm clock ── */
-.scarcity { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8125rem; font-weight: 600; color: var(--warn); margin-bottom: 8px; }
-.scarcity img { height: 20px; width: auto; }
 
 /* ── Footer ── */
 .footer { padding: 48px 32px; background: var(--accent); color: rgba(255,255,255,0.75); text-align: center; }
@@ -659,7 +653,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
   position: relative;
 }
 .pack-preview-thumbs .preview-thumb.bonus-thumb::after {
-  content: '+5 BONUS';
+  content: '+5 bonus';
   position: absolute;
   bottom: -8px;
   left: 50%;
@@ -948,19 +942,14 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
 <!-- ── Hero ── -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-marco-wrap">
-      <img src="assets/mascot/marco-mugprint-face-and-body.webp?v=3" alt="Marco the owl" class="marco-img flex-shrink-0" style="max-width:120px;" >
-      <div class="hero-speech">
-        <strong>Curious?</strong> Every sticker carries your invisible QR code. They scan, you earn. No selling, no pitching &mdash; just a sticker doing the work for you.
-      </div>
-    </div>
+    <div class="mb-24"><img src="assets/mascot/marco-mugprint-face-and-body.webp?v=3" alt="Marco the owl" class="marco-img" style="width:347px;height:auto;"></div>
     <h1><em>Your QR. Their scan. Your commission.</em></h1>
     <p>Every sticker carries your personal invisible QR code &mdash; no ugly code visible, just a clean Marco sticker with your referral link hidden inside. Every scan is a potential assessment booking, and every booking earns you commission. The selfie credit is just a bonus on top.</p>
     <p class="text-center mt-12 c-ink-soft fs-085" >
       You do not need to buy stickers to start earning. Your personal referral link is live in your partner dashboard from day one. Share it anywhere — WhatsApp, email, social media. Stickers simply take your link into the physical world.
     </p>
-    <!-- Trust strip (AIDA: Attention → credibility) -->
-    <div class="mt-24 gap-32 flex-center-wrap py-16" style="border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <!-- Trust strip — hidden until verified data available -->
+    <div class="mt-24 gap-32 flex-center-wrap py-16" style="display:none;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
       <div class="text-center">
         <div class="subheading c-accent">1,200+</div>
         <div class="caption">Assessments delivered</div>
@@ -991,7 +980,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
       <div class="shop-card text-center shop-step-card">
         <div class="emoji-lg fs-4xl" >&#128204;</div>
         <div class="section-label mb-8" >Step 1</div>
-        <h3 class="title-display-sm">Get your stickers</h3>
+        <h3 class="title-display-sm">Place your stickers</h3>
         <p class="speed-desc speed-desc--accent">Each sticker carries your invisible QR code. Place them anywhere — laptops, cafes, campus boards.</p>
       </div>
       <div class="shop-card text-center shop-step-card">
@@ -1010,8 +999,8 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
   </div>
 </section>
 
-<!-- ── Social Proof Wall (AIDA: Interest → Desire) ── -->
-<section class="section">
+<!-- ── Social Proof Wall — hidden until testimonials verified ── -->
+<section class="section" style="display:none;">
   <div class="section-inner mw-800" >
     <div class="section-label text-center">What Partners Are Saying</div>
     <h2 class="section-title text-center mx-auto mb-32">Real numbers. Real people.</h2>
@@ -1102,7 +1091,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
 
     <!-- Camp no-oriented question -->
     <p class="text-center c-ink-soft italic fs-09 mb-16" >
-      Would it be crazy to have 30 silent salespeople working for you 24/7?
+      Would it be crazy to have 30 stickers quietly pointing people to your referral link?
     </p>
 
     <!-- What you get -->
@@ -1114,7 +1103,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
 
     <!-- CTA -->
     <div class="text-center">
-      <a href="https://buy.stripe.com/9B68wPf5Ocf9bDSfjfgUM00" target="_blank" rel="noopener" class="btn-primary">Get Marco + 30 Stickers &rarr;</a>
+      <a href="https://buy.stripe.com/9B68wPf5Ocf9bDSfjfgUM00" target="_blank" rel="noopener" class="btn-primary">See Marco + 30 Stickers &rarr;</a>
       <p class="caption-mt">You are completely free to just browse. Only proceed if it feels right.</p>
       <p class="fs-sm c-ink-light mt-4">Plus shipping</p>
     </div>
@@ -1144,7 +1133,7 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
     </div>
 
     <div class="mx-auto mw-560 success-highlight-box" >
-      <p class="fw-600 fs-lg c-success m-0" >501% potential ROI</p>
+      <p class="fw-600 fs-lg c-success m-0" >500% potential ROI</p>
       <p class="fs-body c-ink-soft mt-8 m-0">EUR 24.95 in. EUR 150+ potential back. One referral assessment already covers your cost many times over.</p>
     </div>
 
@@ -1174,13 +1163,12 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
       <div class="mega-price-block">
         <div class="mega-price-old">Regular price: EUR 384.75</div>
         <div class="mega-price-new">EUR 299.95</div>
-        <div class="mega-price-save"><img src="assets/mascot/marco-face-wink.webp?v=3" alt="Marco winking" loading="lazy"> You save EUR 84.80 (22% off)</div>
-        <p class="fs-base c-ink-soft mt-8 italic" >Less than a nice dinner for two &mdash; but this keeps earning for you long after dessert.</p>
+        <div class="mega-price-save">You save EUR 84.80 (22% off)</div>
+        <p class="fs-base c-ink-soft mt-8 italic" >Less than a dinner for two.</p>
       </div>
 
       <div class="mb-16" >
         <a href="https://app.lingograde.com/shop/mega-bundle" class="btn-success fs-lg items-center gap-14" style="padding:18px 48px;">
-          <img src="assets/mascot/marco-hero.webp?v=3" alt="Marco the owl" style="height:40px;width:auto;" loading="lazy">
           <span>See the Complete Package &rarr;</span>
         </a>
       </div>
@@ -1220,7 +1208,7 @@ if (window._lgIsCNY) {
   <div class="section-inner mw-640 text-center" >
     <div class="success-opt-in-box">
       <h3 class="mb-12 c-ink font-display subheading" >&#127873; Completed a Full or DeepDive Assessment?</h3>
-      <p class="mb-20 lh-17 fs-base c-ink-soft" >Completed your Full or DeepDive Assessment? Your free sticker pack is waiting. Request it from your dashboard.</p>
+      <p class="mb-20 lh-17 fs-base c-ink-soft" >Completed your Full or DeepDive Assessment? Your free sticker pack is available in your dashboard.</p>
       <a class="fw-600 fs-base c-white no-underline d-inline-block bg-success rounded-10 transition-all" href="https://app.lingograde.com/dashboard" style="padding:14px 32px;" >See My Free Sticker Pack &rarr;</a>
       <p class="caption-mt">Entirely up to you. The pack stays in your dashboard whenever you want it.</p>
       <p class="mt-16 fw-600 lh-17 fs-md c-ink" >Your stickers arrive ready to work. Each QR code generates leads quietly in the background — and every booked assessment earns you commission, with EUR 5 selfie bonuses on top.</p>
@@ -1325,7 +1313,7 @@ if (window._lgIsCNY) {
 
               <!-- Tier 3 (Most Popular — first) -->
               <label style="display:flex;align-items:center;gap:12px;padding:12px 16px;border:2px solid var(--accent);border-radius:10px;cursor:pointer;transition:border-color .2s,box-shadow .2s;background:linear-gradient(135deg,rgba(37,99,171,0.15),rgba(37,99,171,0.08));position:relative;box-shadow:0 0 0 1px var(--accent);" class="sticker-tier-option" data-tier="3">
-                <span class="c-white fs-2xs uppercase fw-700 bg-accent" style="position:absolute;top:-10px;right:12px;padding:3px 10px;border-radius:20px;letter-spacing:0.04em;" >MOST CHOSEN</span>
+                <span class="c-white fs-2xs uppercase fw-700 bg-accent" style="position:absolute;top:-10px;right:12px;padding:3px 10px;border-radius:20px;letter-spacing:0.04em;" >Most chosen</span>
                 <input type="radio" name="sticker-tier" value="3" checked class="accent-gold c-accent flex-shrink-0" onchange="updateStickerTotal()" style="accent-width:18px;height:18px;">
                 <div class="flex-1">
                   <div class="fw-700 c-ink">3 Packs &mdash; The Collection <span class="subcaption fw-400" >(105 stickers)</span></div>
@@ -1356,11 +1344,8 @@ if (window._lgIsCNY) {
             </div>
           </fieldset>
 
-          <p class="c-ink-soft italic fs-2xs" style="margin:0 0 14px 0;" >LingoGrade prices are locked at time of purchase and only increase over time.</p>
-
           <div class="price-launch-line">
             <div class="product-price" id="sticker-total" data-price="44.95"></div>
-            <span class="launch-tag">Introductory pricing</span>
           </div>
         </div>
 
@@ -1410,7 +1395,7 @@ if (window._lgIsCNY) {
         </ul>
         <p><strong>Unlimited locations</strong> &mdash; every NEW sticker placement puts your QR code in front of new people. Commission on every booked assessment + EUR 5 selfie bonus per verified placement.</p>
         <p class="fs-md c-ink-soft mb-16">Gave your stickers away? Take your time &mdash; they become referrals. Need more? <a class="fw-600 c-accent" href="#mega-bundle" >See options below.</a></p>
-        <p class="product-highlight">"Every scan is a potential referral. Every referral earns you revenue share."</p>
+        <p class="product-highlight">Every scan is a potential referral. Every referral earns you revenue share.</p>
         <p class="product-smallprint">Stickers are personalized with your embedded referral link. Allow 3&ndash;5 business days for delivery.</p>
       </div>
     </div>
@@ -1493,11 +1478,11 @@ if (window._lgIsCNY) {
       <div class="progress-visual">
         <div class="progress-bar-track pos-relative">
           <div class="progress-bar-fill" style="width:0%;"></div>
-          <span class="fw-600 c-ink fs-2xs nowrap" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);" >0 / 10 ASSESSMENTS</span>
+          <span class="fw-600 c-ink fs-2xs nowrap" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);" >0 / 10 assessments</span>
         </div>
         <div class="progress-labels">
           <span>0 / 10 assessments</span>
-          <span class="unlocked">10 / 10 = PAYOUT UNLOCKED</span>
+          <span class="unlocked">10 / 10 = Payout unlocked</span>
         </div>
       </div>
     </div>
@@ -1567,7 +1552,8 @@ if (window._lgIsCNY) {
   <div class="section-inner">
     <div class="product-card coming-soon">
       <div class="product-img-wrap">
-        <img src="assets/mascot/marco-coffee-cozy.webp?v=3" alt="Marco the owl with coffee" class="rounded-16" style="max-width:280px;width:100%;height:auto;" loading="lazy">
+        <!-- product photo needed -->
+
       </div>
       <div class="product-info">
         <span class="coming-soon-badge">Coming Soon</span>
@@ -1577,7 +1563,7 @@ if (window._lgIsCNY) {
           <input type="email" placeholder="your@email.com" aria-label="Email for LingoGrade Mug waitlist">
           <button type="button" onclick="joinWaitlist(this,'LingoGrade Mug')">I'm curious</button>
         </div>
-        <p class="mt-12 c-ink-light fs-085" >First to know, first to pour. Early access members get launch-day pricing before it goes up.</p>
+        <p class="mt-12 c-ink-light fs-085" >Drop your email and we will let you know when it is ready. No commitment.</p>
       </div>
     </div>
   </div>
@@ -1586,14 +1572,14 @@ if (window._lgIsCNY) {
 <section class="section" id="accessories">
   <div class="section-inner">
     <div class="section-label">Accessories</div>
-    <h2 class="section-title text-center">Wear the owl. Own the vibe.</h2>
+    <h2 class="section-title text-center">Things people actually wear.</h2>
     <p class="text-center mx-auto fs-base c-ink-soft mw-560" >Things that become part of your daily routine. Take a look around.</p>
     <p class="voss-label">You probably don't need another accessory&hellip; but these aren't just accessories.</p>
 
     <div class="accessories-grid">
       <!-- LingoGrade Cap -->
       <div class="accessory-card">
-        <img src="assets/mascot/sliced-final/gpt-marco-traveler.png" alt="Marco the owl wearing a cap" class="accessory-img" loading="lazy">
+        <!-- product photo needed -->
         <h3>LingoGrade Cap</h3>
         <p>Embroidered Marco logo on navy cotton twill. Adjustable strap. One size fits all.</p>
         <div class="accessory-price" data-price="29.95">EUR 29.95</div>
@@ -1610,7 +1596,7 @@ if (window._lgIsCNY) {
       <!-- Marco Bracelet -->
       <div class="accessory-card">
         <span class="most-chosen-badge">Most chosen</span>
-        <img src="assets/mascot/sliced-final/gpt-marco-happy-sparkle.png" alt="Marco the owl with a sparkle" class="accessory-img" loading="lazy">
+        <!-- product photo needed -->
         <h3>Marco Bracelet</h3>
         <p>Woven fabric bracelet with Marco silhouette clasp. LingoGrade blue with gold accent thread.</p>
         <div class="accessory-price" data-price="14.95">EUR 14.95</div>
@@ -1626,7 +1612,7 @@ if (window._lgIsCNY) {
 
       <!-- Marco Enamel Pin -->
       <div class="accessory-card">
-        <img src="assets/mascot/sliced-final/gpt-marco-diploma-proud.png" alt="Marco the owl with diploma" class="accessory-img" loading="lazy">
+        <!-- product photo needed -->
         <h3>Marco Enamel Pin</h3>
         <p>Hard enamel pin of Marco with mortarboard. Gold-plated metal. Butterfly clutch backing.</p>
         <div class="accessory-price" data-price="12.95">EUR 12.95</div>
@@ -1652,7 +1638,7 @@ if (window._lgIsCNY) {
     <div class="product-card text-center" style="grid-template-columns:1fr">
       <img src="assets/mascot/gpt-marco-studying-desk.webp?v=1" alt="Marco the owl studying with flashcards" class="rounded-16" style="max-width:220px;width:100%;height:auto;" loading="lazy">
       <h2>LingoGrade Flashcards</h2>
-      <p class="c-ink-soft">Spaced repetition powered by FSRS — the same algorithm that outperforms Anki. Your flashcard stats feed directly into your lesson guidance.</p>
+      <p class="c-ink-soft">Spaced repetition powered by FSRS — a modern algorithm with strong retention research behind it. Your flashcard stats feed directly into your lesson guidance.</p>
       <div class="fw-700 fs-3xl c-success mt-16 mb-16" >FREE FOREVER</div>
       <p class="mb-12 c-ink-soft fs-09">Every assessment generates free personalized flashcards. Want targeted practice for specific patterns? Pattern packs are available for EUR 19.95 each.</p>
       <a href="https://app.lingograde.com/flashcards" class="btn-primary mt-16" >Explore Flashcards</a>
@@ -1740,7 +1726,7 @@ if (window._lgIsCNY) {
         <a href="https://app.lingograde.com/dashboard" class="btn-secondary w-full justify-center">See Your Dashboard</a>
       </div>
       <div class="text-center cta-path-card pos-relative" style="border:2px solid var(--accent);background:linear-gradient(180deg,rgba(37,99,171,0.08) 0%,#1e1e1e 60%);">
-        <span class="fw-700 c-white uppercase bg-accent" style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);font-size:0.65rem;padding:3px 10px;border-radius:20px;letter-spacing:0.04em;" >MOST CHOSEN</span>
+        <span class="fw-700 c-white uppercase bg-accent" style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);font-size:0.65rem;padding:3px 10px;border-radius:20px;letter-spacing:0.04em;" >Most chosen</span>
         <div class="mb-12 fw-700 c-accent fs-2xs uppercase tracking-wide" >EUR 24.95</div>
         <h3 class="title-display-sm">Meet Marco</h3>
         <p class="mb-16 lh-16 fs-body c-ink-soft" >Plush + 30 QR stickers. Your referral link goes physical.</p>
@@ -1762,7 +1748,7 @@ if (window._lgIsCNY) {
     <div class="section-label">For Young Learners</div>
     <h2 class="section-title">Kids Sticker Packs</h2>
     <p class="c-ink-soft">Coming soon. Age-appropriate designs for children aged 6-14.</p>
-    <a href="kids.html" class="btn-primary">Learn more about Kids assessments</a>
+    <a href="kids.html" class="btn-primary">Explore Kids Assessments</a>
     <p class="caption-mt">Just a look. No commitment involved.</p>
   </div>
 </section>
