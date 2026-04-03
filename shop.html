@@ -108,7 +108,7 @@
   ]
 }
 </script>
-<link rel="icon" type="image/webp" href="/assets/mascot/marco-face-grad-v2.webp?v=3">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/assets/mascot/marco-face-grad-v2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -776,7 +776,9 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
   .hero-speech { border-radius: 16px; max-width: 300px; text-align: center; }
   .hero-speech::after { display: none; }
   .section { padding: 32px 12px; }
-  .hero + .section { padding-top: 16px; }
+
+  /* Partner card: single column on mobile */
+  .partner-card { grid-template-columns: 1fr; gap: 32px; }
 
   /* Product cards: single column on mobile */
   .product-card { grid-template-columns: 1fr; gap: 32px; padding: 12px; }
@@ -913,6 +915,11 @@ details > div, details > p { font-size:0.75rem; color:#777; line-height:1.6; pad
 }
 
 /* pulse-dot animation removed — too aggressive per WISE philosophy */
+
+/* ── Partner Card ── */
+.partner-card { background: var(--accent-bg); border-radius: 16px; padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 40px; }
+.partner-card h3 { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 12px; }
+.partner-card p { font-size: 0.9375rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 20px; }
 </style>
 <script src="/js/cookie-consent.js"></script>
 </head>
