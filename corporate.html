@@ -32,7 +32,7 @@
     {
       "@type": "Offer",
       "name": "Enterprise (50+ employees)",
-      "price": "49.95",
+      "price": "79.95",
       "priceCurrency": "EUR"
     },
     {
@@ -157,9 +157,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <h1 class="mb-20 c-white font-display" style="font-size:clamp(2rem,4.5vw,2.8rem);line-height:1.2;" >What if you could see exactly where<br>your team's language skills stand?</h1>
     <p class="lh-17 fs-lg" style="color:rgba(255,255,255,0.85);max-width:600px;margin:0 auto 32px;">It seems like your team already has the language skills — they just need a structured way to prove it. LingoGrade gives every employee an individual CEFR report across 12 languages — one provider, one invoice, one consistent format. And you get a Team Summary showing exactly where your workforce stands.</p>
     <div class="flex-center-wrap">
-      <a href="#contact" class="btn-primary">Request a Quote</a>
-      <a href="#pricing" class="btn-secondary">See Pricing</a>
-      <a href="samples/corporate_sample_report.pdf" target="_blank" class="btn-secondary" style="border-color:rgba(255,255,255,0.5);color:rgba(255,255,255,0.9);" download>Download Sample Report</a>
+      <a href="#contact" class="btn-primary">Explore Team Options</a>
+      <a href="#pricing" class="btn-secondary" style="border-color:var(--accent);color:var(--accent);">See Pricing</a>
+      <a href="samples/corporate_sample_report.pdf" target="_blank" class="btn-secondary" style="border-color:var(--accent);color:var(--accent);" download>Download Sample Report</a>
     </div>
   </div>
 </section>
@@ -280,7 +280,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       <div class="info-card text-left" style="padding:32px;border-radius:16px;">
         <div class="mb-8 fw-700 c-ink-light fs-2xs uppercase tracking-wide" >Enterprise</div>
         <div class="fs-md c-ink-soft mb-16">50+ employees</div>
-        <div class="corp-price c-ink fs-4xl fw-700" data-eur="49.95" data-usd="49.95" data-chf="49.95" data-gbp="49.95" style="line-height:1;" >&euro;49.95</div>
+        <div class="corp-price c-ink fs-4xl fw-700" data-eur="79.95" data-usd="79.95" data-chf="79.95" data-gbp="79.95" style="line-height:1;" >&euro;79.95</div>
         <div class="subcaption mb-20">per person</div>
         <div class="corp-save subcaption c-success fw-600 mb-16" data-eur="50" data-usd="50" data-chf="50" data-gbp="50">Save &euro;50 per person vs. individual</div>
         <ul class="check-list fs-body c-ink-soft gap-8" >
@@ -303,8 +303,8 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       </div>
     </div>
 
-    <a href="#contact" class="btn-primary mt-16" >Request a Quote</a>
-    <p class="subcaption mt-12">We respond within 24 hours. No commitment required.</p>
+    <a href="#contact" class="btn-primary mt-16" >See What This Looks Like for Your Team</a>
+    <p class="subcaption mt-12">We respond within 24 hours. No commitment, no pressure.</p>
   </div>
 </section>
 
@@ -387,8 +387,8 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <!-- CTA with Form -->
 <section class="section section-alt text-center" id="contact">
   <div class="section-inner mw-640" >
-    <h2 class="section-title">Would it help to see a quote tailored to your team?</h2>
-    <p class="section-desc mb-32 mx-auto" >Tell us about your team and we will send you a detailed quote within 24 hours. No commitment required.</p>
+    <h2 class="section-title">Would it help to see what this looks like for your team?</h2>
+    <p class="section-desc mb-32 mx-auto" >Share a few details and we will put together a tailored overview within 24 hours. No commitment, no follow-up calls.</p>
     <p class="text-center mb-24" style="font-size:0.95rem;color:#777;">Most corporate engagements are completed within 5 business days. Scheduling is flexible and adapts to your team's availability.</p>
     <div class="text-left bg-cream" style="border-radius:16px;padding:32px;border:1.5px solid var(--border);" >
       <form id="corpForm" class="flex-col gap-16" onsubmit="return submitCorpForm(event)">
@@ -438,7 +438,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
               <div class="caption mt-12">Initial assessment</div>
             </div>
             <div style="text-align:right;">
-              <div class="mb-4 fw-700 c-success fs-2xs uppercase tracking-wide" >RE-ASSESSMENT (3-6 MONTHS)</div>
+              <div class="mb-4 fw-700 c-success fs-2xs uppercase tracking-wide" >RE-ASSESSMENT (8 WEEKS)</div>
               <div class="mb-8 c-ink-soft fs-xs" ><span id="rePerPerson"></span> per person &middot; <span id="reEmployeeCount">0</span> employees</div>
               <div class="c-success fs-2xl fw-700" style="line-height:1;" ><span class="cur-sym">&#8364;</span><span id="reTotal">0</span></div>
               <div class="caption mt-12">Follow-up to measure progress</div>
@@ -474,7 +474,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <label class="field-label">Anything else we should know?</label>
           <textarea class="fs-md" name="message" rows="3" placeholder="Purpose of assessment, special requirements, questions..." onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'" style="width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);outline:none;resize:vertical;transition:border 0.15s;"></textarea>
         </div>
-        <button class="fw-600 fs-base c-white" type="submit" id="corpBtn" onmouseover="this.style.background='#E5AB42'" onmouseout="this.style.background='#D4952A'" style="padding:14px 32px;background:var(--gold);border:none;border-radius:10px;font-family:var(--font-body);cursor:pointer;transition:all 0.2s;">Request a Quote</button>
+        <button class="fw-600 fs-base c-white" type="submit" id="corpBtn" onmouseover="this.style.background='#E5AB42'" onmouseout="this.style.background='#D4952A'" style="padding:14px 32px;background:var(--gold);border:none;border-radius:10px;font-family:var(--font-body);cursor:pointer;transition:all 0.2s;">Send Details</button>
       </form>
       <div class="text-center" id="corpSuccess" style="display:none;padding:32px 16px;">
         <div class="mb-12 c-gold fs-3xl" >&#10003;</div>
@@ -486,19 +486,6 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   </div>
 </section>
 
-<!-- Corporate Testimonial -->
-<section class="section section-alt">
-  <div class="section-inner text-center mw-720" >
-    <div class="section-label">What Teams Say</div>
-    <h2 class="section-title" style="margin:0 auto 32px;">Trusted by HR teams across Europe</h2>
-    <div class="info-card text-left mx-auto" style="max-width:600px;" >
-      <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="note-italic">"We rolled LingoGrade out to 23 employees across three offices. Within two weeks, every team member had a clear CEFR level and a personalised development plan. The reports gave our managers something concrete to work with — not vague self-assessments, but structured, evidence-based profiles. The turnaround was fast, the process was smooth, and the team actually enjoyed it."</p>
-      <div class="fw-600 fs-body">Katharina V.</div>
-      <div class="subcaption">&#127465;&#127466; HR Director, International Logistics &mdash; Germany &middot; Mar 2026</div>
-    </div>
-  </div>
-</section>
 
 <!-- Footer -->
 <footer class="site-footer">
@@ -653,28 +640,6 @@ function submitCorpForm(e) {
   });
   return false;
 }
-</script>
-<!-- Sticky floating CTA — visible between hero and contact form -->
-<a class="fw-600 c-white no-underline" href="#contact" id="stickyQuote" style="display:none;position:fixed;bottom:24px;right:24px;z-index:900;padding:14px 28px;background:var(--gold);border-radius:10px;font-size:0.95rem;font-family:var(--font-body);box-shadow:0 4px 20px rgba(0,0,0,0.2);transition:opacity 0.3s,transform 0.3s;" >Request a Quote</a>
-<script>
-(function(){
-  var btn = document.getElementById('stickyQuote');
-  var hero = document.querySelector('.section'); /* first section = hero */
-  var contact = document.getElementById('contact');
-  if (!btn || !hero || !contact) return;
-  var visible = false;
-  function check(){
-    var heroBottom = hero.getBoundingClientRect().bottom;
-    var contactTop = contact.getBoundingClientRect().top;
-    var show = heroBottom < 0 && contactTop > window.innerHeight;
-    if (show !== visible) {
-      visible = show;
-      btn.style.display = show ? 'block' : 'none';
-    }
-  }
-  window.addEventListener('scroll', check, {passive:true});
-  check();
-})();
 </script>
 <script src="js/shield.js" defer></script>
 <script src="js/marco-chat.js" defer></script>
