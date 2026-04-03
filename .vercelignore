@@ -1,0 +1,7 @@
+assets/stickers/framed/
+assets/stickers/framed_print/
+docs/
+pipeline/
+deploy/
+tools/
+supabase/.temp/
