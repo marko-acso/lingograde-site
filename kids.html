@@ -202,6 +202,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       <a href="kids.html" class="nav-active">Kids</a>
       <a href="corporate.html">Corporate</a>
       <a href="partners.html">Partners</a>
+      <a href="programs.html">Programs</a>
       <a href="shop.html">Shop</a>
       <a href="https://app.lingograde.com/login" class="nav-signin">Sign In</a>
       <a href="https://booking.lingograde.com/marco" class="nav-cta">Explore Assessments</a>
@@ -336,6 +337,8 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <a href="teachers.html" class="footer-link">For Teachers</a>
     <a href="partners.html" class="footer-link">Partners</a>
     <a href="shop.html" class="footer-link">Shop</a>
+    <a href="programs.html" class="footer-link">Programs</a>
+    <a href="reviews.html" class="footer-link">Reviews</a>
     <a href="mailto:info@lingograde.com" class="footer-link">Contact</a>
   </div>
   <div class="footer-legal">
@@ -382,7 +385,7 @@ function submitWaitlist(e) {
   e.preventDefault();
   var form = document.getElementById('waitlistForm');
   var email = form.querySelector('input[name="email"]').value;
-  fetch('https://app.lingograde.com/api/waitlist', {
+  fetch('https://api.lingograde.com/v1/waitlist', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email: email, source: 'kids' })
@@ -514,6 +517,46 @@ function submitBooking(e) {
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeBooking();
 });
+
+// ── Purchase result handler ──
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var status = params.get('purchase');
+  if (!status) return;
+
+  var hero = document.querySelector('.hero-inner');
+  if (!hero) return;
+
+  var banner = document.createElement('div');
+  banner.style.cssText = 'max-width:600px;margin:24px auto 0;padding:20px 24px;border-radius:10px;text-align:center;font-size:1.05rem;line-height:1.6;';
+
+  if (status === 'success') {
+    var pkg = params.get('package') || '';
+    var label = PACKAGE_LABELS[pkg] || 'your assessment';
+    banner.style.background = '#E8F5E9';
+    banner.style.border = '1.5px solid #4CAF50';
+    banner.style.color = '#2E7D32';
+    banner.innerHTML = '<strong>Booking confirmed!</strong><br>' +
+      'Thank you for booking ' + label + '. ' +
+      'Check your email for a confirmation and next steps. ' +
+      'Marco is looking forward to meeting your child!';
+  } else if (status === 'cancelled') {
+    banner.style.background = '#FFF8E1';
+    banner.style.border = '1.5px solid #FFC107';
+    banner.style.color = '#F57F17';
+    banner.innerHTML = '<strong>Booking not completed.</strong><br>' +
+      'No worries — nothing was charged. ' +
+      'You can try again whenever you are ready, or <a href="#" onclick="document.getElementById(\'waitlistForm\').scrollIntoView({behavior:\'smooth\'});return false" style="color:#F57F17;text-decoration:underline;">join the waitlist</a> instead.';
+  }
+
+  hero.appendChild(banner);
+  banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+  // Clean URL without reload
+  if (window.history.replaceState) {
+    window.history.replaceState({}, '', window.location.pathname);
+  }
+})();
 </script>
 
 </body>

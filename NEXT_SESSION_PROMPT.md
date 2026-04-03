@@ -70,6 +70,24 @@
 
 ---
 
+## COMPLETED — Session 01: OAuth (Apr 2)
+- **Google OAuth end-to-end working** — login → Google consent → callback → role-based redirect
+- **Auth callback rewritten** as server-side Route Handler (`app/auth/callback/route.ts`) using `cookies()` from `next/headers` — official Supabase pattern
+- **Proxy middleware rewritten** (`proxy.ts`) — replaced broken cookie-presence check (`endsWith('-auth-token')`) with `supabase.auth.getUser()`. Old check failed on chunked cookies (`.0`, `.1` suffixes)
+- **Supabase client upgraded** — `lib/supabase.ts` now uses `createBrowserClient` from `@supabase/ssr` (cookie-based sessions, not localStorage)
+- **New `lib/supabase-server.ts`** — `createClient()` for Route Handlers, `createProxyClient()` for proxy middleware
+- **GDPR consent flow** verified working for new OAuth users (`/auth/consent`)
+- **Account linking** verified in student settings (Google link/unlink)
+- **Data deletion endpoint** verified (`/api/delete-account`)
+- **Login page polish** — Marco book-wave logo on all auth pages, loading state while checking auth (no form flash)
+- **Privacy policy updated** — OAuth provider disclosure (Google/Apple), self-service deletion reference, date updated to Apr 2
+- **Vercel cron fix** — all crons set to daily for Hobby plan (`send-report` 7am, `send-reminders` 8am, `dac7-monitor` 6am)
+- **Vercel CLI installed** + manual deploys via `vercel --prod` (Git integration was disconnected)
+
+---
+
 ## STILL PENDING
 - **mila-hero.png** — Needs generation (same style as marco-hero.png). Fallback works.
-- **Apple OAuth:** Needs Apple Developer Program ($99/yr) — skipped for now
+- **Apple OAuth:** Needs Apple Developer Program ($99/yr) — skipped for now, UI ready
+- **Supabase auto-linking:** Toggle "Automatically link accounts with matching emails" in Supabase dashboard (Settings > Authentication)
+- **Vercel Git integration:** Reconnect lingua-track repo in Vercel dashboard so pushes auto-deploy
