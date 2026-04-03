@@ -557,7 +557,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       if (data.error) {
         startBtn.disabled = false;
         startBtn.textContent = 'Start Talking with Marco';
-        alert(data.message || data.error);
+        alert(data.message || 'Something didn\u2019t go through. Please try again in a moment.');
         return;
       }
       botId = data.bot_id;
