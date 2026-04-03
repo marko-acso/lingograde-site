@@ -1,6 +1,7 @@
 -- 006_kids_profiles.sql
 -- Kids support: child fields on students, parental consent tracking,
--- widen CEFR constraint to include Pre-A1, add kids booking metadata.
+-- widen package constraint, add kids booking table.
+-- Adapted to PRODUCTION schema (not local migration chain).
 
 -- ══════════════════════════════════════════════════
 -- 1. Add kids columns to students
@@ -19,27 +20,21 @@ CREATE INDEX IF NOT EXISTS idx_students_parent_email ON students (parent_email)
     WHERE parent_email IS NOT NULL;
 
 -- ══════════════════════════════════════════════════
--- 2. Widen CEFR constraint to include Pre-A1
--- ══════════════════════════════════════════════════
-
--- Drop old constraint (named after the column in 001)
-ALTER TABLE assessments
-    DROP CONSTRAINT IF EXISTS assessments_cefr_level_check;
-
-ALTER TABLE assessments
-    ADD CONSTRAINT assessments_cefr_level_check
-    CHECK (cefr_level IN ('Pre-A1', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'));
-
--- ══════════════════════════════════════════════════
--- 3. Add package_type to assessments for kids vs adult
+-- 2. Widen assessments.package constraint for kids packages
 -- ══════════════════════════════════════════════════
 
 ALTER TABLE assessments
-    ADD COLUMN IF NOT EXISTS package_type TEXT DEFAULT 'adult'
-    CHECK (package_type IN ('adult', 'kids'));
+    DROP CONSTRAINT IF EXISTS assessments_package_check;
+
+ALTER TABLE assessments
+    ADD CONSTRAINT assessments_package_check
+    CHECK (package IN (
+        'quick_assessment', 'full_assessment',
+        'kids_quick', 'kids_full', 'kids_deep_dive'
+    ));
 
 -- ══════════════════════════════════════════════════
--- 4. Parental consent log (audit trail)
+-- 3. Parental consent log (audit trail)
 -- ══════════════════════════════════════════════════
 
 CREATE TABLE IF NOT EXISTS parental_consents (
@@ -58,14 +53,13 @@ CREATE INDEX IF NOT EXISTS idx_parental_consents_student ON parental_consents (s
 
 ALTER TABLE parental_consents ENABLE ROW LEVEL SECURITY;
 
--- Parent reads own consents (matched by parent_email in JWT)
 CREATE POLICY consents_admin_manage ON parental_consents
     FOR ALL USING (
         (auth.jwt() -> 'user_metadata' ->> 'role') = 'admin'
     );
 
 -- ══════════════════════════════════════════════════
--- 5. Check constraint: children must have parental consent
+-- 4. Check constraint: children must have parental consent
 -- ══════════════════════════════════════════════════
 
 ALTER TABLE students
@@ -76,7 +70,7 @@ ALTER TABLE students
     );
 
 -- ══════════════════════════════════════════════════
--- 6. Kids bookings (Stripe checkout tracking)
+-- 5. Kids bookings (Stripe checkout tracking)
 -- ══════════════════════════════════════════════════
 
 CREATE TABLE IF NOT EXISTS kids_bookings (
