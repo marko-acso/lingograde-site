@@ -201,11 +201,12 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .pricing-card.premium .pricing-features li::before { background: var(--warn); }
 .pricing-btn-premium { background: var(--warn); color: white; }
 .pricing-btn-premium:hover { background: #D35400; }
-.pricing-name { font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); margin-bottom: 4px; }
-.pricing-duration { font-size: 0.875rem; color: var(--ink-light); margin-bottom: 20px; }
+.pricing-name { font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); margin-bottom: 4px; min-height: 3.6rem; display: flex; align-items: flex-end; justify-content: center; }
+.pricing-duration { font-size: 0.875rem; color: var(--ink-light); margin-bottom: 20px; min-height: 1.4rem; }
 .pricing-price { font-family: var(--font-display); font-size: 2.5rem; color: var(--accent); margin-bottom: 4px; }
-.pricing-price-note { font-size: 0.8125rem; color: var(--ink-light); margin-bottom: 24px; }
+.pricing-price-note { font-size: 0.8125rem; color: var(--ink-light); margin-bottom: 24px; min-height: 2.4rem; }
 .pricing-features { list-style: none; margin-bottom: 28px; flex: 1; }
+.pricing-card > .pricing-btn { margin-top: auto; }
 .pricing-features li { font-size: 0.875rem; color: var(--ink-soft); padding: 6px 0; padding-left: 24px; position: relative; }
 .pricing-features li::before { content: ''; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 .pricing-features li.no::before { background: var(--border); }
@@ -572,15 +573,15 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     </div>
 
     <div class="mx-auto mt-32" style="max-width:900px;">
-      <div class="pricing-card c-success pos-relative" style="display:flex;align-items:center;gap:32px;text-align:left;">
+      <div class="pricing-card c-success pos-relative" style="flex-direction:row;align-items:center;gap:32px;text-align:left;">
         <div class="fw-700 c-white tracking-wide bg-success" style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 16px;border-radius:100px;font-size:0.6875rem;" >Instant result</div>
-        <div style="flex:1;min-width:200px;">
+        <div style="flex:1;min-width:180px;">
           <div class="pricing-name">Bot Assessment</div>
           <div class="pricing-duration">5-minute AI conversation</div>
           <div class="pricing-price c-success" data-eur="49.95" data-usd="49.95" data-chf="49.95" data-gbp="49.95">&euro;49.95</div>
           <div class="pricing-price-note">Full written report, no booking needed</div>
         </div>
-        <ul class="pricing-features" style="flex:1;min-width:200px;margin:0;">
+        <ul class="pricing-features" style="flex:1;min-width:180px;margin:0;">
           <li class="dot-item"><span ></span>Approximate CEFR level</li>
           <li class="dot-item"><span ></span>Key speaking patterns identified</li>
           <li class="dot-item"><span ></span>3 personalized flashcards</li>
