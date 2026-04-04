@@ -90,4 +90,4 @@
 - **mila-hero.png** — Needs generation (same style as marco-hero.png). Fallback works.
 - **Apple OAuth:** Needs Apple Developer Program ($99/yr) — skipped for now, UI ready
 - **Supabase auto-linking:** Toggle "Automatically link accounts with matching emails" in Supabase dashboard (Settings > Authentication)
-- **Vercel Git integration:** Reconnect lingua-track repo in Vercel dashboard so pushes auto-deploy
+- ~~**Vercel Git integration:**~~ Connected and auto-deploying (verified Apr 4)
