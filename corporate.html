@@ -95,7 +95,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .marco-img { max-width: 100%; height: auto; background: transparent; }
 .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: var(--gold); color: white; border-radius: 10px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
 .btn-primary:hover { background: var(--accent-lt); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(37,99,171,0.3); }
-.btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: transparent; border-radius: 10px; font-weight: 600; font-size: 1rem; text-decoration: none; border: 1.5px solid var(--accent); color: white; transition: all 0.15s; }
+.btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: transparent; border-radius: 10px; font-weight: 600; font-size: 1rem; text-decoration: none; border: 1.5px solid var(--accent); color: var(--accent); transition: all 0.15s; }
 .btn-secondary:hover { border-color: var(--gold); color: var(--gold); background: rgba(255,255,255,0.1); }
 .section { padding: 40px 32px; }
 .section-inner { max-width: var(--max-w); margin: 0 auto; }
@@ -155,12 +155,12 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   <div class="section-inner mw-760">
     <div class="mb-24" ><img src="assets/mascot/marco-mila-outfit-corporate.webp?v=3" alt="Marco and Mila — LingoGrade Corporate" class="marco-img" style="width:auto;height:350px;" ></div>
     <div class="inline-badge inline-badge--gold">Corporate Language Assessment</div>
-    <h1 class="mb-20 c-white font-display display-heading">What if you could see exactly where<br>your team's language skills stand?</h1>
-    <p class="lh-17 fs-lg mw-600 mx-auto mb-32 c-white">Your team already has the language skills — LingoGrade gives them a structured way to show it. Every employee gets an individual CEFR report across 12 languages — one provider, one invoice, one consistent format. You get a Team Summary showing exactly where your workforce stands.</p>
+    <h1 class="mb-20 c-white font-display display-heading" style="text-shadow:0 2px 6px rgba(0,0,0,0.4);">What if you could see exactly where<br>your team's language skills stand?</h1>
+    <p class="lh-17 fs-lg mw-600 mx-auto mb-32" style="color:#1A3A5C;">Your team already has the language skills — LingoGrade gives them a structured way to show it. Every employee gets an individual CEFR report across 12 languages — one provider, one invoice, one consistent format. You get a Team Summary showing exactly where your workforce stands.</p>
     <div class="flex-center-wrap">
       <a href="#contact" class="btn-primary">See Your Quote</a>
       <a href="#pricing" class="btn-secondary">See Pricing</a>
-      <a href="samples/corporate_sample_report.pdf" target="_blank" class="btn-secondary" style="border-color:rgba(255,255,255,0.7);color:#fff;" download>View Sample Report</a>
+      <a href="samples/corporate_sample_report.pdf" target="_blank" class="btn-secondary" download>View Sample Report</a>
     </div>
   </div>
 </section>
