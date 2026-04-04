@@ -107,8 +107,8 @@
   ]
 }
 </script>
-<link rel="icon" type="image/webp" href="/assets/mascot/marco-face-grad-v2.webp?v=3">
-<link rel="apple-touch-icon" href="/assets/mascot/marco-face-grad-v2.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/site.css">
@@ -743,11 +743,12 @@ details > div, details > p { font-size: 0.75rem; color: #777; line-height: 1.6; 
         <div class="mega-price-save"><img src="assets/mascot/marco-face-wink.webp?v=3" alt="Marco winking" loading="lazy"> You save EUR 84.80 (22% off)</div>
         <p class="fs-base c-ink-soft mt-8 italic">Less than a nice dinner for two &mdash; but this keeps earning for you long after dessert.</p>
       </div>
-      <div class="mb-16">
-        <a href="https://app.lingograde.com/shop/mega-bundle" class="btn-success fs-lg" style="padding:18px 48px;align-items:center;gap:14px;">
+      <div class="mb-16" id="mega-bundle-cta">
+        <input type="email" id="mega-bundle-email" placeholder="Your email address" class="input-field" style="max-width:360px;margin:0 auto 12px;display:block;padding:14px 16px;border-radius:10px;border:1px solid var(--border);font-size:1rem;text-align:center;">
+        <button onclick="checkoutMegaBundle()" class="btn-success fs-lg" style="padding:18px 48px;align-items:center;gap:14px;">
           <img src="assets/mascot/marco-hero.webp?v=3" alt="Marco the owl" style="height:40px;width:auto;" loading="lazy">
-          <span>See the Complete Package &rarr;</span>
-        </a>
+          <span>Get the Complete Package &rarr;</span>
+        </button>
       </div>
       <div class="mega-urgency">
         <p class="c-ink-soft italic" style="font-weight:500;">Whenever you are ready, the stickers start working the day they arrive.</p>
@@ -767,7 +768,7 @@ details > div, details > p { font-size: 0.75rem; color: #777; line-height: 1.6; 
       <div class="mb-4 fw-700 fs-4xl" style="color:#C41E3A;">¥288.95</div>
       <p class="mb-8 fs-body c-ink-light" style="text-decoration:line-through;">¥2,288.95</p>
       <p class="mb-24 fs-md c-ink-soft italic">双八吉利价 — 好运从这里开始</p>
-      <a href="https://app.lingograde.com/shop/mega-bundle" class="btn-primary fs-lg" style="background:#C41E3A;padding:16px 40px;">查看详情 →</a>
+      <button onclick="checkoutMegaBundle()" class="btn-primary fs-lg" style="background:#C41E3A;padding:16px 40px;">查看详情 →</button>
       <p class="mt-16 c-ink-light fs-smm">Includes everything in the Complete Package at our lucky price.</p>
     </div>
   </div>
@@ -1201,7 +1202,7 @@ if (window._lgIsCNY) {
         <div class="mb-12 fw-700 c-success fs-2xs uppercase tracking-wide">EUR 299.95</div>
         <h3 class="title-display-sm">The Complete Package</h3>
         <p class="mb-16 lh-16 fs-body c-ink-soft">Assessment, reassessment, homework, stickers, and Marco. 22% less than buying individually.</p>
-        <a href="https://app.lingograde.com/shop/mega-bundle" class="btn-success" style="width:100%;justify-content:center;">See the Package</a>
+        <a href="#mega-bundle" class="btn-success" style="width:100%;justify-content:center;">See the Package</a>
       </div>
     </div>
     <p class="mt-20 c-ink-light fs-smm">Not ready for any of these? That is perfectly fine. You are completely free to decide another day &mdash; your referral link is already active in your account.</p>
@@ -1408,133 +1409,132 @@ function enlargeImage(src) {
   }
 })();
 
-// ── Currency Detection ──
+// ── Currency geo-detection — IP geolocation with timezone fallback ──
 (function(){
-  var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-  var symbol = '\u20AC';
-  var isUSD = false;
-  var isCNY = false;
-  var usTzExact = ['America/New_York','America/Chicago','America/Denver','America/Los_Angeles','America/Phoenix','America/Anchorage','America/Honolulu'];
-  var isUS = usTzExact.indexOf(tz) !== -1 || tz.indexOf('America/') === 0 || tz.indexOf('US/') === 0;
-  if (isUS) { symbol = '$'; isUSD = true; }
-  else if (tz.indexOf('London') !== -1 || tz.indexOf('Europe/London') !== -1 || tz.indexOf('Europe/Belfast') !== -1 || tz.indexOf('Europe/Isle_of_Man') !== -1 || tz.indexOf('Europe/Jersey') !== -1 || tz.indexOf('Europe/Guernsey') !== -1) { symbol = '\u00A3'; }
-  else if (tz.indexOf('Zurich') !== -1 || tz.indexOf('Europe/Zurich') !== -1) { symbol = 'CHF '; }
-  else if (tz.indexOf('Asia/Shanghai') !== -1 || tz.indexOf('Asia/Chongqing') !== -1 || tz.indexOf('Asia/Harbin') !== -1 || tz.indexOf('Asia/Urumqi') !== -1 || tz.indexOf('Asia/Hong_Kong') !== -1 || tz.indexOf('Asia/Macau') !== -1) { symbol = '\u00A5'; isCNY = true; }
-  if (!isUSD && !isCNY && symbol === '\u20AC') {
-    var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
-    if (/^en-US/i.test(lang)) { symbol = '$'; isUSD = true; }
-  }
-  window._lgCurrency = symbol;
-  window._lgIsUSD = isUSD;
-  window._lgIsCNY = isCNY;
-  // EUR → USD price mapping (complete)
+  var COUNTRY_CURRENCY = {US:'USD',GB:'GBP',CH:'CHF',LI:'CHF',CN:'CNY',HK:'CNY',MO:'CNY'};
+  var SYMBOLS = {EUR:'\u20AC',USD:'$',GBP:'\u00A3',CHF:'CHF\u00A0',CNY:'\u00A5'};
+
   var eurToUsd = {
-    '5.00': '5.00',
-    '10.00': '10.00',
-    '20.00': '20.00',
-    '12.95': '12.95',
-    '14.95': '14.95',
-    '19.95': '22.95',
-    '24.95': '29.95',
-    '29.95': '29.95',
-    '37.95': '43.95',
-    '44.90': '52.90',
-    '44.95': '51.95',
-    '59.95': '68.85',
-    '84.80': '99.80',
-    '129.95': '129.95',
-    '139.95': '139.95',
-    '299.95': '349.95',
-    '384.75': '449.70'
+    '5.00':'5.00','10.00':'10.00','20.00':'20.00','12.95':'12.95','14.95':'14.95',
+    '19.95':'22.95','24.95':'29.95','29.95':'29.95','37.95':'43.95','44.90':'52.90',
+    '44.95':'51.95','59.95':'68.85','84.80':'99.80','129.95':'129.95','139.95':'139.95',
+    '299.95':'349.95','384.75':'449.70'
   };
-  // EUR → CNY price mapping (lucky numbers for tips)
   var eurToCny = {
-    '5.00': '8',
-    '10.00': '18',
-    '20.00': '88',
-    '12.95': '99.95',
-    '14.95': '99.95',
-    '19.95': '149.95',
-    '24.95': '199.95',
-    '29.95': '249.95',
-    '37.95': '299.95',
-    '44.90': '349.95',
-    '44.95': '349.95',
-    '59.95': '449.95',
-    '84.80': '649.95',
-    '129.95': '999.95',
-    '139.95': '999.95',
-    '299.95': '2288.95',
-    '384.75': '2899.95'
+    '5.00':'8','10.00':'18','20.00':'88','12.95':'99.95','14.95':'99.95',
+    '19.95':'149.95','24.95':'199.95','29.95':'249.95','37.95':'299.95','44.90':'349.95',
+    '44.95':'349.95','59.95':'449.95','84.80':'649.95','129.95':'999.95','139.95':'999.95',
+    '299.95':'2288.95','384.75':'2899.95'
   };
-  function convertPrice(eurPrice) {
-    if (isUSD) return eurToUsd[eurPrice] || eurPrice;
-    if (isCNY) return eurToCny[eurPrice] || eurPrice;
-    return eurPrice;
-  }
-  window._lgConvertPrice = convertPrice;
+  var PRICE_MAPS = {USD:eurToUsd,CNY:eurToCny};
   window._lgEurToUsd = eurToUsd;
 
-  // Fill all data-price elements
-  document.querySelectorAll('[data-price]').forEach(function(el){
-    var price = el.getAttribute('data-price');
-    var displayPrice = convertPrice(price);
-    el.textContent = symbol + displayPrice;
-    if (isUSD) el.setAttribute('data-price', displayPrice);
-  });
+  function tzFallback() {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    if (/America\/(New_York|Chicago|Denver|Los_Angeles|Anchorage|Phoenix|Detroit|Indiana|Kentucky|Boise|Juneau|Sitka|Yakutat|Nome|Adak|Menominee|North_Dakota)|Pacific\/Honolulu|US\//.test(tz)) return 'USD';
+    if (/Europe\/London|Europe\/Belfast|Europe\/Isle_of_Man|Europe\/Jersey|Europe\/Guernsey/.test(tz)) return 'GBP';
+    if (/Europe\/Zurich/.test(tz)) return 'CHF';
+    if (/Asia\/(Shanghai|Chongqing|Harbin|Urumqi|Hong_Kong|Macau)/.test(tz)) return 'CNY';
+    return 'EUR';
+  }
 
-  // Replace "EUR X.XX" across the entire page body via TreeWalker
-  if (symbol !== '\u20AC' || isUSD || isCNY) {
-    var priceMap = isUSD ? eurToUsd : (isCNY ? eurToCny : null);
+  var origDataPrices = [];
+  var origTextNodes = [];
+  var origAttrs = [];
+  var origTierLabels = [];
+  var saved = false;
+
+  function saveOriginals() {
+    if (saved) return;
+    document.querySelectorAll('[data-price]').forEach(function(el){
+      origDataPrices.push({el:el, eur:el.getAttribute('data-price'), text:el.textContent});
+    });
     var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
-    var node;
-    while (node = walker.nextNode()) {
-      var text = node.nodeValue;
-      if (text.indexOf('EUR') === -1) continue;
-      text = text.replace(/EUR\s?([\d,]+\.?\d*)/g, function(match, price) {
-        var cleanPrice = price.replace(/,/g, '');
-        var converted = priceMap ? (priceMap[cleanPrice] || cleanPrice) : cleanPrice;
-        return symbol + converted;
-      });
-      node.nodeValue = text;
+    var n;
+    while (n = walker.nextNode()) {
+      if (n.nodeValue.indexOf('EUR') !== -1) origTextNodes.push({node:n, text:n.nodeValue});
     }
-    // Also swap EUR in data-tip and data-title attributes
-    document.querySelectorAll('[data-tip],[data-title]').forEach(function(el) {
-      ['data-tip','data-title'].forEach(function(attr) {
-        var val = el.getAttribute(attr);
-        if (val && val.indexOf('EUR') !== -1) {
-          val = val.replace(/EUR\s?([\d,]+\.?\d*)/g, function(match, price) {
-            var cleanPrice = price.replace(/,/g, '');
-            var converted = priceMap ? (priceMap[cleanPrice] || cleanPrice) : cleanPrice;
-            return symbol + converted;
-          });
-          el.setAttribute(attr, val);
-        }
+    document.querySelectorAll('[data-tip],[data-title]').forEach(function(el){
+      ['data-tip','data-title'].forEach(function(attr){
+        var v = el.getAttribute(attr);
+        if (v && v.indexOf('EUR') !== -1) origAttrs.push({el:el, attr:attr, val:v});
       });
     });
-  }
-
-  // For USD, also swap prices inside the tier radio option labels
-  if (isUSD) {
-    document.querySelectorAll('.sticker-tier-option').forEach(function(label){
-      Object.keys(eurToUsd).forEach(function(eur){
-        var re = new RegExp('\u20AC' + eur.replace('.', '\\.'), 'g');
-        label.innerHTML = label.innerHTML.replace(re, '$' + eurToUsd[eur]);
-      });
-      label.innerHTML = label.innerHTML.replace(/\u20AC18\.95\/pack/g, '$21.95/pack');
-      label.innerHTML = label.innerHTML.replace(/\$18\.95\/pack/g, '$21.95/pack');
-      label.innerHTML = label.innerHTML.replace(/\u20AC14\.95\/pack/g, '$17.33/pack');
-      label.innerHTML = label.innerHTML.replace(/\$14\.95\/pack/g, '$17.33/pack');
-      label.innerHTML = label.innerHTML.replace(/\u20AC1\.95/g, '$1.95');
-      label.innerHTML = label.innerHTML.replace(/\u20AC14\.95/g, '$17.95');
+    document.querySelectorAll('.sticker-tier-option').forEach(function(el){
+      origTierLabels.push({el:el, html:el.innerHTML});
     });
+    saved = true;
   }
 
-  // CNY bundle toggle (geo-gated)
-  if (isCNY) {
+  var currentCode = null;
+
+  function applyPrices(code) {
+    if (code === currentCode) return;
+    currentCode = code;
+    var symbol = SYMBOLS[code] || SYMBOLS.EUR;
+    var isUSD = code === 'USD';
+    var isCNY = code === 'CNY';
+    var priceMap = PRICE_MAPS[code] || null;
+
+    window._lgCurrency = symbol;
+    window._lgCurrencyCode = code;
+    window._lgIsUSD = isUSD;
+    window._lgIsCNY = isCNY;
+    window._lgConvertPrice = function(eurPrice) {
+      return priceMap ? (priceMap[eurPrice] || eurPrice) : eurPrice;
+    };
+
+    origDataPrices.forEach(function(o){
+      var converted = priceMap ? (priceMap[o.eur] || o.eur) : o.eur;
+      o.el.textContent = symbol + converted;
+      o.el.setAttribute('data-price', isUSD ? converted : o.eur);
+    });
+
+    origTextNodes.forEach(function(o){
+      if (code === 'EUR') { o.node.nodeValue = o.text; return; }
+      o.node.nodeValue = o.text.replace(/EUR\s?([\d,]+\.?\d*)/g, function(m, p){
+        var clean = p.replace(/,/g, '');
+        return symbol + (priceMap ? (priceMap[clean] || clean) : clean);
+      });
+    });
+
+    origAttrs.forEach(function(o){
+      if (code === 'EUR') { o.el.setAttribute(o.attr, o.val); return; }
+      o.el.setAttribute(o.attr, o.val.replace(/EUR\s?([\d,]+\.?\d*)/g, function(m, p){
+        var clean = p.replace(/,/g, '');
+        return symbol + (priceMap ? (priceMap[clean] || clean) : clean);
+      }));
+    });
+
+    origTierLabels.forEach(function(o){
+      o.el.innerHTML = o.html;
+      if (isUSD) {
+        Object.keys(eurToUsd).forEach(function(eur){
+          o.el.innerHTML = o.el.innerHTML.replace(new RegExp('\u20AC' + eur.replace('.', '\\.'), 'g'), '$' + eurToUsd[eur]);
+        });
+        o.el.innerHTML = o.el.innerHTML.replace(/\u20AC18\.95\/pack/g, '$21.95/pack');
+        o.el.innerHTML = o.el.innerHTML.replace(/\u20AC14\.95\/pack/g, '$17.33/pack');
+        o.el.innerHTML = o.el.innerHTML.replace(/\u20AC1\.95/g, '$1.95');
+        o.el.innerHTML = o.el.innerHTML.replace(/\u20AC14\.95/g, '$17.95');
+      }
+    });
+
     var cnBundle = document.getElementById('cn-bundle');
-    if (cnBundle) cnBundle.style.display = '';
+    if (cnBundle) cnBundle.style.display = isCNY ? '' : 'none';
+
+    if (typeof updateStickerTotal === 'function') updateStickerTotal();
   }
+
+  saveOriginals();
+  applyPrices(tzFallback());
+
+  fetch('https://api.country.is/')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var cc = d && d.country;
+      if (cc && COUNTRY_CURRENCY[cc]) applyPrices(COUNTRY_CURRENCY[cc]);
+    })
+    .catch(function(){});
 })();
 
 // ── Sticker Order Total ──
@@ -1812,6 +1812,47 @@ function onWaitlistSuccess(btn, input, email) {
   input.disabled = true;
   input.value = email;
 }
+
+function checkoutMegaBundle() {
+  var email = (document.getElementById('mega-bundle-email') || {}).value || '';
+  email = email.trim();
+  if (!email || email.indexOf('@') < 1) {
+    var inp = document.getElementById('mega-bundle-email');
+    if (inp) { inp.focus(); inp.style.borderColor = '#e74c3c'; }
+    alert('Please enter your email address to continue.');
+    return;
+  }
+  var currencyMap = { EUR: 'eur', USD: 'usd', GBP: 'gbp', CHF: 'chf' };
+  var currency = currencyMap[window._lgCurrencyCode || 'EUR'] || 'eur';
+  fetch('https://api.lingograde.com/v1/checkout/mega-bundle', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, currency: currency })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    if (data.checkout_url) {
+      window.location.href = data.checkout_url;
+    } else {
+      alert(data.error || 'Something went wrong. Please try again.');
+    }
+  })
+  .catch(function() {
+    alert('Connection error. Please try again.');
+  });
+}
+
+// ── Mega Bundle purchase success message ──
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('purchase') === 'success' && params.get('product') === 'mega-bundle') {
+    var banner = document.createElement('div');
+    banner.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:9999;background:#27AE60;color:#fff;text-align:center;padding:20px 24px;font-size:1.125rem;font-weight:600;box-shadow:0 4px 20px rgba(0,0,0,0.3);';
+    banner.innerHTML = 'Thank you for purchasing the Mega Bundle! Check your email for next steps. <a href="https://www.lingograde.com/dashboard" style="color:#fff;text-decoration:underline;margin-left:12px;">Open Dashboard</a> <button onclick="this.parentNode.remove()" style="background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;margin-left:16px;vertical-align:middle;">&times;</button>';
+    document.body.prepend(banner);
+    window.history.replaceState({}, '', window.location.pathname);
+  }
+})();
 </script>
 <noscript>
   <div class="noscript-banner"><a href="mailto:hello@lingograde.com">Questions? Email us</a></div>

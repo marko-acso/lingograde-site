@@ -9,6 +9,7 @@ import uuid
 from datetime import datetime, timezone
 
 import anthropic
+import requests as http_requests
 import stripe
 from dotenv import load_dotenv
 from flask import Flask, abort, g, jsonify, request, send_file
@@ -516,6 +517,100 @@ def stripe_webhook():
                     )
             except Exception:
                 pass  # Stripe is source of truth; DB is supplementary
+
+        elif meta.get("product_type") == "homework":
+            # Create homework record for the student after payment
+            customer_email = cs.get("customer_email") or cs.get("customer_details", {}).get("email", "")
+            hw_type = meta.get("homework_type", "A")
+            if customer_email:
+                try:
+                    from datetime import timedelta
+                    deadline = datetime.now(timezone.utc) + timedelta(days=14)
+                    with get_cursor() as cur:
+                        # Find student by email
+                        cur.execute("SELECT id FROM students WHERE email = %s", (customer_email,))
+                        student = cur.fetchone()
+                        if student:
+                            cur.execute(
+                                """INSERT INTO homework
+                                   (id, student_id, title, type, status, deadline)
+                                   VALUES (%s, %s, %s, %s, 'pending', %s)""",
+                                (
+                                    str(uuid.uuid4()),
+                                    student["id"],
+                                    "Homework Check",
+                                    hw_type,
+                                    deadline,
+                                ),
+                            )
+                except Exception:
+                    pass  # Stripe is source of truth
+
+        elif meta.get("product_type") == "mega_bundle":
+            customer_email = cs.get("customer_email") or cs.get("customer_details", {}).get("email", "")
+            if customer_email:
+                try:
+                    with get_cursor() as cur:
+                        # Link to student if exists
+                        cur.execute("SELECT id FROM students WHERE email = %s", (customer_email,))
+                        student = cur.fetchone()
+                        student_id = student["id"] if student else None
+
+                        cur.execute(
+                            """INSERT INTO pack_purchases
+                               (email, student_id, pack_type, stripe_session_id,
+                                amount_cents, currency, reassessment_eligible_date)
+                               VALUES (%s, %s, 'mega_bundle', %s, %s, %s,
+                                       now() + interval '8 weeks')""",
+                            (
+                                customer_email,
+                                student_id,
+                                cs["id"],
+                                cs.get("amount_total", 29995),
+                                cs.get("currency", "eur"),
+                            ),
+                        )
+                except Exception:
+                    pass  # Stripe is source of truth
+
+                # Send confirmation email via Resend
+                try:
+                    resend_key = os.environ.get("RESEND_API_KEY")
+                    if resend_key:
+                        http_requests.post(
+                            "https://api.resend.com/emails",
+                            headers={"Authorization": f"Bearer {resend_key}"},
+                            json={
+                                "from": "LingoGrade <hello@lingograde.com>",
+                                "to": [customer_email],
+                                "bcc": ["marco@lingograde.com"],
+                                "subject": "Your LingoGrade Mega Bundle is ready! / Vaš LingoGrade paket je spreman!",
+                                "html": (
+                                    "<h2>Your LingoGrade Pack is ready!</h2>"
+                                    "<p>Thank you for your purchase. Your Mega Bundle includes:</p>"
+                                    "<ul>"
+                                    "<li>Full language assessment (55 min)</li>"
+                                    "<li>8 weeks of personalised 15-minute lessons</li>"
+                                    "<li>Reassessment after 8 weeks</li>"
+                                    "</ul>"
+                                    "<p><strong>Next step:</strong> Book your assessment in your student dashboard.</p>"
+                                    "<p><a href='https://www.lingograde.com/dashboard'>Open Dashboard</a></p>"
+                                    "<hr>"
+                                    "<h2>Vaš LingoGrade paket je spreman!</h2>"
+                                    "<p>Hvala na kupovini. Vaš Mega Bundle uključuje:</p>"
+                                    "<ul>"
+                                    "<li>Potpuna jezička procjena (55 min)</li>"
+                                    "<li>8 sedmica personaliziranih lekcija od 15 minuta</li>"
+                                    "<li>Ponovna procjena nakon 8 sedmica</li>"
+                                    "</ul>"
+                                    "<p><strong>Sljedeći korak:</strong> Zakažite procjenu u svom studentskom dashboardu.</p>"
+                                    "<p><a href='https://www.lingograde.com/dashboard'>Otvorite Dashboard</a></p>"
+                                ),
+                            },
+                        )
+                except Exception:
+                    pass  # Email failure should not block webhook response
+
         else:
             matched_id = find_assessment_by_payment(cs["id"])
             if matched_id:
@@ -846,6 +941,53 @@ def checkout_kids():
                 "age_group": age_group,
                 "guardian_name": guardian_name,
                 "parent_email": parent_email,
+            },
+            consent_collection={"terms_of_service": "required"},
+        )
+    except stripe.StripeError as e:
+        return jsonify({"error": str(e)}), 400
+
+    return jsonify({"checkout_url": session.url, "session_id": session.id})
+
+
+# ═══════════════════════════════════════════════════════════════════
+# Endpoint: POST /v1/checkout/mega-bundle — Mega Bundle checkout
+# ═══════════════════════════════════════════════════════════════════
+
+@app.route("/v1/checkout/mega-bundle", methods=["POST"])
+def checkout_mega_bundle():
+    data = request.get_json(force=True)
+    email = (data.get("email") or "").strip()
+    currency = (data.get("currency") or "eur").strip().lower()
+
+    if not email or "@" not in email:
+        return jsonify({"error": "Valid email required"}), 400
+    if currency not in ALLOWED_CURRENCIES:
+        currency = "eur"
+
+    origin = os.environ.get("CORS_ORIGIN", "https://www.lingograde.com")
+
+    try:
+        session = stripe.checkout.Session.create(
+            payment_method_types=["card"],
+            line_items=[{
+                "price_data": {
+                    "currency": currency,
+                    "unit_amount": 29995,
+                    "product_data": {
+                        "name": "LingoGrade Mega Bundle",
+                        "description": "Full assessment + 8 weeks of 15-min lessons + reassessment. Everything included.",
+                    },
+                },
+                "quantity": 1,
+            }],
+            mode="payment",
+            customer_email=email,
+            success_url=f"{origin}/shop?purchase=success&product=mega-bundle",
+            cancel_url=f"{origin}/shop?purchase=cancelled",
+            metadata={
+                "product_type": "mega_bundle",
+                "email": email,
             },
             consent_collection={"terms_of_service": "required"},
         )
