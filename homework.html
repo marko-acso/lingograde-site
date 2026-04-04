@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homework — LingoGrade</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/webp" href="/assets/mascot/marco-face-grad-v2.webp?v=3">
+<link rel="apple-touch-icon" href="/assets/mascot/marco-face-grad-v2.png">
+<noscript><meta http-equiv="refresh" content="0;url=https://app.lingograde.com/login?redirect=homework"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
+<style>
+:root {
+  --ink: #1C1C1C;
+  --ink-soft: #4A4A4A;
+  --ink-light: #8A8A8A;
+  --accent: #2563AB;
+  --accent-lt: #3B82F6;
+  --accent-bg: #EFF6FF;
+  --cream: #FFFFFF;
+  --parchment: #F8F8F8;
+  --border: #E0E0E0;
+  --success: #27AE60;
+  --success-bg: #F0FFF4;
+  --warn: #E67E22;
+  --error: #C0392B;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+  --max-w: 720px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--ink); background: var(--parchment); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+/* ── Navigation ── */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: 1080px; margin: 0 auto; padding: 4px 32px; display: flex; align-items: center; justify-content: space-between; }
+.nav-menu { display: flex; gap: 28px; align-items: center; }
+.nav-menu a { font-size: 0.875rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; transition: color 0.15s; }
+.nav-menu a:hover { color: var(--accent); }
+.nav-signin { padding: 8px 16px; border: 1.5px solid var(--border); border-radius: 8px; transition: all 0.15s; }
+.nav-signin:hover { border-color: var(--accent); color: var(--accent) !important; }
+.nav-cta { padding: 8px 16px; background: var(--accent); color: white !important; border-radius: 8px; font-weight: 600; transition: background 0.15s; }
+.nav-cta:hover { background: var(--accent-lt); }
+.brand-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; font-family: var(--font-display); font-size: 1.25rem; color: var(--ink); }
+.brand-logo img { width: 44px; height: 44px; }
+.brand-a { color: var(--success); }
+.nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-hamburger span { display: block; width: 20px; height: 2px; background: var(--ink); margin: 4px 0; transition: all 0.2s; }
+
+/* ── Main content ── */
+.hw-page { max-width: var(--max-w); margin: 0 auto; padding: 100px 24px 60px; }
+.hw-header { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
+.hw-header img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.hw-header h1 { font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); }
+.hw-header p { font-size: 0.9rem; color: var(--ink-soft); margin-top: 2px; }
+
+/* ── Success banner ── */
+.success-banner { background: var(--success-bg); border: 1px solid var(--success); border-radius: 10px; padding: 20px 24px; margin-bottom: 28px; }
+.success-banner h2 { font-family: var(--font-display); font-size: 1.15rem; color: var(--success); margin-bottom: 6px; }
+.success-banner p { font-size: 0.9rem; color: var(--ink-soft); }
+
+/* ── Card ── */
+.card { background: var(--cream); border-radius: 12px; border: 1px solid var(--border); padding: 28px 24px; margin-bottom: 20px; }
+.card-title { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 4px; }
+.card-desc { font-size: 0.875rem; color: var(--ink-soft); margin-bottom: 18px; }
+
+/* ── Upload zone ── */
+.upload-zone { border: 2px dashed var(--border); border-radius: 12px; padding: 28px 20px; text-align: center; cursor: pointer; transition: background 0.15s, border-color 0.15s; }
+.upload-zone:hover, .upload-zone.dragover { background: var(--accent-bg); border-color: var(--accent); }
+.upload-zone-text { font-size: 0.875rem; color: var(--ink-soft); margin-bottom: 10px; }
+.upload-zone-sub { font-size: 0.75rem; color: var(--ink-light); }
+.btn-file-pick { margin-top: 10px; padding: 7px 18px; background: var(--accent); color: white; border: none; border-radius: 7px; font-size: 0.8rem; font-weight: 600; font-family: var(--font-body); cursor: pointer; transition: background 0.15s; }
+.btn-file-pick:hover { background: var(--accent-lt); }
+.upload-preview { margin-top: 16px; padding: 12px 14px; background: var(--parchment); border-radius: 8px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.upload-preview-name { font-size: 0.875rem; color: var(--ink); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.upload-preview-size { font-size: 0.8rem; color: var(--ink-light); white-space: nowrap; }
+.btn-upload-confirm { padding: 7px 18px; background: var(--accent); color: white; border: none; border-radius: 7px; font-size: 0.8rem; font-weight: 600; font-family: var(--font-body); cursor: pointer; transition: background 0.15s; }
+.btn-upload-confirm:hover { background: var(--accent-lt); }
+.btn-upload-confirm:disabled { opacity: 0.5; cursor: not-allowed; }
+.upload-progress { height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; margin-top: 10px; }
+.upload-progress-bar { height: 100%; background: var(--accent); border-radius: 2px; width: 0; transition: width 0.2s; }
+
+/* ── Homework items ── */
+.hw-item { padding: 12px 0; border-bottom: 1px solid var(--border); }
+.hw-item:last-child { border-bottom: none; }
+.hw-item-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.hw-item-title { font-weight: 600; font-size: 0.9rem; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; }
+.badge-type { background: var(--accent-bg); color: var(--accent); }
+.badge-pending { background: #FEF3C7; color: #92400E; }
+.badge-submitted { background: var(--accent-bg); color: var(--accent); }
+.badge-reviewed { background: var(--success-bg); color: var(--success); }
+.hw-countdown { font-size: 0.8rem; color: var(--warn); }
+.hw-meta { font-size: 0.8rem; color: var(--ink-light); }
+.hw-separator { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+.hw-section-title { font-weight: 600; font-size: 0.85rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+.hw-feedback-toggle { background: none; border: none; color: var(--accent); font-size: 0.8rem; font-family: var(--font-body); cursor: pointer; margin-top: 6px; }
+.hw-feedback-body { display: none; margin-top: 8px; padding: 10px 12px; background: var(--parchment); border-radius: 6px; font-size: 0.85rem; color: var(--ink-soft); white-space: pre-wrap; }
+.hw-feedback-body.open { display: block; }
+
+/* ── Empty + waiting states ── */
+.empty-state { color: var(--ink-light); font-size: 0.9rem; padding: 16px 0; }
+.waiting-state { text-align: center; padding: 24px 0; }
+.waiting-state p { font-size: 0.9rem; color: var(--ink-soft); margin-bottom: 12px; }
+.spinner { width: 28px; height: 28px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.7s linear infinite; margin: 0 auto; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Upload select ── */
+.form-group { margin-bottom: 14px; }
+.form-label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--ink-soft); margin-bottom: 4px; }
+.form-select { width: 100%; padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; font-family: var(--font-body); font-size: 0.875rem; background: var(--cream); }
+
+/* ── Toast ── */
+.toast { position: fixed; bottom: -60px; left: 50%; transform: translateX(-50%); padding: 12px 24px; border-radius: 10px; font-size: 0.875rem; font-weight: 500; z-index: 1000; transition: bottom 0.3s; white-space: nowrap; }
+.toast.show { bottom: 32px; }
+.toast.success { background: var(--success); color: white; }
+.toast.error { background: var(--error); color: white; }
+
+/* ── Success checkmark ── */
+.success-check { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: var(--success); color: white; font-size: 1.5rem; margin-bottom: 16px; margin-left: auto; margin-right: auto; }
+
+/* ── Dashboard link ── */
+.link-dashboard { display: inline-block; margin-top: 16px; font-size: 0.875rem; color: var(--accent); text-decoration: none; font-weight: 500; }
+.link-dashboard:hover { text-decoration: underline; }
+
+.hidden { display: none !important; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .nav-menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: white; padding: 16px 24px; border-bottom: 1px solid var(--border); gap: 12px; }
+  .nav-menu.open { display: flex; }
+  .nav-hamburger { display: block; }
+  .hw-page { padding: 80px 16px 40px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade - Home" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"><span>LingoGr<span class="brand-a">A</span>de</span></a>
+    <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-menu">
+      <a href="index.html">Individual</a>
+      <a href="kids.html">Kids</a>
+      <a href="corporate.html">Corporate</a>
+      <a href="partners.html">Partners</a>
+      <a href="shop.html">Shop</a>
+      <a href="https://app.lingograde.com/login" class="nav-signin">Sign In</a>
+      <a href="https://booking.lingograde.com/marco" class="nav-cta">Explore Assessments</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Loading ── -->
+<div class="hw-page">
+  <div id="loadingState"><div class="spinner" style="margin:120px auto;"></div></div>
+
+  <!-- ── Main Content (hidden until auth) ── -->
+  <div class="hidden" id="hwMain">
+
+    <div class="hw-header">
+      <img src="assets/mascot/marco-logo-v6.1.webp" alt="Marco" >
+      <div>
+        <h1 id="hwGreeting">Homework</h1>
+        <p>Upload your completed homework for Marco to check.</p>
+      </div>
+    </div>
+
+    <!-- Success banner (shown after payment) -->
+    <div class="success-banner hidden" id="successBanner">
+      <h2>You're all set.</h2>
+      <p>Your homework check is ready. Upload your completed exercises below and Marco will review them within 1 hour.</p>
+    </div>
+
+    <!-- Homework content -->
+    <div class="card">
+      <div class="card-title">Your Homework</div>
+      <div class="card-desc">Drag and drop or choose a file to submit.</div>
+      <div id="hwContent"><div class="spinner" style="margin:8px 0;"></div></div>
+    </div>
+
+    <a href="dashboard.html" class="link-dashboard">Back to dashboard</a>
+  </div>
+
+  <!-- ── Upload complete state ── -->
+  <div class="hidden" id="uploadDone">
+    <div style="text-align:center;padding:80px 20px;">
+      <div class="success-check">&#10003;</div>
+      <h2 style="font-family:var(--font-display);margin-bottom:8px;">Homework submitted.</h2>
+      <p style="color:var(--ink-soft);font-size:0.95rem;max-width:400px;margin:0 auto;">Marco will check your work and get back to you within 1 hour. You'll see the feedback on your dashboard.</p>
+      <a href="dashboard.html" class="link-dashboard">Go to dashboard</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── Toast ── -->
+<div class="toast" id="toast"></div>
+
+<script>
+var _pendingHw = [];
+var _selectedFile = null;
+var _countdownInterval = null;
+var _isPostPurchase = new URLSearchParams(window.location.search).get('purchase') === 'success';
+var _retryCount = 0;
+
+function showToast(message, type) {
+  var toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.className = 'toast ' + (type || '');
+  toast.classList.add('show');
+  setTimeout(function() { toast.classList.remove('show'); }, 3000);
+}
+
+function escHtml(str) {
+  if (str == null) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function formatDate(iso) {
+  var d = new Date(iso);
+  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+}
+
+function formatBytes(bytes) {
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+  return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+}
+
+// ── Auth gate ──
+(function init() {
+  fetch('https://app.lingograde.com/api/student/profile', { credentials: 'include' })
+    .then(function(r) {
+      if (r.status === 401 || !r.ok) {
+        window.location.href = 'https://app.lingograde.com/login?redirect=homework' +
+          (_isPostPurchase ? '%3Fpurchase%3Dsuccess' : '');
+        return null;
+      }
+      return r.json();
+    })
+    .then(function(data) {
+      if (!data) return;
+      document.getElementById('loadingState').style.display = 'none';
+      document.getElementById('hwMain').style.display = '';
+      document.getElementById('hwMain').classList.remove('hidden');
+
+      var name = data.preferred_name || data.full_name || '';
+      if (name) {
+        document.getElementById('hwGreeting').textContent = name.split(' ')[0] + ', your homework';
+      }
+
+      if (_isPostPurchase) {
+        document.getElementById('successBanner').style.display = '';
+        document.getElementById('successBanner').classList.remove('hidden');
+      }
+
+      loadHomework();
+    })
+    .catch(function() {
+      window.location.href = 'https://app.lingograde.com/login?redirect=homework';
+    });
+})();
+
+// ── Load homework ──
+function loadHomework() {
+  fetch('https://app.lingograde.com/api/student/homework', { credentials: 'include' })
+    .then(function(r) { return r.ok ? r.json() : { homework: [] }; })
+    .then(function(data) {
+      var list = data.homework || [];
+      if (!list.length && _isPostPurchase && _retryCount < 5) {
+        // Webhook may not have fired yet — retry
+        _retryCount++;
+        document.getElementById('hwContent').innerHTML =
+          '<div class="waiting-state"><div class="spinner"></div><p style="margin-top:12px;">Setting up your homework check...</p></div>';
+        setTimeout(loadHomework, 3000);
+        return;
+      }
+      renderHomework(list);
+    })
+    .catch(function() { renderHomework([]); });
+}
+
+// ── Render homework list + upload ──
+function renderHomework(list) {
+  var el = document.getElementById('hwContent');
+  if (_countdownInterval) { clearInterval(_countdownInterval); _countdownInterval = null; }
+
+  if (!list.length) {
+    el.innerHTML = '<p class="empty-state">No homework assigned yet. If you just completed payment, it may take a moment to appear.</p>';
+    _pendingHw = [];
+    return;
+  }
+
+  var pending = list.filter(function(h) { return h.status === 'pending'; });
+  var past = list.filter(function(h) { return h.status !== 'pending'; })
+    .slice().sort(function(a, b) { return new Date(b.submitted_at) - new Date(a.submitted_at); });
+
+  _pendingHw = pending;
+  var html = '';
+
+  if (pending.length) {
+    html += '<div class="hw-section-title">Ready to submit</div>';
+    html += pending.map(function(h) {
+      return '<div class="hw-item" id="hwitem-' + escHtml(h.id) + '">' +
+        '<div class="hw-item-row">' +
+        '<span class="hw-item-title">' + escHtml(h.title) + '</span>' +
+        '<span class="badge badge-type">Type ' + escHtml(h.type) + '</span>' +
+        '<span class="badge badge-pending">Pending</span>' +
+        (h.deadline ? '<span class="hw-countdown" id="countdown-' + escHtml(h.id) + '"></span>' : '') +
+        '</div></div>';
+    }).join('');
+  }
+
+  if (pending.length) {
+    html += '<hr class="hw-separator">';
+    html += renderUploadZone(pending);
+  }
+
+  if (past.length) {
+    if (pending.length) html += '<hr class="hw-separator">';
+    html += '<div class="hw-section-title">Past submissions</div>';
+    html += past.map(function(h) {
+      var statusCls = h.status === 'reviewed' ? 'badge-reviewed' : 'badge-submitted';
+      var statusLabel = h.status === 'reviewed' ? 'Reviewed' : 'Submitted';
+      var feedbackHtml = '';
+      if (h.status === 'reviewed' && h.feedback) {
+        var fid = 'fb-' + h.id;
+        feedbackHtml = '<button class="hw-feedback-toggle" onclick="toggleFeedback(\'' + fid + '\', this)">Show feedback</button>' +
+          '<div class="hw-feedback-body" id="' + fid + '">' + escHtml(h.feedback) + '</div>';
+      }
+      return '<div class="hw-item"><div class="hw-item-row">' +
+        '<span class="hw-item-title">' + escHtml(h.title) + '</span>' +
+        '<span class="badge badge-type">Type ' + escHtml(h.type) + '</span>' +
+        '<span class="badge ' + statusCls + '">' + statusLabel + '</span>' +
+        (h.submitted_at ? '<span class="hw-meta">' + formatDate(h.submitted_at) + '</span>' : '') +
+        '</div>' + feedbackHtml + '</div>';
+    }).join('');
+  }
+
+  el.innerHTML = html;
+
+  if (pending.length) {
+    updateCountdowns();
+    _countdownInterval = setInterval(updateCountdowns, 60000);
+
+    var zone = document.getElementById('uploadZone');
+    if (zone) {
+      zone.addEventListener('dragover', function(e) { e.preventDefault(); zone.classList.add('dragover'); });
+      zone.addEventListener('dragleave', function() { zone.classList.remove('dragover'); });
+      zone.addEventListener('drop', function(e) {
+        e.preventDefault();
+        zone.classList.remove('dragover');
+        var f = e.dataTransfer.files[0];
+        if (f) handleFileSelect(f);
+      });
+    }
+  }
+}
+
+function renderUploadZone(pending) {
+  var options = pending.map(function(h) {
+    return '<option value="' + escHtml(h.id) + '">' + escHtml(h.title) + ' (Type ' + escHtml(h.type) + ')</option>';
+  }).join('');
+
+  return '<div>' +
+    '<div class="hw-section-title">Upload your work</div>' +
+    (pending.length > 1
+      ? '<div class="form-group"><label class="form-label" for="hwSelect">Select assignment</label>' +
+        '<select class="form-select" id="hwSelect">' + options + '</select></div>'
+      : '<input type="hidden" id="hwSelect" value="' + escHtml(pending[0].id) + '">') +
+    '<div class="upload-zone" id="uploadZone" onclick="document.getElementById(\'fileInput\').click()">' +
+    '<div class="upload-zone-text">Drag and drop your file here</div>' +
+    '<div class="upload-zone-sub">PDF, DOCX, DOC, JPG, PNG — max 10 MB</div>' +
+    '<button class="btn-file-pick" type="button" onclick="event.stopPropagation();document.getElementById(\'fileInput\').click()">Choose File</button>' +
+    '</div>' +
+    '<input type="file" id="fileInput" accept=".pdf,.docx,.doc,.jpg,.jpeg,.png" class="hidden" onchange="handleFileInputChange(this)">' +
+    '<div class="hidden upload-preview" id="uploadPreview">' +
+    '<span class="upload-preview-name" id="uploadPreviewName"></span>' +
+    '<span class="upload-preview-size" id="uploadPreviewSize"></span>' +
+    '<button class="btn-upload-confirm" id="btnUpload" type="button" onclick="doUpload()">Upload</button>' +
+    '</div>' +
+    '<div class="upload-progress hidden" id="uploadProgress"><div class="upload-progress-bar" id="uploadProgressBar"></div></div>' +
+    '</div>';
+}
+
+function handleFileInputChange(input) {
+  if (input.files && input.files[0]) handleFileSelect(input.files[0]);
+}
+
+function handleFileSelect(file) {
+  if (file.size > 10 * 1024 * 1024) {
+    showToast('File is too large. Maximum size is 10 MB.', 'error');
+    return;
+  }
+  _selectedFile = file;
+  document.getElementById('uploadPreviewName').textContent = file.name;
+  document.getElementById('uploadPreviewSize').textContent = formatBytes(file.size);
+  document.getElementById('uploadPreview').style.display = 'flex';
+}
+
+function doUpload() {
+  if (!_selectedFile) return;
+  var hwId = document.getElementById('hwSelect').value;
+  if (!hwId) { showToast('Please select an assignment.', 'error'); return; }
+
+  var btn = document.getElementById('btnUpload');
+  btn.disabled = true;
+  btn.textContent = 'Uploading...';
+
+  var progressWrap = document.getElementById('uploadProgress');
+  var progressBar = document.getElementById('uploadProgressBar');
+  progressWrap.style.display = 'block';
+  progressBar.style.width = '0';
+
+  var formData = new FormData();
+  formData.append('file', _selectedFile);
+  formData.append('homework_id', hwId);
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'https://app.lingograde.com/api/student/homework/upload');
+  xhr.withCredentials = true;
+
+  xhr.upload.onprogress = function(e) {
+    if (e.lengthComputable) {
+      progressBar.style.width = Math.round((e.loaded / e.total) * 100) + '%';
+    }
+  };
+
+  xhr.onload = function() {
+    progressWrap.style.display = 'none';
+    btn.disabled = false;
+    btn.textContent = 'Upload';
+    _selectedFile = null;
+    if (xhr.status >= 200 && xhr.status < 300) {
+      document.getElementById('hwMain').style.display = 'none';
+      document.getElementById('uploadDone').style.display = '';
+      document.getElementById('uploadDone').classList.remove('hidden');
+    } else {
+      showToast('Upload failed. Please try again.', 'error');
+    }
+  };
+
+  xhr.onerror = function() {
+    progressWrap.style.display = 'none';
+    btn.disabled = false;
+    btn.textContent = 'Upload';
+    showToast('Upload failed. Please try again.', 'error');
+  };
+
+  xhr.send(formData);
+}
+
+function updateCountdowns() {
+  var now = Date.now();
+  _pendingHw.forEach(function(h) {
+    var el = document.getElementById('countdown-' + h.id);
+    if (!el || !h.deadline) return;
+    var diff = new Date(h.deadline) - now;
+    if (diff <= 0) {
+      el.textContent = 'Past deadline';
+      el.style.color = 'var(--error)';
+      return;
+    }
+    var days = Math.floor(diff / 86400000);
+    var hours = Math.floor((diff % 86400000) / 3600000);
+    if (days > 0) {
+      el.textContent = days + 'd ' + hours + 'h remaining';
+    } else {
+      el.textContent = hours + 'h remaining';
+    }
+  });
+}
+
+function toggleFeedback(id, btn) {
+  var el = document.getElementById(id);
+  el.classList.toggle('open');
+  btn.textContent = el.classList.contains('open') ? 'Hide feedback' : 'Show feedback';
+}
+</script>
+</body>
+</html>
