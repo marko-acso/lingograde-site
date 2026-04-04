@@ -574,25 +574,26 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       </div>
     </div>
 
-    <div class="mx-auto mt-32" style="max-width:360px;">
-      <div class="pricing-card c-success pos-relative">
+    <div class="mx-auto mt-32" style="max-width:900px;">
+      <div class="pricing-card c-success pos-relative" style="display:flex;align-items:center;gap:32px;text-align:left;">
         <div class="fw-700 c-white tracking-wide bg-success" style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 16px;border-radius:100px;font-size:0.6875rem;" >Instant result</div>
-        <div class="pricing-name">Bot Assessment</div>
-        <div class="pricing-duration">5-minute AI conversation</div>
-        <div class="pricing-price c-success" data-eur="49.95" data-usd="49.95" data-chf="49.95" data-gbp="49.95">&euro;49.95</div>
-        <div class="pricing-price-note">Full written report, no booking needed</div>
-        <ul class="pricing-features">
+        <div style="flex:1;min-width:200px;">
+          <div class="pricing-name">Bot Assessment</div>
+          <div class="pricing-duration">5-minute AI conversation</div>
+          <div class="pricing-price c-success" data-eur="49.95" data-usd="49.95" data-chf="49.95" data-gbp="49.95">&euro;49.95</div>
+          <div class="pricing-price-note">Full written report, no booking needed</div>
+        </div>
+        <ul class="pricing-features" style="flex:1;min-width:200px;margin:0;">
           <li class="dot-item"><span ></span>Approximate CEFR level</li>
           <li class="dot-item"><span ></span>Key speaking patterns identified</li>
           <li class="dot-item"><span ></span>3 personalized flashcards</li>
           <li class="dot-item"><span ></span>Delivered instantly via email</li>
           <li class="dot-item"><span ></span>AI chat in 28 languages</li>
-          <li class="no">Human assessor analysis</li>
-          <li class="no">Detailed homework programme</li>
-          <li class="no">8-week learning plan</li>
         </ul>
-        <button onclick="var f=document.querySelector('#marco-fab');if(f)f.click();" class="pricing-btn c-white bg-success no-outline cursor-pointer border-none" style="font-family:inherit;">Try the Bot Assessment &rarr;</button>
-        <p class="subcaption mt-12">Want more depth? Upgrade to a human assessment anytime.</p>
+        <div style="flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <button onclick="var f=document.querySelector('#marco-fab');if(f)f.click();" class="pricing-btn c-white bg-success no-outline cursor-pointer border-none" style="font-family:inherit;white-space:nowrap;">Try the Bot Assessment &rarr;</button>
+          <p class="subcaption">Want more depth? Upgrade anytime.</p>
+        </div>
       </div>
     </div>
 
