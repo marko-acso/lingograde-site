@@ -214,8 +214,6 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--cream);line-
     if (/America\//.test(tz) || /US\//.test(tz)) return 'usd';
     if (/Europe\/(London|Belfast|Isle_of_Man|Jersey|Guernsey)/.test(tz)) return 'gbp';
     if (/Europe\/Zurich/.test(tz)) return 'chf';
-    var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
-    if (/^en-US/i.test(lang)) return 'usd';
     return 'eur';
   }
   var sym = SYMBOLS[detect()] || SYMBOLS.eur;

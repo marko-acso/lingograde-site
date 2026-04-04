@@ -1941,11 +1941,6 @@ function enlargeImage(src) {
     symbol = '\u00A5'; // CNY ¥
     isCNY = true;
   }
-  // Locale reinforcement: en-US locale in non-US timezone → traveler, prefer USD (only overrides EUR fallback)
-  if (!isUSD && !isCNY && symbol === '\u20AC') {
-    var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
-    if (/^en-US/i.test(lang)) { symbol = '$'; isUSD = true; }
-  }
   window._lgCurrency = symbol;
   window._lgIsUSD = isUSD;
   window._lgIsCNY = isCNY;

@@ -526,9 +526,6 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     if (/America\//.test(tz) || /US\//.test(tz)) return 'usd';
     if (/Europe\/London|Europe\/Belfast|Europe\/Isle_of_Man|Europe\/Jersey|Europe\/Guernsey/.test(tz)) return 'gbp';
     if (/Europe\/Zurich/.test(tz)) return 'chf';
-    // Locale reinforcement: en-US locale in non-US timezone → traveler, prefer USD
-    var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
-    if (/^en-US/i.test(lang)) return 'usd';
     return 'eur';
   }
 

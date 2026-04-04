@@ -859,9 +859,6 @@ function translateLanguages(lang) {
     if (/America\/(New_York|Chicago|Denver|Los_Angeles|Anchorage|Phoenix|Detroit|Indiana|Kentucky|Boise|Juneau|Sitka|Yakutat|Nome|Adak|Menominee|North_Dakota)|Pacific\/Honolulu|US\//.test(tz)) return 'USD';
     if (/Europe\/London|Europe\/Belfast|Europe\/Isle_of_Man|Europe\/Jersey|Europe\/Guernsey/.test(tz)) return 'GBP';
     if (/Europe\/Zurich/.test(tz)) return 'CHF';
-    // Locale reinforcement: en-US locale in non-US timezone → traveler, prefer USD
-    var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
-    if (/^en-US/i.test(lang)) return 'USD';
     return 'EUR';
   }
 

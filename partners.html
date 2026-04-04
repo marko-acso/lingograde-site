@@ -1328,9 +1328,6 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     if (/America\/(New_York|Chicago|Denver|Los_Angeles|Phoenix|Anchorage|Detroit|Boise|Juneau|Sitka|Nome|Adak|Menominee)|Pacific\/Honolulu|US\//.test(tz)) return 'usd';
     if (/Europe\/(London|Jersey|Guernsey|Isle_of_Man)/.test(tz)) return 'gbp';
     if (/Europe\/Zurich/.test(tz)) return 'chf';
-    // Locale reinforcement: en-US locale in non-US timezone → traveler, prefer USD
-    var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
-    if (/^en-US/i.test(lang)) return 'usd';
     return 'eur';
   }
 
