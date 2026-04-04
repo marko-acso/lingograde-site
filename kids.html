@@ -108,7 +108,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .pricing-preview-inner h2 { font-family: var(--font-display); font-size: clamp(1.3rem, 3vw, 1.8rem); color: var(--ink); margin-bottom: 12px; }
 .pricing-preview-inner .pricing-sub { font-size: 0.9375rem; color: var(--ink-soft); max-width: 540px; margin: 0 auto 40px; line-height: 1.7; }
 .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 860px; margin: 0 auto; }
-.pricing-card { border-radius: 16px; border: 2px solid var(--border); padding: 32px 24px; position: relative; transition: border-color 0.2s; background: white; }
+.pricing-card { border-radius: 16px; border: 2px solid var(--border); padding: 32px 24px; position: relative; transition: border-color 0.2s; background: white; display: flex; flex-direction: column; }
 .pricing-card:hover { border-color: var(--accent); }
 .pricing-card.featured { border-color: var(--accent); background: linear-gradient(180deg, var(--accent-bg) 0%, white 60%); }
 .pricing-card.featured::before { content: 'Most chosen'; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); padding: 4px 16px; background: var(--accent); color: white; border-radius: 100px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.06em; }
@@ -116,7 +116,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .pricing-duration { font-size: 0.8125rem; color: var(--ink-light); margin-bottom: 16px; }
 .pricing-price { font-family: var(--font-display); font-size: 2.25rem; color: var(--accent); margin-bottom: 4px; }
 .pricing-price-note { font-size: 0.8125rem; color: var(--ink-light); margin-bottom: 20px; }
-.pricing-features { list-style: none; margin-bottom: 24px; }
+.pricing-features { list-style: none; margin-bottom: 24px; flex: 1; }
 .pricing-features li { font-size: 0.8125rem; color: var(--ink-soft); padding: 5px 0 5px 22px; position: relative; text-align: left; }
 .pricing-features li::before { content: ''; position: absolute; left: 0; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 .pricing-coming { display: block; width: 100%; padding: 12px; text-align: center; border-radius: 10px; font-weight: 600; font-size: 0.875rem; background: var(--parchment); color: var(--ink-light); border: 1.5px solid var(--border); cursor: default; }
