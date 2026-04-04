@@ -396,7 +396,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         <div class="pricing-name">Complete Program</div>
         <div class="pricing-sub">Everything. All-inclusive.</div>
         <div class="pricing-price" data-eur="999.95" data-usd="999.95" data-chf="999.95" data-gbp="999.95" style="font-size:1.75rem;">&euro;999.95<span style="font-family:var(--font-body);font-size:1rem;color:var(--ink-light);font-weight:400;">/month</span></div>
-        <div class="pricing-price-note">EUR 249.95/week &middot; Unlimited lessons</div>
+        <div class="pricing-price-note"><span class="cur-text" data-amount="249.95">EUR 249.95</span>/week &middot; Unlimited lessons</div>
         <ul class="pricing-features">
           <li>Unlimited lessons</li>
           <li>All homework checks included</li>
@@ -486,7 +486,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         <h3>With Subscription</h3>
         <div class="hw-price" data-eur="9.95" data-usd="9.95" data-chf="9.95" data-gbp="9.95">&euro;9.95</div>
         <div class="hw-note">1st submission included free with any subscription</div>
-        <p>Additional submissions at EUR 9.95 each. Corrected by the same assessor who knows your file.</p>
+        <p>Additional submissions at <span class="cur-text" data-amount="9.95">EUR 9.95</span> each. Corrected by the same assessor who knows your file.</p>
       </div>
 
     </div>
@@ -598,6 +598,10 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
 
     document.querySelectorAll('.reassess-price[data-eur]').forEach(function(el){
       el.textContent = symbol + resolvePrice(el);
+    });
+
+    document.querySelectorAll('.cur-text[data-amount]').forEach(function(el){
+      el.textContent = symbol + el.getAttribute('data-amount');
     });
   }
 

@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="site.css">
 <style>
 :root{--ink:#2D3748;--ink-soft:#4A4A4A;--ink-light:#8A8A8A;--accent:#2563AB;--accent-lt:#3B82F6;--accent-bg:#EFF6FF;--cream:#FFF;--parchment:#F8F8F8;--border:#E0E0E0;--success:#27AE60;--success-bg:#F0FFF4;--warn:#E67E22;--warn-bg:#FFF8F0;--error:#C0392B;--font-display:'DM Serif Display',Georgia,serif;--font-body:'DM Sans',-apple-system,sans-serif;--max-w:720px}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -183,8 +183,8 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--cream);line-
 <div class="fa-cta-section">
 <p>Would a deeper analysis help you move forward?</p>
 <div class="fa-cta-buttons">
-<a href="chatbot-assessment.html" class="fa-cta-btn fa-cta-primary">See Full Bot Report &mdash; EUR 49.95</a>
-<a href="https://booking.lingograde.com/marco" class="fa-cta-btn fa-cta-secondary">Explore Human Assessment &mdash; EUR 89.95+</a>
+<a href="chatbot-assessment.html" class="fa-cta-btn fa-cta-primary">See Full Bot Report &mdash; <span class="cur-text" data-amount="49.95">EUR 49.95</span></a>
+<a href="https://booking.lingograde.com/marco" class="fa-cta-btn fa-cta-secondary">Explore Human Assessment &mdash; <span class="cur-text" data-amount="89.95+">EUR 89.95+</span></a>
 </div>
 <p class="fs-sm mt-8 c-ink-light text-center">Not ready to go deeper? That is completely fine.</p>
 </div></div>
@@ -193,8 +193,8 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--cream);line-
 <img src="assets/mascot/marco-tea.webp" alt="Marco resting" class="mb-16" style="width:80px;height:auto;">
 <p>Marco has given you a few snapshots already today. For a deeper look, consider a full analysis.</p>
 <div class="fa-cta-buttons mt-16">
-<a href="chatbot-assessment.html" class="fa-cta-btn fa-cta-primary">See Full Bot Report &mdash; EUR 49.95</a>
-<a href="https://booking.lingograde.com/marco" class="fa-cta-btn fa-cta-secondary">Explore Human Assessment &mdash; EUR 89.95+</a>
+<a href="chatbot-assessment.html" class="fa-cta-btn fa-cta-primary">See Full Bot Report &mdash; <span class="cur-text" data-amount="49.95">EUR 49.95</span></a>
+<a href="https://booking.lingograde.com/marco" class="fa-cta-btn fa-cta-secondary">Explore Human Assessment &mdash; <span class="cur-text" data-amount="89.95+">EUR 89.95+</span></a>
 </div></div>
 </div></section>
 
@@ -206,6 +206,24 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--cream);line-
 <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
 </footer>
 
+<script>
+(function(){
+  var SYMBOLS = {eur:'\u20AC',usd:'$',gbp:'\u00A3',chf:'CHF\u00A0'};
+  function detect() {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    if (/America\//.test(tz) || /US\//.test(tz)) return 'usd';
+    if (/Europe\/(London|Belfast|Isle_of_Man|Jersey|Guernsey)/.test(tz)) return 'gbp';
+    if (/Europe\/Zurich/.test(tz)) return 'chf';
+    var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+    if (/^en-US/i.test(lang)) return 'usd';
+    return 'eur';
+  }
+  var sym = SYMBOLS[detect()] || SYMBOLS.eur;
+  document.querySelectorAll('.cur-text[data-amount]').forEach(function(el){
+    el.textContent = sym + el.getAttribute('data-amount');
+  });
+})();
+</script>
 <script src="js/shield.js" defer></script>
 <script src="js/cookie-consent.js" defer></script>
 <script src="js/free-analysis.js" defer></script>

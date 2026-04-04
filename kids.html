@@ -259,7 +259,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <li>Personalised learning roadmap</li>
         </ul>
         <p class="mt-12 c-ink-soft fs-085 bt-border" >
-          <strong>Recommended add-on:</strong> Homework programme — EUR 29.95
+          <strong>Recommended add-on:</strong> Homework programme — <span class="cur-text" data-amount="29.95">EUR 29.95</span>
           <span class="c-ink-light mt-4 fs-xs d-block" >Detailed correction report within 1 hour</span>
         </p>
         <button class="pricing-btn" onclick="openBooking('deep-dive')">Explore Deep Dive</button>
@@ -431,6 +431,9 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
     document.querySelectorAll('[data-eur]').forEach(function(el){
       var val = el.getAttribute('data-' + currency) || el.getAttribute('data-eur');
       el.textContent = sym + val;
+    });
+    document.querySelectorAll('.cur-text[data-amount]').forEach(function(el){
+      el.textContent = sym + el.getAttribute('data-amount');
     });
     window._lgCurrency = currency;
     window._lgSymbol = sym;

@@ -1993,7 +1993,7 @@ function enlargeImage(src) {
   });
 
   // Replace static "EUR " in all price-bearing elements
-  var priceEls = document.querySelectorAll('.product-price, .bundle-price, .mega-price-old, .mega-price-new, .mega-price-save, .bundle-savings, .item-value, .guide-step p, .guide-step h3, .guide-subhead, .challenge-box p, .guide-smallprint p, .guide-smallprint li, .product-price-note, .guide-rule-box li, .need-more-box p');
+  var priceEls = document.querySelectorAll('.section-inner p, .section-inner h2, .section-inner h3, .section-inner li, .section-inner a, .section-inner span, .section-inner div, .section-inner summary, .mega-bundle p, .mega-bundle li, .mega-bundle div');
   priceEls.forEach(function(el){
     if (symbol !== '\u20AC') {
       el.innerHTML = el.innerHTML.replace(/EUR\s/g, symbol);
