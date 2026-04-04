@@ -83,14 +83,14 @@
   ]
 }
 </script>
-<link rel="icon" type="image/webp" href="/assets/mascot/marco-face-grad-v2.webp?v=3">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/assets/mascot/marco-face-grad-v2.png">
 <link rel="manifest" href="/manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="assets/mascot/marco-hero.webp?v=3" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="site.css">
 <style>
 :root {
   --ink: #1C1C1C;
@@ -104,7 +104,7 @@
   --border: #E0E0E0;
   --success: #27AE60;
   --success-bg: #F0FFF4;
-  --warn: #E67E22;
+  --warn: #C8952E;
   --error: #C0392B;
   --purple: #7B4F9E;
   --font-display: 'DM Serif Display', Georgia, serif;
@@ -188,9 +188,17 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .block-card .included-badge { font-size: 0.6875rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 12px; }
 
 /* ── Pricing ── */
-.pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; max-width: 1180px; margin-left: auto; margin-right: auto; }
-.pricing-card { border-radius: 16px; border: 2px solid var(--border); padding: 36px 32px; position: relative; transition: border-color 0.2s; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; max-width: 960px; margin-left: auto; margin-right: auto; }
+.pricing-card { border-radius: 16px; border: 2px solid var(--border); padding: 36px 32px; position: relative; transition: border-color 0.2s; display: flex; flex-direction: column; }
 .pricing-card:hover { border-color: var(--accent); }
+.pricing-card .pricing-btn { margin-top: auto; }
+.pricing-card.starter { border-color: #C5CDD7; background: linear-gradient(180deg, #F0F2F5 0%, var(--cream) 60%); }
+.pricing-card.starter:hover { border-color: var(--accent); }
+.bot-row { display: flex; gap: 24px; align-items: center; margin-top: 24px; max-width: 960px; margin-left: auto; margin-right: auto; padding: 32px 36px; border-radius: 16px; border: 2px solid var(--success); background: linear-gradient(135deg, #F0FFF4 0%, var(--cream) 60%); position: relative; }
+.bot-row:hover { border-color: #1E8449; }
+.bot-row .bot-row-info { flex: 1; }
+.bot-row .bot-row-features { flex: 1; }
+.bot-row .bot-row-cta { flex-shrink: 0; text-align: center; }
 .pricing-card.featured { border-color: var(--accent); background: linear-gradient(180deg, var(--accent-bg) 0%, var(--cream) 60%); }
 .pricing-card.featured::before { content: none; }
 .pricing-card.premium { border-color: var(--warn); background: linear-gradient(180deg, #FFF8F0 0%, var(--cream) 60%); }
@@ -307,6 +315,8 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .steps { grid-template-columns: 1fr 1fr; gap: 24px; }
   .blocks { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr 1fr; max-width: 520px; }
+  .bot-row { flex-direction: column; text-align: center; }
+  .bot-row .bot-row-cta { width: 100%; }
   .lessons-grid { grid-template-columns: 1fr; max-width: 420px; }
   .partner-card { grid-template-columns: 1fr; gap: 32px; }
   .flashcard-layout { grid-template-columns: 1fr; gap: 32px; }
@@ -359,9 +369,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .flashcard-tier .tier-price-note { font-size: 0.75rem; color: var(--ink-soft); margin-bottom: 16px; font-style: italic; }
 .flashcard-tier ul { list-style: none; }
 .flashcard-tier ul li { font-size: 0.875rem; color: var(--ink-soft); padding: 5px 0 5px 24px; position: relative; line-height: 1.6; }
-.flashcard-tier ul li::before { content: ''; position: absolute; left: 0; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
-.flashcard-loss { margin-top: 24px; padding: 16px 20px; background: #FFF8F0; border-left: 3px solid var(--warn); border-radius: 0 8px 8px 0; font-size: 0.875rem; color: var(--ink-soft); line-height: 1.6; font-style: italic; }
-.flashcard-visual { text-align: center; }
+.flashcard-tier ul li::before { content: ''; position: absolute; left: 0; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }.flashcard-visual { text-align: center; }
 .flashcard-visual img { max-width: 340px; width: 100%; height: auto; }
 .testimonial-avatar { width:40px;height:40px;border-radius:50%;background:var(--navy,#1A3A5C);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:0.8125rem;font-weight:700;margin-right:8px;flex-shrink:0; }
 .testimonial-meta { display:flex;align-items:center;margin-top:12px; }
@@ -391,6 +399,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <!-- ── 1. Hero ── -->
 <section class="hero" id="main">
   <div class="hero-inner">
+    <div class="mb-24"><img src="assets/mascot/sliced-images/marco-mila-outfit-private-casual.webp?v=3" alt="Marco and Mila — LingoGrade" class="marco-img" style="height:180px;width:auto;object-fit:contain;"></div>
     <div class="hero-badge">Professional CEFR Language Assessment</div>
     <h1>Most people have no idea what level they <em>actually speak at.</em></h1>
     <p>You practice regularly, take lessons, watch videos in your target language — and yet conversations still feel uncertain and you still cannot confidently say what level you actually are. LingoGrade listens to how you really speak, identifies the patterns you repeat, and shows you exactly what to work on next.</p>
@@ -426,7 +435,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <section class="section" id="how-it-works">
   <div class="section-inner">
     <div class="section-label">How It Works</div>
-    <h3 class="section-title">Four steps to complete clarity</h3>
+    <h3 class="section-title">How it works</h3>
     <p class="section-desc">No test anxiety. No multiple choice. No preparation. Just a natural conversation that reveals exactly where your skills are — and a precise plan to move them forward.</p>
     <div class="steps">
       <div class="step">
@@ -438,7 +447,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       <div class="step">
         <img src="assets/mascot/marco-alarm.webp" alt="Marco with alarm clock" class="step-icon" width="120" height="120"  loading="lazy">
         <div class="step-num">2</div>
-        <h3>Book a Slot</h3>
+        <h3>Choose a Time</h3>
         <p>Select a time that works for you and pay securely online. Availability is updated in real time. You will receive a confirmation immediately.</p>
       </div>
       <div class="step">
@@ -525,6 +534,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         </p>
         <p class="helper-text c-success fw-600 mt-12 bt-border">&#127873; Complete your assessment to unlock your free sticker pack</p>
         <a href="https://booking.lingograde.com/marco/deepdive-assessment" class="pricing-btn pricing-btn-premium" target="_blank">See the Full Picture &rarr;</a>
+        <p class="c-ink-light fs-smm mt-8">No rush &mdash; it&rsquo;ll be here.</p>
       </div>
       <div class="pricing-card featured">
         <div class="fw-700 c-white tracking-wide bg-accent" aria-label="Most chosen — selected by 7 in 10 first-time clients" style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 16px;border-radius:100px;font-size:0.6875rem;" >MOST CHOSEN</div>
@@ -542,8 +552,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         </ul>
         <p class="helper-text c-success fw-600 mt-12 bt-border">&#127873; Complete your assessment to unlock your free sticker pack</p>
         <a href="https://booking.lingograde.com/marco/full-assessment" class="pricing-btn pricing-btn-primary" target="_blank">See the Full Assessment &rarr;</a>
+        <p class="c-ink-light fs-smm mt-8">No rush &mdash; it&rsquo;ll be here.</p>
       </div>
-      <div class="pricing-card">
+      <div class="pricing-card starter">
         <div class="pricing-name">Quick Assessment</div>
         <div class="pricing-duration">15-minute session</div>
         <div class="pricing-price" data-eur="89.95" data-usd="89.95" data-chf="89.95" data-gbp="89.95">&euro;89.95</div>
@@ -559,25 +570,32 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <li class="no">Sentence engine + mini block</li>
         </ul>
         <a href="https://booking.lingograde.com/marco/quick-assessment" class="pricing-btn pricing-btn-secondary" target="_blank">See Where I Actually Stand &rarr;</a>
+        <p class="c-ink-light fs-smm mt-8">No rush &mdash; it&rsquo;ll be here.</p>
       </div>
-      <div class="pricing-card c-success pos-relative">
-        <div class="fw-700 c-white tracking-wide bg-success" style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 16px;border-radius:100px;font-size:0.6875rem;" >INSTANT RESULT</div>
+    </div>
+
+    <!-- Bot Assessment — separate row (AI vs human) -->
+    <div class="bot-row">
+      <div class="fw-700 c-white tracking-wide bg-success" style="position:absolute;top:-13px;left:32px;padding:4px 16px;border-radius:100px;font-size:0.6875rem;" >Instant result</div>
+      <div class="bot-row-info">
         <div class="pricing-name">Bot Assessment</div>
-        <div class="pricing-duration">5-minute AI conversation</div>
-        <div class="pricing-price c-success" data-eur="49.95" data-usd="49.95" data-chf="49.95" data-gbp="49.95">&euro;49.95</div>
+        <div class="pricing-duration" style="margin-bottom:8px;">5-minute AI conversation</div>
+        <div class="pricing-price c-success" data-eur="49.95" data-usd="49.95" data-chf="49.95" data-gbp="49.95" style="font-size:2rem;">&euro;49.95</div>
         <div class="pricing-price-note">Full written report, no booking needed</div>
-        <ul class="pricing-features">
-          <li class="dot-item"><span ></span>Approximate CEFR level</li>
-          <li class="dot-item"><span ></span>Key speaking patterns identified</li>
-          <li class="dot-item"><span ></span>3 personalized flashcards</li>
-          <li class="dot-item"><span ></span>Delivered instantly via email</li>
-          <li class="dot-item"><span ></span>AI chat in 28 languages</li>
-          <li class="no">Human assessor analysis</li>
-          <li class="no">Detailed homework programme</li>
-          <li class="no">8-week learning plan</li>
+      </div>
+      <div class="bot-row-features">
+        <ul class="pricing-features" style="margin-bottom:0;">
+          <li class="dot-item"><span></span>Approximate CEFR level</li>
+          <li class="dot-item"><span></span>Key speaking patterns identified</li>
+          <li class="dot-item"><span></span>3 personalized flashcards</li>
+          <li class="dot-item"><span></span>Delivered instantly via email</li>
+          <li class="dot-item"><span></span>AI chat in 28 languages</li>
         </ul>
-        <button onclick="var f=document.querySelector('#marco-fab');if(f)f.click();" class="pricing-btn c-white bg-success no-outline cursor-pointer border-none" style="font-family:inherit;">Try the Bot Assessment &rarr;</button>
+      </div>
+      <div class="bot-row-cta">
+        <button onclick="var f=document.querySelector('#marco-fab');if(f)f.click();" class="pricing-btn c-white bg-success no-outline cursor-pointer border-none" style="font-family:inherit;width:auto;padding:14px 32px;">Try the Bot Assessment &rarr;</button>
         <p class="subcaption mt-12">Want more depth? Upgrade to a human assessment anytime.</p>
+        <p class="c-ink-light fs-smm mt-8">No rush &mdash; it&rsquo;ll be here.</p>
       </div>
     </div>
 
@@ -615,21 +633,24 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     </div>
     <div class="grid-3col gap-24" >
 
-      <div class="info-card">
+      <!-- HIDDEN: awaiting real testimonial data -->
+      <div class="info-card" style="display:none;">
         <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="note-italic">"I had been telling myself I was B2 for two years. The assessment showed my active level was solid B2 but my passive structures were stuck at B1. That one insight explained why I always felt lost in fast conversations. Now I know exactly what to fix."</p>
         <div class="testimonial-meta"><div class="testimonial-avatar">MT</div><div><div class="fw-600 fs-body">Marcus T.</div><div class="subcaption">&#127475;&#127473; German &middot; Full Assessment &middot; Feb 2026</div></div></div>
         <div class="c-success mt-6 fs-2xs" >&#10003; Verified assessment</div>
       </div>
 
-      <div class="info-card">
+      <!-- HIDDEN: awaiting real testimonial data -->
+      <div class="info-card" style="display:none;">
         <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="note-italic">"I was preparing for a C1 exam and had no idea if I was ready. The Full Assessment confirmed my level was strong C1 in speaking but identified three specific grammar patterns holding me back. I focused on those for three weeks and passed the exam."</p>
         <div class="testimonial-meta"><div class="testimonial-avatar">CM</div><div><div class="fw-600 fs-body">Chiara M.</div><div class="subcaption">&#127470;&#127481; English &middot; Full Assessment &middot; Jan 2026</div></div></div>
         <div class="c-success mt-6 fs-2xs" >&#10003; Verified assessment</div>
       </div>
 
-      <div class="info-card">
+      <!-- HIDDEN: awaiting real testimonial data -->
+      <div class="info-card" style="display:none;">
         <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="note-italic">"I needed to prove my French level for a job application in Paris. My employer asked for B2. I assumed I was there but was not certain. The report gave me an official-standard assessment I could reference with complete confidence. I got the job."</p>
         <div class="testimonial-meta"><div class="testimonial-avatar">AP</div><div><div class="fw-600 fs-body">Aleksandar P.</div><div class="subcaption">&#127479;&#127480; French &middot; Quick Assessment &middot; Mar 2026</div></div></div>
