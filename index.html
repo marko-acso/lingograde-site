@@ -93,7 +93,7 @@
 <link rel="stylesheet" href="site.css">
 <style>
 :root {
-  --ink: #2D3748;
+  --ink: #1C1C1C;
   --ink-soft: #4A4A4A;
   --ink-light: #8A8A8A;
   --accent: #2563AB;
@@ -104,10 +104,9 @@
   --border: #E0E0E0;
   --success: #27AE60;
   --success-bg: #F0FFF4;
-  --warn: #E67E22;
+  --warn: #C8952E;
   --error: #C0392B;
   --purple: #7B4F9E;
-  --navy: #1A3A5C;
   --font-display: 'DM Serif Display', Georgia, serif;
   --font-body: 'DM Sans', -apple-system, sans-serif;
   --max-w: 1080px;
@@ -189,24 +188,31 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .block-card .included-badge { font-size: 0.6875rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 12px; }
 
 /* ── Pricing ── */
-.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; max-width: 900px; margin-left: auto; margin-right: auto; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; max-width: 960px; margin-left: auto; margin-right: auto; }
 .pricing-card { border-radius: 16px; border: 2px solid var(--border); padding: 36px 32px; position: relative; transition: border-color 0.2s; display: flex; flex-direction: column; }
 .pricing-card:hover { border-color: var(--accent); }
+.pricing-card .pricing-btn { margin-top: auto; }
+.pricing-card.starter { border-color: #C5CDD7; background: linear-gradient(180deg, #F0F2F5 0%, var(--cream) 60%); }
+.pricing-card.starter:hover { border-color: var(--accent); }
+.bot-row { display: flex; gap: 24px; align-items: center; margin-top: 24px; max-width: 960px; margin-left: auto; margin-right: auto; padding: 32px 36px; border-radius: 16px; border: 2px solid var(--success); background: linear-gradient(135deg, #F0FFF4 0%, var(--cream) 60%); position: relative; }
+.bot-row:hover { border-color: #1E8449; }
+.bot-row .bot-row-info { flex: 1; }
+.bot-row .bot-row-features { flex: 1; }
+.bot-row .bot-row-cta { flex-shrink: 0; text-align: center; }
 .pricing-card.featured { border-color: var(--accent); background: linear-gradient(180deg, var(--accent-bg) 0%, var(--cream) 60%); }
 .pricing-card.featured::before { content: none; }
 .pricing-card.premium { border-color: var(--warn); background: linear-gradient(180deg, #FFF8F0 0%, var(--cream) 60%); }
 .pricing-card.premium:hover { border-color: #D35400; }
-.pricing-card.premium::before { content: 'Most thorough'; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); padding: 4px 16px; background: var(--warn); color: white; border-radius: 100px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.06em; }
+.pricing-card.premium::before { content: 'MOST THOROUGH'; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); padding: 4px 16px; background: var(--warn); color: white; border-radius: 100px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.06em; }
 .pricing-card.premium .pricing-price { color: var(--warn); }
 .pricing-card.premium .pricing-features li::before { background: var(--warn); }
 .pricing-btn-premium { background: var(--warn); color: white; }
 .pricing-btn-premium:hover { background: #D35400; }
 .pricing-name { font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); margin-bottom: 4px; }
-.pricing-duration { font-size: 0.875rem; color: var(--ink-light); margin-bottom: 20px; min-height: 1.4rem; }
+.pricing-duration { font-size: 0.875rem; color: var(--ink-light); margin-bottom: 20px; }
 .pricing-price { font-family: var(--font-display); font-size: 2.5rem; color: var(--accent); margin-bottom: 4px; }
-.pricing-price-note { font-size: 0.8125rem; color: var(--ink-light); margin-bottom: 24px; min-height: 2.4rem; }
-.pricing-features { list-style: none; margin-bottom: 28px; flex: 1; }
-.pricing-card > .pricing-btn { margin-top: auto; }
+.pricing-price-note { font-size: 0.8125rem; color: var(--ink-light); margin-bottom: 24px; }
+.pricing-features { list-style: none; margin-bottom: 28px; }
 .pricing-features li { font-size: 0.875rem; color: var(--ink-soft); padding: 6px 0; padding-left: 24px; position: relative; }
 .pricing-features li::before { content: ''; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 .pricing-features li.no::before { background: var(--border); }
@@ -278,11 +284,6 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .grid-2col { display: grid; grid-template-columns: 1fr 1fr; }
 .flex-gap-lg { display: flex; gap: 32px; }
 
-/* ── Responsive: 900px (tablet intermediate) ── */
-@media (max-width: 900px) {
-  .grid-3col { grid-template-columns: repeat(2, 1fr); }
-}
-
 /* ── Responsive: 768px ── */
 @media (max-width: 768px) {
   /* Navigation */
@@ -304,7 +305,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .hero-trust { padding: 0 8px; }
   .hero-actions { flex-direction: column; align-items: center; }
   .hero-actions a { width: 100%; justify-content: center; box-sizing: border-box; max-width: 100%; }
-  .hero .marco-img { max-width: 200px; margin: 0 auto; display: block; height: auto !important; }
+  .hero .marco-img { max-width: 200px; margin: 0 auto; display: block; }
 
   /* Sections */
   .section { padding: 32px 20px; }
@@ -314,6 +315,8 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .steps { grid-template-columns: 1fr 1fr; gap: 24px; }
   .blocks { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr 1fr; max-width: 520px; }
+  .bot-row { flex-direction: column; text-align: center; }
+  .bot-row .bot-row-cta { width: 100%; }
   .lessons-grid { grid-template-columns: 1fr; max-width: 420px; }
   .partner-card { grid-template-columns: 1fr; gap: 32px; }
   .flashcard-layout { grid-template-columns: 1fr; gap: 32px; }
@@ -366,52 +369,10 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .flashcard-tier .tier-price-note { font-size: 0.75rem; color: var(--ink-soft); margin-bottom: 16px; font-style: italic; }
 .flashcard-tier ul { list-style: none; }
 .flashcard-tier ul li { font-size: 0.875rem; color: var(--ink-soft); padding: 5px 0 5px 24px; position: relative; line-height: 1.6; }
-.flashcard-tier ul li::before { content: ''; position: absolute; left: 0; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
-.flashcard-loss { margin-top: 24px; padding: 16px 20px; background: #FFF8F0; border-left: 3px solid var(--warn); border-radius: 0 8px 8px 0; font-size: 0.875rem; color: var(--ink-soft); line-height: 1.6; font-style: italic; }
-.flashcard-visual { text-align: center; }
+.flashcard-tier ul li::before { content: ''; position: absolute; left: 0; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }.flashcard-visual { text-align: center; }
 .flashcard-visual img { max-width: 340px; width: 100%; height: auto; }
-.testimonial-avatar { width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:0.8125rem;font-weight:700;margin-right:8px;flex-shrink:0; }
-.testimonial-meta { display:flex;align-items:center;margin-top:auto;padding-top:12px; }
-.trustpilot-fallback { display:inline-flex;align-items:center;text-decoration:none;padding:12px 0; }
-
-/* ── Sample Reports ── */
-.sample-lang-selector { margin-top: 32px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
-.sample-lang-label { font-size: 0.875rem; font-weight: 600; color: var(--ink-soft); }
-.sample-lang-chips { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
-.sample-lang-chip { padding: 6px 16px; border-radius: 100px; border: 1.5px solid var(--border); background: var(--cream); font-family: var(--font-body); font-size: 0.8125rem; font-weight: 500; color: var(--ink-soft); cursor: pointer; transition: all 0.15s; }
-.sample-lang-chip:hover { border-color: var(--accent); color: var(--accent); }
-.sample-lang-chip.active { background: var(--accent); color: white; border-color: var(--accent); }
-.sample-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; max-width: 720px; margin-left: auto; margin-right: auto; }
-.sample-card { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 20px 16px; border-radius: 12px; border: 1.5px solid var(--border); background: var(--cream); text-decoration: none; transition: all 0.15s; }
-.sample-card:hover { border-color: var(--accent); background: var(--accent-bg); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(37,99,171,0.1); }
-.sample-level { display: inline-block; padding: 2px 10px; border-radius: 4px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.04em; background: var(--accent); color: white; }
-.sample-name { font-size: 0.9375rem; font-weight: 600; color: var(--ink); }
-
-/* ── Bundle Box ── */
-.bundle-box { max-width: 640px; border-radius: 16px; border: 2px solid var(--accent); background: linear-gradient(180deg, var(--accent-bg) 0%, var(--cream) 60%); padding: 40px 36px; text-align: center; }
-.bundle-header { font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); margin-bottom: 4px; }
-.bundle-sub { font-size: 0.9375rem; color: var(--ink-soft); margin-bottom: 24px; }
-.bundle-items { list-style: none; text-align: left; margin-bottom: 24px; }
-.bundle-items li { font-size: 0.875rem; color: var(--ink-soft); padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-.bundle-items li:last-child { border-bottom: none; }
-.bundle-val { font-weight: 600; color: var(--ink-light); white-space: nowrap; }
-.bundle-total { display: flex; justify-content: space-between; padding: 12px 0; border-top: 2px solid var(--border); margin-bottom: 16px; }
-.bundle-total-label { font-size: 0.875rem; color: var(--ink-soft); }
-.bundle-total-val { font-size: 0.875rem; color: var(--ink-light); text-decoration: line-through; }
-.bundle-price-row { display: flex; align-items: baseline; justify-content: center; gap: 16px; margin-bottom: 8px; }
-.bundle-price-old { font-size: 1.125rem; color: var(--ink-light); text-decoration: line-through; }
-.bundle-price-now { font-family: var(--font-display); font-size: 2.25rem; color: var(--accent); }
-.bundle-savings { font-size: 0.875rem; font-weight: 600; color: var(--success); margin-bottom: 8px; }
-.bundle-note { font-size: 0.8125rem; color: var(--ink-soft); font-style: italic; margin-bottom: 4px; }
-
-@media (max-width: 768px) {
-  .sample-grid { grid-template-columns: repeat(3, 1fr); }
-  .bundle-box { padding: 28px 20px; }
-  .bundle-items li { flex-direction: column; gap: 2px; }
-}
-@media (max-width: 480px) {
-  .sample-grid { grid-template-columns: repeat(2, 1fr); }
-}
+.testimonial-avatar { width:40px;height:40px;border-radius:50%;background:var(--navy,#1A3A5C);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:0.8125rem;font-weight:700;margin-right:8px;flex-shrink:0; }
+.testimonial-meta { display:flex;align-items:center;margin-top:12px; }
 </style>
 <script src="/js/cookie-consent.js"></script>
 </head>
@@ -426,11 +387,8 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       <span></span><span></span><span></span>
     </button>
     <div class="nav-menu">
-      <a href="index.html" class="nav-active">Individual</a>
       <a href="kids.html">Kids</a>
       <a href="corporate.html">Corporate</a>
-      <a href="partners.html">Partners</a>
-      <a href="programs.html">Programs</a>
       <a href="shop.html">Shop</a>
       <a href="https://app.lingograde.com/login" class="nav-signin">Sign In</a>
       <a href="https://booking.lingograde.com/marco" class="nav-cta">Explore Assessments</a>
@@ -441,7 +399,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <!-- ── 1. Hero ── -->
 <section class="hero" id="main">
   <div class="hero-inner">
-    <div class="mb-24"><img src="assets/mascot/sliced-images/marco-mila-outfit-private-casual.webp?v=3" alt="Marco and Mila — LingoGrade" class="marco-img" style="width:auto;height:350px;"></div>
+    <div class="mb-24"><img src="assets/mascot/sliced-images/marco-mila-outfit-private-casual.webp?v=3" alt="Marco and Mila — LingoGrade" class="marco-img" style="height:180px;width:auto;object-fit:contain;"></div>
     <div class="hero-badge">Professional CEFR Language Assessment</div>
     <h1>Most people have no idea what level they <em>actually speak at.</em></h1>
     <p>You practice regularly, take lessons, watch videos in your target language — and yet conversations still feel uncertain and you still cannot confidently say what level you actually are. LingoGrade listens to how you really speak, identifies the patterns you repeat, and shows you exactly what to work on next.</p>
@@ -475,19 +433,19 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
 <!-- ── 2. How It Works ── -->
 <section class="section" id="how-it-works">
-  <div class="section-inner text-center">
+  <div class="section-inner">
     <div class="section-label">How It Works</div>
-    <h3 class="section-title mx-auto">How it works</h3>
-    <p class="section-desc mx-auto">No test anxiety. No multiple choice. No preparation. Just a natural conversation that reveals exactly where your skills are — and a precise plan to move them forward.</p>
+    <h3 class="section-title">How it works</h3>
+    <p class="section-desc">No test anxiety. No multiple choice. No preparation. Just a natural conversation that reveals exactly where your skills are — and a precise plan to move them forward.</p>
     <div class="steps">
       <div class="step">
         <img src="assets/mascot/marco-reading.webp?v=3" alt="Marco reading" class="step-icon" width="120" height="120" style="transform:scale(1.5);" loading="lazy">
         <div class="step-num">1</div>
         <h3>Choose Your Assessment</h3>
-        <p>DeepDive Assessment for a detailed, structured diagnostic. Full Assessment for a complete diagnostic with homework and an 8-week plan. Quick Assessment for a focused baseline. All include your full CEFR report.</p>
+        <p>DeepDive Assessment for the most thorough diagnostic available. Full Assessment for a complete diagnostic with homework and an 8-week plan. Quick Assessment for a focused baseline. All include your full CEFR report.</p>
       </div>
       <div class="step">
-        <img src="assets/mascot/marco-tip.gif" alt="Marco with tip" class="step-icon" width="120" height="120"  loading="lazy">
+        <img src="assets/mascot/marco-alarm.webp" alt="Marco with alarm clock" class="step-icon" width="120" height="120"  loading="lazy">
         <div class="step-num">2</div>
         <h3>Choose a Time</h3>
         <p>Select a time that works for you and pay securely online. Availability is updated in real time. You will receive a confirmation immediately.</p>
@@ -510,10 +468,10 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
 <!-- ── 3. What You Get ── -->
 <section class="section section-alt" id="what-you-get">
-  <div class="section-inner text-center">
+  <div class="section-inner">
     <div class="section-label">What You Get</div>
-    <h3 class="section-title mx-auto">Not just a level. A complete picture.</h3>
-    <p class="section-desc mx-auto">Most assessments tell you where you are. LingoGrade tells you where you are, why you are stuck, and exactly what to do next. Every report is structured into five evidence-based blocks.</p>
+    <h3 class="section-title">Not just a level. A complete picture.</h3>
+    <p class="section-desc">Most assessments tell you where you are. LingoGrade tells you where you are, why you are stuck, and exactly what to do next. Every report is structured into five evidence-based blocks.</p>
     <div class="blocks">
       <div class="block-card included">
         <span class="block-tag block-tag-a">Block A</span>
@@ -546,114 +504,16 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   </div>
 </section>
 
-<!-- ── 3b. Sample Reports ── -->
-<section class="section" id="samples">
-  <div class="section-inner text-center">
-    <div class="section-label">Sample Reports</div>
-    <h3 class="section-title mx-auto">This is what you receive. Take your time with it.</h3>
-    <p class="section-desc mx-auto">Every report is delivered bilingually — the assessed language plus your native language. Choose your language below, then click any report to download a real sample.</p>
-
-    <div class="sample-lang-selector">
-      <span class="sample-lang-label">Your native language:</span>
-      <div class="sample-lang-chips">
-        <button class="sample-lang-chip active" data-native="en">English</button>
-        <button class="sample-lang-chip" data-native="es">Espa&#241;ol</button>
-        <button class="sample-lang-chip" data-native="pt">Portugu&#234;s</button>
-        <button class="sample-lang-chip" data-native="ru">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</button>
-        <button class="sample-lang-chip" data-native="ar">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</button>
-        <button class="sample-lang-chip" data-native="tr">T&#252;rk&#231;e</button>
-        <button class="sample-lang-chip" data-native="uk">&#1059;&#1082;&#1088;&#1072;&#1111;&#1085;&#1089;&#1100;&#1082;&#1072;</button>
-        <button class="sample-lang-chip" data-native="zh">&#20013;&#25991;</button>
-      </div>
-    </div>
-
-    <div class="sample-grid">
-      <a href="samples/sample_german_b2_en.pdf" data-sample="sample_german_b2" class="sample-card" target="_blank">
-        <span class="sample-level">B2</span>
-        <span class="sample-name" data-lang="de">German</span>
-      </a>
-      <a href="samples/sample_english_b2_en.pdf" data-sample="sample_english_b2" class="sample-card" target="_blank">
-        <span class="sample-level">B2</span>
-        <span class="sample-name" data-lang="en">English</span>
-      </a>
-      <a href="samples/sample_french_b1_en.pdf" data-sample="sample_french_b1" class="sample-card" target="_blank">
-        <span class="sample-level">B1</span>
-        <span class="sample-name" data-lang="fr">French</span>
-      </a>
-      <a href="samples/sample_spanish_b2_en.pdf" data-sample="sample_spanish_b2" class="sample-card" target="_blank">
-        <span class="sample-level">B2</span>
-        <span class="sample-name" data-lang="es">Spanish</span>
-      </a>
-      <a href="samples/sample_italian_b1_en.pdf" data-sample="sample_italian_b1" class="sample-card" target="_blank">
-        <span class="sample-level">B1</span>
-        <span class="sample-name" data-lang="it">Italian</span>
-      </a>
-      <a href="samples/sample_portuguese_b1_en.pdf" data-sample="sample_portuguese_b1" class="sample-card" target="_blank">
-        <span class="sample-level">B1</span>
-        <span class="sample-name" data-lang="pt">Portuguese</span>
-      </a>
-      <a href="samples/sample_russian_a2_en.pdf" data-sample="sample_russian_a2" class="sample-card" target="_blank">
-        <span class="sample-level">A2</span>
-        <span class="sample-name" data-lang="ru">Russian</span>
-      </a>
-      <a href="samples/sample_serbian_a2_en.pdf" data-sample="sample_serbian_a2" class="sample-card" target="_blank">
-        <span class="sample-level">A2</span>
-        <span class="sample-name" data-lang="sr">Serbian</span>
-      </a>
-      <a href="samples/sample_croatian_a2_en.pdf" data-sample="sample_croatian_a2" class="sample-card" target="_blank">
-        <span class="sample-level">A2</span>
-        <span class="sample-name" data-lang="hr">Croatian</span>
-      </a>
-      <a href="samples/sample_romanian_a2_en.pdf" data-sample="sample_romanian_a2" class="sample-card" target="_blank">
-        <span class="sample-level">A2</span>
-        <span class="sample-name" data-lang="ro">Romanian</span>
-      </a>
-      <a href="samples/sample_polish_a2_en.pdf" data-sample="sample_polish_a2" class="sample-card" target="_blank">
-        <span class="sample-level">A2</span>
-        <span class="sample-name" data-lang="pl">Polish</span>
-      </a>
-      <a href="samples/sample_bulgarian_a2_en.pdf" data-sample="sample_bulgarian_a2" class="sample-card" target="_blank">
-        <span class="sample-level">A2</span>
-        <span class="sample-name" data-lang="bg">Bulgarian</span>
-      </a>
-    </div>
-
-    <p class="c-ink-light fs-smm mt-16">Each sample is a real LingoGrade assessment report. Click any language to download the PDF.</p>
-
-    <div class="bundle-box mx-auto mt-32">
-      <div class="bundle-header">The Complete LingoGrade Package</div>
-      <p class="bundle-sub">One step. One price. Nothing left open.</p>
-      <ul class="bundle-items">
-        <li>1&times; Full Assessment — complete CEFR evaluation <span class="bundle-val">&euro;129.95</span></li>
-        <li>1&times; Reassessment after 8 weeks — track your progress <span class="bundle-val">&euro;139.95</span></li>
-        <li>3&times; Sticker Packs (105 stickers) — with your personal QR code <span class="bundle-val">&euro;59.95</span></li>
-        <li>1&times; Homework Check — detailed correction report <span class="bundle-val">&euro;29.95</span></li>
-        <li>1&times; Marco Plush <span class="bundle-val">&euro;24.95</span></li>
-      </ul>
-      <div class="bundle-total">
-        <span class="bundle-total-label">Total value:</span>
-        <span class="bundle-total-val">&euro;384.75</span>
-      </div>
-      <div class="bundle-price-row">
-        <span class="bundle-price-old">&euro;384.75</span>
-        <span class="bundle-price-now" data-eur="299.95" data-usd="299.95" data-chf="299.95" data-gbp="299.95">&euro;299.95</span>
-      </div>
-      <p class="bundle-savings">You save &euro;84.80 (22%)</p>
-      <p class="bundle-note">Everything in one step. Nothing you would need to organise separately.</p>
-      <a href="https://booking.lingograde.com/marco/complete-package" class="pricing-btn pricing-btn-primary mt-12" target="_blank">See the Complete Package &rarr;</a>
-      <p class="subcaption mt-12">No rush — it will be here whenever you are ready.</p>
-    </div>
-  </div>
-</section>
-
 <!-- ── 4. Pricing ── -->
 <section class="section section-alt" id="pricing">
   <div class="section-inner text-center">
     <div class="section-label">Pricing</div>
     <h3 class="section-title mx-auto">One conversation. Complete clarity.</h3>
-    <p class="section-desc mx-auto">All assessments include a professional bilingual PDF report delivered within 1 hour. No preparation needed — just show up and talk.</p>
+    <p class="section-desc mx-auto">All assessments include a professional bilingual PDF report delivered within 1 hour. No preparation needed — just show up and talk. <img src="assets/mascot/marco-alarm.webp?v=3" alt="Marco alarm" class="marco-icon" width="48" height="48" loading="lazy" style="margin-left:6px;"></p>
 
     <div class="pricing-grid pos-relative">
+      <!-- Marco pointing at the recommended card -->
+      <img src="assets/mascot/marco-thumbsup.webp?v=3" alt="Marco the owl pointing" width="100" height="100" onload="this.style.display='block'" loading="lazy" style="position:absolute;top:-60px;right:-40px;width:100px;height:auto;z-index:10;pointer-events:none;display:none;">
       <div class="pricing-card premium">
         <span class="sr-only">Most Thorough</span>
         <div class="pricing-name">DeepDive Assessment</div>
@@ -674,14 +534,14 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         </p>
         <p class="helper-text c-success fw-600 mt-12 bt-border">&#127873; Complete your assessment to unlock your free sticker pack</p>
         <a href="https://booking.lingograde.com/marco/deepdive-assessment" class="pricing-btn pricing-btn-premium" target="_blank">See the Full Picture &rarr;</a>
-        <p class="subcaption mt-12">No rush — explore when you are ready.</p>
+        <p class="c-ink-light fs-smm mt-8">No rush &mdash; it&rsquo;ll be here.</p>
       </div>
       <div class="pricing-card featured">
-        <div class="fw-700 c-white tracking-wide bg-accent" aria-label="Most chosen" style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 16px;border-radius:100px;font-size:0.6875rem;" >Most chosen</div>
+        <div class="fw-700 c-white tracking-wide bg-accent" aria-label="Most chosen — selected by 7 in 10 first-time clients" style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 16px;border-radius:100px;font-size:0.6875rem;" >MOST CHOSEN</div>
         <div class="pricing-name">Full Assessment</div>
         <div class="pricing-duration">25-minute session</div>
         <div class="pricing-price" data-eur="129.95" data-usd="129.95" data-chf="129.95" data-gbp="129.95">&euro;129.95</div>
-        <div class="pricing-price-note">Complete assessment package</div>
+        <div class="pricing-price-note">Complete assessment package &middot; Chosen by 7 in 10 first-time clients</div>
         <ul class="pricing-features">
           <li>Extended CEFR analysis</li>
           <li>5 structural problems + 5 solutions</li>
@@ -692,9 +552,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         </ul>
         <p class="helper-text c-success fw-600 mt-12 bt-border">&#127873; Complete your assessment to unlock your free sticker pack</p>
         <a href="https://booking.lingograde.com/marco/full-assessment" class="pricing-btn pricing-btn-primary" target="_blank">See the Full Assessment &rarr;</a>
-        <p class="subcaption mt-12">No rush — explore when you are ready.</p>
+        <p class="c-ink-light fs-smm mt-8">No rush &mdash; it&rsquo;ll be here.</p>
       </div>
-      <div class="pricing-card">
+      <div class="pricing-card starter">
         <div class="pricing-name">Quick Assessment</div>
         <div class="pricing-duration">15-minute session</div>
         <div class="pricing-price" data-eur="89.95" data-usd="89.95" data-chf="89.95" data-gbp="89.95">&euro;89.95</div>
@@ -710,40 +570,43 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <li class="no">Sentence engine + mini block</li>
         </ul>
         <a href="https://booking.lingograde.com/marco/quick-assessment" class="pricing-btn pricing-btn-secondary" target="_blank">See Where I Actually Stand &rarr;</a>
-        <p class="subcaption mt-12">No rush — explore when you are ready.</p>
+        <p class="c-ink-light fs-smm mt-8">No rush &mdash; it&rsquo;ll be here.</p>
       </div>
     </div>
 
-    <div class="mx-auto mt-32" style="max-width:900px;">
-      <div class="pricing-card c-success pos-relative" style="flex-direction:row;align-items:center;gap:32px;text-align:left;">
-        <div class="fw-700 c-white tracking-wide bg-success" style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 16px;border-radius:100px;font-size:0.6875rem;" >Instant result</div>
-        <div style="flex:1;min-width:180px;">
-          <div class="pricing-name">Bot Assessment</div>
-          <div class="pricing-duration">5-minute AI conversation</div>
-          <div class="pricing-price c-success" data-eur="49.95" data-usd="49.95" data-chf="49.95" data-gbp="49.95">&euro;49.95</div>
-          <div class="pricing-price-note">Full written report, no booking needed</div>
-        </div>
-        <ul class="pricing-features" style="flex:1;min-width:180px;margin:0;">
-          <li class="dot-item"><span ></span>Approximate CEFR level</li>
-          <li class="dot-item"><span ></span>Key speaking patterns identified</li>
-          <li class="dot-item"><span ></span>3 personalized flashcards</li>
-          <li class="dot-item"><span ></span>Delivered instantly via email</li>
-          <li class="dot-item"><span ></span>AI chat in 28 languages</li>
+    <!-- Bot Assessment — separate row (AI vs human) -->
+    <div class="bot-row">
+      <div class="fw-700 c-white tracking-wide bg-success" style="position:absolute;top:-13px;left:32px;padding:4px 16px;border-radius:100px;font-size:0.6875rem;" >Instant result</div>
+      <div class="bot-row-info">
+        <div class="pricing-name">Bot Assessment</div>
+        <div class="pricing-duration" style="margin-bottom:8px;">5-minute AI conversation</div>
+        <div class="pricing-price c-success" data-eur="49.95" data-usd="49.95" data-chf="49.95" data-gbp="49.95" style="font-size:2rem;">&euro;49.95</div>
+        <div class="pricing-price-note">Full written report, no booking needed</div>
+      </div>
+      <div class="bot-row-features">
+        <ul class="pricing-features" style="margin-bottom:0;">
+          <li class="dot-item"><span></span>Approximate CEFR level</li>
+          <li class="dot-item"><span></span>Key speaking patterns identified</li>
+          <li class="dot-item"><span></span>3 personalized flashcards</li>
+          <li class="dot-item"><span></span>Delivered instantly via email</li>
+          <li class="dot-item"><span></span>AI chat in 28 languages</li>
         </ul>
-        <div style="flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:8px;">
-          <button onclick="var f=document.querySelector('#marco-fab');if(f)f.click();" class="pricing-btn c-white bg-success no-outline cursor-pointer border-none" style="font-family:inherit;white-space:nowrap;">Try the Bot Assessment &rarr;</button>
-          <p class="subcaption">Want more depth? Upgrade anytime.</p>
-        </div>
+      </div>
+      <div class="bot-row-cta">
+        <button onclick="var f=document.querySelector('#marco-fab');if(f)f.click();" class="pricing-btn c-white bg-success no-outline cursor-pointer border-none" style="font-family:inherit;width:auto;padding:14px 32px;">Try the Bot Assessment &rarr;</button>
+        <p class="subcaption mt-12">Want more depth? Upgrade to a human assessment anytime.</p>
+        <p class="c-ink-light fs-smm mt-8">No rush &mdash; it&rsquo;ll be here.</p>
       </div>
     </div>
 
     <div class="mx-auto mt-16 bg-success-bg mw-1080 rounded-8" style="padding:12px 24px;border:1px solid rgba(39,174,96,0.2);">
-      <p class="fs-body c-success">Sessions are offered on selected days. Availability is updated in real time.</p>
+      <p class="fs-body c-success"><img src="assets/mascot/marco-alarm.webp?v=3" alt="Marco alarm" class="marco-icon" width="60" height="60" loading="lazy" style="width:60px;height:auto;margin-right:6px;">Sessions are offered on selected days. Availability is updated in real time.</p>
     </div>
 
     <div class="pricing-discount mx-auto mt-16 mw-1080 d-flex items-center gap-20">
+      <img src="assets/mascot/marco-coffee-cozy.webp?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img flex-shrink-0" width="100" height="100" loading="lazy" style="width:100px;height:auto;">
       <div>
-        <p>Not sure which to choose? Start with the <strong>free 5-minute chat</strong> for a quick snapshot. The <strong>Bot Assessment</strong> gives you a written report instantly. The <strong>Full Assessment</strong> is our most complete human-led option. The <strong>DeepDive</strong> goes the deepest — structured diagnostic with full detail.</p>
+        <p>Not sure which to choose? Start with the <strong>free 5-minute chat</strong> for a quick snapshot. The <strong>Bot Assessment</strong> gives you a written report instantly. The <strong>Full Assessment</strong> is the most popular human option. The <strong>DeepDive</strong> is the most thorough diagnostic available.</p>
         <p class="c-ink-light mt-8 fs-smm" >Not ready? Take your time — everything will be here whenever you are.</p>
       </div>
     </div>
@@ -757,59 +620,115 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
 <!-- ── 5. Testimonials ── -->
 <section class="section" id="reviews">
-  <div class="section-inner text-center">
+  <div class="section-inner">
     <!-- TrustBox widget - Micro Review Count (star display) -->
     <div class="trustpilot-widget" data-locale="en-US" data-template-id="53aa8807dec7e10d38f59f32" data-businessunit-id="69ba47415aa0a9b17480c1ab" data-style-height="150px" data-style-width="100%" data-theme="light" data-stars="4,5">
-      <a href="https://www.trustpilot.com/review/lingograde.com" target="_blank" rel="noopener" class="trustpilot-fallback">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#00B67A" style="vertical-align:middle;margin-right:6px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
-        <span style="font-weight:600;color:#1A1A1A;">Trustpilot</span>
-        <span style="color:#8A8A8A;margin-left:4px;font-size:0.875rem;">See our reviews</span>
-      </a>
+      <a href="https://www.trustpilot.com/review/lingograde.com" target="_blank" rel="noopener">Trustpilot</a>
     </div>
     <!-- End TrustBox widget -->
     <div class="mt-40">
       <div class="section-label">Student Experiences</div>
-      <h2 class="section-title mx-auto">What our students discovered</h2>
-      <p class="section-desc mx-auto mb-48">These are real results from real assessments. Every student came in with a question about their level. Every student left with an answer — and a plan.</p>
+      <h2 class="section-title">What our students discovered</h2>
+      <p class="section-desc mb-48">These are real results from real assessments. Every student came in with a question about their level. Every student left with an answer — and a plan.</p>
     </div>
     <div class="grid-3col gap-24" >
 
-      <div class="info-card">
+      <!-- HIDDEN: awaiting real testimonial data -->
+      <div class="info-card" style="display:none;">
         <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="note-italic">"I had been telling myself I was B2 for two years. The assessment showed my active level was solid B2 but my passive structures were stuck at B1. That one insight explained why I always felt lost in fast conversations. Now I know exactly what to fix."</p>
         <div class="testimonial-meta"><div class="testimonial-avatar">MT</div><div><div class="fw-600 fs-body">Marcus T.</div><div class="subcaption">&#127475;&#127473; German &middot; Full Assessment &middot; Feb 2026</div></div></div>
-        <div class="c-success mt-6 fs-2xs">&#10003; Verified assessment</div>
+        <div class="c-success mt-6 fs-2xs" >&#10003; Verified assessment</div>
       </div>
 
-      <div class="info-card">
+      <!-- HIDDEN: awaiting real testimonial data -->
+      <div class="info-card" style="display:none;">
         <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="note-italic">"I was preparing for a C1 exam and had no idea if I was ready. The Full Assessment confirmed my level was strong C1 in speaking but identified three specific grammar patterns holding me back. I focused on those for three weeks and passed the exam."</p>
         <div class="testimonial-meta"><div class="testimonial-avatar">CM</div><div><div class="fw-600 fs-body">Chiara M.</div><div class="subcaption">&#127470;&#127481; English &middot; Full Assessment &middot; Jan 2026</div></div></div>
-        <div class="c-success mt-6 fs-2xs">&#10003; Verified assessment</div>
+        <div class="c-success mt-6 fs-2xs" >&#10003; Verified assessment</div>
       </div>
 
-      <div class="info-card">
+      <!-- HIDDEN: awaiting real testimonial data -->
+      <div class="info-card" style="display:none;">
         <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="note-italic">"I needed to prove my French level for a job application in Paris. My employer asked for B2. I assumed I was there but was not certain. The report gave me an official-standard assessment I could reference with complete confidence. I got the job."</p>
         <div class="testimonial-meta"><div class="testimonial-avatar">AP</div><div><div class="fw-600 fs-body">Aleksandar P.</div><div class="subcaption">&#127479;&#127480; French &middot; Quick Assessment &middot; Mar 2026</div></div></div>
-        <div class="c-success mt-6 fs-2xs">&#10003; Verified assessment</div>
+        <div class="c-success mt-6 fs-2xs" >&#10003; Verified assessment</div>
       </div>
 
     </div>
 
     <div class="text-center mt-40">
-      <a href="reviews.html" class="btn-secondary" style="margin-right:12px;">Read More Reviews &rarr;</a>
       <a href="#pricing" class="btn-primary">Explore Assessment Options &rarr;</a>
     </div>
   </div>
 </section>
 
+<!-- ── 6. Languages ── -->
+<section class="section section-alt" id="languages">
+  <div class="section-inner text-center mx-auto mw-960" >
+    <div class="section-label">Available Languages</div>
+    <h2 class="section-title">12 languages assessed. Reports in 25+ native languages.</h2>
+
+    <!-- Native Language Selector -->
+    <div class="mx-auto mb-32 mw-340">
+      <label class="fw-600 c-ink-light mb-6 fs-xs uppercase d-block tracking-wide" for="nativeLangSelect" >Your native language</label>
+      <select id="nativeLangSelect" onchange="translateLanguages(this.value)" class="styled-select">
+        <option value="en">&#127468;&#127463; English</option>
+        <option value="es">&#127466;&#127480; Espa&ntilde;ol</option>
+        <option value="zh">&#127464;&#127475; &#20013;&#25991;</option>
+        <option value="ar">&#127480;&#127462; &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</option>
+        <option value="ru">&#127479;&#127482; &#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option>
+        <option value="pt">&#127463;&#127479; Portugu&ecirc;s</option>
+        <option value="tr">&#127481;&#127479; T&uuml;rk&ccedil;e</option>
+        <option value="uk">&#127482;&#127462; &#1059;&#1082;&#1088;&#1072;&#1111;&#1085;&#1089;&#1100;&#1082;&#1072;</option>
+      </select>
+      <p class="c-ink-light mt-6 fs-2xs" >8 display languages shown. Reports available in 25+ native languages.</p>
+    </div>
+
+    <div style="font-size:2.5rem;line-height:1.8;letter-spacing:0.25em;margin-bottom:24px;">
+      <a href="samples/sample_german_b2_en.pdf" data-sample="sample_german_b2" target="_blank" title="German" style="text-decoration:none;">&#127465;&#127466;</a>
+      <a href="samples/sample_english_b2_en.pdf" data-sample="sample_english_b2" target="_blank" title="English" style="text-decoration:none;">&#127468;&#127463;</a>
+      <a href="samples/sample_french_b1_en.pdf" data-sample="sample_french_b1" target="_blank" title="French" style="text-decoration:none;">&#127467;&#127479;</a>
+      <a href="samples/sample_spanish_b2_en.pdf" data-sample="sample_spanish_b2" target="_blank" title="Spanish" style="text-decoration:none;">&#127466;&#127480;</a>
+      <a href="samples/sample_italian_b1_en.pdf" data-sample="sample_italian_b1" target="_blank" title="Italian" style="text-decoration:none;">&#127470;&#127481;</a>
+      <a href="samples/sample_portuguese_b1_en.pdf" data-sample="sample_portuguese_b1" target="_blank" title="Portuguese" style="text-decoration:none;">&#127477;&#127481;</a>
+      <a href="samples/sample_russian_a2_en.pdf" data-sample="sample_russian_a2" target="_blank" title="Russian" style="text-decoration:none;">&#127479;&#127482;</a>
+      <a href="samples/sample_serbian_a2_en.pdf" data-sample="sample_serbian_a2" target="_blank" title="Serbian" style="text-decoration:none;">&#127479;&#127480;</a>
+      <a href="samples/sample_croatian_a2_en.pdf" data-sample="sample_croatian_a2" target="_blank" title="Croatian" style="text-decoration:none;">&#127469;&#127479;</a>
+      <a href="samples/sample_romanian_a2_en.pdf" data-sample="sample_romanian_a2" target="_blank" title="Romanian" style="text-decoration:none;">&#127479;&#127476;</a>
+      <a href="samples/sample_polish_a2_en.pdf" data-sample="sample_polish_a2" target="_blank" title="Polish" style="text-decoration:none;">&#127477;&#127473;</a>
+      <a href="samples/sample_bulgarian_a2_en.pdf" data-sample="sample_bulgarian_a2" target="_blank" title="Bulgarian" style="text-decoration:none;">&#127463;&#127468;</a>
+    </div>
+
+    <!-- Hidden data-lang elements for translateLanguages JS -->
+    <span data-lang="de" style="display:none;">German</span>
+    <span data-lang="en" style="display:none;">English</span>
+    <span data-lang="fr" style="display:none;">French</span>
+    <span data-lang="es" style="display:none;">Spanish</span>
+    <span data-lang="it" style="display:none;">Italian</span>
+    <span data-lang="pt" style="display:none;">Portuguese</span>
+    <span data-lang="ru" style="display:none;">Russian</span>
+    <span data-lang="sr" style="display:none;">Serbian</span>
+    <span data-lang="hr" style="display:none;">Croatian</span>
+    <span data-lang="ro" style="display:none;">Romanian</span>
+    <span data-lang="pl" style="display:none;">Polish</span>
+    <span data-lang="bg" style="display:none;">Bulgarian</span>
+
+    <p><a class="fw-600 c-accent" href="samples/sample_german_b2_en.pdf" target="_blank">Download a sample report &rarr;</a></p>
+  </div>
+</section>
+
 <!-- ── 7. FAQ ── -->
 <section class="section section-alt" id="faq">
-  <div class="section-inner text-center">
+  <div class="section-inner">
     <div class="section-label">FAQ</div>
-    <h2 class="section-title mx-auto mb-8" >Common questions</h2>
-    <div class="faq-list text-left">
+    <div class="mb-8 gap-16 flex-center-wrap items-center" >
+      <img src="assets/mascot/marco-face-wink.webp?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img flex-shrink-0" width="120" height="120" loading="lazy" style="width:120px;height:auto;">
+      <h2 class="section-title m-0" >Common questions</h2>
+    </div>
+    <div class="faq-list">
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">Is the LingoGrade assessment officially recognised?</button>
         <div class="faq-a"><div class="faq-a-inner">LingoGrade uses the same CEFR framework as Goethe-Institut, telc, and Cambridge — the global standard for language proficiency. Your report is delivered by a qualified professional assessor and follows the same diagnostic methodology used by language teachers and institutions worldwide. It is a professional assessment tool, not an accredited exam certificate. Think of it as the diagnostic step that tells you exactly where you stand and what to work on — whether you are preparing for an official exam or simply need a clear picture of your level for professional or personal reasons.</div></div>
@@ -859,13 +778,12 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   <p class="footer-tagline">Professional Language Assessment</p>
   <div class="footer-nav">
     <a href="#how-it-works" class="footer-link">How It Works</a>
-    <a href="#samples" class="footer-link">Languages</a>
+    <a href="#languages" class="footer-link">Languages</a>
     <a href="#pricing" class="footer-link">Pricing</a>
     <a href="teachers.html" class="footer-link">For Teachers</a>
     <a href="partners.html" class="footer-link">Partners</a>
     <a href="shop.html" class="footer-link">Shop</a>
-    <a href="programs.html" class="footer-link">Programs</a>
-    <a href="reviews.html" class="footer-link">Reviews</a>
+    <a href="#share-experience" class="footer-link">Share Experience</a>
     <a href="mailto:info@lingograde.com" class="footer-link">Contact</a>
   </div>
   <div class="footer-legal">
@@ -936,14 +854,6 @@ function translateLanguages(lang) {
     el.href = 'samples/' + base + suffix + '.pdf';
   });
 }
-// Native language chip selector
-document.querySelectorAll('.sample-lang-chip').forEach(function(chip) {
-  chip.addEventListener('click', function() {
-    document.querySelectorAll('.sample-lang-chip').forEach(function(c) { c.classList.remove('active'); });
-    chip.classList.add('active');
-    translateLanguages(chip.getAttribute('data-native'));
-  });
-});
 </script>
 <script>
 // Currency geo-detection — IP geolocation with timezone fallback
@@ -956,6 +866,9 @@ document.querySelectorAll('.sample-lang-chip').forEach(function(chip) {
     if (/America\/(New_York|Chicago|Denver|Los_Angeles|Anchorage|Phoenix|Detroit|Indiana|Kentucky|Boise|Juneau|Sitka|Yakutat|Nome|Adak|Menominee|North_Dakota)|Pacific\/Honolulu|US\//.test(tz)) return 'USD';
     if (/Europe\/London|Europe\/Belfast|Europe\/Isle_of_Man|Europe\/Jersey|Europe\/Guernsey/.test(tz)) return 'GBP';
     if (/Europe\/Zurich/.test(tz)) return 'CHF';
+    // Locale reinforcement: en-US locale in non-US timezone → traveler, prefer USD
+    var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+    if (/^en-US/i.test(lang)) return 'USD';
     return 'EUR';
   }
 
@@ -968,7 +881,7 @@ document.querySelectorAll('.sample-lang-chip').forEach(function(chip) {
       return el.getAttribute('data-' + code.toLowerCase()) || el.getAttribute('data-eur');
     }
 
-    document.querySelectorAll('.pricing-price[data-eur], .lesson-price[data-eur], .bundle-price-now[data-eur]').forEach(function(el){
+    document.querySelectorAll('.pricing-price[data-eur], .lesson-price[data-eur]').forEach(function(el){
       el.textContent = symbol + resolvePrice(el);
     });
 

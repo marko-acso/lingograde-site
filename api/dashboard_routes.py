@@ -178,5 +178,39 @@ def get_stickers():
     return jsonify({"stickers": stickers})
 
 
+# ═══════════════════════════════════════════════════════════════════
+# GET /api/dashboard/pack
+# ═══════════════════════════════════════════════════════════════════
+
+@dashboard_bp.route("/pack", methods=["GET"])
+@require_auth
+def get_pack():
+    with get_cursor() as cur:
+        cur.execute(
+            """SELECT id, pack_type, amount_cents, currency,
+                      assessment_status, reassessment_status,
+                      reassessment_eligible_date, purchased_at
+               FROM pack_purchases
+               WHERE student_id = %s
+               ORDER BY purchased_at DESC LIMIT 1""",
+            (g.student_id,),
+        )
+        row = cur.fetchone()
+
+    if not row:
+        return jsonify({"pack": None})
+
+    return jsonify({"pack": {
+        "id": str(row["id"]),
+        "pack_type": row["pack_type"],
+        "amount_cents": row["amount_cents"],
+        "currency": row["currency"],
+        "assessment_status": row["assessment_status"],
+        "reassessment_status": row["reassessment_status"],
+        "reassessment_eligible_date": row["reassessment_eligible_date"].isoformat() if row["reassessment_eligible_date"] else None,
+        "purchased_at": row["purchased_at"].isoformat() if row["purchased_at"] else None,
+    }})
+
+
 # POST /api/dashboard/stickers/verify — REMOVED
 # Use POST /v1/stickers/verify instead (has full 7-layer anti-abuse protection)

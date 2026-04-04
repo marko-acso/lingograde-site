@@ -242,6 +242,13 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
     <div id="assessmentsContent"><div class="spinner mt-8 mb-8"></div></div>
   </div>
 
+  <!-- ── My Pack Card ── -->
+  <div class="card hidden" id="cardPack">
+    <div class="card-title">My Pack</div>
+    <div class="card-desc">Your purchased package and what's included.</div>
+    <div id="packContent"></div>
+  </div>
+
   <!-- ── Progress Card ── -->
   <div class="card hidden" id="cardProgress">
     <div class="card-title">Your Progress</div>
@@ -413,6 +420,7 @@ function cefrBadgeClass(level) {
 
       loadAssessments();
       loadHomework();
+      loadPack();
     })
     .catch(function() {
       window.location.href = 'https://app.lingograde.com/login?redirect=dashboard';
@@ -506,6 +514,48 @@ function renderProgress(list) {
 
   el.innerHTML = html;
   card.style.display = '';
+}
+
+// ── My Pack ──
+function loadPack() {
+  fetch('https://app.lingograde.com/api/dashboard/pack', { credentials: 'include' })
+    .then(function(r) { return r.ok ? r.json() : { pack: null }; })
+    .then(function(data) { renderPack(data.pack); })
+    .catch(function() { renderPack(null); });
+}
+
+function renderPack(pack) {
+  var card = document.getElementById('cardPack');
+  var el = document.getElementById('packContent');
+  if (!pack) return;
+
+  card.classList.remove('hidden');
+
+  var statusColors = { not_booked: '#e67e22', booked: '#2563AB', completed: '#27AE60', locked: '#999' };
+  var statusLabels = { not_booked: 'Not Booked', booked: 'Booked', completed: 'Completed', locked: 'Locked' };
+
+  var assessBadge = '<span class="badge" style="background:' + (statusColors[pack.assessment_status] || '#999') + ';color:#fff;padding:4px 10px;border-radius:6px;font-size:0.8rem;">' + (statusLabels[pack.assessment_status] || pack.assessment_status) + '</span>';
+  var reassessBadge = '<span class="badge" style="background:' + (statusColors[pack.reassessment_status] || '#999') + ';color:#fff;padding:4px 10px;border-radius:6px;font-size:0.8rem;">' + (statusLabels[pack.reassessment_status] || pack.reassessment_status) + '</span>';
+
+  var bookBtn = pack.assessment_status === 'not_booked'
+    ? ' <a href="https://booking.lingograde.com/marco" target="_blank" rel="noopener" class="btn-dl" style="margin-left:8px;">Book Now</a>'
+    : '';
+
+  var reassessExtra = '';
+  if (pack.reassessment_status === 'locked' && pack.reassessment_eligible_date) {
+    reassessExtra = '<span style="margin-left:8px;font-size:0.85rem;color:#999;">Available ' + formatDate(pack.reassessment_eligible_date) + '</span>';
+  } else if (pack.reassessment_status === 'not_booked') {
+    reassessExtra = ' <a href="https://booking.lingograde.com/marco" target="_blank" rel="noopener" class="btn-dl" style="margin-left:8px;">Book Reassessment</a>';
+  }
+
+  var purchaseDate = pack.purchased_at ? formatDate(pack.purchased_at.slice(0, 10)) : '';
+
+  el.innerHTML =
+    '<div style="display:flex;flex-direction:column;gap:12px;">' +
+      '<div><strong>Mega Bundle</strong>' + (purchaseDate ? '<span style="margin-left:12px;font-size:0.85rem;color:#999;">Purchased ' + purchaseDate + '</span>' : '') + '</div>' +
+      '<div>Assessment: ' + assessBadge + bookBtn + '</div>' +
+      '<div>Reassessment: ' + reassessBadge + reassessExtra + '</div>' +
+    '</div>';
 }
 
 // ── Homework ──
