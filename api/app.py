@@ -33,6 +33,7 @@ from bot_store import (
     save_assessment, get_assessment, update_assessment,
     find_assessment_by_payment,
     save_free_bot, get_free_bot, update_free_bot, count_free_bot_by_ip,
+    upsert_lead,
 )
 
 load_dotenv()
@@ -261,6 +262,20 @@ def free_bot_email():
         return jsonify({"error": "Session not found"}), 404
 
     update_free_bot(bot_id, email=email)
+
+    # Store as lead for nurture sequence
+    lang = session.get("lang", "")
+    cefr = None
+    result = session.get("result")
+    if isinstance(result, dict):
+        cefr = result.get("cefr")
+    elif isinstance(result, str):
+        try:
+            cefr = json.loads(result).get("cefr")
+        except (json.JSONDecodeError, AttributeError):
+            pass
+    upsert_lead(email, lang, "free-bot", cefr)
+
     return jsonify({"status": "ok"})
 
 

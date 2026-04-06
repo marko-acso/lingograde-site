@@ -236,6 +236,22 @@ def update_free_bot(bot_id, **fields):
             session.update(fields)
 
 
+def upsert_lead(email, lang, source, cefr=None):
+    """Store a lead from free-bot or free-analysis for nurture sequence."""
+    if not email or not _has_db():
+        return
+    with get_cursor() as cur:
+        cur.execute(
+            """INSERT INTO leads (email, lang, source, cefr_estimate, created_at)
+               VALUES (%s, %s, %s, %s, now())
+               ON CONFLICT (email) DO UPDATE
+               SET lang = EXCLUDED.lang,
+                   cefr_estimate = COALESCE(EXCLUDED.cefr_estimate, leads.cefr_estimate),
+                   last_seen_at = now()""",
+            (email.lower().strip(), lang, source, cefr),
+        )
+
+
 def count_free_bot_by_ip(ip, since_iso):
     """Count free bot sessions from an IP since a timestamp (rate limiting)."""
     if _has_db():
