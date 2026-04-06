@@ -88,157 +88,139 @@ function enlargeImage(src) {
   }
 })();
 
-// Currency detection — symbol swap + USD price conversion
+// Currency geo-detection — IP geolocation with timezone fallback
 (function(){
-  var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-  var symbol = '\u20AC'; // EUR default
-  var isUSD = false;
-  var isCNY = false;
+  var COUNTRY_CURRENCY = {US:'USD',GB:'GBP',CH:'CHF',LI:'CHF',CN:'CNY',HK:'CNY',MO:'CNY'};
+  var SYMBOLS = {EUR:'\u20AC',USD:'$',GBP:'\u00A3',CHF:'CHF\u00A0',CNY:'\u00A5'};
 
-  // USD timezones
-  var usTzExact = ['America/New_York','America/Chicago','America/Denver','America/Los_Angeles','America/Phoenix','America/Anchorage','America/Honolulu'];
-  var isUS = usTzExact.indexOf(tz) !== -1 || tz.indexOf('America/') === 0 || tz.indexOf('US/') === 0;
-
-  if (isUS) {
-    symbol = '$';
-    isUSD = true;
-  } else if (tz.indexOf('London') !== -1 || tz.indexOf('Europe/London') !== -1 || tz.indexOf('Europe/Belfast') !== -1 || tz.indexOf('Europe/Isle_of_Man') !== -1 || tz.indexOf('Europe/Jersey') !== -1 || tz.indexOf('Europe/Guernsey') !== -1) {
-    symbol = '\u00A3'; // GBP
-  } else if (tz.indexOf('Zurich') !== -1 || tz.indexOf('Europe/Zurich') !== -1) {
-    symbol = 'CHF '; // CHF
-  } else if (tz.indexOf('Asia/Shanghai') !== -1 || tz.indexOf('Asia/Chongqing') !== -1 || tz.indexOf('Asia/Harbin') !== -1 || tz.indexOf('Asia/Urumqi') !== -1 || tz.indexOf('Asia/Hong_Kong') !== -1 || tz.indexOf('Asia/Macau') !== -1) {
-    symbol = '\u00A5'; // CNY ¥
-    isCNY = true;
-  }
-  // Locale reinforcement: en-US locale in non-US timezone → traveler, prefer USD (only overrides EUR fallback)
-  if (!isUSD && !isCNY && symbol === '\u20AC') {
-    var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
-    if (/^en-US/i.test(lang)) { symbol = '$'; isUSD = true; }
-  }
-  window._lgCurrency = symbol;
-  window._lgIsUSD = isUSD;
-  window._lgIsCNY = isCNY;
-
-  // EUR → USD price mapping
   var eurToUsd = {
-    '5.00': '5.00',
-    '10.00': '10.00',
-    '20.00': '20.00',
-    '12.95': '12.95',
-    '14.95': '14.95',
-    '19.95': '22.95',
-    '24.95': '29.95',
-    '29.95': '29.95',
-    '37.95': '43.95',
-    '44.90': '52.90',
-    '44.95': '51.95',
-    '59.95': '68.85',
-    '84.80': '99.80',
-    '129.95': '129.95',
-    '139.95': '139.95',
-    '299.95': '349.95',
-    '384.75': '449.70'
+    '5.00':'5.00','10.00':'10.00','20.00':'20.00','12.95':'12.95','14.95':'14.95',
+    '19.95':'22.95','24.95':'29.95','29.95':'29.95','37.95':'43.95','44.90':'52.90',
+    '44.95':'51.95','59.95':'68.85','84.80':'99.80','129.95':'129.95','139.95':'139.95',
+    '299.95':'349.95','384.75':'449.70'
   };
-
-  // EUR → CNY price mapping (CHF reference, rounded UP to X49.95 or X99.95)
-  // Tips use lucky numbers: 8/18/88
   var eurToCny = {
-    '5.00': '8',
-    '10.00': '18',
-    '20.00': '88',
-    '12.95': '99.95',
-    '14.95': '99.95',
-    '19.95': '149.95',
-    '24.95': '199.95',
-    '29.95': '249.95',
-    '37.95': '299.95',
-    '44.90': '349.95',
-    '44.95': '349.95',
-    '59.95': '449.95',
-    '84.80': '649.95',
-    '129.95': '999.95',
-    '139.95': '999.95',
-    '299.95': '2288.95',
-    '384.75': '2899.95'
+    '5.00':'8','10.00':'18','20.00':'88','12.95':'99.95','14.95':'99.95',
+    '19.95':'149.95','24.95':'199.95','29.95':'249.95','37.95':'299.95','44.90':'349.95',
+    '44.95':'349.95','59.95':'449.95','84.80':'649.95','129.95':'999.95','139.95':'999.95',
+    '299.95':'2288.95','384.75':'2899.95'
   };
-
-  // Helper: convert a EUR price string to local currency
-  function convertPrice(eurPrice) {
-    if (isUSD) return eurToUsd[eurPrice] || eurPrice;
-    if (isCNY) return eurToCny[eurPrice] || eurPrice;
-    return eurPrice;
-  }
-  window._lgConvertPrice = convertPrice;
+  var PRICE_MAPS = {USD:eurToUsd,CNY:eurToCny};
   window._lgEurToUsd = eurToUsd;
 
-  // Fill all data-price elements (swap price if USD)
-  document.querySelectorAll('[data-price]').forEach(function(el){
-    var price = el.getAttribute('data-price');
-    var displayPrice = convertPrice(price);
-    el.textContent = symbol + displayPrice;
-    if (isUSD) el.setAttribute('data-price', displayPrice);
-  });
+  function tzFallback() {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    if (/America\/(New_York|Chicago|Denver|Los_Angeles|Anchorage|Phoenix|Detroit|Indiana|Kentucky|Boise|Juneau|Sitka|Yakutat|Nome|Adak|Menominee|North_Dakota)|Pacific\/Honolulu|US\//.test(tz)) return 'USD';
+    if (/Europe\/London|Europe\/Belfast|Europe\/Isle_of_Man|Europe\/Jersey|Europe\/Guernsey/.test(tz)) return 'GBP';
+    if (/Europe\/Zurich/.test(tz)) return 'CHF';
+    if (/Asia\/(Shanghai|Chongqing|Harbin|Urumqi|Hong_Kong|Macau)/.test(tz)) return 'CNY';
+    return 'EUR';
+  }
 
-  // Replace "EUR X.XX" across the entire page body
-  // Walk all text nodes to avoid innerHTML side-effects on event listeners
-  if (symbol !== '\u20AC' || isUSD || isCNY) {
-    var priceMap = isUSD ? eurToUsd : (isCNY ? eurToCny : null);
+  // Save originals once so we can re-apply on geo override
+  var origDataPrices = [];
+  var origTextNodes = [];
+  var origAttrs = [];
+  var origTierLabels = [];
+  var saved = false;
+
+  function saveOriginals() {
+    if (saved) return;
+    document.querySelectorAll('[data-price]').forEach(function(el){
+      origDataPrices.push({el:el, eur:el.getAttribute('data-price'), text:el.textContent});
+    });
     var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
-    var node;
-    while (node = walker.nextNode()) {
-      var text = node.nodeValue;
-      if (text.indexOf('EUR') === -1) continue;
-      // Replace EUR + price with local symbol + converted price
-      text = text.replace(/EUR\s?([\d,]+\.?\d*)/g, function(match, price) {
-        var cleanPrice = price.replace(/,/g, '');
-        var converted = priceMap ? (priceMap[cleanPrice] || cleanPrice) : cleanPrice;
-        return symbol + converted;
-      });
-      node.nodeValue = text;
+    var n;
+    while (n = walker.nextNode()) {
+      if (n.nodeValue.indexOf('EUR') !== -1) origTextNodes.push({node:n, text:n.nodeValue});
     }
-    // Also swap EUR in data-tip and data-title attributes
-    document.querySelectorAll('[data-tip],[data-title]').forEach(function(el) {
-      ['data-tip','data-title'].forEach(function(attr) {
-        var val = el.getAttribute(attr);
-        if (val && val.indexOf('EUR') !== -1) {
-          val = val.replace(/EUR\s?([\d,]+\.?\d*)/g, function(match, price) {
-            var cleanPrice = price.replace(/,/g, '');
-            var converted = priceMap ? (priceMap[cleanPrice] || cleanPrice) : cleanPrice;
-            return symbol + converted;
-          });
-          el.setAttribute(attr, val);
-        }
+    document.querySelectorAll('[data-tip],[data-title]').forEach(function(el){
+      ['data-tip','data-title'].forEach(function(attr){
+        var v = el.getAttribute(attr);
+        if (v && v.indexOf('EUR') !== -1) origAttrs.push({el:el, attr:attr, val:v});
       });
     });
-  }
-
-  // For USD, also swap prices inside the tier radio option labels (rendered as &euro; in HTML)
-  if (isUSD) {
-    document.querySelectorAll('.sticker-tier-option').forEach(function(label){
-      // Replace euro symbol + price in the tier labels
-      Object.keys(eurToUsd).forEach(function(eur){
-        var re = new RegExp('\u20AC' + eur.replace('.', '\\.'), 'g');
-        label.innerHTML = label.innerHTML.replace(re, '$' + eurToUsd[eur]);
-      });
-      // Also update per-pack prices for tier 2 and tier 3
-      // Tier 2: €18.95/pack → $21.95/pack
-      label.innerHTML = label.innerHTML.replace(/\u20AC18\.95\/pack/g, '$21.95/pack');
-      label.innerHTML = label.innerHTML.replace(/\$18\.95\/pack/g, '$21.95/pack');
-      // Tier 3: €14.95/pack → $17.33/pack
-      label.innerHTML = label.innerHTML.replace(/\u20AC14\.95\/pack/g, '$17.33/pack');
-      label.innerHTML = label.innerHTML.replace(/\$14\.95\/pack/g, '$17.33/pack');
-      // Tier 2 savings: Save €1.95 → Save $1.95
-      label.innerHTML = label.innerHTML.replace(/\u20AC1\.95/g, '$1.95');
-      // Tier 3 savings: Save €14.95 → Save $17.95 (3 x 22.95 = 68.85, collection = 51.95, save = 16.90)
-      label.innerHTML = label.innerHTML.replace(/\u20AC14\.95/g, '$17.95');
+    document.querySelectorAll('.sticker-tier-option').forEach(function(el){
+      origTierLabels.push({el:el, html:el.innerHTML});
     });
+    saved = true;
   }
 
-  // CNY bundle toggle (geo-gated)
-  if (isCNY) {
+  var currentCode = null;
+
+  function applyPrices(code) {
+    if (code === currentCode) return;
+    currentCode = code;
+    var symbol = SYMBOLS[code] || SYMBOLS.EUR;
+    var isUSD = code === 'USD';
+    var isCNY = code === 'CNY';
+    var priceMap = PRICE_MAPS[code] || null;
+
+    window._lgCurrency = symbol;
+    window._lgIsUSD = isUSD;
+    window._lgIsCNY = isCNY;
+    window._lgConvertPrice = function(eurPrice) {
+      return priceMap ? (priceMap[eurPrice] || eurPrice) : eurPrice;
+    };
+
+    // data-price elements
+    origDataPrices.forEach(function(o){
+      var converted = priceMap ? (priceMap[o.eur] || o.eur) : o.eur;
+      o.el.textContent = symbol + converted;
+      o.el.setAttribute('data-price', isUSD ? converted : o.eur);
+    });
+
+    // Text nodes — always restore from EUR originals then convert
+    origTextNodes.forEach(function(o){
+      if (code === 'EUR') { o.node.nodeValue = o.text; return; }
+      o.node.nodeValue = o.text.replace(/EUR\s?([\d,]+\.?\d*)/g, function(m, p){
+        var clean = p.replace(/,/g, '');
+        return symbol + (priceMap ? (priceMap[clean] || clean) : clean);
+      });
+    });
+
+    // data-tip / data-title attributes
+    origAttrs.forEach(function(o){
+      if (code === 'EUR') { o.el.setAttribute(o.attr, o.val); return; }
+      o.el.setAttribute(o.attr, o.val.replace(/EUR\s?([\d,]+\.?\d*)/g, function(m, p){
+        var clean = p.replace(/,/g, '');
+        return symbol + (priceMap ? (priceMap[clean] || clean) : clean);
+      }));
+    });
+
+    // Sticker tier labels — restore then convert
+    origTierLabels.forEach(function(o){
+      o.el.innerHTML = o.html; // restore EUR originals
+      if (isUSD) {
+        Object.keys(eurToUsd).forEach(function(eur){
+          o.el.innerHTML = o.el.innerHTML.replace(new RegExp('\u20AC' + eur.replace('.', '\\.'), 'g'), '$' + eurToUsd[eur]);
+        });
+        o.el.innerHTML = o.el.innerHTML.replace(/\u20AC18\.95\/pack/g, '$21.95/pack');
+        o.el.innerHTML = o.el.innerHTML.replace(/\u20AC14\.95\/pack/g, '$17.33/pack');
+        o.el.innerHTML = o.el.innerHTML.replace(/\u20AC1\.95/g, '$1.95');
+        o.el.innerHTML = o.el.innerHTML.replace(/\u20AC14\.95/g, '$17.95');
+      }
+    });
+
+    // CNY bundle toggle
     var cnBundle = document.getElementById('cn-bundle');
-    if (cnBundle) cnBundle.style.display = '';
+    if (cnBundle) cnBundle.style.display = isCNY ? '' : 'none';
+
+    // Re-run sticker total
+    if (typeof updateStickerTotal === 'function') updateStickerTotal();
   }
+
+  saveOriginals();
+  applyPrices(tzFallback()); // instant render with timezone guess
+
+  // Override with geo-IP if different
+  fetch('https://api.country.is/')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var cc = d && d.country;
+      if (cc && COUNTRY_CURRENCY[cc]) applyPrices(COUNTRY_CURRENCY[cc]);
+    })
+    .catch(function(){}); // silently keep timezone result
 })();
 
 // Sticker order total
@@ -253,7 +235,6 @@ function updateStickerTotal(){
   var el = document.getElementById('sticker-total');
   el.textContent = (window._lgCurrency || '\u20AC') + total;
 
-  // Highlight selected tier option
   document.querySelectorAll('.sticker-tier-option').forEach(function(opt){
     var isSel = opt.getAttribute('data-tier') === tier;
     if(opt.getAttribute('data-tier') === '3'){

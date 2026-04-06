@@ -86,8 +86,30 @@
 
 ---
 
+## COMPLETED — Shop Rebuild (Apr 4)
+- **CSS extracted** → `css/shop.css` (787 lines). Only `:root` dark theme vars stay inline in shop.html
+- **JS extracted** → `js/shop.js` (753 lines) with correct initialization order
+- **shop.html trimmed** from 2,613 → 1,125 lines (-57%)
+- **Bug fixed:** `getElementById('stickerDesign')` → `getElementById('sticker-set')` — carousel↔dropdown sync was silently failing
+- **Stripe API migration:** Cap/bracelet/pin now use `/v1/checkout/accessory` API with email capture form (expand-in-place pattern) instead of direct `buy.stripe.com` links. Marco plush + tips stay as direct Stripe links (no API route)
+- **Dynamic currency:** Replaced fragile per-selector EUR swap with body-wide TreeWalker — catches every `EUR X.XX` across the entire page (mega bundle old price, savings, FAQ text, CTA buttons, ROI section, guide steps, data-tip attributes). Full EUR→USD and EUR→CNY conversion maps with all prices
+- **Nav/footer:** Added missing `programs.html` link
+- **CNY geo-gate:** Moved from inline script into shop.js (eliminates race condition)
+- **Dev→prod sync** done first (speech bubble hero, accessories visible, mug waitlist, Explore More grid)
+- Committed + pushed to main, Vercel auto-deploy
+
+---
+
 ## STILL PENDING
 - **mila-hero.png** — Needs generation (same style as marco-hero.png). Fallback works.
 - **Apple OAuth:** Needs Apple Developer Program ($99/yr) — skipped for now, UI ready
 - **Supabase auto-linking:** Toggle "Automatically link accounts with matching emails" in Supabase dashboard (Settings > Authentication)
-- ~~**Vercel Git integration:**~~ Connected and auto-deploying (verified Apr 4)
+
+## BUILD QUEUE (remaining)
+3. **Flashcard PWA** — PWA essentials done. Remaining: auth, Marco Bot, sync, push notifs
+4. **Auto-invoicing** — automated invoice generation
+5. **Partner payouts** — partner payment system
+6. **Drip emails** — automated email sequences (spec in docs/drip-email-system.md)
+8. **Product Hunt** — launch prep & submission
+9. **RSSA** — (rssa-dev/ repo exists)
+10. **Logopedics flashcards** — speech therapy flashcard set

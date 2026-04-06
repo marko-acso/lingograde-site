@@ -867,43 +867,7 @@ def sticker_verify():
 
 
 # ═══════════════════════════════════════════════════════════════════
-# Endpoint 11: POST /v1/waitlist — Email capture for waitlist
-# ═══════════════════════════════════════════════════════════════════
-
-VALID_WAITLIST_SOURCES = {"kids", "shop", "general"}
-
-
-@app.route("/v1/waitlist", methods=["POST"])
-def waitlist_signup():
-    data = request.get_json(force=True)
-    email = (data.get("email") or "").strip().lower()
-    source = (data.get("source") or "general").strip().lower()
-
-    if not email or "@" not in email:
-        return jsonify({"error": "Valid email required"}), 400
-    if source not in VALID_WAITLIST_SOURCES:
-        source = "general"
-
-    try:
-        with get_cursor() as cur:
-            cur.execute(
-                """INSERT INTO waitlist (email, source)
-                   VALUES (%s, %s)
-                   ON CONFLICT (email, source) DO NOTHING
-                   RETURNING id""",
-                (email, source),
-            )
-            row = cur.fetchone()
-    except Exception:
-        return jsonify({"error": "Could not save — please try again"}), 500
-
-    if row:
-        return jsonify({"ok": True, "message": "You're on the list!"}), 201
-    return jsonify({"ok": True, "message": "You're already on the list!"}), 200
-
-
-# ═══════════════════════════════════════════════════════════════════
-# Endpoint 12: POST /v1/checkout/kids — Stripe Checkout for kids assessment
+# Endpoint 11: POST /v1/checkout/kids — Stripe Checkout for kids assessment
 # ═══════════════════════════════════════════════════════════════════
 
 KIDS_PACKAGES = {
