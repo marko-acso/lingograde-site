@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LingoGrade Programs — Lessons, Subscriptions, Flashcards &amp; Homework</title>
+<meta name="description" content="Lessons built around your assessment report, subscription plans for consistent practice, flashcard app, and detailed homework correction — everything after your LingoGrade assessment.">
+<meta property="og:title" content="LingoGrade Programs — Lessons, Subscriptions, Flashcards &amp; Homework">
+<meta property="og:description" content="Lessons, subscriptions, and flashcards — everything you need after your assessment. Built around your report, no warm-up, no wasted time.">
+<meta property="og:image" content="https://www.lingograde.com/og-logo-v2.png">
+<meta property="og:url" content="https://www.lingograde.com/programs">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LingoGrade Programs — Lessons, Subscriptions, Flashcards &amp; Homework">
+<meta name="twitter:description" content="Lessons, subscriptions, and flashcards — everything you need after your assessment. Built around your report, no warm-up, no wasted time.">
+<meta name="twitter:image" content="https://www.lingograde.com/og-logo-v2.png">
+<meta property="og:locale" content="en_US">
+<link rel="canonical" href="https://www.lingograde.com/programs">
+<link rel="alternate" hreflang="en" href="https://www.lingograde.com/programs">
+<link rel="alternate" hreflang="x-default" href="https://www.lingograde.com/programs">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "LingoGrade Programs",
+  "provider": { "@type": "Organization", "name": "LingoGrade" },
+  "description": "1-on-1 lessons, subscription plans, flashcard app, and homework correction built around your CEFR assessment report.",
+  "serviceType": "Language Learning Programs",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Single 15-min Lesson",
+      "price": "89.95",
+      "priceCurrency": "EUR"
+    },
+    {
+      "@type": "Offer",
+      "name": "Single 25-min Lesson",
+      "price": "129.95",
+      "priceCurrency": "EUR"
+    },
+    {
+      "@type": "Offer",
+      "name": "Stackable 15+15 Lesson",
+      "price": "139.95",
+      "priceCurrency": "EUR"
+    },
+    {
+      "@type": "Offer",
+      "name": "Stackable 15+25 Lesson",
+      "price": "169.95",
+      "priceCurrency": "EUR"
+    },
+    {
+      "@type": "Offer",
+      "name": "Complete Program Subscription",
+      "price": "999.95",
+      "priceCurrency": "EUR"
+    },
+    {
+      "@type": "Offer",
+      "name": "Homework Correction",
+      "price": "29.95",
+      "priceCurrency": "EUR"
+    }
+  ]
+}
+</script>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+:root {
+  --ink: #2D3748;
+  --ink-soft: #4A4A4A;
+  --ink-light: #8A8A8A;
+  --accent: #2563AB;
+  --accent-lt: #3B82F6;
+  --accent-bg: #EFF6FF;
+  --cream: #FFFFFF;
+  --parchment: #F8F8F8;
+  --border: #E0E0E0;
+  --success: #27AE60;
+  --success-bg: #F0FFF4;
+  --warn: #E67E22;
+  --error: #C0392B;
+  --purple: #7B4F9E;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+  --max-w: 1080px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--ink); background: var(--cream); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+/* ── Skip link ── */
+.skip-link { position: absolute; left: -9999px; top: 0; z-index: 9999; padding: 10px 20px; background: var(--accent); color: white; font-weight: 600; text-decoration: none; border-radius: 0 0 8px 0; }
+.skip-link:focus { left: 0; }
+
+/* ── Navigation ── */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 4px 32px; height: auto; display: flex; align-items: center; justify-content: space-between; }
+.brand-logo { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); }
+.brand-logo img { height: 44px; width: auto; }
+.brand-a { color: #27AE60; text-decoration: none; }
+.nav-menu { display: flex; gap: 28px; align-items: center; }
+.nav-menu a { font-size: 0.875rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; transition: color 0.15s; }
+.nav-menu a:hover { color: var(--accent); }
+.nav-signin { padding: 8px 16px; border: 1.5px solid var(--border); border-radius: 8px; transition: all 0.15s; }
+.nav-signin:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
+.nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+.nav-hamburger span { display: block; width: 24px; height: 2.5px; background: var(--ink); border-radius: 2px; transition: all 0.2s; }
+.nav-cta { display: inline-flex; align-items: center; padding: 8px 20px; background: var(--accent); color: white !important; border-radius: 8px; font-weight: 600; font-size: 0.875rem; transition: background 0.15s; }
+.nav-cta:hover { background: var(--accent-lt); }
+
+/* ── Hero ── */
+.hero { padding: 140px 32px 48px; text-align: center; background: linear-gradient(180deg, var(--accent-bg) 0%, var(--cream) 100%); }
+.hero-inner { max-width: 720px; margin: 0 auto; }
+.hero-badge { display: inline-block; padding: 6px 16px; background: var(--accent); color: white; border-radius: 100px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 24px; }
+.hero h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.2; color: var(--ink); margin-bottom: 20px; }
+.hero p { font-size: 1.125rem; color: var(--ink-soft); max-width: 560px; margin: 0 auto 32px; line-height: 1.7; }
+.hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* ── Buttons ── */
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: var(--accent); color: white; border-radius: 10px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
+.btn-primary:hover { background: var(--accent-lt); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(37,99,171,0.3); }
+.btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: transparent; color: var(--ink); border-radius: 10px; font-weight: 600; font-size: 1rem; text-decoration: none; border: 1.5px solid var(--border); transition: all 0.15s; }
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+.btn-success { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: var(--success); color: white; border-radius: 10px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: all 0.2s; }
+.btn-success:hover { background: #219653; transform: translateY(-1px); }
+
+/* ── Sections ── */
+.section { padding: 40px 32px; }
+.section-inner { max-width: var(--max-w); margin: 0 auto; }
+.section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+.section-title { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.25rem); line-height: 1.3; color: var(--ink); margin-bottom: 16px; }
+.section-desc { font-size: 1rem; color: var(--ink-soft); max-width: 600px; line-height: 1.7; }
+.section-alt { background: var(--parchment); }
+
+/* ── Pricing Cards ── */
+.pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
+.pricing-grid--2 { grid-template-columns: repeat(2, 1fr); max-width: 780px; margin-left: auto; margin-right: auto; }
+.pricing-card { border-radius: 16px; border: 2px solid var(--border); padding: 36px 28px; position: relative; transition: border-color 0.2s; background: var(--cream); display: flex; flex-direction: column; align-items: center; }
+.pricing-card:hover { border-color: var(--accent); }
+.pricing-card.featured { border-color: var(--accent); background: linear-gradient(180deg, var(--accent-bg) 0%, var(--cream) 60%); }
+.pricing-card.featured::before { content: 'Most chosen'; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); padding: 4px 16px; background: var(--accent); color: white; border-radius: 100px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.06em; white-space: nowrap; }
+.pricing-name { font-family: var(--font-display); font-size: 1.25rem; color: var(--ink); margin-bottom: 4px; }
+.pricing-sub { font-size: 0.875rem; color: var(--ink-light); margin-bottom: 16px; font-style: italic; }
+.pricing-price { font-family: var(--font-display); font-size: 2.25rem; color: var(--accent); margin-bottom: 4px; }
+.pricing-price-note { font-size: 0.8125rem; color: var(--ink-light); margin-bottom: 24px; align-self: stretch; }
+.pricing-features { list-style: none; margin-bottom: 28px; flex: 1; text-align: left; align-self: stretch; }
+.pricing-features li { font-size: 0.875rem; color: var(--ink-soft); padding: 6px 0; padding-left: 24px; position: relative; }
+.pricing-features li::before { content: ''; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.pricing-btn { display: block; width: 100%; padding: 14px; text-align: center; border-radius: 10px; font-weight: 600; font-size: 0.9375rem; text-decoration: none; transition: all 0.15s; align-self: stretch; }
+.pricing-btn-primary { background: var(--accent); color: white; }
+.pricing-btn-primary:hover { background: var(--accent-lt); }
+.pricing-btn-secondary { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+.pricing-btn-secondary:hover { background: var(--accent-bg); }
+
+/* ── Sub-badge (Most Chosen on subscription) ── */
+.pricing-card.sub-featured { border-color: var(--success); background: linear-gradient(180deg, var(--success-bg) 0%, var(--cream) 60%); }
+.pricing-card.sub-featured::before { content: 'Most chosen'; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); padding: 4px 16px; background: var(--success); color: white; border-radius: 100px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.06em; white-space: nowrap; }
+.pricing-card.sub-featured .pricing-price { color: var(--success); }
+.pricing-card.sub-featured .pricing-features li::before { background: var(--success); }
+.pricing-btn-success { background: var(--success); color: white; }
+.pricing-btn-success:hover { background: #219653; }
+
+/* ── Section note ── */
+.section-note { margin-top: 28px; padding: 16px 20px; background: var(--accent-bg); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; font-size: 0.875rem; color: var(--ink-soft); line-height: 1.6; max-width: 720px; }
+.section-valve { margin-top: 20px; font-size: 0.9rem; color: var(--ink-light); font-style: italic; max-width: 580px; }
+
+/* ── Flashcard tiers ── */
+.flashcard-tiers { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 48px; }
+.flashcard-tier { border-radius: 12px; border: 1.5px solid var(--border); padding: 28px; background: var(--cream); position: relative; }
+.flashcard-tier.packs { border-color: var(--success); background: #f0faf4; }
+.flashcard-tier.premium { border-color: var(--accent); background: var(--accent-bg); }
+.tier-badge { position: absolute; top: -10px; right: 16px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; padding: 3px 10px; border-radius: 20px; }
+.tier-badge--free { background: var(--ink); color: #fff; }
+.tier-badge--onetime { background: var(--success); color: #fff; }
+.tier-badge--subscription { background: var(--accent); color: #fff; }
+.flashcard-tier h4 { font-family: var(--font-display); font-size: 1.125rem; margin-bottom: 4px; }
+.flashcard-tier .tier-price { font-size: 0.8125rem; color: var(--ink-light); margin-bottom: 4px; }
+.flashcard-tier .tier-price-note { font-size: 0.75rem; color: var(--ink-soft); margin-bottom: 16px; font-style: italic; }
+.flashcard-tier ul { list-style: none; }
+.flashcard-tier ul li { font-size: 0.875rem; color: var(--ink-soft); padding: 5px 0 5px 24px; position: relative; line-height: 1.6; }
+.flashcard-tier ul li::before { content: ''; position: absolute; left: 0; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.flashcard-tier.packs ul li::before { background: var(--success); }
+
+/* ── Homework info block ── */
+.homework-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px; max-width: 840px; margin-left: auto; margin-right: auto; }
+.hw-card { border-radius: 14px; border: 1.5px solid var(--border); padding: 32px; background: var(--cream); }
+.hw-card h3 { font-family: var(--font-display); font-size: 1.25rem; color: var(--ink); margin-bottom: 8px; }
+.hw-card .hw-price { font-family: var(--font-display); font-size: 2rem; color: var(--accent); margin-bottom: 4px; }
+.hw-card .hw-note { font-size: 0.8125rem; color: var(--ink-light); margin-bottom: 16px; }
+.hw-card p { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.7; }
+
+/* ── Reassessment teaser ── */
+.reassess-block { text-align: center; padding: 64px 32px; background: linear-gradient(180deg, var(--parchment) 0%, var(--cream) 100%); }
+.reassess-inner { max-width: 600px; margin: 0 auto; }
+.reassess-inner h2 { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2rem); color: var(--ink); margin-bottom: 16px; }
+.reassess-inner p { font-size: 1rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 8px; }
+.reassess-price { font-family: var(--font-display); font-size: 1.5rem; color: var(--accent); margin: 16px 0 28px; }
+
+/* ── Closing CTA ── */
+.cta-close { text-align: center; padding: 64px 32px; background: var(--accent-bg); }
+.cta-close-inner { max-width: 600px; margin: 0 auto; }
+.cta-close p { font-size: 1.0625rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 28px; }
+
+/* ── SR-only ── */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* ── Responsive: 768px ── */
+@media (max-width: 768px) {
+  .marco-img { height: auto !important; max-width: 60vw; }
+  .nav-inner { padding: 8px 16px; }
+  .brand-logo { font-size: 1.2rem; gap: 6px; }
+  .brand-logo img { height: 32px; }
+  .nav-hamburger { display: flex; }
+  .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; flex-direction: column; gap: 0; padding: 8px 0; border-bottom: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .nav-menu.open { display: flex; }
+  .nav-menu a { padding: 12px 32px; font-size: 1rem; }
+  .nav-menu a:hover { background: var(--parchment); }
+  .nav-signin { margin: 4px 32px; text-align: center; }
+  .nav-cta { margin: 8px 32px 12px; text-align: center; justify-content: center; display: flex; }
+  .hero { padding: 100px 20px 48px; }
+  .hero h1 { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+  .hero p { font-size: 1rem; }
+  .hero-actions { flex-direction: column; align-items: center; }
+  .hero-actions a { width: 100%; justify-content: center; box-sizing: border-box; max-width: 100%; }
+  .section { padding: 48px 20px; }
+  .pricing-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .pricing-grid--2 { grid-template-columns: 1fr; max-width: 420px; }
+  .flashcard-tiers { grid-template-columns: 1fr; }
+  .homework-grid { grid-template-columns: 1fr; max-width: 420px; }
+  .btn-primary, .btn-secondary, .btn-success, .pricing-btn { width: 100%; text-align: center; justify-content: center; box-sizing: border-box; }
+  img { max-width: 100%; height: auto; }
+}
+
+/* ── Responsive: 480px ── */
+@media (max-width: 480px) {
+  .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
+  .hero { padding: 90px 16px 40px; }
+  .hero h1 { font-size: 1.75rem; }
+  .section { padding: 40px 16px; }
+  .section-title { font-size: 1.4rem; }
+  .pricing-price { font-size: 2rem; }
+  .reassess-block { padding: 48px 16px; }
+  .cta-close { padding: 48px 16px; }
+}
+</style>
+<script src="/js/cookie-consent.js"></script>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- ── Navigation ── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade - Home" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"><span>LingoGr<span class="brand-a">A</span>de</span></a>
+    <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-menu">
+      <a href="index.html">Individual</a>
+      <a href="kids.html">Kids</a>
+      <a href="corporate.html">Corporate</a>
+      <a href="partners.html">Partners</a>
+      <a href="programs.html" class="nav-active">Programs</a>
+      <a href="shop.html">Shop</a>
+      <a href="https://app.lingograde.com/login" class="nav-signin">Sign In</a>
+      <a href="https://booking.lingograde.com/marco" class="nav-cta">Explore Assessments</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── 1. Hero ── -->
+<section class="hero" id="main">
+  <div class="hero-inner">
+    <div class="mb-24"><img src="assets/mascot/sliced-images/marco-mila-celebrating-highfive.webp?v=3" alt="Marco and Mila — LingoGrade Programs" class="marco-img" style="width:auto;height:350px;"></div>
+    <div class="hero-badge">LingoGrade Programs</div>
+    <h1>Deeper practice. Consistent progress. Real growth.</h1>
+    <p>Lessons, subscriptions, and flashcards — everything you need after your assessment.</p>
+    <div class="hero-actions">
+      <a href="#lessons" class="btn-primary">See All Programs</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── 2. Lessons ── -->
+<section class="section" id="lessons">
+  <div class="section-inner text-center">
+    <div class="section-label">1-on-1 Lessons</div>
+    <h2 class="section-title mx-auto">Pick up exactly where your assessment left off.</h2>
+    <p class="section-desc mx-auto">Every lesson is built around your report. Your assessor already knows your patterns — no warm-up, no wasted time.</p>
+
+    <div class="pricing-grid">
+
+      <!-- Single 15-min -->
+      <div class="pricing-card">
+        <div class="pricing-name">Single 15-min</div>
+        <div class="pricing-sub">Focused micro-session on one pattern</div>
+        <div class="pricing-price" data-eur="89.95" data-usd="89.95" data-chf="89.95" data-gbp="89.95">&euro;89.95</div>
+        <div class="pricing-price-note">Per session</div>
+        <ul class="pricing-features">
+          <li>One structural pattern</li>
+          <li>Targeted drills</li>
+          <li>Progress note added to your file</li>
+        </ul>
+        <a href="https://booking.lingograde.com/marco" class="pricing-btn pricing-btn-secondary">See Sessions</a>
+      </div>
+
+      <!-- Single 25-min -->
+      <div class="pricing-card">
+        <div class="pricing-name">Single 25-min</div>
+        <div class="pricing-sub">Full session, full depth</div>
+        <div class="pricing-price" data-eur="129.95" data-usd="129.95" data-chf="129.95" data-gbp="129.95">&euro;129.95</div>
+        <div class="pricing-price-note">Per session</div>
+        <ul class="pricing-features">
+          <li>2–3 structural patterns</li>
+          <li>Extended practice</li>
+          <li>Detailed session notes</li>
+          <li>Homework follow-up</li>
+        </ul>
+        <a href="https://booking.lingograde.com/marco" class="pricing-btn pricing-btn-secondary">See Sessions</a>
+      </div>
+
+      <!-- Stackable 15+15 -->
+      <div class="pricing-card">
+        <div class="pricing-name">Stackable 15+15</div>
+        <div class="pricing-sub">Two focused blocks, 5-min break</div>
+        <div class="pricing-price" data-eur="139.95" data-usd="139.95" data-chf="139.95" data-gbp="139.95">&euro;139.95</div>
+        <div class="pricing-price-note">Per double session</div>
+        <ul class="pricing-features">
+          <li>Everything in Single 15-min &times;2</li>
+          <li>Mandatory 5-min Lozanov break</li>
+          <li>Two patterns covered</li>
+        </ul>
+        <a href="https://booking.lingograde.com/marco" class="pricing-btn pricing-btn-secondary">See Sessions</a>
+      </div>
+
+      <!-- Stackable 15+25 -->
+      <div class="pricing-card featured">
+        <div class="pricing-name">Stackable 15+25</div>
+        <div class="pricing-sub">Maximum depth in one sitting</div>
+        <div class="pricing-price" data-eur="169.95" data-usd="169.95" data-chf="169.95" data-gbp="169.95">&euro;169.95</div>
+        <div class="pricing-price-note">Per double session</div>
+        <ul class="pricing-features">
+          <li>Everything in both singles</li>
+          <li>5-min break between sessions</li>
+          <li>3+ patterns covered</li>
+          <li>Priority scheduling</li>
+        </ul>
+        <a href="https://booking.lingograde.com/marco" class="pricing-btn pricing-btn-primary">See Sessions</a>
+      </div>
+
+    </div>
+
+    <div class="section-note">
+      Sessions are offered on selected days. Availability is updated in real time.
+    </div>
+    <p class="section-valve">Not ready for lessons yet? Your report and homework are always waiting for you.</p>
+  </div>
+</section>
+
+<!-- ── 3. Subscriptions ── -->
+<section class="section section-alt" id="subscriptions">
+  <div class="section-inner text-center">
+    <div class="section-label">Subscriptions</div>
+    <h2 class="section-title mx-auto">Consistent practice. Consistent progress.</h2>
+
+    <div class="pricing-grid pricing-grid--2">
+
+      <!-- Weekly Plan -->
+      <div class="pricing-card">
+        <div class="pricing-name">Weekly Plan</div>
+        <div class="pricing-sub">3 lessons/week + 1 homework check included</div>
+        <div class="pricing-price" data-eur="89.95" data-usd="89.95" data-chf="89.95" data-gbp="89.95" style="font-size:1.75rem;">from &euro;89.95<span style="font-family:var(--font-body);font-size:1rem;color:var(--ink-light);font-weight:400;">/lesson</span></div>
+        <div class="pricing-price-note">Billed monthly. Lessons scheduled weekly.</div>
+        <ul class="pricing-features">
+          <li>3 scheduled lessons per week</li>
+          <li>1 homework check included</li>
+          <li>Flexible scheduling</li>
+          <li>Monthly progress review</li>
+        </ul>
+        <a href="https://booking.lingograde.com/marco" class="pricing-btn pricing-btn-secondary">Meet Your Assessor</a>
+      </div>
+
+      <!-- Complete Program -->
+      <div class="pricing-card sub-featured">
+        <div class="pricing-name">Complete Program</div>
+        <div class="pricing-sub">Everything. All-inclusive.</div>
+        <div class="pricing-price" data-eur="999.95" data-usd="999.95" data-chf="999.95" data-gbp="999.95" style="font-size:1.75rem;">&euro;999.95<span style="font-family:var(--font-body);font-size:1rem;color:var(--ink-light);font-weight:400;">/month</span></div>
+        <div class="pricing-price-note"><span class="cur-text" data-amount="249.95">EUR 249.95</span>/week &middot; Up to 25 lessons/month</div>
+        <ul class="pricing-features">
+          <li>Up to 25 lessons per month</li>
+          <li>Up to 25 homework checks included</li>
+          <li>Priority scheduling</li>
+          <li>Monthly reassessment included</li>
+          <li>Premium flashcard access</li>
+          <li>Dedicated assessor</li>
+        </ul>
+        <a href="https://booking.lingograde.com/marco" class="pricing-btn pricing-btn-success">Meet Your Assessor</a>
+      </div>
+
+    </div>
+
+    <p class="section-valve" style="text-align:center;">Would it be wrong to see how much changes in 8 weeks?</p>
+  </div>
+</section>
+
+<!-- ── 4. Flashcards ── -->
+<section class="section" id="flashcards">
+  <div class="section-inner text-center">
+    <div class="section-label">Flashcard App</div>
+    <h2 class="section-title mx-auto">Your patterns. Your cards. Your pace.</h2>
+
+    <div class="flashcard-tiers">
+
+      <!-- Free -->
+      <div class="flashcard-tier">
+        <span class="tier-badge tier-badge--free">Free Forever</span>
+        <h4>Free Forever</h4>
+        <div class="tier-price" data-eur="0" data-usd="0" data-chf="0" data-gbp="0">&euro;0</div>
+        <div class="tier-price-note">No card required</div>
+        <ul>
+          <li>50 starter cards</li>
+          <li>Spaced repetition</li>
+          <li>Basic statistics</li>
+        </ul>
+      </div>
+
+      <!-- Card Packs -->
+      <div class="flashcard-tier packs">
+        <span class="tier-badge tier-badge--onetime">One-time</span>
+        <h4>Card Packs</h4>
+        <div class="tier-price" data-eur="4.95" data-usd="4.95" data-chf="4.95" data-gbp="4.95">from &euro;4.95</div>
+        <div class="tier-price-note">Per pack, no subscription</div>
+        <ul>
+          <li>Assessment-generated cards</li>
+          <li>Language-specific decks</li>
+          <li>Unlimited reviews</li>
+        </ul>
+      </div>
+
+      <!-- Premium -->
+      <div class="flashcard-tier premium">
+        <span class="tier-badge tier-badge--subscription">Monthly</span>
+        <h4>Premium</h4>
+        <div class="tier-price" data-eur="4.95" data-usd="4.95" data-chf="4.95" data-gbp="4.95">&euro;4.95<span style="font-weight:400;">/mo</span></div>
+        <div class="tier-price-note">Cancel any time</div>
+        <ul>
+          <li>Unlimited cards</li>
+          <li>AI-generated decks</li>
+          <li>Priority support</li>
+          <li>Export disabled — learning stays in-app</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 5. Homework ── -->
+<section class="section section-alt" id="homework">
+  <div class="section-inner text-center">
+    <div class="section-label">Homework Programme</div>
+    <h2 class="section-title mx-auto">Detailed correction. 55-minute turnaround.</h2>
+    <p class="section-desc mx-auto">Every homework submission is corrected by your original assessor — the person who already knows your patterns.</p>
+
+    <div class="homework-grid">
+
+      <div class="hw-card">
+        <h3>Standalone</h3>
+        <div class="hw-price" data-eur="29.95" data-usd="29.95" data-chf="29.95" data-gbp="29.95">&euro;29.95</div>
+        <div class="hw-note">Available within 2 weeks of assessment</div>
+        <p>Submit your completed homework and receive a detailed written correction — every pattern flagged, every suggestion explained.</p>
+      </div>
+
+      <div class="hw-card">
+        <h3>With Subscription</h3>
+        <div class="hw-price" data-eur="9.95" data-usd="9.95" data-chf="9.95" data-gbp="9.95">&euro;9.95</div>
+        <div class="hw-note">1st submission included free with any subscription</div>
+        <p>Additional submissions at <span class="cur-text" data-amount="9.95">EUR 9.95</span> each. Corrected by the same assessor who knows your file.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 6. Reassessment teaser ── -->
+<div class="reassess-block">
+  <div class="reassess-inner">
+    <h2>Ready to measure your progress?</h2>
+    <p>Reassessment available 8 weeks after your original assessment.</p>
+    <div class="reassess-price" data-eur="139.95" data-usd="139.95" data-chf="139.95" data-gbp="139.95">&euro;139.95</div>
+    <a href="https://booking.lingograde.com/marco" class="btn-primary">See Where I Stand Now &rarr;</a>
+    <p class="c-ink-light fs-smm mt-8">Not ready? No problem &mdash; it&rsquo;ll be here whenever you are.</p>
+  </div>
+</div>
+
+<!-- ── 7. Closing CTA ── -->
+<div class="cta-close">
+  <div class="cta-close-inner">
+    <p>Not sure where to start? Your assessment report has personalised recommendations for your next step.</p>
+    <a href="index.html#pricing" class="btn-secondary">View Assessment Options &rarr;</a>
+  </div>
+</div>
+
+<!-- ── Footer ── -->
+<footer class="site-footer">
+  <div class="footer-brand">LingoGr<span class="brand-a">A</span>de</div>
+  <p class="footer-tagline">Professional Language Assessment</p>
+  <div class="footer-nav">
+    <a href="index.html" class="footer-link">Home</a>
+    <a href="index.html#languages" class="footer-link">Languages</a>
+    <a href="index.html#pricing" class="footer-link">Pricing</a>
+    <a href="teachers.html" class="footer-link">Teachers</a>
+    <a href="partners.html" class="footer-link">Partners</a>
+    <a href="shop.html" class="footer-link">Shop</a>
+    <a href="programs.html" class="footer-link">Programs</a>
+    <a href="reviews.html" class="footer-link">Reviews</a>
+    <a href="mailto:info@lingograde.com" class="footer-link">Contact</a>
+  </div>
+  <div class="footer-legal">
+    <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+    <a href="terms-of-service.html" class="footer-legal-link">Terms of Service</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('.nav-menu')?.classList.remove('open');
+    var target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+
+<script>
+// Currency geo-detection — IP geolocation with timezone fallback
+(function(){
+  var COUNTRY_CURRENCY = {US:'USD',GB:'GBP',CH:'CHF',LI:'CHF'};
+  var SYMBOLS = {EUR:'\u20AC',USD:'$',GBP:'\u00A3',CHF:'CHF\u00A0'};
+
+  function tzFallback() {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    if (/America\/(New_York|Chicago|Denver|Los_Angeles|Anchorage|Phoenix|Detroit|Indiana|Kentucky|Boise|Juneau|Sitka|Yakutat|Nome|Adak|Menominee|North_Dakota)|Pacific\/Honolulu|US\//.test(tz)) return 'USD';
+    if (/Europe\/London|Europe\/Belfast|Europe\/Isle_of_Man|Europe\/Jersey|Europe\/Guernsey/.test(tz)) return 'GBP';
+    if (/Europe\/Zurich/.test(tz)) return 'CHF';
+    return 'EUR';
+  }
+
+  function applyPrices(code) {
+    var symbol = SYMBOLS[code] || SYMBOLS.EUR;
+    window._lgCurrency = symbol;
+    window._lgCurrencyCode = code;
+
+    function resolvePrice(el) {
+      return el.getAttribute('data-' + code.toLowerCase()) || el.getAttribute('data-eur');
+    }
+
+    document.querySelectorAll('.pricing-price[data-eur]').forEach(function(el){
+      // Preserve suffix spans (e.g. /month, /lesson)
+      var span = el.querySelector('span');
+      if (span) {
+        el.innerHTML = symbol + resolvePrice(el) + ' ' + span.outerHTML;
+      } else {
+        el.textContent = symbol + resolvePrice(el);
+      }
+    });
+
+    document.querySelectorAll('.hw-price[data-eur]').forEach(function(el){
+      el.textContent = symbol + resolvePrice(el);
+    });
+
+    document.querySelectorAll('.tier-price[data-eur]').forEach(function(el){
+      var span = el.querySelector('span');
+      if (span) {
+        el.innerHTML = symbol + resolvePrice(el) + span.outerHTML;
+      } else {
+        // Preserve "from" prefix for card packs
+        var raw = el.getAttribute('data-' + code.toLowerCase()) || el.getAttribute('data-eur');
+        var isFrom = parseFloat(raw) < 10 && el.textContent.indexOf('from') !== -1;
+        el.textContent = (isFrom ? 'from ' : '') + symbol + raw;
+      }
+    });
+
+    document.querySelectorAll('.reassess-price[data-eur]').forEach(function(el){
+      el.textContent = symbol + resolvePrice(el);
+    });
+
+    document.querySelectorAll('.cur-text[data-amount]').forEach(function(el){
+      el.textContent = symbol + el.getAttribute('data-amount');
+    });
+  }
+
+  applyPrices(tzFallback());
+  fetch('https://api.country.is/')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var cc = d && d.country;
+      if (cc && COUNTRY_CURRENCY[cc]) applyPrices(COUNTRY_CURRENCY[cc]);
+    })
+    .catch(function(){});
+})();
+</script>
+
+</body>
+</html>
