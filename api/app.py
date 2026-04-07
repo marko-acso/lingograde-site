@@ -28,6 +28,7 @@ from free_bot_prompt import (
     build_turn_message as free_bot_turn_message,
 )
 from mini_report import generate_mini_report
+from invoice_generator import generate_invoice, get_invoice_pdf, get_invoices_by_email
 from bot_store import (
     save_analysis, get_analysis,
     save_assessment, get_assessment, update_assessment,
@@ -42,6 +43,12 @@ from db_pool import init_pool, get_cursor
 from student_routes import student_bp
 from dashboard_routes import dashboard_bp
 from auth import require_auth
+
+try:
+    import drip_engine
+    _DRIP_ENABLED = True
+except Exception:
+    _DRIP_ENABLED = False
 
 app = Flask(__name__)
 CORS(
@@ -436,6 +443,18 @@ def assess_turn():
             result=result,
         )
 
+        if _DRIP_ENABLED:
+            try:
+                cefr = (result or {}).get("cefr_level", "")
+                drip_engine.enqueue_post_assessment(
+                    email=session["email"],
+                    language=session["lang"],
+                    cefr_level=cefr,
+                    assess_id=assess_id,
+                )
+            except Exception:
+                pass  # Drip failure must not break assessment response
+
         return jsonify({
             "response": bot_response,
             "complete": True,
@@ -490,6 +509,27 @@ def stripe_webhook():
         matched_id = find_assessment_by_payment(pi["id"])
         if matched_id:
             update_assessment(matched_id, payment_confirmed=True)
+
+        # Generate invoice for direct PaymentIntent payments
+        try:
+            customer_email = (pi.get("receipt_email")
+                              or pi.get("metadata", {}).get("email", ""))
+            if customer_email and pi.get("amount"):
+                generate_invoice(
+                    customer_email=customer_email,
+                    customer_name=pi.get("metadata", {}).get("customer_name"),
+                    line_items=[{
+                        "description": "LingoGrade Bot Assessment",
+                        "quantity": 1,
+                        "unit_price_cents": pi["amount"],
+                    }],
+                    total_cents=pi["amount"],
+                    currency=(pi.get("currency") or "eur").upper(),
+                    stripe_payment_intent_id=pi["id"],
+                    product_type="bot_assessment",
+                )
+        except Exception:
+            pass  # Invoice failure must not break webhook
 
     elif event["type"] == "checkout.session.completed":
         cs = event["data"]["object"]
@@ -611,12 +651,114 @@ def stripe_webhook():
                 except Exception:
                     pass  # Email failure should not block webhook response
 
+        elif meta.get("product_type") == "subscription":
+            customer_email = cs.get("customer_email") or cs.get("customer_details", {}).get("email", "")
+            if customer_email and _DRIP_ENABLED:
+                try:
+                    with get_cursor() as cur:
+                        cur.execute("SELECT id FROM students WHERE email = %s", (customer_email,))
+                        student = cur.fetchone()
+                    if student:
+                        sub_meta = cs.get("metadata", {})
+                        drip_engine.enqueue_subscriber_welcome(
+                            email=customer_email,
+                            student_id=str(student["id"]),
+                            subscription_tier=sub_meta.get("tier", "weekly"),
+                            first_session_date=sub_meta.get("first_session_date", "TBD"),
+                            first_session_time=sub_meta.get("first_session_time", "TBD"),
+                            assessor_name="Marco",
+                            homework_included=True,
+                        )
+                except Exception:
+                    pass  # Drip failure must not break webhook
+
         else:
             matched_id = find_assessment_by_payment(cs["id"])
             if matched_id:
                 update_assessment(matched_id, payment_confirmed=True)
 
+        # ── Auto-invoice for ALL checkout sessions ──
+        try:
+            customer_email = (cs.get("customer_email")
+                              or cs.get("customer_details", {}).get("email", ""))
+            customer_name = cs.get("customer_details", {}).get("name")
+            amount = cs.get("amount_total", 0)
+            currency = (cs.get("currency") or "eur").upper()
+            product_type = meta.get("product_type", "unknown")
+
+            if customer_email and amount:
+                # Build description from product type
+                descriptions = {
+                    "kids_assessment": f"Kids Assessment — {meta.get('package', 'standard').title()}",
+                    "homework": f"Homework Check — Type {meta.get('homework_type', 'A')}",
+                    "mega_bundle": "LingoGrade Mega Bundle",
+                    "accessory": f"LingoGrade {meta.get('product', 'item').title()}",
+                }
+                desc = descriptions.get(product_type, f"LingoGrade — {product_type}")
+
+                generate_invoice(
+                    customer_email=customer_email,
+                    customer_name=customer_name,
+                    line_items=[{
+                        "description": desc,
+                        "quantity": 1,
+                        "unit_price_cents": amount,
+                    }],
+                    total_cents=amount,
+                    currency=currency,
+                    stripe_session_id=cs["id"],
+                    product_type=product_type,
+                )
+        except Exception:
+            pass  # Invoice failure must not break webhook
+
     return jsonify({"status": "ok"})
+
+
+# ═══════════════════════════════════════════════════════════════════
+# Invoice endpoints
+# ═══════════════════════════════════════════════════════════════════
+
+@app.route("/v1/invoice/<invoice_id>/pdf", methods=["GET"])
+@require_auth
+def download_invoice(invoice_id):
+    pdf_path = get_invoice_pdf(invoice_id)
+    if not pdf_path or not os.path.isfile(pdf_path):
+        return jsonify({"error": "Invoice not found"}), 404
+    return send_file(
+        pdf_path,
+        mimetype="application/pdf",
+        as_attachment=True,
+        download_name=os.path.basename(pdf_path),
+    )
+
+
+@app.route("/v1/invoices", methods=["GET"])
+@require_auth
+def list_invoices():
+    student_id = g.student_id
+    try:
+        with get_cursor() as cur:
+            cur.execute("SELECT email FROM students WHERE id = %s::uuid", (student_id,))
+            row = cur.fetchone()
+            if not row:
+                return jsonify([])
+            email = row["email"]
+    except Exception:
+        return jsonify([])
+
+    invoices = get_invoices_by_email(email)
+    return jsonify([
+        {
+            "id": str(inv["id"]),
+            "number": f"{inv['invoice_number']:010d}",
+            "date": inv["issued_at"].isoformat(),
+            "total": inv["total_cents"] / 100,
+            "currency": inv["currency"],
+            "product": inv["product_type"],
+        }
+        for inv in invoices
+    ])
 
 
 # ═══════════════════════════════════════════════════════════════════
@@ -995,6 +1137,62 @@ def checkout_mega_bundle():
         return jsonify({"error": str(e)}), 400
 
     return jsonify({"checkout_url": session.url, "session_id": session.id})
+
+
+# ═══════════════════════════════════════════════════════════════════
+# Endpoint: POST /api/partner-apply — Partner application
+# ═══════════════════════════════════════════════════════════════════
+
+@app.route("/api/partner-apply", methods=["POST"])
+def partner_apply():
+    data = request.get_json(force=True)
+    name = (data.get("name") or "").strip()
+    email = (data.get("email") or "").strip().lower()
+    phone = (data.get("phone") or "").strip()
+    institution = (data.get("institution") or "").strip()
+    country = (data.get("country") or "").strip()
+    languages = (data.get("languages") or "").strip()
+    referral_source = (data.get("referral_source") or "").strip()
+
+    if not name or not email or "@" not in email:
+        return jsonify({"error": "Name and valid email required"}), 400
+
+    first_name = name.split()[0] if name else ""
+
+    try:
+        with get_cursor() as cur:
+            cur.execute(
+                """INSERT INTO partner_applications
+                   (name, email, phone, institution, country, languages, referral_source)
+                   VALUES (%s, %s, %s, %s, %s, %s, %s)
+                   ON CONFLICT (email) DO UPDATE SET
+                       name = EXCLUDED.name,
+                       phone = EXCLUDED.phone,
+                       institution = EXCLUDED.institution,
+                       country = EXCLUDED.country,
+                       languages = EXCLUDED.languages,
+                       referral_source = EXCLUDED.referral_source,
+                       applied_at = NOW()
+                   RETURNING id""",
+                (name, email, phone, institution, country, languages, referral_source),
+            )
+            row = cur.fetchone()
+            app_id = row[0] if row else None
+    except Exception as e:
+        app.logger.error(f"partner_apply DB error: {e}")
+        return jsonify({"error": "Application could not be saved"}), 500
+
+    # Kick off partner onboarding drip sequence
+    if _DRIP_ENABLED:
+        try:
+            drip_engine.enqueue_partner_onboarding(
+                email=email,
+                first_name=first_name,
+            )
+        except Exception as e:
+            app.logger.error(f"partner_apply drip error: {e}")
+
+    return jsonify({"ok": True}), 200
 
 
 if __name__ == "__main__":

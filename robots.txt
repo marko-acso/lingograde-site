@@ -2,6 +2,9 @@ User-agent: *
 Allow: /
 
 Disallow: /dashboard
+Disallow: /homework
+Disallow: /client-memory
+Disallow: /teacher-tools
 Disallow: /components/
 
 Sitemap: https://www.lingograde.com/sitemap.xml

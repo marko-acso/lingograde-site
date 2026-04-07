@@ -955,7 +955,12 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       </div>
       <h3>Partner Application</h3>
       <p class="form-subtitle">A few details about you and your network. We use this to personalize your onboarding experience.</p>
-      <form action="https://app.lingograde.com/api/partner/apply" method="POST">
+      <div id="partnerSuccess" style="display:none;padding:32px 0;text-align:center;">
+        <img src="assets/mascot/marco-thumbsup.webp?v=3" alt="Marco" style="height:80px;margin-bottom:16px;" loading="lazy">
+        <h3>Application received!</h3>
+        <p>We'll review it and get back to you within 24 hours.</p>
+      </div>
+      <form id="partnerForm" onsubmit="return submitPartnerForm(event)"  method="POST">
         <div class="form-group">
           <label for="name">Full name</label>
           <input type="text" id="name" name="name" required placeholder="Your full name">
@@ -1045,7 +1050,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <input type="checkbox" id="terms" name="terms" required>
           <label for="terms">I agree to the <a class="c-accent" href="terms-of-service.html" style="text-decoration:underline;">LingoGrade Partner Terms</a></label>
         </div>
-        <button type="submit" class="form-submit">Submit Application</button>
+        <button type="submit" class="form-submit" id="partnerBtn">Submit Application</button>
       </form>
       <!-- Trust badges -->
       <div class="form-trust">
@@ -1362,6 +1367,34 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     })
     .catch(function(){});
 })();
+</script>
+<script>
+function submitPartnerForm(e) {
+  e.preventDefault();
+  var form = document.getElementById('partnerForm');
+  var btn = document.getElementById('partnerBtn');
+  var data = {};
+  new FormData(form).forEach(function(v, k) { data[k] = v; });
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  fetch('https://app.lingograde.com/api/partner-apply', {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {'Content-Type': 'application/json'}
+  }).then(function(r) {
+    if (r.ok) {
+      form.style.display = 'none';
+      document.getElementById('partnerSuccess').style.display = 'block';
+    } else {
+      btn.textContent = 'That didn\u2019t go through \u2014 please try again.';
+      btn.disabled = false;
+    }
+  }).catch(function() {
+    btn.textContent = 'That didn\u2019t go through \u2014 please try again.';
+    btn.disabled = false;
+  });
+  return false;
+}
 </script>
 <script src="js/marco-chat.js" defer></script>
 <script>

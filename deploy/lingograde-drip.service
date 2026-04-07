@@ -1,0 +1,20 @@
+[Unit]
+Description=LingoGrade Drip Email Worker
+After=network.target postgresql.service
+Requires=network.target
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/var/www/lingograde-api
+ExecStart=/var/www/lingograde-api/venv/bin/python drip_worker.py
+Restart=always
+RestartSec=30
+Environment=DATABASE_URL=placeholder
+Environment=RESEND_API_KEY=placeholder
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=lingograde-drip
+
+[Install]
+WantedBy=multi-user.target
