@@ -1186,6 +1186,7 @@ def partner_apply():
 
     try:
         with get_cursor() as cur:
+            cur.execute("SET LOCAL row_security = off")
             # Check for existing application
             cur.execute(
                 "SELECT id FROM partner_applications WHERE email = %s",
