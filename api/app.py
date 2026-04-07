@@ -1174,22 +1174,30 @@ def partner_apply():
 
     first_name = name.split()[0] if name else ""
 
+    # Build message from extra fields not in the table schema
+    msg_parts = []
+    if phone:
+        msg_parts.append(f"Phone: {phone}")
+    if institution:
+        msg_parts.append(f"Background: {institution}")
+    if referral_source:
+        msg_parts.append(f"Referral source: {referral_source}")
+    message = "\n".join(msg_parts) or None
+
     try:
         with get_cursor() as cur:
             cur.execute(
                 """INSERT INTO partner_applications
-                   (name, email, phone, institution, country, languages, referral_source)
-                   VALUES (%s, %s, %s, %s, %s, %s, %s)
+                   (name, email, country, languages, message)
+                   VALUES (%s, %s, %s, %s, %s)
                    ON CONFLICT (email) DO UPDATE SET
                        name = EXCLUDED.name,
-                       phone = EXCLUDED.phone,
-                       institution = EXCLUDED.institution,
                        country = EXCLUDED.country,
                        languages = EXCLUDED.languages,
-                       referral_source = EXCLUDED.referral_source,
-                       applied_at = NOW()
+                       message = EXCLUDED.message,
+                       updated_at = NOW()
                    RETURNING id""",
-                (name, email, phone, institution, country, languages, referral_source),
+                (name, email, country, languages, message),
             )
             row = cur.fetchone()
             app_id = row[0] if row else None
