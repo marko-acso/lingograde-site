@@ -1169,35 +1169,31 @@ def partner_apply():
         msg_parts.append(f"Referral source: {referral_source}")
     message = "\n".join(msg_parts) or None
 
+    # Use Supabase REST API with service_role key to bypass RLS
+    sb_url = os.environ.get("SUPABASE_URL", "https://sbfjhsfvsbyjguplywfj.supabase.co")
+    sb_key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "")
+    if not sb_key:
+        app.logger.error("partner_apply: SUPABASE_SERVICE_ROLE_KEY not set")
+        return jsonify({"error": "Application could not be saved"}), 500
+
     try:
-        with get_cursor() as cur:
-            cur.execute("SET LOCAL row_security = off")
-            # Check for existing application
-            cur.execute(
-                "SELECT id FROM partner_applications WHERE email = %s",
-                (email,),
-            )
-            existing = cur.fetchone()
-            if existing:
-                cur.execute(
-                    """UPDATE partner_applications
-                       SET name = %s, country = %s, languages = %s,
-                           message = %s, updated_at = NOW()
-                       WHERE email = %s RETURNING id""",
-                    (name, country, languages, message, email),
-                )
-            else:
-                cur.execute(
-                    """INSERT INTO partner_applications
-                       (name, email, country, languages, message)
-                       VALUES (%s, %s, %s, %s, %s)
-                       RETURNING id""",
-                    (name, email, country, languages, message),
-                )
-            row = cur.fetchone()
-            app_id = row[0] if row else None
+        resp = http_requests.post(
+            f"{sb_url}/rest/v1/partner_applications",
+            json={"name": name, "email": email, "country": country,
+                  "languages": languages, "message": message},
+            headers={
+                "apikey": sb_key,
+                "Authorization": f"Bearer {sb_key}",
+                "Content-Type": "application/json",
+                "Prefer": "return=representation",
+            },
+            timeout=10,
+        )
+        if resp.status_code not in (200, 201):
+            app.logger.error(f"partner_apply Supabase error: {resp.status_code} {resp.text}")
+            return jsonify({"error": "Application could not be saved"}), 500
     except Exception as e:
-        app.logger.error(f"partner_apply DB error: {e}")
+        app.logger.error(f"partner_apply error: {e}")
         return jsonify({"error": "Application could not be saved"}), 500
 
     # Kick off partner onboarding drip sequence
