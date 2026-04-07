@@ -1,5 +1,9 @@
 {
   "cleanUrls": true,
+  "redirects": [
+    { "source": "/dashboard", "destination": "https://app.lingograde.com/login?redirect=dashboard", "permanent": true },
+    { "source": "/homework", "destination": "https://app.lingograde.com/login?redirect=homework", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
