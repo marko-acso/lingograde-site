@@ -1171,19 +1171,28 @@ def partner_apply():
 
     try:
         with get_cursor() as cur:
+            # Check for existing application
             cur.execute(
-                """INSERT INTO partner_applications
-                   (name, email, country, languages, message)
-                   VALUES (%s, %s, %s, %s, %s)
-                   ON CONFLICT (email) DO UPDATE SET
-                       name = EXCLUDED.name,
-                       country = EXCLUDED.country,
-                       languages = EXCLUDED.languages,
-                       message = EXCLUDED.message,
-                       updated_at = NOW()
-                   RETURNING id""",
-                (name, email, country, languages, message),
+                "SELECT id FROM partner_applications WHERE email = %s",
+                (email,),
             )
+            existing = cur.fetchone()
+            if existing:
+                cur.execute(
+                    """UPDATE partner_applications
+                       SET name = %s, country = %s, languages = %s,
+                           message = %s, updated_at = NOW()
+                       WHERE email = %s RETURNING id""",
+                    (name, country, languages, message, email),
+                )
+            else:
+                cur.execute(
+                    """INSERT INTO partner_applications
+                       (name, email, country, languages, message)
+                       VALUES (%s, %s, %s, %s, %s)
+                       RETURNING id""",
+                    (name, email, country, languages, message),
+                )
             row = cur.fetchone()
             app_id = row[0] if row else None
     except Exception as e:
