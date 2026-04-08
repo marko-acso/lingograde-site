@@ -5,7 +5,10 @@ Flask microservice, deployed behind Caddy at api.lingograde.com.
 
 import json
 import os
+import threading
+import time
 import uuid
+from collections import defaultdict
 from datetime import datetime, timezone
 
 import anthropic
@@ -34,6 +37,7 @@ from bot_store import (
     save_assessment, get_assessment, update_assessment,
     find_assessment_by_payment,
     save_free_bot, get_free_bot, update_free_bot, count_free_bot_by_ip,
+    cleanup_mem as _bot_store_cleanup,
 )
 
 load_dotenv()
@@ -65,6 +69,57 @@ init_pool(app)
 app.register_blueprint(student_bp)
 app.register_blueprint(dashboard_bp)
 
+# ── Simple in-memory rate limiter ──
+class _RateLimiter:
+    """Token-bucket rate limiter keyed by IP. Thread-safe."""
+    def __init__(self):
+        self._buckets = defaultdict(list)  # key -> [timestamp, ...]
+        self._lock = threading.Lock()
+
+    def is_allowed(self, key, max_requests, window_seconds):
+        now = time.time()
+        cutoff = now - window_seconds
+        with self._lock:
+            bucket = self._buckets[key]
+            # Prune old entries
+            self._buckets[key] = [t for t in bucket if t > cutoff]
+            if len(self._buckets[key]) >= max_requests:
+                return False
+            self._buckets[key].append(now)
+            return True
+
+    def cleanup(self, max_age=86400):
+        """Remove stale keys older than max_age seconds."""
+        now = time.time()
+        cutoff = now - max_age
+        with self._lock:
+            stale = [k for k, v in self._buckets.items() if not v or v[-1] < cutoff]
+            for k in stale:
+                del self._buckets[k]
+
+_limiter = _RateLimiter()
+
+def _get_client_ip():
+    return request.headers.get("X-Forwarded-For", request.remote_addr or "").split(",")[0].strip()
+
+_ALLOWED_ORIGINS = {
+    "https://www.lingograde.com",
+    "https://app.lingograde.com",
+    os.environ.get("CORS_ORIGIN", "https://www.lingograde.com"),
+}
+
+@app.before_request
+def _csrf_origin_check():
+    """Block state-changing requests from unknown origins (CSRF protection)."""
+    if request.method in ("GET", "HEAD", "OPTIONS"):
+        return
+    # Stripe webhooks use Stripe-Signature, not Origin
+    if request.path.startswith("/v1/webhook"):
+        return
+    origin = request.headers.get("Origin", "")
+    if origin and origin not in _ALLOWED_ORIGINS:
+        abort(403, description="Origin not allowed")
+
 stripe.api_key = os.environ["STRIPE_SECRET_KEY"]
 STRIPE_WEBHOOK_SECRET = os.environ.get("STRIPE_WEBHOOK_SECRET", "")
 REPORT_DIR = os.environ.get("REPORT_DIR", "/tmp/lingograde-reports")
@@ -81,6 +136,10 @@ claude = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
 @app.route("/v1/analyse", methods=["POST"])
 def analyse():
+    ip = _get_client_ip()
+    if not _limiter.is_allowed(f"analyse:{ip}", max_requests=10, window_seconds=86400):
+        return jsonify({"error": "rate_limit", "message": "Too many requests. Please try again tomorrow."}), 429
+
     data = request.get_json(force=True)
     text = (data.get("text") or "").strip()
     lang = data.get("lang", "en")
@@ -302,6 +361,10 @@ def free_bot_complete(bot_id):
 
 @app.route("/v1/payment/intent", methods=["POST"])
 def create_payment_intent():
+    ip = _get_client_ip()
+    if not _limiter.is_allowed(f"payment:{ip}", max_requests=10, window_seconds=3600):
+        return jsonify({"error": "rate_limit", "message": "Too many payment attempts. Please try again later."}), 429
+
     data = request.get_json(force=True)
     email = (data.get("email") or "").strip()
     session_id = data.get("session_id", "")
@@ -779,6 +842,9 @@ def frontend_config():
 
 @app.route("/health", methods=["GET"])
 def health():
+    # Piggyback periodic cleanup on health checks
+    _limiter.cleanup()
+    _bot_store_cleanup()
     return jsonify({"status": "ok", "service": "lingograde-bot-api"})
 
 
@@ -807,6 +873,10 @@ ACCESSORY_CATALOG = {
 
 @app.route("/v1/checkout/accessory", methods=["POST"])
 def checkout_accessory():
+    ip = _get_client_ip()
+    if not _limiter.is_allowed(f"checkout:{ip}", max_requests=15, window_seconds=3600):
+        return jsonify({"error": "rate_limit", "message": "Too many checkout attempts. Please try again later."}), 429
+
     data = request.get_json(force=True)
     email = (data.get("email") or "").strip()
     product = (data.get("product") or "").strip().lower()
@@ -931,6 +1001,10 @@ def sticker_verify():
     except ValueError:
         return jsonify({"error": "Invalid coordinates"}), 400
 
+    import math
+    if not (-90 <= lat <= 90) or not (-180 <= lng <= 180) or math.isnan(lat) or math.isnan(lng):
+        return jsonify({"error": "Coordinates out of range"}), 400
+
     # Velocity throttle: max 3/day per student
     try:
         with get_cursor() as cur:
@@ -1035,6 +1109,10 @@ ALLOWED_CURRENCIES = {"eur", "usd", "gbp", "chf"}
 
 @app.route("/v1/checkout/kids", methods=["POST"])
 def checkout_kids():
+    ip = _get_client_ip()
+    if not _limiter.is_allowed(f"checkout:{ip}", max_requests=15, window_seconds=3600):
+        return jsonify({"error": "rate_limit", "message": "Too many checkout attempts. Please try again later."}), 429
+
     data = request.get_json(force=True)
     parent_email = (data.get("parent_email") or "").strip()
     child_name = (data.get("child_name") or "").strip()
@@ -1145,6 +1223,10 @@ def checkout_mega_bundle():
 
 @app.route("/api/partner-apply", methods=["POST"])
 def partner_apply():
+    ip = _get_client_ip()
+    if not _limiter.is_allowed(f"partner:{ip}", max_requests=3, window_seconds=86400):
+        return jsonify({"error": "rate_limit", "message": "Too many applications. Please try again tomorrow."}), 429
+
     data = request.get_json(force=True)
     name = (data.get("name") or "").strip()
     email = (data.get("email") or "").strip().lower()
@@ -1210,4 +1292,4 @@ def partner_apply():
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5050, debug=True)
+    app.run(host="127.0.0.1", port=5050, debug=os.environ.get("FLASK_DEBUG", "").lower() == "true")

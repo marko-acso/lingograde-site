@@ -5,12 +5,22 @@ Will be replaced by OAuth (Google + Apple) in a future phase.
 """
 
 import functools
+import logging
 import os
 
 from flask import abort, g, request
 from itsdangerous import BadSignature, TimestampSigner
 
-_SECRET = os.environ.get("SESSION_SECRET", os.environ.get("FLASK_SECRET_KEY", "dev-insecure-key"))
+_SECRET = os.environ.get("SESSION_SECRET", os.environ.get("FLASK_SECRET_KEY", ""))
+if not _SECRET or _SECRET == "dev-insecure-key":
+    if os.environ.get("FLASK_ENV") == "production" or os.environ.get("VERCEL"):
+        raise RuntimeError(
+            "SESSION_SECRET must be set to a strong random value in production. "
+            "Generate one with: python -c \"import secrets; print(secrets.token_urlsafe(32))\""
+        )
+    _SECRET = "dev-insecure-key"
+    logging.getLogger(__name__).warning("Using insecure dev session secret — do NOT use in production")
+
 _COOKIE = "lg_session"
 _MAX_AGE = 60 * 60 * 24 * 30  # 30 days
 
@@ -28,7 +38,7 @@ def create_session_cookie(student_id: str) -> dict:
         "max_age": _MAX_AGE,
         "httponly": True,
         "secure": True,
-        "samesite": "None",
+        "samesite": "Lax",
         "path": "/",
     }
 
