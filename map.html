@@ -16,6 +16,7 @@
 <meta name="twitter:description" content="Every dot is a verified sticker placement by a real LingoGrade ambassador. Watch the global community grow in real time.">
 <meta name="twitter:image" content="https://www.lingograde.com/og-logo-v2.png">
 <meta property="og:locale" content="en_US">
+<link rel="manifest" href="/manifest.json">
 <link rel="canonical" href="https://www.lingograde.com/map">
 <link rel="alternate" hreflang="en" href="https://www.lingograde.com/map">
 <link rel="alternate" hreflang="x-default" href="https://www.lingograde.com/map">
@@ -98,29 +99,32 @@ body { font-family: var(--font-body); background: var(--bg); color: var(--ink); 
   .map-stat-num { font-size: 1.5rem; }
   .btn-secondary { margin-left: 0; margin-top: 12px; }
 }
+.skip-link{position:absolute;left:-9999px;top:0;z-index:9999;padding:10px 20px;background:#2563AB;color:white;font-weight:600;text-decoration:none;border-radius:0 0 8px 0}.skip-link:focus{left:0}
 </style>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to main content</a>
 
-<nav class="nav">
+<nav class="nav" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade - Home" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"><span>LingoGr<span class="brand-a">A</span>de</span></a>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
     <div class="nav-menu">
-      <a href="index.html">Individual</a>
-      <a href="kids.html">Kids</a>
-      <a href="corporate.html">Corporate</a>
-      <a href="partners.html">Partners</a>
-      <a href="programs.html">Programs</a>
-      <a href="shop.html">Shop</a>
+      <a href="index.html" data-i18n="nav.individual">Individual</a>
+      <a href="kids.html" data-i18n="nav.kids">Kids</a>
+      <a href="corporate.html" data-i18n="nav.corporate">Corporate</a>
+      <a href="partners.html" data-i18n="nav.partners">Partners</a>
+      <a href="programs.html" data-i18n="nav.programs">Programs</a>
+      <a href="shop.html" data-i18n="nav.shop">Shop</a>
       <a href="map.html" class="nav-active">Map</a>
-      <a href="https://app.lingograde.com/login" class="nav-signin">Sign In</a>
-      <a href="https://booking.lingograde.com/marco" class="nav-cta">Explore Assessments</a>
+      <a href="https://app.lingograde.com/login" class="nav-signin" data-i18n="nav.login">Sign In</a>
+      <a href="https://booking.lingograde.com/marco" class="nav-cta" data-i18n="nav.book">Explore Assessments</a>
     </div>
   </div>
 </nav>
+<main id="main">
 
 <div class="page">
   <div class="page-hero">
@@ -155,18 +159,19 @@ body { font-family: var(--font-body); background: var(--bg); color: var(--ink); 
   </div>
 </div>
 
+</main>
 <footer class="footer">
   <div class="footer-brand">LingoGr<span class="c-green">A</span>de</div>
   <p class="footer-tagline">Professional Language Assessment</p>
-  <div class="footer-nav">
+  <nav class="footer-nav" aria-label="Footer navigation">
     <a href="index.html">Home</a>
     <a href="index.html#languages">Languages</a>
     <a href="index.html#pricing">Pricing</a>
     <a href="teachers.html">For Teachers</a>
-    <a href="partners.html">Partners</a>
-    <a href="shop.html">Shop</a>
+    <a href="partners.html" data-i18n="nav.partners">Partners</a>
+    <a href="shop.html" data-i18n="nav.shop">Shop</a>
     <a href="mailto:info@lingograde.com">Contact</a>
-  </div>
+  </nav>
   <div class="footer-legal">
     <a class="fs-sm" href="privacy-policy.html" style="color:rgba(255,255,255,0.5);">Privacy Policy</a>
     <a class="fs-sm" href="terms-of-service.html" style="color:rgba(255,255,255,0.5);">Terms of Service</a>

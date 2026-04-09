@@ -71,19 +71,23 @@ The result.problems and result.corrections should reference ACTUAL examples from
 
 def build_start_message(lang, prior_analysis=None):
     """Build the first message for a new assessment session."""
+    from sanitize import sanitize_lang, sanitize_field, sanitize_list
+    safe_lang = sanitize_lang(lang)
     context = ""
     if prior_analysis:
+        safe_cefr = sanitize_field(prior_analysis.get("cefr_estimate", "unknown"))
+        safe_areas = sanitize_list(prior_analysis.get("focus_areas", []))
         context = (
             f"\n\nThe student already did a free analysis. Their CEFR estimate was "
-            f"{prior_analysis.get('cefr_estimate', 'unknown')}. "
-            f"Focus areas identified: {', '.join(prior_analysis.get('focus_areas', []))}. "
+            f"{safe_cefr}. "
+            f"Focus areas identified: {', '.join(safe_areas)}. "
             f"Use this to guide your probing — but keep the conversation natural."
         )
 
     return {
         "role": "user",
         "content": (
-            f"Start a new assessment session. Student's language: {lang}.{context}\n\n"
+            f"Start a new assessment session. Student's language: {safe_lang}.{context}\n\n"
             f"Begin with a warm greeting and your first question."
         )
     }
@@ -91,7 +95,9 @@ def build_start_message(lang, prior_analysis=None):
 
 def build_turn_message(student_message):
     """Build a turn message from the student's input."""
+    from sanitize import sanitize_text
+    safe_msg = sanitize_text(student_message)
     return {
         "role": "user",
-        "content": student_message
+        "content": f"<student_message>\n{safe_msg}\n</student_message>"
     }

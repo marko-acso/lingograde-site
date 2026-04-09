@@ -575,12 +575,14 @@ body {
 @media (max-width: 400px) {
   .summary-grid { grid-template-columns: 1fr; }
 }
+.skip-link{position:absolute;left:-9999px;top:0;z-index:9999;padding:10px 20px;background:#2563AB;color:white;font-weight:600;text-decoration:none;border-radius:0 0 8px 0}.skip-link:focus{left:0}
 </style>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to main content</a>
 
 <!-- ── Nav ── -->
-<nav class="nav">
+<nav class="nav" aria-label="Main navigation">
   <a href="index.html" class="nav-brand">LingoGr<span class="brand-a">A</span>de</a>
   <span class="nav-tool-label">Letter Highlighting</span>
   <div class="nav-user">
@@ -588,6 +590,7 @@ body {
     <a href="#" id="navSignOut">Sign out</a>
   </div>
 </nav>
+<main id="main">
 
 <!-- ── Auth Gate ── -->
 <div id="authGate">

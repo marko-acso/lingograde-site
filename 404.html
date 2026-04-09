@@ -36,10 +36,12 @@ p { font-size: 1.125rem; color: var(--ink-soft); line-height: 1.7; margin-bottom
 .footer-minimal { background: #1A3A5C; color: white; padding: 24px; text-align: center; margin-top: 60px; width: 100%; }
 .footer-minimal a { color: #2563AB; text-decoration: none; font-weight: 600; }
 .footer-minimal a:hover { text-decoration: underline; }
+.skip-link{position:absolute;left:-9999px;top:0;z-index:9999;padding:10px 20px;background:#2563AB;color:white;font-weight:600;text-decoration:none;border-radius:0 0 8px 0}.skip-link:focus{left:0}
 </style>
 <script src="/js/cookie-consent.js"></script>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to main content</a>
 <div class="container">
   <img src="/assets/mascot/marco-sleeping-branch-v2.webp" alt="Marco the owl sleeping on a branch" class="marco-img">
   <h1><span>404</span> — Page Not Found</h1>
@@ -48,14 +50,15 @@ p { font-size: 1.125rem; color: var(--ink-soft); line-height: 1.7; margin-bottom
 </div>
 
 <!-- Footer -->
+</main>
 <footer class="site-footer site-footer--fullbleed">
   <div class="footer-brand">LingoGr<span class="c-green">A</span>de</div>
   <p class="footer-tagline">Professional Language Assessment</p>
-  <div class="footer-nav">
+  <nav class="footer-nav" aria-label="Footer navigation">
     <a href="/" class="footer-link">Home</a>
     <a href="/shop" class="footer-link">Shop</a>
     <a href="mailto:info@lingograde.com" class="footer-link">Contact</a>
-  </div>
+  </nav>
   <div class="footer-legal">
     <a href="/privacy-policy" class="footer-legal-link">Privacy Policy</a>
     <a href="/terms-of-service" class="footer-legal-link">Terms of Service</a>
