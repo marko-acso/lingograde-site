@@ -144,10 +144,16 @@ LANGUAGE_INSIGHTS = {
 _BASE_WRAPPER = (
     '<div style="font-family: Georgia, serif; max-width: 580px; margin: 0 auto; '
     'color: #1A1A1A; font-size: 15px; line-height: 1.6;">'
+    '<div style="background-color: #1A3A5C; padding: 24px; border-radius: 6px 6px 0 0; text-align: center;">'
+    '<img src="https://www.lingograde.com/assets/mascot/sliced-final/marco-logo-book-wave.png" '
+    'alt="LingoGrade" style="max-height: 80px;">'
+    "</div>"
+    '<div style="padding: 24px;">'
     "{content}"
+    "</div>"
     "<br>"
-    '<p style="color: #888; font-size: 13px; margin-top: 32px;">'
-    'LingoGrade — <a href="https://www.lingograde.com" style="color: #2563AB;">lingograde.com</a>'
+    '<p style="color: #888; font-size: 13px; margin-top: 32px; padding: 0 24px;">'
+    'LingoGrade &mdash; <a href="https://www.lingograde.com" style="color: #2563AB;">lingograde.com</a>'
     "</p>"
     "</div>"
 )
