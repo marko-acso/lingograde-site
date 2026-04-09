@@ -71,19 +71,23 @@ Remember: this is a TASTE. Give them enough to be genuinely helpful, but leave t
 
 def build_start_message(lang, prior_analysis=None):
     """Build the first message for a new free bot session."""
+    from sanitize import sanitize_lang, sanitize_field, sanitize_list
+    safe_lang = sanitize_lang(lang)
     context = ""
     if prior_analysis:
+        safe_cefr = sanitize_field(prior_analysis.get("cefr_estimate", "unknown"))
+        safe_areas = sanitize_list(prior_analysis.get("focus_areas", []))
         context = (
             f"\n\nThis student already did a free text analysis. Their CEFR estimate was "
-            f"{prior_analysis.get('cefr_estimate', 'unknown')}. "
-            f"Focus areas: {', '.join(prior_analysis.get('focus_areas', []))}. "
+            f"{safe_cefr}. "
+            f"Focus areas: {', '.join(safe_areas)}. "
             f"Use this context subtly — don't mention it directly."
         )
 
     return {
         "role": "user",
         "content": (
-            f"Start a free 5-minute conversation. Student's target language: {lang}.{context}\n\n"
+            f"Start a free 5-minute conversation. Student's target language: {safe_lang}.{context}\n\n"
             f"Greet them warmly and ask your first question. Keep it light and fun."
         )
     }
@@ -91,7 +95,9 @@ def build_start_message(lang, prior_analysis=None):
 
 def build_turn_message(student_message):
     """Build a turn message from the student's input."""
+    from sanitize import sanitize_text
+    safe_msg = sanitize_text(student_message)
     return {
         "role": "user",
-        "content": student_message
+        "content": f"<student_message>\n{safe_msg}\n</student_message>"
     }

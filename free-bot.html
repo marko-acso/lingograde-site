@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LingoGrade — Free 5-Minute Conversation with Marco</title>
-<meta name="description" content="Chat with Marco the owl for 5 minutes and discover your language level. Free, no login required. Get your CEFR estimate, strengths, focus areas, and 3 personalized flashcards.">
+<meta name="description" content="Chat with Marco for 5 minutes and discover your language level. Free, no login. Get your CEFR estimate, strengths, and focus areas.">
 <meta property="og:title" content="LingoGrade — Free 5-Minute Conversation">
 <meta property="og:description" content="Chat with Marco for free. Discover your CEFR level, strengths, and focus areas in 5 minutes.">
 <meta property="og:image" content="https://www.lingograde.com/og-logo-v2.png">
@@ -15,6 +15,7 @@
 <meta name="twitter:description" content="Chat with Marco for free. Discover your CEFR level, strengths, and focus areas in 5 minutes.">
 <meta name="twitter:image" content="https://www.lingograde.com/og-logo-v2.png">
 <meta property="og:locale" content="en_US">
+<link rel="manifest" href="/manifest.json">
 <link rel="canonical" href="https://www.lingograde.com/free-bot">
 <link rel="alternate" hreflang="en" href="https://www.lingograde.com/free-bot">
 <link rel="alternate" hreflang="x-default" href="https://www.lingograde.com/free-bot">
@@ -218,26 +219,29 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .funnel-grid { flex-direction: column; }
   .email-row { flex-direction: column; }
 }
+.skip-link{position:absolute;left:-9999px;top:0;z-index:9999;padding:10px 20px;background:#2563AB;color:white;font-weight:600;text-decoration:none;border-radius:0 0 8px 0}.skip-link:focus{left:0}
 </style>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to main content</a>
 
 <!-- ═══════════════════════════════════════════════════ -->
 <!-- PICK LANGUAGE VIEW                                 -->
 <!-- ═══════════════════════════════════════════════════ -->
 <div id="pick-view" class="pick-view">
 
-<nav class="nav"><div class="nav-inner">
+<nav class="nav" aria-label="Main navigation"><div class="nav-inner">
   <a class="brand-logo" href="/">
     <img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade - Home" width="44" height="44">
     <span>LingoGr<span class="brand-a">A</span>de</span>
   </a>
   <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
   <div class="nav-menu">
-    <a href="/">Individual</a><a href="kids.html">Kids</a><a href="corporate.html">Corporate</a><a href="partners.html">Partners</a><a href="programs.html">Programs</a><a href="shop.html">Shop</a>
-    <a href="https://booking.lingograde.com/marco" class="nav-cta">Explore Assessments</a>
+    <a href="/">Individual</a><a href="kids.html" data-i18n="nav.kids">Kids</a><a href="corporate.html" data-i18n="nav.corporate">Corporate</a><a href="partners.html" data-i18n="nav.partners">Partners</a><a href="programs.html" data-i18n="nav.programs">Programs</a><a href="shop.html" data-i18n="nav.shop">Shop</a>
+    <a href="https://booking.lingograde.com/marco" class="nav-cta" data-i18n="nav.book">Explore Assessments</a>
   </div>
 </div></nav>
+<main id="main">
 
 <div class="pick-inner">
   <img src="assets/mascot/marco-chatbot-speech-bubble.webp?v=3" alt="Marco the Owl" class="pick-owl" width="100" height="100">
@@ -289,7 +293,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   <div class="chat-messages" id="chat-messages"></div>
 
   <div class="chat-input-bar">
-    <textarea class="chat-input" id="chat-input" rows="1" placeholder="Type your response..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMessage();}"></textarea>
+    <textarea class="chat-input" id="chat-input" aria-label="Chat message" rows="1" placeholder="Type your response..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMessage();}"></textarea>
     <button class="chat-send" id="send-btn" onclick="sendMessage()">Send</button>
   </div>
 </div>
@@ -300,7 +304,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <!-- ═══════════════════════════════════════════════════ -->
 <div id="results-view" class="results-wrapper">
 
-  <nav class="nav"><div class="nav-inner">
+  <nav class="nav" aria-label="Main navigation"><div class="nav-inner">
     <a class="brand-logo" href="/">
       <img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade - Home" width="44" height="44">
       <span>LingoGr<span class="brand-a">A</span>de</span>
@@ -395,10 +399,11 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   </div>
 
   <!-- Footer -->
-  <footer class="footer">
+  </main>
+<footer class="footer">
     <div class="footer-brand">LingoGr<span class="green">A</span>de</div>
     <p>Professional Language Assessment</p>
-    <div class="footer-links"><a href="/">Home</a><a href="teachers.html">For Teachers</a><a href="partners.html">Partners</a><a href="shop.html">Shop</a><a href="mailto:info@lingograde.com">Contact</a></div>
+    <nav class="footer-links" aria-label="Footer navigation"><a href="/">Home</a><a href="teachers.html">For Teachers</a><a href="partners.html" data-i18n="nav.partners">Partners</a><a href="shop.html" data-i18n="nav.shop">Shop</a><a href="mailto:info@lingograde.com">Contact</a></nav>
     <div class="footer-legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms of Service</a></div>
     <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
   </footer>
@@ -410,7 +415,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <!-- RATE LIMIT VIEW                                    -->
 <!-- ═══════════════════════════════════════════════════ -->
 <div id="rate-limit-view" class="rate-limit-view">
-  <nav class="nav"><div class="nav-inner">
+  <nav class="nav" aria-label="Main navigation"><div class="nav-inner">
     <a class="brand-logo" href="/">
       <img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade - Home" width="44" height="44">
       <span>LingoGr<span class="brand-a">A</span>de</span>

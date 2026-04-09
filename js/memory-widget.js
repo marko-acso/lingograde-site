@@ -48,34 +48,39 @@ var MemoryWidget = (function () {
 
   // ── Fetch pinned + recent memories ──
   async function fetchMemories(studentId) {
-    var pinned = await db()
-      .from(TABLE)
-      .select('*')
-      .eq('student_id', studentId)
-      .eq('is_pinned', true)
-      .order('updated_at', { ascending: false })
-      .limit(MAX_PINNED);
+    try {
+      var pinned = await db()
+        .from(TABLE)
+        .select('*')
+        .eq('student_id', studentId)
+        .eq('is_pinned', true)
+        .order('updated_at', { ascending: false })
+        .limit(MAX_PINNED);
 
-    var pinnedIds = (pinned.data || []).map(function (m) { return m.id; });
+      var pinnedIds = (pinned.data || []).map(function (m) { return m.id; });
 
-    var recentQuery = db()
-      .from(TABLE)
-      .select('*')
-      .eq('student_id', studentId)
-      .order('created_at', { ascending: false })
-      .limit(MAX_RECENT + pinnedIds.length);
+      var recentQuery = db()
+        .from(TABLE)
+        .select('*')
+        .eq('student_id', studentId)
+        .order('created_at', { ascending: false })
+        .limit(MAX_RECENT + pinnedIds.length);
 
-    var recent = await recentQuery;
+      var recent = await recentQuery;
 
-    // Exclude pinned from recent to avoid duplicates
-    var recentFiltered = (recent.data || []).filter(function (m) {
-      return pinnedIds.indexOf(m.id) === -1;
-    }).slice(0, MAX_RECENT);
+      // Exclude pinned from recent to avoid duplicates
+      var recentFiltered = (recent.data || []).filter(function (m) {
+        return pinnedIds.indexOf(m.id) === -1;
+      }).slice(0, MAX_RECENT);
 
-    return {
-      pinned: pinned.data || [],
-      recent: recentFiltered
-    };
+      return {
+        pinned: pinned.data || [],
+        recent: recentFiltered
+      };
+    } catch (err) {
+      console.error('[MemoryWidget] Failed to fetch memories:', err);
+      return { pinned: [], recent: [] };
+    }
   }
 
   // ── Render a single memory card ──
@@ -123,7 +128,13 @@ var MemoryWidget = (function () {
 
     container.innerHTML = '<div style="padding:16px;color:#8A8A8A;font-size:0.8125rem;">Loading memories...</div>';
 
-    var session = await db().auth.getSession();
+    try {
+      var session = await db().auth.getSession();
+    } catch (err) {
+      console.error('[MemoryWidget] Auth check failed:', err);
+      container.innerHTML = '<div style="padding:16px;color:#C0392B;font-size:0.8125rem;">Could not verify session. Please refresh.</div>';
+      return;
+    }
     if (!session.data.session) {
       container.innerHTML = '<div style="padding:16px;color:#C0392B;font-size:0.8125rem;">Sign in to view client memories.</div>';
       return;

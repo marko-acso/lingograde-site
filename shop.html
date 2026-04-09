@@ -15,6 +15,7 @@
 <meta name="twitter:description" content="Sticker packs, plush owls, and bundles. Spread the word and earn while doing it.">
 <meta name="twitter:image" content="https://www.lingograde.com/og-logo-v2.png">
 <meta property="og:locale" content="en_US">
+<link rel="manifest" href="/manifest.json">
 <link rel="canonical" href="https://www.lingograde.com/shop">
 <link rel="alternate" hreflang="en" href="https://www.lingograde.com/shop">
 <link rel="alternate" hreflang="x-default" href="https://www.lingograde.com/shop">
@@ -521,30 +522,33 @@ details > div, details > p { font-size: 0.75rem; color: #777; line-height: 1.6; 
   .carousel-item.far-prev { transform: translateX(-110px) translateZ(-50px) rotateY(20deg) scale(0.55); opacity: 0.15; }
   .carousel-item.far-next { transform: translateX(110px) translateZ(-50px) rotateY(-20deg) scale(0.55); opacity: 0.15; }
 }
+.skip-link{position:absolute;left:-9999px;top:0;z-index:9999;padding:10px 20px;background:#2563AB;color:white;font-weight:600;text-decoration:none;border-radius:0 0 8px 0}.skip-link:focus{left:0}
 </style>
 <script src="/js/cookie-consent.js"></script>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to main content</a>
 
 <!-- ═══ Navigation ═══ -->
-<nav class="nav">
+<nav class="nav" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade - Home" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"><span>LingoGr<span class="brand-a">A</span>de</span></a>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
     <div class="nav-menu">
-      <a href="index.html">Individual</a>
-      <a href="kids.html">Kids</a>
-      <a href="corporate.html">Corporate</a>
-      <a href="partners.html">Partners</a>
-      <a href="programs.html">Programs</a>
-      <a href="shop.html" class="nav-active">Shop</a>
-      <a href="https://app.lingograde.com/login" class="nav-signin">Sign In</a>
-      <a href="https://booking.lingograde.com/marco" class="nav-cta">Explore Assessments</a>
+      <a href="index.html" data-i18n="nav.individual">Individual</a>
+      <a href="kids.html" data-i18n="nav.kids">Kids</a>
+      <a href="corporate.html" data-i18n="nav.corporate">Corporate</a>
+      <a href="partners.html" data-i18n="nav.partners">Partners</a>
+      <a href="programs.html" data-i18n="nav.programs">Programs</a>
+      <a href="shop.html" data-i18n="nav.shop">Shop</a>
+      <a href="https://app.lingograde.com/login" class="nav-signin" data-i18n="nav.login">Sign In</a>
+      <a href="https://booking.lingograde.com/marco" class="nav-cta" data-i18n="nav.book">Explore Assessments</a>
     </div>
   </div>
 </nav>
+<main id="main">
 
 <!-- ═══ Hero ═══ -->
 <section class="hero">
@@ -745,7 +749,7 @@ details > div, details > p { font-size: 0.75rem; color: #777; line-height: 1.6; 
         <p class="fs-base c-ink-soft mt-8 italic">Less than a nice dinner for two &mdash; but this keeps earning for you long after dessert.</p>
       </div>
       <div class="mb-16" id="mega-bundle-cta">
-        <input type="email" id="mega-bundle-email" placeholder="Your email address" class="input-field" style="max-width:360px;margin:0 auto 12px;display:block;padding:14px 16px;border-radius:10px;border:1px solid var(--border);font-size:1rem;text-align:center;">
+        <input type="email" id="mega-bundle-email" placeholder="Your email address" aria-label="Email for Mega Bundle checkout" class="input-field" style="max-width:360px;margin:0 auto 12px;display:block;padding:14px 16px;border-radius:10px;border:1px solid var(--border);font-size:1rem;text-align:center;">
         <button onclick="checkoutMegaBundle()" class="btn-success fs-lg" style="padding:18px 48px;align-items:center;gap:14px;">
           <img src="assets/mascot/marco-hero.webp?v=3" alt="Marco the owl" style="height:40px;width:auto;" loading="lazy">
           <span>Get the Complete Package &rarr;</span>
@@ -1057,20 +1061,18 @@ if (window._lgIsCNY) {
     <h2 class="section-title text-center">Wear the owl. Own the vibe.</h2>
     <p class="text-center mx-auto fs-base c-ink-soft mw-560">Things that become part of your daily routine. Take a look around.</p>
     <p class="voss-label">You probably don't need another accessory&hellip; but these aren't just accessories.</p>
-    <div class="accessories-grid">
+    <div style="background:linear-gradient(135deg,#1A3A5C 0%,#2563AB 100%);border-radius:16px;padding:48px 32px;text-align:center;margin-bottom:32px;">
+      <p style="font-size:0.875rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:8px;">Coming Soon</p>
+      <h3 style="font-family:var(--font-display);font-size:1.75rem;color:#fff;margin-bottom:12px;">Marco merch is on its way.</h3>
+      <p style="color:rgba(255,255,255,0.8);font-size:1rem;max-width:480px;margin:0 auto;">Cap, bracelet, enamel pin &mdash; all featuring Marco the owl. We are finalising production and will open the shop soon.</p>
+    </div>
+    <div class="accessories-grid" style="opacity:0.45;pointer-events:none;filter:grayscale(0.3);">
       <div class="accessory-card">
         <img src="assets/mascot/sliced-final/gpt-marco-traveler.png" alt="Marco the owl wearing a cap" class="accessory-img" loading="lazy">
         <h3>LingoGrade Cap</h3>
         <p>Embroidered Marco logo on navy cotton twill. Adjustable strap. One size fits all.</p>
         <div class="accessory-price" data-price="29.95">EUR 29.95</div>
-        <a href="https://buy.stripe.com/5kQ4gz8Hqcf90Ze6MJgUM08" target="_blank" rel="noopener" class="btn-accessory">Take a closer look</a>
-        <p class="safety-valve">No rush &mdash; it will be here whenever you are ready.</p>
-        <div class="tip-row">
-          <a href="https://buy.stripe.com/tip20" class="tip-btn" target="_blank" rel="noopener">+EUR 20</a>
-          <a href="https://buy.stripe.com/tip10" class="tip-btn" target="_blank" rel="noopener">+EUR 10</a>
-          <a href="https://buy.stripe.com/tip5" class="tip-btn" target="_blank" rel="noopener">+EUR 5</a>
-        </div>
-        <p class="tip-label">Leave a tip for the team</p>
+        <span class="btn-accessory" style="opacity:0.6;">Coming Soon</span>
       </div>
       <div class="accessory-card">
         <span class="most-chosen-badge">Most chosen</span>
@@ -1078,28 +1080,14 @@ if (window._lgIsCNY) {
         <h3>Marco Bracelet</h3>
         <p>Woven fabric bracelet with Marco silhouette clasp. LingoGrade blue with gold accent thread.</p>
         <div class="accessory-price" data-price="14.95">EUR 14.95</div>
-        <a href="https://buy.stripe.com/dRm6oH5vecf90Ze1spgUM09" target="_blank" rel="noopener" class="btn-accessory">Take a closer look</a>
-        <p class="safety-valve">No rush &mdash; it will be here whenever you are ready.</p>
-        <div class="tip-row">
-          <a href="https://buy.stripe.com/tip20" class="tip-btn" target="_blank" rel="noopener">+EUR 20</a>
-          <a href="https://buy.stripe.com/tip10" class="tip-btn" target="_blank" rel="noopener">+EUR 10</a>
-          <a href="https://buy.stripe.com/tip5" class="tip-btn" target="_blank" rel="noopener">+EUR 5</a>
-        </div>
-        <p class="tip-label">Leave a tip for the team</p>
+        <span class="btn-accessory" style="opacity:0.6;">Coming Soon</span>
       </div>
       <div class="accessory-card">
         <img src="assets/mascot/sliced-final/gpt-marco-diploma-proud.png" alt="Marco the owl with diploma" class="accessory-img" loading="lazy">
         <h3>Marco Enamel Pin</h3>
         <p>Hard enamel pin of Marco with mortarboard. Gold-plated metal. Butterfly clutch backing.</p>
         <div class="accessory-price" data-price="12.95">EUR 12.95</div>
-        <a href="https://buy.stripe.com/28E9AT1eY3ID8rG2wtgUM0a" target="_blank" rel="noopener" class="btn-accessory">Take a closer look</a>
-        <p class="safety-valve">No rush &mdash; it will be here whenever you are ready.</p>
-        <div class="tip-row">
-          <a href="https://buy.stripe.com/tip20" class="tip-btn" target="_blank" rel="noopener">+EUR 20</a>
-          <a href="https://buy.stripe.com/tip10" class="tip-btn" target="_blank" rel="noopener">+EUR 10</a>
-          <a href="https://buy.stripe.com/tip5" class="tip-btn" target="_blank" rel="noopener">+EUR 5</a>
-        </div>
-        <p class="tip-label">Leave a tip for the team</p>
+        <span class="btn-accessory" style="opacity:0.6;">Coming Soon</span>
       </div>
     </div>
     <p class="text-center mt-20 c-ink-light fs-smm">Sticker credit can be spent on accessories at 11+ verified placements. <a href="#how-it-works" class="c-accent">See how it works</a></p>
@@ -1317,22 +1305,23 @@ if (window._lgIsCNY) {
 </section>
 
 <!-- ═══ Footer ═══ -->
+</main>
 <footer class="site-footer">
   <div class="footer-brand">LingoGr<span class="c-green">A</span>de</div>
   <p class="footer-tagline">Professional Language Assessment</p>
-  <div class="footer-nav">
+  <nav class="footer-nav" aria-label="Footer navigation">
     <a href="index.html" class="footer-link">Home</a>
     <a href="index.html#languages" class="footer-link">Languages</a>
     <a href="index.html#pricing" class="footer-link">Pricing</a>
     <a href="teachers.html" class="footer-link">For Teachers</a>
-    <a href="partners.html" class="footer-link">Partners</a>
-    <a href="shop.html" class="footer-link">Shop</a>
+    <a href="partners.html" data-i18n="nav.partners">Partners</a>
+    <a href="shop.html" data-i18n="nav.shop">Shop</a>
     <a href="mailto:info@lingograde.com" class="footer-link">Contact</a>
-  </div>
+  </nav>
   <div class="footer-legal">
     <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
     <a href="terms-of-service.html" class="footer-legal-link">Terms of Service</a>
-  </div>
+  </nav>
   <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
 </footer>
 

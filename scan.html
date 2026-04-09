@@ -16,6 +16,7 @@
 <meta name="twitter:description" content="You scanned a LingoGrade sticker. Find out your language level in 10 minutes.">
 <meta name="twitter:image" content="https://www.lingograde.com/og-logo-v2.png">
 <meta property="og:locale" content="en_US">
+<link rel="manifest" href="/manifest.json">
 <link rel="canonical" href="https://www.lingograde.com/scan">
 <link rel="alternate" hreflang="en" href="https://www.lingograde.com/scan">
 <link rel="alternate" hreflang="x-default" href="https://www.lingograde.com/scan">
@@ -268,10 +269,12 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     padding: 28px 20px;
   }
 }
+.skip-link{position:absolute;left:-9999px;top:0;z-index:9999;padding:10px 20px;background:#2563AB;color:white;font-weight:600;text-decoration:none;border-radius:0 0 8px 0}.skip-link:focus{left:0}
 </style>
 <script src="/js/cookie-consent.js"></script>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to main content</a>
 
 <!-- Hero -->
 <section class="scan-hero">
@@ -352,10 +355,11 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 </section>
 
 <!-- Footer -->
+</main>
 <footer class="site-footer">
   <div class="footer-brand">LingoGr<span class="c-green">A</span>de</div>
   <p class="footer-tagline">Professional Language Assessment</p>
-  <div class="footer-nav">
+  <nav class="footer-nav" aria-label="Footer navigation">
     <a href="index.html" class="footer-link">Home</a>
     <a href="index.html#languages" class="footer-link">Languages</a>
     <a href="index.html#pricing" class="footer-link">Pricing</a>
@@ -363,7 +367,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <a href="partners.html" class="footer-link">Partners</a>
     <a href="shop.html" class="footer-link">Shop</a>
     <a href="mailto:info@lingograde.com" class="footer-link">Contact</a>
-  </div>
+  </nav>
   <p class="mt-16 fs-sm c-white-50" >Marco says: Your next level is closer than you think.</p>
   <div class="footer-legal">
     <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>

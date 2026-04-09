@@ -163,7 +163,8 @@ def upload_homework():
     if not file or not homework_id:
         return jsonify({"error": "file and homework_id required"}), 400
 
-    if not _allowed_file(file.filename):
+    safe_orig = secure_filename(file.filename)
+    if not safe_orig or not _allowed_file(safe_orig):
         return jsonify({"error": "File type not allowed"}), 400
 
     # Read into memory to check size (avoids saving oversized files)
@@ -187,7 +188,7 @@ def upload_homework():
         return jsonify({"error": "Homework already submitted"}), 400
 
     # Save file
-    ext = file.filename.rsplit(".", 1)[1].lower()
+    ext = safe_orig.rsplit(".", 1)[1].lower()
     safe_name = f"{homework_id}_{uuid.uuid4().hex[:8]}.{ext}"
     student_dir = os.path.join(UPLOAD_DIR, g.student_id)
     os.makedirs(student_dir, exist_ok=True)

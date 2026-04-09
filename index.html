@@ -380,27 +380,30 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <a href="#main" class="skip-link">Skip to main content</a>
 
 <!-- ── Navigation ── -->
-<nav class="nav">
+<header>
+<nav class="nav" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="#top" class="brand-logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade - Home" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"><span>LingoGr<span class="brand-a">A</span>de</span></a>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
     <div class="nav-menu">
-      <a href="index.html" class="nav-active">Individual</a>
-      <a href="kids.html">Kids</a>
-      <a href="corporate.html">Corporate</a>
-      <a href="partners.html">Partners</a>
-      <a href="programs.html">Programs</a>
-      <a href="shop.html">Shop</a>
-      <a href="https://app.lingograde.com/login" class="nav-signin">Sign In</a>
-      <a href="https://booking.lingograde.com/marco" class="nav-cta">Explore Assessments</a>
+      <a href="index.html" class="nav-active" data-i18n="nav.individual">Individual</a>
+      <a href="kids.html" data-i18n="nav.kids">Kids</a>
+      <a href="corporate.html" data-i18n="nav.corporate">Corporate</a>
+      <a href="partners.html" data-i18n="nav.partners">Partners</a>
+      <a href="programs.html" data-i18n="nav.programs">Programs</a>
+      <a href="shop.html" data-i18n="nav.shop">Shop</a>
+      <a href="https://app.lingograde.com/login" class="nav-signin" data-i18n="nav.login">Sign In</a>
+      <a href="https://booking.lingograde.com/marco" class="nav-cta" data-i18n="nav.book">Explore Assessments</a>
     </div>
   </div>
 </nav>
+</header>
 
 <!-- ── 1. Hero ── -->
-<section class="hero" id="main">
+<main id="main">
+<section class="hero">
   <div class="hero-inner">
     <div class="mb-24"><img src="assets/mascot/sliced-images/marco-mila-outfit-private-casual.webp?v=3" alt="Marco and Mila — LingoGrade" class="marco-img" style="height:350px;width:auto;object-fit:contain;"></div>
     <div class="hero-badge">Professional CEFR Language Assessment</div>
@@ -439,7 +442,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   <div class="section-inner">
     <div class="section-label">How It Works</div>
     <h3 class="section-title">How it works</h3>
-    <p class="section-desc">No test anxiety. No multiple choice. No preparation. Just a natural conversation that reveals exactly where your skills are — and a precise plan to move them forward.</p>
+    <p class="section-desc">No test anxiety. No multiple choice. No preparation. Just a natural conversation with someone who genuinely wants to understand how you communicate — and a precise plan to move forward.</p>
     <div class="steps">
       <div class="step">
         <img src="assets/mascot/marco-reading.webp?v=3" alt="Marco reading" class="step-icon" width="120" height="120" loading="lazy">
@@ -457,7 +460,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         <img src="assets/mascot/marco-headset-standing.webp" alt="Marco with headset" class="step-icon" width="120" height="120" loading="lazy">
         <div class="step-num">3</div>
         <h3>Have a Conversation</h3>
-        <p>Join a relaxed video call. Just talk naturally — no scripts, no multiple choice, no stress. Our assessor adapts to your level and draws out your real abilities.</p>
+        <p>Join a relaxed video call — like talking to a friend who happens to be a linguist. No scripts, no multiple choice, no stress. Your assessor adapts to your level and draws out your real abilities through genuine curiosity.</p>
       </div>
       <div class="step">
         <img src="assets/mascot/marco-thumbsup.webp" alt="Marco thumbs up" class="step-icon" width="120" height="120" loading="lazy">
@@ -772,11 +775,13 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   <p class="fs-11 c-ink-soft">Looking for team assessments? <a class="fw-600 c-accent" href="corporate.html" >See our Corporate Programme &rarr;</a></p>
 </div>
 
+</main>
+
 <!-- ── 10. Footer ── -->
 <footer class="site-footer">
   <div class="footer-brand">LingoGr<span class="c-green">A</span>de</div>
   <p class="footer-tagline">Professional Language Assessment</p>
-  <div class="footer-nav">
+  <nav class="footer-nav" aria-label="Footer navigation">
     <a href="#how-it-works" class="footer-link">How It Works</a>
     <a href="#languages" class="footer-link">Languages</a>
     <a href="#pricing" class="footer-link">Pricing</a>
@@ -785,7 +790,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <a href="shop.html" class="footer-link">Shop</a>
     <a href="#share-experience" class="footer-link">Share Experience</a>
     <a href="mailto:info@lingograde.com" class="footer-link">Contact</a>
-  </div>
+  </nav>
   <div class="footer-legal">
     <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
     <a href="terms-of-service.html" class="footer-legal-link">Terms of Service</a>

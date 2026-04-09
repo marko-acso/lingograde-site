@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Partner Programme — LingoGrade Referrals</title>
-<meta name="description" content="You are the person people trust when they need to learn a language. Earn every time they get assessed. No caps, no tiers, no minimum. Join the LingoGrade partner programme.">
+<meta name="description" content="Earn every time your students get assessed. No caps, no tiers, no minimum. Join the LingoGrade partner programme.">
 <meta property="og:title" content="Partner Programme — LingoGrade Referrals">
 <meta property="og:description" content="You are the person people trust when they need to learn a language. Earn every time they get assessed. No caps, no tiers, no minimum.">
 <meta property="og:image" content="https://www.lingograde.com/og-logo-v2.png">
@@ -18,6 +18,7 @@
 <meta name="twitter:description" content="You are the person people trust when they need to learn a language. Earn every time they get assessed. No caps, no tiers, no minimum.">
 <meta name="twitter:image" content="https://www.lingograde.com/og-logo-v2.png">
 <meta property="og:locale" content="en_US">
+<link rel="manifest" href="/manifest.json">
 <link rel="canonical" href="https://www.lingograde.com/partners">
 <link rel="alternate" hreflang="en" href="https://www.lingograde.com/partners">
 <link rel="alternate" hreflang="x-default" href="https://www.lingograde.com/partners">
@@ -452,30 +453,33 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .partner-map-stat { text-align: center; }
 .partner-map-stat-num { font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: var(--accent); }
 .partner-map-stat-label { font-size: 0.75rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
+.skip-link{position:absolute;left:-9999px;top:0;z-index:9999;padding:10px 20px;background:#2563AB;color:white;font-weight:600;text-decoration:none;border-radius:0 0 8px 0}.skip-link:focus{left:0}
 </style>
 <script src="/js/cookie-consent.js"></script>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to main content</a>
 
 <!-- ── Navigation ── -->
-<nav class="nav">
+<nav class="nav" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="index.html" class="brand-logo"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade - Home" width="44" height="44" onerror="this.onerror=null;this.src='assets/mascot/marco-logo-v6.1.webp'"><span>LingoGr<span class="brand-a">A</span>de</span></a>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
     <div class="nav-menu">
-      <a href="index.html">Individual</a>
-      <a href="kids.html">Kids</a>
-      <a href="corporate.html">Corporate</a>
-      <a href="partners.html" class="nav-active">Partners</a>
-      <a href="programs.html">Programs</a>
-      <a href="shop.html">Shop</a>
-      <a href="https://app.lingograde.com/login" class="nav-signin">Sign In</a>
-      <a href="https://booking.lingograde.com/marco" class="nav-cta">Explore Assessments</a>
+      <a href="index.html" data-i18n="nav.individual">Individual</a>
+      <a href="kids.html" data-i18n="nav.kids">Kids</a>
+      <a href="corporate.html" data-i18n="nav.corporate">Corporate</a>
+      <a href="partners.html" data-i18n="nav.partners">Partners</a>
+      <a href="programs.html" data-i18n="nav.programs">Programs</a>
+      <a href="shop.html" data-i18n="nav.shop">Shop</a>
+      <a href="https://app.lingograde.com/login" class="nav-signin" data-i18n="nav.login">Sign In</a>
+      <a href="https://booking.lingograde.com/marco" class="nav-cta" data-i18n="nav.book">Explore Assessments</a>
     </div>
   </div>
 </nav>
+<main id="main">
 
 <!-- ── Hero ── -->
 <section class="hero">
@@ -1252,22 +1256,23 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 </section>
 
 <!-- ── Footer ── -->
+</main>
 <footer class="site-footer">
   <div class="footer-brand">LingoGr<span class="c-green">A</span>de</div>
   <p class="footer-tagline">Professional Language Assessment</p>
-  <div class="footer-nav">
+  <nav class="footer-nav" aria-label="Footer navigation">
     <a href="index.html" class="footer-link">Home</a>
     <a href="index.html#languages" class="footer-link">Languages</a>
     <a href="index.html#pricing" class="footer-link">Pricing</a>
     <a href="teachers.html" class="footer-link">For Teachers</a>
-    <a href="partners.html" class="footer-link">Partners</a>
-    <a href="shop.html" class="footer-link">Shop</a>
+    <a href="partners.html" data-i18n="nav.partners">Partners</a>
+    <a href="shop.html" data-i18n="nav.shop">Shop</a>
     <a href="mailto:info@lingograde.com" class="footer-link">Contact</a>
-  </div>
+  </nav>
   <div class="footer-legal">
     <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
     <a href="terms-of-service.html" class="footer-legal-link">Terms of Service</a>
-  </div>
+  </nav>
   <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
 </footer>
 

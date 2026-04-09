@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bot Assessment — EUR 49.95 | LingoGrade</title>
-<meta name="description" content="Get a professional CEFR language assessment from Marco, our AI assessor. 15-20 minute structured conversation, instant mini-report with your level, patterns, strengths, and study plan.">
+<meta name="description" content="Professional CEFR assessment from Marco, our AI assessor. 15-20 minute conversation, instant mini-report with your level, strengths, and study plan.">
 <meta property="og:title" content="Bot Assessment — LingoGrade">
 <meta property="og:description" content="Professional AI language assessment. 15-20 minutes, instant results. CEFR level, 5 focus areas, 5 strengths, 4-week study plan.">
 <meta property="og:image" content="https://www.lingograde.com/og-logo-v2.png">
@@ -15,6 +15,7 @@
 <meta name="twitter:description" content="Professional AI language assessment. 15-20 minutes, instant results. CEFR level, 5 focus areas, 5 strengths, 4-week study plan.">
 <meta name="twitter:image" content="https://www.lingograde.com/og-logo-v2.png">
 <meta property="og:locale" content="en_US">
+<link rel="manifest" href="/manifest.json">
 <link rel="canonical" href="https://www.lingograde.com/chatbot-assessment">
 <link rel="alternate" hreflang="en" href="https://www.lingograde.com/chatbot-assessment">
 <link rel="alternate" hreflang="x-default" href="https://www.lingograde.com/chatbot-assessment">
@@ -204,9 +205,11 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .compare-table th, .compare-table td { padding: 8px 6px; font-size: 0.75rem; }
   .chat-progress-step { width: 24px; }
 }
+.skip-link{position:absolute;left:-9999px;top:0;z-index:9999;padding:10px 20px;background:#2563AB;color:white;font-weight:600;text-decoration:none;border-radius:0 0 8px 0}.skip-link:focus{left:0}
 </style>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to main content</a>
 
 <!-- ═══════════════════════════════════════════════════ -->
 <!-- LANDING VIEW (pre-payment)                         -->
@@ -214,7 +217,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <div id="landing-view">
 
 <!-- Nav -->
-<nav class="nav">
+<nav class="nav" aria-label="Main navigation">
   <div class="nav-inner">
     <a class="brand-logo" href="/">
       <img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade - Home" height="44" width="44">
@@ -226,14 +229,15 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <div class="nav-menu">
       <a href="/#how-it-works">How It Works</a>
       <a href="teachers.html">For Teachers</a>
-      <a href="partners.html">Partners</a>
-      <a href="programs.html">Programs</a>
-      <a href="shop.html">Shop</a>
+      <a href="partners.html" data-i18n="nav.partners">Partners</a>
+      <a href="programs.html" data-i18n="nav.programs">Programs</a>
+      <a href="shop.html" data-i18n="nav.shop">Shop</a>
       <a href="/#pricing">Pricing</a>
     </div>
-    <a href="https://booking.lingograde.com/marco" class="nav-cta">Explore Assessments</a>
+    <a href="https://booking.lingograde.com/marco" class="nav-cta" data-i18n="nav.book">Explore Assessments</a>
   </div>
 </nav>
+<main id="main">
 
 <!-- Hero -->
 <section class="hero">
@@ -444,22 +448,23 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 </section>
 
 <!-- Footer -->
+</main>
 <footer class="site-footer">
   <div class="footer-brand">LingoGr<span class="c-green">A</span>de</div>
   <p class="footer-tagline">Professional Language Assessment</p>
-  <div class="footer-nav">
+  <nav class="footer-nav" aria-label="Footer navigation">
     <a href="/#how-it-works" class="footer-link">How It Works</a>
     <a href="/#languages" class="footer-link">Languages</a>
     <a href="/#pricing" class="footer-link">Pricing</a>
     <a href="teachers.html" class="footer-link">For Teachers</a>
-    <a href="partners.html" class="footer-link">Partners</a>
-    <a href="shop.html" class="footer-link">Shop</a>
+    <a href="partners.html" data-i18n="nav.partners">Partners</a>
+    <a href="shop.html" data-i18n="nav.shop">Shop</a>
     <a href="mailto:info@lingograde.com" class="footer-link">Contact</a>
-  </div>
+  </nav>
   <div class="footer-legal">
     <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
     <a href="terms-of-service.html" class="footer-legal-link">Terms of Service</a>
-  </div>
+  </nav>
   <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
 </footer>
 
@@ -496,7 +501,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <button class="chat-mic" id="mic-btn" onclick="toggleMic()" title="Voice input">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
     </button>
-    <textarea class="chat-input" id="chat-input" rows="1" placeholder="Type your response..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMessage();}"></textarea>
+    <textarea class="chat-input" id="chat-input" aria-label="Chat message" rows="1" placeholder="Type your response..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMessage();}"></textarea>
     <button class="chat-send" id="send-btn" onclick="sendMessage()">Send</button>
   </div>
 </div>
@@ -507,7 +512,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <!-- ═══════════════════════════════════════════════════ -->
 <div id="report-view" class="report-wrapper">
 
-  <nav class="nav">
+  <nav class="nav" aria-label="Main navigation">
     <div class="nav-inner">
       <a class="brand-logo" href="/">
         <img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade - Home" height="44" width="44">
@@ -583,11 +588,11 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   <footer class="site-footer">
     <div class="footer-brand">LingoGr<span class="c-green">A</span>de</div>
     <p class="footer-tagline">Professional Language Assessment</p>
-    <div class="footer-nav">
+    <nav class="footer-nav" aria-label="Footer navigation">
       <a href="/" class="footer-link">Home</a>
       <a href="teachers.html" class="footer-link">For Teachers</a>
-      <a href="partners.html" class="footer-link">Partners</a>
-      <a href="shop.html" class="footer-link">Shop</a>
+      <a href="partners.html" data-i18n="nav.partners">Partners</a>
+      <a href="shop.html" data-i18n="nav.shop">Shop</a>
       <a href="mailto:info@lingograde.com" class="footer-link">Contact</a>
     </div>
     <div class="footer-legal">

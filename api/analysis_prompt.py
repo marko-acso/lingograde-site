@@ -44,9 +44,13 @@ If the text is too short or incomprehensible, still give your best estimate and 
 
 def build_analysis_messages(text, lang):
     """Build the messages array for the Claude API call."""
+    from sanitize import sanitize_text, sanitize_lang
+    safe_text = sanitize_text(text, max_len=3000)
+    safe_lang = sanitize_lang(lang)
     return [
         {"role": "user", "content": (
-            f"Student's UI language: {lang}\n"
-            f"Language sample to analyze:\n\n{text}"
+            f"Student's UI language: {safe_lang}\n"
+            f"Language sample to analyze:\n\n"
+            f"<student_text>\n{safe_text}\n</student_text>"
         )}
     ]

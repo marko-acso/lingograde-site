@@ -5,7 +5,9 @@ falls back to in-memory dicts for local dev.
 """
 
 import json
+import threading
 import uuid as _uuid
+from datetime import datetime, timezone, timedelta
 
 from db_pool import get_pool, get_cursor
 
@@ -21,6 +23,8 @@ def _is_valid_uuid(val):
 # ── In-memory fallback (local dev without Postgres) ──
 _analyses = {}
 _assessments = {}
+_mem_lock = threading.Lock()
+_MEM_MAX_AGE = timedelta(days=7)
 
 
 def _has_db():
@@ -286,3 +290,14 @@ def find_assessment_by_payment(stripe_session_id):
             if session.get("stripe_session_id") == stripe_session_id:
                 return aid
         return None
+
+
+def cleanup_mem():
+    """Remove stale in-memory sessions older than 7 days. Call periodically."""
+    cutoff = (datetime.now(timezone.utc) - _MEM_MAX_AGE).isoformat()
+    with _mem_lock:
+        for store in (_analyses, _assessments, _free_bots):
+            stale = [k for k, v in store.items()
+                     if isinstance(v, dict) and v.get("created_at", "") < cutoff]
+            for k in stale:
+                del store[k]

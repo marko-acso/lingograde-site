@@ -349,7 +349,7 @@
 .hero--corporate {
   padding-top: 120px;
   text-align: center;
-  background: linear-gradient(180deg, #1B3A5C 0%, #2A5580 40%, var(--cream) 100%);
+  background: linear-gradient(180deg, #1A3A5C 0%, #2A5580 40%, var(--cream) 100%);
 }
 
 /* ── Grid utilities ── */
@@ -669,6 +669,16 @@
 .featured-testimonial { border-radius: 16px; border: 2px solid var(--border); background: #1e1e1e; padding: 40px 32px; }
 .success-highlight-box { padding: 20px 24px; border-radius: 12px; background: rgba(39,174,96,0.08); border: 1.5px solid var(--success); }
 .success-opt-in-box { border-radius: 14px; border: 2px solid var(--success); background: rgba(39,174,96,0.08); padding: 32px 28px; }
+
+/* ── Keyboard focus states ── */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #2563AB;
+  outline-offset: 2px;
+}
 
 @media (max-width: 768px) {
   .grid-3 { grid-template-columns: 1fr; }
