@@ -59,6 +59,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .nav-menu { display: flex; gap: 28px; align-items: center; }
 .nav-menu a { font-size: 0.875rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; transition: color 0.15s; }
 .nav-menu a:hover { color: var(--accent); }
+.nav-menu a.nav-active { color: var(--accent); font-weight: 700; }
 .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
 .nav-hamburger span { display: block; width: 24px; height: 2.5px; background: var(--ink); border-radius: 2px; transition: all 0.2s; }
 .nav-cta { display: inline-flex; align-items: center; padding: 8px 20px; background: var(--accent); color: white !important; border-radius: 8px; font-weight: 600; font-size: 0.875rem; text-decoration: none; transition: background 0.15s; }
@@ -785,5 +786,6 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 
 <script src="js/shield.js" defer></script>
 <script src="js/cookie-consent.js" defer></script>
+<script>(function(){var p=location.pathname.split('/').pop()||'index.html';if(!p.endsWith('.html'))p+='.html';document.querySelectorAll('.nav-menu a').forEach(function(a){var h=a.getAttribute('href');if(h&&h.split('?')[0].split('#')[0]===p)a.classList.add('nav-active');});})()</script>
 </body>
 </html>

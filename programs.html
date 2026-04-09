@@ -118,6 +118,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .nav-menu { display: flex; gap: 28px; align-items: center; }
 .nav-menu a { font-size: 0.875rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; transition: color 0.15s; }
 .nav-menu a:hover { color: var(--accent); }
+.nav-menu a.nav-active { color: var(--accent); font-weight: 700; }
 .nav-signin { padding: 8px 16px; border: 1.5px solid var(--border); border-radius: 8px; transition: all 0.15s; }
 .nav-signin:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
 .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
@@ -620,5 +621,6 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
 })();
 </script>
 
+<script>(function(){var p=location.pathname.split('/').pop()||'index.html';if(!p.endsWith('.html'))p+='.html';document.querySelectorAll('.nav-menu a').forEach(function(a){var h=a.getAttribute('href');if(h&&h.split('?')[0].split('#')[0]===p)a.classList.add('nav-active');});})()</script>
 </body>
 </html>
