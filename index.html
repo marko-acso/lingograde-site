@@ -370,12 +370,13 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .flashcard-tier .tier-price-note { font-size: 0.75rem; color: var(--ink-soft); margin-bottom: 16px; font-style: italic; }
 .flashcard-tier ul { list-style: none; }
 .flashcard-tier ul li { font-size: 0.875rem; color: var(--ink-soft); padding: 5px 0 5px 24px; position: relative; line-height: 1.6; }
-.flashcard-tier ul li::before { content: ''; position: absolute; left: 0; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }.flashcard-visual { text-align: center; }
+.flashcard-tier ul li::before { content: ''; position: absolute; left: 0; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.flashcard-visual { text-align: center; }
 .flashcard-visual img { max-width: 340px; width: 100%; height: auto; }
 .testimonial-avatar { width:40px;height:40px;border-radius:50%;background:var(--navy,#1A3A5C);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:0.8125rem;font-weight:700;margin-right:8px;flex-shrink:0; }
 .testimonial-meta { display:flex;align-items:center;margin-top:12px; }
 </style>
-<script src="/js/cookie-consent.js"></script>
+<script src="/js/cookie-consent.js" defer></script>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to main content</a>
@@ -406,7 +407,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <main id="main">
 <section class="hero">
   <div class="hero-inner">
-    <div class="mb-24"><img src="assets/mascot/sliced-images/marco-mila-outfit-private-casual.webp?v=3" alt="Marco and Mila — LingoGrade" class="marco-img" style="height:350px;width:auto;object-fit:contain;"></div>
+    <div class="mb-24"><img src="assets/mascot/sliced-images/marco-mila-outfit-private-casual.webp?v=3" alt="Marco and Mila — LingoGrade" class="marco-img" width="350" height="350" style="height:350px;width:auto;object-fit:contain;"></div>
     <div class="hero-badge">Professional CEFR Language Assessment</div>
     <h1>Most people have no idea what level they <em>actually speak at.</em></h1>
     <p>You practice regularly, take lessons, watch videos in your target language — and yet conversations still feel uncertain and you still cannot confidently say what level you actually are. LingoGrade listens to how you really speak, identifies the patterns you repeat, and shows you exactly what to work on next.</p>
@@ -442,7 +443,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <section class="section" id="how-it-works">
   <div class="section-inner">
     <div class="section-label">How It Works</div>
-    <h3 class="section-title">How it works</h3>
+    <h2 class="section-title">How it works</h2>
     <p class="section-desc">No test anxiety. No multiple choice. No preparation. Just a natural conversation with someone who genuinely wants to understand how you communicate — and a precise plan to move forward.</p>
     <div class="steps">
       <div class="step">
@@ -477,7 +478,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <section class="section section-alt" id="what-you-get">
   <div class="section-inner">
     <div class="section-label">What You Get</div>
-    <h3 class="section-title">Not just a level. A complete picture.</h3>
+    <h2 class="section-title">Not just a level. A complete picture.</h2>
     <p class="section-desc">Most assessments tell you where you are. LingoGrade tells you where you are, why you are stuck, and exactly what to do next. Every report is structured into five evidence-based blocks.</p>
     <div class="blocks">
       <div class="block-card included">
@@ -515,7 +516,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <section class="section section-alt" id="pricing">
   <div class="section-inner text-center">
     <div class="section-label">Pricing</div>
-    <h3 class="section-title mx-auto">One conversation. Complete clarity.</h3>
+    <h2 class="section-title mx-auto">One conversation. Complete clarity.</h2>
     <p class="section-desc mx-auto">All assessments include a professional bilingual PDF report delivered within 1 hour. No preparation needed — just show up and talk. <img src="assets/mascot/marco-alarm.webp?v=3" alt="Marco alarm" class="marco-icon" width="48" height="48" loading="lazy" style="margin-left:6px;"></p>
 
     <div class="pricing-grid pos-relative">
@@ -548,7 +549,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         <div class="pricing-name">Full Assessment</div>
         <div class="pricing-duration">25-minute session</div>
         <div class="pricing-price" data-eur="129.95" data-usd="129.95" data-chf="129.95" data-gbp="129.95">&euro;129.95</div>
-        <div class="pricing-price-note">Complete assessment package &middot; Chosen by 7 in 10 first-time clients</div>
+        <div class="pricing-price-note">Complete assessment package &middot; Our most popular option</div>
         <ul class="pricing-features">
           <li>Extended CEFR analysis</li>
           <li>5 structural problems + 5 solutions</li>
@@ -638,33 +639,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       <h2 class="section-title">What our students discovered</h2>
       <p class="section-desc mb-48">These are real results from real assessments. Every student came in with a question about their level. Every student left with an answer — and a plan.</p>
     </div>
-    <div class="grid-3col gap-24" >
-
-      <!-- HIDDEN: awaiting real testimonial data -->
-      <div class="info-card" style="display:none;">
-        <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="note-italic">"I had been telling myself I was B2 for two years. The assessment showed my active level was solid B2 but my passive structures were stuck at B1. That one insight explained why I always felt lost in fast conversations. Now I know exactly what to fix."</p>
-        <div class="testimonial-meta"><div class="testimonial-avatar">MT</div><div><div class="fw-600 fs-body">Marcus T.</div><div class="subcaption">&#127475;&#127473; German &middot; Full Assessment &middot; Feb 2026</div></div></div>
-        <div class="c-success mt-6 fs-2xs" >&#10003; Verified assessment</div>
-      </div>
-
-      <!-- HIDDEN: awaiting real testimonial data -->
-      <div class="info-card" style="display:none;">
-        <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="note-italic">"I was preparing for a C1 exam and had no idea if I was ready. The Full Assessment confirmed my level was strong C1 in speaking but identified three specific grammar patterns holding me back. I focused on those for three weeks and passed the exam."</p>
-        <div class="testimonial-meta"><div class="testimonial-avatar">CM</div><div><div class="fw-600 fs-body">Chiara M.</div><div class="subcaption">&#127470;&#127481; English &middot; Full Assessment &middot; Jan 2026</div></div></div>
-        <div class="c-success mt-6 fs-2xs" >&#10003; Verified assessment</div>
-      </div>
-
-      <!-- HIDDEN: awaiting real testimonial data -->
-      <div class="info-card" style="display:none;">
-        <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="note-italic">"I needed to prove my French level for a job application in Paris. My employer asked for B2. I assumed I was there but was not certain. The report gave me an official-standard assessment I could reference with complete confidence. I got the job."</p>
-        <div class="testimonial-meta"><div class="testimonial-avatar">AP</div><div><div class="fw-600 fs-body">Aleksandar P.</div><div class="subcaption">&#127479;&#127480; French &middot; Quick Assessment &middot; Mar 2026</div></div></div>
-        <div class="c-success mt-6 fs-2xs" >&#10003; Verified assessment</div>
-      </div>
-
-    </div>
+    <!-- Testimonial cards will be added here when real student data is available -->
 
     <div class="text-center mt-40">
       <a href="#pricing" class="btn-primary">Explore Assessment Options &rarr;</a>
@@ -768,7 +743,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 <section class="section" id="share-experience">
   <div class="section-inner text-center mx-auto mw-640" >
     <div class="section-label">Your Experience</div>
-    <h3 class="section-title">Had an assessment? Tell us how it went.</h3>
+    <h2 class="section-title">Had an assessment? Tell us how it went.</h2>
     <p class="section-desc mx-auto mb-24">Your feedback helps other learners decide with confidence. Approved reviews appear on this page. Write to us at <a href="mailto:info@lingograde.com" class="c-accent">info@lingograde.com</a> — we would love to hear from you.</p>
     <a href="review.html" class="btn-primary d-inline-flex">Share My Experience</a>
   </div>
