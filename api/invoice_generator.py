@@ -5,7 +5,6 @@ Triggered by Stripe webhook on successful payment.
 """
 
 import base64
-import io
 import os
 from datetime import datetime, timedelta, timezone
 
@@ -80,7 +79,6 @@ def generate_invoice(
 
     # No VAT — not VAT registered
     subtotal_cents = total_cents
-    vat_cents = 0
 
     total_bgn_cents = round(total_cents * EUR_TO_BGN)
 

@@ -251,7 +251,7 @@ def count_free_bot_by_ip(ip, since_iso):
             )
             return cur.fetchone()["cnt"]
     else:
-        from datetime import datetime, timezone
+        from datetime import datetime
         cutoff = datetime.fromisoformat(since_iso)
         return sum(
             1 for s in _free_bots.values()

@@ -9,7 +9,6 @@ Sends via Resend. Logs to stdout.
 """
 
 import logging
-import os
 import signal
 import time
 from datetime import datetime, timedelta, timezone
