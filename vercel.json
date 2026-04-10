@@ -2,7 +2,14 @@
   "cleanUrls": true,
   "redirects": [
     { "source": "/dashboard", "destination": "https://app.lingograde.com/login?redirect=dashboard", "permanent": true },
-    { "source": "/homework", "destination": "https://app.lingograde.com/login?redirect=homework", "permanent": true }
+    { "source": "/homework", "destination": "https://app.lingograde.com/login?redirect=homework", "permanent": true },
+    { "source": "/buy/marco-plush", "destination": "https://buy.stripe.com/9B68wPf5Ocf9bDSfjfgUM00", "permanent": false },
+    { "source": "/buy/sticker-10", "destination": "https://buy.stripe.com/6oUfZh8Hq3IDazO4EBgUM04", "permanent": false },
+    { "source": "/buy/sticker-30", "destination": "https://buy.stripe.com/9B6fZh5veenh9vK9YVgUM06", "permanent": false },
+    { "source": "/buy/sticker-50", "destination": "https://buy.stripe.com/fZudR91eY0wr5fu5IFgUM07", "permanent": false },
+    { "source": "/buy/mega-bundle", "destination": "https://buy.stripe.com/5kQ4gz8Hqcf90Ze6MJgUM08", "permanent": false },
+    { "source": "/buy/plush-stickers", "destination": "https://buy.stripe.com/dRm6oH5vecf90Ze1spgUM09", "permanent": false },
+    { "source": "/buy/complete-package", "destination": "https://buy.stripe.com/28E9AT1eY3ID8rG2wtgUM0a", "permanent": false }
   ],
   "headers": [
     {

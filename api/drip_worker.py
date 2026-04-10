@@ -25,6 +25,7 @@ running = True
 POLL_INTERVAL = 60  # seconds
 BATCH_SIZE = 50
 GAP_HOURS = 48
+MAX_RETRIES = 3
 
 
 def handle_signal(sig, frame):
@@ -86,6 +87,44 @@ def _within_gap(student_id: str | None, day: int) -> bool:
     return (now - last) < timedelta(hours=GAP_HOURS)
 
 
+def _handle_failure(log_id: str, template: str, email: str):
+    """Increment retry count; move to dead_letter after MAX_RETRIES."""
+    try:
+        with get_cursor() as cur:
+            cur.execute(
+                "SELECT COALESCE((metadata->>'retry_count')::int, 0) AS retries FROM drip_email_queue WHERE id = %s",
+                (log_id,),
+            )
+            row = cur.fetchone()
+            retries = (row["retries"] if row else 0) + 1
+
+            if retries >= MAX_RETRIES:
+                cur.execute(
+                    """UPDATE drip_email_queue
+                       SET status = 'dead_letter',
+                           metadata = jsonb_set(COALESCE(metadata, '{}'::jsonb), '{retry_count}', %s::jsonb)
+                       WHERE id = %s""",
+                    (str(retries), log_id),
+                )
+                logger.error(f"DLQ: {template} to {email} (log={log_id}) after {retries} retries")
+            else:
+                # Exponential backoff: 5min, 25min, 125min
+                backoff_minutes = 5 ** retries
+                cur.execute(
+                    """UPDATE drip_email_queue
+                       SET status = 'pending',
+                           scheduled_for = now() + make_interval(mins => %s),
+                           metadata = jsonb_set(COALESCE(metadata, '{}'::jsonb), '{retry_count}', %s::jsonb)
+                       WHERE id = %s""",
+                    (backoff_minutes, str(retries), log_id),
+                )
+                logger.warning(
+                    f"Retry {retries}/{MAX_RETRIES} for {template} to {email} (log={log_id}), backoff {backoff_minutes}m"
+                )
+    except Exception as e:
+        logger.error(f"_handle_failure error for {log_id}: {e}")
+
+
 def process_due_emails():
     """Fetch and send all due pending emails, respecting the 48-hour gap rule."""
     try:
@@ -131,9 +170,10 @@ def process_due_emails():
             if success:
                 logger.info(f"Sent {template} to {email} (log={log_id})")
             else:
-                logger.warning(f"Failed to send {template} to {email} (log={log_id})")
+                _handle_failure(log_id, template, email)
         except Exception as e:
             logger.error(f"Unexpected error sending {log_id}: {e}")
+            _handle_failure(log_id, template, email)
 
 
 if __name__ == "__main__":
