@@ -25,6 +25,8 @@ def init_pool(app=None):
         minconn=2,
         maxconn=10,
         dsn=dsn,
+        options="-c statement_timeout=30000",  # 30s statement timeout
+        connect_timeout=5,
     )
     if app:
         app.logger.info("PostgreSQL pool initialised")

@@ -9,6 +9,7 @@
   'use strict';
 
   var GA_ID = 'G-32D60T2ZKT';
+  var CLARITY_ID = 'w9dq69gmuo';
   var STORAGE_KEY = 'lg_cookie_consent';
 
   /* ── 1. Load GA only when accepted ─────────────────────────── */
@@ -25,11 +26,21 @@
     gtag('config', GA_ID, { anonymize_ip: true });
   }
 
+  /* ── 1b. Load Clarity only when accepted ───────────────────── */
+  function loadClarity() {
+    if (window.clarity) return; // already injected
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", CLARITY_ID);
+  }
+
   /* ── 2. Save consent and act on it ─────────────────────────── */
   function setConsent(value) {
     try { localStorage.setItem(STORAGE_KEY, value); } catch (e) {}
     hideBanner();
-    if (value === 'accepted') loadGA();
+    if (value === 'accepted') { loadGA(); loadClarity(); }
   }
 
   /* ── 3. Banner visibility helpers ──────────────────────────── */
@@ -136,7 +147,7 @@
     banner.innerHTML = [
       '<p>',
       '  We use cookies to analyse site traffic and improve your experience. ',
-      '  By clicking <strong>Accept</strong> you consent to our use of Google Analytics. ',
+      '  By clicking <strong>Accept</strong> you consent to our use of Google Analytics and Microsoft Clarity. ',
       '  Read our <a href="/privacy-policy.html">Privacy Policy</a>.',
       '</p>',
       '<div class="lg-cookie-actions">',
@@ -162,6 +173,7 @@
 
     if (consent === 'accepted') {
       loadGA();
+      loadClarity();
       return; /* no banner needed */
     }
     if (consent === 'rejected') {

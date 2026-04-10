@@ -15,7 +15,11 @@ from weasyprint import HTML
 from db_pool import get_cursor
 
 # ── Constants ──
-EUR_TO_BGN = 1.95583  # Fixed peg, required on invoices until end of 2026
+# Fixed by law (Bulgarian National Bank Act, Art. 29): 1 EUR = 1.95583 BGN.
+# This is NOT a market rate — it's a legally mandated fixed peg.
+# Review date: if Bulgaria adopts the euro, remove BGN conversion entirely.
+# Next review: 2027-01-01 (current accession target is 2026).
+EUR_TO_BGN = float(os.environ.get("EUR_TO_BGN_RATE", "1.95583"))
 INVOICE_DIR = os.environ.get("INVOICE_DIR", "/var/data/lingograde/invoices")
 
 COMPANY = {

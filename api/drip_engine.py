@@ -13,6 +13,7 @@ import requests as http_requests
 
 import drip_templates
 from db_pool import get_cursor
+from pricing import HOMEWORK_CHECK, REASSESSMENT, DOUBLE_HOMEWORK
 
 logger = logging.getLogger(__name__)
 
@@ -141,9 +142,20 @@ def _insert_drip(
     scheduled_for: datetime,
     metadata: dict,
 ):
-    """Insert a single row into drip_email_queue."""
+    """Insert a single row into drip_email_queue. Idempotent — skips if already exists."""
     log_id = str(uuid.uuid4())
     with get_cursor() as cur:
+        # Idempotency: skip if any row exists for this student/sequence/day (any status)
+        if student_id:
+            cur.execute(
+                """SELECT 1 FROM drip_email_queue
+                   WHERE student_id = %s AND sequence = %s AND day = %s LIMIT 1""",
+                (student_id, sequence, day),
+            )
+            if cur.fetchone():
+                logger.info(f"Idempotent skip: {template} for student {student_id} already enqueued")
+                return None
+
         cur.execute(
             """
             INSERT INTO drip_email_queue
@@ -242,9 +254,9 @@ def enqueue_post_assessment(
                 "first_name": first_name,
                 "cefr_level": cefr_level,
                 "specific_pattern": specific_pattern,
-                "discounted_price": 23.95,
-                "full_price": 29.95,
-                "currency": "EUR",
+                "discounted_price": HOMEWORK_CHECK["discounted"],
+                "full_price": HOMEWORK_CHECK["full"],
+                "currency": HOMEWORK_CHECK["currency"],
                 "assessor_name": assessor_name,
                 "language": language_display,
             }
@@ -252,17 +264,17 @@ def enqueue_post_assessment(
             metadata = {
                 "first_name": first_name,
                 "language": language_display,
-                "discounted_price": 118.95,
-                "full_price": 139.95,
-                "currency": "EUR",
+                "discounted_price": REASSESSMENT["discounted"],
+                "full_price": REASSESSMENT["full"],
+                "currency": REASSESSMENT["currency"],
                 "assessor_name": assessor_name,
             }
         elif day == 5:
             metadata = {
                 "first_name": first_name,
-                "discounted_price": 53.95,
-                "full_price": 59.90,
-                "currency": "EUR",
+                "discounted_price": DOUBLE_HOMEWORK["discounted"],
+                "full_price": DOUBLE_HOMEWORK["full"],
+                "currency": DOUBLE_HOMEWORK["currency"],
                 "assessor_name": assessor_name,
             }
         elif day == 7:

@@ -23,7 +23,7 @@
 }
 .footer-brand .brand-a { color: #27AE60; }
 .footer-tagline {
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.75);
   font-size: 0.9375rem;
   margin: 8px 0 24px;
 }
@@ -47,14 +47,14 @@
 }
 .footer-legal-link {
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.7);
   text-decoration: none;
 }
 .footer-legal-link:hover { color: rgba(255,255,255,0.8); }
 .footer-copy {
   margin-top: 16px;
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.7);
 }
 
 /* ── Checklist (checkmark items) ── */
