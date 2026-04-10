@@ -43,12 +43,12 @@ logging.root.handlers = [_handler]
 logging.root.setLevel(logging.INFO)
 
 # ── Database + student dashboard ──
-from db_pool import init_pool, get_cursor
-from student_routes import student_bp
-from dashboard_routes import dashboard_bp
+from db_pool import init_pool  # noqa: E402
+from student_routes import student_bp  # noqa: E402
+from dashboard_routes import dashboard_bp  # noqa: E402
 
 try:
-    import drip_engine
+    import drip_engine  # noqa: F401
     _DRIP_ENABLED = True
 except Exception:
     _DRIP_ENABLED = False
@@ -133,20 +133,20 @@ def _csrf_origin_check():
         abort(403, description="Origin not allowed")
 
 stripe.api_key = os.environ["STRIPE_SECRET_KEY"]
-REPORT_DIR = os.environ.get("REPORT_DIR", "/tmp/lingograde-reports")
+REPORT_DIR = os.environ.get("REPORT_DIR", "/tmp/lingograde-reports")  # nosec B108
 os.makedirs(REPORT_DIR, exist_ok=True)
 
 claude = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
 
 # ── Register route blueprints ──
-from analysis_routes import analysis_bp
-from free_bot_routes import free_bot_bp
-from assessment_routes import assessment_bp
-from checkout_routes import checkout_bp
-from webhook_routes import webhook_bp
-from sticker_routes import sticker_bp
-from partner_routes import partner_bp
+from analysis_routes import analysis_bp  # noqa: E402
+from free_bot_routes import free_bot_bp  # noqa: E402
+from assessment_routes import assessment_bp  # noqa: E402
+from checkout_routes import checkout_bp  # noqa: E402
+from webhook_routes import webhook_bp  # noqa: E402
+from sticker_routes import sticker_bp  # noqa: E402
+from partner_routes import partner_bp  # noqa: E402
 
 app.register_blueprint(analysis_bp)
 app.register_blueprint(free_bot_bp)

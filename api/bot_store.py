@@ -160,7 +160,7 @@ def update_assessment(assess_id, **fields):
         vals.append(assess_id)
         with get_cursor() as cur:
             cur.execute(
-                f"UPDATE bot_assessments SET {', '.join(sets)} WHERE id = %s",
+                f"UPDATE bot_assessments SET {', '.join(sets)} WHERE id = %s",  # nosec B608 — keys from field_map allowlist
                 vals,
             )
     else:
@@ -231,7 +231,7 @@ def update_free_bot(bot_id, **fields):
         vals.append(bot_id)
         with get_cursor() as cur:
             cur.execute(
-                f"UPDATE free_bot_sessions SET {', '.join(sets)} WHERE bot_id = %s",
+                f"UPDATE free_bot_sessions SET {', '.join(sets)} WHERE bot_id = %s",  # nosec B608 — keys from allowed set
                 vals,
             )
     else:

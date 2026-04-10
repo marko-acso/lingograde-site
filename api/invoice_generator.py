@@ -294,6 +294,7 @@ def _email_invoice(customer_email, invoice_number, pdf_bytes, filename):
         http_requests.post(
             "https://api.resend.com/emails",
             headers={"Authorization": f"Bearer {resend_key}"},
+            timeout=30,
             json={
                 "from": "LingoGrade <hello@lingograde.com>",
                 "to": [customer_email],

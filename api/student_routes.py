@@ -80,7 +80,7 @@ def patch_profile():
 
     with get_cursor() as cur:
         cur.execute(
-            f"UPDATE students SET {set_clause} WHERE id = %s",
+            f"UPDATE students SET {set_clause} WHERE id = %s",  # nosec B608 — keys validated against _PATCHABLE allowlist
             values,
         )
 
