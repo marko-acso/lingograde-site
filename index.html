@@ -912,10 +912,10 @@ function translateLanguages(lang) {
 
   // Try IP geolocation first, fall back to timezone
   applyPrices(tzFallback()); // instant render with timezone guess
-  fetch('https://api.country.is/')
+  fetch('https://ipapi.co/json/')
     .then(function(r){ return r.json(); })
     .then(function(d){
-      var cc = d && d.country;
+      var cc = d && d.country_code;
       if (cc && COUNTRY_CURRENCY[cc]) applyPrices(COUNTRY_CURRENCY[cc]);
     })
     .catch(function(){}); // silently keep timezone result
