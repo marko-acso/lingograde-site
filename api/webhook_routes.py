@@ -144,6 +144,7 @@ def stripe_webhook():
                         http_requests.post(
                             "https://api.resend.com/emails",
                             headers={"Authorization": f"Bearer {resend_key}"},
+                            timeout=30,
                             json={
                                 "from": "LingoGrade <hello@lingograde.com>",
                                 "to": [customer_email],

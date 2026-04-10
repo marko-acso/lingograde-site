@@ -189,5 +189,5 @@ def assess_report(assess_id):
         report_path,
         mimetype="application/pdf",
         as_attachment=True,
-        download_name=f"LingoGrade_Bot_Report.pdf",
+        download_name="LingoGrade_Bot_Report.pdf",
     )

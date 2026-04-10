@@ -4,7 +4,7 @@ Covers subscriptions, referrals, partner earnings, sticker read endpoints.
 Sticker verification POST lives in app.py (/v1/stickers/verify) with full anti-abuse.
 """
 
-from flask import Blueprint, g, jsonify, request
+from flask import Blueprint, g, jsonify
 
 from auth import require_auth
 from db_pool import get_cursor
