@@ -204,52 +204,11 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   <div class="section-inner text-center">
     <div class="section-label">Verified Assessments</div>
     <h2 class="section-title mx-auto" style="margin-bottom:40px;">What students found out</h2>
-    <div class="testimonials-grid">
-
-      <!-- Testimonial 1 — Marcus T. -->
-      <div class="info-card">
-        <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="note-italic">"I had been telling myself I was B2 for two years. The assessment showed my active level was solid B2 but my passive structures were stuck at B1. That one insight explained why I always felt lost in fast conversations. Now I know exactly what to fix."</p>
-        <div class="testimonial-meta">
-          <div class="testimonial-avatar">MT</div>
-          <div>
-            <div class="fw-600 fs-body">Marcus T.</div>
-            <div class="subcaption">&#127475;&#127473; German &middot; Full Assessment &middot; Feb 2026</div>
-          </div>
-        </div>
-        <div class="c-success mt-6 fs-2xs">&#10003; Verified assessment</div>
+    <div class="testimonials-grid" id="reviews-grid">
+      <div style="grid-column:1/-1;text-align:center;padding:40px 0;">
+        <div style="display:inline-block;width:32px;height:32px;border:3px solid var(--accent);border-top-color:transparent;border-radius:50%;animation:spin 0.8s linear infinite;"></div>
+        <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
       </div>
-
-      <!-- Testimonial 2 — Chiara M. -->
-      <div class="info-card">
-        <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="note-italic">"I was preparing for a C1 exam and had no idea if I was ready. The Full Assessment confirmed my level was strong C1 in speaking but identified three specific grammar patterns holding me back. I focused on those for three weeks and passed the exam."</p>
-        <div class="testimonial-meta">
-          <div class="testimonial-avatar">CM</div>
-          <div>
-            <div class="fw-600 fs-body">Chiara M.</div>
-            <div class="subcaption">&#127470;&#127481; English &middot; Full Assessment &middot; Jan 2026</div>
-          </div>
-        </div>
-        <div class="c-success mt-6 fs-2xs">&#10003; Verified assessment</div>
-      </div>
-
-      <!-- Testimonial 3 — Aleksandar P. -->
-      <div class="info-card">
-        <div class="flex-gap-4 mb-16">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="note-italic">"I needed to prove my French level for a job application in Paris. My employer asked for B2. I assumed I was there but was not certain. The report gave me an official-standard assessment I could reference with complete confidence. I got the job."</p>
-        <div class="testimonial-meta">
-          <div class="testimonial-avatar">AP</div>
-          <div>
-            <div class="fw-600 fs-body">Aleksandar P.</div>
-            <div class="subcaption">&#127479;&#127480; French &middot; Quick Assessment &middot; Mar 2026</div>
-          </div>
-        </div>
-        <div class="c-success mt-6 fs-2xs">&#10003; Verified assessment</div>
-      </div>
-
-      <!-- Testimonials 4–8 hidden — restore when real testimonial data is available -->
-
     </div>
   </div>
 </section>
@@ -307,6 +266,51 @@ document.addEventListener('click', function(e) {
     menu.classList.remove('open');
   }
 });
+
+// Load approved reviews from API
+(function() {
+  var grid = document.getElementById('reviews-grid');
+  fetch('https://app.lingograde.com/api/public-reviews')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var reviews = data.reviews || [];
+      if (!reviews.length) {
+        grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:var(--ink-light);padding:40px 0;">No reviews yet — be the first to share your experience.</p>';
+        return;
+      }
+      grid.innerHTML = '';
+      reviews.forEach(function(r) {
+        var stars = '';
+        for (var i = 0; i < 5; i++) stars += i < (r.rating || 0) ? '&#9733;' : '&#9734;';
+        var initials = (r.name || '').split(' ').map(function(w) { return w.charAt(0).toUpperCase(); }).join('').slice(0, 2);
+        var avatar = r.avatar === 'female' ? '&#128105;&#8205;&#128188;' : r.avatar === 'male' ? '&#128104;&#8205;&#128188;' : r.avatar === 'neutral' ? '&#128522;' : initials;
+        var useEmoji = r.avatar === 'female' || r.avatar === 'male' || r.avatar === 'neutral';
+        var date = new Date(r.created_at);
+        var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        var dateStr = months[date.getMonth()] + ' ' + date.getFullYear();
+        var lang = r.language_assessed || '';
+        var level = r.cefr_level ? ' · ' + r.cefr_level : '';
+
+        var card = document.createElement('div');
+        card.className = 'info-card';
+        card.innerHTML =
+          '<div class="flex-gap-4 mb-16">' + stars + '</div>' +
+          '<p class="note-italic">"' + (r.review_text || '').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '"</p>' +
+          '<div class="testimonial-meta">' +
+            '<div class="testimonial-avatar"' + (useEmoji ? ' style="font-size:1.25rem;background:var(--accent-bg);"' : '') + '>' + avatar + '</div>' +
+            '<div>' +
+              '<div class="fw-600 fs-body">' + (r.name || '').replace(/</g, '&lt;') + '</div>' +
+              '<div class="subcaption">' + (r.country || '') + (lang ? ' &middot; ' + lang : '') + level + ' &middot; ' + dateStr + '</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="c-success mt-6 fs-2xs">&#10003; Verified assessment</div>';
+        grid.appendChild(card);
+      });
+    })
+    .catch(function() {
+      grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:var(--ink-light);padding:40px 0;">Unable to load reviews right now.</p>';
+    });
+})();
 </script>
 
 </body>
