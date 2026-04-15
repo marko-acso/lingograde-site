@@ -13,12 +13,18 @@
     "confidence": "80%",
     "structural_stability": "mittel",
     "self_correction": "mittel bis hoch",
-    "sentence_control": "teilstabil",
     "recommended_reassessment": "8 Wochen",
     "error_focus": [
       "Präpositionen",
       "Zeitformen"
-    ]
+    ],
+    "emotional_state": "confident",
+    "formality_preference": "informal",
+    "student_type": "single",
+    "student_type_badge": "Single Assessment",
+    "assessor_id": "M-0001",
+    "assessor_offer": false,
+    "purchase_history": []
   },
   "sections": [
     {
@@ -214,16 +220,16 @@
       "explanation_native": "Every day, form 5 sentences using verb + preposition combinations from your problem list. Say them out loud. Consciously emphasize the correct preposition.",
       "patterns": [
         {
-          "de": "It depends on the context.",
-          "native": "It depends on the context."
+          "native": "It depends on the context.",
+          "assessed": "It depends on the context."
         },
         {
-          "de": "The report consists of three parts.",
-          "native": "The report consists of three parts."
+          "native": "The report consists of three parts.",
+          "assessed": "The report consists of three parts."
         },
         {
-          "de": "She insisted on paying the bill.",
-          "native": "She insisted on paying the bill."
+          "native": "She insisted on paying the bill.",
+          "assessed": "She insisted on paying the bill."
         }
       ],
       "daily_instruction_assessed": "5 verb + preposition sentences per day, spoken aloud, preposition stressed.",
@@ -235,28 +241,28 @@
       "title_native": "Activation",
       "sentences": [
         {
-          "de": "I visited my parents last weekend because I hadn't seen them in months.",
-          "native": "I visited my parents last weekend because I hadn't seen them in months."
+          "native": "I visited my parents last weekend because I hadn't seen them in months.",
+          "assessed": "I visited my parents last weekend because I hadn't seen them in months."
         },
         {
-          "de": "The success of the project depends on good teamwork.",
-          "native": "The success of the project depends on good teamwork."
+          "native": "The success of the project depends on good teamwork.",
+          "assessed": "The success of the project depends on good teamwork."
         },
         {
-          "de": "She is currently working on a new proposal for the client.",
-          "native": "She is currently working on a new proposal for the client."
+          "native": "She is currently working on a new proposal for the client.",
+          "assessed": "She is currently working on a new proposal for the client."
         },
         {
-          "de": "I need a laptop for my presentation tomorrow.",
-          "native": "I need a laptop for my presentation tomorrow."
+          "native": "I need a laptop for my presentation tomorrow.",
+          "assessed": "I need a laptop for my presentation tomorrow."
         },
         {
-          "de": "He bought a beautiful Italian car last month.",
-          "native": "He bought a beautiful Italian car last month."
+          "native": "He bought a beautiful Italian car last month.",
+          "assessed": "He bought a beautiful Italian car last month."
         },
         {
-          "de": "The meeting resulted in several important decisions.",
-          "native": "The meeting resulted in several important decisions."
+          "native": "The meeting resulted in several important decisions.",
+          "assessed": "The meeting resulted in several important decisions."
         }
       ]
     },
@@ -266,28 +272,28 @@
       "title_native": "Task A — Structure",
       "sentences": [
         {
-          "de": "The quality depends on the materials we use.",
-          "native": "The quality depends on the materials we use."
+          "native": "The quality depends on the materials we use.",
+          "assessed": "The quality depends on the materials we use."
         },
         {
-          "de": "I have lived here since 2020.",
-          "native": "I have lived here since 2020."
+          "native": "I have lived here since 2020.",
+          "assessed": "I have lived here since 2020."
         },
         {
-          "de": "She went to Paris last December.",
-          "native": "She went to Paris last December."
+          "native": "She went to Paris last December.",
+          "assessed": "She went to Paris last December."
         },
         {
-          "de": "The book consists of twelve chapters.",
-          "native": "The book consists of twelve chapters."
+          "native": "The book consists of twelve chapters.",
+          "assessed": "The book consists of twelve chapters."
         },
         {
-          "de": "He insisted on speaking with the manager.",
-          "native": "He insisted on speaking with the manager."
+          "native": "He insisted on speaking with the manager.",
+          "assessed": "He insisted on speaking with the manager."
         },
         {
-          "de": "They are currently looking for a new office.",
-          "native": "They are currently looking for a new office."
+          "native": "They are currently looking for a new office.",
+          "assessed": "They are currently looking for a new office."
         }
       ]
     },
@@ -334,36 +340,36 @@
       "title_native": "Task C — Oral Fluency",
       "sentences": [
         {
-          "de": "First I made myself a coffee and sat down at my desk.",
-          "native": "First I made myself a coffee and sat down at my desk."
+          "native": "First I made myself a coffee and sat down at my desk.",
+          "assessed": "First I made myself a coffee and sat down at my desk."
         },
         {
-          "de": "Then I opened my laptop because I had to finish a report.",
-          "native": "Then I opened my laptop because I had to finish a report."
+          "native": "Then I opened my laptop because I had to finish a report.",
+          "assessed": "Then I opened my laptop because I had to finish a report."
         },
         {
-          "de": "I worked on it for two hours and then took a break.",
-          "native": "I worked on it for two hours and then took a break."
+          "native": "I worked on it for two hours and then took a break.",
+          "assessed": "I worked on it for two hours and then took a break."
         },
         {
-          "de": "During the break, I called a colleague who needed help.",
-          "native": "During the break, I called a colleague who needed help."
+          "native": "During the break, I called a colleague who needed help.",
+          "assessed": "During the break, I called a colleague who needed help."
         },
         {
-          "de": "The problem depended on a software update that hadn't been installed.",
-          "native": "The problem depended on a software update that hadn't been installed."
+          "native": "The problem depended on a software update that hadn't been installed.",
+          "assessed": "The problem depended on a software update that hadn't been installed."
         },
         {
-          "de": "After we figured it out, I went back to my report.",
-          "native": "After solving it, I went back to my report."
+          "native": "After solving it, I went back to my report.",
+          "assessed": "After we figured it out, I went back to my report."
         },
         {
-          "de": "By the end of the day, I had completed everything I planned.",
-          "native": "By the end of the day, I had completed everything I had planned."
+          "native": "By the end of the day, I had completed everything I had planned.",
+          "assessed": "By the end of the day, I had completed everything I planned."
         },
         {
-          "de": "Although I was tired, I felt very productive.",
-          "native": "Even though I was tired, I felt very productive."
+          "native": "Even though I was tired, I felt very productive.",
+          "assessed": "Although I was tired, I felt very productive."
         }
       ]
     },
@@ -439,8 +445,8 @@
     "stability_native": "Structural stability under pressure: medium",
     "self_correction_assessed": "Self-correction ability: medium to high",
     "self_correction_native": "Self-correction ability: medium to high",
-    "reassessment_assessed": "Recommended re-assessment: 3 months",
-    "reassessment_native": "Recommended reassessment: 3 months"
+    "reassessment_assessed": "Empfohlenes Re-Assessment: 8 Wochen",
+    "reassessment_native": "Recommended reassessment: 8 Wochen"
   },
   "block_d": {
     "title_native": "Summary in Your Language",
@@ -453,6 +459,17 @@
       "Spanish false friends (actually, realize, etc.)"
     ],
     "key_recommendation_native": "Practice the Preposition Engine daily: form 5 sentences with verb + preposition combinations and say them out loud. This single exercise will strengthen your highest-impact focus area.",
-    "next_steps_native": "Focus on verb + preposition combinations for the next 2 weeks, then move on to tense selection and false friends. Schedule a reassessment in 8 weeks to measure progress."
+    "next_steps_native": "Focus on verb + preposition combinations for the next 2 weeks, then move on to tense selection and false friends. Schedule a reassessment in 8 weeks to measure progress.",
+    "title_assessed": "Zusammenfassung in deiner Sprache",
+    "cefr_summary_assessed": "You are in the B2 range. Your communicative foundation is strong, but preposition transfer from Spanish and tense inconsistency remain the key areas for improvement. With targeted training, C1 is realistic in 4-5 months.",
+    "top_problems_assessed": [
+      "Dependent prepositions after verbs",
+      "Present perfect vs. simple past",
+      "Article omission with countable nouns",
+      "Adjective word order",
+      "False friends from Spanish"
+    ],
+    "key_recommendation_assessed": "Learn the 20 most common verb + preposition combinations. Write 2 sentences per day using them.",
+    "next_steps_assessed": "Your central pattern is preposition confusion after specific verbs. You transfer Spanish preposition logic into English: \"depend of\" instead of \"depend on\", \"consist in\" instead of \"consist of\". This is a classic L1 transfer error that needs targeted drilling to override."
   }
 }

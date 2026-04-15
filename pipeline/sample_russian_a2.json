@@ -13,12 +13,18 @@
     "confidence": "65%",
     "structural_stability": "niedrig bis mittel",
     "self_correction": "niedrig",
-    "sentence_control": "teilweise stabil",
     "recommended_reassessment": "8 Wochen",
     "error_focus": [
       "Kasus/Artikel",
       "Verbposition"
-    ]
+    ],
+    "emotional_state": "confident",
+    "formality_preference": "informal",
+    "student_type": "single",
+    "student_type_badge": "Индивидуальная оценка",
+    "assessor_id": "M-0001",
+    "assessor_offer": false,
+    "purchase_history": []
   },
   "sections": [
     {
@@ -214,16 +220,16 @@
       "explanation_native": "Every day say aloud 5 sentences, consciously choosing the correct case. Underline the ending.",
       "patterns": [
         {
-          "de": "Я вижу книгу. (вин. падеж)",
-          "native": "Я вижу книгу. (accusative case)"
+          "native": "Я вижу книгу. (accusative case)",
+          "assessed": "Я вижу книгу. (вин. падеж)"
         },
         {
-          "de": "Я иду в магазин. (вин. — направление)",
-          "native": "Я иду в магазин. (acc. — direction)"
+          "native": "Я иду в магазин. (acc. — direction)",
+          "assessed": "Я иду в магазин. (вин. — направление)"
         },
         {
-          "de": "Я в магазине. (предл. — место)",
-          "native": "Я в магазине. (prep. — location)"
+          "native": "Я в магазине. (prep. — location)",
+          "assessed": "Я в магазине. (предл. — место)"
         }
       ],
       "daily_instruction_assessed": "5 предложений в день, вслух, с осознанным падежом.",
@@ -235,28 +241,28 @@
       "title_native": "Activation",
       "sentences": [
         {
-          "de": "Я иду в магазин, потому что мне нужен хлеб.",
-          "native": "I am going to the store because I need bread."
+          "native": "I am going to the store because I need bread.",
+          "assessed": "Я иду в магазин, потому что мне нужен хлеб."
         },
         {
-          "de": "Вчера я прочитал интересную книгу.",
-          "native": "Yesterday I read an interesting book."
+          "native": "Yesterday I read an interesting book.",
+          "assessed": "Вчера я прочитал интересную книгу."
         },
         {
-          "de": "Я дал другу свою книгу.",
-          "native": "I gave my friend my book."
+          "native": "I gave my friend my book.",
+          "assessed": "Я дал другу свою книгу."
         },
         {
-          "de": "Мы живем в большом городе.",
-          "native": "We live in a big city."
+          "native": "We live in a big city.",
+          "assessed": "Мы живем в большом городе."
         },
         {
-          "de": "Она ходит в школу каждый день.",
-          "native": "She goes to school every day."
+          "native": "She goes to school every day.",
+          "assessed": "Она ходит в школу каждый день."
         },
         {
-          "de": "Я написал письмо маме.",
-          "native": "I wrote a letter to mom."
+          "native": "I wrote a letter to mom.",
+          "assessed": "Я написал письмо маме."
         }
       ]
     },
@@ -266,28 +272,28 @@
       "title_native": "Homework A — Structure",
       "sentences": [
         {
-          "de": "Я вижу большой дом.",
-          "native": "I see a big house."
+          "native": "I see a big house.",
+          "assessed": "Я вижу большой дом."
         },
         {
-          "de": "Она идет в школу.",
-          "native": "She is going to school."
+          "native": "She is going to school.",
+          "assessed": "Она идет в школу."
         },
         {
-          "de": "Мы живем в Москве.",
-          "native": "We live in Moscow."
+          "native": "We live in Moscow.",
+          "assessed": "Мы живем в Москве."
         },
         {
-          "de": "Я дал книгу другу.",
-          "native": "I gave a book to a friend."
+          "native": "I gave a book to a friend.",
+          "assessed": "Я дал книгу другу."
         },
         {
-          "de": "Вчера я написал письмо.",
-          "native": "Yesterday I wrote a letter."
+          "native": "Yesterday I wrote a letter.",
+          "assessed": "Вчера я написал письмо."
         },
         {
-          "de": "Он читает интересную книгу.",
-          "native": "He is reading an interesting book."
+          "native": "He is reading an interesting book.",
+          "assessed": "Он читает интересную книгу."
         }
       ]
     },
@@ -447,8 +453,8 @@
     "stability_native": "Structural stability under pressure: low to medium",
     "self_correction_assessed": "Способность к самокоррекции: низкая",
     "self_correction_native": "Self-correction ability: low",
-    "reassessment_assessed": "Рекомендуемая переоценка: 3 месяца",
-    "reassessment_native": "Recommended reassessment: 3 months"
+    "reassessment_assessed": "Empfohlenes Re-Assessment: 8 Wochen",
+    "reassessment_native": "Recommended reassessment: 8 Wochen"
   },
   "block_d": {
     "title_native": "Summary in Your Language",
@@ -461,6 +467,17 @@
       "Unpredictable word stress"
     ],
     "key_recommendation_native": "Practice the Case Engine daily: say 5 sentences aloud with conscious selection of the correct case. This single exercise will strengthen your highest-impact focus area.",
-    "next_steps_native": "Focus on the case system for the next 2 weeks, then move on to verbs of motion and verb aspect. Schedule a reassessment in 8 weeks."
+    "next_steps_native": "Focus on the case system for the next 2 weeks, then move on to verbs of motion and verb aspect. Schedule a reassessment in 8 weeks.",
+    "title_assessed": "Zusammenfassung in deiner Sprache",
+    "cefr_summary_assessed": "Ты находишься на уровне A2. Твоя база есть, но падежная система нестабильна. С целенаправленным тренингом B1 реалистичен через 3-4 месяца.",
+    "top_problems_assessed": [
+      "Падежные ошибки",
+      "Вид глагола",
+      "Глаголы движения",
+      "Предлоги с падежами",
+      "Ударение в словах"
+    ],
+    "key_recommendation_assessed": "Каждый день 5 предложений с осознанным выбором падежа. Проговаривай вслух.",
+    "next_steps_assessed": "Центральная проблема этого занятия — падежная система. Ты используешь именительный падеж там, где нужен винительный или дательный. Хотя болгарский и русский — родственные языки, отсутствие падежей в болгарском создает основную трудность."
   }
 }

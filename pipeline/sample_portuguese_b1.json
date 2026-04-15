@@ -13,12 +13,18 @@
     "confidence": "73%",
     "structural_stability": "mittel",
     "self_correction": "niedrig bis mittel",
-    "sentence_control": "teilweise stabil",
     "recommended_reassessment": "8 Wochen",
     "error_focus": [
       "Zeitformen",
       "Präpositionen"
-    ]
+    ],
+    "emotional_state": "confident",
+    "formality_preference": "informal",
+    "student_type": "single",
+    "student_type_badge": "Avaliação individual",
+    "assessor_id": "M-0001",
+    "assessor_offer": false,
+    "purchase_history": []
   },
   "sections": [
     {
@@ -214,16 +220,16 @@
       "explanation_native": "Every day, form 5 pairs of sentences: same situation, once in the simple past and once in the imperfect. Say them aloud.",
       "patterns": [
         {
-          "de": "Perfeito: Ontem comi uma pizza. (acao unica)",
-          "native": "Simple past: Yesterday I ate a pizza. (single action)"
+          "native": "Simple past: Yesterday I ate a pizza. (single action)",
+          "assessed": "Perfeito: Ontem comi uma pizza. (acao unica)"
         },
         {
-          "de": "Imperfeito: Quando era crianca, comia pizza todos os domingos. (habito)",
-          "native": "Imperfect: When I was a child, I used to eat pizza every Sunday. (habit)"
+          "native": "Imperfect: When I was a child, I used to eat pizza every Sunday. (habit)",
+          "assessed": "Imperfeito: Quando era crianca, comia pizza todos os domingos. (habito)"
         },
         {
-          "de": "Combinado: Chovia (imperfeito) quando sai de casa (perfeito).",
-          "native": "Combined: It was raining (imperfect) when I went out (simple past)."
+          "native": "Combined: It was raining (imperfect) when I went out (simple past).",
+          "assessed": "Combinado: Chovia (imperfeito) quando sai de casa (perfeito)."
         }
       ],
       "daily_instruction_assessed": "5 pares por dia, em voz alta, sublinhando a escolha do tempo.",
@@ -235,28 +241,28 @@
       "title_native": "Activation",
       "sentences": [
         {
-          "de": "Quando era jovem, morava no Porto.",
-          "native": "When I was young, I lived in Porto."
+          "native": "When I was young, I lived in Porto.",
+          "assessed": "Quando era jovem, morava no Porto."
         },
         {
-          "de": "Ontem fui ao mercado e comprei pao.",
-          "native": "Yesterday I went to the market and bought some bread."
+          "native": "Yesterday I went to the market and bought some bread.",
+          "assessed": "Ontem fui ao mercado e comprei pao."
         },
         {
-          "de": "Fazia sol quando chegamos a praia.",
-          "native": "The weather was nice when we arrived at the beach."
+          "native": "The weather was nice when we arrived at the beach.",
+          "assessed": "Fazia sol quando chegamos a praia."
         },
         {
-          "de": "Se eu tiver tempo amanha, vou ao museu.",
-          "native": "If I have time tomorrow, I will go to the museum."
+          "native": "If I have time tomorrow, I will go to the museum.",
+          "assessed": "Se eu tiver tempo amanha, vou ao museu."
         },
         {
-          "de": "O livro do professor esta na mesa.",
-          "native": "The teacher's book is on the table."
+          "native": "The teacher's book is on the table.",
+          "assessed": "O livro do professor esta na mesa."
         },
         {
-          "de": "Disse-me que estava cansado.",
-          "native": "He told me he was tired."
+          "native": "He told me he was tired.",
+          "assessed": "Disse-me que estava cansado."
         }
       ]
     },
@@ -266,28 +272,28 @@
       "title_native": "Homework A — Structure",
       "sentences": [
         {
-          "de": "Ontem fui ao cinema com os meus amigos.",
-          "native": "Yesterday I went to the cinema with my friends."
+          "native": "Yesterday I went to the cinema with my friends.",
+          "assessed": "Ontem fui ao cinema com os meus amigos."
         },
         {
-          "de": "Quando era crianca, brincava no jardim.",
-          "native": "When I was a child, I used to play in the garden."
+          "native": "When I was a child, I used to play in the garden.",
+          "assessed": "Quando era crianca, brincava no jardim."
         },
         {
-          "de": "Chovia quando ela saiu de casa.",
-          "native": "It was raining when she left the house."
+          "native": "It was raining when she left the house.",
+          "assessed": "Chovia quando ela saiu de casa."
         },
         {
-          "de": "Se eu tiver dinheiro, compro um carro novo.",
-          "native": "If I have money, I will buy a new car."
+          "native": "If I have money, I will buy a new car.",
+          "assessed": "Se eu tiver dinheiro, compro um carro novo."
         },
         {
-          "de": "O livro da Maria esta na mesa.",
-          "native": "Marie's book is on the table."
+          "native": "Marie's book is on the table.",
+          "assessed": "O livro da Maria esta na mesa."
         },
         {
-          "de": "Ela disse-me que ia viajar.",
-          "native": "She told me she was going to travel."
+          "native": "She told me she was going to travel.",
+          "assessed": "Ela disse-me que ia viajar."
         }
       ]
     },
@@ -334,36 +340,36 @@
       "title_native": "Homework C — Oral Fluency",
       "sentences": [
         {
-          "de": "De manha acordei cedo e tomei o pequeno-almoco.",
-          "native": "In the morning I got up early and had breakfast."
+          "native": "In the morning I got up early and had breakfast.",
+          "assessed": "De manha acordei cedo e tomei o pequeno-almoco."
         },
         {
-          "de": "Depois sai porque fazia bom tempo.",
-          "native": "Then I went out because the weather was nice."
+          "native": "Then I went out because the weather was nice.",
+          "assessed": "Depois sai porque fazia bom tempo."
         },
         {
-          "de": "Caminhei no parque durante uma hora.",
-          "native": "I walked in the park for an hour."
+          "native": "I walked in the park for an hour.",
+          "assessed": "Caminhei no parque durante uma hora."
         },
         {
-          "de": "Quando estava no parque, encontrei um velho amigo.",
-          "native": "When I was in the park, I ran into an old friend."
+          "native": "When I was in the park, I ran into an old friend.",
+          "assessed": "Quando estava no parque, encontrei um velho amigo."
         },
         {
-          "de": "Tomamos cafe juntos num pequeno cafe.",
-          "native": "We had a coffee together in a small bistro."
+          "native": "We had a coffee together in a small bistro.",
+          "assessed": "Tomamos cafe juntos num pequeno cafe."
         },
         {
-          "de": "Contou-me que trabalhava agora em Franca.",
-          "native": "He told me he was now working in France."
+          "native": "He told me he was now working in France.",
+          "assessed": "Contou-me que trabalhava agora em Franca."
         },
         {
-          "de": "Depois do nosso encontro, voltei para casa.",
-          "native": "After our meeting, I went back home."
+          "native": "After our meeting, I went back home.",
+          "assessed": "Depois do nosso encontro, voltei para casa."
         },
         {
-          "de": "A noite, cozinhei para a minha familia.",
-          "native": "In the evening, I cooked for my family."
+          "native": "In the evening, I cooked for my family.",
+          "assessed": "A noite, cozinhei para a minha familia."
         }
       ]
     },
@@ -439,8 +445,8 @@
     "stability_native": "Structural stability under pressure: average",
     "self_correction_assessed": "Capacidade de autocorrecao: baixa a media",
     "self_correction_native": "Self-correction ability: low to average",
-    "reassessment_assessed": "Reavaliacao recomendada: 3 meses",
-    "reassessment_native": "Reassessment recommended: 3 months"
+    "reassessment_assessed": "Empfohlenes Re-Assessment: 8 Wochen",
+    "reassessment_native": "Reassessment recommended: 8 Wochen"
   },
   "block_d": {
     "title_native": "Summary in your language",
@@ -453,6 +459,17 @@
       "Pronoun placement influenced by French"
     ],
     "key_recommendation_native": "Practice the Tense Engine every day: form 5 pairs of sentences — same situation, once in the simple past and once in the imperfect. This single exercise will strengthen your highest-impact focus area.",
-    "next_steps_native": "Focus on simple past vs. imperfect for the next 2 weeks, then move on to prepositions and the future subjunctive. Schedule a reassessment in 8 weeks."
+    "next_steps_native": "Focus on simple past vs. imperfect for the next 2 weeks, then move on to prepositions and the future subjunctive. Schedule a reassessment in 8 weeks.",
+    "title_assessed": "Zusammenfassung in deiner Sprache",
+    "cefr_summary_assessed": "Estas na faixa B1. A tua base e solida mas os tempos e as preposicoes permanecem instaveis. Com treino focado, B2 e realista em 4-5 meses.",
+    "top_problems_assessed": [
+      "Preterito perfeito vs. imperfeito",
+      "Preposicoes de lugar",
+      "Futuro do conjuntivo",
+      "Contracoes de preposicoes",
+      "Colocacao pronominal"
+    ],
+    "key_recommendation_assessed": "Cada dia, escreve 3 frases no perfeito (acao unica) e 3 no imperfeito (descricao/habito).",
+    "next_steps_assessed": "O padrao central desta sessao e a confusao entre preterito perfeito e imperfeito. Usas o perfeito para descrever habitos e estados no passado, onde o imperfeito seria correto. Esta confusao e compreensivel dado que o frances tem uma distincao semelhante mas usa-a de forma diferente."
   }
 }

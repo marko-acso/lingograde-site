@@ -13,12 +13,18 @@
     "confidence": "62%",
     "structural_stability": "niedrig bis mittel",
     "self_correction": "niedrig",
-    "sentence_control": "teilweise stabil",
     "recommended_reassessment": "8 Wochen",
     "error_focus": [
       "Kasus/Artikel",
       "Zeitformen"
-    ]
+    ],
+    "emotional_state": "confident",
+    "formality_preference": "informal",
+    "student_type": "single",
+    "student_type_badge": "Evaluare individuală",
+    "assessor_id": "M-0001",
+    "assessor_offer": false,
+    "purchase_history": []
   },
   "sections": [
     {
@@ -214,16 +220,16 @@
       "explanation_native": "Every day say aloud 5 sentences, consciously choosing the correct case.",
       "patterns": [
         {
-          "de": "Cartea fratelui meu. (genitiv)",
-          "native": "My brother's book. (genitive)"
+          "native": "My brother's book. (genitive)",
+          "assessed": "Cartea fratelui meu. (genitiv)"
         },
         {
-          "de": "I-am dat cartea lui Ion. (dativ)",
-          "native": "I gave the book to Ion. (dative)"
+          "native": "I gave the book to Ion. (dative)",
+          "assessed": "I-am dat cartea lui Ion. (dativ)"
         },
         {
-          "de": "Am vazut omul pe strada. (articol hotarat)",
-          "native": "I saw the man on the street. (definite article)"
+          "native": "I saw the man on the street. (definite article)",
+          "assessed": "Am vazut omul pe strada. (articol hotarat)"
         }
       ],
       "daily_instruction_assessed": "5 propozitii pe zi, cu voce tare, cu caz constient.",
@@ -235,28 +241,28 @@
       "title_native": "Activation",
       "sentences": [
         {
-          "de": "Merg la magazin pentru ca am nevoie de paine.",
-          "native": "I'm going to the store because I need bread."
+          "native": "I'm going to the store because I need bread.",
+          "assessed": "Merg la magazin pentru ca am nevoie de paine."
         },
         {
-          "de": "Ieri am citit o carte interesanta.",
-          "native": "Yesterday I read an interesting book."
+          "native": "Yesterday I read an interesting book.",
+          "assessed": "Ieri am citit o carte interesanta."
         },
         {
-          "de": "I-am dat prietenului meu cartea.",
-          "native": "I gave my friend the book."
+          "native": "I gave my friend the book.",
+          "assessed": "I-am dat prietenului meu cartea."
         },
         {
-          "de": "Locuim intr-un oras mare.",
-          "native": "We live in a big city."
+          "native": "We live in a big city.",
+          "assessed": "Locuim intr-un oras mare."
         },
         {
-          "de": "Ea merge la scoala in fiecare zi.",
-          "native": "She goes to school every day."
+          "native": "She goes to school every day.",
+          "assessed": "Ea merge la scoala in fiecare zi."
         },
         {
-          "de": "Am scris o scrisoare mamei.",
-          "native": "I wrote a letter to mom."
+          "native": "I wrote a letter to mom.",
+          "assessed": "Am scris o scrisoare mamei."
         }
       ]
     },
@@ -266,28 +272,28 @@
       "title_native": "Homework A — Structure",
       "sentences": [
         {
-          "de": "Vad o casa mare.",
-          "native": "I see a big house."
+          "native": "I see a big house.",
+          "assessed": "Vad o casa mare."
         },
         {
-          "de": "Ea merge la scoala.",
-          "native": "She goes to school."
+          "native": "She goes to school.",
+          "assessed": "Ea merge la scoala."
         },
         {
-          "de": "Locuim in Bucuresti.",
-          "native": "We live in Bucharest."
+          "native": "We live in Bucharest.",
+          "assessed": "Locuim in Bucuresti."
         },
         {
-          "de": "I-am dat cartea prietenului.",
-          "native": "I gave the book to my friend."
+          "native": "I gave the book to my friend.",
+          "assessed": "I-am dat cartea prietenului."
         },
         {
-          "de": "Ieri am scris o scrisoare.",
-          "native": "Yesterday I wrote a letter."
+          "native": "Yesterday I wrote a letter.",
+          "assessed": "Ieri am scris o scrisoare."
         },
         {
-          "de": "El citeste o carte interesanta.",
-          "native": "He is reading an interesting book."
+          "native": "He is reading an interesting book.",
+          "assessed": "El citeste o carte interesanta."
         }
       ]
     },
@@ -447,8 +453,8 @@
     "stability_native": "Structural stability under pressure: low to medium",
     "self_correction_assessed": "Capacitate de autocorectare: scazuta",
     "self_correction_native": "Self-correction ability: low",
-    "reassessment_assessed": "Reevaluare recomandata: 3 luni",
-    "reassessment_native": "Recommended reassessment: 3 months"
+    "reassessment_assessed": "Empfohlenes Re-Assessment: 8 Wochen",
+    "reassessment_native": "Recommended reassessment: 8 Wochen"
   },
   "block_d": {
     "title_native": "Summary in Your Language",
@@ -461,6 +467,17 @@
       "Omitted clitic pronouns"
     ],
     "key_recommendation_native": "Practice the Case Engine daily: say 5 sentences aloud with correct articles and cases. This exercise strengthens your highest-impact focus area.",
-    "next_steps_native": "Focus on articles and cases for the next 2 weeks. Schedule a reassessment in 8 weeks."
+    "next_steps_native": "Focus on articles and cases for the next 2 weeks. Schedule a reassessment in 8 weeks.",
+    "title_assessed": "Zusammenfassung in deiner Sprache",
+    "cefr_summary_assessed": "Te afli la nivelul A2. Baza ta exista, dar articolele si cazurile sunt instabile. Cu antrenament tintit, B1 este realist in 4-5 luni.",
+    "top_problems_assessed": [
+      "Articolul postpus",
+      "Genitiv-dativ",
+      "Conjugarea la trecut",
+      "Prepozitii de loc",
+      "Pronume atone"
+    ],
+    "key_recommendation_assessed": "In fiecare zi 5 propozitii cu articol hotarat si nehotarat. Pronunta cu voce tare.",
+    "next_steps_assessed": "Problema centrala este articolul postpus si sistemul de cazuri. In romana, articolul se pune dupa substantiv ('omul' nu 'om-ul'), iar cazurile genitiv si dativ au forme speciale."
   }
 }

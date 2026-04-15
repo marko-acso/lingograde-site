@@ -13,12 +13,18 @@
     "confidence": "68%",
     "structural_stability": "mittel",
     "self_correction": "niedrig bis mittel",
-    "sentence_control": "teilweise stabil",
     "recommended_reassessment": "8 Wochen",
     "error_focus": [
       "Kasus/Artikel",
       "Zeitformen"
-    ]
+    ],
+    "emotional_state": "confident",
+    "formality_preference": "informal",
+    "student_type": "single",
+    "student_type_badge": "Pojedinačna procena",
+    "assessor_id": "M-0001",
+    "assessor_offer": false,
+    "purchase_history": []
   },
   "sections": [
     {
@@ -214,16 +220,16 @@
       "explanation_native": "Every day, say 5 sentences aloud, consciously choosing the correct case.",
       "patterns": [
         {
-          "de": "Видим књигу. (акузатив)",
-          "native": "I see the book. (accusative)"
+          "native": "I see the book. (accusative)",
+          "assessed": "Видим књигу. (акузатив)"
         },
         {
-          "de": "Идем у продавницу. (акуз. — правац)",
-          "native": "I am going to the store. (accusative — direction)"
+          "native": "I am going to the store. (accusative — direction)",
+          "assessed": "Идем у продавницу. (акуз. — правац)"
         },
         {
-          "de": "Ја сам у продавници. (локатив — место)",
-          "native": "I am in the store. (locative — location)"
+          "native": "I am in the store. (locative — location)",
+          "assessed": "Ја сам у продавници. (локатив — место)"
         }
       ],
       "daily_instruction_assessed": "5 реченица дневно, наглас, са свесним падежом.",
@@ -235,28 +241,28 @@
       "title_native": "Activation",
       "sentences": [
         {
-          "de": "Идем у продавницу јер ми треба хлеб.",
-          "native": "I am going to the store because I need bread."
+          "native": "I am going to the store because I need bread.",
+          "assessed": "Идем у продавницу јер ми треба хлеб."
         },
         {
-          "de": "Јуче сам прочитао занимљиву књигу.",
-          "native": "Yesterday I read an interesting book."
+          "native": "Yesterday I read an interesting book.",
+          "assessed": "Јуче сам прочитао занимљиву књигу."
         },
         {
-          "de": "Дао сам пријатељу своју књигу.",
-          "native": "I gave my friend my book."
+          "native": "I gave my friend my book.",
+          "assessed": "Дао сам пријатељу своју књигу."
         },
         {
-          "de": "Живимо у великом граду.",
-          "native": "We live in a big city."
+          "native": "We live in a big city.",
+          "assessed": "Живимо у великом граду."
         },
         {
-          "de": "Она иде у школу сваки дан.",
-          "native": "She goes to school every day."
+          "native": "She goes to school every day.",
+          "assessed": "Она иде у школу сваки дан."
         },
         {
-          "de": "Написао сам писмо мами.",
-          "native": "I wrote a letter to mom."
+          "native": "I wrote a letter to mom.",
+          "assessed": "Написао сам писмо мами."
         }
       ]
     },
@@ -266,28 +272,28 @@
       "title_native": "Homework A — Structure",
       "sentences": [
         {
-          "de": "Видим велику кућу.",
-          "native": "I see a big house."
+          "native": "I see a big house.",
+          "assessed": "Видим велику кућу."
         },
         {
-          "de": "Она иде у школу.",
-          "native": "She is going to school."
+          "native": "She is going to school.",
+          "assessed": "Она иде у школу."
         },
         {
-          "de": "Живимо у Београду.",
-          "native": "We live in Belgrade."
+          "native": "We live in Belgrade.",
+          "assessed": "Живимо у Београду."
         },
         {
-          "de": "Дао сам књигу пријатељу.",
-          "native": "I gave a book to a friend."
+          "native": "I gave a book to a friend.",
+          "assessed": "Дао сам књигу пријатељу."
         },
         {
-          "de": "Јуче сам написао писмо.",
-          "native": "Yesterday I wrote a letter."
+          "native": "Yesterday I wrote a letter.",
+          "assessed": "Јуче сам написао писмо."
         },
         {
-          "de": "Он чита занимљиву књигу.",
-          "native": "He is reading an interesting book."
+          "native": "He is reading an interesting book.",
+          "assessed": "Он чита занимљиву књигу."
         }
       ]
     },
@@ -451,8 +457,8 @@
     "stability_native": "Structural stability under pressure: medium",
     "self_correction_assessed": "Способност самокорекције: ниска до средња",
     "self_correction_native": "Self-correction ability: low to medium",
-    "reassessment_assessed": "Препоручена поновна процена: 3 месеца",
-    "reassessment_native": "Recommended reassessment: 3 months"
+    "reassessment_assessed": "Empfohlenes Re-Assessment: 8 Wochen",
+    "reassessment_native": "Recommended reassessment: 8 Wochen"
   },
   "block_d": {
     "title_native": "Summary in Your Language",
@@ -465,6 +471,17 @@
       "Incorrect clitic order"
     ],
     "key_recommendation_native": "Practice the Case Engine daily: say 5 sentences aloud with a conscious choice of the correct case. This exercise strengthens your highest-impact focus area.",
-    "next_steps_native": "Focus on the case system over the next 2 weeks, then move on to verbal aspect and prepositions. Schedule a reassessment after 8 weeks."
+    "next_steps_native": "Focus on the case system over the next 2 weeks, then move on to verbal aspect and prepositions. Schedule a reassessment after 8 weeks.",
+    "title_assessed": "Zusammenfassung in deiner Sprache",
+    "cefr_summary_assessed": "Налазиш се на нивоу A2. Твоја база постоји, али падежни систем је нестабилан. Са циљаним тренингом B1 је реалистичан за 3-4 месеца.",
+    "top_problems_assessed": [
+      "Падежне грешке",
+      "Глаголски вид",
+      "Екавица / ијекавица",
+      "Предлози са падежима",
+      "Ред речи у питањима"
+    ],
+    "key_recommendation_assessed": "Сваки дан 5 реченица са свесним избором падежа. Изговарај наглас.",
+    "next_steps_assessed": "Централни проблем је падежни систем. Као бугарски говорник, нисти навикнут на промену облика именица. У српском, свака реч мења облик зависно од функције у реченици."
   }
 }

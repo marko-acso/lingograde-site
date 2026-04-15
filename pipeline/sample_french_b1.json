@@ -13,12 +13,18 @@
     "confidence": "72%",
     "structural_stability": "mittel",
     "self_correction": "niedrig bis mittel",
-    "sentence_control": "teilweise stabil",
     "recommended_reassessment": "8 Wochen",
     "error_focus": [
       "Zeitformen",
       "Kasus/Artikel"
-    ]
+    ],
+    "emotional_state": "confident",
+    "formality_preference": "informal",
+    "student_type": "single",
+    "student_type_badge": "Évaluation individuelle",
+    "assessor_id": "M-0001",
+    "assessor_offer": false,
+    "purchase_history": []
   },
   "sections": [
     {
@@ -214,16 +220,16 @@
       "explanation_native": "Every day, form 5 pairs of sentences: same situation, once in passé composé (single event) and once in imparfait (description). Say them out loud.",
       "patterns": [
         {
-          "de": "Passe compose: Hier, j'ai mange une pizza. (action unique)",
-          "native": "Passé composé: Hier, j'ai mange une pizza. (single event)"
+          "native": "Passé composé: Hier, j'ai mange une pizza. (single event)",
+          "assessed": "Passe compose: Hier, j'ai mange une pizza. (action unique)"
         },
         {
-          "de": "Imparfait: Quand j'etais enfant, je mangeais souvent des pizzas. (habitude)",
-          "native": "Imparfait: Quand j'etais enfant, je mangeais souvent des pizzas. (habit)"
+          "native": "Imparfait: Quand j'etais enfant, je mangeais souvent des pizzas. (habit)",
+          "assessed": "Imparfait: Quand j'etais enfant, je mangeais souvent des pizzas. (habitude)"
         },
         {
-          "de": "Combine: Il pleuvait (imparfait) quand je suis sorti (passe compose).",
-          "native": "Mix: Il pleuvait (imparfait) quand je suis sorti (passé composé)."
+          "native": "Mix: Il pleuvait (imparfait) quand je suis sorti (passé composé).",
+          "assessed": "Combine: Il pleuvait (imparfait) quand je suis sorti (passe compose)."
         }
       ],
       "daily_instruction_assessed": "5 paires par jour, a haute voix, en soulignant le choix du temps.",
@@ -235,28 +241,28 @@
       "title_native": "Activation",
       "sentences": [
         {
-          "de": "Quand j'etais jeune, j'habitais a Casablanca.",
-          "native": "When I was young, I used to live in Casablanca."
+          "native": "When I was young, I used to live in Casablanca.",
+          "assessed": "Quand j'etais jeune, j'habitais a Casablanca."
         },
         {
-          "de": "Hier, je suis alle au marche et j'ai achete du pain.",
-          "native": "Yesterday, I went to the market and bought bread."
+          "native": "Yesterday, I went to the market and bought bread.",
+          "assessed": "Hier, je suis alle au marche et j'ai achete du pain."
         },
         {
-          "de": "Il faisait beau quand nous sommes arrives.",
-          "native": "The weather was beautiful when we arrived."
+          "native": "The weather was beautiful when we arrived.",
+          "assessed": "Il faisait beau quand nous sommes arrives."
         },
         {
-          "de": "Elle a mange de la salade et du fromage.",
-          "native": "I ate a salad and cheese."
+          "native": "I ate a salad and cheese.",
+          "assessed": "Elle a mange de la salade et du fromage."
         },
         {
-          "de": "Je vais en France la semaine prochaine.",
-          "native": "I will go to France next week."
+          "native": "I will go to France next week.",
+          "assessed": "Je vais en France la semaine prochaine."
         },
         {
-          "de": "La table est dans la cuisine.",
-          "native": "The table is in the kitchen."
+          "native": "The table is in the kitchen.",
+          "assessed": "La table est dans la cuisine."
         }
       ]
     },
@@ -266,28 +272,28 @@
       "title_native": "Homework A — Structure",
       "sentences": [
         {
-          "de": "Hier, je suis alle au cinema avec mon ami.",
-          "native": "Yesterday, I went to the cinema with my friend."
+          "native": "Yesterday, I went to the cinema with my friend.",
+          "assessed": "Hier, je suis alle au cinema avec mon ami."
         },
         {
-          "de": "Quand j'etais enfant, je jouais dans le jardin.",
-          "native": "When I was a child, I used to play in the garden."
+          "native": "When I was a child, I used to play in the garden.",
+          "assessed": "Quand j'etais enfant, je jouais dans le jardin."
         },
         {
-          "de": "Il pleuvait quand elle est sortie de la maison.",
-          "native": "It was raining when I left the house."
+          "native": "It was raining when I left the house.",
+          "assessed": "Il pleuvait quand elle est sortie de la maison."
         },
         {
-          "de": "J'ai achete du lait et de la farine au supermarche.",
-          "native": "I bought milk and flour from the supermarket."
+          "native": "I bought milk and flour from the supermarket.",
+          "assessed": "J'ai achete du lait et de la farine au supermarche."
         },
         {
-          "de": "Nous allons en Espagne cet ete.",
-          "native": "We will go to Spain this summer."
+          "native": "We will go to Spain this summer.",
+          "assessed": "Nous allons en Espagne cet ete."
         },
         {
-          "de": "Elle est allee a l'ecole ce matin.",
-          "native": "I went to school this morning."
+          "native": "I went to school this morning.",
+          "assessed": "Elle est allee a l'ecole ce matin."
         }
       ]
     },
@@ -334,36 +340,36 @@
       "title_native": "Homework C — Fluency",
       "sentences": [
         {
-          "de": "D'abord, je me suis leve et j'ai pris mon petit-dejeuner.",
-          "native": "First, I woke up and had breakfast."
+          "native": "First, I woke up and had breakfast.",
+          "assessed": "D'abord, je me suis leve et j'ai pris mon petit-dejeuner."
         },
         {
-          "de": "Ensuite, je suis sorti parce qu'il faisait beau.",
-          "native": "Then, I went out because the weather was beautiful."
+          "native": "Then, I went out because the weather was beautiful.",
+          "assessed": "Ensuite, je suis sorti parce qu'il faisait beau."
         },
         {
-          "de": "J'ai marche dans le parc pendant une heure.",
-          "native": "I walked in the garden for an hour."
+          "native": "I walked in the garden for an hour.",
+          "assessed": "J'ai marche dans le parc pendant une heure."
         },
         {
-          "de": "Quand j'etais dans le parc, j'ai rencontre un vieil ami.",
-          "native": "While I was in the garden, I ran into an old friend."
+          "native": "While I was in the garden, I ran into an old friend.",
+          "assessed": "Quand j'etais dans le parc, j'ai rencontre un vieil ami."
         },
         {
-          "de": "Nous avons bu du cafe ensemble dans un petit bistrot.",
-          "native": "We had coffee together at a small café."
+          "native": "We had coffee together at a small café.",
+          "assessed": "Nous avons bu du cafe ensemble dans un petit bistrot."
         },
         {
-          "de": "Il m'a raconte qu'il travaillait maintenant en France.",
-          "native": "He told me he is now working in France."
+          "native": "He told me he is now working in France.",
+          "assessed": "Il m'a raconte qu'il travaillait maintenant en France."
         },
         {
-          "de": "Apres notre rencontre, je suis rentre chez moi.",
-          "native": "After our meeting, I went back home."
+          "native": "After our meeting, I went back home.",
+          "assessed": "Apres notre rencontre, je suis rentre chez moi."
         },
         {
-          "de": "Le soir, j'ai cuisine du couscous pour ma famille.",
-          "native": "In the evening, I cooked couscous for my family."
+          "native": "In the evening, I cooked couscous for my family.",
+          "assessed": "Le soir, j'ai cuisine du couscous pour ma famille."
         }
       ]
     },
@@ -439,8 +445,8 @@
     "stability_native": "Structural stability under pressure: Intermediate",
     "self_correction_assessed": "Capacite d'auto-correction: faible a moyenne",
     "self_correction_native": "Self-correction ability: Low to intermediate",
-    "reassessment_assessed": "Re-evaluation recommandee: 3 mois",
-    "reassessment_native": "Reassessment recommended: 3 months"
+    "reassessment_assessed": "Empfohlenes Re-Assessment: 8 Wochen",
+    "reassessment_native": "Reassessment recommended: 8 Wochen"
   },
   "block_d": {
     "title_native": "Summary in Your Language",
@@ -453,6 +459,17 @@
       "Confusion between place prepositions (à / en / au)"
     ],
     "key_recommendation_native": "Practice the tense engine daily: form 5 pairs of sentences with the same situation — once in passé composé and once in imparfait. This single exercise will strengthen your highest-impact focus area.",
-    "next_steps_native": "Focus on passé composé vs. imparfait over the next two weeks, then move on to partitive articles and gender. Schedule a reassessment in 8 weeks to measure progress."
+    "next_steps_native": "Focus on passé composé vs. imparfait over the next two weeks, then move on to partitive articles and gender. Schedule a reassessment in 8 weeks to measure progress.",
+    "title_assessed": "Zusammenfassung in deiner Sprache",
+    "cefr_summary_assessed": "Tu es dans la fourchette B1. Ta base est solide mais les temps et le genre restent instables. Avec un entrainement cible, B2 est realiste en 4-5 mois.",
+    "top_problems_assessed": [
+      "Passe compose vs. imparfait",
+      "Articles partitifs",
+      "Genre des noms",
+      "Accord du participe passe",
+      "Prepositions de lieu"
+    ],
+    "key_recommendation_assessed": "Chaque jour, ecris 3 phrases au passe compose (action unique) et 3 a l'imparfait (description/habitude).",
+    "next_steps_assessed": "Le schema central de cette seance est la confusion entre le passe compose et l'imparfait. Tu utilises le passe compose pour decrire des situations continues dans le passe, la ou l'imparfait serait correct. Ce probleme est lie a l'absence d'un equivalent direct en arabe."
   }
 }
