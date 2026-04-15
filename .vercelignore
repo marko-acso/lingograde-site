@@ -5,3 +5,4 @@ pipeline/
 deploy/
 tools/
 supabase/.temp/
+api/
