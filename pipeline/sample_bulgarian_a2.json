@@ -13,12 +13,18 @@
     "confidence": "70%",
     "structural_stability": "mittel",
     "self_correction": "niedrig bis mittel",
-    "sentence_control": "teilweise stabil",
     "recommended_reassessment": "8 Wochen",
     "error_focus": [
       "Kasus/Artikel",
       "Zeitformen"
-    ]
+    ],
+    "emotional_state": "confident",
+    "formality_preference": "informal",
+    "student_type": "single",
+    "student_type_badge": "Индивидуална оценка",
+    "assessor_id": "M-0001",
+    "assessor_offer": false,
+    "purchase_history": []
   },
   "sections": [
     {
@@ -214,16 +220,16 @@
       "explanation_native": "Every day speak aloud 5 sentence pairs — the same action, first in perfective (completed), then imperfective (in progress). Stress the difference.",
       "patterns": [
         {
-          "de": "Свършен: Написах писмото. (завърших)",
-          "native": "Perfective: Napisah pismoto. (I finished writing it)"
+          "native": "Perfective: Napisah pismoto. (I finished writing it)",
+          "assessed": "Свършен: Написах писмото. (завърших)"
         },
         {
-          "de": "Несвършен: Писах писмо цял ден. (процес)",
-          "native": "Imperfective: Pisah pismo tsyal den. (I was writing all day)"
+          "native": "Imperfective: Pisah pismo tsyal den. (I was writing all day)",
+          "assessed": "Несвършен: Писах писмо цял ден. (процес)"
         },
         {
-          "de": "Свършен: Прочетох книгата. (до края)",
-          "native": "Perfective: Prochetoh knigata. (I read it to the end)"
+          "native": "Perfective: Prochetoh knigata. (I read it to the end)",
+          "assessed": "Свършен: Прочетох книгата. (до края)"
         }
       ],
       "daily_instruction_assessed": "5 двойки на ден, на глас, с осъзнат избор на вид.",
@@ -235,28 +241,28 @@
       "title_native": "Activation",
       "sentences": [
         {
-          "de": "Отивам на работа, защото имам среща.",
-          "native": "I'm going to work because I have a meeting."
+          "native": "I'm going to work because I have a meeting.",
+          "assessed": "Отивам на работа, защото имам среща."
         },
         {
-          "de": "Вчера прочетох интересна книга.",
-          "native": "Yesterday I finished reading an interesting book."
+          "native": "Yesterday I finished reading an interesting book.",
+          "assessed": "Вчера прочетох интересна книга."
         },
         {
-          "de": "Мъжът каза, че идва утре.",
-          "native": "The man said he's coming tomorrow."
+          "native": "The man said he's coming tomorrow.",
+          "assessed": "Мъжът каза, че идва утре."
         },
         {
-          "de": "Живея в голям град.",
-          "native": "I live in a big city."
+          "native": "I live in a big city.",
+          "assessed": "Живея в голям град."
         },
         {
-          "de": "Тя ходи на училище всеки ден.",
-          "native": "She goes to school every day."
+          "native": "She goes to school every day.",
+          "assessed": "Тя ходи на училище всеки ден."
         },
         {
-          "de": "Написах писмо на мама.",
-          "native": "I wrote a letter to mom."
+          "native": "I wrote a letter to mom.",
+          "assessed": "Написах писмо на мама."
         }
       ]
     },
@@ -266,28 +272,28 @@
       "title_native": "Homework A — Structure",
       "sentences": [
         {
-          "de": "Видях голямата къща.",
-          "native": "I saw the big house."
+          "native": "I saw the big house.",
+          "assessed": "Видях голямата къща."
         },
         {
-          "de": "Тя отива на училище.",
-          "native": "She is going to school."
+          "native": "She is going to school.",
+          "assessed": "Тя отива на училище."
         },
         {
-          "de": "Живеем в София.",
-          "native": "We live in Sofia."
+          "native": "We live in Sofia.",
+          "assessed": "Живеем в София."
         },
         {
-          "de": "Дадох книгата на приятеля си.",
-          "native": "I gave the book to my friend."
+          "native": "I gave the book to my friend.",
+          "assessed": "Дадох книгата на приятеля си."
         },
         {
-          "de": "Вчера написах писмо.",
-          "native": "Yesterday I wrote a letter."
+          "native": "Yesterday I wrote a letter.",
+          "assessed": "Вчера написах писмо."
         },
         {
-          "de": "Той чете интересна книга.",
-          "native": "He is reading an interesting book."
+          "native": "He is reading an interesting book.",
+          "assessed": "Той чете интересна книга."
         }
       ]
     },
@@ -334,44 +340,44 @@
       "title_native": "Homework C — Speaking Fluency",
       "sentences": [
         {
-          "de": "Тази сутрин станах рано и си направих кафе.",
-          "native": "This morning I got up early and made myself a coffee."
+          "native": "This morning I got up early and made myself a coffee.",
+          "assessed": "Тази сутрин станах рано и си направих кафе."
         },
         {
-          "de": "След това седнах на бюрото, защото имах работа.",
-          "native": "Then I sat down at the desk because I had work to do."
+          "native": "Then I sat down at the desk because I had work to do.",
+          "assessed": "След това седнах на бюрото, защото имах работа."
         },
         {
-          "de": "Отворих лаптопа и прочетох имейлите си.",
-          "native": "I opened the laptop and read my emails."
+          "native": "I opened the laptop and read my emails.",
+          "assessed": "Отворих лаптопа и прочетох имейлите си."
         },
         {
-          "de": "Един колега ми се обади, защото имаше нужда от помощ.",
-          "native": "A colleague called me because he needed help."
+          "native": "A colleague called me because he needed help.",
+          "assessed": "Един колега ми се обади, защото имаше нужда от помощ."
         },
         {
-          "de": "Отидох при него и му помогнах с проблема.",
-          "native": "I went to him and helped him with the problem."
+          "native": "I went to him and helped him with the problem.",
+          "assessed": "Отидох при него и му помогнах с проблема."
         },
         {
-          "de": "След това се върнах на бюрото си и продължих да работя.",
-          "native": "After that I returned to my desk and continued working."
+          "native": "After that I returned to my desk and continued working.",
+          "assessed": "След това се върнах на бюрото си и продължих да работя."
         },
         {
-          "de": "По обяд отидох на ресторант с приятели.",
-          "native": "At lunchtime I went to a restaurant with friends."
+          "native": "At lunchtime I went to a restaurant with friends.",
+          "assessed": "По обяд отидох на ресторант с приятели."
         },
         {
-          "de": "Ядохме и разговаряхме почти един час.",
-          "native": "We ate and talked for almost an hour."
+          "native": "We ate and talked for almost an hour.",
+          "assessed": "Ядохме и разговаряхме почти един час."
         },
         {
-          "de": "Въпреки че бях уморен, работих до късно.",
-          "native": "Although I was tired, I worked until late."
+          "native": "Although I was tired, I worked until late.",
+          "assessed": "Въпреки че бях уморен, работих до късно."
         },
         {
-          "de": "Накрая денят беше продуктивен, въпреки че беше изморителен.",
-          "native": "In the end the day was productive, although it was exhausting."
+          "native": "In the end the day was productive, although it was exhausting.",
+          "assessed": "Накрая денят беше продуктивен, въпреки че беше изморителен."
         }
       ]
     },
@@ -447,8 +453,8 @@
     "stability_native": "Structural stability under pressure: medium",
     "self_correction_assessed": "Способност за самокорекция: ниска до средна",
     "self_correction_native": "Self-correction ability: low to medium",
-    "reassessment_assessed": "Препоръчителна преоценка: 3 месеца",
-    "reassessment_native": "Recommended re-assessment: 3 months"
+    "reassessment_assessed": "Empfohlenes Re-Assessment: 8 Wochen",
+    "reassessment_native": "Recommended re-assessment: 8 Wochen"
   },
   "block_d": {
     "title_native": "Summary in Your Language",
@@ -461,6 +467,17 @@
       "Preposition confusion: v (enclosed) vs. na (open/abstract)"
     ],
     "key_recommendation_native": "Practice the Verb Aspect Engine daily: form 5 sentence pairs with the same action — once perfective (completed), once imperfective (ongoing). This single drill will strengthen your highest-impact focus area.",
-    "next_steps_native": "Focus on verb aspect for the next 2 weeks, then move to definite articles and clitics. Book a re-assessment in 8 weeks to measure progress."
+    "next_steps_native": "Focus on verb aspect for the next 2 weeks, then move to definite articles and clitics. Book a re-assessment in 8 weeks to measure progress.",
+    "title_assessed": "Zusammenfassung in deiner Sprache",
+    "cefr_summary_assessed": "Намираш се на ниво A2. Базата ти е добра, но глаголният вид и определителният член остават нестабилни под натиск. С целенасочено обучение B1 е реалистичен за 3-4 месеца.",
+    "top_problems_assessed": [
+      "Глаголен вид: свършен vs. несвършен",
+      "Определителен член: пълен vs. кратък",
+      "Словоред с клитики",
+      "Движение: отивам vs. ходя",
+      "Предлози за място и посока"
+    ],
+    "key_recommendation_assessed": "Всеки ден 5 двойки изречения: едно и също действие — свършен вид (резултат) и несвършен вид (процес). Произнасяй на глас.",
+    "next_steps_assessed": "Централният модел на тази сесия е объркването на глаголния вид. Български има два вида за почти всеки глагол — свършен (завършено действие) и несвършен (продължаващо действие). В английски тази разлика не съществува по същия начин, което е основната причина за грешките ти."
   }
 }

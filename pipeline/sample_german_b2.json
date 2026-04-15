@@ -13,12 +13,18 @@
     "confidence": "82%",
     "structural_stability": "mittel bis hoch",
     "self_correction": "hoch",
-    "sentence_control": "teilstabil",
     "recommended_reassessment": "8 Wochen",
     "error_focus": [
       "Kasus/Artikel",
       "Präpositionen"
-    ]
+    ],
+    "emotional_state": "confident",
+    "formality_preference": "informal",
+    "student_type": "single",
+    "student_type_badge": "Einzelbewertung",
+    "assessor_id": "M-0001",
+    "assessor_offer": false,
+    "purchase_history": []
   },
   "sections": [
     {
@@ -214,16 +220,16 @@
       "explanation_native": "Every day form 5 sentences with two-way prepositions — 1x movement (accusative), 1x position (dative). Say them out loud. Consciously emphasize the correct case.",
       "patterns": [
         {
-          "de": "Ich gehe in den Park. → Ich bin im Park.",
-          "native": "I go to the park. → I am in the park."
+          "native": "I go to the park. → I am in the park.",
+          "assessed": "Ich gehe in den Park. → Ich bin im Park."
         },
         {
-          "de": "Ich lege das Buch auf den Tisch. → Das Buch liegt auf dem Tisch.",
-          "native": "I put the book on the table. → The book is on the table."
+          "native": "I put the book on the table. → The book is on the table.",
+          "assessed": "Ich lege das Buch auf den Tisch. → Das Buch liegt auf dem Tisch."
         },
         {
-          "de": "Er hängt das Bild an die Wand. → Das Bild hängt an der Wand.",
-          "native": "He hangs the picture on the wall. → The picture is hanging on the wall."
+          "native": "He hangs the picture on the wall. → The picture is hanging on the wall.",
+          "assessed": "Er hängt das Bild an die Wand. → Das Bild hängt an der Wand."
         }
       ],
       "daily_instruction_assessed": "5 Paare pro Tag, laut gesprochen, Kasus bewusst betont.",
@@ -235,28 +241,28 @@
       "title_native": "Activation",
       "sentences": [
         {
-          "de": "Ich gehe in den Supermarkt, weil ich einkaufen muss.",
-          "native": "I go to the supermarket because I need to do the shopping."
+          "native": "I go to the supermarket because I need to do the shopping.",
+          "assessed": "Ich gehe in den Supermarkt, weil ich einkaufen muss."
         },
         {
-          "de": "Er sitzt im Büro und arbeitet konzentriert.",
-          "native": "He is sitting in the office and working with concentration."
+          "native": "He is sitting in the office and working with concentration.",
+          "assessed": "Er sitzt im Büro und arbeitet konzentriert."
         },
         {
-          "de": "Wir fahren an die Küste, weil das Wetter schön ist.",
-          "native": "We are going to the coast because the weather is nice."
+          "native": "We are going to the coast because the weather is nice.",
+          "assessed": "Wir fahren an die Küste, weil das Wetter schön ist."
         },
         {
-          "de": "Das Bild hängt an der Wand seit gestern.",
-          "native": "The picture has been hanging on the wall since yesterday."
+          "native": "The picture has been hanging on the wall since yesterday.",
+          "assessed": "Das Bild hängt an der Wand seit gestern."
         },
         {
-          "de": "Sie legt die Schlüssel auf den Tisch.",
-          "native": "She puts the keys on the table."
+          "native": "She puts the keys on the table.",
+          "assessed": "Sie legt die Schlüssel auf den Tisch."
         },
         {
-          "de": "Die Schlüssel liegen auf dem Tisch.",
-          "native": "The keys are on the table."
+          "native": "The keys are on the table.",
+          "assessed": "Die Schlüssel liegen auf dem Tisch."
         }
       ]
     },
@@ -266,28 +272,28 @@
       "title_native": "Homework A — Structure",
       "sentences": [
         {
-          "de": "Ich lege das Buch auf den Tisch.",
-          "native": "I put the book on the table."
+          "native": "I put the book on the table.",
+          "assessed": "Ich lege das Buch auf den Tisch."
         },
         {
-          "de": "Das Buch liegt auf dem Tisch.",
-          "native": "The book is on the table."
+          "native": "The book is on the table.",
+          "assessed": "Das Buch liegt auf dem Tisch."
         },
         {
-          "de": "Er geht in die Küche.",
-          "native": "He goes into the kitchen."
+          "native": "He goes into the kitchen.",
+          "assessed": "Er geht in die Küche."
         },
         {
-          "de": "Er ist in der Küche.",
-          "native": "He is in the kitchen."
+          "native": "He is in the kitchen.",
+          "assessed": "Er ist in der Küche."
         },
         {
-          "de": "Sie hängt das Bild an die Wand.",
-          "native": "She hangs the picture on the wall."
+          "native": "She hangs the picture on the wall.",
+          "assessed": "Sie hängt das Bild an die Wand."
         },
         {
-          "de": "Das Bild hängt an der Wand.",
-          "native": "The picture is hanging on the wall."
+          "native": "The picture is hanging on the wall.",
+          "assessed": "Das Bild hängt an der Wand."
         }
       ]
     },
@@ -334,44 +340,44 @@
       "title_native": "Homework C — Oral Fluency",
       "sentences": [
         {
-          "de": "Gestern bin ich in den Park gegangen.",
-          "native": "Yesterday I went to the park."
+          "native": "Yesterday I went to the park.",
+          "assessed": "Gestern bin ich in den Park gegangen."
         },
         {
-          "de": "Ich habe mich auf die Bank gesetzt.",
-          "native": "I sat down on the bench."
+          "native": "I sat down on the bench.",
+          "assessed": "Ich habe mich auf die Bank gesetzt."
         },
         {
-          "de": "Dann habe ich auf der Bank gesessen und gelesen.",
-          "native": "Then I stayed sitting on the bench and read."
+          "native": "Then I stayed sitting on the bench and read.",
+          "assessed": "Dann habe ich auf der Bank gesessen und gelesen."
         },
         {
-          "de": "Ein Freund hat mich angerufen, weil er Hilfe brauchte.",
-          "native": "A friend called me because he needed help."
+          "native": "A friend called me because he needed help.",
+          "assessed": "Ein Freund hat mich angerufen, weil er Hilfe brauchte."
         },
         {
-          "de": "Ich bin zu ihm nach Hause gefahren.",
-          "native": "I drove to his place by car."
+          "native": "I drove to his place by car.",
+          "assessed": "Ich bin zu ihm nach Hause gefahren."
         },
         {
-          "de": "Bei ihm zu Hause habe ich ihm geholfen.",
-          "native": "At his place I helped him."
+          "native": "At his place I helped him.",
+          "assessed": "Bei ihm zu Hause habe ich ihm geholfen."
         },
         {
-          "de": "Danach sind wir zusammen in ein Restaurant gegangen.",
-          "native": "Afterwards we went to a restaurant together."
+          "native": "Afterwards we went to a restaurant together.",
+          "assessed": "Danach sind wir zusammen in ein Restaurant gegangen."
         },
         {
-          "de": "Wir haben im Restaurant gegessen und viel gelacht.",
-          "native": "We ate at the restaurant and laughed a lot."
+          "native": "We ate at the restaurant and laughed a lot.",
+          "assessed": "Wir haben im Restaurant gegessen und viel gelacht."
         },
         {
-          "de": "Obwohl es spät war, bin ich noch spazieren gegangen.",
-          "native": "Even though it was late, I went for a walk."
+          "native": "Even though it was late, I went for a walk.",
+          "assessed": "Obwohl es spät war, bin ich noch spazieren gegangen."
         },
         {
-          "de": "Am Ende war ich müde, aber zufrieden.",
-          "native": "In the end I was tired but satisfied."
+          "native": "In the end I was tired but satisfied.",
+          "assessed": "Am Ende war ich müde, aber zufrieden."
         }
       ]
     },
@@ -447,8 +453,8 @@
     "stability_native": "Structural stability under pressure: medium-high",
     "self_correction_assessed": "Selbstkorrektur-Fähigkeit: hoch",
     "self_correction_native": "Self-correction ability: high",
-    "reassessment_assessed": "Empfohlenes Re-Assessment: 3 Monate",
-    "reassessment_native": "Recommended reassessment: 3 months"
+    "reassessment_assessed": "Empfohlenes Re-Assessment: 8 Wochen",
+    "reassessment_native": "Recommended reassessment: 8 Wochen"
   },
   "block_d": {
     "title_native": "Summary in Your Language",
@@ -461,6 +467,17 @@
       "Gender errors in common nouns"
     ],
     "key_recommendation_native": "Practice the Case Engine every day: form 5 sentence pairs with two-way prepositions — once movement (accusative), once position (dative). This single exercise will strengthen your highest-impact focus area.",
-    "next_steps_native": "Focus on two-way prepositions for the next 2 weeks, then move on to dative verbs and gender. Book a reassessment in 8 weeks to measure your progress."
+    "next_steps_native": "Focus on two-way prepositions for the next 2 weeks, then move on to dative verbs and gender. Book a reassessment in 8 weeks to measure your progress.",
+    "title_assessed": "Zusammenfassung in deiner Sprache",
+    "cefr_summary_assessed": "Du bist im B2-Bereich angekommen. Deine Struktur ist solide, aber das Kasussystem bei Wechselpräpositionen bleibt der zentrale Optimierungspunkt. Mit gezieltem Training ist C1 in 4-6 Monaten erreichbar.",
+    "top_problems_assessed": [
+      "Wechselpräpositionen: Akkusativ statt Dativ",
+      "Artikelwahl bei Komposita",
+      "Präposition bei temporalen Angaben",
+      "Fehlender Dativ nach bestimmten Verben",
+      "Genusfehler bei häufigen Substantiven"
+    ],
+    "key_recommendation_assessed": "Jeden Tag 5 Satzpaare bilden: gleiche Präposition, einmal Bewegung (Akk.), einmal Position (Dat.).",
+    "next_steps_assessed": "Dein Deutsch ist strukturell stark, aber das Kasussystem bleibt der zentrale Schwachpunkt. Unter Sprechdruck greifst du instinktiv zum Akkusativ, auch wo der Dativ korrekt wäre. Das betrifft besonders Wechselpräpositionen (in, auf, an) und die Kombination mit bestimmten Verben."
   }
 }

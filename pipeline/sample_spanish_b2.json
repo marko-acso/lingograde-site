@@ -13,12 +13,18 @@
     "confidence": "79%",
     "structural_stability": "mittel",
     "self_correction": "mittel bis hoch",
-    "sentence_control": "teilstabil",
     "recommended_reassessment": "8 Wochen",
     "error_focus": [
       "Zeitformen",
       "Präpositionen"
-    ]
+    ],
+    "emotional_state": "confident",
+    "formality_preference": "informal",
+    "student_type": "single",
+    "student_type_badge": "Evaluación individual",
+    "assessor_id": "M-0001",
+    "assessor_offer": false,
+    "purchase_history": []
   },
   "sections": [
     {
@@ -214,16 +220,16 @@
       "explanation_native": "Every day, form 5 sentences with expressions that demand the subjunctive. Speak aloud. Consciously stress the subjunctive form.",
       "patterns": [
         {
-          "de": "Quiero que vengas a la fiesta.",
-          "native": "I want you to come to the party."
+          "native": "I want you to come to the party.",
+          "assessed": "Quiero que vengas a la fiesta."
         },
         {
-          "de": "Es importante que estudies todos los dias.",
-          "native": "It's important that you study every day."
+          "native": "It's important that you study every day.",
+          "assessed": "Es importante que estudies todos los dias."
         },
         {
-          "de": "Dudo que el pueda terminar a tiempo.",
-          "native": "I doubt he can finish on time."
+          "native": "I doubt he can finish on time.",
+          "assessed": "Dudo que el pueda terminar a tiempo."
         }
       ],
       "daily_instruction_assessed": "5 frases con subjuntivo por dia, habladas en voz alta.",
@@ -235,28 +241,28 @@
       "title_native": "Activation",
       "sentences": [
         {
-          "de": "Quiero que vengas a mi fiesta el sabado.",
-          "native": "I want you to come to my party on Saturday."
+          "native": "I want you to come to my party on Saturday.",
+          "assessed": "Quiero que vengas a mi fiesta el sabado."
         },
         {
-          "de": "Estoy cansado porque trabaje mucho ayer.",
-          "native": "I'm tired because I worked a lot yesterday."
+          "native": "I'm tired because I worked a lot yesterday.",
+          "assessed": "Estoy cansado porque trabaje mucho ayer."
         },
         {
-          "de": "Estudio para aprobar el examen de espanol.",
-          "native": "I study to pass the Spanish exam."
+          "native": "I study to pass the Spanish exam.",
+          "assessed": "Estudio para aprobar el examen de espanol."
         },
         {
-          "de": "La ciudad es bonita pero esta muy sucia hoy.",
-          "native": "The city is beautiful but it's very dirty today."
+          "native": "The city is beautiful but it's very dirty today.",
+          "assessed": "La ciudad es bonita pero esta muy sucia hoy."
         },
         {
-          "de": "Es una empresa con problemas dificiles de resolver.",
-          "native": "It's a company with problems that are hard to solve."
+          "native": "It's a company with problems that are hard to solve.",
+          "assessed": "Es una empresa con problemas dificiles de resolver."
         },
         {
-          "de": "Dudo que llueva manana.",
-          "native": "I doubt it will rain tomorrow."
+          "native": "I doubt it will rain tomorrow.",
+          "assessed": "Dudo que llueva manana."
         }
       ]
     },
@@ -266,28 +272,28 @@
       "title_native": "Homework A — Structure",
       "sentences": [
         {
-          "de": "Espero que puedas venir a la reunion.",
-          "native": "I hope you can come to the meeting."
+          "native": "I hope you can come to the meeting.",
+          "assessed": "Espero que puedas venir a la reunion."
         },
         {
-          "de": "El esta enfermo, por eso no viene.",
-          "native": "He is sick, that's why he's not coming."
+          "native": "He is sick, that's why he's not coming.",
+          "assessed": "El esta enfermo, por eso no viene."
         },
         {
-          "de": "Estudio espanol para trabajar en Espana.",
-          "native": "I study Spanish to work in Spain."
+          "native": "I study Spanish to work in Spain.",
+          "assessed": "Estudio espanol para trabajar en Espana."
         },
         {
-          "de": "La situacion es complicada pero estamos preparados.",
-          "native": "The situation is complicated but we are prepared."
+          "native": "The situation is complicated but we are prepared.",
+          "assessed": "La situacion es complicada pero estamos preparados."
         },
         {
-          "de": "Es necesario que hables con el jefe.",
-          "native": "It's necessary that you speak with the boss."
+          "native": "It's necessary that you speak with the boss.",
+          "assessed": "Es necesario que hables con el jefe."
         },
         {
-          "de": "Viaje por toda Sudamerica el ano pasado.",
-          "native": "I traveled through all of South America last year."
+          "native": "I traveled through all of South America last year.",
+          "assessed": "Viaje por toda Sudamerica el ano pasado."
         }
       ]
     },
@@ -334,36 +340,36 @@
       "title_native": "Homework C — Speaking Fluency",
       "sentences": [
         {
-          "de": "Primero me levante y desayune con mi familia.",
-          "native": "First I got up and had breakfast with my family."
+          "native": "First I got up and had breakfast with my family.",
+          "assessed": "Primero me levante y desayune con mi familia."
         },
         {
-          "de": "Luego sali de casa porque tenia una reunion importante.",
-          "native": "Then I left the house because I had an important meeting."
+          "native": "Then I left the house because I had an important meeting.",
+          "assessed": "Luego sali de casa porque tenia una reunion importante."
         },
         {
-          "de": "Cuando llegue a la oficina, mi jefe ya estaba alli.",
-          "native": "When I arrived at the office, my boss was already there."
+          "native": "When I arrived at the office, my boss was already there.",
+          "assessed": "Cuando llegue a la oficina, mi jefe ya estaba alli."
         },
         {
-          "de": "Hablamos durante una hora sobre el nuevo proyecto.",
-          "native": "We talked for an hour about the new project."
+          "native": "We talked for an hour about the new project.",
+          "assessed": "Hablamos durante una hora sobre el nuevo proyecto."
         },
         {
-          "de": "Despues de la reunion, trabaje en mi escritorio hasta las seis.",
-          "native": "After the meeting, I worked at my desk until six."
+          "native": "After the meeting, I worked at my desk until six.",
+          "assessed": "Despues de la reunion, trabaje en mi escritorio hasta las seis."
         },
         {
-          "de": "Por la noche, cene con amigos en un restaurante mexicano.",
-          "native": "In the evening, I had dinner with friends at a Mexican restaurant."
+          "native": "In the evening, I had dinner with friends at a Mexican restaurant.",
+          "assessed": "Por la noche, cene con amigos en un restaurante mexicano."
         },
         {
-          "de": "Aunque estaba cansado, me quede hasta tarde porque la conversacion era interesante.",
-          "native": "Although I was tired, I stayed late because the conversation was interesting."
+          "native": "Although I was tired, I stayed late because the conversation was interesting.",
+          "assessed": "Aunque estaba cansado, me quede hasta tarde porque la conversacion era interesante."
         },
         {
-          "de": "Al final del dia, me senti satisfecho con todo lo que habia logrado.",
-          "native": "At the end of the day, I felt satisfied with everything I had achieved."
+          "native": "At the end of the day, I felt satisfied with everything I had achieved.",
+          "assessed": "Al final del dia, me senti satisfecho con todo lo que habia logrado."
         }
       ]
     },
@@ -439,8 +445,8 @@
     "stability_native": "Structural stability under pressure: medium",
     "self_correction_assessed": "Capacidad de autocorreccion: media a alta",
     "self_correction_native": "Self-correction ability: medium to high",
-    "reassessment_assessed": "Reevaluacion recomendada: 3 meses",
-    "reassessment_native": "Recommended re-assessment: 3 months"
+    "reassessment_assessed": "Empfohlenes Re-Assessment: 8 Wochen",
+    "reassessment_native": "Recommended re-assessment: 8 Wochen"
   },
   "block_d": {
     "title_native": "Summary in Your Language",
@@ -453,6 +459,17 @@
       "Overuse of 'que' as universal connector"
     ],
     "key_recommendation_native": "Practice the Subjunctive Engine daily: form 5 sentences with expressions that require the subjunctive and speak them aloud. This single drill will strengthen your highest-impact focus area.",
-    "next_steps_native": "Focus on the subjunctive for the next 2 weeks, then move to ser/estar and por/para. Book a re-assessment in 8 weeks to measure progress."
+    "next_steps_native": "Focus on the subjunctive for the next 2 weeks, then move to ser/estar and por/para. Book a re-assessment in 8 weeks to measure progress.",
+    "title_assessed": "Zusammenfassung in deiner Sprache",
+    "cefr_summary_assessed": "Estas en el rango B2. Tu base es solida pero el subjuntivo y la distincion ser/estar son los puntos clave. Con entrenamiento focalizado, C1 es realista en 4-5 meses.",
+    "top_problems_assessed": [
+      "Subjuntivo evitado tras expresiones de deseo",
+      "Confusion ser / estar",
+      "Preposiciones: por vs. para",
+      "Concordancia de genero con adjetivos",
+      "Uso excesivo de 'que' como conector"
+    ],
+    "key_recommendation_assessed": "Cada dia, forma 5 frases con 'quiero que / espero que / dudo que' + subjuntivo. Pronuncia en voz alta.",
+    "next_steps_assessed": "El patron central de esta sesion es la evitacion del subjuntivo. Donde el subjuntivo es obligatorio (despues de 'quiero que', 'es importante que', 'dudo que'), usas el indicativo. Esto es transferencia directa del ingles, que no tiene un modo subjuntivo productivo."
   }
 }

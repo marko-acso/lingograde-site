@@ -13,12 +13,18 @@
     "confidence": "64%",
     "structural_stability": "niedrig bis mittel",
     "self_correction": "niedrig",
-    "sentence_control": "teilweise stabil",
     "recommended_reassessment": "8 Wochen",
     "error_focus": [
       "Kasus/Artikel",
       "Zeitformen"
-    ]
+    ],
+    "emotional_state": "confident",
+    "formality_preference": "informal",
+    "student_type": "single",
+    "student_type_badge": "Ocena indywidualna",
+    "assessor_id": "M-0001",
+    "assessor_offer": false,
+    "purchase_history": []
   },
   "sections": [
     {
@@ -214,16 +220,16 @@
       "explanation_native": "Say 5 sentences out loud every day, consciously choosing the correct case.",
       "patterns": [
         {
-          "de": "Widze ksiazke. (biernik)",
-          "native": "I see the book. (Accusative)"
+          "native": "I see the book. (Accusative)",
+          "assessed": "Widze ksiazke. (biernik)"
         },
         {
-          "de": "Ide do sklepu. (dopelniacz — kierunek)",
-          "native": "I go to the store. (Genitive — direction)"
+          "native": "I go to the store. (Genitive — direction)",
+          "assessed": "Ide do sklepu. (dopelniacz — kierunek)"
         },
         {
-          "de": "Jestem w sklepie. (miejscownik — miejsce)",
-          "native": "I am in the store. (Locative — location)"
+          "native": "I am in the store. (Locative — location)",
+          "assessed": "Jestem w sklepie. (miejscownik — miejsce)"
         }
       ],
       "daily_instruction_assessed": "5 zdan dziennie, na glos, ze swiadomym przypadkiem.",
@@ -235,28 +241,28 @@
       "title_native": "Activation",
       "sentences": [
         {
-          "de": "Ide do sklepu, bo potrzebuje chleba.",
-          "native": "I go to the store because I need bread."
+          "native": "I go to the store because I need bread.",
+          "assessed": "Ide do sklepu, bo potrzebuje chleba."
         },
         {
-          "de": "Wczoraj przeczytalem ciekawa ksiazke.",
-          "native": "Yesterday I read an interesting book."
+          "native": "Yesterday I read an interesting book.",
+          "assessed": "Wczoraj przeczytalem ciekawa ksiazke."
         },
         {
-          "de": "Dalem przyjacielowi swoja ksiazke.",
-          "native": "I gave my friend my book."
+          "native": "I gave my friend my book.",
+          "assessed": "Dalem przyjacielowi swoja ksiazke."
         },
         {
-          "de": "Mieszkamy w duzym miescie.",
-          "native": "We live in a big city."
+          "native": "We live in a big city.",
+          "assessed": "Mieszkamy w duzym miescie."
         },
         {
-          "de": "Ona chodzi do szkoly codziennie.",
-          "native": "She goes to school every day."
+          "native": "She goes to school every day.",
+          "assessed": "Ona chodzi do szkoly codziennie."
         },
         {
-          "de": "Napisalem list do mamy.",
-          "native": "I wrote a letter to mom."
+          "native": "I wrote a letter to mom.",
+          "assessed": "Napisalem list do mamy."
         }
       ]
     },
@@ -266,28 +272,28 @@
       "title_native": "Homework A — Structure",
       "sentences": [
         {
-          "de": "Widze duzy dom.",
-          "native": "I see a big house."
+          "native": "I see a big house.",
+          "assessed": "Widze duzy dom."
         },
         {
-          "de": "Ona idzie do szkoly.",
-          "native": "She goes to school."
+          "native": "She goes to school.",
+          "assessed": "Ona idzie do szkoly."
         },
         {
-          "de": "Mieszkamy w Warszawie.",
-          "native": "We live in Warsaw."
+          "native": "We live in Warsaw.",
+          "assessed": "Mieszkamy w Warszawie."
         },
         {
-          "de": "Dalem ksiazke przyjacielowi.",
-          "native": "I gave the friend a book."
+          "native": "I gave the friend a book.",
+          "assessed": "Dalem ksiazke przyjacielowi."
         },
         {
-          "de": "Wczoraj napisalem list.",
-          "native": "Yesterday I wrote a letter."
+          "native": "Yesterday I wrote a letter.",
+          "assessed": "Wczoraj napisalem list."
         },
         {
-          "de": "On czyta ciekawa ksiazke.",
-          "native": "He reads an interesting book."
+          "native": "He reads an interesting book.",
+          "assessed": "On czyta ciekawa ksiazke."
         }
       ]
     },
@@ -447,8 +453,8 @@
     "stability_native": "Structural stability under pressure: low to medium",
     "self_correction_assessed": "Zdolnosc autokorekty: niska",
     "self_correction_native": "Self-correction ability: low",
-    "reassessment_assessed": "Zalecana ponowna ocena: 3 miesiace",
-    "reassessment_native": "Recommended re-assessment: 3 months"
+    "reassessment_assessed": "Empfohlenes Re-Assessment: 8 Wochen",
+    "reassessment_native": "Recommended re-assessment: 8 Wochen"
   },
   "block_d": {
     "title_native": "Summary in Your Language",
@@ -461,6 +467,17 @@
       "Pronunciation of sibilants sz, cz, rz"
     ],
     "key_recommendation_native": "Practice the Case Engine daily: say 5 sentences out loud with conscious selection of the correct case. This single exercise strengthens your highest-impact focus area.",
-    "next_steps_native": "Focus on the case system for the next 2 weeks, then move on to verb aspect and prepositions. Book a re-assessment in 8 weeks."
+    "next_steps_native": "Focus on the case system for the next 2 weeks, then move on to verb aspect and prepositions. Book a re-assessment in 8 weeks.",
+    "title_assessed": "Zusammenfassung in deiner Sprache",
+    "cefr_summary_assessed": "Jestes na poziomie A2. Twoja baza istnieje, ale system przypadkow jest niestabilny. Z ukierunkowanym treningiem B1 jest realistyczny w 3-4 miesiace.",
+    "top_problems_assessed": [
+      "Bledy przypadkowe",
+      "Aspekt czasownika",
+      "Przyimki z przypadkami",
+      "Deklinacja przymiotnikow",
+      "Wymowa: sz, cz, rz, dz"
+    ],
+    "key_recommendation_assessed": "Codziennie 5 zdan ze swiadomym wyborem przypadka. Mow na glos.",
+    "next_steps_assessed": "Centralnym problemem jest system przypadkow. Polski ma 7 przypadkow, a kazdy zmienia forme rzeczownika. Jako niemiecki mowca znasz 4 przypadki, ale polski ma wiecej form i wiecej wyjatkow."
   }
 }
