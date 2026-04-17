@@ -1,6 +1,14 @@
 /**
- * LingoGrade Cookie Consent
- * GDPR-compliant — GA4 only fires after explicit Accept.
+ * LingoGrade Cookie Consent — Google Consent Mode v2
+ *
+ * GA4 loads on every page with consent defaults = "denied", sending
+ * anonymized cookieless pings (aggregate page views, no user ID) under
+ * legitimate interest. When the user clicks Accept, consent is upgraded
+ * to "granted" → full user-level tracking with cookies.
+ *
+ * Clarity is more invasive (session replay), so it stays gated behind
+ * explicit Accept.
+ *
  * Consent stored in localStorage key: "lg_cookie_consent"
  * Values: "accepted" | "rejected" | undefined (not yet decided)
  */
@@ -12,23 +20,57 @@
   var CLARITY_ID = 'w9dq69gmuo';
   var STORAGE_KEY = 'lg_cookie_consent';
 
-  /* ── 1. Load GA only when accepted ─────────────────────────── */
+  /* ── 0. Consent Mode v2: set defaults BEFORE gtag loads ─────── */
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = gtag;
+
+  var storedConsent;
+  try { storedConsent = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+
+  /* Default state — denied for everything non-essential.
+     If the user already accepted in a prior visit, we still set denied
+     first and then call "update" → granted a few lines below. This
+     ordering is required by Consent Mode v2. */
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    functionality_storage: 'granted',
+    personalization_storage: 'denied',
+    security_storage: 'granted',
+    wait_for_update: 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+
+  /* ── 1. Always load GA4 (cookieless pings when denied) ──────── */
   function loadGA() {
-    if (document.querySelector('script[src*="googletagmanager"]')) return; // already injected
+    if (document.querySelector('script[src*="googletagmanager"]')) return;
     var s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
     document.head.appendChild(s);
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { window.dataLayer.push(arguments); }
-    window.gtag = gtag;
     gtag('js', new Date());
     gtag('config', GA_ID, { anonymize_ip: true });
   }
+  loadGA();
 
-  /* ── 1b. Load Clarity only when accepted ───────────────────── */
+  /* ── 2. If prior visit accepted, upgrade consent now ─────────── */
+  function grantConsent() {
+    gtag('consent', 'update', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      analytics_storage: 'granted',
+      personalization_storage: 'granted'
+    });
+  }
+
+  /* ── 3. Clarity (session replay) — explicit opt-in only ─────── */
   function loadClarity() {
-    if (window.clarity) return; // already injected
+    if (window.clarity) return;
     (function(c,l,a,r,i,t,y){
       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
@@ -36,14 +78,24 @@
     })(window, document, "clarity", "script", CLARITY_ID);
   }
 
-  /* ── 2. Save consent and act on it ─────────────────────────── */
+  if (storedConsent === 'accepted') {
+    grantConsent();
+    loadClarity();
+  }
+
+  /* ── 4. Save consent and act on it ──────────────────────────── */
   function setConsent(value) {
     try { localStorage.setItem(STORAGE_KEY, value); } catch (e) {}
     hideBanner();
-    if (value === 'accepted') { loadGA(); loadClarity(); }
+    if (value === 'accepted') {
+      grantConsent();
+      loadClarity();
+    }
+    /* If rejected: defaults stay denied. GA keeps sending anonymized
+       cookieless pings under legitimate interest. */
   }
 
-  /* ── 3. Banner visibility helpers ──────────────────────────── */
+  /* ── 5. Banner visibility helpers ───────────────────────────── */
   function showBanner() {
     var b = document.getElementById('lg-cookie-banner');
     if (b) b.style.display = 'flex';
@@ -58,9 +110,8 @@
     }
   }
 
-  /* ── 4. Inject banner HTML + CSS ───────────────────────────── */
+  /* ── 6. Inject banner HTML + CSS ────────────────────────────── */
   function injectBanner() {
-    /* Skip if already in DOM (e.g. double-load) */
     if (document.getElementById('lg-cookie-banner')) return;
 
     var style = document.createElement('style');
@@ -77,12 +128,12 @@
       '  flex-wrap: wrap;',
       '  gap: 12px;',
       '  padding: 14px 24px;',
-      '  background: #1A2E52;',          /* deep navy — brand-adjacent */
+      '  background: #1A2E52;',
       '  color: #F0F6FF;',
       '  font-family: "DM Sans", -apple-system, sans-serif;',
       '  font-size: 0.875rem;',
       '  line-height: 1.5;',
-      '  border-top: 3px solid #27AE60;', /* --success green accent */
+      '  border-top: 3px solid #27AE60;',
       '  box-shadow: 0 -4px 24px rgba(0,0,0,0.18);',
       '  opacity: 1;',
       '  transform: translateY(0);',
@@ -93,7 +144,7 @@
       '  flex: 1 1 280px;',
       '}',
       '#lg-cookie-banner a {',
-      '  color: #60A5FA;',               /* --accent-lt tone */
+      '  color: #60A5FA;',
       '  text-decoration: underline;',
       '  text-underline-offset: 2px;',
       '}',
@@ -146,8 +197,9 @@
     banner.setAttribute('aria-label', 'Cookie consent');
     banner.innerHTML = [
       '<p>',
-      '  We use cookies to analyse site traffic and improve your experience. ',
-      '  By clicking <strong>Accept</strong> you consent to our use of Google Analytics and Microsoft Clarity. ',
+      '  We collect anonymous usage stats to improve the site. ',
+      '  Click <strong>Accept</strong> to also allow personalised analytics ',
+      '  (Google Analytics cookies + Microsoft Clarity session replay). ',
       '  Read our <a href="/privacy-policy.html">Privacy Policy</a>.',
       '</p>',
       '<div class="lg-cookie-actions">',
@@ -166,27 +218,12 @@
     });
   }
 
-  /* ── 5. Boot ────────────────────────────────────────────────── */
-  function boot() {
-    var consent;
-    try { consent = localStorage.getItem(STORAGE_KEY); } catch (e) {}
-
-    if (consent === 'accepted') {
-      loadGA();
-      loadClarity();
-      return; /* no banner needed */
-    }
-    if (consent === 'rejected') {
-      return; /* GA not loaded, no banner */
-    }
-
-    /* No decision yet — show banner */
+  /* ── 7. Boot ──────────────────────────────────────────────────── */
+  if (!storedConsent) {
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', injectBanner);
     } else {
       injectBanner();
     }
   }
-
-  boot();
 })();
