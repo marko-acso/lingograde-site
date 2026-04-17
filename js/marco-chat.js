@@ -1571,13 +1571,16 @@
       panel.querySelector('.mc-stripe-close').disabled = true;
 
       // Step 1: Create PaymentIntent
+      var _gaCid = '';
+      try { var _m = document.cookie.match(/_ga=GA\d+\.\d+\.(\d+\.\d+)/); _gaCid = _m ? _m[1] : ''; } catch(e) {}
       fetch(PAYMENT_API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           email: email,
           session_id: getSession(),
-          package: 'bot-assessment'
+          package: 'bot-assessment',
+          ga_client_id: _gaCid
         })
       })
       .then(function (r) { return r.json(); })

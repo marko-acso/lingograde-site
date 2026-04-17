@@ -16,6 +16,35 @@ from invoice_generator import generate_invoice, get_invoice_pdf, get_invoices_by
 webhook_bp = Blueprint("webhook_bp", __name__)
 
 
+def _send_ga4_purchase(transaction_id, value_cents, currency, items, client_id=None):
+    """Fire GA4 purchase event via Measurement Protocol (server-side)."""
+    measurement_id = os.environ.get("GA4_MEASUREMENT_ID", "")
+    api_secret = os.environ.get("GA4_API_SECRET", "")
+    if not measurement_id or not api_secret or not value_cents:
+        return
+    try:
+        http_requests.post(
+            "https://www.google-analytics.com/mp/collect",
+            params={"measurement_id": measurement_id, "api_secret": api_secret},
+            timeout=5,
+            json={
+                "client_id": client_id or str(uuid.uuid4()),
+                "non_personalized_ads": False,
+                "events": [{
+                    "name": "purchase",
+                    "params": {
+                        "transaction_id": transaction_id,
+                        "value": round(value_cents / 100, 2),
+                        "currency": (currency or "EUR").upper(),
+                        "items": items,
+                    },
+                }],
+            },
+        )
+    except Exception:
+        pass  # Analytics must never break webhook response
+
+
 @webhook_bp.route("/v1/stripe/webhook", methods=["POST"])
 def stripe_webhook():
     from app import _DRIP_ENABLED
@@ -55,6 +84,19 @@ def stripe_webhook():
                 )
         except Exception:
             pass  # Invoice failure must not break webhook
+
+        _send_ga4_purchase(
+            transaction_id=pi["id"],
+            value_cents=pi.get("amount", 0),
+            currency=pi.get("currency", "eur"),
+            items=[{
+                "item_id": "bot_assessment",
+                "item_name": "LingoGrade Chatbot Assessment",
+                "price": round(pi.get("amount", 0) / 100, 2),
+                "quantity": 1,
+            }],
+            client_id=pi.get("metadata", {}).get("ga_client_id"),
+        )
 
     elif event["type"] == "checkout.session.completed":
         cs = event["data"]["object"]
@@ -237,6 +279,36 @@ def stripe_webhook():
                 )
         except Exception:
             pass  # Invoice failure must not break webhook
+
+        # GA4 purchase tracking (server-side Measurement Protocol)
+        try:
+            amount = cs.get("amount_total", 0)
+            currency = (cs.get("currency") or "eur").upper()
+            product_type = meta.get("product_type", "unknown")
+            item_names = {
+                "kids_assessment": f"Kids Assessment — {meta.get('package', 'standard').title()}",
+                "homework": f"Homework Check — Type {meta.get('homework_type', 'A')}",
+                "mega_bundle": "LingoGrade Mega Bundle",
+                "accessory": f"LingoGrade {meta.get('product', 'item').title()}",
+                "subscription": f"LingoGrade Subscription — {meta.get('tier', 'weekly').title()}",
+            }
+            item_name = item_names.get(product_type, f"LingoGrade — {product_type}")
+            item_id = meta.get("product") or meta.get("package") or product_type
+            _send_ga4_purchase(
+                transaction_id=cs["id"],
+                value_cents=amount,
+                currency=currency,
+                items=[{
+                    "item_id": item_id,
+                    "item_name": item_name,
+                    "item_category": product_type,
+                    "price": round(amount / 100, 2) if amount else 0,
+                    "quantity": 1,
+                }],
+                client_id=meta.get("ga_client_id"),
+            )
+        except Exception:
+            pass
 
     return jsonify({"status": "ok"})
 

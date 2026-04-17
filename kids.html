@@ -483,13 +483,16 @@ function submitBooking(e) {
   btn.textContent = 'Processing\u2026';
   errEl.style.display = 'none';
 
+  var _gaCid = '';
+  try { var _m = document.cookie.match(/_ga=GA\d+\.\d+\.(\d+\.\d+)/); _gaCid = _m ? _m[1] : ''; } catch(e) {}
   var payload = {
     parent_email: document.getElementById('parentEmail').value.trim(),
     guardian_name: document.getElementById('guardianName').value.trim(),
     child_name: document.getElementById('childName').value.trim(),
     age_group: document.getElementById('ageGroup').value,
     package: document.getElementById('bookingPackage').value,
-    currency: window._lgCurrency || 'eur'
+    currency: window._lgCurrency || 'eur',
+    ga_client_id: _gaCid
   };
 
   fetch('https://api.lingograde.com/v1/checkout/kids', {

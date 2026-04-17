@@ -26,6 +26,7 @@ def create_payment_intent():
     email = (data.get("email") or "").strip()
     session_id = data.get("session_id", "")
     package = data.get("package", "bot-assessment")
+    ga_client_id = (data.get("ga_client_id") or "").strip()
 
     if not email or "@" not in email:
         return jsonify({"error": "Valid email required"}), 400
@@ -38,7 +39,11 @@ def create_payment_intent():
             amount=BOT_ASSESSMENT_CENTS,
             currency="eur",
             receipt_email=email,
-            metadata={"session_id": session_id, "package": package},
+            metadata={
+                "session_id": session_id,
+                "package": package,
+                "ga_client_id": ga_client_id,
+            },
             description="LingoGrade Chatbot Assessment",
         )
     except stripe.StripeError as e:
@@ -58,6 +63,7 @@ def checkout_accessory():
     data = request.get_json(force=True)
     email = (data.get("email") or "").strip()
     product = (data.get("product") or "").strip().lower()
+    ga_client_id = (data.get("ga_client_id") or "").strip()
 
     if not email or "@" not in email:
         return jsonify({"error": "Valid email required"}), 400
@@ -86,7 +92,11 @@ def checkout_accessory():
             customer_email=email,
             success_url=f"{origin}/shop?purchase=success&product={product}",
             cancel_url=f"{origin}/shop?purchase=cancelled",
-            metadata={"product_type": "accessory", "product": product},
+            metadata={
+                "product_type": "accessory",
+                "product": product,
+                "ga_client_id": ga_client_id,
+            },
         )
     except stripe.StripeError as e:
         return jsonify({"error": str(e)}), 400
@@ -120,6 +130,7 @@ def checkout_kids():
     package = (data.get("package") or "").strip().lower()
     currency = (data.get("currency") or "eur").strip().lower()
     guardian_name = (data.get("guardian_name") or "").strip()
+    ga_client_id = (data.get("ga_client_id") or "").strip()
 
     if not parent_email or "@" not in parent_email:
         return jsonify({"error": "Valid parent email required"}), 400
@@ -161,6 +172,7 @@ def checkout_kids():
                 "age_group": age_group,
                 "guardian_name": guardian_name,
                 "parent_email": parent_email,
+                "ga_client_id": ga_client_id,
             },
             consent_collection={"terms_of_service": "required"},
         )
@@ -175,6 +187,7 @@ def checkout_mega_bundle():
     data = request.get_json(force=True)
     email = (data.get("email") or "").strip()
     currency = (data.get("currency") or "eur").strip().lower()
+    ga_client_id = (data.get("ga_client_id") or "").strip()
 
     if not email or "@" not in email:
         return jsonify({"error": "Valid email required"}), 400
@@ -204,6 +217,7 @@ def checkout_mega_bundle():
             metadata={
                 "product_type": "mega_bundle",
                 "email": email,
+                "ga_client_id": ga_client_id,
             },
             consent_collection={"terms_of_service": "required"},
         )

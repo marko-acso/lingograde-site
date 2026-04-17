@@ -1814,10 +1814,12 @@ function checkoutMegaBundle() {
   }
   var currencyMap = { EUR: 'eur', USD: 'usd', GBP: 'gbp', CHF: 'chf' };
   var currency = currencyMap[window._lgCurrencyCode || 'EUR'] || 'eur';
+  var _gaCid = '';
+  try { var _m = document.cookie.match(/_ga=GA\d+\.\d+\.(\d+\.\d+)/); _gaCid = _m ? _m[1] : ''; } catch(e) {}
   fetch('https://api.lingograde.com/v1/checkout/mega-bundle', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: email, currency: currency })
+    body: JSON.stringify({ email: email, currency: currency, ga_client_id: _gaCid })
   })
   .then(function(r) { return r.json(); })
   .then(function(data) {

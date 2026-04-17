@@ -717,6 +717,15 @@ function onWaitlistSuccess(btn, input, email, product) {
   input.value = email;
 }
 
+// ── GA4 client_id extraction (for server-side purchase attribution) ──
+function getGaClientId() {
+  try {
+    var m = document.cookie.match(/_ga=GA\d+\.\d+\.(\d+\.\d+)/);
+    return m ? m[1] : '';
+  } catch (e) { return ''; }
+}
+window.getGaClientId = getGaClientId;
+
 // ── Accessory Checkout via Stripe API ──
 function toggleAccessoryForm(btn) {
   var form = btn.nextElementSibling;
@@ -751,7 +760,7 @@ function checkoutAccessory(product, btn) {
   fetch(API + '/v1/checkout/accessory', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: email, product: product })
+    body: JSON.stringify({ email: email, product: product, ga_client_id: getGaClientId() })
   })
   .then(function(r) { return r.json(); })
   .then(function(data) {
