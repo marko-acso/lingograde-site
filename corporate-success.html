@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Confirmed — LingoGrade Corporate Assessment</title>
+<meta name="description" content="Your LingoGrade Corporate Assessment order is confirmed. Next step: share your candidate list.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+:root {
+  --ink: #1C1C1C; --ink-soft: #4A4A4A; --ink-light: #8A8A8A;
+  --accent: #1B3A5C; --accent-lt: #2A5580; --accent-bg: #F0F4F8;
+  --gold: #D4952A; --cream: #FFFFFF; --parchment: #F5F7FA; --border: #D6DDE5;
+  --success: #27AE60; --success-bg: #F0FFF4;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-body); color: var(--ink); background: var(--cream); line-height: 1.6; }
+.wrap { max-width: 640px; margin: 0 auto; padding: 96px 24px 64px; text-align: center; }
+.check { width: 72px; height: 72px; border-radius: 50%; background: var(--success-bg); color: var(--success); display: inline-flex; align-items: center; justify-content: center; font-size: 2.5rem; margin-bottom: 24px; border: 2px solid var(--success); }
+h1 { font-family: var(--font-display); font-size: clamp(1.75rem, 3.5vw, 2.25rem); color: var(--ink); line-height: 1.25; margin-bottom: 16px; }
+.lead { font-size: 1.05rem; color: var(--ink-soft); margin-bottom: 32px; }
+.card { background: var(--parchment); border: 1px solid var(--border); border-radius: 16px; padding: 28px 32px; text-align: left; margin-bottom: 32px; }
+.card h2 { font-family: var(--font-display); font-size: 1.25rem; color: var(--ink); margin-bottom: 12px; }
+.card ol { padding-left: 20px; color: var(--ink-soft); }
+.card ol li { margin-bottom: 10px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: var(--accent); color: white; border-radius: 10px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: background 0.15s; }
+.btn:hover { background: var(--accent-lt); }
+.muted { font-size: 0.875rem; color: var(--ink-light); margin-top: 16px; }
+a.mail { color: var(--accent); text-decoration: none; font-weight: 600; }
+a.mail:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="check" aria-hidden="true">&#10003;</div>
+  <h1>Your order is confirmed</h1>
+  <p class="lead">Thank you for your LingoGrade Corporate Assessment order. A receipt has been emailed to you by Stripe, and a confirmation from <strong>corporate@lingograde.com</strong> is on its way with the next step.</p>
+
+  <div class="card">
+    <h2>What happens next</h2>
+    <ol>
+      <li>Reply to the confirmation email with your candidate list: full name and email for each candidate, plus the target language.</li>
+      <li>Your assessment coordinator emails a scheduling link to each candidate so they can pick their own slot.</li>
+      <li>Each candidate receives their CEFR report within one hour of their session.</li>
+      <li>You receive a Team Summary report once all candidates are assessed.</li>
+    </ol>
+  </div>
+
+  <a class="btn" href="/corporate">Back to Corporate overview</a>
+
+  <p class="muted">Questions? Just reply to the confirmation email, or write directly to <a class="mail" href="mailto:corporate@lingograde.com">corporate@lingograde.com</a>.</p>
+</main>
+</body>
+</html>
