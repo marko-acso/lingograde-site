@@ -62,8 +62,12 @@ jobs:
           username: ${{ secrets.HETZNER_USER }}
           key: ${{ secrets.HETZNER_SSH_KEY }}
           script: |
-            cd /opt/lingograde-api
-            git pull origin main
-            pip install -r api/requirements.txt
+            set -e
+            cd /opt/lingograde-site
+            git fetch origin main
+            git reset --hard origin/main
+            /opt/lingograde-site/api/venv/bin/pip install -r api/requirements.txt --quiet
             sudo systemctl restart lingograde-api
             sudo systemctl restart lingograde-drip
+            systemctl is-active lingograde-api
+            systemctl is-active lingograde-drip
