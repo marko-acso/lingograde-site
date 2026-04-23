@@ -426,13 +426,13 @@ def stripe_webhook():
                             f"<li>Target language"
                             + (f" (you indicated <strong>{language.upper()}</strong>)" if language else "")
                             + "</li>"
-                            f"<li>Any scheduling window you prefer (optional — default is within 5 business days)</li>"
-                            f"</ul>"
-                            f"<p>Your assessment coordinator will then send a scheduling link to each candidate and deliver the CEFR reports within one hour of each session. "
-                            f"You will receive a Team Summary once all assessments are complete.</p>"
-                            f"<p>If you have any questions, just reply to this email.</p>"
-                            f"<p>Kind regards,<br>The LingoGrade Team<br>"
-                            f"<a href=\"https://lingograde.com/corporate\">lingograde.com/corporate</a></p>"
+                            "<li>Any scheduling window you prefer (optional — default is within 5 business days)</li>"
+                            "</ul>"
+                            "<p>Your assessment coordinator will then send a scheduling link to each candidate and deliver the CEFR reports within one hour of each session. "
+                            "You will receive a Team Summary once all assessments are complete.</p>"
+                            "<p>If you have any questions, just reply to this email.</p>"
+                            "<p>Kind regards,<br>The LingoGrade Team<br>"
+                            "<a href=\"https://lingograde.com/corporate\">lingograde.com/corporate</a></p>"
                         )
                         http_requests.post(
                             "https://api.resend.com/emails",
