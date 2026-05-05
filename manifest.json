@@ -36,12 +36,6 @@
   ],
   "shortcuts": [
     {
-      "name": "Free Analysis",
-      "short_name": "Analyse",
-      "url": "/free-analysis",
-      "description": "Try a free 5-minute language snapshot"
-    },
-    {
       "name": "Shop",
       "url": "/shop",
       "description": "Browse LingoGrade assessments and merch"

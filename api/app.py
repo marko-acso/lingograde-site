@@ -1,5 +1,5 @@
 """
-LingoGrade Bot API — Free analysis + Paid chatbot assessment.
+LingoGrade API — Checkout, webhooks, partners, stickers.
 Flask microservice, deployed behind Caddy at api.lingograde.com.
 """
 
@@ -15,8 +15,6 @@ import stripe
 from dotenv import load_dotenv
 from flask import Flask, abort, g, jsonify, request
 from flask_cors import CORS
-
-from bot_store import cleanup_mem as _bot_store_cleanup
 
 load_dotenv()
 
@@ -140,17 +138,11 @@ claude = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
 
 # ── Register route blueprints ──
-from analysis_routes import analysis_bp  # noqa: E402
-from free_bot_routes import free_bot_bp  # noqa: E402
-from assessment_routes import assessment_bp  # noqa: E402
 from checkout_routes import checkout_bp  # noqa: E402
 from webhook_routes import webhook_bp  # noqa: E402
 from sticker_routes import sticker_bp  # noqa: E402
 from partner_routes import partner_bp  # noqa: E402
 
-app.register_blueprint(analysis_bp)
-app.register_blueprint(free_bot_bp)
-app.register_blueprint(assessment_bp)
 app.register_blueprint(checkout_bp)
 app.register_blueprint(webhook_bp)
 app.register_blueprint(sticker_bp)
@@ -177,8 +169,7 @@ def frontend_config():
 def health():
     # Piggyback periodic cleanup on health checks
     _limiter.cleanup()
-    _bot_store_cleanup()
-    return jsonify({"status": "ok", "service": "lingograde-bot-api"})
+    return jsonify({"status": "ok", "service": "lingograde-api"})
 
 
 if __name__ == "__main__":

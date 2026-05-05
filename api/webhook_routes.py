@@ -9,7 +9,6 @@ import stripe
 from flask import Blueprint, abort, g, jsonify, request, send_file
 
 from auth import require_auth
-from bot_store import find_assessment_by_payment, update_assessment
 from db_pool import get_cursor
 from invoice_generator import generate_invoice, get_invoice_pdf, get_invoices_by_email
 
@@ -162,47 +161,7 @@ def stripe_webhook():
     except (stripe.SignatureVerificationError, ValueError):
         abort(400)
 
-    if event["type"] == "payment_intent.succeeded":
-        pi = event["data"]["object"]
-        matched_id = find_assessment_by_payment(pi["id"])
-        if matched_id:
-            update_assessment(matched_id, payment_confirmed=True)
-
-        # Generate invoice for direct PaymentIntent payments
-        try:
-            customer_email = (pi.get("receipt_email")
-                              or pi.get("metadata", {}).get("email", ""))
-            if customer_email and pi.get("amount"):
-                generate_invoice(
-                    customer_email=customer_email,
-                    customer_name=pi.get("metadata", {}).get("customer_name"),
-                    line_items=[{
-                        "description": "LingoGrade Bot Assessment",
-                        "quantity": 1,
-                        "unit_price_cents": pi["amount"],
-                    }],
-                    total_cents=pi["amount"],
-                    currency=(pi.get("currency") or "eur").upper(),
-                    stripe_payment_intent_id=pi["id"],
-                    product_type="bot_assessment",
-                )
-        except Exception:
-            pass  # Invoice failure must not break webhook
-
-        _send_ga4_purchase(
-            transaction_id=pi["id"],
-            value_cents=pi.get("amount", 0),
-            currency=pi.get("currency", "eur"),
-            items=[{
-                "item_id": "bot_assessment",
-                "item_name": "LingoGrade Chatbot Assessment",
-                "price": round(pi.get("amount", 0) / 100, 2),
-                "quantity": 1,
-            }],
-            client_id=pi.get("metadata", {}).get("ga_client_id"),
-        )
-
-    elif event["type"] == "checkout.session.completed":
+    if event["type"] == "checkout.session.completed":
         cs = event["data"]["object"]
         meta = cs.get("metadata", {})
 
@@ -471,11 +430,6 @@ def stripe_webhook():
                         )
                 except Exception:
                     pass  # Drip failure must not break webhook
-
-        else:
-            matched_id = find_assessment_by_payment(cs["id"])
-            if matched_id:
-                update_assessment(matched_id, payment_confirmed=True)
 
         # ── Auto-invoice for ALL checkout sessions ──
         try:

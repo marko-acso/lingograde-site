@@ -56,12 +56,6 @@ End TrustBox script -->
       "offers": [
         {
           "@type": "Offer",
-          "name": "Bot Assessment",
-          "price": "49.95",
-          "priceCurrency": "EUR"
-        },
-        {
-          "@type": "Offer",
           "name": "Quick Assessment",
           "price": "89.95",
           "priceCurrency": "EUR"
@@ -195,11 +189,6 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .pricing-card .pricing-btn { margin-top: auto; }
 .pricing-card.starter { border-color: #C5CDD7; background: linear-gradient(180deg, #F0F2F5 0%, var(--cream) 60%); }
 .pricing-card.starter:hover { border-color: var(--accent); }
-.bot-row { display: flex; gap: 24px; align-items: center; margin-top: 24px; max-width: 960px; margin-left: auto; margin-right: auto; padding: 32px 36px; border-radius: 16px; border: 2px solid var(--success); background: linear-gradient(135deg, #F0FFF4 0%, var(--cream) 60%); position: relative; }
-.bot-row:hover { border-color: #1E8449; }
-.bot-row .bot-row-info { flex: 1; }
-.bot-row .bot-row-features { flex: 1; }
-.bot-row .bot-row-cta { flex-shrink: 0; text-align: center; }
 .pricing-card.featured { border-color: var(--accent); background: linear-gradient(180deg, var(--accent-bg) 0%, var(--cream) 60%); }
 .pricing-card.featured::before { content: none; }
 .pricing-card.premium { border-color: var(--warn); background: linear-gradient(180deg, #FFF8F0 0%, var(--cream) 60%); }
@@ -316,8 +305,6 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   .steps { grid-template-columns: 1fr 1fr; gap: 24px; }
   .blocks { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr 1fr; max-width: 520px; }
-  .bot-row { flex-direction: column; text-align: center; }
-  .bot-row .bot-row-cta { width: 100%; }
   .lessons-grid { grid-template-columns: 1fr; max-width: 420px; }
   .partner-card { grid-template-columns: 1fr; gap: 32px; }
   .flashcard-layout { grid-template-columns: 1fr; gap: 32px; }
@@ -413,7 +400,6 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <p class="mt-12 italic fs-11 c-ink-soft">Would it be wrong to find out where you actually stand?</p>
     <div class="hero-actions">
       <a href="#pricing" class="btn-primary">See Where I Actually Stand</a>
-      <a href="free-bot.html" class="btn-secondary c-success bg-success-bg" >Try Free 5-Min Conversation</a>
       <a href="#how-it-works" class="btn-secondary">How It Works</a>
     </div>
     <div class="hero-trust mt-32" >
@@ -579,31 +565,6 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       </div>
     </div>
 
-    <!-- Bot Assessment — separate row (AI vs human) -->
-    <div class="bot-row">
-      <div class="fw-700 c-white tracking-wide bg-success" style="position:absolute;top:-13px;left:32px;padding:4px 16px;border-radius:100px;font-size:0.6875rem;" >Instant result</div>
-      <div class="bot-row-info">
-        <div class="pricing-name">Bot Assessment</div>
-        <div class="pricing-duration" style="margin-bottom:8px;">5-minute AI conversation</div>
-        <div class="pricing-price c-success" data-eur="49.95" data-usd="49.95" data-chf="49.95" data-gbp="49.95" style="font-size:2rem;">&euro;49.95</div>
-        <div class="pricing-price-note">Full written report, no booking needed</div>
-      </div>
-      <div class="bot-row-features">
-        <ul class="pricing-features" style="margin-bottom:0;">
-          <li class="dot-item"><span></span>Approximate CEFR level</li>
-          <li class="dot-item"><span></span>Key speaking patterns identified</li>
-          <li class="dot-item"><span></span>3 personalized flashcards</li>
-          <li class="dot-item"><span></span>Delivered instantly via email</li>
-          <li class="dot-item"><span></span>AI chat available in 28 languages</li>
-        </ul>
-      </div>
-      <div class="bot-row-cta">
-        <button onclick="var f=document.querySelector('#marco-fab');if(f)f.click();" class="pricing-btn c-white bg-success no-outline cursor-pointer border-none" style="font-family:inherit;width:auto;padding:14px 32px;">Try the Bot Assessment &rarr;</button>
-        <p class="subcaption mt-12">Want more depth? Upgrade to a human assessment anytime.</p>
-        <p class="c-ink-light fs-smm mt-8">No rush &mdash; it&rsquo;ll be here.</p>
-      </div>
-    </div>
-
     <div class="mx-auto mt-16 bg-success-bg mw-1080 rounded-8" style="padding:12px 24px;border:1px solid rgba(39,174,96,0.2);">
       <p class="fs-body c-success"><img src="assets/mascot/marco-alarm.webp?v=3" alt="Marco alarm" class="marco-icon" width="60" height="60" loading="lazy" style="width:60px;height:auto;margin-right:6px;">Sessions are offered on selected days. Availability is updated in real time.</p>
     </div>
@@ -611,7 +572,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <div class="pricing-discount mx-auto mt-16 mw-1080 d-flex items-center gap-20">
       <img src="assets/mascot/marco-coffee-cozy.webp?v=3" alt="Marco the Owl — LingoGrade Mascot" class="marco-img flex-shrink-0" width="100" height="100" loading="lazy" style="width:100px;height:auto;">
       <div>
-        <p>Not sure which to choose? Start with the <strong>free 5-minute chat</strong> for a quick snapshot. The <strong>Bot Assessment</strong> gives you a written report instantly. The <strong>Full Assessment</strong> is the most popular human option. The <strong>DeepDive</strong> is the most thorough diagnostic available.</p>
+        <p>Not sure which to choose? The <strong>Quick Assessment</strong> is a 15-minute snapshot. The <strong>Full Assessment</strong> is the most popular option for a complete picture. The <strong>DeepDive</strong> is the most thorough diagnostic available — every report is signed by a named human assessor.</p>
         <p class="c-ink-light mt-8 fs-smm" >Not ready? Take your time — everything will be here whenever you are.</p>
       </div>
     </div>
@@ -932,7 +893,6 @@ function translateLanguages(lang) {
 })();
 </script>
 <script src="js/shield.js" defer></script>
-<script src="js/marco-chat.js" defer></script>
 <noscript>
     <div class="noscript-banner">
         <a href="mailto:hello@lingograde.com" >Questions? Email us</a>

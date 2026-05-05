@@ -3,9 +3,6 @@ pricing.py — Single source of truth for all LingoGrade prices.
 All amounts in cents. All prices end in .95 (business rule).
 """
 
-# ── Bot Assessment ──
-BOT_ASSESSMENT_CENTS = 4995  # EUR 49.95
-
 # ── Kids Packages ──
 KIDS_PACKAGES = {
     "quick": {

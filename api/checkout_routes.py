@@ -9,51 +9,13 @@ from flask import Blueprint, jsonify, request
 
 from db_pool import get_cursor
 from pricing import (
-    BOT_ASSESSMENT_CENTS, KIDS_PACKAGES, MEGA_BUNDLE_CENTS,
+    KIDS_PACKAGES, MEGA_BUNDLE_CENTS,
     ACCESSORY_CATALOG, ALLOWED_CURRENCIES,
     EXPRESS_HIRING_AUDIT,
     CORPORATE_ASSESSMENT,
 )
 
 checkout_bp = Blueprint("checkout_bp", __name__)
-
-
-@checkout_bp.route("/v1/payment/intent", methods=["POST"])
-def create_payment_intent():
-    from app import _limiter, _get_client_ip
-
-    ip = _get_client_ip()
-    if not _limiter.is_allowed(f"payment:{ip}", max_requests=10, window_seconds=3600):
-        return jsonify({"error": "rate_limit", "message": "Too many payment attempts. Please try again later."}), 429
-
-    data = request.get_json(force=True)
-    email = (data.get("email") or "").strip()
-    session_id = data.get("session_id", "")
-    package = data.get("package", "bot-assessment")
-    ga_client_id = (data.get("ga_client_id") or "").strip()
-
-    if not email or "@" not in email:
-        return jsonify({"error": "Valid email required"}), 400
-
-    if package != "bot-assessment":
-        return jsonify({"error": "Unknown package"}), 400
-
-    try:
-        intent = stripe.PaymentIntent.create(
-            amount=BOT_ASSESSMENT_CENTS,
-            currency="eur",
-            receipt_email=email,
-            metadata={
-                "session_id": session_id,
-                "package": package,
-                "ga_client_id": ga_client_id,
-            },
-            description="LingoGrade Chatbot Assessment",
-        )
-    except stripe.StripeError as e:
-        return jsonify({"error": str(e)}), 400
-
-    return jsonify({"client_secret": intent.client_secret})
 
 
 @checkout_bp.route("/v1/checkout/accessory", methods=["POST"])
