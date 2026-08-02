@@ -1339,7 +1339,7 @@ function enlargeImage(src) {
     '44.95':'349.95','59.95':'449.95','84.80':'649.95','129.95':'999.95','139.95':'999.95',
     '299.95':'2288.95','384.75':'2899.95'
   };
-  var PRICE_MAPS = {USD:eurToUsd,CNY:eurToCny};
+  var PRICE_MAPS = {CNY:eurToCny};
   window._lgEurToUsd = eurToUsd;
 
   function tzFallback() {
@@ -1421,15 +1421,7 @@ function enlargeImage(src) {
 
     origTierLabels.forEach(function(o){
       o.el.innerHTML = o.html;
-      if (isUSD) {
-        Object.keys(eurToUsd).forEach(function(eur){
-          o.el.innerHTML = o.el.innerHTML.replace(new RegExp('\u20AC' + eur.replace('.', '\\.'), 'g'), '$' + eurToUsd[eur]);
-        });
-        o.el.innerHTML = o.el.innerHTML.replace(/\u20AC18\.95\/pack/g, '$21.95/pack');
-        o.el.innerHTML = o.el.innerHTML.replace(/\u20AC14\.95\/pack/g, '$17.33/pack');
-        o.el.innerHTML = o.el.innerHTML.replace(/\u20AC1\.95/g, '$1.95');
-        o.el.innerHTML = o.el.innerHTML.replace(/\u20AC14\.95/g, '$17.95');
-      }
+      if (isUSD) o.el.innerHTML = o.el.innerHTML.split('\u20AC').join('$');
     });
 
     var cnBundle = document.getElementById('cn-bundle');
@@ -1452,12 +1444,10 @@ function enlargeImage(src) {
 
 // ── Sticker Order Total ──
 function updateStickerTotal(){
-  var tierPricesEUR = { '1': 19.95, '2': 37.95, '3': 44.95 };
-  var tierPricesUSD = { '1': 22.95, '2': 43.95, '3': 51.95 };
-  var tierPrices = window._lgIsUSD ? tierPricesUSD : tierPricesEUR;
+  var tierPrices = { '1': 19.95, '2': 37.95, '3': 44.95 };
   var tierEl = document.querySelector('input[name="sticker-tier"]:checked');
   var tier = tierEl ? tierEl.value : '3';
-  var defaultPrice = window._lgIsUSD ? 51.95 : 44.95;
+  var defaultPrice = 44.95;
   var total = (tierPrices[tier] || defaultPrice).toFixed(2);
   var el = document.getElementById('sticker-total');
   el.textContent = (window._lgCurrency || '\u20AC') + total;

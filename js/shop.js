@@ -105,7 +105,7 @@ function enlargeImage(src) {
     '44.95':'349.95','59.95':'449.95','84.80':'649.95','129.95':'999.95','139.95':'999.95',
     '299.95':'2288.95','384.75':'2899.95'
   };
-  var PRICE_MAPS = {USD:eurToUsd,CNY:eurToCny};
+  var PRICE_MAPS = {CNY:eurToCny};
   window._lgEurToUsd = eurToUsd;
 
   function tzFallback() {
@@ -191,6 +191,7 @@ function enlargeImage(src) {
     // Sticker tier labels — restore then convert
     origTierLabels.forEach(function(o){
       o.el.innerHTML = o.html; // restore EUR originals
+      if (code !== 'EUR') o.el.innerHTML = o.el.innerHTML.split(SYMBOLS.EUR).join(symbol); // 1:1 symbol swap
       if (isUSD) {
         Object.keys(eurToUsd).forEach(function(eur){
           o.el.innerHTML = o.el.innerHTML.replace(new RegExp('\u20AC' + eur.replace('.', '\\.'), 'g'), '$' + eurToUsd[eur]);
