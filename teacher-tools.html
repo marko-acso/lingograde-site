@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Letter Highlighting — Teacher Tools — LingoGrade</title>
+<title>Letter Highlighting - Teacher Tools - LingoGrade</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -767,7 +767,7 @@ body {
 <script src="/js/phoneme-tools.js"></script>
 <script>
 /* ════════════════════════════════════════════════════════════════════════════
-   Teacher Tools — Letter Highlighting
+   Teacher Tools - Letter Highlighting
    Vanilla JS, no framework.
 ═══════════════════════════════════════════════════════════════════════════ */
 (function () {
@@ -892,7 +892,7 @@ body {
         populateStudentDropdowns(students);
       })
       .catch(function() {
-        // Table might not exist yet — that is fine, just show empty state
+        // Table might not exist yet - that is fine, just show empty state
         populateStudentDropdowns([]);
       });
   }
@@ -904,7 +904,7 @@ body {
       if (idx === 0) {
         var opt = document.createElement('option');
         opt.value = '';
-        opt.textContent = '— Select existing student —';
+        opt.textContent = '- Select existing student -';
         sel.appendChild(opt);
       } else {
         var opt0 = document.createElement('option');
@@ -956,7 +956,7 @@ body {
     $('letterGrid').innerHTML = '<span class="fs-md c-ink-light self-center" >Add a word above to see letters here.</span>';
 
     var langLabel = $('langSelect').options[$('langSelect').selectedIndex].text;
-    $('sessionStatus').textContent = 'Session active: ' + studentName + ' — ' + langLabel + ' — ' + state.sessionDate;
+    $('sessionStatus').textContent = 'Session active: ' + studentName + ' - ' + langLabel + ' - ' + state.sessionDate;
     $('sessionStatus').className = 'session-status active';
 
     $('wordInput').focus();
@@ -1040,7 +1040,7 @@ body {
     state.tokens.forEach(function(tok, i) {
       var btn = document.createElement('button');
       btn.className = 'letter-btn' + (tok.severity ? ' ' + tok.severity : '');
-      btn.setAttribute('aria-label', tok.grapheme + ' — ' + tok.family + ' — tap to highlight');
+      btn.setAttribute('aria-label', tok.grapheme + ' - ' + tok.family + ' - tap to highlight');
       btn.dataset.index = i;
 
       var label = document.createElement('span');
@@ -1218,7 +1218,7 @@ body {
         highlighted.forEach(function(t) {
           var chip = document.createElement('span');
           chip.className = 'phoneme-chip ' + t.severity;
-          chip.textContent = t.grapheme + ' — ' + t.family + ' (' + t.position + ')';
+          chip.textContent = t.grapheme + ' - ' + t.family + ' (' + t.position + ')';
           chipRow.appendChild(chip);
         });
       }
@@ -1496,7 +1496,7 @@ body {
       head.className = 'session-card-head';
       head.innerHTML =
         '<span class="session-date">' + formatDate(s.session_date) + '</span>' +
-        '<span class="session-meta">' + s.student_id + ' — ' + s.lang.toUpperCase() + ' — ' + s.logs.length + ' phonemes</span>';
+        '<span class="session-meta">' + s.student_id + ' - ' + s.lang.toUpperCase() + ' - ' + s.logs.length + ' phonemes</span>';
 
       var body = document.createElement('div');
       body.className = 'session-body';

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Homework — LingoGrade</title>
+<title>Homework - LingoGrade</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/webp" href="/assets/mascot/marco-face-grad-v2.webp?v=3">
 <link rel="apple-touch-icon" href="/assets/mascot/marco-face-grad-v2.png">
@@ -281,7 +281,7 @@ function loadHomework() {
     .then(function(data) {
       var list = data.homework || [];
       if (!list.length && _isPostPurchase && _retryCount < 5) {
-        // Webhook may not have fired yet — retry
+        // Webhook may not have fired yet - retry
         _retryCount++;
         document.getElementById('hwContent').innerHTML =
           '<div class="waiting-state"><div class="spinner"></div><p style="margin-top:12px;">Setting up your homework check...</p></div>';
@@ -383,7 +383,7 @@ function renderUploadZone(pending) {
       : '<input type="hidden" id="hwSelect" value="' + escHtml(pending[0].id) + '">') +
     '<div class="upload-zone" id="uploadZone" onclick="document.getElementById(\'fileInput\').click()">' +
     '<div class="upload-zone-text">Drag and drop your file here</div>' +
-    '<div class="upload-zone-sub">PDF, DOCX, DOC, JPG, PNG — max 10 MB</div>' +
+    '<div class="upload-zone-sub">PDF, DOCX, DOC, JPG, PNG - max 10 MB</div>' +
     '<button class="btn-file-pick" type="button" onclick="event.stopPropagation();document.getElementById(\'fileInput\').click()">Choose File</button>' +
     '</div>' +
     '<input type="file" id="fileInput" accept=".pdf,.docx,.doc,.jpg,.jpeg,.png" class="hidden" onchange="handleFileInputChange(this)">' +
