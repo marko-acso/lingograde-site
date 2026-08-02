@@ -296,7 +296,7 @@ function selectPack(pack){
 // 3D Carousel Navigation
 var currentSlide = 1; // Start with Mila (index 1) active
 var carouselItems = document.querySelectorAll('.carousel-item');
-var campaignNames = ['Marco — Marco solo', 'Mila — Mila solo', 'Corporate — Marco + Mila in uniform', 'Playful — Marco + Mila casual', 'Kids — fun and playful'];
+var campaignNames = ['Marco - Marco solo', 'Mila - Mila solo', 'Corporate - Marco + Mila in uniform', 'Playful - Marco + Mila casual', 'Kids - fun and playful'];
 
 function updateCarousel() {
   var items = document.querySelectorAll('.carousel-item');
@@ -429,7 +429,7 @@ function updateSkuPreview() {
   img.style.opacity = '0';
   setTimeout(function() {
     img.src = src;
-    img.alt = campaign + ' sticker — ' + currentFrame + ' frame';
+    img.alt = campaign + ' sticker - ' + currentFrame + ' frame';
     img.style.opacity = '1';
   }, 150);
 }

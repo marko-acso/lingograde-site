@@ -218,7 +218,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
       <span></span><span></span><span></span>
     </button>
     <div class="nav-menu">
-      <a href="/" data-i18n="nav.individual">Individual</a>
+      <a href="/" data-i18n="nav.home">Home</a>
       <a href="kids.html" data-i18n="nav.kids">Kids</a>
       <a href="corporate.html" data-i18n="nav.corporate">Corporate</a>
       <a href="partners.html" data-i18n="nav.partners">Partners</a>
@@ -514,7 +514,7 @@ function renderProgress(list) {
       '<div class="progress-lang-name">' + escHtml(lang) + '</div>' +
       '<div class="progress-track">' + steps + '</div>' +
       '<div class="progress-current-label">Current level: <strong>' + latest + '</strong>' +
-        (entries.length > 1 ? ' &mdash; ' + entries.length + ' assessments completed' : '') +
+        (entries.length > 1 ? ' - ' + entries.length + ' assessments completed' : '') +
       '</div>' +
       '</div>';
   }).join('');
@@ -674,7 +674,7 @@ function renderUploadZone(pending) {
       : '<input type="hidden" id="hwSelect" value="' + escHtml(pending[0].id) + '">') +
     '<div class="upload-zone" id="uploadZone" onclick="document.getElementById(\'fileInput\').click()">' +
     '<div class="upload-zone-text">Drag and drop your file here</div>' +
-    '<div class="upload-zone-sub">PDF, DOCX, DOC, JPG, PNG &mdash; max 10 MB</div>' +
+    '<div class="upload-zone-sub">PDF, DOCX, DOC, JPG, PNG - max 10 MB</div>' +
     '<button class="btn-file-pick" type="button" onclick="event.stopPropagation();document.getElementById(\'fileInput\').click()">Choose File</button>' +
     '</div>' +
     '<input type="file" id="fileInput" accept=".pdf,.docx,.doc,.jpg,.jpeg,.png" class="hidden" onchange="handleFileInputChange(this)">' +
