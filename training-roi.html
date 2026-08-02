@@ -264,7 +264,7 @@ function calcRoi() {
     return;
   }
   // Per-person measurement = baseline + re-assessment, volume-tiered to match corporate pricing.
-  var baseline = n >= 50 ? 79.95 : (n >= 15 ? 89.95 : 99.95);
+  var baseline = n >= 50 ? 79.95 : (n >= 15 ? 99.95 : 119.95);
   var reassess = 139.95;
   var perPerson = baseline + reassess;
   var measure = n * perPerson;

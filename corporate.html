@@ -40,19 +40,19 @@
     {
       "@type": "Offer",
       "name": "Department (15-49 employees)",
-      "price": "89.95",
-      "priceCurrency": "EUR"
-    },
-    {
-      "@type": "Offer",
-      "name": "Team (5-14 employees)",
       "price": "99.95",
       "priceCurrency": "EUR"
     },
     {
       "@type": "Offer",
+      "name": "Team (5-14 employees)",
+      "price": "119.95",
+      "priceCurrency": "EUR"
+    },
+    {
+      "@type": "Offer",
       "name": "Individual",
-      "price": "129.95",
+      "price": "149.95",
       "priceCurrency": "EUR"
     }
   ]
@@ -184,7 +184,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       <div class="info-card bg-cream">
         <div class="fw-700 c-ink mb-8">Pre-made Test Library</div>
         <p class="fs-md c-ink-soft mb-8">A ready-to-assign catalog of pre-made pre-employment tests across 12 languages and 6 CEFR levels (A1 to C2) - 72 standardized tests total. Every test is calibrated to the same rubric, so every candidate in the pipeline is measured the same way.</p>
-        <p class="fs-md c-ink-soft"><strong>Example pre-made tests:</strong> German A2 Pre-Hire, English B2 Pre-Hire, French C1 Pre-Hire, Spanish B1 Pre-Hire, Italian A2 Pre-Hire, Bulgarian B2 Pre-Hire &mdash; same test, same result format, every time.</p>
+        <p class="fs-md c-ink-soft"><strong>Example pre-made tests:</strong> German A2 Pre-Hire, English B2 Pre-Hire, French C1 Pre-Hire, Spanish B1 Pre-Hire, Italian A2 Pre-Hire, Bulgarian B2 Pre-Hire - same test, same result format, every time.</p>
         <p class="mt-8 fs-085 c-accent"><a href="samples/corporate_sample_report.pdf" target="_blank" download>Download a sample test report (PDF) &rarr;</a></p>
       </div>
       <div class="info-card bg-cream">
@@ -283,14 +283,18 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
     <div class="section-label">Corporate Pricing</div>
     <h2 class="section-title mx-auto mb-8">Would it be unreasonable to expect this level of precision at scale?</h2>
     <p class="section-desc" style="margin:0 auto 16px;">Every corporate assessment is the complete 25-minute Full Assessment with all diagnostic blocks. No shortcuts, no stripped-down versions. Precise data, delivered within hours.</p>
-    <p class="fs-body c-ink-soft italic" style="margin:0 auto 40px;max-width:600px;" >Voice-only assessments available for corporate teams at a reduced rate. Contact us for details.</p>
+    <p class="fs-body c-ink-soft italic" style="margin:0 auto 24px;max-width:600px;" >Voice-only assessments available for corporate teams at a reduced rate. Contact us for details.</p>
+
+    <div class="text-left mw-720" style="margin:0 auto 40px;padding:20px 24px;border-radius:12px;background:var(--accent-bg);border:1px solid var(--border);">
+      <p class="lh-17 m-0 fs-body c-ink-soft">A national language certificate (Goethe, telc, Cambridge) runs roughly <strong class="c-ink">&euro;175 to &euro;430 per person</strong>, takes weeks to schedule, and returns a single pass/fail grade. LingoGrade returns a signed CEFR diagnostic per person <strong class="c-ink">within the hour</strong> - active and passive level, where the gaps are, and exactly what to train next.</p>
+    </div>
 
     <div class="pricing-tiers mb-32 gap-24" style="display:grid;grid-template-columns:repeat(3,1fr);" >
       <!-- Team -->
       <div class="info-card text-left" style="padding:32px;border-radius:16px;">
         <div class="mb-8 fw-700 c-ink-light fs-2xs uppercase tracking-wide" >Team</div>
         <div class="fs-md c-ink-soft mb-16">5 &ndash; 14 employees</div>
-        <div class="corp-price c-ink fs-4xl fw-700" data-eur="99.95" data-usd="99.95" data-chf="99.95" data-gbp="99.95" style="line-height:1;" >&euro;99.95</div>
+        <div class="corp-price c-ink fs-4xl fw-700" data-eur="119.95" data-usd="119.95" data-chf="119.95" data-gbp="119.95" style="line-height:1;" >&euro;119.95</div>
         <div class="subcaption mb-20">per person</div>
         <div class="corp-save subcaption c-success fw-600 mb-16" data-eur="30" data-usd="30" data-chf="30" data-gbp="30">Save &euro;30 per person vs. individual</div>
         <ul class="check-list fs-body c-ink-soft gap-8 mb-20" >
@@ -299,23 +303,23 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
           <li>&#10003; Single invoice</li>
           <li>&#10003; Flexible scheduling</li>
         </ul>
-        <button type="button" class="btn-primary w-full corp-buy-btn" data-tier="team" data-min="5" data-max="14" data-unit="99.95" style="width:100%;justify-content:center;">Buy Team Assessment</button>
+        <button type="button" class="btn-primary w-full corp-buy-btn" data-tier="team" data-min="5" data-max="14" data-unit="119.95" style="width:100%;justify-content:center;">Buy Team Assessment</button>
       </div>
       <!-- Department -->
       <div class="text-left" style="padding:32px;border-radius:16px;background:var(--gold-bg);border:1.5px solid var(--gold);position:relative;">
         <div class="fw-700 c-white fs-2xs uppercase tracking-wide" style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);padding:4px 16px;border-radius:100px;" >Most Chosen</div>
         <div class="mb-8 fw-700 c-gold fs-2xs uppercase tracking-wide" >Department</div>
         <div class="fs-md c-ink-soft mb-16">15 &ndash; 49 employees</div>
-        <div class="corp-price c-accent fs-4xl fw-700" data-eur="89.95" data-usd="89.95" data-chf="89.95" data-gbp="89.95" style="line-height:1;" >&euro;89.95</div>
+        <div class="corp-price c-accent fs-4xl fw-700" data-eur="99.95" data-usd="99.95" data-chf="99.95" data-gbp="99.95" style="line-height:1;" >&euro;99.95</div>
         <div class="subcaption mb-20">per person</div>
-        <div class="corp-save subcaption c-success fw-600 mb-16" data-eur="40" data-usd="40" data-chf="40" data-gbp="40">Save &euro;40 per person vs. individual</div>
+        <div class="corp-save subcaption c-success fw-600 mb-16" data-eur="50" data-usd="50" data-chf="50" data-gbp="50">Save &euro;50 per person vs. individual</div>
         <ul class="check-list fs-body c-ink-soft gap-8 mb-20" >
           <li>&#10003; Everything in Team</li>
           <li>&#10003; Priority scheduling</li>
           <li>&#10003; Group strengths &amp; focus areas analysis</li>
           <li>&#10003; Training focus recommendation</li>
         </ul>
-        <button type="button" class="btn-primary w-full corp-buy-btn" data-tier="department" data-min="15" data-max="49" data-unit="89.95" style="width:100%;justify-content:center;">Buy Department Assessment</button>
+        <button type="button" class="btn-primary w-full corp-buy-btn" data-tier="department" data-min="15" data-max="49" data-unit="99.95" style="width:100%;justify-content:center;">Buy Department Assessment</button>
       </div>
       <!-- Enterprise -->
       <div class="info-card text-left" style="padding:32px;border-radius:16px;">
@@ -323,7 +327,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
         <div class="fs-md c-ink-soft mb-16">50 &ndash; 200 employees</div>
         <div class="corp-price c-ink fs-4xl fw-700" data-eur="79.95" data-usd="79.95" data-chf="79.95" data-gbp="79.95" style="line-height:1;" >&euro;79.95</div>
         <div class="subcaption mb-20">per person</div>
-        <div class="corp-save subcaption c-success fw-600 mb-16" data-eur="50" data-usd="50" data-chf="50" data-gbp="50">Save &euro;50 per person vs. individual</div>
+        <div class="corp-save subcaption c-success fw-600 mb-16" data-eur="70" data-usd="70" data-chf="70" data-gbp="70">Save &euro;70 per person vs. individual</div>
         <ul class="check-list fs-body c-ink-soft gap-8 mb-20" >
           <li>&#10003; Everything in Department</li>
           <li>&#10003; Dedicated assessment coordinator</li>
@@ -372,7 +376,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
   <div class="section-inner text-center mw-760" >
     <div class="section-label">Ongoing Development</div>
     <h2 class="section-title" style="margin:0 auto 12px;">It sounds like assessment alone won't address the pattern. You need progress.</h2>
-    <p class="section-desc mb-32 mx-auto" >Knowing where your team stands is only the first step. Without structured follow-up, those focus areas stay unaddressed. Give your team weekly targeted lessons based on their individual results &mdash; every session addresses their specific focus areas, not generic curriculum.</p>
+    <p class="section-desc mb-32 mx-auto" >Knowing where your team stands is only the first step. Without structured follow-up, those focus areas stay unaddressed. Give your team weekly targeted lessons based on their individual results - every session addresses their specific focus areas, not generic curriculum.</p>
     <div class="mx-auto text-left mw-560 bg-cream" style="padding:32px;border-radius:16px;border:1.5px solid var(--border);" >
       <ul class="fs-md c-ink-soft" style="list-style:none;display:flex;flex-direction:column;gap:12px;">
         <li>&#10003; Weekly 15-minute targeted lessons per employee</li>
@@ -553,7 +557,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       <h3 id="cbTitle" class="font-display" style="font-size:1.5rem;color:var(--ink);margin:0;">Buy Corporate Assessment</h3>
       <button type="button" data-cb-close aria-label="Close" style="background:none;border:none;cursor:pointer;font-size:1.5rem;color:var(--ink-light);line-height:1;padding:4px 8px;">×</button>
     </div>
-    <form id="corpBuyForm" data-min="5" data-max="14" data-unit="99.95">
+    <form id="corpBuyForm" data-min="5" data-max="14" data-unit="119.95">
       <input type="hidden" id="cbTier" name="tier" value="team">
 
       <label for="cbCompany" class="fw-600 fs-085 c-ink" style="display:block;margin-bottom:6px;">Company name</label>
@@ -693,10 +697,10 @@ function updatePricing() {
   var curKey = window._lgCurKey || 'eur';
   var tier, ppp, rePP, indivPP;
   var prices = {
-    eur:  { enterprise: 79.95, department: 89.95, team: 99.95, reassess: 139.95, individual: 129.95 },
-    usd:  { enterprise: 79.95, department: 89.95, team: 99.95, reassess: 139.95, individual: 129.95 },
-    chf:  { enterprise: 79.95, department: 89.95, team: 99.95, reassess: 139.95, individual: 129.95 },
-    gbp:  { enterprise: 79.95, department: 89.95, team: 99.95, reassess: 139.95, individual: 129.95 }
+    eur:  { enterprise: 79.95, department: 99.95, team: 119.95, reassess: 139.95, individual: 149.95 },
+    usd:  { enterprise: 79.95, department: 99.95, team: 119.95, reassess: 139.95, individual: 149.95 },
+    chf:  { enterprise: 79.95, department: 99.95, team: 119.95, reassess: 139.95, individual: 149.95 },
+    gbp:  { enterprise: 79.95, department: 99.95, team: 119.95, reassess: 139.95, individual: 149.95 }
   };
   var p = prices[curKey] || prices.eur;
   if (n >= 50) { tier = 'ENTERPRISE'; ppp = p.enterprise; }

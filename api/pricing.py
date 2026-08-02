@@ -29,7 +29,7 @@ MEGA_BUNDLE_CENTS = 29995  # EUR 299.95
 EXPRESS_HIRING_AUDIT = {
     "name": "Express Hiring Audit",
     "description": "Independent CEFR verification of a candidate before you hire. 25-minute live assessment. Written audit report signed by the assessor, delivered within 60 minutes. Candidate consent required before session.",
-    "amounts": {"eur": 19995, "usd": 19995, "gbp": 19995, "chf": 19995},
+    "amounts": {"eur": 24995, "usd": 24995, "gbp": 24995, "chf": 24995},
 }
 
 # ── Corporate Assessment (volume tiers, per-seat) ──
@@ -41,14 +41,14 @@ CORPORATE_ASSESSMENT = {
         "description": "Full 25-minute CEFR assessment per candidate. Standardized PDF report per candidate. Team Summary across the group. Billing per candidate.",
         "min_seats": 5,
         "max_seats": 14,
-        "unit_cents": 9995,   # EUR 99.95 / seat
+        "unit_cents": 11995,   # EUR 119.95 / seat
     },
     "department": {
         "name": "LingoGrade Department Assessment",
         "description": "Full 25-minute CEFR assessment per candidate. Standardized PDF report per candidate. Department summary, priority scheduling, training focus recommendation.",
         "min_seats": 15,
         "max_seats": 49,
-        "unit_cents": 8995,   # EUR 89.95 / seat
+        "unit_cents": 9995,   # EUR 99.95 / seat
     },
     "enterprise": {
         "name": "LingoGrade Enterprise Assessment",
