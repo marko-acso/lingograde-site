@@ -19,6 +19,7 @@
 <meta property="og:locale" content="en_US">
 <link rel="manifest" href="/manifest.json">
 <link rel="canonical" href="https://www.lingograde.com/call-centers">
+<link rel="alternate" hreflang="de" href="https://www.lingograde.com/call-centers-de">
 <link rel="alternate" hreflang="en" href="https://www.lingograde.com/call-centers">
 <link rel="alternate" hreflang="x-default" href="https://www.lingograde.com/call-centers">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
@@ -61,6 +62,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
 .nav-menu a { font-size: 0.875rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; transition: color 0.15s; }
 .nav-menu a:hover { color: var(--accent); }
 .nav-menu a.nav-active { color: var(--accent); font-weight: 700; }
+.nav-lang { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; border: 1px solid var(--border); border-radius: 8px; padding: 5px 10px; }
+.nav-lang strong { color: var(--accent); }
+.nav-lang a { color: var(--ink-light) !important; font-weight: 600; }
 .nav-signin { padding: 8px 16px; border: 1.5px solid var(--border); border-radius: 8px; transition: all 0.15s; }
 .nav-signin:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
 .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
@@ -121,6 +125,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--cream
       <a href="training-roi.html">Training ROI</a>
       <a href="call-centers.html">Call Centers</a>
       <a href="partners.html" data-i18n="nav.partners">Partners</a>
+      <span class="nav-lang"><a href="/call-centers-de" hreflang="de" lang="de">DE</a> <strong>EN</strong></span>
       <a href="https://app.lingograde.com/login" class="nav-signin" data-i18n="nav.login">Sign In</a>
       <a href="corporate.html#contact" class="nav-cta">Talk to Us</a>
     </div>
