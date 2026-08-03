@@ -45,7 +45,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--parch
 /* ── Navigation ── */
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
 .nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 4px 32px; height: auto; display: flex; align-items: center; justify-content: space-between; }
-.nav-menu { display: flex; gap: 28px; align-items: center; }
+.nav-menu { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
 .nav-menu a { font-size: 0.875rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; transition: color 0.15s; }
 .nav-menu a:hover { color: var(--accent); }
 .nav-menu a.nav-active { color: var(--accent); font-weight: 700; }
