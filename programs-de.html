@@ -625,6 +625,6 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
 })();
 </script>
 
-<script>(function(){var p=location.pathname.split('/').pop()||'index.html';if(!p.endsWith('.html'))p+='.html';document.querySelectorAll('.nav-menu a').forEach(function(a){var h=a.getAttribute('href');if(h&&h.split('?')[0].split('#')[0]===p)a.classList.add('nav-active');});})()</script>
+<script>(function(){function s(u){u=(u||'').split('?')[0].split('#')[0].replace(/^.*\//,'').replace(/\.html$/,'');return u||'index';}var c=s(location.pathname);document.querySelectorAll('.nav-menu a').forEach(function(a){var h=a.getAttribute('href');if(h&&s(h)===c)a.classList.add('nav-active');});})()</script>
 </body>
 </html>
