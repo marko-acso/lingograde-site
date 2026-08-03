@@ -120,7 +120,7 @@ textarea:focus{border-color:var(--accent);}
 <div class="input-row"><div><label>Language Assessed</label><select id="reviewLang"><option value="">Select...</option><option>German</option><option>English</option><option>French</option><option>Spanish</option><option>Italian</option><option>Portuguese</option><option>Russian</option><option>Serbian</option><option>Croatian</option><option>Romanian</option><option>Polish</option><option>Bulgarian</option></select></div></div>
 <div class="mt-16 text-left" ><label class="mb-8 fw-600 c-ink-soft fs-xs" style="display:block;" >Choose your avatar</label><div class="gap-16" id="avatarPicker" style="display:flex;justify-content:flex-start;"><button type="button" class="avatar-opt" onclick="pickAvatar(this,'female')" title="Female" aria-label="Female avatar" style="width:56px;height:56px;border-radius:50%;border:2px solid #E0E0E0;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:28px;transition:all 0.2s;">👩‍💼</button><button type="button" class="avatar-opt" onclick="pickAvatar(this,'male')" title="Male" aria-label="Male avatar" style="width:56px;height:56px;border-radius:50%;border:2px solid #E0E0E0;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:28px;transition:all 0.2s;">👨‍💼</button><button type="button" class="avatar-opt" onclick="pickAvatar(this,'neutral')" title="Neutral" aria-label="Neutral avatar" style="width:56px;height:56px;border-radius:50%;border:2px solid #E0E0E0;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:24px;transition:all 0.2s;">😊</button></div></div>
 <div class="mt-12 text-left" ><label class="field-label">Anything else? (optional)</label><textarea id="reviewFeedback" rows="2" placeholder="A sentence or two is perfect..."></textarea></div>
-<div class="mt-16 text-left" ><label class="c-ink-soft lh-15 gap-8 fs-085" style="display:flex;align-items:flex-start;cursor:pointer;" ><input class="c-accent" type="checkbox" id="reviewConsent" style="margin-top:3px;min-width:18px;min-height:18px;accent-;"><span>I agree that LingoGrade may publish this review on its website. <a class="c-accent" href="privacy-policy.html" target="_blank" style="text-decoration:underline;">Privacy Policy</a></span></label></div>
+<div class="mt-16 text-left" ><label class="c-ink-soft lh-15 gap-8 fs-085" style="display:flex;align-items:flex-start;cursor:pointer;" ><input class="c-accent" type="checkbox" id="reviewConsent" style="margin-top:3px;min-width:18px;min-height:18px;accent-color:var(--accent);"><span>I agree that LingoGrade may publish this review on its website. <a class="c-accent" href="privacy-policy.html" target="_blank" style="text-decoration:underline;">Privacy Policy</a></span></label></div>
 <button class="btn-next" id="btnSubmit" onclick="submitReview()">Submit My Review</button>
 </div>
 </div>
@@ -165,7 +165,7 @@ textarea:focus{border-color:var(--accent);}
   <div class="footer-legal">
     <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
     <a href="terms-of-service.html" class="footer-legal-link">Terms of Service</a>
-  </nav>
+  </div>
   <div class="footer-copy">&copy; 2026 LingoGrade. All rights reserved.</div>
 </footer>
 
