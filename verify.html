@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Verify Your Real Language Level - LingoGrade</title>
-<meta name="description" content="Your CV says C1. Is it, really? A human C2 examiner checks your actual German, English or one of 12 languages and gives you a signed CEFR verdict. Same day. EUR 39.95.">
+<meta name="description" content="Your CV says C1. Is it, really? Book a live 15-minute check with a human C2 examiner in one of 12 languages and get a signed CEFR verdict the same day. EUR 39.95.">
 <meta property="og:title" content="Your CV says C1. Is it, really?">
-<meta property="og:description" content="A human C2 examiner verifies your real level and signs the verdict. Same day, 12 languages, EUR 39.95.">
+<meta property="og:description" content="Book a live 15-minute check with a human C2 examiner. Signed CEFR verdict, same day, 12 languages, EUR 39.95.">
 <meta property="og:image" content="https://www.lingograde.com/og-logo-v3.png">
 <meta property="og:url" content="https://www.lingograde.com/verify">
 <meta property="og:type" content="website">
@@ -94,6 +94,10 @@ a{color:var(--accent)}
 .sample-grid a{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.28);border-radius:10px;padding:10px 16px;font-size:.9rem;text-decoration:none}
 .sample-grid a:hover{background:rgba(255,255,255,.22)}
 
+/* language strip */
+.langs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:720px;margin:0 auto}
+.langs span{background:var(--accent-bg);color:var(--navy);border:1px solid #dbe8fb;border-radius:100px;padding:8px 16px;font-size:.92rem;font-weight:600}
+
 /* anchor table */
 .cmp{max-width:680px;margin:0 auto;border:1px solid var(--border);border-radius:16px;overflow:hidden}
 .cmp-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border)}
@@ -157,7 +161,7 @@ a{color:var(--accent)}
   <div class="wrap">
     <div class="badge">Independent CEFR Verification</div>
     <h1>Your CV says C1. <em>Is it, really?</em></h1>
-    <p class="sub">A human C2 examiner checks your actual German, English or one of 12 languages and gives you a signed CEFR verdict. Same day. No account, no scheduling.</p>
+    <p class="sub">Book a live 15-minute check with a human C2 examiner in one of 12 languages and get a signed CEFR verdict the same day. Mornings, straight from your desk.</p>
     <a href="https://buy.stripe.com/eVq28r2j2enhbDS5IFgUM0e" target="_blank" rel="noopener" class="btn btn-primary">Verify my level - &euro;39.95</a>
     <p class="trust"><strong>12 languages</strong> &middot; Human-signed &middot; Same-day &middot; Used before job interviews and relocations</p>
     <img class="owl" src="assets/mascot/marco-mila-outfit-private-casual.webp?v=3" alt="Marco the Owl - LingoGrade" onerror="this.style.display='none'">
@@ -168,32 +172,45 @@ a{color:var(--accent)}
 <section class="sec" id="how">
   <div class="wrap">
     <h2>Three steps. One honest answer.</h2>
-    <p class="lead">No preparation. Record two short samples from your desk, and a real examiner does the rest.</p>
+    <p class="lead">No preparation. Pick your language, book a morning slot, and talk to a real examiner for 15 minutes.</p>
     <div class="steps">
       <div class="step">
-        <img src="assets/mascot/marco-headset-standing.webp" alt="Record" onerror="this.style.display='none'">
+        <img src="assets/mascot/marco-headset-standing.webp" alt="Pick and pay" onerror="this.style.display='none'">
         <div class="n">Step 1</div>
-        <h3>Record</h3>
-        <p>A ~2-minute speaking prompt and one short writing task, right in your browser.</p>
+        <h3>Pick &amp; pay</h3>
+        <p>Choose your language and pay &euro;39.95. That is the whole checkout - no account to create.</p>
       </div>
       <div class="step">
-        <img src="assets/mascot/marco-reading.webp?v=3" alt="Reviewed" onerror="this.style.display='none'">
+        <img src="assets/mascot/marco-reading.webp?v=3" alt="Book your slot" onerror="this.style.display='none'">
         <div class="n">Step 2</div>
-        <h3>We check</h3>
-        <p>A C2 examiner reviews it against the official CEFR grid. Not a bot score.</p>
+        <h3>Book your slot</h3>
+        <p>Pick any free 15-minute morning slot. You see only what is genuinely open, shown in your own timezone.</p>
       </div>
       <div class="step">
-        <img src="assets/mascot/marco-thumbsup.webp?v=3" alt="Proof" onerror="this.style.display='none'">
+        <img src="assets/mascot/marco-thumbsup.webp?v=3" alt="Live check and proof" onerror="this.style.display='none'">
         <div class="n">Step 3</div>
-        <h3>You get proof</h3>
-        <p>A signed PDF: your active and passive level, three patterns that betray your true level, and exactly what to fix.</p>
+        <h3>Live check + proof</h3>
+        <p>A C2 examiner talks with you live, then sends a signed PDF the same day: your real level and exactly what to fix.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SAMPLE PROOF -->
+<!-- LANGUAGES -->
 <section class="sec alt">
+  <div class="wrap">
+    <h2>Twelve languages. One standard.</h2>
+    <p class="lead">Every check is run by a native-level C2 examiner. Choose yours at checkout.</p>
+    <div class="langs">
+      <span>German</span><span>English</span><span>French</span><span>Italian</span>
+      <span>Spanish</span><span>Portuguese</span><span>Russian</span><span>Serbian</span>
+      <span>Croatian</span><span>Bulgarian</span><span>Polish</span><span>Romanian</span>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE PROOF -->
+<section class="sec">
   <div class="wrap">
     <div class="sample">
       <h2>This is what lands in your inbox.</h2>
@@ -249,7 +266,7 @@ a{color:var(--accent)}
       </div>
       <div class="tile">
         <h3>Twelve languages?</h3>
-        <p>German, English, French, Italian, Spanish, Serbian, Russian and more - native-examiner standard on each.</p>
+        <p>German, English, French, Italian, Spanish, Portuguese, Russian, Serbian, Croatian, Bulgarian, Polish, Romanian - native-examiner standard on each.</p>
       </div>
     </div>
   </div>
@@ -260,10 +277,11 @@ a{color:var(--accent)}
   <div class="wrap">
     <h2>Questions</h2>
     <div class="faq">
-      <details><summary>How fast do I get it?</summary><p>Same day - most within a few hours.</p></details>
-      <details><summary>Do I need an account?</summary><p>No. Pay, record, done. The link to record arrives the moment you pay.</p></details>
+      <details><summary>How does the session work?</summary><p>After you pay you pick a free 15-minute morning slot. At that time you talk live with a C2 examiner, and your signed PDF verdict lands the same day.</p></details>
+      <details><summary>What if I need to reschedule or cancel?</summary><p>You can reschedule or cancel free up to 24 hours before your slot. Inside 24 hours, or if you do not show up, the slot is forfeited and the &euro;39.95 is not refunded - the examiner's time was reserved for you.</p></details>
+      <details><summary>Do I need an account?</summary><p>No. Choose your language, pay, book a slot. That is it.</p></details>
       <details><summary>Is this an official certificate?</summary><p>It is an independent expert verification, not a state exam. It tells you where you truly stand - before you sit one.</p></details>
-      <details><summary>Which languages can I verify?</summary><p>Twelve, including German, English, French, Italian, Spanish, Serbian and Russian.</p></details>
+      <details><summary>Which languages can I verify?</summary><p>Twelve: German, English, French, Italian, Spanish, Portuguese, Russian, Serbian, Croatian, Bulgarian, Polish and Romanian.</p></details>
     </div>
   </div>
 </section>
@@ -273,7 +291,8 @@ a{color:var(--accent)}
   <div class="final">
     <h2>Stop guessing where your language stands.</h2>
     <a href="https://buy.stripe.com/eVq28r2j2enhbDS5IFgUM0e" target="_blank" rel="noopener" class="btn btn-primary">Verify my level - &euro;39.95</a>
-    <p class="sub">Same day &middot; Human-signed &middot; 12 languages</p>
+    <p class="sub">Live 15-minute check &middot; Human-signed &middot; 12 languages</p>
+    <p class="sub">Free reschedule up to 24h before. No-show or later cancellation forfeits the slot.</p>
   </div>
 </section>
 
