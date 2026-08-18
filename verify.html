@@ -60,6 +60,10 @@ a{color:var(--accent)}
 .hd-brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-size:1.35rem;color:var(--ink);text-decoration:none}
 .hd-brand img{width:38px;height:38px}
 .brand-a{color:var(--success)}
+.hd-right{display:flex;align-items:center;gap:10px}
+.lang-toggle{display:flex;gap:3px}
+.lang-btn{background:none;border:1px solid var(--border);color:var(--ink-light);font-family:var(--font-body);font-weight:600;font-size:.78rem;padding:5px 9px;border-radius:8px;cursor:pointer;line-height:1}
+.lang-btn.on{background:var(--accent);color:#fff;border-color:var(--accent)}
 
 /* hero */
 .hero{padding:64px 0 40px;text-align:center;background:linear-gradient(180deg,var(--accent-bg) 0%,var(--cream) 100%)}
@@ -145,12 +149,18 @@ a{color:var(--accent)}
 </head>
 <body>
 
-<!-- CHECKOUT: live EUR 39.95 Stripe Payment Link (Quick Verification) wired into all CTAs -->
+<!-- CHECKOUT: live EUR 39.95 Stripe Payment Link (Quick Verification) wired into all CTAs. Bilingual DE/EN via data-de attributes + toggle. -->
 
 <header class="hd">
   <div class="hd-in">
     <a href="/" class="hd-brand"><img src="assets/mascot/marco-logo-reading-book.webp?v=3" alt="LingoGrade" onerror="this.style.display='none'">LingoGr<span class="brand-a">A</span>de</a>
-    <a href="https://buy.stripe.com/eVq28r2j2enhbDS5IFgUM0e" target="_blank" rel="noopener" class="btn btn-ghost">Verify my level</a>
+    <div class="hd-right">
+      <div class="lang-toggle">
+        <button type="button" class="lang-btn" data-lang="de" onclick="__setLang('de')">DE</button>
+        <button type="button" class="lang-btn" data-lang="en" onclick="__setLang('en')">EN</button>
+      </div>
+      <a href="https://buy.stripe.com/eVq28r2j2enhbDS5IFgUM0e" target="_blank" rel="noopener" class="btn btn-ghost" data-de="Niveau pr&uuml;fen">Verify my level</a>
+    </div>
   </div>
 </header>
 
@@ -159,11 +169,11 @@ a{color:var(--accent)}
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="badge">Independent CEFR Verification</div>
-    <h1>Your CV says C1. <em>Is it, really?</em></h1>
-    <p class="sub">Book a live 15-minute check with a human C2 examiner in one of 12 languages and get a signed CEFR verdict the same day. Mornings, straight from your desk.</p>
-    <a href="https://buy.stripe.com/eVq28r2j2enhbDS5IFgUM0e" target="_blank" rel="noopener" class="btn btn-primary">Verify my level - &euro;39.95</a>
-    <p class="trust"><strong>12 languages</strong> &middot; Human-signed &middot; Same-day &middot; Used before job interviews and relocations</p>
+    <div class="badge" data-de="Unabh&auml;ngige GER-Einstufung">Independent CEFR Verification</div>
+    <h1 data-de="Im Lebenslauf steht C1. <em>Stimmt das wirklich?</em>">Your CV says C1. <em>Is it, really?</em></h1>
+    <p class="sub" data-de="Buchen Sie einen 15-min&uuml;tigen Live-Check mit einem menschlichen C2-Pr&uuml;fer in einer von 12 Sprachen und erhalten Sie noch am selben Tag ein unterschriebenes GER-Urteil. Vormittags, direkt vom Schreibtisch aus.">Book a live 15-minute check with a human C2 examiner in one of 12 languages and get a signed CEFR verdict the same day. Mornings, straight from your desk.</p>
+    <a href="https://buy.stripe.com/eVq28r2j2enhbDS5IFgUM0e" target="_blank" rel="noopener" class="btn btn-primary" data-de="Niveau pr&uuml;fen - 39,95 &euro;">Verify my level - &euro;39.95</a>
+    <p class="trust" data-de="<strong>12 Sprachen</strong> &middot; Von Hand unterschrieben &middot; Noch am selben Tag &middot; Genutzt vor Vorstellungsgespr&auml;chen und Umz&uuml;gen"><strong>12 languages</strong> &middot; Human-signed &middot; Same-day &middot; Used before job interviews and relocations</p>
     <img class="owl" src="assets/mascot/marco-mila-outfit-private-casual.webp?v=3" alt="Marco the Owl - LingoGrade" onerror="this.style.display='none'">
   </div>
 </section>
@@ -171,26 +181,26 @@ a{color:var(--accent)}
 <!-- HOW IT WORKS -->
 <section class="sec" id="how">
   <div class="wrap">
-    <h2>Three steps. One honest answer.</h2>
-    <p class="lead">No preparation. Pick your language, book a morning slot, and talk to a real examiner for 15 minutes.</p>
+    <h2 data-de="Drei Schritte. Eine ehrliche Antwort.">Three steps. One honest answer.</h2>
+    <p class="lead" data-de="Keine Vorbereitung. Sprache w&auml;hlen, einen Vormittagstermin buchen und 15 Minuten mit einem echten Pr&uuml;fer sprechen.">No preparation. Pick your language, book a morning slot, and talk to a real examiner for 15 minutes.</p>
     <div class="steps">
       <div class="step">
         <img src="assets/mascot/marco-headset-standing.webp" alt="Pick and pay" onerror="this.style.display='none'">
-        <div class="n">Step 1</div>
-        <h3>Pick &amp; pay</h3>
-        <p>Choose your language and pay &euro;39.95. That is the whole checkout - no account to create.</p>
+        <div class="n" data-de="Schritt 1">Step 1</div>
+        <h3 data-de="W&auml;hlen &amp; zahlen">Pick &amp; pay</h3>
+        <p data-de="Sprache w&auml;hlen und 39,95 &euro; zahlen. Das ist der gesamte Checkout - kein Konto n&ouml;tig.">Choose your language and pay &euro;39.95. That is the whole checkout - no account to create.</p>
       </div>
       <div class="step">
         <img src="assets/mascot/marco-reading.webp?v=3" alt="Book your slot" onerror="this.style.display='none'">
-        <div class="n">Step 2</div>
-        <h3>Book your slot</h3>
-        <p>Pick any free 15-minute morning slot. You see only what is genuinely open, shown in your own timezone.</p>
+        <div class="n" data-de="Schritt 2">Step 2</div>
+        <h3 data-de="Termin buchen">Book your slot</h3>
+        <p data-de="W&auml;hlen Sie einen freien 15-Minuten-Termin am Vormittag. Sie sehen nur, was wirklich frei ist - in Ihrer eigenen Zeitzone.">Pick any free 15-minute morning slot. You see only what is genuinely open, shown in your own timezone.</p>
       </div>
       <div class="step">
         <img src="assets/mascot/marco-thumbsup.webp?v=3" alt="Live check and proof" onerror="this.style.display='none'">
-        <div class="n">Step 3</div>
-        <h3>Live check + proof</h3>
-        <p>A C2 examiner talks with you live, then sends a signed PDF the same day: your real level and exactly what to fix.</p>
+        <div class="n" data-de="Schritt 3">Step 3</div>
+        <h3 data-de="Live-Check + Nachweis">Live check + proof</h3>
+        <p data-de="Ein C2-Pr&uuml;fer spricht live mit Ihnen und schickt noch am selben Tag ein unterschriebenes PDF: Ihr echtes Niveau und genau das, was zu verbessern ist.">A C2 examiner talks with you live, then sends a signed PDF the same day: your real level and exactly what to fix.</p>
       </div>
     </div>
   </div>
@@ -199,12 +209,12 @@ a{color:var(--accent)}
 <!-- LANGUAGES -->
 <section class="sec alt">
   <div class="wrap">
-    <h2>Twelve languages. One standard.</h2>
-    <p class="lead">Every check is run by a native-level C2 examiner. Choose yours at checkout.</p>
+    <h2 data-de="Zw&ouml;lf Sprachen. Ein Ma&szlig;stab.">Twelve languages. One standard.</h2>
+    <p class="lead" data-de="Jeder Check l&auml;uft &uuml;ber einen muttersprachlichen C2-Pr&uuml;fer. Ihre Sprache w&auml;hlen Sie beim Checkout.">Every check is run by a native-level C2 examiner. Choose yours at checkout.</p>
     <div class="langs">
-      <span>German</span><span>English</span><span>French</span><span>Italian</span>
-      <span>Spanish</span><span>Portuguese</span><span>Russian</span><span>Serbian</span>
-      <span>Croatian</span><span>Bulgarian</span><span>Polish</span><span>Romanian</span>
+      <span data-de="Deutsch">German</span><span data-de="Englisch">English</span><span data-de="Franz&ouml;sisch">French</span><span data-de="Italienisch">Italian</span>
+      <span data-de="Spanisch">Spanish</span><span data-de="Portugiesisch">Portuguese</span><span data-de="Russisch">Russian</span><span data-de="Serbisch">Serbian</span>
+      <span data-de="Kroatisch">Croatian</span><span data-de="Bulgarisch">Bulgarian</span><span data-de="Polnisch">Polish</span><span data-de="Rum&auml;nisch">Romanian</span>
     </div>
   </div>
 </section>
@@ -213,14 +223,14 @@ a{color:var(--accent)}
 <section class="sec">
   <div class="wrap">
     <div class="sample">
-      <h2>This is what lands in your inbox.</h2>
-      <p>Real report, real depth. Read a full German B2 verification before you pay a cent.</p>
-      <a href="samples/sample_german_b2_en.pdf" class="btn btn-primary" target="_blank" rel="noopener">Open a sample report (PDF)</a>
+      <h2 data-de="Das landet in Ihrem Postfach.">This is what lands in your inbox.</h2>
+      <p data-de="Echter Bericht, echte Tiefe. Lesen Sie eine vollst&auml;ndige deutsche B2-Einstufung, bevor Sie einen Cent zahlen.">Real report, real depth. Read a full German B2 verification before you pay a cent.</p>
+      <a href="samples/sample_german_b2_en.pdf" class="btn btn-primary" target="_blank" rel="noopener" data-de="Musterbericht &ouml;ffnen (PDF)">Open a sample report (PDF)</a>
       <div class="sample-grid">
-        <a href="samples/sample_german_b2_en.pdf" target="_blank" rel="noopener">German B2 &rarr;</a>
-        <a href="samples/sample_english_b2_en.pdf" target="_blank" rel="noopener">English B2 &rarr;</a>
-        <a href="samples/sample_french_b1_en.pdf" target="_blank" rel="noopener">French B1 &rarr;</a>
-        <a href="samples/sample_italian_b1_en.pdf" target="_blank" rel="noopener">Italian B1 &rarr;</a>
+        <a href="samples/sample_german_b2_en.pdf" target="_blank" rel="noopener" data-de="Deutsch B2 &rarr;">German B2 &rarr;</a>
+        <a href="samples/sample_english_b2_en.pdf" target="_blank" rel="noopener" data-de="Englisch B2 &rarr;">English B2 &rarr;</a>
+        <a href="samples/sample_french_b1_en.pdf" target="_blank" rel="noopener" data-de="Franz&ouml;sisch B1 &rarr;">French B1 &rarr;</a>
+        <a href="samples/sample_italian_b1_en.pdf" target="_blank" rel="noopener" data-de="Italienisch B1 &rarr;">Italian B1 &rarr;</a>
       </div>
     </div>
   </div>
@@ -229,26 +239,26 @@ a{color:var(--accent)}
 <!-- ANCHOR -->
 <section class="sec">
   <div class="wrap">
-    <h2>Before you pay &euro;250 for an official exam</h2>
+    <h2 data-de="Bevor Sie 250 &euro; f&uuml;r eine offizielle Pr&uuml;fung zahlen">Before you pay &euro;250 for an official exam</h2>
     <div class="cmp">
       <div class="cmp-row cmp-head">
-        <div class="l">Official exam (Goethe / telc / IELTS)</div>
-        <div class="r">LingoGrade verification</div>
+        <div class="l" data-de="Offizielle Pr&uuml;fung (Goethe / telc / IELTS)">Official exam (Goethe / telc / IELTS)</div>
+        <div class="r" data-de="LingoGrade-Einstufung">LingoGrade verification</div>
       </div>
-      <div class="cmp-row"><div class="l">&euro;150 - &euro;250</div><div class="r">&euro;39.95</div></div>
-      <div class="cmp-row"><div class="l">Booked weeks out</div><div class="r">Today</div></div>
-      <div class="cmp-row"><div class="l">Fixed test centre</div><div class="r">From your desk</div></div>
-      <div class="cmp-row"><div class="l">A certificate</div><div class="r">A verdict <em>plus</em> what to fix</div></div>
+      <div class="cmp-row"><div class="l" data-de="150 - 250 &euro;">&euro;150 - &euro;250</div><div class="r" data-de="39,95 &euro;">&euro;39.95</div></div>
+      <div class="cmp-row"><div class="l" data-de="Wochen im Voraus">Booked weeks out</div><div class="r" data-de="Heute">Today</div></div>
+      <div class="cmp-row"><div class="l" data-de="Festes Pr&uuml;fungszentrum">Fixed test centre</div><div class="r" data-de="Vom Schreibtisch aus">From your desk</div></div>
+      <div class="cmp-row"><div class="l" data-de="Ein Zertifikat">A certificate</div><div class="r" data-de="Ein Urteil <em>plus</em> was zu verbessern ist">A verdict <em>plus</em> what to fix</div></div>
     </div>
-    <p class="anchor-note">Sit the official exam when you <em>know</em> you will pass. Verify first, for &euro;39.95.</p>
+    <p class="anchor-note" data-de="Machen Sie die offizielle Pr&uuml;fung, wenn Sie <em>wissen</em>, dass Sie bestehen. Pr&uuml;fen Sie erst - f&uuml;r 39,95 &euro;.">Sit the official exam when you <em>know</em> you will pass. Verify first, for &euro;39.95.</p>
   </div>
 </section>
 
 <!-- DIFFERENTIATOR -->
 <section class="sec alt">
   <div class="wrap">
-    <h2>Free online tests give you a number.<br>We give you a verdict you can stand behind.</h2>
-    <p class="lead">EF SET and the rest are machine-scored multiple choice. No one signs them. No one checked your <em>speaking</em>. LingoGrade is a human C2 examiner putting their name on your level - the difference between a guess and proof.</p>
+    <h2 data-de="Kostenlose Online-Tests geben Ihnen eine Zahl.<br>Wir geben Ihnen ein Urteil, hinter dem Sie stehen k&ouml;nnen.">Free online tests give you a number.<br>We give you a verdict you can stand behind.</h2>
+    <p class="lead" data-de="EF SET und der Rest sind maschinell bewertete Multiple-Choice-Tests. Niemand unterschreibt sie. Niemand hat Ihr <em>Sprechen</em> gepr&uuml;ft. Bei LingoGrade setzt ein menschlicher C2-Pr&uuml;fer seinen Namen unter Ihr Niveau - der Unterschied zwischen einer Vermutung und einem Nachweis.">EF SET and the rest are machine-scored multiple choice. No one signs them. No one checked your <em>speaking</em>. LingoGrade is a human C2 examiner putting their name on your level - the difference between a guess and proof.</p>
   </div>
 </section>
 
@@ -257,16 +267,16 @@ a{color:var(--accent)}
   <div class="wrap">
     <div class="tiles">
       <div class="tile">
-        <h3>Is it really human?</h3>
-        <p>Yes. A C2 examiner signs every report by name. The tooling does prep; the human gives the verdict.</p>
+        <h3 data-de="Wirklich ein Mensch?">Is it really human?</h3>
+        <p data-de="Ja. Ein C2-Pr&uuml;fer unterschreibt jeden Bericht mit Namen. Die Technik &uuml;bernimmt die Vorarbeit; das Urteil gibt der Mensch.">Yes. A C2 examiner signs every report by name. The tooling does prep; the human gives the verdict.</p>
       </div>
       <div class="tile">
-        <h3>What if I score lower than I hoped?</h3>
-        <p>Then you just saved &euro;250 and weeks of prep - with the exact three fixes to close the gap.</p>
+        <h3 data-de="Und wenn es schlechter ausf&auml;llt als erhofft?">What if I score lower than I hoped?</h3>
+        <p data-de="Dann haben Sie gerade 250 &euro; und Wochen der Vorbereitung gespart - mit den genauen drei Korrekturen, um die L&uuml;cke zu schlie&szlig;en.">Then you just saved &euro;250 and weeks of prep - with the exact three fixes to close the gap.</p>
       </div>
       <div class="tile">
-        <h3>Twelve languages?</h3>
-        <p>German, English, French, Italian, Spanish, Portuguese, Russian, Serbian, Croatian, Bulgarian, Polish, Romanian - native-examiner standard on each.</p>
+        <h3 data-de="Zw&ouml;lf Sprachen?">Twelve languages?</h3>
+        <p data-de="Deutsch, Englisch, Franz&ouml;sisch, Italienisch, Spanisch, Portugiesisch, Russisch, Serbisch, Kroatisch, Bulgarisch, Polnisch, Rum&auml;nisch - muttersprachlicher Pr&uuml;ferstandard bei jeder.">German, English, French, Italian, Spanish, Portuguese, Russian, Serbian, Croatian, Bulgarian, Polish, Romanian - native-examiner standard on each.</p>
       </div>
     </div>
   </div>
@@ -275,13 +285,13 @@ a{color:var(--accent)}
 <!-- FAQ -->
 <section class="sec alt">
   <div class="wrap">
-    <h2>Questions</h2>
+    <h2 data-de="Fragen">Questions</h2>
     <div class="faq">
-      <details><summary>How does the session work?</summary><p>After you pay you pick a free 15-minute morning slot. At that time you talk live with a C2 examiner, and your signed PDF verdict lands the same day.</p></details>
-      <details><summary>What if I need to reschedule or cancel?</summary><p>You can reschedule or cancel free up to 24 hours before your slot. Inside 24 hours, or if you do not show up, the slot is forfeited and the &euro;39.95 is not refunded - the examiner's time was reserved for you.</p></details>
-      <details><summary>Do I need an account?</summary><p>No. Choose your language, pay, book a slot. That is it.</p></details>
-      <details><summary>Is this an official certificate?</summary><p>It is an independent expert verification, not a state exam. It tells you where you truly stand - before you sit one.</p></details>
-      <details><summary>Which languages can I verify?</summary><p>Twelve: German, English, French, Italian, Spanish, Portuguese, Russian, Serbian, Croatian, Bulgarian, Polish and Romanian.</p></details>
+      <details><summary data-de="Wie l&auml;uft die Sitzung ab?">How does the session work?</summary><p data-de="Nach der Zahlung w&auml;hlen Sie einen freien 15-Minuten-Termin am Vormittag. Zu diesem Zeitpunkt sprechen Sie live mit einem C2-Pr&uuml;fer, und Ihr unterschriebenes PDF-Urteil kommt noch am selben Tag.">After you pay you pick a free 15-minute morning slot. At that time you talk live with a C2 examiner, and your signed PDF verdict lands the same day.</p></details>
+      <details><summary data-de="Was, wenn ich verschieben oder absagen muss?">What if I need to reschedule or cancel?</summary><p data-de="Sie k&ouml;nnen bis 24 Stunden vor Ihrem Termin kostenlos verschieben oder absagen. Innerhalb von 24 Stunden oder bei Nichterscheinen verf&auml;llt der Termin und die 39,95 &euro; werden nicht erstattet - die Zeit des Pr&uuml;fers war f&uuml;r Sie reserviert.">You can reschedule or cancel free up to 24 hours before your slot. Inside 24 hours, or if you do not show up, the slot is forfeited and the &euro;39.95 is not refunded - the examiner's time was reserved for you.</p></details>
+      <details><summary data-de="Brauche ich ein Konto?">Do I need an account?</summary><p data-de="Nein. Sprache w&auml;hlen, zahlen, Termin buchen. Das war's.">No. Choose your language, pay, book a slot. That is it.</p></details>
+      <details><summary data-de="Ist das ein offizielles Zertifikat?">Is this an official certificate?</summary><p data-de="Es ist eine unabh&auml;ngige Experteneinstufung, keine staatliche Pr&uuml;fung. Sie sagt Ihnen, wo Sie wirklich stehen - bevor Sie eine ablegen.">It is an independent expert verification, not a state exam. It tells you where you truly stand - before you sit one.</p></details>
+      <details><summary data-de="Welche Sprachen kann ich pr&uuml;fen lassen?">Which languages can I verify?</summary><p data-de="Zw&ouml;lf: Deutsch, Englisch, Franz&ouml;sisch, Italienisch, Spanisch, Portugiesisch, Russisch, Serbisch, Kroatisch, Bulgarisch, Polnisch und Rum&auml;nisch.">Twelve: German, English, French, Italian, Spanish, Portuguese, Russian, Serbian, Croatian, Bulgarian, Polish and Romanian.</p></details>
     </div>
   </div>
 </section>
@@ -289,10 +299,10 @@ a{color:var(--accent)}
 <!-- FINAL CTA -->
 <section class="wrap" id="checkout" style="padding:24px">
   <div class="final">
-    <h2>Stop guessing where your language stands.</h2>
-    <a href="https://buy.stripe.com/eVq28r2j2enhbDS5IFgUM0e" target="_blank" rel="noopener" class="btn btn-primary">Verify my level - &euro;39.95</a>
-    <p class="sub">Live 15-minute check &middot; Human-signed &middot; 12 languages</p>
-    <p class="sub">Free reschedule up to 24h before. No-show or later cancellation forfeits the slot.</p>
+    <h2 data-de="H&ouml;ren Sie auf zu raten, wo Ihre Sprache steht.">Stop guessing where your language stands.</h2>
+    <a href="https://buy.stripe.com/eVq28r2j2enhbDS5IFgUM0e" target="_blank" rel="noopener" class="btn btn-primary" data-de="Niveau pr&uuml;fen - 39,95 &euro;">Verify my level - &euro;39.95</a>
+    <p class="sub" data-de="15-min&uuml;tiger Live-Check &middot; Von Hand unterschrieben &middot; 12 Sprachen">Live 15-minute check &middot; Human-signed &middot; 12 languages</p>
+    <p class="sub" data-de="Kostenloses Verschieben bis 24 Std. vorher. Bei Nichterscheinen oder sp&auml;terer Absage verf&auml;llt der Termin.">Free reschedule up to 24h before. No-show or later cancellation forfeits the slot.</p>
   </div>
 </section>
 
@@ -301,11 +311,35 @@ a{color:var(--accent)}
 <footer class="ft">
   <div class="ft-brand">LingoGr<span class="brand-a">A</span>de</div>
   <div>
-    <a href="terms-of-service.html">Terms</a>
-    <a href="privacy-policy.html">Privacy</a>
+    <a href="terms-of-service.html" data-de="AGB">Terms</a>
+    <a href="privacy-policy.html" data-de="Datenschutz">Privacy</a>
   </div>
-  <div class="cp">&copy; 2026 LingoGrade. Independent language verification.</div>
+  <div class="cp" data-de="&copy; 2026 LingoGrade. Unabh&auml;ngige Sprachpr&uuml;fung.">&copy; 2026 LingoGrade. Independent language verification.</div>
 </footer>
+
+<script>
+(function(){
+  function pick(){
+    try{ var s=localStorage.getItem('lg_verify_lang'); if(s==='de'||s==='en') return s; }catch(e){}
+    return (navigator.language||'').toLowerCase().indexOf('de')===0 ? 'de' : 'en';
+  }
+  function apply(l){
+    document.documentElement.lang=l;
+    var nodes=document.querySelectorAll('[data-de]');
+    for(var i=0;i<nodes.length;i++){
+      var el=nodes[i];
+      if(el.getAttribute('data-en')===null) el.setAttribute('data-en', el.innerHTML);
+      var v=el.getAttribute('data-'+l);
+      if(v!==null) el.innerHTML=v;
+    }
+    var btns=document.querySelectorAll('.lang-btn');
+    for(var j=0;j<btns.length;j++){ btns[j].classList.toggle('on', btns[j].getAttribute('data-lang')===l); }
+    try{ localStorage.setItem('lg_verify_lang', l); }catch(e){}
+  }
+  window.__setLang=apply;
+  apply(pick());
+})();
+</script>
 
 </body>
 </html>
